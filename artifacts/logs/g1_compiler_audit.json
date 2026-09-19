@@ -1,0 +1,137 @@
+{
+  "status": "success",
+  "audit_meta": {
+    "agent": "Agent 5: Compiler Pipeline & Mock Elimination Engineer",
+    "timestamp_utc": "2026-09-06T04:55:00Z",
+    "mandate": "Verify compiler pipeline integrity, honest AST-estimated memory metrics, and fail-closed download lockout.",
+    "safety_mandate": "Absolute Hardware Lockout Policy. Zero hardware or PLC download. ZERO GUI interaction. No Straton. No fake 100%/VERIFIED_LIVE.",
+    "verdict": "VERIFIED_COMPLIANT"
+  },
+  "pipeline_verification": {
+    "ast_memory_metrics": {
+      "status": "HONEST_AST_DERIVED",
+      "heuristic_mock_formulas_eliminated": true,
+      "arbitrary_max_formula_removed": true,
+      "metrics_function": "compute_honest_ast_metrics(code: str) -> Dict[str, int]",
+      "extracted_metrics": [
+        "ast_statement_count",
+        "ast_variable_count",
+        "ast_expression_count",
+        "source_bytes_total"
+      ],
+      "labeled_estimates": {
+        "estimated_ast_footprint": true,
+        "memory_footprint": {
+          "code_size_bytes": "total_source_bytes",
+          "data_size_bytes": "total_ast_variables * 4",
+          "retain_size_bytes": 0,
+          "total_size_bytes": "total_source_bytes + (total_ast_variables * 4)"
+        }
+      }
+    },
+    "hardware_download_lockout": {
+      "status": "FAIL_CLOSED_ENFORCED",
+      "prohibited_command_ids": {
+        "ID_CONTROLLER_DOWNLOAD": 32827,
+        "ID_PROGRAM_DOWNLOADOPTIONS": 33149
+      },
+      "exception_type": "UnauthorizedDownloadError",
+      "unconditional_enforcement_verified": true,
+      "guarded_entrypoints": [
+        "CscapeCompiler.trigger_cscape_gui_compile(command_id=32827)",
+        "CscapeCompiler.trigger_cscape_gui_compile(command_id=33149)",
+        "CscapeCompiler.download_to_controller()",
+        "CscapeCompiler.download_project()",
+        "CscapeCompiler.download_options()",
+        "IECValidator.check_download_lockout(32827)",
+        "IECValidator.check_download_lockout(33149)",
+        "IECValidator.check_download_lockout('ID_CONTROLLER_DOWNLOAD')",
+        "IECValidator.check_download_lockout('ID_PROGRAM_DOWNLOADOPTIONS')",
+        "IECValidator.check_hardware_safety(code)"
+      ]
+    },
+    "diagnostics_error_patterns": {
+      "status": "success",
+      "patterns": [
+        {
+          "name": "PATTERN_LINE_COL_FIRST",
+          "regex": "^(?:(?:Line\\s*(?P<line>\\d+)(?:,\\s*|\\s+)(?:Col\\s*(?P<col>\\d+))?)|(?:\\((?:Line\\s*)?(?P<line2>\\d+)(?:,\\s*(?:Col\\s*)?(?P<col2>\\d+)|\\s+Col\\s+(?P<col3>\\d+))?\\)))\\s*:\\s*(?P<level>error|warning|info)\\s*(?:\\[?(?P<code>K5\\d+|\\w+)\\]?)?:\\s*(?P<msg>.+)$",
+          "tested_formats": [
+            "Line 8 Col 21: error: ...",
+            "Line 12, Col 5: error K51001: ...",
+            "(Line 20 Col 3): warning: ...",
+            "(15, 10): error: ..."
+          ]
+        },
+        {
+          "name": "PATTERN_GENERIC_LINE",
+          "regex": "^(?P<level>ERROR|WARNING|INFO)\\s*(?:\\[(?P<code>\\w+)\\])?:\\s*(?:(?:Line\\s*(?P<line>\\d+)(?:,\\s*Col\\s*(?P<col>\\d+)|\\s+Col\\s*(?P<col2>\\d+))?):\\s*)?(?P<msg>.+)$",
+          "tested_formats": [
+            "ERROR [ST_SYNTAX]: Line 8 Col 21: ...",
+            "ERROR: Line 45: ...",
+            "WARNING [W1002]: Line 10, Col 2: ..."
+          ]
+        },
+        {
+          "name": "PATTERN_CSCAPE_LOCATION",
+          "regex": "^(?!(?:Line\\s*\\d+|ERROR|WARNING|INFO) )(?P<file>(?:[a-zA-Z]:[\\\\/])?[^:()]+?)(?:\\((?:Line\\s*)?(?P<line>\\d+)(?:,\\s*(?:Col\\s*)?(?P<col>\\d+)|\\s+Col\\s+(?P<col2>\\d+))?\\))?:\\s*(?P<level>error|warning|info)\\s*(?P<code>K5\\d+|\\w+)?:\\s*(?P<msg>.+)$",
+          "tested_formats": [
+            "PRG_Main.st(8,21): error ST_SYNTAX_ERROR: ...",
+            "MotorControl.st(14,5): error K51001: ...",
+            "FB_Timer.st(22): warning: ...",
+            "C:\\path\\file.st(8,21): error: ..."
+          ]
+        }
+      ],
+      "clean_build_proof": {
+        "verified": true,
+        "status_text": "SUCCESS",
+        "zero_errors_zero_warnings_proof": true
+      }
+    }
+  },
+  "test_execution_summary": {
+    "command": "pytest tests/test_cscape_compiler.py tests/test_iec_validator.py tests/test_diagnostics.py -q --tb=short",
+    "exit_code": 0,
+    "total_tests": 37,
+    "passed": 37,
+    "failed": 0,
+    "duration_seconds": 1.15,
+    "breakdown": {
+      "tests/test_cscape_compiler.py": {
+        "count": 17,
+        "passed": 17,
+        "status": "success"
+      },
+      "tests/test_iec_validator.py": {
+        "count": 12,
+        "passed": 12,
+        "status": "success"
+      },
+      "tests/test_diagnostics.py": {
+        "count": 8,
+        "passed": 8,
+        "status": "success"
+      }
+    }
+  },
+  "code_mirroring": {
+    "roots": [
+      "C:\\HornerAI\\horner-cscape-mcp",
+      "C:\\Users\\ArmandoSilva"
+    ],
+    "mirrored_files": [
+      "src/cscape/compilation.py",
+      "src/iec/validator.py",
+      "src/cscape/diagnostics.py",
+      "tests/test_cscape_compiler.py",
+      "tests/test_iec_validator.py",
+      "tests/test_diagnostics.py",
+      "artifacts/logs/g1_compiler_audit.json",
+      "tests/test_compiler.py"
+    ],
+    "src_junction_verified": true,
+    "tests_mirrored": true,
+    "artifacts_mirrored": true
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "step": 45,
+  "name": "step45_scan_overrun_watchdog_checkpoint",
+  "description": "Scan cycle overrun & watchdog interlock recovery audit verified across 300 cycles (30 cycles of 65ms overrun > 50ms limit, 100% fail-safe clamp to 0.0%, latch persistence, and bumpless recovery with 0.0017% final error).",
+  "timestamp_utc": "2026-09-05T09:44:35.795Z",
+  "cscape_pid": 11808,
+  "cscape_hwnd": "0x1f00670",
+  "cscape_healthy": true,
+  "total_cycles": 300,
+  "cycles_per_sec": 2136.04,
+  "phase1_final_error_percent": 0.0318,
+  "phase2_max_clamped_output": 0.0,
+  "phase3_latch_retained": true,
+  "phase4_recovery_error_percent": 0.0017,
+  "watchdog_fail_safe_verified": true,
+  "hardware_lockout_enforced": true,
+  "audit_log": "C:\\Users\\ArmandoSilva\\artifacts\\logs\\mcp_scan_overrun_watchdog_audit.json",
+  "status": "VERIFIED_LIVE"
+}

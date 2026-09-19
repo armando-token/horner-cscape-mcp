@@ -1,0 +1,101 @@
+[
+  {
+    "scenario": "Scenario 1: Syntax Error (Unclosed IF block missing END_IF)",
+    "file_path": "POU_SyntaxError.st",
+    "line": 10,
+    "column": 1,
+    "error_code": "ST_SYNTAX_ERROR",
+    "level": "ERROR",
+    "message": "Mismatched closing block at line 10, col 1: got 'END_PROGRAM', expected closing for 'IF' (opened at line 6, col 1)."
+  },
+  {
+    "scenario": "Scenario 1: Syntax Error (Unclosed IF block missing END_IF)",
+    "file_path": "POU_SyntaxError.st",
+    "line": 1,
+    "column": 1,
+    "error_code": "ERR_UNCLOSED_PROGRAM",
+    "level": "ERROR",
+    "message": ": Unclosed 'PROGRAM' block (opened at line 1, col 0) missing terminating keyword."
+  },
+  {
+    "scenario": "Scenario 1: Syntax Error (Unclosed IF block missing END_IF)",
+    "file_path": "POU_SyntaxError.st",
+    "line": 10,
+    "column": 1,
+    "error_code": "ST_SYNTAX_ERROR",
+    "level": "ERROR",
+    "message": "Syntax error at line 10, col 1: Unexpected token in statement: END_PROGRAM ('END_PROGRAM')"
+  },
+  {
+    "scenario": "Scenario 1: Syntax Error (Unclosed IF block missing END_IF)",
+    "file_path": "POU_SyntaxError.st",
+    "line": 6,
+    "column": 1,
+    "error_code": "ERR_UNCLOSED_IF",
+    "level": "ERROR",
+    "message": "Unclosed IF block: 1 'IF' opened, but only 0 'END_IF' closed."
+  },
+  {
+    "scenario": "Scenario 2: Missing Semicolon (Assignment missing ';')",
+    "file_path": "POU_MissingSemicolon.st",
+    "line": 7,
+    "column": 1,
+    "error_code": "ST_SYNTAX_ERROR",
+    "level": "ERROR",
+    "message": "Syntax error at line 7, col 1: Expected ';' after assignment"
+  },
+  {
+    "scenario": "Scenario 2: Missing Semicolon (Assignment missing ';')",
+    "file_path": "POU_MissingSemicolon.st",
+    "line": 6,
+    "column": 18,
+    "error_code": "ERR_MISSING_SEMICOLON",
+    "level": "ERROR",
+    "message": "Statement missing terminating semicolon: 'TargetCount := 42'"
+  },
+  {
+    "scenario": "Scenario 3: Undeclared Variable (Assignment to unallocated symbol)",
+    "file_path": "POU_UndeclaredVar.st",
+    "line": 6,
+    "column": 1,
+    "error_code": "ERR_UNDECLARED_VAR",
+    "level": "ERROR",
+    "message": "Assignment to undeclared variable 'PhantomOutput'."
+  },
+  {
+    "scenario": "Scenario 3: Undeclared Variable (Assignment to unallocated symbol)",
+    "file_path": "POU_UndeclaredVar.st",
+    "line": 6,
+    "column": 1,
+    "error_code": "ERR_UNDECLARED_VAR",
+    "level": "ERROR",
+    "message": "Undeclared variable or identifier 'PhantomOutput' used in logic."
+  },
+  {
+    "scenario": "Scenario 4: Ladder Logic Injection (Forbidden contact '---[ ]---')",
+    "file_path": "POU_LadderInjection.st",
+    "line": 7,
+    "column": 1,
+    "error_code": "ERR_LADDER_FORBIDDEN",
+    "level": "ERROR",
+    "message": ": Ladder logic artifact detected at line 7, col 1 matching pattern '---\\[\\s*\\]---'. Only pure IEC 61131-3 Structured Text is permitted."
+  },
+  {
+    "scenario": "Scenario 4: Ladder Logic Injection (Forbidden contact '---[ ]---')",
+    "file_path": "POU_LadderInjection.st",
+    "line": 7,
+    "column": 1,
+    "error_code": "ST_SYNTAX_ERROR",
+    "level": "ERROR",
+    "message": "Syntax error at line 7, col 1: Unexpected token in statement: MINUS ('-')"
+  },
+  {
+    "scenario": "Scenario 4: Ladder Logic Injection (Forbidden contact '---[ ]---')",
+    "file_path": "POU_LadderInjection.st",
+    "line": 7,
+    "column": 1,
+    "error_code": "ERR_LADDER_FORBIDDEN",
+    "level": "ERROR",
+    "message": "Forbidden ladder logic construct 'Normally open contact' detected: '---[ ]--- InSensor'. Strict constraint violated: ONLY pure IEC 61131-3 Structured Text is permitted."
+  }
+]

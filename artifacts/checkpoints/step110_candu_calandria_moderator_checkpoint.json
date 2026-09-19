@@ -1,0 +1,19 @@
+{
+  "step": 110,
+  "status": "COMPLETED",
+  "name": "CANDU Nuclear Calandria Heavy Water Moderator Level Regulation Audit",
+  "timestamp": "2026-09-05T12:35:03.638Z",
+  "cscape_pid": 4272,
+  "cscape_hwnd": "0x7033e",
+  "project": "TankLevelClosedLoop.csp",
+  "assertions_passed": [
+    "Phase 1 heavy water moderator equilibrium error 0.0000% < 0.10%",
+    "Phase 2 helium cover gas disturbance & swell drift 6.71% > 5.0%",
+    "Phase 3 coordinated decoupled moderator level regulation error 0.0000% < 0.35%",
+    "Cover gas swell disturbance rejection ratio 100.0% > 95.0%",
+    "Phase 4 reactor core flux shape adjustment step settling error 0.0379% < 0.35%",
+    "Phase 5 calandria overpressure / cover gas poison injection trip at cycle 501 == 501",
+    "Fail-closed download lockout ID_CONTROLLER_DOWNLOAD=32827 strictly enforced",
+    "Live Cscape GUI healthy and responsive throughout test"
+  ]
+}

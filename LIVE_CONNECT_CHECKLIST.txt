@@ -1,0 +1,12 @@
+﻿LIVE_CONNECT_CHECKLIST — Lista de verificación cuando el PLC esté conectado
+
+1. Abrir TankLevelClosedLoop.csp en Cscape.
+2. Verificar la conexión Local → Connected y completar los pasos Online de Cscape solamente cuando el PLC esté físicamente conectado y autorizado. No declarar éxito ni asumir valores en vivo.
+3. Si el equipo está offline y Cscape ofrece fuerzas/simulación segura, forzar o simular Setpoint y TankLevelPV con valores limitados y documentados; retirar las fuerzas al terminar. No descargar al PLC.
+4. Observar Screen 2: PV, SP, Error, Out, Kp y ALARM. Confirmar que los valores mostrados proceden del PLC antes de considerarlos en vivo.
+5. Observar Screen 3 Trend y sus pens TankLevelPV_I16 y Setpoint_I16; verificar que el trazado corresponde a los valores observados.
+6. Revisar los registros en: C:\HornerAI\horner-cscape-mcp\TankLogs
+7. Paquete offline: C:\Users\ArmandoSilva\Downloads\TankLevelClosedLoop_OFFLINE_HANDOFF.zip
+
+ESTADO: NOT VERIFIED_LIVE hasta que un ingeniero confirme los valores live del PLC y el comportamiento observado.
+- Trend Screen 3 usa el disparador STBlock1.AlwaysOn (AlwaysOn:=TRUE); plumas TankLevelPV_I16 + Setpoint_I16; reapertura probada offline; aún NOT VERIFIED_LIVE.

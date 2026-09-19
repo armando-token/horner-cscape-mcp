@@ -1,0 +1,14 @@
+=== Horner Cscape 10.2 Compile Pass: FailAudit_POU_MissingSemicolon ===
+Clean Build: True
+Mode: IEC 61131-3 Structured Text (Advanced Ladder Excluded)
+Timestamp: 2026-09-04T14:07:41.666494
+----------------------------------------------------------------
+Compiling POU: POU_MissingSemicolon (98 bytes)...
+  POU_MissingSemicolon.st(6,1): error ST_SYNTAX_ERROR: Syntax error at line 6, col 1: Expected ';' after assignment
+  POU_MissingSemicolon.st(5,17): error ERR_MISSING_SEMICOLON: Statement missing terminating semicolon: 'BatchCount := 42'
+----------------------------------------------------------------
+Build Result: FAILED
+Errors: 2, Warnings: 0
+Estimated Code Size: 1024 bytes, Data Size: 512 bytes
+Duration: 0.018s
+Hardware Lockout: ENFORCED (Zero PLC communication / No download)

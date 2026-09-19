@@ -1,0 +1,890 @@
+{
+  "status": "success",
+  "step": 180,
+  "gate": "G1",
+  "title": "Security & Safety Guard Fail-Closed Audit",
+  "auditor": "Security & Safety Guard Agent",
+  "start_time_utc": "2026-09-06T22:32:31.409528+00:00",
+  "completion_time_utc": "2026-09-06T22:32:31.482895+00:00",
+  "duration_seconds": 0.073,
+  "contract_state": "4-state: success | failed | blocked | inconclusive (Safety policies: blocked, Overall audit: success)",
+  "offline_dev_vs_live": {
+    "mode": "DEV_OFFLINE_LOCKOUT_POLICY",
+    "offline_dev_note": "Rigorous fail-closed safety policy verification under offline/DEV constraints. Distinct from VERIFIED_LIVE runtime hardware."
+  },
+  "tasks": {
+    "task1_pytest_security_suite": {
+      "test_file": "tests/test_security.py",
+      "total_passed": 227,
+      "warnings": 1,
+      "warning_type": "DeprecationWarning (T5SIMUL deprecated/quarantined)",
+      "status": "success"
+    },
+    "task2_physical_com_ports": {
+      "status": "blocked",
+      "tested_com_count": 256,
+      "com_ports_blocked": true,
+      "unc_com_ports_blocked": true,
+      "linux_tty_ports_blocked": true,
+      "raises_hardware_lockout_error": true,
+      "sample_verifications": [
+        {
+          "port": "COM1",
+          "policy_blocked": true,
+          "guard_blocked": true,
+          "exception": "HardwareLockoutError",
+          "status": "blocked"
+        },
+        {
+          "port": "COM2",
+          "policy_blocked": true,
+          "guard_blocked": true,
+          "exception": "HardwareLockoutError",
+          "status": "blocked"
+        },
+        {
+          "port": "COM4",
+          "policy_blocked": true,
+          "guard_blocked": true,
+          "exception": "HardwareLockoutError",
+          "status": "blocked"
+        },
+        {
+          "port": "COM10",
+          "policy_blocked": true,
+          "guard_blocked": true,
+          "exception": "HardwareLockoutError",
+          "status": "blocked"
+        },
+        {
+          "port": "COM256",
+          "policy_blocked": true,
+          "guard_blocked": true,
+          "exception": "HardwareLockoutError",
+          "status": "blocked"
+        },
+        {
+          "port": "\\\\.\\COM1",
+          "policy_blocked": true,
+          "guard_blocked": true,
+          "exception": "HardwareLockoutError",
+          "status": "blocked"
+        },
+        {
+          "port": "\\\\.\\COM4",
+          "policy_blocked": true,
+          "guard_blocked": true,
+          "exception": "HardwareLockoutError",
+          "status": "blocked"
+        },
+        {
+          "port": "\\\\.\\COM256",
+          "policy_blocked": true,
+          "guard_blocked": true,
+          "exception": "HardwareLockoutError",
+          "status": "blocked"
+        },
+        {
+          "port": "/dev/ttyS0",
+          "policy_blocked": true,
+          "guard_blocked": true,
+          "exception": "HardwareLockoutError",
+          "status": "blocked"
+        },
+        {
+          "port": "/dev/ttyUSB0",
+          "policy_blocked": true,
+          "guard_blocked": true,
+          "exception": "HardwareLockoutError",
+          "status": "blocked"
+        },
+        {
+          "port": "/dev/ttyACM0",
+          "policy_blocked": true,
+          "guard_blocked": true,
+          "exception": "HardwareLockoutError",
+          "status": "blocked"
+        },
+        {
+          "port": "/dev/ttyAMA0",
+          "policy_blocked": true,
+          "guard_blocked": true,
+          "exception": "HardwareLockoutError",
+          "status": "blocked"
+        }
+      ]
+    },
+    "task3_industrial_fieldbuses": {
+      "status": "blocked",
+      "tested_fieldbuses": [
+        "CAN0",
+        "can1",
+        "CAN2",
+        "pcan_usb",
+        "kvaser_leaf",
+        "vector_can",
+        "socketcan",
+        "slcan0",
+        "cscan",
+        "CSCAN",
+        "canopen",
+        "CANOPEN",
+        "devicenet",
+        "DEVICENET",
+        "profibus",
+        "PROFIBUS",
+        "j1939",
+        "J1939"
+      ],
+      "all_fieldbuses_blocked": true,
+      "details": [
+        {
+          "fieldbus": "CAN0",
+          "policy_blocked": true,
+          "guard_blocked": true,
+          "exception": "HardwareLockoutError",
+          "status": "blocked"
+        },
+        {
+          "fieldbus": "can1",
+          "policy_blocked": true,
+          "guard_blocked": true,
+          "exception": "HardwareLockoutError",
+          "status": "blocked"
+        },
+        {
+          "fieldbus": "CAN2",
+          "policy_blocked": true,
+          "guard_blocked": true,
+          "exception": "HardwareLockoutError",
+          "status": "blocked"
+        },
+        {
+          "fieldbus": "pcan_usb",
+          "policy_blocked": true,
+          "guard_blocked": true,
+          "exception": "HardwareLockoutError",
+          "status": "blocked"
+        },
+        {
+          "fieldbus": "kvaser_leaf",
+          "policy_blocked": true,
+          "guard_blocked": true,
+          "exception": "HardwareLockoutError",
+          "status": "blocked"
+        },
+        {
+          "fieldbus": "vector_can",
+          "policy_blocked": true,
+          "guard_blocked": true,
+          "exception": "HardwareLockoutError",
+          "status": "blocked"
+        },
+        {
+          "fieldbus": "socketcan",
+          "policy_blocked": true,
+          "guard_blocked": true,
+          "exception": "HardwareLockoutError",
+          "status": "blocked"
+        },
+        {
+          "fieldbus": "slcan0",
+          "policy_blocked": true,
+          "guard_blocked": true,
+          "exception": "HardwareLockoutError",
+          "status": "blocked"
+        },
+        {
+          "fieldbus": "cscan",
+          "policy_blocked": true,
+          "guard_blocked": true,
+          "exception": "HardwareLockoutError",
+          "status": "blocked"
+        },
+        {
+          "fieldbus": "CSCAN",
+          "policy_blocked": true,
+          "guard_blocked": true,
+          "exception": "HardwareLockoutError",
+          "status": "blocked"
+        },
+        {
+          "fieldbus": "canopen",
+          "policy_blocked": true,
+          "guard_blocked": true,
+          "exception": "HardwareLockoutError",
+          "status": "blocked"
+        },
+        {
+          "fieldbus": "CANOPEN",
+          "policy_blocked": true,
+          "guard_blocked": true,
+          "exception": "HardwareLockoutError",
+          "status": "blocked"
+        },
+        {
+          "fieldbus": "devicenet",
+          "policy_blocked": true,
+          "guard_blocked": true,
+          "exception": "HardwareLockoutError",
+          "status": "blocked"
+        },
+        {
+          "fieldbus": "DEVICENET",
+          "policy_blocked": true,
+          "guard_blocked": true,
+          "exception": "HardwareLockoutError",
+          "status": "blocked"
+        },
+        {
+          "fieldbus": "profibus",
+          "policy_blocked": true,
+          "guard_blocked": true,
+          "exception": "HardwareLockoutError",
+          "status": "blocked"
+        },
+        {
+          "fieldbus": "PROFIBUS",
+          "policy_blocked": true,
+          "guard_blocked": true,
+          "exception": "HardwareLockoutError",
+          "status": "blocked"
+        },
+        {
+          "fieldbus": "j1939",
+          "policy_blocked": true,
+          "guard_blocked": true,
+          "exception": "HardwareLockoutError",
+          "status": "blocked"
+        },
+        {
+          "fieldbus": "J1939",
+          "policy_blocked": true,
+          "guard_blocked": true,
+          "exception": "HardwareLockoutError",
+          "status": "blocked"
+        }
+      ]
+    },
+    "task4_usb_and_debuggers": {
+      "status": "blocked",
+      "tested_items": [
+        "USB1",
+        "\\\\?\\usb#vid_1234&pid_5678",
+        "VID_0483",
+        "PID_DF11",
+        "HORNER_USB",
+        "JTAG",
+        "jtag",
+        "JTAG_PORT",
+        "SWD",
+        "swd",
+        "SWD_PORT",
+        "st-link.exe",
+        "jlink.exe",
+        "openocd.exe",
+        "dfu-util.exe",
+        "WinJTAG.exe"
+      ],
+      "all_debuggers_blocked": true,
+      "details": [
+        {
+          "target": "USB1",
+          "policy_blocked": true,
+          "guard_blocked": true,
+          "status": "blocked"
+        },
+        {
+          "target": "\\\\?\\usb#vid_1234&pid_5678",
+          "policy_blocked": true,
+          "guard_blocked": true,
+          "status": "blocked"
+        },
+        {
+          "target": "VID_0483",
+          "policy_blocked": true,
+          "guard_blocked": true,
+          "status": "blocked"
+        },
+        {
+          "target": "PID_DF11",
+          "policy_blocked": true,
+          "guard_blocked": true,
+          "status": "blocked"
+        },
+        {
+          "target": "HORNER_USB",
+          "policy_blocked": true,
+          "guard_blocked": true,
+          "status": "blocked"
+        },
+        {
+          "target": "JTAG",
+          "policy_blocked": true,
+          "guard_blocked": true,
+          "status": "blocked"
+        },
+        {
+          "target": "jtag",
+          "policy_blocked": true,
+          "guard_blocked": true,
+          "status": "blocked"
+        },
+        {
+          "target": "JTAG_PORT",
+          "policy_blocked": true,
+          "guard_blocked": true,
+          "status": "blocked"
+        },
+        {
+          "target": "SWD",
+          "policy_blocked": true,
+          "guard_blocked": true,
+          "status": "blocked"
+        },
+        {
+          "target": "swd",
+          "policy_blocked": true,
+          "guard_blocked": true,
+          "status": "blocked"
+        },
+        {
+          "target": "SWD_PORT",
+          "policy_blocked": true,
+          "guard_blocked": true,
+          "status": "blocked"
+        },
+        {
+          "target": "st-link.exe",
+          "policy_blocked": true,
+          "guard_blocked": true,
+          "status": "blocked"
+        },
+        {
+          "target": "jlink.exe",
+          "policy_blocked": true,
+          "guard_blocked": true,
+          "status": "blocked"
+        },
+        {
+          "target": "openocd.exe",
+          "policy_blocked": true,
+          "guard_blocked": true,
+          "status": "blocked"
+        },
+        {
+          "target": "dfu-util.exe",
+          "policy_blocked": true,
+          "guard_blocked": true,
+          "status": "blocked"
+        },
+        {
+          "target": "WinJTAG.exe",
+          "policy_blocked": true,
+          "guard_blocked": true,
+          "status": "blocked"
+        }
+      ]
+    },
+    "task5_companion_flashers_and_cli": {
+      "status": "blocked",
+      "flashers": {
+        "status": "blocked",
+        "tested_binaries": [
+          "PGMUpdateUtility.exe",
+          "pgmupdateutility.exe",
+          "DfuSeCommand.exe",
+          "dfusecommand.exe",
+          "STMFlashLoader.exe",
+          "stmflashloader.exe",
+          "WinJTAG.exe",
+          "winjtag.exe",
+          "CscapeAutoUpdt.exe",
+          "XLeTerm.exe",
+          "DnCfg.exe",
+          "DNXCfg.exe"
+        ],
+        "all_binaries_blocked": true,
+        "details": [
+          {
+            "executable": "PGMUpdateUtility.exe",
+            "policy_blocked": true,
+            "guard_blocked": true,
+            "exception": "BlockedExecutableError",
+            "status": "blocked"
+          },
+          {
+            "executable": "pgmupdateutility.exe",
+            "policy_blocked": true,
+            "guard_blocked": true,
+            "exception": "BlockedExecutableError",
+            "status": "blocked"
+          },
+          {
+            "executable": "DfuSeCommand.exe",
+            "policy_blocked": true,
+            "guard_blocked": true,
+            "exception": "BlockedExecutableError",
+            "status": "blocked"
+          },
+          {
+            "executable": "dfusecommand.exe",
+            "policy_blocked": true,
+            "guard_blocked": true,
+            "exception": "BlockedExecutableError",
+            "status": "blocked"
+          },
+          {
+            "executable": "STMFlashLoader.exe",
+            "policy_blocked": true,
+            "guard_blocked": true,
+            "exception": "BlockedExecutableError",
+            "status": "blocked"
+          },
+          {
+            "executable": "stmflashloader.exe",
+            "policy_blocked": true,
+            "guard_blocked": true,
+            "exception": "BlockedExecutableError",
+            "status": "blocked"
+          },
+          {
+            "executable": "WinJTAG.exe",
+            "policy_blocked": true,
+            "guard_blocked": true,
+            "exception": "BlockedExecutableError",
+            "status": "blocked"
+          },
+          {
+            "executable": "winjtag.exe",
+            "policy_blocked": true,
+            "guard_blocked": true,
+            "exception": "BlockedExecutableError",
+            "status": "blocked"
+          },
+          {
+            "executable": "CscapeAutoUpdt.exe",
+            "policy_blocked": true,
+            "guard_blocked": true,
+            "exception": "BlockedExecutableError",
+            "status": "blocked"
+          },
+          {
+            "executable": "XLeTerm.exe",
+            "policy_blocked": true,
+            "guard_blocked": true,
+            "exception": "BlockedExecutableError",
+            "status": "blocked"
+          },
+          {
+            "executable": "DnCfg.exe",
+            "policy_blocked": true,
+            "guard_blocked": true,
+            "exception": "BlockedExecutableError",
+            "status": "blocked"
+          },
+          {
+            "executable": "DNXCfg.exe",
+            "policy_blocked": true,
+            "guard_blocked": true,
+            "exception": "BlockedExecutableError",
+            "status": "blocked"
+          }
+        ]
+      },
+      "cli_switches": {
+        "status": "blocked",
+        "tested_switches": [
+          "/d",
+          "-d",
+          "/download",
+          "-download",
+          "--download",
+          "/flash",
+          "-flash",
+          "--flash",
+          "/burn",
+          "-burn",
+          "--burn",
+          "/write-flash",
+          "--write-flash",
+          "/pgm",
+          "-pgm",
+          "--pgm",
+          "/firmware",
+          "-firmware",
+          "--firmware",
+          "/target:hardware",
+          "/target:plc",
+          "--target=hardware",
+          "--target=plc",
+          "/erase",
+          "/upload"
+        ],
+        "all_switches_blocked": true,
+        "details": [
+          {
+            "flag": "/d",
+            "policy_blocked": true,
+            "guard_blocked": true,
+            "exception": "UnauthorizedDownloadError",
+            "status": "blocked"
+          },
+          {
+            "flag": "-d",
+            "policy_blocked": true,
+            "guard_blocked": true,
+            "exception": "UnauthorizedDownloadError",
+            "status": "blocked"
+          },
+          {
+            "flag": "/download",
+            "policy_blocked": true,
+            "guard_blocked": true,
+            "exception": "UnauthorizedDownloadError",
+            "status": "blocked"
+          },
+          {
+            "flag": "-download",
+            "policy_blocked": true,
+            "guard_blocked": true,
+            "exception": "UnauthorizedDownloadError",
+            "status": "blocked"
+          },
+          {
+            "flag": "--download",
+            "policy_blocked": true,
+            "guard_blocked": true,
+            "exception": "UnauthorizedDownloadError",
+            "status": "blocked"
+          },
+          {
+            "flag": "/flash",
+            "policy_blocked": true,
+            "guard_blocked": true,
+            "exception": "UnauthorizedDownloadError",
+            "status": "blocked"
+          },
+          {
+            "flag": "-flash",
+            "policy_blocked": true,
+            "guard_blocked": true,
+            "exception": "UnauthorizedDownloadError",
+            "status": "blocked"
+          },
+          {
+            "flag": "--flash",
+            "policy_blocked": true,
+            "guard_blocked": true,
+            "exception": "UnauthorizedDownloadError",
+            "status": "blocked"
+          },
+          {
+            "flag": "/burn",
+            "policy_blocked": true,
+            "guard_blocked": true,
+            "exception": "UnauthorizedDownloadError",
+            "status": "blocked"
+          },
+          {
+            "flag": "-burn",
+            "policy_blocked": true,
+            "guard_blocked": true,
+            "exception": "UnauthorizedDownloadError",
+            "status": "blocked"
+          },
+          {
+            "flag": "--burn",
+            "policy_blocked": true,
+            "guard_blocked": true,
+            "exception": "UnauthorizedDownloadError",
+            "status": "blocked"
+          },
+          {
+            "flag": "/write-flash",
+            "policy_blocked": true,
+            "guard_blocked": true,
+            "exception": "UnauthorizedDownloadError",
+            "status": "blocked"
+          },
+          {
+            "flag": "--write-flash",
+            "policy_blocked": true,
+            "guard_blocked": true,
+            "exception": "UnauthorizedDownloadError",
+            "status": "blocked"
+          },
+          {
+            "flag": "/pgm",
+            "policy_blocked": true,
+            "guard_blocked": true,
+            "exception": "UnauthorizedDownloadError",
+            "status": "blocked"
+          },
+          {
+            "flag": "-pgm",
+            "policy_blocked": true,
+            "guard_blocked": true,
+            "exception": "UnauthorizedDownloadError",
+            "status": "blocked"
+          },
+          {
+            "flag": "--pgm",
+            "policy_blocked": true,
+            "guard_blocked": true,
+            "exception": "UnauthorizedDownloadError",
+            "status": "blocked"
+          },
+          {
+            "flag": "/firmware",
+            "policy_blocked": true,
+            "guard_blocked": true,
+            "exception": "UnauthorizedDownloadError",
+            "status": "blocked"
+          },
+          {
+            "flag": "-firmware",
+            "policy_blocked": true,
+            "guard_blocked": true,
+            "exception": "UnauthorizedDownloadError",
+            "status": "blocked"
+          },
+          {
+            "flag": "--firmware",
+            "policy_blocked": true,
+            "guard_blocked": true,
+            "exception": "UnauthorizedDownloadError",
+            "status": "blocked"
+          },
+          {
+            "flag": "/target:hardware",
+            "policy_blocked": true,
+            "guard_blocked": true,
+            "exception": "UnauthorizedDownloadError",
+            "status": "blocked"
+          },
+          {
+            "flag": "/target:plc",
+            "policy_blocked": true,
+            "guard_blocked": true,
+            "exception": "UnauthorizedDownloadError",
+            "status": "blocked"
+          },
+          {
+            "flag": "--target=hardware",
+            "policy_blocked": true,
+            "guard_blocked": true,
+            "exception": "UnauthorizedDownloadError",
+            "status": "blocked"
+          },
+          {
+            "flag": "--target=plc",
+            "policy_blocked": true,
+            "guard_blocked": true,
+            "exception": "UnauthorizedDownloadError",
+            "status": "blocked"
+          },
+          {
+            "flag": "/erase",
+            "policy_blocked": true,
+            "guard_blocked": true,
+            "exception": "UnauthorizedDownloadError",
+            "status": "blocked"
+          },
+          {
+            "flag": "/upload",
+            "policy_blocked": true,
+            "guard_blocked": true,
+            "exception": "UnauthorizedDownloadError",
+            "status": "blocked"
+          }
+        ]
+      }
+    },
+    "task6_win32_download_commands": {
+      "status": "blocked",
+      "tested_command_ids": [
+        32827,
+        33149,
+        32828,
+        32862,
+        32993,
+        38293,
+        38294,
+        38295,
+        38296,
+        38297,
+        38372,
+        38373
+      ],
+      "all_command_ids_blocked": true,
+      "details": [
+        {
+          "command_id": 32827,
+          "name": "ID_CONTROLLER_DOWNLOAD / ID_PLC_DOWNLOAD",
+          "policy_blocked": true,
+          "intercept_download_command_blocked": true,
+          "cscape_safety_guard_blocked": true,
+          "exception": "CscapeSafetyViolationError",
+          "status": "blocked"
+        },
+        {
+          "command_id": 33149,
+          "name": "ID_CONTROLLER_DOWNLOAD_ALT / ID_PROGRAM_DOWNLOADOPTIONS",
+          "policy_blocked": true,
+          "intercept_download_command_blocked": true,
+          "cscape_safety_guard_blocked": true,
+          "exception": "CscapeSafetyViolationError",
+          "status": "blocked"
+        },
+        {
+          "command_id": 32828,
+          "name": "ID_PLC_UPLOAD",
+          "policy_blocked": true,
+          "intercept_download_command_blocked": true,
+          "cscape_safety_guard_blocked": true,
+          "exception": "CscapeSafetyViolationError",
+          "status": "blocked"
+        },
+        {
+          "command_id": 32862,
+          "name": "ID_PLC_VERIFY",
+          "policy_blocked": true,
+          "intercept_download_command_blocked": true,
+          "cscape_safety_guard_blocked": true,
+          "exception": "CscapeSafetyViolationError",
+          "status": "blocked"
+        },
+        {
+          "command_id": 32993,
+          "name": "ID_PLC_CLEARMEMORY",
+          "policy_blocked": true,
+          "intercept_download_command_blocked": true,
+          "cscape_safety_guard_blocked": true,
+          "exception": "CscapeSafetyViolationError",
+          "status": "blocked"
+        },
+        {
+          "command_id": 38293,
+          "name": "ID_ONLINECHANGECONNECT",
+          "policy_blocked": true,
+          "intercept_download_command_blocked": true,
+          "cscape_safety_guard_blocked": true,
+          "exception": "CscapeSafetyViolationError",
+          "status": "blocked"
+        },
+        {
+          "command_id": 38294,
+          "name": "Online Change Subcommand 38294",
+          "policy_blocked": true,
+          "intercept_download_command_blocked": true,
+          "cscape_safety_guard_blocked": true,
+          "exception": "CscapeSafetyViolationError",
+          "status": "blocked"
+        },
+        {
+          "command_id": 38295,
+          "name": "ID_ONLINECHANGEACTION",
+          "policy_blocked": true,
+          "intercept_download_command_blocked": true,
+          "cscape_safety_guard_blocked": true,
+          "exception": "CscapeSafetyViolationError",
+          "status": "blocked"
+        },
+        {
+          "command_id": 38296,
+          "name": "Online Change Subcommand 38296",
+          "policy_blocked": true,
+          "intercept_download_command_blocked": true,
+          "cscape_safety_guard_blocked": true,
+          "exception": "CscapeSafetyViolationError",
+          "status": "blocked"
+        },
+        {
+          "command_id": 38297,
+          "name": "ID_ONLINECHANGEREVERT",
+          "policy_blocked": true,
+          "intercept_download_command_blocked": true,
+          "cscape_safety_guard_blocked": true,
+          "exception": "CscapeSafetyViolationError",
+          "status": "blocked"
+        },
+        {
+          "command_id": 38372,
+          "name": "ID_DEBUGOPTIONSELECTIONMENU_DOWNLOADONLINECHANGE",
+          "policy_blocked": true,
+          "intercept_download_command_blocked": true,
+          "cscape_safety_guard_blocked": true,
+          "exception": "CscapeSafetyViolationError",
+          "status": "blocked"
+        },
+        {
+          "command_id": 38373,
+          "name": "ID_DEBUGOPTIONSELECTIONMENU_DOONLINECHANGE",
+          "policy_blocked": true,
+          "intercept_download_command_blocked": true,
+          "cscape_safety_guard_blocked": true,
+          "exception": "CscapeSafetyViolationError",
+          "status": "blocked"
+        }
+      ]
+    },
+    "task7_straton_k5_quarantine": {
+      "status": "blocked",
+      "quarantine_directory": "quarantine/straton_k5_legacy/",
+      "quarantine_file_count": 28,
+      "src_import_violations_count": 0,
+      "src_import_violations": [],
+      "legacy_targets": [
+        {
+          "target": "T5RTI",
+          "quarantined": true,
+          "deprecated": true,
+          "warning_emitted": "DeprecationWarning",
+          "status": "blocked"
+        },
+        {
+          "target": "T5SIMUL",
+          "quarantined": true,
+          "deprecated": true,
+          "warning_emitted": "DeprecationWarning",
+          "status": "blocked"
+        }
+      ],
+      "k5p_export_quarantine_enforced": true
+    },
+    "task8_offline_gate_simulation": {
+      "status": "blocked",
+      "offline_gate_fail_closed": true,
+      "dead_pid_fail_closed": true,
+      "missing_gate_fail_closed": true,
+      "error_offline": "FAIL-CLOSED: Operations halted. Cscape is not ready. Status='OFFLINE', Reason='Simulated offline condition for fail-closed test'",
+      "error_dead_pid": "FAIL-CLOSED: Cscape process PID=99999999 has terminated. GUI is dead."
+    }
+  },
+  "safety_summary": {
+    "hardware_downloads_blocked": true,
+    "serial_com_ports_blocked": "COM1..COM256, \\\\.\\COM*, /dev/tty*",
+    "industrial_fieldbuses_blocked": "CAN*, CsCAN, DeviceNet, Profibus, CANopen, J1939",
+    "usb_debuggers_blocked": "USB*, JTAG, SWD, ST-Link, J-Link, OpenOCD, Dfu-Util, WinJTAG",
+    "flashing_binaries_blocked": "PGMUpdateUtility.exe, DfuSeCommand.exe, STMFlashLoader.exe, WinJTAG.exe, CscapeAutoUpdt.exe",
+    "download_cli_switches_blocked": "/d, /download, /flash, /burn, /write-flash, /pgm, /firmware, /erase, /upload",
+    "win32_command_ids_blocked": [
+      32827,
+      33149,
+      32828,
+      32862,
+      32993,
+      38293,
+      38294,
+      38295,
+      38296,
+      38297,
+      38372,
+      38373
+    ],
+    "straton_k5_isolated": true,
+    "fail_closed_offline_gate_enforced": true,
+    "dual_root_parity": true
+  }
+}

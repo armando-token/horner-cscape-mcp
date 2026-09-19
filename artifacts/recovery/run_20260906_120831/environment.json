@@ -1,0 +1,17 @@
+{
+  "cscape_build": "10.2.751.4",
+  "system_dpi": 96,
+  "session_id": 2,
+  "desktop": "winsta0\\Default",
+  "pid": 2108,
+  "main_window_handle": "0xa9033c",
+  "main_window_handle_int": 11076412,
+  "main_window_title": "Cscape - Logged In : \"armando@controlnautas.com\" - [LabProject_W01.csp]",
+  "project_file": "C:\\HornerAI\\horner-cscape-mcp\\artifacts\\projects\\LabProject_W01\\LabProject_W01.csp",
+  "lab_project_sha256": "b35342602654d2afa39095e71cd52b2a37a8d1061bab68ccf6eaae5e925aef5e",
+  "original_tanklevel_sha256": "d075e67d80be031a99a6895078735918b7a15c8086590a6d20ec8484b27749af",
+  "target_connection": "Disconnected",
+  "operational_mode": "offline/DEV if Disconnected",
+  "run_id": "run_20260906_120831",
+  "timestamp_utc": "2026-09-07T02:26:18.936648+00:00"
+}

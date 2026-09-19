@@ -1,0 +1,48 @@
+{
+  "step": 174,
+  "auditor": "Security Lockout Auditor subagent for MEGAPLAN",
+  "mandate": "Fail-Closed Hardware Lockout & Straton Isolation Audit",
+  "status": "success",
+  "start_time_utc": "2026-09-06T09:36:52.466Z",
+  "completion_time_utc": "2026-09-06T09:36:56.078Z",
+  "execution_duration_sec": 3.612,
+  "tasks": {
+    "task1_hardware_lockout": {
+      "cmd_32827_blocked": true,
+      "cmd_32827_reason": "Physical controller download command '32827' (ID_CONTROLLER_DOWNLOAD=32827, ID_CONTROLLER_DOWNLOAD_ALT=33149) is strictly locked out. Zero physical PLC flashing permitted.",
+      "cmd_33149_blocked": true,
+      "cmd_33149_reason": "Physical controller download command '33149' (ID_CONTROLLER_DOWNLOAD=32827, ID_CONTROLLER_DOWNLOAD_ALT=33149) is strictly locked out. Zero physical PLC flashing permitted.",
+      "safety_guard_validate_download_blocked": true,
+      "all_hardware_ports_blocked": true,
+      "compiler_cmd_32827_blocked": true,
+      "compiler_cmd_33149_blocked": true
+    },
+    "task2_mcp_download_tool": {
+      "mcp_tool_blocked": true,
+      "mcp_error": ""
+    },
+    "task3_straton_quarantine": {
+      "quarantine_file_count": 11,
+      "straton_import_violations": 0
+    },
+    "task4_offline_gate_simulation": {
+      "offline_gate_rejected": true,
+      "dead_pid_rejected": true
+    }
+  },
+  "verifications": {
+    "hardware_download_prevented": true,
+    "forbidden_ports_blocked": [
+      "COM1..256",
+      "CAN*",
+      "USB*",
+      "/dev/tty*"
+    ],
+    "blocked_command_ids": [
+      32827,
+      33149
+    ],
+    "straton_quarantine_enforced": true,
+    "status_contract_adherence": "success"
+  }
+}

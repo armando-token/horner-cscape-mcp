@@ -1,0 +1,463 @@
+{
+  "step": 187,
+  "name": "step187_pure_st_audit",
+  "status": "success",
+  "timestamp_utc": "2026-09-06T22:32:46.267646+00:00",
+  "mandate": "PLC / IEC 61131-3 Pure ST Audit for FB_FlowTotalizer",
+  "execution_duration_sec": 0.3718,
+  "dual_root_parity": true,
+  "cscape_gui_mode": "headless_static_analysis_only",
+  "target_pou": {
+    "name": "FB_FlowTotalizer",
+    "type": "FUNCTION_BLOCK",
+    "relative_path": "examples/st_applications/flow_totalizer_integrator.st",
+    "sha256": "b5ecf4e77fa978bd4499dc5258861850fba7bdede2488170dab2088e3147fef2",
+    "expected_sha256": "b5ecf4e77fa978bd4499dc5258861850fba7bdede2488170dab2088e3147fef2",
+    "byte_size": 4090,
+    "lines": 100
+  },
+  "tasks": {
+    "task1_file_existence_and_parity": {
+      "status": "success",
+      "horner_file": "C:\\HornerAI\\horner-cscape-mcp\\examples\\st_applications\\flow_totalizer_integrator.st",
+      "user_file": "C:\\Users\\ArmandoSilva\\examples\\st_applications\\flow_totalizer_integrator.st",
+      "horner_sha256": "b5ecf4e77fa978bd4499dc5258861850fba7bdede2488170dab2088e3147fef2",
+      "user_sha256": "b5ecf4e77fa978bd4499dc5258861850fba7bdede2488170dab2088e3147fef2",
+      "expected_sha256": "b5ecf4e77fa978bd4499dc5258861850fba7bdede2488170dab2088e3147fef2",
+      "sha_match": true,
+      "dual_root_parity": true,
+      "diff_line_count": 0,
+      "diff": "",
+      "file_size_bytes": 4090,
+      "duration_sec": 0.0008195999544113874
+    },
+    "task2_ladder_construct_scan_and_fail_closed": {
+      "status": "success",
+      "clean_scan_artifacts_count": 0,
+      "clean_scan_artifacts": [],
+      "clean_validator_errors": [],
+      "clean_st_parser_ladder_errors": [],
+      "mutation_tests_total": 12,
+      "mutation_tests_fail_closed": 12,
+      "mutation_results": [
+        {
+          "construct_name": "Normally Open Contact",
+          "construct_syntax": "---[ ]---",
+          "guard_rejected": true,
+          "validator_rejected": true,
+          "parser_rejected": true,
+          "mcp_rejected": true,
+          "fail_closed": true
+        },
+        {
+          "construct_name": "Normally Closed Contact",
+          "construct_syntax": "---[/]---",
+          "guard_rejected": true,
+          "validator_rejected": true,
+          "parser_rejected": true,
+          "mcp_rejected": true,
+          "fail_closed": true
+        },
+        {
+          "construct_name": "Spaced Inverted Contact",
+          "construct_syntax": "---[ / ]---",
+          "guard_rejected": true,
+          "validator_rejected": true,
+          "parser_rejected": true,
+          "mcp_rejected": true,
+          "fail_closed": true
+        },
+        {
+          "construct_name": "Normal Output Coil",
+          "construct_syntax": "---( )---",
+          "guard_rejected": true,
+          "validator_rejected": true,
+          "parser_rejected": true,
+          "mcp_rejected": true,
+          "fail_closed": true
+        },
+        {
+          "construct_name": "Set Latch Coil",
+          "construct_syntax": "---(S)---",
+          "guard_rejected": true,
+          "validator_rejected": true,
+          "parser_rejected": true,
+          "mcp_rejected": true,
+          "fail_closed": true
+        },
+        {
+          "construct_name": "Reset Unlatch Coil",
+          "construct_syntax": "---(R)---",
+          "guard_rejected": true,
+          "validator_rejected": true,
+          "parser_rejected": true,
+          "mcp_rejected": true,
+          "fail_closed": true
+        },
+        {
+          "construct_name": "Rung Header Marker",
+          "construct_syntax": "RUNG 1: Flow Totalizer Integrator",
+          "guard_rejected": true,
+          "validator_rejected": true,
+          "parser_rejected": true,
+          "mcp_rejected": true,
+          "fail_closed": true
+        },
+        {
+          "construct_name": "Rung Terminator Marker",
+          "construct_syntax": "END_RUNG",
+          "guard_rejected": true,
+          "validator_rejected": true,
+          "parser_rejected": true,
+          "mcp_rejected": true,
+          "fail_closed": true
+        },
+        {
+          "construct_name": "Ladder Network Section",
+          "construct_syntax": "NETWORK 10",
+          "guard_rejected": true,
+          "validator_rejected": true,
+          "parser_rejected": true,
+          "mcp_rejected": true,
+          "fail_closed": true
+        },
+        {
+          "construct_name": "Instruction Mnemonic XIC",
+          "construct_syntax": "XIC(ResetBatch)",
+          "guard_rejected": true,
+          "validator_rejected": true,
+          "parser_rejected": true,
+          "mcp_rejected": true,
+          "fail_closed": true
+        },
+        {
+          "construct_name": "Instruction Mnemonic XIO",
+          "construct_syntax": "XIO(PulseOut)",
+          "guard_rejected": true,
+          "validator_rejected": true,
+          "parser_rejected": true,
+          "mcp_rejected": true,
+          "fail_closed": true
+        },
+        {
+          "construct_name": "Instruction Mnemonic OTE",
+          "construct_syntax": "OTE(PulseOut)",
+          "guard_rejected": true,
+          "validator_rejected": true,
+          "parser_rejected": true,
+          "mcp_rejected": true,
+          "fail_closed": true
+        }
+      ],
+      "duration_sec": 0.33301030000438914
+    },
+    "task3_iec61131_syntax_and_datatypes": {
+      "status": "success",
+      "pou_name": "FB_FlowTotalizer",
+      "pou_type": "FUNCTION_BLOCK",
+      "total_variables": 19,
+      "input_count": 9,
+      "output_count": 6,
+      "local_count": 4,
+      "type_violations": [],
+      "iec_validator_valid": true,
+      "st_parser_valid": true,
+      "mcp_validator_valid": true,
+      "variables": [
+        {
+          "name": "FlowRate",
+          "data_type": "REAL",
+          "scope": "VAR_INPUT",
+          "initial_value": "0.0"
+        },
+        {
+          "name": "TimeBaseSec",
+          "data_type": "REAL",
+          "scope": "VAR_INPUT",
+          "initial_value": "3600.0"
+        },
+        {
+          "name": "LowFlowCutoff",
+          "data_type": "REAL",
+          "scope": "VAR_INPUT",
+          "initial_value": "0.5"
+        },
+        {
+          "name": "ResetBatch",
+          "data_type": "BOOL",
+          "scope": "VAR_INPUT",
+          "initial_value": "FALSE"
+        },
+        {
+          "name": "ResetDaily",
+          "data_type": "BOOL",
+          "scope": "VAR_INPUT",
+          "initial_value": "FALSE"
+        },
+        {
+          "name": "ResetMaster",
+          "data_type": "BOOL",
+          "scope": "VAR_INPUT",
+          "initial_value": "FALSE"
+        },
+        {
+          "name": "PulseVolume",
+          "data_type": "REAL",
+          "scope": "VAR_INPUT",
+          "initial_value": "10.0"
+        },
+        {
+          "name": "PulseDurationSec",
+          "data_type": "REAL",
+          "scope": "VAR_INPUT",
+          "initial_value": "0.2"
+        },
+        {
+          "name": "CycleTimeSec",
+          "data_type": "REAL",
+          "scope": "VAR_INPUT",
+          "initial_value": "0.1"
+        },
+        {
+          "name": "TotalMaster",
+          "data_type": "LREAL",
+          "scope": "VAR_OUTPUT",
+          "initial_value": "0.0"
+        },
+        {
+          "name": "TotalDaily",
+          "data_type": "REAL",
+          "scope": "VAR_OUTPUT",
+          "initial_value": "0.0"
+        },
+        {
+          "name": "TotalBatch",
+          "data_type": "REAL",
+          "scope": "VAR_OUTPUT",
+          "initial_value": "0.0"
+        },
+        {
+          "name": "NetFlowRate",
+          "data_type": "REAL",
+          "scope": "VAR_OUTPUT",
+          "initial_value": "0.0"
+        },
+        {
+          "name": "PulseOut",
+          "data_type": "BOOL",
+          "scope": "VAR_OUTPUT",
+          "initial_value": "FALSE"
+        },
+        {
+          "name": "PulseCount",
+          "data_type": "DINT",
+          "scope": "VAR_OUTPUT",
+          "initial_value": "0"
+        },
+        {
+          "name": "PrevRate",
+          "data_type": "REAL",
+          "scope": "VAR",
+          "initial_value": "0.0"
+        },
+        {
+          "name": "IncrementalVol",
+          "data_type": "REAL",
+          "scope": "VAR",
+          "initial_value": "0.0"
+        },
+        {
+          "name": "PulseVolumeAcc",
+          "data_type": "REAL",
+          "scope": "VAR",
+          "initial_value": "0.0"
+        },
+        {
+          "name": "PulseTimer",
+          "data_type": "REAL",
+          "scope": "VAR",
+          "initial_value": "0.0"
+        }
+      ],
+      "duration_sec": 0.03403879998950288
+    },
+    "task4_ast_decomposition": {
+      "status": "success",
+      "pou_name": "FB_FlowTotalizer",
+      "pou_type": "FUNCTION_BLOCK",
+      "sha256": "b5ecf4e77fa978bd4499dc5258861850fba7bdede2488170dab2088e3147fef2",
+      "total_lines": 100,
+      "total_tokens": 302,
+      "var_blocks_count": 3,
+      "var_blocks": [
+        {
+          "block_type": "VAR_INPUT",
+          "declarations_count": 9,
+          "declarations": [
+            {
+              "name": "FlowRate",
+              "data_type": "REAL",
+              "initial_value": "LiteralNode(0.0, 'REAL')"
+            },
+            {
+              "name": "TimeBaseSec",
+              "data_type": "REAL",
+              "initial_value": "LiteralNode(3600.0, 'REAL')"
+            },
+            {
+              "name": "LowFlowCutoff",
+              "data_type": "REAL",
+              "initial_value": "LiteralNode(0.5, 'REAL')"
+            },
+            {
+              "name": "ResetBatch",
+              "data_type": "BOOL",
+              "initial_value": "LiteralNode(False, 'BOOL')"
+            },
+            {
+              "name": "ResetDaily",
+              "data_type": "BOOL",
+              "initial_value": "LiteralNode(False, 'BOOL')"
+            },
+            {
+              "name": "ResetMaster",
+              "data_type": "BOOL",
+              "initial_value": "LiteralNode(False, 'BOOL')"
+            },
+            {
+              "name": "PulseVolume",
+              "data_type": "REAL",
+              "initial_value": "LiteralNode(10.0, 'REAL')"
+            },
+            {
+              "name": "PulseDurationSec",
+              "data_type": "REAL",
+              "initial_value": "LiteralNode(0.2, 'REAL')"
+            },
+            {
+              "name": "CycleTimeSec",
+              "data_type": "REAL",
+              "initial_value": "LiteralNode(0.1, 'REAL')"
+            }
+          ]
+        },
+        {
+          "block_type": "VAR_OUTPUT",
+          "declarations_count": 6,
+          "declarations": [
+            {
+              "name": "TotalMaster",
+              "data_type": "LREAL",
+              "initial_value": "LiteralNode(0.0, 'REAL')"
+            },
+            {
+              "name": "TotalDaily",
+              "data_type": "REAL",
+              "initial_value": "LiteralNode(0.0, 'REAL')"
+            },
+            {
+              "name": "TotalBatch",
+              "data_type": "REAL",
+              "initial_value": "LiteralNode(0.0, 'REAL')"
+            },
+            {
+              "name": "NetFlowRate",
+              "data_type": "REAL",
+              "initial_value": "LiteralNode(0.0, 'REAL')"
+            },
+            {
+              "name": "PulseOut",
+              "data_type": "BOOL",
+              "initial_value": "LiteralNode(False, 'BOOL')"
+            },
+            {
+              "name": "PulseCount",
+              "data_type": "DINT",
+              "initial_value": "LiteralNode(0, 'INT')"
+            }
+          ]
+        },
+        {
+          "block_type": "VAR",
+          "declarations_count": 4,
+          "declarations": [
+            {
+              "name": "PrevRate",
+              "data_type": "REAL",
+              "initial_value": "LiteralNode(0.0, 'REAL')"
+            },
+            {
+              "name": "IncrementalVol",
+              "data_type": "REAL",
+              "initial_value": "LiteralNode(0.0, 'REAL')"
+            },
+            {
+              "name": "PulseVolumeAcc",
+              "data_type": "REAL",
+              "initial_value": "LiteralNode(0.0, 'REAL')"
+            },
+            {
+              "name": "PulseTimer",
+              "data_type": "REAL",
+              "initial_value": "LiteralNode(0.0, 'REAL')"
+            }
+          ]
+        }
+      ],
+      "statements_count": 10,
+      "statements": [
+        {
+          "index": 1,
+          "statement_type": "IfNode",
+          "line": 43
+        },
+        {
+          "index": 2,
+          "statement_type": "IfNode",
+          "line": 47
+        },
+        {
+          "index": 3,
+          "statement_type": "IfNode",
+          "line": 51
+        },
+        {
+          "index": 4,
+          "statement_type": "IfNode",
+          "line": 56
+        },
+        {
+          "index": 5,
+          "statement_type": "IfNode",
+          "line": 63
+        },
+        {
+          "index": 6,
+          "statement_type": "AssignmentNode",
+          "line": 68
+        },
+        {
+          "index": 7,
+          "statement_type": "AssignmentNode",
+          "line": 71
+        },
+        {
+          "index": 8,
+          "statement_type": "AssignmentNode",
+          "line": 72
+        },
+        {
+          "index": 9,
+          "statement_type": "AssignmentNode",
+          "line": 73
+        },
+        {
+          "index": 10,
+          "statement_type": "IfNode",
+          "line": 76
+        }
+      ],
+      "duration_sec": 0.003862400015350431
+    }
+  }
+}

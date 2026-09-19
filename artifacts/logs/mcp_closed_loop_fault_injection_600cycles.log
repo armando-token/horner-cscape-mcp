@@ -1,0 +1,110 @@
+================================================================================
+HORNER CSCAPE 10.2 MCP CLOSED-LOOP INDUSTRIAL FAULT INJECTION REPORT
+================================================================================
+Timestamp UTC  : 2026-09-05T06:02:41.624Z
+Elapsed Time   : 0.4173s
+Total Cycles   : 600
+Scan Rate      : 10.0 ms/cycle
+Cscape Gate    : PID=7616, HWND=0x007B06D6
+Safety Policy  : Simulation-Only (Zero Hardware Download)
+Straton Status : Zero Straton Dependencies (100% Native Horner)
+
+PHASE SUMMARY RESULTS:
+------------------------------------------------------------
+[PASSED] PHASE_1_STEADY_STATE_PID_TRACKING:
+   Cycles      : 1-100
+   Description : Quiescent steady-state PID setpoint tracking at 60.0%
+   setpoint                 : 60.0
+   final_pv                 : 60.0
+   mean_error               : 0.0
+   windup_state             : NORMAL
+   alarm_high_high          : False
+   alarm_low_low            : False
+
+[PASSED] PHASE_2_SENSOR_CALIBRATION_DRIFT:
+   Cycles      : 101-200
+   Description : Sensor calibration drift (+15% to +22% linear ramp, triggering deviation and High alarm)
+   peak_drift_percent       : 22.0
+   deviation_alarm_tripped  : True
+   deviation_alarm_cycles   : 78
+   high_alarm_tripped       : True
+   high_alarm_cycles        : 10
+
+[PASSED] PHASE_3_ACTUATOR_STUCK_CLOSED:
+   Cycles      : 201-300
+   Description : Actuator stuck-closed fault (%AQ1=0%), testing integral anti-windup clamp
+   valve_command_override   : 0.0
+   min_pv_reached           : 0.36
+   alarm_low_tripped        : True
+   alarm_low_low_tripped    : True
+   dry_run_pump_cutoff      : True
+   anti_windup_clamp_active : True
+   anti_windup_clamped_cycles: 100
+   max_integral             : 100.0
+
+[PASSED] PHASE_4_ACTUATOR_RUNAWAY:
+   Cycles      : 301-400
+   Description : Actuator runaway fault (%AQ1=100%), High-High trip, and emergency dump valve at 92.0%
+   valve_command_override   : 100.0
+   peak_pv_reached          : 92.12
+   alarm_high_tripped       : True
+   alarm_high_high_tripped  : True
+   inflow_valve_safety_cutoff: True
+   emergency_dump_valve_tripped: True
+   dump_trip_cycles         : 59
+   anti_windup_clamp_low_active: True
+   min_integral             : 0.0
+
+[PASSED] PHASE_5_WIRE_BREAK_SIGNAL_CHATTER:
+   Cycles      : 401-500
+   Description : Intermittent sensor wire break / signal chatter (alternating 0mA and 4mA)
+   signal_chatter_cycles    : 100
+   wire_break_zero_ma_cycles: 50
+   sensor_fault_flag_asserted: True
+   alarm_low_low_chatter_count: 50
+   dry_run_pump_chatter_protection: True
+
+[PASSED] PHASE_6_FAULT_CLEARANCE_BUMPLESS_RETURN:
+   Cycles      : 501-600
+   Description : Fault clearance and bumpless return to normal closed-loop operation
+   setpoint                 : 60.0
+   final_pv                 : 60.0
+   final_error              : 0.0
+   settled_within_tolerance_cycles: 100
+   all_alarms_cleared       : True
+   windup_state             : NORMAL
+
+------------------------------------------------------------
+SAMPLE TIME-SERIES SNAPSHOTS (Selected Cycles):
+ Cycle | Phase |   PV(%) | Sensed(%) |  SP(%) |   CV(%) |       Windup |                         Alarms | Annotation
+------------------------------------------------------------------------------------------------------------------------
+     1 |     1 |   60.00 |     60.00 |   60.0 |   60.00 |       NORMAL |                           NONE | NORMAL_STEADY_STATE
+    25 |     1 |   60.00 |     60.00 |   60.0 |   60.00 |       NORMAL |                           NONE | NORMAL_STEADY_STATE
+    50 |     1 |   60.00 |     60.00 |   60.0 |   60.00 |       NORMAL |                           NONE | NORMAL_STEADY_STATE
+    75 |     1 |   60.00 |     60.00 |   60.0 |   60.00 |       NORMAL |                           NONE | NORMAL_STEADY_STATE
+   100 |     1 |   60.00 |     60.00 |   60.0 |   60.00 |       NORMAL |                           NONE | NORMAL_STEADY_STATE
+   125 |     2 |   60.00 |     65.50 |   60.0 |   43.73 |       NORMAL |                deviation_alarm | SENSOR_DRIFT_DEVIATION_TRIP (PV=65.5%, +5.5%)
+   150 |     2 |   60.00 |     71.00 |   60.0 |   25.80 |       NORMAL |                deviation_alarm | SENSOR_DRIFT_DEVIATION_TRIP (PV=71.0%, +11.0%)
+   175 |     2 |   60.00 |     76.50 |   60.0 |    5.12 |       NORMAL |                deviation_alarm | SENSOR_DRIFT_DEVIATION_TRIP (PV=76.5%, +16.5%)
+   200 |     2 |   60.00 |     82.00 |   60.0 |    0.00 |  CLAMPED_LOW |     alarm_high,deviation_alarm | SENSOR_DRIFT_HIGH_ALARM_TRIP (PV=82.0%, +22.0%)
+   220 |     3 |   21.51 |     22.64 |   60.0 |  100.00 | CLAMPED_HIGH |                           NONE | ACTUATOR_STUCK_CLOSED_OVERRIDE_0_PERCENT
+   250 |     3 |    4.62 |      4.86 |   60.0 |  100.00 | CLAMPED_HIGH |        alarm_low,alarm_low_low | ACTUATOR_STUCK_CLOSED_OVERRIDE_0_PERCENT
+   280 |     3 |    0.99 |      1.04 |   60.0 |  100.00 | CLAMPED_HIGH |        alarm_low,alarm_low_low | ACTUATOR_STUCK_CLOSED_OVERRIDE_0_PERCENT
+   300 |     3 |    0.36 |      0.37 |   60.0 |  100.00 | CLAMPED_HIGH |        alarm_low,alarm_low_low | ACTUATOR_STUCK_CLOSED_OVERRIDE_0_PERCENT
+   310 |     4 |   46.33 |     42.90 |   60.0 |   51.85 |       NORMAL |                           NONE | ACTUATOR_RUNAWAY_SURGING
+   330 |     4 |   84.43 |     83.44 |   60.0 |    0.00 |  CLAMPED_LOW |                     alarm_high | ACTUATOR_RUNAWAY_SURGING
+   350 |     4 |   92.00 |     92.00 |   60.0 |    0.00 |  CLAMPED_LOW | alarm_high_high,alarm_high,emergency_dump | ACTUATOR_RUNAWAY_EMERGENCY_DUMP_ACTIVE
+   380 |     4 |   92.00 |     92.00 |   60.0 |    0.00 |  CLAMPED_LOW | alarm_high_high,alarm_high,emergency_dump | ACTUATOR_RUNAWAY_EMERGENCY_DUMP_ACTIVE
+   400 |     4 |   92.00 |     92.00 |   60.0 |    0.00 |  CLAMPED_LOW | alarm_high_high,alarm_high,emergency_dump | ACTUATOR_RUNAWAY_EMERGENCY_DUMP_ACTIVE
+   410 |     5 |   60.00 |      0.00 |   60.0 |  100.00 | CLAMPED_HIGH | alarm_low,alarm_low_low,sensor_fault | WIRE_BREAK_SIGNAL_LOSS_0MA
+   430 |     5 |   60.00 |      0.00 |   60.0 |  100.00 | CLAMPED_HIGH | alarm_low,alarm_low_low,sensor_fault | WIRE_BREAK_SIGNAL_LOSS_0MA
+   450 |     5 |   60.00 |      0.00 |   60.0 |  100.00 | CLAMPED_HIGH | alarm_low,alarm_low_low,sensor_fault | WIRE_BREAK_SIGNAL_LOSS_0MA
+   480 |     5 |   60.00 |     60.00 |   60.0 |    0.00 | CLAMPED_HIGH |                           NONE | WIRE_CONTACT_REESTABLISHED_4MA
+   500 |     5 |   60.00 |     60.00 |   60.0 |    0.00 | CLAMPED_HIGH |                           NONE | WIRE_CONTACT_REESTABLISHED_4MA
+   520 |     6 |   60.00 |     60.00 |   60.0 |   60.00 |       NORMAL |                           NONE | BUMPLESS_RETURN_RECOVERY
+   550 |     6 |   60.00 |     60.00 |   60.0 |   60.00 |       NORMAL |                           NONE | BUMPLESS_RETURN_RECOVERY
+   580 |     6 |   60.00 |     60.00 |   60.0 |   60.00 |       NORMAL |                           NONE | BUMPLESS_RETURN_RECOVERY
+   600 |     6 |   60.00 |     60.00 |   60.0 |   60.00 |       NORMAL |                           NONE | BUMPLESS_RETURN_RECOVERY
+================================================================================
+MISSION STATUS: PASSED - ALL 6 PHASES EXERCISED AND VERIFIED
+================================================================================

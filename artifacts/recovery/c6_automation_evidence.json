@@ -1,0 +1,342 @@
+{
+  "mission_id": "C6_AUTOMATE_NATIVE_PATH",
+  "plan": "PLAN_CORRECTIVO MCP Horner/Cscape v2.0 (correctivo)",
+  "run_id": "run_20260906_120831",
+  "completed_at_utc": "2026-09-08T04:06:54.479049+00:00",
+  "status": "success",
+  "pipeline_stages": {
+    "1_start": {
+      "status": "done",
+      "sha256": "f4bc356cc0e4b10bd982f660d1ff7522192761a8324a9e1d4a5dc48a6617f669",
+      "size_bytes": 114688
+    },
+    "2_edit": {
+      "status": "done",
+      "action": "ID_PROGRAM_VARIABLES (38053)",
+      "children_count": 55
+    },
+    "3_save": {
+      "status": "done",
+      "action": "ID_FILE_SAVE (57603)",
+      "sha256": "26bd9ef87bb26020d1ee938c0852c1619234329047cd02af0321074a5aba0c6a",
+      "size_bytes": 114688,
+      "is_valid_cfbf": true
+    },
+    "4_reopen": {
+      "status": "done",
+      "action": "ID_FILE_MRU_FILE1 (57616)",
+      "reopened_title": "Cscape - Logged In : \"armando@controlnautas.com\" - [C6_Native_Run.csp]"
+    },
+    "5_navigator": {
+      "status": "done",
+      "nav_bar_hwnd": "0xff0562",
+      "tree_ctrl_found": true
+    },
+    "6_status_bar": {
+      "status": "done",
+      "connection_state": "Disconnected",
+      "operational_mode": "offline/DEV if Disconnected"
+    },
+    "7_errorcheck_compile": {
+      "status": "blocked",
+      "modal": {
+        "title": "Non-Fatal Compilation Errors",
+        "controls": [
+          "&Yes",
+          "&No",
+          "Non-Fatal Compilation Errors were found. Do you want to continue?"
+        ],
+        "action_taken": "IDNO (7) fail-closed; auto-Yes strictly prohibited",
+        "meaning": "Non-fatal compilation modal defense active",
+        "status": "blocked"
+      },
+      "output_window_lines": [
+        "<No bookmarks added>",
+        "Compiler V12.0.200.82",
+        "Loading application symbols...",
+        "EnhancedDisplayAttributes",
+        "No error detected",
+        "Loading application symbols...",
+        "Building application data...",
+        "Relocating code...",
+        "No error detected",
+        "Online Change is disabled",
+        "Generate OCS code...",
+        "No error detected",
+        "Warn : Screen set as first screen is empty.Screen 1"
+      ]
+    },
+    "8_download_lockout": {
+      "status": "blocked",
+      "restricted_command_ids": [
+        32827,
+        33149
+      ],
+      "ports_blocked": [
+        "COM1",
+        "COM256",
+        "CAN0",
+        "USB0"
+      ]
+    },
+    "9_pure_st_validation": {
+      "status": "done",
+      "valid_st_verified": true,
+      "ladder_rejection_verified": true
+    },
+    "udfb_and_two_instances": {
+      "status": "done",
+      "udfb_name": "ScaleAnalogFilter",
+      "two_instances": [
+        "Filter1",
+        "Filter2"
+      ],
+      "pous_validated": [
+        "ScaleAnalogFilter.st",
+        "MainProcessControl.st"
+      ]
+    },
+    "compile_fail_and_fix": {
+      "status": "done",
+      "compile_fail_status": "failed",
+      "compile_fail_errors": 3,
+      "compile_fix_status": "success",
+      "compile_fix_errors": 0
+    },
+    "save_close_reopen_reread": {
+      "status": "done",
+      "reread_cfbf_valid": true,
+      "saved_size_bytes": 114688,
+      "reopened_title": "Cscape - Logged In : \"armando@controlnautas.com\" - [C6_Native_Run.csp]"
+    }
+  },
+  "live_gui_telemetry": {
+    "pid": 8528,
+    "hwnd": "0x157051c",
+    "title": "Cscape - Logged In : \"armando@controlnautas.com\" - [C6_Native_Run.csp]",
+    "visible": true,
+    "session_id": 2,
+    "desktop": "winsta0\\Default",
+    "connection_status": "Disconnected",
+    "operational_mode": "offline/DEV if Disconnected",
+    "visibility_classification": "PARTIAL / SUPERVISOR-DEPENDENT (offline/DEV if Disconnected) - NOT VERIFIED_LIVE"
+  },
+  "proven_c5_native_path": {
+    "mission_id": "C6_AUTOMATE_NATIVE_PATH",
+    "plan": "PLAN_CORRECTIVO MCP Horner/Cscape v2.0 (correctivo)",
+    "run_id": "run_20260906_120831",
+    "completed_at_utc": "2026-09-08T04:06:54.473774+00:00",
+    "status": "success",
+    "evidence_type": "automated_proven_c5_native_path",
+    "live_gui_telemetry": {
+      "pid": 8528,
+      "hwnd": "0x157051c",
+      "title": "Cscape - Logged In : \"armando@controlnautas.com\" - [C6_Native_Run.csp]",
+      "visible": true,
+      "session_id": 2,
+      "desktop": "winsta0\\Default",
+      "rect": [
+        40,
+        40,
+        860,
+        740
+      ],
+      "connection_status": "Disconnected",
+      "operational_mode": "offline/DEV if Disconnected",
+      "visibility_classification": "PARTIAL / SUPERVISOR-DEPENDENT (offline/DEV if Disconnected) - NOT VERIFIED_LIVE",
+      "child_control_count": 55
+    },
+    "project_navigator": {
+      "hwnd": "0xff0562",
+      "class": "Afx:ControlBar:7a0000:8:10003:10",
+      "title": "Project Navigator",
+      "visible": true,
+      "rect": [
+        48,
+        184,
+        337,
+        713
+      ]
+    },
+    "status_bar": {
+      "hwnd": "0xcb00ee",
+      "class": "Afx:StatusBar:7a0000:8:10003:10",
+      "ctrl_id": 59393,
+      "visible": true,
+      "rect": [
+        48,
+        713,
+        852,
+        732
+      ],
+      "connection_state": "Disconnected",
+      "operational_mode": "offline/DEV if Disconnected"
+    },
+    "modal_defense": {
+      "title": "Non-Fatal Compilation Errors",
+      "controls": [
+        "&Yes",
+        "&No",
+        "Non-Fatal Compilation Errors were found. Do you want to continue?"
+      ],
+      "action_taken": "IDNO (7) fail-closed; auto-Yes strictly prohibited",
+      "meaning": "Non-fatal compilation modal defense active",
+      "status": "blocked"
+    },
+    "hardware_and_download_lockout": {
+      "status": "blocked",
+      "download_commands_blocked": [
+        32827,
+        33149
+      ],
+      "ports_blocked": [
+        "COM1",
+        "COM256",
+        "CAN0",
+        "USB0"
+      ],
+      "companion_flashers_active": 0,
+      "straton_processes_active": 0
+    },
+    "pure_st_logic": {
+      "udfb": "ScaleAnalogFilter.st",
+      "udfb_type": "FUNCTION_BLOCK",
+      "program": "MainProcessControl.st",
+      "instances": [
+        "Filter1",
+        "Filter2"
+      ],
+      "ladder_constructs_rejected": [
+        {
+          "construct": "---[ ]---",
+          "description": "Normally open contact",
+          "rejected_fail_closed": true,
+          "error_code": "ERR_LADDER_FORBIDDEN"
+        },
+        {
+          "construct": "---[/]---",
+          "description": "Normally closed contact",
+          "rejected_fail_closed": true,
+          "error_code": "ERR_LADDER_FORBIDDEN"
+        },
+        {
+          "construct": "---( )---",
+          "description": "Standard coil",
+          "rejected_fail_closed": true,
+          "error_code": "ERR_LADDER_FORBIDDEN"
+        },
+        {
+          "construct": "---(S)---",
+          "description": "Set latch coil",
+          "rejected_fail_closed": true,
+          "error_code": "ERR_LADDER_FORBIDDEN"
+        },
+        {
+          "construct": "---(R)---",
+          "description": "Reset unlatch coil",
+          "rejected_fail_closed": true,
+          "error_code": "ERR_LADDER_FORBIDDEN"
+        },
+        {
+          "construct": "RUNG 1: XIC %I1 OTE %Q1",
+          "description": "Instruction mnemonics",
+          "rejected_fail_closed": true,
+          "error_code": "ERR_LADDER_FORBIDDEN"
+        }
+      ],
+      "manual_bumpless_logic_verified": true
+    },
+    "compile_fail_and_fix": {
+      "compile_fail_status": "failed",
+      "compile_fail_errors": 3,
+      "compile_fix_status": "success",
+      "compile_fix_errors": 0
+    },
+    "save_as_lifecycle": {
+      "status": "done",
+      "action_save": "ID_FILE_SAVE (57603)",
+      "action_saveas": "ID_FILE_SAVEAS (57604) modal handled without infinite loop",
+      "action_reopen": "ID_FILE_MRU_FILE1 (57616)",
+      "size_bytes": 114688,
+      "sha256": "26bd9ef87bb26020d1ee938c0852c1619234329047cd02af0321074a5aba0c6a",
+      "is_valid_cfbf": true,
+      "sector_size": 512,
+      "reopened_title": "Cscape - Logged In : \"armando@controlnautas.com\" - [C6_Native_Run.csp]",
+      "streams_verified": [
+        "Root Entry",
+        "Contents"
+      ],
+      "pous_verified_on_disk": [
+        "ScaleAnalogFilter.st",
+        "MainProcessControl.st"
+      ]
+    },
+    "baseline_isolation": {
+      "baseline_path": "C:\\HornerAI\\horner-cscape-mcp\\artifacts\\projects\\TankLevelClosedLoop\\TankLevelClosedLoop.csp",
+      "baseline_sha256": "d075e67d80be031a99a6895078735918b7a15c8086590a6d20ec8484b27749af",
+      "expected_sha256": "d075e67d80be031a99a6895078735918b7a15c8086590a6d20ec8484b27749af",
+      "verified_untouched": true
+    },
+    "gate_status_governance": {
+      "G0": {
+        "status": "success",
+        "detail": "Cscape 10.2 x86 PE binary, DLL exports, and registry verified."
+      },
+      "G1": {
+        "status": "success",
+        "detail": "False successes H01-H13 dismantled; honest contract status enforced."
+      },
+      "G2": {
+        "status": "inconclusive",
+        "detail": "Live visible Cscape on winsta0\\Default; visibility alone is NOT claimed as VERIFIED_LIVE."
+      },
+      "G3": {
+        "status": "blocked",
+        "detail": "GUI error check modal dismissed fail-closed (IDNO); download commands blocked."
+      },
+      "G4": {
+        "status": "success",
+        "detail": "Pure-software simulation verified offline (offline/DEV only)."
+      },
+      "G5": {
+        "status": "blocked",
+        "detail": "Gate G5 is strictly NOT RUN per user mandate and remains closed."
+      }
+    },
+    "invariants_confirmed": {
+      "single_gui_owner_enforced": true,
+      "keep_cscape_visible_c6_native_run": true,
+      "fail_closed_if_hidden": true,
+      "offline_dev_mode_enforced": true,
+      "visibility_not_verified_live": true,
+      "no_confirm_save_as_loop": true,
+      "baseline_tanklevel_untouched": true,
+      "gate_g5_strictly_not_run": true,
+      "no_c1_c2_c3_restart": true,
+      "no_plc_or_straton": true,
+      "pytest_counts_not_g5_completion": true
+    },
+    "proof_artifacts": [
+      "c6_proven_c5_automated_evidence.json",
+      "c6_supervisor_evidence.json",
+      "c6_proven_c5_execution_log.json",
+      "c6_c5_stage1_open.png",
+      "c6_c5_stage2_edit.png",
+      "c6_c5_stage2_saveas.png",
+      "c6_c5_stage3_reopened.png",
+      "c6_c5_navigator_visible.png",
+      "c6_c5_statusbar.png",
+      "c6_c5_modal_defense.png"
+    ]
+  },
+  "invariants_enforced": {
+    "baseline_tanklevel_untouched": true,
+    "cscape_visibility_not_verified_live": true,
+    "gate_g5_strictly_not_run": true,
+    "no_c1_c2_c3_restart": true,
+    "no_plc_or_straton": true,
+    "dual_root_parity_enforced": true,
+    "keep_cscape_visible_c6_native_run": true,
+    "fail_closed_if_hidden": true
+  }
+}

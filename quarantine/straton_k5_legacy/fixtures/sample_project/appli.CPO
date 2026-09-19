@@ -1,0 +1,5 @@
+[Options]
+Target=K5_SIM
+Optimization=Speed
+WarningAsError=0
+Language=ST

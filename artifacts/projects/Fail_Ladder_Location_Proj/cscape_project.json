@@ -1,0 +1,10 @@
+{
+  "name": "Fail_Ladder_Location_Proj",
+  "controller": "XL4",
+  "description": "Scenario 4: Ladder Logic Injection (Forbidden contact '---[ ]---')",
+  "author": "Horner AI Agent",
+  "iec_engine": "Cscape 10.2 IEC 61131-3 Structured Text",
+  "created_at": "2026-09-04T21:57:42.505882+00:00",
+  "hardware_lockout": true,
+  "pous": []
+}

@@ -1,0 +1,22 @@
+{
+  "step": 173,
+  "role": "FastMCP Generator AVR Simulation Runner",
+  "status": "PASSED",
+  "start_time_utc": "2026-09-06T12:24:58.891Z",
+  "completion_time_utc": "2026-09-06T12:25:01.914Z",
+  "duration_sec": 3.023,
+  "live_cscape_gate": {
+    "pid": 10892,
+    "hwnd": "0x01B005DC",
+    "status": "READY_FOR_TESTS",
+    "ready_for_tests": true
+  },
+  "scenarios": {
+    "scenario_A_avr_steady_state": "PASSED",
+    "scenario_B_over_excitation_limiter": "PASSED",
+    "scenario_C_under_excitation_limiter": "PASSED",
+    "scenario_D_volts_per_hertz_overfluxing": "PASSED",
+    "scenario_E_loss_of_field_40_trip": "PASSED",
+    "hardware_download_lockout": "PASSED"
+  }
+}

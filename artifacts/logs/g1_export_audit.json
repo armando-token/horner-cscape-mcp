@@ -1,0 +1,152 @@
+{
+  "audit_id": "g1_export_audit",
+  "agent": "Agent 3: Export Subsystem Refactoring & Proof Engineer",
+  "timestamp_utc": "2026-09-06T04:54:22.264656+00:00",
+  "status": "success",
+  "safety_policy": {
+    "hardware_lockout_active": true,
+    "physical_plc_download_allowed": false,
+    "gui_interaction_required": false,
+    "straton_runtime_dependencies": false,
+    "no_fake_live": true
+  },
+  "task_1_allowed_export_formats": {
+    "verified": true,
+    "source_file": "src/security/guard.py",
+    "allowed_formats": [
+      "k5p",
+      "xml",
+      "st",
+      "json",
+      "csp",
+      "cpj",
+      "csv"
+    ],
+    "required_formats_present": {
+      "csp": true,
+      "cpj": true,
+      "csv": true,
+      "xml": true,
+      "st": true,
+      "json": true
+    },
+    "destination_permitted": "artifacts/exports/",
+    "hardware_formats_blocked": [
+      "hardware",
+      "plc",
+      "flash",
+      "dfu",
+      "jtag",
+      "direct_download"
+    ],
+    "k5p_quarantine_enforced": true,
+    "quarantine_path": "quarantine/straton_k5_legacy/artifacts/exports/"
+  },
+  "task_2_export_subsystem_verification": {
+    "verified": true,
+    "cscape_export_project": {
+      "file": "src/mcp/tools.py",
+      "cfbf_magic_expected": "0xD0CF11E0A1B11AE1",
+      "cfbf_magic_verified": "d0cf11e0a1b11ae1",
+      "sector_size": 512,
+      "horner_markers": [
+        "HornerOCS",
+        "main3",
+        "Allocated",
+        "<END_RETAIN>",
+        "%AI1",
+        "%AQ1",
+        "PLC Type"
+      ],
+      "cfbf_inspection_integrated": true,
+      "formats_supported": [
+        "csp",
+        "cpj",
+        "csv",
+        "xml",
+        "st",
+        "json",
+        "k5p"
+      ]
+    },
+    "automation_project_manager_export": {
+      "file": "src/automation/project_manager.py",
+      "cfbf_inspection_integrated": true,
+      "variable_manager_integrated": true,
+      "formats_supported": [
+        "csp",
+        "cpj",
+        "csv",
+        "xml",
+        "st",
+        "json",
+        "zip"
+      ]
+    },
+    "variable_scope_fidelity": {
+      "file": "src/cscape/variables.py",
+      "methods": [
+        "CscapeVariableManager.export_xml",
+        "CscapeVariableManager.export_csv"
+      ],
+      "register_scopes_tested": [
+        "%R",
+        "%M",
+        "%T",
+        "%AI",
+        "%AQ",
+        "%I",
+        "%Q",
+        "%S",
+        "%SR"
+      ],
+      "truncation_detected": false,
+      "scope_retention_xml": "Intact <vargroup name=\"%R\">, <vargroup name=\"%M\">, etc.",
+      "scope_retention_csv": "Intact scope column (%R, %M, %T, %AI, %AQ, %I, %Q, %S, %SR)",
+      "xml_roundtrip_lossless": true,
+      "csv_roundtrip_lossless": true
+    }
+  },
+  "task_3_pytest_results": {
+    "command": "pytest tests/test_project_export.py tests/test_mcp_variable_tools.py -q --tb=short",
+    "collected_items": 94,
+    "passed": 94,
+    "failed": 0,
+    "duration_seconds": 19.72,
+    "suites": {
+      "tests/test_project_export.py": {
+        "collected": 49,
+        "passed": 49,
+        "failed": 0
+      },
+      "tests/test_mcp_variable_tools.py": {
+        "collected": 45,
+        "passed": 45,
+        "failed": 0
+      }
+    }
+  },
+  "task_4_code_mirroring": {
+    "source_root": "C:\\HornerAI\\horner-cscape-mcp",
+    "destination_root": "C:\\Users\\ArmandoSilva",
+    "mirrored_files": [
+      {
+        "relative_path": "src/automation/project_manager.py",
+        "status": "IDENTICAL_VIA_JUNCTION"
+      },
+      {
+        "relative_path": "src/mcp/tools.py",
+        "status": "IDENTICAL_VIA_JUNCTION"
+      },
+      {
+        "relative_path": "src/mcp/server.py",
+        "status": "IDENTICAL_VIA_JUNCTION"
+      },
+      {
+        "relative_path": "tests/test_project_export.py",
+        "status": "success",
+        "size_bytes": 27265
+      }
+    ]
+  }
+}

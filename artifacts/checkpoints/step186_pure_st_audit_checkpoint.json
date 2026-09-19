@@ -1,0 +1,19 @@
+{
+  "step": 186,
+  "gate": "G4",
+  "name": "step186_pure_st_audit_checkpoint",
+  "status": "success",
+  "timestamp_utc": "2026-09-06T22:32:44.017239+00:00",
+  "mandate": "PLC / IEC 61131-3 Pure ST Audit: analog_scaling_bounds.st",
+  "execution_duration_sec": 0.4264,
+  "dual_root_parity": true,
+  "sha256": "9e130a26c3f8cc9dff9370a3fc99c29d4c7029234d6af9c58ac5f6698a96018d",
+  "expected_sha256": "9e130a26c3f8cc9dff9370a3fc99c29d4c7029234d6af9c58ac5f6698a96018d",
+  "pure_iec61131_3_verified": true,
+  "ladder_artifacts_detected": 0,
+  "ladder_mutations_rejected_fail_closed": 12,
+  "pou": "FB_AnalogScalingOutOfBounds",
+  "pou_type": "FUNCTION_BLOCK",
+  "total_variables": 25,
+  "total_ast_statements": 9
+}

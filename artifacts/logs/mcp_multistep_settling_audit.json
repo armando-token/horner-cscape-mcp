@@ -1,0 +1,190 @@
+{
+  "step": 35,
+  "title": "High-Dynamic Multi-Setpoint Sequence & Settling Time Benchmark",
+  "timestamp_utc_start": "2026-09-05T07:35:09.385Z",
+  "timestamp_utc_end": "2026-09-05T07:35:15.828Z",
+  "status": "VERIFIED_LIVE",
+  "cscape_process": {
+    "healthy": true,
+    "pid": 15240,
+    "is_hung": false,
+    "working_set_mb": 121.67,
+    "threads": 11,
+    "gate_status": "READY_FOR_TESTS",
+    "window_title": "Cscape - Logged In : \"armando@controlnautas.com\" - [TankLevelClosedLoop.csp]"
+  },
+  "simulation_summary": {
+    "total_cycles": 500,
+    "duration_seconds": 0.331,
+    "throughput_cycles_per_sec": 1510.31
+  },
+  "stage_metrics": {
+    "STAGE_1_30PCT": {
+      "target_sp": 30.0,
+      "settling_cycles": 42,
+      "peak_pv": 30.3281,
+      "final_pv": 30.018,
+      "final_error_pct": 0.018,
+      "settling_verified": true
+    },
+    "STAGE_2_70PCT": {
+      "target_sp": 70.0,
+      "settling_cycles": 20,
+      "peak_pv": 73.4713,
+      "final_pv": 69.8991,
+      "final_error_pct": 0.1009,
+      "settling_verified": true
+    },
+    "STAGE_3_40PCT": {
+      "target_sp": 40.0,
+      "settling_cycles": 20,
+      "peak_pv": 69.8991,
+      "final_pv": 40.0731,
+      "final_error_pct": 0.0731,
+      "settling_verified": true
+    },
+    "STAGE_4_85PCT": {
+      "target_sp": 85.0,
+      "settling_cycles": 25,
+      "peak_pv": 88.8533,
+      "final_pv": 84.8587,
+      "final_error_pct": 0.1413,
+      "settling_verified": true
+    },
+    "STAGE_5_50PCT": {
+      "target_sp": 50.0,
+      "settling_cycles": 20,
+      "peak_pv": 84.8587,
+      "final_pv": 50.0848,
+      "final_error_pct": 0.0848,
+      "settling_verified": true
+    }
+  },
+  "safety_audit": {
+    "physical_plc_download_blocked": true,
+    "zero_physical_hardware_touched": true,
+    "hardware_lockout_enforced": true
+  },
+  "sample_trace": [
+    {
+      "cycle": 0,
+      "stage": "STAGE_1_30PCT",
+      "target_sp": 30.0,
+      "pv_plant": 28.5,
+      "cv": 0.0,
+      "hh": false,
+      "h": false,
+      "l": false,
+      "ll": false,
+      "error": 1.5
+    },
+    {
+      "cycle": 50,
+      "stage": "STAGE_1_30PCT",
+      "target_sp": 30.0,
+      "pv_plant": 29.8972,
+      "cv": 31.3608,
+      "hh": false,
+      "h": false,
+      "l": false,
+      "ll": false,
+      "error": 0.1028
+    },
+    {
+      "cycle": 100,
+      "stage": "STAGE_2_70PCT",
+      "target_sp": 70.0,
+      "pv_plant": 33.5171,
+      "cv": 100.0,
+      "hh": false,
+      "h": false,
+      "l": false,
+      "ll": false,
+      "error": 36.4829
+    },
+    {
+      "cycle": 150,
+      "stage": "STAGE_2_70PCT",
+      "target_sp": 70.0,
+      "pv_plant": 71.8919,
+      "cv": 69.3944,
+      "hh": false,
+      "h": false,
+      "l": false,
+      "ll": false,
+      "error": 1.8919
+    },
+    {
+      "cycle": 200,
+      "stage": "STAGE_3_40PCT",
+      "target_sp": 40.0,
+      "pv_plant": 66.4042,
+      "cv": 0.0,
+      "hh": false,
+      "h": false,
+      "l": false,
+      "ll": false,
+      "error": 26.4042
+    },
+    {
+      "cycle": 250,
+      "stage": "STAGE_3_40PCT",
+      "target_sp": 40.0,
+      "pv_plant": 38.6296,
+      "cv": 40.4052,
+      "hh": false,
+      "h": false,
+      "l": false,
+      "ll": false,
+      "error": 1.3704
+    },
+    {
+      "cycle": 300,
+      "stage": "STAGE_4_85PCT",
+      "target_sp": 85.0,
+      "pv_plant": 43.0695,
+      "cv": 100.0,
+      "hh": false,
+      "h": false,
+      "l": false,
+      "ll": false,
+      "error": 41.9305
+    },
+    {
+      "cycle": 350,
+      "stage": "STAGE_4_85PCT",
+      "target_sp": 85.0,
+      "pv_plant": 87.8233,
+      "cv": 85.0847,
+      "hh": false,
+      "h": true,
+      "l": false,
+      "ll": false,
+      "error": 2.8233
+    },
+    {
+      "cycle": 400,
+      "stage": "STAGE_5_50PCT",
+      "target_sp": 50.0,
+      "pv_plant": 80.6157,
+      "cv": 0.0,
+      "hh": false,
+      "h": true,
+      "l": false,
+      "ll": false,
+      "error": 30.6157
+    },
+    {
+      "cycle": 450,
+      "stage": "STAGE_5_50PCT",
+      "target_sp": 50.0,
+      "pv_plant": 48.4106,
+      "cv": 50.473,
+      "hh": false,
+      "h": false,
+      "l": false,
+      "ll": false,
+      "error": 1.5894
+    }
+  ]
+}

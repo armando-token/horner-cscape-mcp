@@ -1,0 +1,44 @@
+================================================================================
+HORNER CSCAPE 10.2 CLOSED-LOOP TANK LEVEL PID SIMULATION VERIFICATION
+STANDARDS: IEC 61131-3 / ISA-18.2 / NAMUR NE 43 / FAIL-CLOSED ISOLATION
+================================================================================
+Audit Timestamp (UTC) : 2026-09-06T12:40:53.505066+00:00
+Simulation Engine     : CscapeSimulator (IEC 61131-3 AST + HornerRegisterTable)
+POU Under Test        : artifacts/projects/TankLevelClosedLoop/pous/TankLevelClosedLoop.st
+Hardware Lockout      : ACTIVE (COM/CAN/USB/Flash Download Blocked)
+Overall Status        : ALL SCENARIOS VERIFIED [ 100.0% PASS ]
+--------------------------------------------------------------------------------
+SCENARIO EXECUTION SUMMARY:
+--------------------------------------------------------------------------------
+Scenario 1: Quiescent Steady-State Operation
+  Status        : [ PASS ]
+  Cycles Tested : 50 consecutive cycles at PV == SP == 60.0%
+  Error / Drift : 0.00% Error, Output held steady at 8000 counts (25.0% CV)
+  Alarms / Cmds : All alarms FALSE, PumpRunCmd == TRUE, InflowValveCmd == TRUE
+
+Scenario 2: Step Setpoint Changes (Closed-Loop)
+  Status        : [ PASS ]
+  Total Cycles  : 750 cycles
+  Step Up (50->60%): Succeeded, Settled PV = 59.67% (|SP-PV| <= 0.5%)
+  Step Down (60->40%): Succeeded, Settled PV = 40.46% (|SP-PV| <= 0.5%)
+
+Scenario 3: Anti-Reset Windup Clamping (0 - 32000 counts)
+  Status        : [ PASS ]
+  High Saturation : 100 cycles pinned, IntegralSum <= 100.0%, RawPumpOutput <= 32000 counts
+  Low Saturation  : 100 cycles pinned, IntegralSum >= 0.0%, RawPumpOutput >= 0 counts
+  Desaturation    : Instant desaturation on cycle 1 of error reversal (CV = 0.00%)
+
+Scenario 4: Bumpless Manual-to-Auto Transfer
+  Status        : [ PASS ]
+  Transfer Jump : delta CV = 0.0000% (tolerance <= 0.05%)
+  Derivative Kick: 0.0000% (zero kick verified)
+  Mode Toggling : 20 rapid Auto/Manual transitions verified stable
+
+Scenario 5: Inflow/Outflow Disturbance Rejection
+  Status        : [ PASS ]
+  Outflow Surge : Settled to within +/- 0.5% in 9 scan cycles (<= 50)
+  Supply Loss   : Residual error = 0.292%, Boosted Integral = 61.4%
+  Noise Jitter  : Std Dev = 4.97 (bounded damping, no derivative chatter)
+================================================================================
+LOG INTEGRITY SHA-256: 5e4ae4bec2c036d2338fbae3261a9da4aa7c2234b03d3d9d6967fcf4c42912ba
+================================================================================

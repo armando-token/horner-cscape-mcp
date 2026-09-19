@@ -1,0 +1,106 @@
+{
+  "step": 167,
+  "name": "step167_mcp_superheater_attemperator_spray",
+  "status": "PASSED",
+  "mission": "Live FastMCP Superheater Attemperator Spray Regulation & Thermal Quenching Protection Audit",
+  "timestamp_start": "2026-09-06T12:24:13.070Z",
+  "timestamp_complete": "2026-09-06T12:24:21.395Z",
+  "duration_seconds": 8.326,
+  "gate": {
+    "ready_for_tests": true,
+    "status": "READY_FOR_TESTS",
+    "pid": 10892,
+    "hwnd": "0x01B005DC",
+    "window_title": "Cscape - Logged In : \"armando@controlnautas.com\" - [TankLevelClosedLoop.csp]",
+    "project_file": "C:\\HornerAI\\horner-cscape-mcp\\artifacts\\projects\\TankLevelClosedLoop\\TankLevelClosedLoop.csp",
+    "exit_code": null,
+    "reason": "Gate G3 Error Check and Output Scrape Verified Clean (0 errors, 0 warnings)",
+    "cycle": 17,
+    "timestamp_utc": "2026-09-06T11:43:46.709Z",
+    "heartbeat_utc": "2026-09-06T11:43:46.709Z"
+  },
+  "cscape_pid": 10892,
+  "hwnd": "0x01B005DC",
+  "scenarios_passed": 5,
+  "scenarios_total": 5,
+  "scenario_results": {
+    "scenario_a_normal_steam_temp_modulation": {
+      "verified": true,
+      "final_steam_temp_f": 900.0,
+      "attemperator_spray_valve_pct": 25.0,
+      "spray_water_delta_p_psi": 75.0,
+      "spray_block_valve_enabled": true,
+      "high_temp_alarm": false
+    },
+    "scenario_b_superheat_high_temp_excursion": {
+      "verified": true,
+      "peak_excursion_temp_f": 945.0,
+      "high_temp_alarm_actuated": true,
+      "spray_boosted_pct": 65.0,
+      "restored_steam_temp_f": 902.0
+    },
+    "scenario_c_thermal_quenching_protection": {
+      "verified": true,
+      "quenched_interstage_temp_f": 510.0,
+      "quenching_alarm_actuated": true,
+      "spray_clamped_to_zero": true,
+      "restored_interstage_temp_f": 545.0
+    },
+    "scenario_d_low_deltap_atomization_lockout": {
+      "verified": true,
+      "low_delta_p_psi": 28.0,
+      "low_dp_alarm": true,
+      "spray_block_valve_isolated": true
+    },
+    "scenario_e_normal_recovery": {
+      "verified": true,
+      "final_steam_temp_f": 900.0,
+      "spray_water_delta_p_psi": 75.0,
+      "spray_block_valve_restored": true,
+      "all_alarms_cleared": true
+    }
+  },
+  "telemetry_records": [
+    {
+      "scenario": "A_NORMAL_STEAM_TEMP_MODULATION",
+      "cycle": 1,
+      "tfinal": 900.0,
+      "spray": 25.0,
+      "dp": 75.0
+    },
+    {
+      "scenario": "B_SUPERHEAT_EXCURSION",
+      "cycle": 2,
+      "tfinal": 945.0,
+      "m37": true,
+      "spray": 65.0
+    },
+    {
+      "scenario": "C_THERMAL_QUENCHING_PROTECTION",
+      "cycle": 3,
+      "tint": 510.0,
+      "m36": true,
+      "spray": 0.0
+    },
+    {
+      "scenario": "D_LOW_DELTAP_LOCKOUT",
+      "cycle": 4,
+      "dp": 28.0,
+      "m38": true,
+      "q21": false
+    },
+    {
+      "scenario": "E_NORMAL_RECOVERY",
+      "cycle": 5,
+      "tfinal": 900.0,
+      "dp": 75.0,
+      "q21": true
+    }
+  ],
+  "security": {
+    "hardware_download_lockout": "FAIL_CLOSED_BLOCKED",
+    "zero_straton_dependencies": true,
+    "zero_plc_hardware_interaction": true,
+    "no_gui_hwnd_command_dispatched": true
+  }
+}

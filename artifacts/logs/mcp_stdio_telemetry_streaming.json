@@ -1,0 +1,242 @@
+{
+  "step": 19,
+  "title": "Long-Duration Closed-Loop Telemetry Streaming Over stdio JSON-RPC",
+  "timestamp_utc": "2026-09-05T06:43:02.254Z",
+  "cscape_process": {
+    "healthy": true,
+    "pid": 7616,
+    "name": "Cscape.exe",
+    "status": "running",
+    "working_set_mb": 125.41,
+    "threads": 15,
+    "gate_ready": true,
+    "gate_pid": 7616,
+    "gate_hwnd": "0x007B06D6",
+    "is_hung": false
+  },
+  "stream_summary": {
+    "total_frames_streamed": 600,
+    "total_frame_drops": 0,
+    "frame_loss_rate_pct": 0.0,
+    "monotonic_sequence_verified": true,
+    "monotonic_timestamps_verified": true,
+    "duration_seconds": 1.736,
+    "throughput_frames_per_sec": 345.54
+  },
+  "latency_percentiles_ms": {
+    "min": 1.87,
+    "median": 2.24,
+    "p90": 2.86,
+    "p95": 4.73,
+    "p99": 9.54,
+    "max": 71.4,
+    "mean": 2.69,
+    "stddev": 3.15
+  },
+  "convergence_summary": {
+    "phase_1_baseline_error_pct": 0.0,
+    "phase_1_converged": true,
+    "phase_2_step_up_error_pct": 0.0031,
+    "phase_2_converged": true,
+    "phase_3_surge_rejection_error_pct": 0.0,
+    "phase_3_converged": true,
+    "phase_4_step_down_error_pct": 0.0063,
+    "phase_4_converged": true
+  },
+  "phase_milestones": {
+    "phase_1_baseline_hold": {
+      "cycle": 149,
+      "phase": "PHASE_1_BASELINE_HOLD",
+      "time_ms": 1490.0,
+      "target_sp": 50.0,
+      "pv": 50.0,
+      "sp": 50.0,
+      "cv": 50.0,
+      "error": 0.0,
+      "latency_ms": 2.133,
+      "is_hung_live": false
+    },
+    "phase_2_step_up": {
+      "cycle": 299,
+      "phase": "PHASE_2_STEP_CHANGE",
+      "time_ms": 2990.0,
+      "target_sp": 75.0,
+      "pv": 75.0031,
+      "sp": 75.0,
+      "cv": 75.0008,
+      "error": -0.0031,
+      "latency_ms": 2.212,
+      "is_hung_live": false
+    },
+    "phase_3_surge_disturbance": {
+      "cycle": 449,
+      "phase": "PHASE_3_LOAD_SURGE_DISTURBANCE",
+      "time_ms": 4490.0,
+      "target_sp": 75.0,
+      "pv": 75.0,
+      "sp": 75.0,
+      "cv": 62.5002,
+      "error": 0.0,
+      "latency_ms": 2.292,
+      "is_hung_live": false
+    },
+    "phase_4_step_down": {
+      "cycle": 599,
+      "phase": "PHASE_4_STEP_DOWN",
+      "time_ms": 5990.0,
+      "target_sp": 35.0,
+      "pv": 34.9937,
+      "sp": 35.0,
+      "cv": 35.0019,
+      "error": 0.0063,
+      "latency_ms": 2.229,
+      "is_hung_live": false
+    }
+  },
+  "sample_telemetry_trace": [
+    {
+      "cycle": 0,
+      "phase": "PHASE_1_BASELINE_HOLD",
+      "time_ms": 0.0,
+      "target_sp": 50.0,
+      "pv": 50.0,
+      "sp": 50.0,
+      "cv": 50.0,
+      "error": 0.0,
+      "latency_ms": 2.74,
+      "is_hung_live": false
+    },
+    {
+      "cycle": 50,
+      "phase": "PHASE_1_BASELINE_HOLD",
+      "time_ms": 500.0,
+      "target_sp": 50.0,
+      "pv": 50.0,
+      "sp": 50.0,
+      "cv": 50.0,
+      "error": 0.0,
+      "latency_ms": 3.141,
+      "is_hung_live": false
+    },
+    {
+      "cycle": 100,
+      "phase": "PHASE_1_BASELINE_HOLD",
+      "time_ms": 1000.0,
+      "target_sp": 50.0,
+      "pv": 50.0,
+      "sp": 50.0,
+      "cv": 50.0,
+      "error": 0.0,
+      "latency_ms": 2.731,
+      "is_hung_live": false
+    },
+    {
+      "cycle": 150,
+      "phase": "PHASE_2_STEP_CHANGE",
+      "time_ms": 1500.0,
+      "target_sp": 75.0,
+      "pv": 50.0,
+      "sp": 75.0,
+      "cv": 100.0,
+      "error": 25.0,
+      "latency_ms": 5.938,
+      "is_hung_live": false
+    },
+    {
+      "cycle": 200,
+      "phase": "PHASE_2_STEP_CHANGE",
+      "time_ms": 2000.0,
+      "target_sp": 75.0,
+      "pv": 76.2469,
+      "sp": 75.0,
+      "cv": 74.6345,
+      "error": -1.2469,
+      "latency_ms": 2.173,
+      "is_hung_live": false
+    },
+    {
+      "cycle": 250,
+      "phase": "PHASE_2_STEP_CHANGE",
+      "time_ms": 2500.0,
+      "target_sp": 75.0,
+      "pv": 74.9375,
+      "sp": 75.0,
+      "cv": 75.0081,
+      "error": 0.0625,
+      "latency_ms": 2.073,
+      "is_hung_live": false
+    },
+    {
+      "cycle": 300,
+      "phase": "PHASE_3_LOAD_SURGE_DISTURBANCE",
+      "time_ms": 3000.0,
+      "target_sp": 75.0,
+      "pv": 75.0031,
+      "sp": 75.0,
+      "cv": 75.0003,
+      "error": -0.0031,
+      "latency_ms": 2.133,
+      "is_hung_live": false
+    },
+    {
+      "cycle": 350,
+      "phase": "PHASE_3_LOAD_SURGE_DISTURBANCE",
+      "time_ms": 3500.0,
+      "target_sp": 75.0,
+      "pv": 74.9781,
+      "sp": 75.0,
+      "cv": 62.1072,
+      "error": 0.0219,
+      "latency_ms": 2.717,
+      "is_hung_live": false
+    },
+    {
+      "cycle": 400,
+      "phase": "PHASE_3_LOAD_SURGE_DISTURBANCE",
+      "time_ms": 4000.0,
+      "target_sp": 75.0,
+      "pv": 75.0031,
+      "sp": 75.0,
+      "cv": 62.507,
+      "error": -0.0031,
+      "latency_ms": 2.967,
+      "is_hung_live": false
+    },
+    {
+      "cycle": 450,
+      "phase": "PHASE_4_STEP_DOWN",
+      "time_ms": 4500.0,
+      "target_sp": 35.0,
+      "pv": 75.0,
+      "sp": 35.0,
+      "cv": 0.0,
+      "error": -40.0,
+      "latency_ms": 2.405,
+      "is_hung_live": false
+    },
+    {
+      "cycle": 500,
+      "phase": "PHASE_4_STEP_DOWN",
+      "time_ms": 5000.0,
+      "target_sp": 35.0,
+      "pv": 32.8781,
+      "sp": 35.0,
+      "cv": 36.1998,
+      "error": 2.1219,
+      "latency_ms": 2.068,
+      "is_hung_live": false
+    },
+    {
+      "cycle": 550,
+      "phase": "PHASE_4_STEP_DOWN",
+      "time_ms": 5500.0,
+      "target_sp": 35.0,
+      "pv": 35.1094,
+      "sp": 35.0,
+      "cv": 34.962,
+      "error": -0.1094,
+      "latency_ms": 3.905,
+      "is_hung_live": false
+    }
+  ]
+}

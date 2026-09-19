@@ -1,0 +1,200 @@
+{
+  "status": "success",
+  "error_code": null,
+  "details": "Agent 5 security verification and status contract enforcement completed deterministically under Gate G1 mandate.",
+  "data": {
+    "gate": "G1",
+    "agent": "Agent 5 (Fail-Closed Security & Status Contract Enforcer)",
+    "timestamp_utc": "2026-09-06T11:15:00.000000+00:00",
+    "h11_security_verification": {
+      "status": "success",
+      "execution_mode": "HEADLESS_ONLY",
+      "test_suite": "tests/test_security.py",
+      "total_tests_passed": 225,
+      "total_tests_failed": 0,
+      "total_tests_skipped": 0,
+      "execution_duration_seconds": 2.12,
+      "additional_security_suites": {
+        "tests/test_real_cscape_safety.py": {
+          "passed": 190,
+          "failed": 0,
+          "duration_seconds": 1.97
+        },
+        "tests/test_step157_security_audit.py": {
+          "passed": 4,
+          "failed": 0
+        },
+        "tests/test_step176_security_audit.py": {
+          "passed": 5,
+          "failed": 0
+        },
+        "tests/test_step178_security_audit.py": {
+          "passed": 5,
+          "failed": 0
+        }
+      },
+      "aggregate_security_tests_passed": 429,
+      "hardware_lockouts_verified": {
+        "serial_ports_com1_to_com256": {
+          "status": "blocked",
+          "range": "COM1 through COM256",
+          "formats_tested": [
+            "COM{n}",
+            "com{n}",
+            "\\\\.\\COM{n}"
+          ],
+          "count_evaluated": 256,
+          "policy_result": "HARDWARE_LOCKOUT_ENFORCED"
+        },
+        "fieldbuses_can": {
+          "status": "blocked",
+          "targets": [
+            "CAN0",
+            "can1",
+            "pcan_usb",
+            "kvaser_leaf",
+            "vector_can",
+            "socketcan",
+            "slcan0",
+            "cscan",
+            "canopen",
+            "devicenet",
+            "j1939"
+          ],
+          "policy_result": "HARDWARE_LOCKOUT_ENFORCED"
+        },
+        "usb_and_jtag": {
+          "status": "blocked",
+          "targets": [
+            "USB1",
+            "\\\\?\\usb#vid_1234&pid_5678",
+            "VID_0483",
+            "PID_DF11",
+            "JTAG",
+            "jtag",
+            "JTAG_PORT",
+            "st-link.exe",
+            "jlink.exe",
+            "openocd.exe",
+            "dfu-util.exe",
+            "WinJTAG.exe"
+          ],
+          "policy_result": "HARDWARE_LOCKOUT_ENFORCED"
+        },
+        "companion_flash_tools": {
+          "status": "blocked",
+          "executables": [
+            "PGMUpdateUtility.exe",
+            "DfuSeCommand.exe",
+            "STMFlashLoader.exe",
+            "WinJTAG.exe",
+            "CscapeAutoUpdt.exe",
+            "XLeTerm.exe"
+          ],
+          "policy_result": "BLOCKED_EXECUTABLE_ENFORCED"
+        },
+        "download_cli_switches": {
+          "status": "blocked",
+          "switches": [
+            "/d",
+            "-d",
+            "/download",
+            "--download",
+            "/flash",
+            "-flash",
+            "--flash",
+            "/pgm",
+            "-pgm",
+            "--pgm",
+            "/burn",
+            "-burn",
+            "/firmware",
+            "--firmware",
+            "/target:hardware",
+            "/target:plc",
+            "--target=hardware",
+            "--target=plc",
+            "/write-flash",
+            "/erase",
+            "/upload",
+            "/com",
+            "/port",
+            "/can",
+            "/jtag"
+          ],
+          "policy_result": "UNAUTHORIZED_DOWNLOAD_ERROR_ENFORCED"
+        },
+        "win32_download_commands": {
+          "status": "blocked",
+          "command_ids": [
+            32827,
+            33149
+          ],
+          "command_symbols": [
+            "ID_PROGRAM_DOWNLOAD",
+            "ID_CONTROLLER_DOWNLOAD"
+          ],
+          "interception_methods": [
+            "intercept_download_command",
+            "CscapeSafetyGuard.validate_cscape_download",
+            "SafetyPolicy.is_ui_command_blocked"
+          ],
+          "policy_result": "CSCAPE_SAFETY_VIOLATION_ENFORCED"
+        }
+      }
+    },
+    "h13_operational_policy": {
+      "status": "success",
+      "physical_plc_connections": {
+        "status": "blocked",
+        "policy": "ZERO_PHYSICAL_CONNECTIONS",
+        "enforcement": "validate_hardware_connection unconditionally raises HardwareLockoutError"
+      },
+      "machine_disturbance": {
+        "status": "success",
+        "policy": "ZERO_MACHINE_DISTURBANCE",
+        "enforcement": "All tests executed headlessly with zero window manipulation on winsta0\\Default"
+      },
+      "straton_k5_quarantine": {
+        "status": "success",
+        "quarantine_directory": "quarantine/straton_k5_legacy/",
+        "active_imports_in_src": 0,
+        "zero_straton_imports_verified": true,
+        "zero_k5_imports_verified": true,
+        "legacy_k5p_export_quarantined": true
+      }
+    },
+    "status_contract_enforcement": {
+      "status": "success",
+      "mandated_enum": [
+        "success",
+        "failed",
+        "blocked",
+        "inconclusive"
+      ],
+      "scan_results": {
+        "scanned_files_count": 1022,
+        "scan_report_path": "artifacts/logs/status_contract_scan.json",
+        "pseudo_statuses_scanned": [
+          "VERIFIED",
+          "100%",
+          "PERFECT",
+          "ALL_TESTS_PASSING",
+          "PASSED",
+          "COMPLETED",
+          "READY_FOR_TESTS"
+        ],
+        "mcp_server_contract_verified": true,
+        "mcp_status_contract_tests_passed": 60,
+        "tool_status_normalization_enforced": true
+      }
+    },
+    "execution_watchdog": {
+      "status": "success",
+      "timeout_limit_seconds": 600,
+      "max_observed_command_runtime_seconds": 31.23,
+      "unmonitored_processes_detected": 0,
+      "watchdog_compliance": true
+    }
+  }
+}

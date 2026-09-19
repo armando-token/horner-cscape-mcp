@@ -1,0 +1,227 @@
+{
+  "step": 54,
+  "audit_title": "In-Band Liquid Slosh & Wave Disturbance Pole-Placement IIR Notch Filter Closed-Loop Audit",
+  "timestamp_start": "2026-09-05T10:10:55.755Z",
+  "timestamp_end": "2026-09-05T10:11:02.955Z",
+  "status": "VERIFIED_LIVE",
+  "cscape_active_process": {
+    "healthy": true,
+    "pid": 3784,
+    "hwnd": "0xbb06c2",
+    "desktop": "Default",
+    "is_hung": false,
+    "wm_null_ping_ok": true,
+    "working_set_mb": 228.24,
+    "uptime_seconds": 934.09,
+    "thread_count": 15,
+    "gate_status": "READY_FOR_TESTS",
+    "window_title": "Cscape - Logged In : \"armando@controlnautas.com\" - [TankLevelClosedLoop.csp]"
+  },
+  "cscape_gate": {
+    "ready_for_tests": true,
+    "status": "READY_FOR_TESTS",
+    "pid": 3784,
+    "hwnd": "0x00BB06C2",
+    "window_title": "Cscape - Logged In : \"armando@controlnautas.com\" - [TankLevelClosedLoop.csp]",
+    "project_file": "C:\\Users\\ArmandoSilva\\artifacts\\projects\\TankLevelClosedLoop\\TankLevelClosedLoop.csp",
+    "exit_code": null,
+    "reason": "TankLevelClosedLoop verified active and responsive",
+    "cycle": 1,
+    "timestamp_utc": "2026-09-05T10:10:53.931Z"
+  },
+  "gui_compilation": {
+    "command_id": 32826,
+    "status": "success",
+    "errors": 0,
+    "warnings": 0
+  },
+  "slosh_filter_metrics": {
+    "total_cycles": 650,
+    "slosh_frequency_hz": 1.0,
+    "slosh_amplitude_pct": 4.5,
+    "pole_radius_r": 0.85,
+    "unfiltered_chatter_pk_pct": 7.49,
+    "notch_filtered_chatter_pk_pct": 0.4026,
+    "chatter_attenuation_pct": 94.62,
+    "phase4_final_error_percent": 0.3603,
+    "phase4_mean_last15_error_percent": 0.3287
+  },
+  "safety_audit": {
+    "physical_plc_download_blocked": true,
+    "blocked_command_id": 32827,
+    "zero_physical_hardware_touched": true,
+    "zero_straton_dependencies": true
+  },
+  "sample_trace": [
+    {
+      "cycle": 0,
+      "phase": "PHASE_1_CALM_BASELINE",
+      "wave": 0.0,
+      "surface_level": 50.0,
+      "feedback_level": 50.0,
+      "cv": 50.0,
+      "pv_plant": 50.0,
+      "error": 0.0
+    },
+    {
+      "cycle": 50,
+      "phase": "PHASE_1_CALM_BASELINE",
+      "wave": 0.0,
+      "surface_level": 50.0,
+      "feedback_level": 50.0,
+      "cv": 50.0,
+      "pv_plant": 50.0,
+      "error": 0.0
+    },
+    {
+      "cycle": 100,
+      "phase": "PHASE_1_CALM_BASELINE",
+      "wave": 0.0,
+      "surface_level": 50.0,
+      "feedback_level": 50.0,
+      "cv": 50.0,
+      "pv_plant": 50.0,
+      "error": 0.0
+    },
+    {
+      "cycle": 110,
+      "phase": "PHASE_2_UNFILTERED_SLOSH",
+      "wave": 2.65,
+      "surface_level": 51.85,
+      "feedback_level": 51.85,
+      "cv": 46.27,
+      "pv_plant": 49.0586,
+      "error": 0.9414
+    },
+    {
+      "cycle": 150,
+      "phase": "PHASE_2_UNFILTERED_SLOSH",
+      "wave": 0.0,
+      "surface_level": 47.7,
+      "feedback_level": 47.7,
+      "cv": 51.34,
+      "pv_plant": 47.8783,
+      "error": 2.1217
+    },
+    {
+      "cycle": 200,
+      "phase": "PHASE_2_UNFILTERED_SLOSH",
+      "wave": -0.0,
+      "surface_level": 52.27,
+      "feedback_level": 52.27,
+      "cv": 48.68,
+      "pv_plant": 52.0921,
+      "error": 2.0921
+    },
+    {
+      "cycle": 201,
+      "phase": "PHASE_3_NOTCH_FILTERED",
+      "wave": 0.28,
+      "surface_level": 52.37,
+      "feedback_level": 50.0,
+      "cv": 52.09,
+      "pv_plant": 52.0923,
+      "error": 2.0923
+    },
+    {
+      "cycle": 250,
+      "phase": "PHASE_3_NOTCH_FILTERED",
+      "wave": 0.0,
+      "surface_level": 48.62,
+      "feedback_level": 49.78,
+      "cv": 48.96,
+      "pv_plant": 48.6386,
+      "error": 1.3614
+    },
+    {
+      "cycle": 300,
+      "phase": "PHASE_3_NOTCH_FILTERED",
+      "wave": -0.0,
+      "surface_level": 50.48,
+      "feedback_level": 49.82,
+      "cv": 50.76,
+      "pv_plant": 50.4904,
+      "error": 0.4904
+    },
+    {
+      "cycle": 350,
+      "phase": "PHASE_3_NOTCH_FILTERED",
+      "wave": 0.0,
+      "surface_level": 49.96,
+      "feedback_level": 50.18,
+      "cv": 49.67,
+      "pv_plant": 49.9495,
+      "error": 0.0505
+    },
+    {
+      "cycle": 400,
+      "phase": "PHASE_3_NOTCH_FILTERED",
+      "wave": -0.0,
+      "surface_level": 49.92,
+      "feedback_level": 49.91,
+      "cv": 50.07,
+      "pv_plant": 49.9256,
+      "error": 0.0744
+    },
+    {
+      "cycle": 401,
+      "phase": "PHASE_4_STEP_DURING_SLOSH",
+      "wave": 0.28,
+      "surface_level": 50.21,
+      "feedback_level": 49.91,
+      "cv": 73.77,
+      "pv_plant": 51.1178,
+      "error": 13.8822
+    },
+    {
+      "cycle": 450,
+      "phase": "PHASE_4_STEP_DURING_SLOSH",
+      "wave": 0.0,
+      "surface_level": 71.13,
+      "feedback_level": 64.21,
+      "cv": 72.45,
+      "pv_plant": 71.1965,
+      "error": 6.1965
+    },
+    {
+      "cycle": 500,
+      "phase": "PHASE_4_STEP_DURING_SLOSH",
+      "wave": -0.0,
+      "surface_level": 63.78,
+      "feedback_level": 66.63,
+      "cv": 61.16,
+      "pv_plant": 63.6462,
+      "error": 1.3538
+    },
+    {
+      "cycle": 550,
+      "phase": "PHASE_4_STEP_DURING_SLOSH",
+      "wave": 0.0,
+      "surface_level": 64.5,
+      "feedback_level": 63.98,
+      "cv": 66.12,
+      "pv_plant": 64.5856,
+      "error": 0.4144
+    },
+    {
+      "cycle": 600,
+      "phase": "PHASE_4_STEP_DURING_SLOSH",
+      "wave": -0.0,
+      "surface_level": 65.64,
+      "feedback_level": 65.38,
+      "cv": 65.05,
+      "pv_plant": 65.6131,
+      "error": 0.6131
+    },
+    {
+      "cycle": 649,
+      "phase": "PHASE_4_STEP_DURING_SLOSH",
+      "wave": 0.28,
+      "surface_level": 64.92,
+      "feedback_level": 64.96,
+      "cv": 64.69,
+      "pv_plant": 64.6397,
+      "error": 0.3603
+    }
+  ]
+}

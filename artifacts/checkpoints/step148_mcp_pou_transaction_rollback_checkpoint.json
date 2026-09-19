@@ -1,0 +1,18 @@
+{
+  "step": 148,
+  "name": "step148_mcp_pou_transaction_rollback_checkpoint",
+  "status": "PASSED",
+  "timestamp_utc": "2026-09-05T19:37:41.360Z",
+  "cscape_pid": 15624,
+  "hwnd": "0x0167056A",
+  "ast_validated_pou": "TransientFilterPOU",
+  "forbidden_ladder_rejected": true,
+  "rejection_code": "ERR_LADDER_FORBIDDEN",
+  "transactional_rollback": "SUCCESS",
+  "simulation_cycles": 50,
+  "gui_compile_status": "SUCCESS",
+  "zero_straton_dependencies": true,
+  "hardware_lockout_enforced": true,
+  "live_screenshot_sha256": "83198ad12f58b287bfe0ba657aca97fc6effb54bc0980d88a12200c4b4c0c0e5",
+  "checkpoint_sha256": "093175724d22f54258ff42b634b1f0092a01770b84722e516d109c87f1c42bae"
+}

@@ -1,0 +1,266 @@
+{
+  "step": 186,
+  "gate": "G5",
+  "mandate": "MEGAPLAN Gate G5: Evidence-Gated Final Signoff & Dual-Root Parity Audit for Step 186",
+  "status": "success",
+  "start_time_utc": "2026-09-06T15:59:17.905Z",
+  "completion_time_utc": "2026-09-06T15:59:17.963Z",
+  "execution_duration_sec": 0.057,
+  "roots": {
+    "horner_root": "C:\\HornerAI\\horner-cscape-mcp",
+    "user_root": "C:\\Users\\ArmandoSilva"
+  },
+  "live_cscape_gate": {
+    "pid": 10892,
+    "hwnd": "0x01B005DC",
+    "status": "READY_FOR_TESTS",
+    "project": "C:\\HornerAI\\horner-cscape-mcp\\artifacts\\projects\\TankLevelClosedLoop\\TankLevelClosedLoop.csp",
+    "window_title": "Cscape - Logged In : \"armando@controlnautas.com\" - [TankLevelClosedLoop.csp]",
+    "desktop": "winsta0\\Default",
+    "classification": "VERIFIED_LIVE (Live Cscape GUI Gate on winsta0\\Default)"
+  },
+  "gates_verified": {
+    "G0": "PASSED (Inventory & PE binary audit: Cscape 10.2 x86 PE Build 10.2.751.4)",
+    "G1": "PASSED (False successes H01-H13 dismantled, honest PARTIAL classification enforced, ephemeral PIDs recognized as gate-dependent)",
+    "G2": "PASSED (Live Cscape 10.2 visible GUI on winsta0\\Default with TankLevelClosedLoop.csp and Project Navigator visible)",
+    "G3": "PASSED (Live GUI Error Check 32826 clean build 0 errors/0 warnings, download lockout)",
+    "G4": "PASSED (Pure-software closed-loop plant simulation & Industrial Process Analog Scaling Out-of-Bounds FB_AnalogScalingOutOfBounds, offline/DEV TESTED_MOCK)",
+    "G5": "PASSED (Evidence-gated final signoff & dual-root parity passed across all checkpoints, logs, and guides)"
+  },
+  "verification_classification": {
+    "offline_suites_label": "offline/DEV (TESTED_MOCK)",
+    "live_gui_gates": "VERIFIED_LIVE (Live Cscape GUI Gate on winsta0\\Default)",
+    "hardware_lockout": "BLOCKED_SAFETY (Fail-closed lockout enforced)"
+  },
+  "parity_verified": true,
+  "details": {
+    "checkpoints": {
+      "artifacts/checkpoints/megaplan_g2_visible_gui_checkpoint.json": {
+        "rel_path": "artifacts/checkpoints/megaplan_g2_visible_gui_checkpoint.json",
+        "size_bytes": 1764,
+        "sha256": "c51b5d259f6ec65c9b9d9b45721f1f8331aeae1af16ffb498f2d29f367627cf0",
+        "identical": true,
+        "json_valid": true,
+        "status": "success"
+      },
+      "artifacts/checkpoints/megaplan_g3_live_compile_pipeline_checkpoint.json": {
+        "rel_path": "artifacts/checkpoints/megaplan_g3_live_compile_pipeline_checkpoint.json",
+        "size_bytes": 1754,
+        "sha256": "b514116f8369b2617d8d7a164286733408bb4f784ea33c011d0c5649e15f867c",
+        "identical": true,
+        "json_valid": true,
+        "status": "success"
+      },
+      "artifacts/checkpoints/megaplan_g4_closed_loop_simulation_checkpoint.json": {
+        "rel_path": "artifacts/checkpoints/megaplan_g4_closed_loop_simulation_checkpoint.json",
+        "size_bytes": 795,
+        "sha256": "bcee0a73a0c7085b4335851edc00ee26fd3a2582947daadf81771a60095d4664",
+        "identical": true,
+        "json_valid": true,
+        "status": "success"
+      },
+      "artifacts/checkpoints/megaplan_g5_final_parity_checkpoint.json": {
+        "rel_path": "artifacts/checkpoints/megaplan_g5_final_parity_checkpoint.json",
+        "size_bytes": 4073,
+        "sha256": "c3affd1dc26f91f6d6046e941dbe3eac06e822acc3b00a6e45012ee0fe3953cc",
+        "identical": true,
+        "json_valid": true,
+        "status": "success"
+      },
+      "artifacts/checkpoints/step186_visible_gui_proof_checkpoint.json": {
+        "rel_path": "artifacts/checkpoints/step186_visible_gui_proof_checkpoint.json",
+        "size_bytes": 1570,
+        "sha256": "9b521904c1c7dcca5146093034299b59e3cbcb501de6db3ab2fe191b7cef8766",
+        "identical": true,
+        "json_valid": true,
+        "status": "success"
+      },
+      "artifacts/checkpoints/step186_security_audit_checkpoint.json": {
+        "rel_path": "artifacts/checkpoints/step186_security_audit_checkpoint.json",
+        "size_bytes": 2131,
+        "sha256": "fd62dffdae8ec2f9e8e4aa1ce93fb74da957ece00333e83f3cc7c5ba48833f41",
+        "identical": true,
+        "json_valid": true,
+        "status": "success"
+      },
+      "artifacts/checkpoints/step186_pure_st_audit_checkpoint.json": {
+        "rel_path": "artifacts/checkpoints/step186_pure_st_audit_checkpoint.json",
+        "size_bytes": 725,
+        "sha256": "f98626c35e5196f6e7860e6e250d29985fc877e6baef1bc4520b049848c291c7",
+        "identical": true,
+        "json_valid": true,
+        "status": "success"
+      },
+      "artifacts/checkpoints/step186_mcp_analog_scaling_bounds_checkpoint.json": {
+        "rel_path": "artifacts/checkpoints/step186_mcp_analog_scaling_bounds_checkpoint.json",
+        "size_bytes": 342,
+        "sha256": "ae43d66188e5b707c6ec7049729c7ff1646b3dc705e56af7a1b6eb0c8232db8e",
+        "identical": true,
+        "json_valid": true,
+        "status": "success"
+      }
+    },
+    "logs": {
+      "artifacts/logs/step186_visible_gui_proof.json": {
+        "rel_path": "artifacts/logs/step186_visible_gui_proof.json",
+        "size_bytes": 3256,
+        "sha256": "b022005f8bfea8d41c8f6dc66de1f6d26f688e759c4d291193c73dd64c2faea9",
+        "identical": true,
+        "json_valid": true,
+        "status": "success"
+      },
+      "artifacts/logs/step186_security_audit.json": {
+        "rel_path": "artifacts/logs/step186_security_audit.json",
+        "size_bytes": 30638,
+        "sha256": "a2080f0f80c05fd039ad098408af50ccd59e702213e5492fe12348f80e8874a0",
+        "identical": true,
+        "json_valid": true,
+        "status": "success"
+      },
+      "artifacts/logs/step186_pure_st_audit.json": {
+        "rel_path": "artifacts/logs/step186_pure_st_audit.json",
+        "size_bytes": 15859,
+        "sha256": "7e49abcc1412351415d7c5d9a6d41b780eb05849b7d0704c466dded15092cd8c",
+        "identical": true,
+        "json_valid": true,
+        "status": "success"
+      },
+      "artifacts/logs/step186_mcp_analog_scaling_bounds.json": {
+        "rel_path": "artifacts/logs/step186_mcp_analog_scaling_bounds.json",
+        "size_bytes": 3509,
+        "sha256": "930f423cb29fda2e552c6c27edbffcc56bc6e18154ff91ff0593c446f46dfb3d",
+        "identical": true,
+        "json_valid": true,
+        "status": "success"
+      },
+      "artifacts/logs/megaplan_g4_closed_loop_simulation.json": {
+        "rel_path": "artifacts/logs/megaplan_g4_closed_loop_simulation.json",
+        "size_bytes": 3457,
+        "sha256": "fc3db8e08e7f98243497e0db6fad86833837a49d0b2daeaef39911ad626880e6",
+        "identical": true,
+        "json_valid": true,
+        "status": "success"
+      }
+    },
+    "screenshots": {
+      "artifacts/screenshots/live_cscape_tank_level_step186.png": {
+        "rel_path": "artifacts/screenshots/live_cscape_tank_level_step186.png",
+        "size_bytes": 71597,
+        "sha256": "3629ca11ab19c8a2ec8b2c58e5bfcbb6febc2d45132107708368cf014cbf09b9",
+        "identical": true
+      }
+    },
+    "scripts": {
+      "scripts/execute_step186_visible_cscape_gui_driver.py": {
+        "rel_path": "scripts/execute_step186_visible_cscape_gui_driver.py",
+        "size_bytes": 35248,
+        "sha256": "71a8d5df2c9a465271ab33b0ce13572a7324ddd3d8fd9c7443bff6287cf044f2",
+        "identical": true
+      },
+      "scripts/step186_security_audit.py": {
+        "rel_path": "scripts/step186_security_audit.py",
+        "size_bytes": 33536,
+        "sha256": "37b5243ca23ff432d123217718d2d1d365510c769495c706b1422ebaa4b65e40",
+        "identical": true
+      },
+      "scripts/execute_step186_pure_st_audit.py": {
+        "rel_path": "scripts/execute_step186_pure_st_audit.py",
+        "size_bytes": 16066,
+        "sha256": "9bc730c941f87531efc92c5755e902f01c45af00403e44af423208d149951f0b",
+        "identical": true
+      },
+      "scripts/execute_step186_mcp_analog_scaling_bounds.py": {
+        "rel_path": "scripts/execute_step186_mcp_analog_scaling_bounds.py",
+        "size_bytes": 23311,
+        "sha256": "f2f7375d43c7ed2c6bba6da3e0a52130c3a7529bf54ffdd5d754d37bf408168d",
+        "identical": true
+      },
+      "scripts/execute_step186_dual_root_sync_audit.py": {
+        "rel_path": "scripts/execute_step186_dual_root_sync_audit.py",
+        "size_bytes": 12140,
+        "sha256": "09d7cd019255f5cfa240c697b52f1ea2309faef8076f6c29baea12ef92237da6",
+        "identical": true
+      }
+    },
+    "tests": {
+      "tests/test_step186_visible_cscape_gui_driver.py": {
+        "rel_path": "tests/test_step186_visible_cscape_gui_driver.py",
+        "size_bytes": 5837,
+        "sha256": "fc6710c3eff0142c3ba8a609ff998e0d2df0b93c5519ae035de45b60c6941783",
+        "identical": true
+      },
+      "tests/test_step186_security_audit.py": {
+        "rel_path": "tests/test_step186_security_audit.py",
+        "size_bytes": 8090,
+        "sha256": "fd62932b9eb535e0686e1df08eb13c3944fffea5610bcba1f25d3a2ee329ebe7",
+        "identical": true
+      },
+      "tests/test_step186_pure_st_audit.py": {
+        "rel_path": "tests/test_step186_pure_st_audit.py",
+        "size_bytes": 8409,
+        "sha256": "201bd6ea351695e7c42abbe3cc87cca6ef767505c1d9f43ba0606fba1b76681b",
+        "identical": true
+      },
+      "tests/test_step186_mcp_analog_scaling_bounds.py": {
+        "rel_path": "tests/test_step186_mcp_analog_scaling_bounds.py",
+        "size_bytes": 11201,
+        "sha256": "ebffbe0e1dcf21c1f690cb643f8b6cd5ba20b181dec36b040607c74b28aa3a64",
+        "identical": true
+      },
+      "tests/test_step186_dual_root_sync.py": {
+        "rel_path": "tests/test_step186_dual_root_sync.py",
+        "size_bytes": 9229,
+        "sha256": "f2f5d09b127477d6022472f0f7cf7a67991db69501e17a13657f7a3360b3763d",
+        "identical": true
+      }
+    },
+    "examples": {
+      "examples/st_applications/analog_scaling_bounds.st": {
+        "rel_path": "examples/st_applications/analog_scaling_bounds.st",
+        "size_bytes": 5392,
+        "sha256": "9e130a26c3f8cc9dff9370a3fc99c29d4c7029234d6af9c58ac5f6698a96018d",
+        "identical": true
+      }
+    },
+    "project_files": {
+      "artifacts/projects/TankLevelClosedLoop/TankLevelClosedLoop.csp": {
+        "rel_path": "artifacts/projects/TankLevelClosedLoop/TankLevelClosedLoop.csp",
+        "size_bytes": 49152,
+        "sha256": "d075e67d80be031a99a6895078735918b7a15c8086590a6d20ec8484b27749af",
+        "identical": true
+      },
+      "artifacts/projects/TankLevelClosedLoop/pous/TankLevelClosedLoop.st": {
+        "rel_path": "artifacts/projects/TankLevelClosedLoop/pous/TankLevelClosedLoop.st",
+        "size_bytes": 2599,
+        "sha256": "7fd73e139c3c6475dd0f4c84351c339a0c66b96f2b160f452fc2564017de7ea9",
+        "identical": true
+      },
+      "artifacts/projects/TankLevelClosedLoop/artifacts/build.log": {
+        "rel_path": "artifacts/projects/TankLevelClosedLoop/artifacts/build.log",
+        "size_bytes": 1037,
+        "sha256": "c33ff7d978ba29eeb674118e444c7bf0822cc91ea29631ca8f4696e4af90d13a",
+        "identical": true
+      }
+    },
+    "documentation": {
+      "CAPABILITY_MATRIX.md": {
+        "rel_path": "CAPABILITY_MATRIX.md",
+        "size_bytes": 203640,
+        "sha256": "ff22f73fa6562a2af46925a3c9767ca728dd6a3e41184ebec234718f52f64501",
+        "identical": true
+      },
+      "AGENTS.md": {
+        "rel_path": "AGENTS.md",
+        "size_bytes": 17722,
+        "sha256": "25943094ff5d33d9ec94d6ecf2fe88a9129112f43ba051b6f481544c7628bf93",
+        "identical": true
+      },
+      "CHANGELOG.md": {
+        "rel_path": "CHANGELOG.md",
+        "size_bytes": 29069,
+        "sha256": "292f147a5ca58dc537007003bcc71fb36751f1740e147f10ddc7c7161e719d0c",
+        "identical": true
+      }
+    }
+  }
+}

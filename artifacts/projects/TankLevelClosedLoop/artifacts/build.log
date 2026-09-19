@@ -1,0 +1,21 @@
+=== Horner Cscape 10.2 Compile Pass: TankLevelClosedLoop ===
+Clean Build: False
+Mode: IEC 61131-3 Structured Text (Advanced Ladder Excluded)
+Timestamp: 2026-09-06T15:31:07.053098
+----------------------------------------------------------------
+Compiling POU: AlarmMonitor (72 bytes)...
+  POU 'AlarmMonitor' parsed and validated cleanly.
+Compiling POU: AuxPumpControl (71 bytes)...
+  POU 'AuxPumpControl' parsed and validated cleanly.
+Compiling POU: BrokenPOU (79 bytes)...
+  POU 'BrokenPOU' parsed and validated cleanly.
+Compiling POU: SafetyInterlockST (66 bytes)...
+  POU 'SafetyInterlockST' parsed and validated cleanly.
+Compiling POU: TankLevelClosedLoop (2503 bytes)...
+  POU 'TankLevelClosedLoop' parsed and validated cleanly.
+----------------------------------------------------------------
+Build Result: SUCCESS
+Errors: 0, Warnings: 0
+Estimated AST Footprint: Statements: 40, Variables: 28, Expressions: 141, Source: 2791 bytes
+Duration: 0.072s
+Hardware Lockout: ENFORCED (Zero PLC communication / No download)

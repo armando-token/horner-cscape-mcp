@@ -1,0 +1,13 @@
+{
+  "ready_for_tests": true,
+  "status": "READY_FOR_TESTS",
+  "pid": 928,
+  "hwnd": "0x0003040C",
+  "window_title": "Cscape - Logged In : \"armando@controlnautas.com\" - [TankLevel_P5_Dedicated.csp]",
+  "project_file": "C:\\HornerAI\\horner-cscape-mcp\\artifacts\\projects\\TankLevelClosedLoop\\TankLevelClosedLoop.csp",
+  "exit_code": null,
+  "reason": "TankLevel_P5_Dedicated live active on desktop",
+  "cycle": 1,
+  "timestamp_utc": "2026-09-17T15:39:56.377Z",
+  "heartbeat_utc": "2026-09-17T15:39:56.377Z"
+}

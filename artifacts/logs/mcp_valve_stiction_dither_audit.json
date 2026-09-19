@@ -1,0 +1,226 @@
+{
+  "step": 49,
+  "audit_title": "Control Valve Stiction Compensation & High-Frequency Dither Injection Closed-Loop Audit",
+  "timestamp_start": "2026-09-05T09:58:29.169Z",
+  "timestamp_end": "2026-09-05T09:58:35.419Z",
+  "status": "VERIFIED_LIVE",
+  "cscape_active_process": {
+    "healthy": true,
+    "pid": 3784,
+    "hwnd": "0xbb06c2",
+    "desktop": "Default",
+    "is_hung": false,
+    "wm_null_ping_ok": true,
+    "working_set_mb": 220.41,
+    "uptime_seconds": 186.56,
+    "thread_count": 16,
+    "gate_status": "READY_FOR_TESTS",
+    "window_title": "Cscape - Logged In : \"armando@controlnautas.com\" - [TankLevelClosedLoop.csp]"
+  },
+  "cscape_gate": {
+    "ready_for_tests": true,
+    "status": "READY_FOR_TESTS",
+    "pid": 3784,
+    "hwnd": "0x00BB06C2",
+    "window_title": "Cscape - Logged In : \"armando@controlnautas.com\" - [TankLevelClosedLoop.csp]",
+    "project_file": "C:\\Users\\ArmandoSilva\\artifacts\\projects\\TankLevelClosedLoop\\TankLevelClosedLoop.csp",
+    "exit_code": null,
+    "reason": "TankLevelClosedLoop verified active and responsive",
+    "cycle": 1,
+    "timestamp_utc": "2026-09-05T09:58:28.690Z"
+  },
+  "gui_compilation": {
+    "command_id": 32826,
+    "status": "success",
+    "errors": 0,
+    "warnings": 0
+  },
+  "valve_stiction_metrics": {
+    "total_cycles": 450,
+    "stiction_breakaway_force_pct": 3.5,
+    "deadband_pct": 1.8,
+    "stiction_hunting_amplitude_pct": 2.0329,
+    "dither_compensated_amplitude_pct": 0.2843,
+    "hunting_reduction_pct": 86.01,
+    "phase4_final_error_percent": 0.0011,
+    "phase4_mean_last15_error_percent": 0.0011
+  },
+  "safety_audit": {
+    "physical_plc_download_blocked": true,
+    "blocked_command_id": 32827,
+    "zero_physical_hardware_touched": true,
+    "zero_straton_dependencies": true
+  },
+  "sample_trace": [
+    {
+      "cycle": 0,
+      "phase": "PHASE_1_LINEAR_BASELINE",
+      "target_sp": 50.0,
+      "raw_cv": 50.0,
+      "commanded_cv": 50.0,
+      "valve_pos": 50.0,
+      "pv_plant": 50.0,
+      "error": 0.0
+    },
+    {
+      "cycle": 50,
+      "phase": "PHASE_1_LINEAR_BASELINE",
+      "target_sp": 50.0,
+      "raw_cv": 50.0,
+      "commanded_cv": 50.0,
+      "valve_pos": 50.0,
+      "pv_plant": 50.0,
+      "error": 0.0
+    },
+    {
+      "cycle": 100,
+      "phase": "PHASE_1_LINEAR_BASELINE",
+      "target_sp": 50.0,
+      "raw_cv": 50.0,
+      "commanded_cv": 50.0,
+      "valve_pos": 50.0,
+      "pv_plant": 50.0,
+      "error": 0.0
+    },
+    {
+      "cycle": 105,
+      "phase": "PHASE_2_STICTION_HUNTING",
+      "target_sp": 55.0,
+      "raw_cv": 57.843,
+      "commanded_cv": 57.843,
+      "valve_pos": 57.2963,
+      "pv_plant": 53.797,
+      "error": 1.203
+    },
+    {
+      "cycle": 120,
+      "phase": "PHASE_2_STICTION_HUNTING",
+      "target_sp": 55.0,
+      "raw_cv": 63.6352,
+      "commanded_cv": 63.6352,
+      "valve_pos": 62.7352,
+      "pv_plant": 52.6265,
+      "error": 2.3735
+    },
+    {
+      "cycle": 150,
+      "phase": "PHASE_2_STICTION_HUNTING",
+      "target_sp": 55.0,
+      "raw_cv": 65.6739,
+      "commanded_cv": 65.6739,
+      "valve_pos": 62.7352,
+      "pv_plant": 54.2826,
+      "error": 0.7174
+    },
+    {
+      "cycle": 190,
+      "phase": "PHASE_2_STICTION_HUNTING",
+      "target_sp": 55.0,
+      "raw_cv": 61.9306,
+      "commanded_cv": 61.9306,
+      "valve_pos": 62.6575,
+      "pv_plant": 55.7725,
+      "error": 0.7725
+    },
+    {
+      "cycle": 200,
+      "phase": "PHASE_2_STICTION_HUNTING",
+      "target_sp": 55.0,
+      "raw_cv": 61.9734,
+      "commanded_cv": 61.9734,
+      "valve_pos": 62.6575,
+      "pv_plant": 55.3251,
+      "error": 0.3251
+    },
+    {
+      "cycle": 201,
+      "phase": "PHASE_3_DITHER_COMPENSATED",
+      "target_sp": 55.0,
+      "raw_cv": 54.5097,
+      "commanded_cv": 52.5097,
+      "valve_pos": 55.0,
+      "pv_plant": 54.6,
+      "error": 0.4
+    },
+    {
+      "cycle": 210,
+      "phase": "PHASE_3_DITHER_COMPENSATED",
+      "target_sp": 55.0,
+      "raw_cv": 59.595,
+      "commanded_cv": 61.595,
+      "valve_pos": 58.5495,
+      "pv_plant": 52.9811,
+      "error": 2.0189
+    },
+    {
+      "cycle": 230,
+      "phase": "PHASE_3_DITHER_COMPENSATED",
+      "target_sp": 55.0,
+      "raw_cv": 62.8347,
+      "commanded_cv": 64.8347,
+      "valve_pos": 64.3131,
+      "pv_plant": 53.6927,
+      "error": 1.3073
+    },
+    {
+      "cycle": 260,
+      "phase": "PHASE_3_DITHER_COMPENSATED",
+      "target_sp": 55.0,
+      "raw_cv": 62.7429,
+      "commanded_cv": 64.7429,
+      "valve_pos": 63.8429,
+      "pv_plant": 54.9929,
+      "error": 0.0071
+    },
+    {
+      "cycle": 300,
+      "phase": "PHASE_3_DITHER_COMPENSATED",
+      "target_sp": 55.0,
+      "raw_cv": 62.5457,
+      "commanded_cv": 64.5457,
+      "valve_pos": 63.6457,
+      "pv_plant": 54.9988,
+      "error": 0.0012
+    },
+    {
+      "cycle": 301,
+      "phase": "PHASE_4_CALIBRATED_RECOVERY",
+      "target_sp": 50.0,
+      "raw_cv": 31.3312,
+      "commanded_cv": 31.3312,
+      "valve_pos": 31.3312,
+      "pv_plant": 49.0666,
+      "error": 0.9334
+    },
+    {
+      "cycle": 350,
+      "phase": "PHASE_4_CALIBRATED_RECOVERY",
+      "target_sp": 50.0,
+      "raw_cv": 50.0141,
+      "commanded_cv": 50.0141,
+      "valve_pos": 50.0141,
+      "pv_plant": 50.0037,
+      "error": 0.0037
+    },
+    {
+      "cycle": 400,
+      "phase": "PHASE_4_CALIBRATED_RECOVERY",
+      "target_sp": 50.0,
+      "raw_cv": 50.0011,
+      "commanded_cv": 50.0011,
+      "valve_pos": 50.0011,
+      "pv_plant": 50.0013,
+      "error": 0.0013
+    },
+    {
+      "cycle": 449,
+      "phase": "PHASE_4_CALIBRATED_RECOVERY",
+      "target_sp": 50.0,
+      "raw_cv": 50.0011,
+      "commanded_cv": 50.0011,
+      "valve_pos": 50.0011,
+      "pv_plant": 50.0011,
+      "error": 0.0011
+    }
+  ]
+}

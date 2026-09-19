@@ -1,0 +1,138 @@
+{
+  "success": false,
+  "status": "failed",
+  "error_code": "ST_SYNTAX_ERROR",
+  "project_name": "LabProject_W01",
+  "build_time_seconds": 0.014069,
+  "error_count": 3,
+  "warning_count": 0,
+  "errors": [
+    "Syntax error at line 9, col 32: Expected ')' after function arguments",
+    "Statement missing terminating semicolon: 'Filter1(RawInput := RawSensor1 SmoothingFactor := Alpha)'",
+    "Undeclared variable or identifier 'SmoothingFactor' used in logic."
+  ],
+  "warnings": [],
+  "build_log": "=== Horner Cscape 10.2 Compile Pass: LabProject_W01 ===\nClean Build: True\nMode: IEC 61131-3 Structured Text (Advanced Ladder Excluded)\nTimestamp: 2026-09-06T20:48:59.321770\n----------------------------------------------------------------\nCompiling POU: MainProcessControl (286 bytes)...\n  MainProcessControl.st(9,32): error ST_SYNTAX_ERROR: Syntax error at line 9, col 32: Expected ')' after function arguments\n  MainProcessControl.st(9,57): error ERR_MISSING_SEMICOLON: Statement missing terminating semicolon: 'Filter1(RawInput := RawSensor1 SmoothingFactor := Alpha)'\n  MainProcessControl.st(9,32): error ERR_UNDECLARED_VAR: Undeclared variable or identifier 'SmoothingFactor' used in logic.\nCompiling POU: ScaleAnalogFilter (769 bytes)...\n  POU 'ScaleAnalogFilter' parsed and validated cleanly.\n----------------------------------------------------------------\nBuild Result: FAILED\nErrors: 3, Warnings: 0\nEstimated AST Footprint: Statements: 12, Variables: 10, Expressions: 38, Source: 1055 bytes\nDuration: 0.014s\nHardware Lockout: ENFORCED (Zero PLC communication / No download)",
+  "diagnostics": [
+    {
+      "level": "ERROR",
+      "message": "Syntax error at line 9, col 32: Expected ')' after function arguments",
+      "line": 9,
+      "column": 32,
+      "file_path": "C:\\HornerAI\\horner-cscape-mcp\\artifacts\\projects\\LabProject_W01\\pous\\MainProcessControl.st",
+      "pou_name": "MainProcessControl",
+      "error_code": "ST_SYNTAX_ERROR",
+      "failure_location": {
+        "file_path": "MainProcessControl.st",
+        "full_path": "C:\\HornerAI\\horner-cscape-mcp\\artifacts\\projects\\LabProject_W01\\pous\\MainProcessControl.st",
+        "line": 9,
+        "column": 32,
+        "error_code": "ST_SYNTAX_ERROR",
+        "severity": "ERROR",
+        "message": "Syntax error at line 9, col 32: Expected ')' after function arguments"
+      }
+    },
+    {
+      "level": "ERROR",
+      "message": "Statement missing terminating semicolon: 'Filter1(RawInput := RawSensor1 SmoothingFactor := Alpha)'",
+      "line": 9,
+      "column": 57,
+      "file_path": "C:\\HornerAI\\horner-cscape-mcp\\artifacts\\projects\\LabProject_W01\\pous\\MainProcessControl.st",
+      "pou_name": "MainProcessControl",
+      "error_code": "ERR_MISSING_SEMICOLON",
+      "failure_location": {
+        "file_path": "MainProcessControl.st",
+        "full_path": "C:\\HornerAI\\horner-cscape-mcp\\artifacts\\projects\\LabProject_W01\\pous\\MainProcessControl.st",
+        "line": 9,
+        "column": 57,
+        "error_code": "ERR_MISSING_SEMICOLON",
+        "severity": "ERROR",
+        "message": "Statement missing terminating semicolon: 'Filter1(RawInput := RawSensor1 SmoothingFactor := Alpha)'"
+      }
+    },
+    {
+      "level": "ERROR",
+      "message": "Undeclared variable or identifier 'SmoothingFactor' used in logic.",
+      "line": 9,
+      "column": 32,
+      "file_path": "C:\\HornerAI\\horner-cscape-mcp\\artifacts\\projects\\LabProject_W01\\pous\\MainProcessControl.st",
+      "pou_name": "MainProcessControl",
+      "error_code": "ERR_UNDECLARED_VAR",
+      "failure_location": {
+        "file_path": "MainProcessControl.st",
+        "full_path": "C:\\HornerAI\\horner-cscape-mcp\\artifacts\\projects\\LabProject_W01\\pous\\MainProcessControl.st",
+        "line": 9,
+        "column": 32,
+        "error_code": "ERR_UNDECLARED_VAR",
+        "severity": "ERROR",
+        "message": "Undeclared variable or identifier 'SmoothingFactor' used in logic."
+      }
+    }
+  ],
+  "memory_footprint": {
+    "estimated_ast_footprint": {
+      "ast_statement_count": 12,
+      "ast_variable_count": 10,
+      "ast_expression_count": 38,
+      "source_bytes_total": 1055,
+      "pou_count": 2,
+      "target_architecture": "Horner OCS (XL4 Native CFBF)"
+    },
+    "ast_statement_count": 12,
+    "ast_variable_count": 10,
+    "ast_expression_count": 38,
+    "source_bytes_total": 1055,
+    "code_size_bytes": 1055,
+    "data_size_bytes": 40,
+    "retain_size_bytes": 0,
+    "total_size_bytes": 1095,
+    "target_architecture": "Horner OCS (XL4 Native CFBF)"
+  },
+  "hardware_lockout_enforced": true,
+  "message": "Compilation completed: FAILED (3 errors, 0 warnings)",
+  "compiled_at": "2026-09-07T03:48:59.339352+00:00",
+  "failure_locations": [
+    {
+      "file_path": "MainProcessControl.st",
+      "full_path": "C:\\HornerAI\\horner-cscape-mcp\\artifacts\\projects\\LabProject_W01\\pous\\MainProcessControl.st",
+      "line": 9,
+      "column": 32,
+      "error_code": "ST_SYNTAX_ERROR",
+      "severity": "ERROR",
+      "message": "Syntax error at line 9, col 32: Expected ')' after function arguments"
+    },
+    {
+      "file_path": "MainProcessControl.st",
+      "full_path": "C:\\HornerAI\\horner-cscape-mcp\\artifacts\\projects\\LabProject_W01\\pous\\MainProcessControl.st",
+      "line": 9,
+      "column": 57,
+      "error_code": "ERR_MISSING_SEMICOLON",
+      "severity": "ERROR",
+      "message": "Statement missing terminating semicolon: 'Filter1(RawInput := RawSensor1 SmoothingFactor := Alpha)'"
+    },
+    {
+      "file_path": "MainProcessControl.st",
+      "full_path": "C:\\HornerAI\\horner-cscape-mcp\\artifacts\\projects\\LabProject_W01\\pous\\MainProcessControl.st",
+      "line": 9,
+      "column": 32,
+      "error_code": "ERR_UNDECLARED_VAR",
+      "severity": "ERROR",
+      "message": "Undeclared variable or identifier 'SmoothingFactor' used in logic."
+    }
+  ],
+  "failure_location": {
+    "file_path": "MainProcessControl.st",
+    "full_path": "C:\\HornerAI\\horner-cscape-mcp\\artifacts\\projects\\LabProject_W01\\pous\\MainProcessControl.st",
+    "line": 9,
+    "column": 32,
+    "error_code": "ST_SYNTAX_ERROR",
+    "severity": "ERROR",
+    "message": "Syntax error at line 9, col 32: Expected ')' after function arguments"
+  },
+  "compile_successful": false,
+  "clean_build": true,
+  "pous_compiled": [
+    "MainProcessControl",
+    "ScaleAnalogFilter"
+  ]
+}

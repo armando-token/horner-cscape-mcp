@@ -1,0 +1,13 @@
+=== Horner Cscape 10.2 Compile Pass: Fail_SyntaxNearSemi_Location_Proj ===
+Clean Build: True
+Mode: IEC 61131-3 Structured Text (Advanced Ladder Excluded)
+Timestamp: 2026-09-04T14:57:42.660118
+----------------------------------------------------------------
+Compiling POU: POU_SyntaxNearSemi (143 bytes)...
+  POU_SyntaxNearSemi.st(7,28): error ST_SYNTAX_ERROR: Syntax error at line 7, col 28: Unexpected token in expression: SEMICOLON (';')
+----------------------------------------------------------------
+Build Result: FAILED
+Errors: 1, Warnings: 0
+Estimated Code Size: 1024 bytes, Data Size: 512 bytes
+Duration: 0.011s
+Hardware Lockout: ENFORCED (Zero PLC communication / No download)

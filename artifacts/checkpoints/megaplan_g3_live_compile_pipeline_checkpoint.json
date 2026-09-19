@@ -1,0 +1,37 @@
+{
+  "gate": "G3",
+  "name": "megaplan_g3_live_compile_pipeline_checkpoint",
+  "status": "success",
+  "timestamp_utc": "2026-09-06T11:43:46.709Z",
+  "mandate": "MEGAPLAN v1.0 Gate G3: Live GUI Error Check (32826) & FastMCP Stdio Compilation Pipeline",
+  "dual_root_parity": true,
+  "live_cscape_target": {
+    "pid": 10892,
+    "hwnd": "0x01B005DC",
+    "project": "TankLevelClosedLoop.csp",
+    "window_title": "Cscape - Logged In : \"armando@controlnautas.com\" - [TankLevelClosedLoop.csp]",
+    "desktop": "winsta0\\Default",
+    "classification": "VERIFIED_LIVE (Live Cscape GUI Error Check)"
+  },
+  "compilation_pipeline_verified": {
+    "command_dispatched": "ID_PROGRAM_ERRORCHECK (32826 / Ctrl+F7)",
+    "clean_compile_result": "0 errors, 0 warnings",
+    "ast_footprint_metrics": "Honest AST estimate (offline/DEV classification)",
+    "ladder_rejection": "ERR_LADDER_FORBIDDEN strictly enforced on ladder contacts/rungs",
+    "hardware_lockout": "ID_CONTROLLER_DOWNLOAD (32827) and ID_CONTROLLER_DOWNLOAD_ALT (33149) unconditionally blocked fail-closed"
+  },
+  "verification_classification": {
+    "offline_compilation_and_ast": "offline/DEV (TESTED_MOCK)",
+    "live_gui_error_check": "VERIFIED_LIVE (Live Cscape GUI Error Check)"
+  },
+  "test_suites_verified": {
+    "test_compilation": "10 passed, 0 failed [offline/DEV]",
+    "test_cscape_compiler": "17 passed, 0 failed [offline/DEV]",
+    "test_compiler_diagnostics_audit": "6 passed, 0 failed [offline/DEV]",
+    "test_intentional_diagnostics": "30 passed, 0 failed [offline/DEV]",
+    "test_diagnostics": "8 passed, 0 failed [offline/DEV]",
+    "test_mcp_compile_project_audit": "13 passed, 0 failed [offline/DEV]",
+    "total_g3_tests_verified": 84,
+    "total_g3_tests_failed": 0
+  }
+}

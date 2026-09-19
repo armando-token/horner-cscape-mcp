@@ -1,0 +1,234 @@
+{
+  "audit_step": 68,
+  "name": "Exothermic CSTR Liquid Inventory & Coolant Jacket Cascade Runaway Quench Closed-Loop Audit",
+  "timestamp": "2026-09-05T10:49:39.391Z",
+  "completed_at": "2026-09-05T10:49:45.672Z",
+  "cscape_pid": 8660,
+  "cscape_hwnd": "0x147068c",
+  "total_cycles": 600,
+  "metrics": {
+    "max_phase1_level_error_pct": 0.0,
+    "mean_phase1_level_error_pct": 0.0,
+    "max_phase2_uncomp_drift_pct": 7.38,
+    "mean_phase2_uncomp_drift_pct": 5.41,
+    "max_phase3_comp_error_pct": 0.0,
+    "mean_phase3_comp_error_pct": 0.0,
+    "thermal_runaway_rejection_pct": 100.0,
+    "phase4_final_level_error_pct": 0.1138,
+    "phase4_mean_tail_level_error_pct": 0.0703,
+    "high_high_rupture_interlock_trip_cycle": 501,
+    "high_high_trip_level_pct": 85.0
+  },
+  "trace_samples": [
+    {
+      "cycle": 0,
+      "phase": "PHASE_1_EQUILIBRIUM_CSTR",
+      "target_sp": 50.0,
+      "reactor_level": 50.0,
+      "q_rxn_kw": 40.0,
+      "rupture_trip": false,
+      "cv_pid": 50.0
+    },
+    {
+      "cycle": 50,
+      "phase": "PHASE_1_EQUILIBRIUM_CSTR",
+      "target_sp": 50.0,
+      "reactor_level": 50.0,
+      "q_rxn_kw": 40.0,
+      "rupture_trip": false,
+      "cv_pid": 50.0
+    },
+    {
+      "cycle": 100,
+      "phase": "PHASE_1_EQUILIBRIUM_CSTR",
+      "target_sp": 50.0,
+      "reactor_level": 50.0,
+      "q_rxn_kw": 40.0,
+      "rupture_trip": false,
+      "cv_pid": 50.0
+    },
+    {
+      "cycle": 101,
+      "phase": "PHASE_2_EXOTHERMIC_RUNAWAY_UNCOMP",
+      "target_sp": 50.0,
+      "reactor_level": 50.025,
+      "q_rxn_kw": 40.4,
+      "rupture_trip": false,
+      "cv_pid": 50.0
+    },
+    {
+      "cycle": 125,
+      "phase": "PHASE_2_EXOTHERMIC_RUNAWAY_UNCOMP",
+      "target_sp": 50.0,
+      "reactor_level": 55.01,
+      "q_rxn_kw": 50.0,
+      "rupture_trip": false,
+      "cv_pid": 42.18
+    },
+    {
+      "cycle": 150,
+      "phase": "PHASE_2_EXOTHERMIC_RUNAWAY_UNCOMP",
+      "target_sp": 50.0,
+      "reactor_level": 57.324,
+      "q_rxn_kw": 60.0,
+      "rupture_trip": false,
+      "cv_pid": 24.52
+    },
+    {
+      "cycle": 175,
+      "phase": "PHASE_2_EXOTHERMIC_RUNAWAY_UNCOMP",
+      "target_sp": 50.0,
+      "reactor_level": 56.148,
+      "q_rxn_kw": 70.0,
+      "rupture_trip": false,
+      "cv_pid": 11.85
+    },
+    {
+      "cycle": 200,
+      "phase": "PHASE_2_EXOTHERMIC_RUNAWAY_UNCOMP",
+      "target_sp": 50.0,
+      "reactor_level": 56.079,
+      "q_rxn_kw": 80.0,
+      "rupture_trip": false,
+      "cv_pid": 0.27
+    },
+    {
+      "cycle": 201,
+      "phase": "PHASE_3_CASCADE_QUENCH_DECOUPLING",
+      "target_sp": 50.0,
+      "reactor_level": 50.0,
+      "q_rxn_kw": 80.0,
+      "rupture_trip": false,
+      "cv_pid": 50.0
+    },
+    {
+      "cycle": 225,
+      "phase": "PHASE_3_CASCADE_QUENCH_DECOUPLING",
+      "target_sp": 50.0,
+      "reactor_level": 50.0,
+      "q_rxn_kw": 80.0,
+      "rupture_trip": false,
+      "cv_pid": 50.0
+    },
+    {
+      "cycle": 250,
+      "phase": "PHASE_3_CASCADE_QUENCH_DECOUPLING",
+      "target_sp": 50.0,
+      "reactor_level": 50.0,
+      "q_rxn_kw": 80.0,
+      "rupture_trip": false,
+      "cv_pid": 50.0
+    },
+    {
+      "cycle": 275,
+      "phase": "PHASE_3_CASCADE_QUENCH_DECOUPLING",
+      "target_sp": 50.0,
+      "reactor_level": 50.0,
+      "q_rxn_kw": 80.0,
+      "rupture_trip": false,
+      "cv_pid": 50.0
+    },
+    {
+      "cycle": 300,
+      "phase": "PHASE_3_CASCADE_QUENCH_DECOUPLING",
+      "target_sp": 50.0,
+      "reactor_level": 50.0,
+      "q_rxn_kw": 80.0,
+      "rupture_trip": false,
+      "cv_pid": 50.0
+    },
+    {
+      "cycle": 350,
+      "phase": "PHASE_3_CASCADE_QUENCH_DECOUPLING",
+      "target_sp": 50.0,
+      "reactor_level": 50.0,
+      "q_rxn_kw": 80.0,
+      "rupture_trip": false,
+      "cv_pid": 50.0
+    },
+    {
+      "cycle": 351,
+      "phase": "PHASE_4_DYNAMIC_INVENTORY_STEP",
+      "target_sp": 65.0,
+      "reactor_level": 51.26,
+      "q_rxn_kw": 65.0,
+      "rupture_trip": false,
+      "cv_pid": 75.2
+    },
+    {
+      "cycle": 400,
+      "phase": "PHASE_4_DYNAMIC_INVENTORY_STEP",
+      "target_sp": 65.0,
+      "reactor_level": 66.427,
+      "q_rxn_kw": 65.0,
+      "rupture_trip": false,
+      "cv_pid": 42.79
+    },
+    {
+      "cycle": 450,
+      "phase": "PHASE_4_DYNAMIC_INVENTORY_STEP",
+      "target_sp": 65.0,
+      "reactor_level": 65.236,
+      "q_rxn_kw": 65.0,
+      "rupture_trip": false,
+      "cv_pid": 51.0
+    },
+    {
+      "cycle": 500,
+      "phase": "PHASE_4_DYNAMIC_INVENTORY_STEP",
+      "target_sp": 65.0,
+      "reactor_level": 64.886,
+      "q_rxn_kw": 65.0,
+      "rupture_trip": false,
+      "cv_pid": 49.95
+    },
+    {
+      "cycle": 501,
+      "phase": "PHASE_5_HIGH_HIGH_RUPTURE_TRIP",
+      "target_sp": 65.0,
+      "reactor_level": 64.886,
+      "q_rxn_kw": 25.0,
+      "rupture_trip": true,
+      "cv_pid": 49.96
+    },
+    {
+      "cycle": 520,
+      "phase": "PHASE_5_HIGH_HIGH_RUPTURE_TRIP",
+      "target_sp": 65.0,
+      "reactor_level": 64.886,
+      "q_rxn_kw": 25.0,
+      "rupture_trip": true,
+      "cv_pid": 50.19
+    },
+    {
+      "cycle": 550,
+      "phase": "PHASE_5_HIGH_HIGH_RUPTURE_TRIP",
+      "target_sp": 65.0,
+      "reactor_level": 64.886,
+      "q_rxn_kw": 25.0,
+      "rupture_trip": true,
+      "cv_pid": 50.46
+    },
+    {
+      "cycle": 599,
+      "phase": "PHASE_5_HIGH_HIGH_RUPTURE_TRIP",
+      "target_sp": 65.0,
+      "reactor_level": 64.886,
+      "q_rxn_kw": 25.0,
+      "rupture_trip": true,
+      "cv_pid": 50.9
+    }
+  ],
+  "cscape_health": {
+    "healthy": true,
+    "pid": 8660,
+    "hwnd": "0x147068c",
+    "desktop": "Default",
+    "is_hung": false,
+    "wm_null_ping_ok": true,
+    "working_set_mb": 61.91,
+    "num_threads": 11,
+    "uptime_sec": 802.28
+  },
+  "download_lockout_verified": true
+}

@@ -1,0 +1,601 @@
+{
+  "title": "MCP Variable Memory Collision & Boundary Audit",
+  "timestamp_utc": "2026-09-05T06:12:27.058830+00:00",
+  "auditor": "MCP Variable Memory Collision & Boundary Auditor Subagent",
+  "cscape_version": "10.20.0.0",
+  "zero_physical_plc_download": true,
+  "zero_straton_k5_tools": true,
+  "steps": {
+    "step1_cscape_gate": {
+      "status": "PASSED",
+      "gate_path": "C:\\Users\\ArmandoSilva\\artifacts\\.cscape_live_gate.json",
+      "gate_data": {
+        "ready_for_tests": true,
+        "status": "READY_FOR_TESTS",
+        "pid": 7616,
+        "hwnd": "0x007B06D6",
+        "window_title": "Cscape - Logged In : \"armando@controlnautas.com\" - [TankLevelClosedLoop.csp]",
+        "project_file": "C:\\Users\\ArmandoSilva\\artifacts\\projects\\TankLevelClosedLoop\\TankLevelClosedLoop.csp",
+        "exit_code": null,
+        "reason": "TankLevelClosedLoop verified active and responsive",
+        "cycle": 1,
+        "timestamp_utc": "2026-09-05T06:12:26.531Z"
+      },
+      "pid": 7616,
+      "hwnd": "0x007B06D6",
+      "window_title": "Cscape - Logged In : \"armando@controlnautas.com\" - [TankLevelClosedLoop.csp]",
+      "project_file": "C:\\Users\\ArmandoSilva\\artifacts\\projects\\TankLevelClosedLoop\\TankLevelClosedLoop.csp",
+      "ready_for_tests": true
+    },
+    "step2_tanklevel_variables_schema": {
+      "status": "PASSED",
+      "csv_path": "C:\\Users\\ArmandoSilva\\artifacts\\projects\\TankLevelClosedLoop\\variables.csv",
+      "sha256": "d78f07a0036d0f498b79192e6708a83e2a722751dc9701a0601be85709311a16",
+      "file_size_bytes": 2166,
+      "total_lines_including_header": 22,
+      "active_tags_count": 21,
+      "validation_status": "VALID",
+      "validation_errors": [],
+      "conflicts_detected": 0,
+      "tag_footprints": {
+        "AlarmHigh": {
+          "tag": "%M8",
+          "data_type": "BOOL",
+          "scope": "globals",
+          "occupied_registers": [
+            "%M8"
+          ],
+          "words_spanned": 1,
+          "description": "High Level Warning Alarm"
+        },
+        "AlarmHighHigh": {
+          "tag": "%M7",
+          "data_type": "BOOL",
+          "scope": "globals",
+          "occupied_registers": [
+            "%M7"
+          ],
+          "words_spanned": 1,
+          "description": "High-High Level Critical Trip Alarm"
+        },
+        "AlarmLow": {
+          "tag": "%M9",
+          "data_type": "BOOL",
+          "scope": "globals",
+          "occupied_registers": [
+            "%M9"
+          ],
+          "words_spanned": 1,
+          "description": "Low Level Warning Alarm"
+        },
+        "AlarmLowLow": {
+          "tag": "%M10",
+          "data_type": "BOOL",
+          "scope": "globals",
+          "occupied_registers": [
+            "%M10"
+          ],
+          "words_spanned": 1,
+          "description": "Low-Low Level Critical Dry-Run Trip Alarm"
+        },
+        "ControlOutput": {
+          "tag": "%R7",
+          "data_type": "REAL",
+          "scope": "globals",
+          "occupied_registers": [
+            "%R7",
+            "%R8"
+          ],
+          "words_spanned": 2,
+          "description": "Calculated PID Manipulated Variable Output (0.0 - 100.0%)"
+        },
+        "CycleCounter": {
+          "tag": "%R21",
+          "data_type": "DINT",
+          "scope": "globals",
+          "occupied_registers": [
+            "%R21",
+            "%R22"
+          ],
+          "words_spanned": 2,
+          "description": "Total Tank Cycles Completed"
+        },
+        "DI_EStop_Healthy": {
+          "tag": "%I3",
+          "data_type": "BOOL",
+          "scope": "globals",
+          "occupied_registers": [
+            "%I3"
+          ],
+          "words_spanned": 1,
+          "description": "Emergency Stop Dual-Channel NC Healthy Contact"
+        },
+        "DI_LSHH_Level_Float": {
+          "tag": "%I4",
+          "data_type": "BOOL",
+          "scope": "globals",
+          "occupied_registers": [
+            "%I4"
+          ],
+          "words_spanned": 1,
+          "description": "High-High Level Hardwired Float Switch NC Contact"
+        },
+        "DI_System_Start_PB": {
+          "tag": "%I1",
+          "data_type": "BOOL",
+          "scope": "globals",
+          "occupied_registers": [
+            "%I1"
+          ],
+          "words_spanned": 1,
+          "description": "Panel System Start Pushbutton NO Contact"
+        },
+        "DI_System_Stop_PB": {
+          "tag": "%I2",
+          "data_type": "BOOL",
+          "scope": "globals",
+          "occupied_registers": [
+            "%I2"
+          ],
+          "words_spanned": 1,
+          "description": "Panel System Stop Pushbutton NC Fail-Safe Contact"
+        },
+        "InflowValveCmd": {
+          "tag": "%Q2",
+          "data_type": "BOOL",
+          "scope": "globals",
+          "occupied_registers": [
+            "%Q2"
+          ],
+          "words_spanned": 1,
+          "description": "Inlet Emergency Isolation Solenoid Valve"
+        },
+        "Kd": {
+          "tag": "%R33",
+          "data_type": "REAL",
+          "scope": "globals",
+          "occupied_registers": [
+            "%R33",
+            "%R34"
+          ],
+          "words_spanned": 2,
+          "description": "PID Derivative Rate Time Constant"
+        },
+        "Ki": {
+          "tag": "%R31",
+          "data_type": "REAL",
+          "scope": "globals",
+          "occupied_registers": [
+            "%R31",
+            "%R32"
+          ],
+          "words_spanned": 2,
+          "description": "PID Integral Reset Time Constant"
+        },
+        "Kp": {
+          "tag": "%R29",
+          "data_type": "REAL",
+          "scope": "globals",
+          "occupied_registers": [
+            "%R29",
+            "%R30"
+          ],
+          "words_spanned": 2,
+          "description": "PID Proportional Gain Constant"
+        },
+        "ManualOutput": {
+          "tag": "%R9",
+          "data_type": "REAL",
+          "scope": "globals",
+          "occupied_registers": [
+            "%R9",
+            "%R10"
+          ],
+          "words_spanned": 2,
+          "description": "Manual Operator Output Setting (0.0 - 100.0%)"
+        },
+        "PumpRunCmd": {
+          "tag": "%Q1",
+          "data_type": "BOOL",
+          "scope": "globals",
+          "occupied_registers": [
+            "%Q1"
+          ],
+          "words_spanned": 1,
+          "description": "Inlet Feed Pump Contactor Coil Command Output"
+        },
+        "RawLevelInput": {
+          "tag": "%AI1",
+          "data_type": "INT",
+          "scope": "globals",
+          "occupied_registers": [
+            "%AI1"
+          ],
+          "words_spanned": 1,
+          "description": "Tank Level Sensor 4-20mA Raw ADC Counts (0-32000)"
+        },
+        "RawPumpOutput": {
+          "tag": "%AQ1",
+          "data_type": "INT",
+          "scope": "globals",
+          "occupied_registers": [
+            "%AQ1"
+          ],
+          "words_spanned": 1,
+          "description": "Inflow Modulating Valve Positioner 4-20mA (0-32000)"
+        },
+        "RawValveOutput": {
+          "tag": "%AQ2",
+          "data_type": "INT",
+          "scope": "globals",
+          "occupied_registers": [
+            "%AQ2"
+          ],
+          "words_spanned": 1,
+          "description": "Inflow Solenoid Valve Positioner (0-32000)"
+        },
+        "Setpoint": {
+          "tag": "%R3",
+          "data_type": "REAL",
+          "scope": "globals",
+          "occupied_registers": [
+            "%R3",
+            "%R4"
+          ],
+          "words_spanned": 2,
+          "description": "Active Tank Level Setpoint (0.0 - 100.0%)"
+        },
+        "TankLevelPV": {
+          "tag": "%R1",
+          "data_type": "REAL",
+          "scope": "globals",
+          "occupied_registers": [
+            "%R1",
+            "%R2"
+          ],
+          "words_spanned": 2,
+          "description": "Scaled Tank Level Process Variable (0.0 - 100.0%)"
+        }
+      }
+    },
+    "step3_boundary_limits": {
+      "status": "PASSED",
+      "tested_types_count": 8,
+      "boundaries": {
+        "%R": {
+          "min_index": 1,
+          "max_index": 9999,
+          "min_valid_tested": "%R1",
+          "min_valid_passed": true,
+          "max_valid_tested": "%R9999",
+          "max_valid_passed": true,
+          "zero_index_rejected_fail_closed": true,
+          "zero_index_error_message": "Register index 0 out of bounds for %R (valid: 1..9999) in '%R0'",
+          "above_max_rejected_fail_closed": true,
+          "above_max_tested": "%R10000",
+          "above_max_error_message": "Register index 10000 out of bounds for %R (valid: 1..9999) in '%R10000'",
+          "negative_index_rejected_fail_closed": true
+        },
+        "%M": {
+          "min_index": 1,
+          "max_index": 2048,
+          "min_valid_tested": "%M1",
+          "min_valid_passed": true,
+          "max_valid_tested": "%M2048",
+          "max_valid_passed": true,
+          "zero_index_rejected_fail_closed": true,
+          "zero_index_error_message": "Register index 0 out of bounds for %M (valid: 1..2048) in '%M0'",
+          "above_max_rejected_fail_closed": true,
+          "above_max_tested": "%M2049",
+          "above_max_error_message": "Register index 2049 out of bounds for %M (valid: 1..2048) in '%M2049'",
+          "negative_index_rejected_fail_closed": true
+        },
+        "%AI": {
+          "min_index": 1,
+          "max_index": 512,
+          "min_valid_tested": "%AI1",
+          "min_valid_passed": true,
+          "max_valid_tested": "%AI512",
+          "max_valid_passed": true,
+          "zero_index_rejected_fail_closed": true,
+          "zero_index_error_message": "Register index 0 out of bounds for %AI (valid: 1..512) in '%AI0'",
+          "above_max_rejected_fail_closed": true,
+          "above_max_tested": "%AI513",
+          "above_max_error_message": "Register index 513 out of bounds for %AI (valid: 1..512) in '%AI513'",
+          "negative_index_rejected_fail_closed": true
+        },
+        "%AQ": {
+          "min_index": 1,
+          "max_index": 512,
+          "min_valid_tested": "%AQ1",
+          "min_valid_passed": true,
+          "max_valid_tested": "%AQ512",
+          "max_valid_passed": true,
+          "zero_index_rejected_fail_closed": true,
+          "zero_index_error_message": "Register index 0 out of bounds for %AQ (valid: 1..512) in '%AQ0'",
+          "above_max_rejected_fail_closed": true,
+          "above_max_tested": "%AQ513",
+          "above_max_error_message": "Register index 513 out of bounds for %AQ (valid: 1..512) in '%AQ513'",
+          "negative_index_rejected_fail_closed": true
+        },
+        "%I": {
+          "min_index": 1,
+          "max_index": 2048,
+          "min_valid_tested": "%I1",
+          "min_valid_passed": true,
+          "max_valid_tested": "%I2048",
+          "max_valid_passed": true,
+          "zero_index_rejected_fail_closed": true,
+          "zero_index_error_message": "Register index 0 out of bounds for %I (valid: 1..2048) in '%I0'",
+          "above_max_rejected_fail_closed": true,
+          "above_max_tested": "%I2049",
+          "above_max_error_message": "Register index 2049 out of bounds for %I (valid: 1..2048) in '%I2049'",
+          "negative_index_rejected_fail_closed": true
+        },
+        "%Q": {
+          "min_index": 1,
+          "max_index": 2048,
+          "min_valid_tested": "%Q1",
+          "min_valid_passed": true,
+          "max_valid_tested": "%Q2048",
+          "max_valid_passed": true,
+          "zero_index_rejected_fail_closed": true,
+          "zero_index_error_message": "Register index 0 out of bounds for %Q (valid: 1..2048) in '%Q0'",
+          "above_max_rejected_fail_closed": true,
+          "above_max_tested": "%Q2049",
+          "above_max_error_message": "Register index 2049 out of bounds for %Q (valid: 1..2048) in '%Q2049'",
+          "negative_index_rejected_fail_closed": true
+        },
+        "%S": {
+          "min_index": 1,
+          "max_index": 128,
+          "min_valid_tested": "%S1",
+          "min_valid_passed": true,
+          "max_valid_tested": "%S128",
+          "max_valid_passed": true,
+          "zero_index_rejected_fail_closed": true,
+          "zero_index_error_message": "Register index 0 out of bounds for %S (valid: 1..128) in '%S0'",
+          "above_max_rejected_fail_closed": true,
+          "above_max_tested": "%S129",
+          "above_max_error_message": "Register index 129 out of bounds for %S (valid: 1..128) in '%S129'",
+          "negative_index_rejected_fail_closed": true
+        },
+        "%SR": {
+          "min_index": 1,
+          "max_index": 256,
+          "min_valid_tested": "%SR1",
+          "min_valid_passed": true,
+          "max_valid_tested": "%SR256",
+          "max_valid_passed": true,
+          "zero_index_rejected_fail_closed": true,
+          "zero_index_error_message": "Register index 0 out of bounds for %SR (valid: 1..256) in '%SR0'",
+          "above_max_rejected_fail_closed": true,
+          "above_max_tested": "%SR257",
+          "above_max_error_message": "Register index 257 out of bounds for %SR (valid: 1..256) in '%SR257'",
+          "negative_index_rejected_fail_closed": true
+        }
+      }
+    },
+    "step4_bit_of_word_indexing": {
+      "status": "PASSED",
+      "r100_bits_1_to_16_verified": true,
+      "r100_bits_count": 16,
+      "sr43_1_verified": {
+        "address": "%SR43.1",
+        "prefix": "%SR",
+        "index": 43,
+        "bit": 1,
+        "valid": true
+      },
+      "r100_17_exceeding_word_bits_rejected": {
+        "address": "%R100.17",
+        "rejected_fail_closed": true,
+        "error_message": "Bit offset in register '%R100.17' out of range (0..16): 17"
+      },
+      "m1_1_discrete_bit_offset_rejected": {
+        "address": "%M1.1",
+        "rejected_fail_closed": true,
+        "error_message": "Bit offset not allowed on discrete bit register '%M' in '%M1.1'"
+      },
+      "all_discrete_registers_bit_offset_rejections": {
+        "%M": {
+          "tested_address": "%M1.1",
+          "rejected_fail_closed": true,
+          "rejection_message": "Bit offset not allowed on discrete bit register '%M' in '%M1.1'"
+        },
+        "%I": {
+          "tested_address": "%I1.1",
+          "rejected_fail_closed": true,
+          "rejection_message": "Bit offset not allowed on discrete bit register '%I' in '%I1.1'"
+        },
+        "%Q": {
+          "tested_address": "%Q1.1",
+          "rejected_fail_closed": true,
+          "rejection_message": "Bit offset not allowed on discrete bit register '%Q' in '%Q1.1'"
+        },
+        "%T": {
+          "tested_address": "%T1.1",
+          "rejected_fail_closed": true,
+          "rejection_message": "Bit offset not allowed on discrete bit register '%T' in '%T1.1'"
+        },
+        "%S": {
+          "tested_address": "%S1.1",
+          "rejected_fail_closed": true,
+          "rejection_message": "Bit offset not allowed on discrete bit register '%S' in '%S1.1'"
+        }
+      }
+    },
+    "step5_collision_injection": {
+      "status": "PASSED",
+      "scenario_a_real_word_span": {
+        "variable": "AllocatedReal50",
+        "type": "REAL",
+        "tag": "%R50",
+        "occupied_registers": [
+          "%R50",
+          "%R51"
+        ],
+        "total_words": 2
+      },
+      "scenario_b_int_collision_at_r51": {
+        "attempted_variable": "ConflictingInt51",
+        "type": "INT",
+        "tag": "%R51",
+        "occupied_registers": [
+          "%R51"
+        ],
+        "collision_detected": true,
+        "status": "REJECTED_FAIL_CLOSED",
+        "conflict_details": {
+          "variable1": "AllocatedReal50",
+          "scope1": "globals",
+          "register1": "%R50",
+          "type1": "REAL",
+          "spanned1": [
+            "%R50",
+            "%R51"
+          ],
+          "variable2": "ConflictingInt51",
+          "scope2": "globals",
+          "register2": "%R51",
+          "type2": "INT",
+          "spanned2": [
+            "%R51"
+          ],
+          "overlapping_registers": [
+            "%R51"
+          ],
+          "reason": "Memory overlap between AllocatedReal50 (%R50) and ConflictingInt51 (%R51) on %R51"
+        }
+      },
+      "scenario_c_lreal_overlap_at_r50": {
+        "attempted_variable": "OverlapLReal50",
+        "type": "LREAL",
+        "tag": "%R50",
+        "occupied_registers": [
+          "%R50",
+          "%R51",
+          "%R52",
+          "%R53"
+        ],
+        "collision_detected": true,
+        "status": "REJECTED_FAIL_CLOSED",
+        "conflict_details": {
+          "variable1": "BaseReal50",
+          "scope1": "globals",
+          "register1": "%R50",
+          "type1": "REAL",
+          "spanned1": [
+            "%R50",
+            "%R51"
+          ],
+          "variable2": "OverlapLReal50",
+          "scope2": "globals",
+          "register2": "%R50",
+          "type2": "LREAL",
+          "spanned2": [
+            "%R50",
+            "%R51",
+            "%R52",
+            "%R53"
+          ],
+          "overlapping_registers": [
+            "%R50",
+            "%R51"
+          ],
+          "reason": "Memory overlap between BaseReal50 (%R50) and OverlapLReal50 (%R50) on %R50, %R51"
+        }
+      },
+      "scenario_d_mcp_tool_fail_closed_validation": {
+        "tool": "cscape_write_variables",
+        "validation_status": "INVALID",
+        "conflicts_detected": 3,
+        "conflict_details": [
+          {
+            "variable1": "AllocatedReal50",
+            "scope1": "globals",
+            "register1": "%R50",
+            "type1": "REAL",
+            "spanned1": [
+              "%R50",
+              "%R51"
+            ],
+            "variable2": "ConflictingInt51",
+            "scope2": "globals",
+            "register2": "%R51",
+            "type2": "INT",
+            "spanned2": [
+              "%R51"
+            ],
+            "overlapping_registers": [
+              "%R51"
+            ],
+            "reason": "Memory overlap between AllocatedReal50 (%R50) and ConflictingInt51 (%R51) on %R51"
+          },
+          {
+            "variable1": "AllocatedReal50",
+            "scope1": "globals",
+            "register1": "%R50",
+            "type1": "REAL",
+            "spanned1": [
+              "%R50",
+              "%R51"
+            ],
+            "variable2": "OverlapLReal50",
+            "scope2": "globals",
+            "register2": "%R50",
+            "type2": "LREAL",
+            "spanned2": [
+              "%R50",
+              "%R51",
+              "%R52",
+              "%R53"
+            ],
+            "overlapping_registers": [
+              "%R50",
+              "%R51"
+            ],
+            "reason": "Memory overlap between AllocatedReal50 (%R50) and OverlapLReal50 (%R50) on %R50, %R51"
+          },
+          {
+            "variable1": "ConflictingInt51",
+            "scope1": "globals",
+            "register1": "%R51",
+            "type1": "INT",
+            "spanned1": [
+              "%R51"
+            ],
+            "variable2": "OverlapLReal50",
+            "scope2": "globals",
+            "register2": "%R50",
+            "type2": "LREAL",
+            "spanned2": [
+              "%R50",
+              "%R51",
+              "%R52",
+              "%R53"
+            ],
+            "overlapping_registers": [
+              "%R51"
+            ],
+            "reason": "Memory overlap between ConflictingInt51 (%R51) and OverlapLReal50 (%R50) on %R51"
+          }
+        ]
+      }
+    },
+    "step6_multiformat_roundtrip_fidelity": {
+      "status": "PASSED",
+      "pipeline": "In-Memory -> CSV -> XML -> CSV",
+      "variables_count": 21,
+      "step1_csv_sha256": "4f8baa40fe0f5a5b9891b7b80e76f7468ee4e6863c394bdd7bf64445ee155a61",
+      "step2_xml_sha256": "55c12aa3bb0600b9cdfb5c20a23d18497caf713ef06df1a94f8844b1696d4df3",
+      "step3_csv_sha256": "4f8baa40fe0f5a5b9891b7b80e76f7468ee4e6863c394bdd7bf64445ee155a61",
+      "exact_sha256_match": true,
+      "byte_lengths": {
+        "step1_csv_bytes": 2166,
+        "step2_xml_bytes": 4022,
+        "step3_csv_bytes": 2166
+      }
+    }
+  }
+}

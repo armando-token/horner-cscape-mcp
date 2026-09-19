@@ -1,0 +1,256 @@
+{
+  "mission_id": "G1_FALSE_SUCCESS_C4_AUDIT_OFFLINE_v2",
+  "audit_phase": "G1_FALSE_SUCCESS_DISMANTLING_AND_NEGATIVE_TESTS_V2",
+  "completed_at_utc": "2026-09-09T01:06:20.839815+00:00",
+  "operational_mode": "offline/DEV only (no Cscape GUI, no PLC, no hardware)",
+  "test_suite": "tests/test_g1_false_success_negative_cases.py",
+  "test_execution": {
+    "total_tests": 28,
+    "passed": 28,
+    "failed": 0,
+    "duration_seconds": 5.02,
+    "coverage": "100% of cataloged false-success vulnerabilities across 28 negative test cases"
+  },
+  "h01_to_h13_execution": {
+    "test_suite": "tests/test_step190_g1_false_success_audit.py",
+    "total_tests": 16,
+    "passed": 16,
+    "failed": 0,
+    "duration_seconds": 5.3
+  },
+  "dismantled_cases": {
+    "CASE_01": {
+      "name": "cscape_run_simulation - Empty Simulation Loop",
+      "target_file": "src/mcp/tools.py",
+      "vulnerability": "Empty or None st_code returned status: success and success: True on 0 POUs.",
+      "fix": "Fail closed on empty or whitespace st_code: status='failed', error_code='INVALID_ST_CODE'.",
+      "negative_test": "test_case01_simulation_empty_st_code_fails_closed",
+      "status": "success"
+    },
+    "CASE_02": {
+      "name": "cscape_inspect_variables - Success on Missing Project / Broken POUs",
+      "target_file": "src/mcp/tools.py",
+      "vulnerability": "Non-existent project or missing pous dir returned status: success with 0 variables.",
+      "fix": "Validate project_name via SafetyGuard.validate_project_name(); fail closed if missing: status='failed', error_code='PROJECT_NOT_FOUND'.",
+      "negative_test": "test_case02_inspect_variables_missing_or_empty_project_fails_closed",
+      "status": "success"
+    },
+    "CASE_03": {
+      "name": "cscape_insert_st & cscape_add_st_pou - Missing POU Name Validation",
+      "target_file": "src/mcp/tools.py",
+      "vulnerability": "Unsanitized pou_name allowed traversal or empty POU names while reporting success: True.",
+      "fix": "Enforced SafetyGuard.validate_pou_name() and pou_type validation at entry.",
+      "negative_test": "test_case03_insert_pou_invalid_name_or_traversal_fails_closed",
+      "status": "success"
+    },
+    "CASE_04": {
+      "name": "cscape_write_variables - Success on Empty Variable List",
+      "target_file": "src/mcp/tools.py",
+      "vulnerability": "Writing 0 variables returned success: True, written_count: 0.",
+      "fix": "Fail closed if total_count == 0: status='failed', error_code='EMPTY_VARIABLE_LIST'. Enforce success = (is_valid and total_count > 0).",
+      "negative_test": "test_case04_write_variables_empty_list_fails_closed",
+      "status": "success"
+    },
+    "CASE_05": {
+      "name": "cscape_read_variables - Success on Empty Database or Path",
+      "target_file": "src/mcp/tools.py",
+      "vulnerability": "Empty variables file with 0 records returned success: True.",
+      "fix": "Require non-empty file_path; fail closed if count == 0: status='failed', error_code='EMPTY_VARIABLE_DATABASE'.",
+      "negative_test": "test_case05_read_variables_empty_file_or_path_fails_closed",
+      "status": "success"
+    },
+    "CASE_06": {
+      "name": "cscape_get_build_output - Hardcoded success: True on Failed Build",
+      "target_file": "src/mcp/tools.py",
+      "vulnerability": "Dict explicitly set success: True while setting status: failed on build error.",
+      "fix": "Set success = build_successful.",
+      "negative_test": "test_case06_get_build_output_failed_build_honest_success",
+      "status": "success"
+    },
+    "CASE_07": {
+      "name": "cscape_get_diagnostics - Compile Successful & Clean Build Overrides",
+      "target_file": "src/mcp/tools.py",
+      "vulnerability": "Defaulted compile_successful to True, clean_build hardcoded to True, empty project defaulted to cwd.",
+      "fix": "Reject empty project name; set clean_build = bool(compile_ok and warning_count == 0 and error_count == 0).",
+      "negative_test": "test_case07_get_diagnostics_empty_project_and_failed_build",
+      "status": "success"
+    },
+    "CASE_08": {
+      "name": "get_active_simulator - Non-Existent Project Execution",
+      "target_file": "src/mcp/tools.py",
+      "vulnerability": "Non-existent project bypassed POU/variable loading and returned running simulator on 0 POUs.",
+      "fix": "Raise FileNotFoundError when specified project directory does not exist.",
+      "negative_test": "test_case08_get_active_simulator_missing_project_fails_closed",
+      "status": "success"
+    },
+    "CASE_09": {
+      "name": "cscape_simulate_pou - Mock Fallback Masking Execution Errors",
+      "target_file": "src/mcp/tools.py",
+      "vulnerability": "Runtime simulation exception fell back to mock evaluator that returned success: True without error.",
+      "fix": "Wrap fallback in try-except; fail closed with status='failed', error_code='SIMULATION_EXECUTION_ERROR'.",
+      "negative_test": "test_case09_simulate_pou_execution_failure_fails_closed",
+      "status": "success"
+    },
+    "CASE_10": {
+      "name": "STParser.validate - Empty Code Validated as Valid",
+      "target_file": "src/iec/st_parser.py",
+      "vulnerability": "Empty or whitespace-only source emitted a warning but returned is_valid=True.",
+      "fix": "Emit IssueSeverity.ERROR with code ERR_EMPTY_SOURCE and return is_valid=False.",
+      "negative_test": "test_case10_st_parser_empty_code_is_invalid",
+      "status": "success"
+    },
+    "CASE_11": {
+      "name": "com_bridge.py open_project - Returncode Bypass",
+      "target_file": "src/automation/com_bridge.py",
+      "vulnerability": "Condition 'or timed_out is False' caused abnormal process exits (returncode != 0) to report status: success.",
+      "fix": "Condition updated to 'returncode == 0 and not timed_out'.",
+      "negative_test": "test_case11_com_bridge_process_failure_reports_failed",
+      "status": "success"
+    },
+    "CASE_12": {
+      "name": "cscape_export_project - Synthesis of Dummy Files on Missing Artifacts",
+      "target_file": "src/mcp/tools.py",
+      "vulnerability": "Generated synthetic .k5p dummy files on missing projects and reported status: success.",
+      "fix": "Fail closed if source file does not exist: status='failed', error_code='NO_DATA_TO_EXPORT'.",
+      "negative_test": "test_case12_export_project_k5p_missing_fails_closed",
+      "status": "success"
+    },
+    "CASE_13": {
+      "name": "normalize_tool_result - Unverified Result Dict Defaults to Success",
+      "target_file": "src/mcp/tools.py",
+      "vulnerability": "Dict omitting both status and success fell through to status='success', success=True.",
+      "fix": "Set canonical_status='inconclusive', success=False, error_code='UNVERIFIED_RESULT_STATUS'.",
+      "negative_test": "test_case13_normalize_tool_result_unverified_dict_inconclusive",
+      "status": "success"
+    },
+    "CASE_14": {
+      "name": "Convenience Tools - Non-Canonical 'error' Status",
+      "target_file": "src/mcp/tools.py",
+      "vulnerability": "Tools assigned status: 'error' violating canonical 4-state contract.",
+      "fix": "Replaced 'error' with canonical 'failed' across all tool failure return branches.",
+      "negative_test": "test_case14_convenience_tools_canonical_status",
+      "status": "success"
+    },
+    "CASE_15": {
+      "name": "CscapeLiveProjectManager.open_project - Fake Open Without Live Engine",
+      "target_file": "src/cscape/project_manager.py",
+      "vulnerability": "Checked stale gate JSON for is_project_open without checking if PID/HWND is actually live.",
+      "fix": "Require IsWindow / process liveness check before trusting gate JSON.",
+      "negative_test": "test_case15_open_project_require_live_gui_without_gui_fails_closed",
+      "status": "success"
+    },
+    "CASE_16": {
+      "name": "cscape_new_iec_project - Live GUI Failure Fallback to Dummy CFBF",
+      "target_file": "src/mcp/tools.py",
+      "vulnerability": "Swallowed live GUI failure with warning and generated synthetic CFBF bytes with success: True.",
+      "fix": "Fail closed if live GUI creation was requested and fails: status='failed', error_code='LIVE_PROJECT_CREATION_FAILED'.",
+      "negative_test": "test_case16_new_iec_project_live_gui_failure_fails_closed",
+      "status": "success"
+    },
+    "CASE_17": {
+      "name": "StructuredTextInserter - AST Hash Crash Defaulting ast_match to True",
+      "target_file": "src/cscape/st_inserter.py",
+      "vulnerability": "If AST hash calculation crashed, expression defaulted to True, bypassing AST verification.",
+      "fix": "Require ast_match without defaulting to True on failure; fail closed.",
+      "negative_test": "test_case17_st_inserter_ast_mismatch_fails_verification",
+      "status": "success"
+    },
+    "CASE_18": {
+      "name": "STSimulator._evaluate_expression - Swallowing Runtime Evaluation Exceptions",
+      "target_file": "src/iec/simulator.py",
+      "vulnerability": "Eval exceptions (e.g. ZeroDivisionError) returned raw unparsed string and reported success: True.",
+      "fix": "Raise RuntimeError on eval failure; catch in simulate() and fail closed with error_code='SIMULATION_EXECUTION_ERROR'.",
+      "negative_test": "test_case18_simulator_runtime_exception_fails_closed",
+      "status": "success"
+    },
+    "CASE_19": {
+      "name": "cscape_compile & normalize_tool_result - Build Warnings Coerced to Success",
+      "target_file": "src/mcp/tools.py",
+      "vulnerability": "BuildStatus.WARNINGS or status 'warnings' mapped to status='success' if errors_list was empty.",
+      "fix": "Mapped status 'warnings' to canonical status 'inconclusive'.",
+      "negative_test": "test_case19_normalize_tool_result_warnings_inconclusive",
+      "status": "success"
+    },
+    "CASE_20": {
+      "name": "intercept_hardware_interface - Port Lockout Bypass on Empty interface_name",
+      "target_file": "src/cscape/safety.py",
+      "vulnerability": "Early return on empty interface_name bypassed evaluation of port parameter.",
+      "fix": "Evaluate interface_name and port independently; fail closed on blocked port.",
+      "negative_test": "test_case20_hardware_interface_empty_name_with_port_blocked",
+      "status": "success"
+    },
+    "CASE_21": {
+      "name": "test_real_compilation.py - Synthetic Win32 Mocks Claiming Live Pass",
+      "target_file": "tests/test_real_compilation.py",
+      "vulnerability": "Unit tests using canned mock HWND 99999 could be misinterpreted as live Cscape passes.",
+      "fix": "Tagged unit test docstrings with [MOCK_DISPATCH_ONLY].",
+      "negative_test": "test_case21_unit_tests_tagged_mock_dispatch",
+      "status": "success"
+    },
+    "CASE_22": {
+      "name": "IECValidator.validate - Swallowing Semantic Parser Exceptions",
+      "target_file": "src/iec/validator.py",
+      "vulnerability": "Unexpected STParser.validate exception was swallowed with pass, dropping diagnostics.",
+      "fix": "Catch exception and append diagnostic to warnings list.",
+      "negative_test": "test_case22_validator_does_not_swallow_semantic_exceptions",
+      "status": "success"
+    },
+    "CASE_23": {
+      "name": "cscape_validate_st - Empty Code & Ladder Logic Rejection",
+      "target_file": "src/mcp/tools.py",
+      "vulnerability": "Empty source or ladder logic could be accepted without explicit fail-closed contract.",
+      "fix": "Reject empty ST code and reject ladder logic with ERR_LADDER_FORBIDDEN; fail closed with valid=False, status='failed'.",
+      "negative_test": "test_case23_validate_st_empty_and_ladder_fail_closed",
+      "status": "success"
+    },
+    "CASE_24": {
+      "name": "cscape_compile - Missing Project & Ladder Logic Syntax Rejection",
+      "target_file": "src/mcp/tools.py",
+      "vulnerability": "Compiling non-existent directory or ladder logic POU could produce ambiguous statuses.",
+      "fix": "Fail closed on missing project (PROJECT_NOT_FOUND) and ladder logic POU (ST_SYNTAX_ERROR).",
+      "negative_test": "test_case24_compile_missing_project_and_ladder_pou_fail_closed",
+      "status": "success"
+    },
+    "CASE_25": {
+      "name": "cscape_compile_project - Empty Project Name Validation",
+      "target_file": "src/mcp/tools.py",
+      "vulnerability": "Convenience compile wrapper on empty string could attempt directory resolution against workspace root.",
+      "fix": "Validate project name; fail closed immediately with status='failed'.",
+      "negative_test": "test_case25_compile_project_empty_name_fails_closed",
+      "status": "success"
+    },
+    "CASE_26": {
+      "name": "cscape_read_register - Malformed Address & Non-Existent Project Rejection",
+      "target_file": "src/mcp/tools.py",
+      "vulnerability": "Reading malformed register syntax or non-existent project could return ambiguous defaults.",
+      "fix": "Fail closed with ERR_INVALID_REGISTER_ADDRESS or project error; status='failed'.",
+      "negative_test": "test_case26_read_register_invalid_format_and_missing_project",
+      "status": "success"
+    },
+    "CASE_27": {
+      "name": "cscape_write_register - Malformed Address & Non-Existent Project Rejection",
+      "target_file": "src/mcp/tools.py",
+      "vulnerability": "Writing malformed register syntax or non-existent project could return ambiguous success.",
+      "fix": "Fail closed with ERR_INVALID_REGISTER_ADDRESS or project error; status='failed'.",
+      "negative_test": "test_case27_write_register_invalid_format_and_missing_project",
+      "status": "success"
+    },
+    "CASE_28": {
+      "name": "cscape_simulate_cycle & Variable Import/Export Fail Closed",
+      "target_file": "src/mcp/tools.py",
+      "vulnerability": "Simulating non-existent project or importing/exporting empty variable sets could return false success.",
+      "fix": "Fail closed with status='failed' on non-existent project or empty variable sets.",
+      "negative_test": "test_case28_simulate_cycle_and_variable_tools_fail_closed",
+      "status": "success"
+    }
+  },
+  "invariants_confirmed": {
+    "canonical_status_contract": true,
+    "zero_auto_yes": true,
+    "hardware_lockout_fail_closed": true,
+    "baseline_isolated": true,
+    "no_cscape_gui_dependency": true,
+    "no_premature_g5_done_claim": true,
+    "dual_root_parity_maintained": true
+  }
+}

@@ -1,0 +1,105 @@
+{
+  "mission_id": "MCP_HMI_OPERATOR_SCREEN2_OPERATOR_UI",
+  "status": "success",
+  "timestamp_utc": "2026-09-10T09:57:53.114Z",
+  "environment": {
+    "os": "Windows",
+    "winsta_desktop": "winsta0\\Default",
+    "cscape_version": "Horner APG Cscape 10.2 (Build 10.2.751.4)",
+    "pid": 19488,
+    "hwnd": "0x01AC0B88",
+    "target_project": "TankLevelClosedLoop.csp",
+    "target_path": "C:\\HornerAI\\horner-cscape-mcp\\artifacts\\projects\\TankLevelClosedLoop\\TankLevelClosedLoop.csp",
+    "csp_size_bytes": 131072,
+    "csp_sha256": "DAB6BB33FDB376BFC015F11CC960770DD7FCD547CA4704BDA5A8200F86EBD4EE",
+    "active_screen": "Screen 2 (2)",
+    "single_gui_owner": "PID 19488 exclusive on winsta0\\Default"
+  },
+  "operator_ui_specifications": {
+    "screen_name": "Screen 2",
+    "screen_tab": "Screen 2 (2)",
+    "screen_state": "ACTIVE_IN_FRONT",
+    "zoom": "120%",
+    "total_operator_objects": 5,
+    "objects": [
+      {
+        "index": 1,
+        "role": "Large Process Variable (PV) Display",
+        "variable": "TankLevelPV",
+        "data_type": "REAL (32-bit floating point)",
+        "register_mapping": "%R1",
+        "label": "PV",
+        "position": "Upper-Left Quadrant",
+        "visual_hierarchy": "Primary / Largest value on screen",
+        "container_style": "Beveled high-contrast metallic frame"
+      },
+      {
+        "index": 2,
+        "role": "Target Setpoint (SP) Display",
+        "variable": "Setpoint",
+        "data_type": "REAL (32-bit floating point)",
+        "register_mapping": "%R3",
+        "label": "Setpoint",
+        "position": "Upper-Right Quadrant",
+        "visual_hierarchy": "Target reference value",
+        "container_style": "Beveled high-contrast metallic frame"
+      },
+      {
+        "index": 3,
+        "role": "Tank Silhouette & Level Fill Bar",
+        "variable": "TankLevelPV_I16",
+        "data_type": "INT (16-bit)",
+        "register_mapping": "%R16",
+        "label": "Bar",
+        "position": "Lower-Left Quadrant",
+        "range": "0.0 .. 100.0%",
+        "visual_element": "Horizontal graduated bar with red fill framed within solid rectangular tank silhouette"
+      },
+      {
+        "index": 4,
+        "role": "High Level Alarm Indicator (HI)",
+        "variable": "HI",
+        "data_type": "BOOL",
+        "register_mapping": "%T3",
+        "label": "HI",
+        "position": "Lower-Right Quadrant (Left Lamp)",
+        "trigger_condition": "TankLevelPV >= 65.0"
+      },
+      {
+        "index": 5,
+        "role": "Low Level Alarm Indicator (LO)",
+        "variable": "LO",
+        "data_type": "BOOL",
+        "register_mapping": "%T4",
+        "label": "LO",
+        "position": "Lower-Right Quadrant (Right Lamp)",
+        "trigger_condition": "TankLevelPV <= 35.0"
+      }
+    ]
+  },
+  "stblock1_program_bindings": {
+    "pou_name": "STBlock1",
+    "pou_type": "Main Loop POU",
+    "st_equations": [
+      "TankLevelPV_I16 := ANY_TO_INT(TankLevelPV);",
+      "HI := TankLevelPV >= 65.0;",
+      "LO := TankLevelPV <= 35.0;",
+      "Error := Setpoint - TankLevelPV;",
+      "ControlOutput := Kp * Error;",
+      "IF ControlOutput > 100.0 THEN ControlOutput := 100.0; ELSIF ControlOutput < 0.0 THEN ControlOutput := 0.0; END_IF;"
+    ],
+    "binding_verification": "ALL_5_OBJECTS_DIRECTLY_BOUND_TO_STBLOCK1"
+  },
+  "persistence_and_reopen_status": {
+    "save_command": "ID_FILE_SAVE (57603)",
+    "persistence_state": "SUCCESSFULLY_SAVED_TO_DISK",
+    "reopen_safe": true,
+    "dual_root_parity": true
+  },
+  "policy_compliance": {
+    "screen1_policy": "SCREEN1_DONE (Untouched, legacy fatals preserved)",
+    "test_policy": "NO_PYTEST_NO_G1 (Preserved)",
+    "hardware_policy": "NO_PLC_DOWNLOAD (Fail-closed lockout enforced)",
+    "survey_policy": "SURVEYS_SKIPPED"
+  }
+}

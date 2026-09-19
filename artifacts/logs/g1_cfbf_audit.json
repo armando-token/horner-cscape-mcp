@@ -1,0 +1,108 @@
+{
+    "mandate": "Verify CFBF container parsing, stream extraction, and project open decoupling from hardcoded PIDs",
+    "safety_mandate": {
+        "gui_interaction_count": 0,
+        "hardware_lockout": "ENFORCED",
+        "straton_binaries_running": 0,
+        "short_timeout_execution": true,
+        "hardware_or_plc_download": 0,
+        "live_gate_verified": true
+    },
+    "agent": "Agent 4: CFBF Container & Project Open Engineer",
+    "test_results": {
+        "exit_code": 0,
+        "passed": 37,
+        "skipped": 0,
+        "status": "success",
+        "test_suites": [
+            "tests/test_step139_cfbf_pou_insertion.py",
+            "tests/test_project_manager.py"
+        ],
+        "duration_seconds": 29.98,
+        "total_collected": 37,
+        "failed": 0
+    },
+    "cscape_live_gate": {
+        "status": "READY_FOR_TESTS",
+        "pid": 6704,
+        "window_title": "Cscape - Logged In : \"armando@controlnautas.com\" - [TankLevelClosedLoop.csp]",
+        "project_file": "C:\\HornerAI\\horner-cscape-mcp\\artifacts\\projects\\TankLevelClosedLoop\\TankLevelClosedLoop.csp",
+        "dynamic_pid_resolution": "VERIFIED_DYNAMIC"
+    },
+    "cfbf_module_verification": {
+        "module": "src.cscape.cfbf",
+        "contents_stream_extraction": {
+            "contents_magic": "0x78563412",
+            "horner_markers_detected": [
+                "HornerOCS",
+                "main3",
+                "Allocated",
+                "<END_RETAIN>",
+                "%AI1",
+                "%AQ1",
+                "PLC Type"
+            ],
+            "legacy_binary_header_support": "VERIFIED (<BBH struct)",
+            "unicode_header_support": "VERIFIED (UTF-16LE, 0xFFFE marker)"
+        },
+        "synthetic_generation": {
+            "function": "generate_minimal_cfbf_bytes",
+            "envelope_size_bytes": 5632,
+            "roundtrip_inspection": "VERIFIED"
+        },
+        "ole2_compound_document": {
+            "mini_fat_mini_stream_support": "VERIFIED",
+            "header_magic": "0xD0CF11E0A1B11AE1",
+            "fat_chain_traversal": "VERIFIED",
+            "sector_size_bytes": 512,
+            "difat_table_parsing": "VERIFIED",
+            "directory_stream_parsing": "VERIFIED",
+            "sector_size_shift": 9
+        }
+    },
+    "timestamp_utc": "2026-09-06T05:07:30.183556Z",
+    "status": "success",
+    "project_manager_verification": {
+        "module": "src.cscape.project_manager",
+        "dirty_prompt_handling": {
+            "auto_dismissal": true,
+            "discard_dirty_default": true
+        },
+        "double_open_modal_prevention": {
+            "skips_redundant_open": true,
+            "window_title_check": true,
+            "gate_project_file_check": true
+        },
+        "dynamic_pid_resolution": {
+            "gate_file_path": "artifacts/.cscape_live_gate.json",
+            "fallback_to_psutil_scan": true,
+            "hardcoded_pids_removed": true,
+            "queries_gate_file": true
+        }
+    },
+    "classification": "TESTED_MOCK [offline/DEV only]",
+    "cfbf_mock_classification": {
+        "status": "success",
+        "classification": "TESTED_MOCK [offline/DEV only]",
+        "description": "Pure-software CFBF container inspection and stream extraction without physical hardware",
+        "live_hardware_interaction": false,
+        "gui_interaction_count": 0,
+        "straton_runtime_execution": false
+    },
+    "simulation_mock_classification": {
+        "status": "success",
+        "classification": "TESTED_MOCK [offline/DEV only]",
+        "pure_software_modules": [
+            "src/cscape/simulator.py",
+            "src/cscape/simulation.py",
+            "src/simulation/simulator.py"
+        ],
+        "mcp_tools": [
+            "cscape_simulate_pou",
+            "cscape_run_simulation"
+        ],
+        "execution_backend": "SimulationBackend.EMULATED",
+        "live_hardware_interaction": false,
+        "straton_runtimes_executed": 0
+    }
+}

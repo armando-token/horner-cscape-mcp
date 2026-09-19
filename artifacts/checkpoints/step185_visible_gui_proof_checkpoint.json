@@ -1,0 +1,54 @@
+{
+  "gate": "G1",
+  "step": 185,
+  "role": "Single Visible Cscape GUI Automation Agent",
+  "status": "success",
+  "mandate": "MEGAPLAN Gate G1/G2: Live Visible Cscape GUI Evidence with TankLevelClosedLoop and Project Navigator",
+  "timestamp_utc": "2026-09-06T15:29:48.862707+00:00",
+  "execution_duration_sec": 9.11,
+  "live_cscape": {
+    "pid": 10892,
+    "hwnd": "0x01B005DC",
+    "hwnd_int": 28313052,
+    "project": "TankLevelClosedLoop.csp",
+    "window_title": "Cscape - Logged In : \"armando@controlnautas.com\" - [TankLevelClosedLoop.csp]",
+    "desktop": "Default",
+    "visible": true,
+    "enabled": true,
+    "responsive": true,
+    "project_navigator_visible": true,
+    "process_name": "Cscape.exe",
+    "uptime_sec": 21522.48,
+    "working_set_mb": 115.03
+  },
+  "screenshot_proof": {
+    "file": "artifacts/screenshots/live_cscape_tank_level_step185.png",
+    "size_bytes": 71597,
+    "sha256": "3629ca11ab19c8a2ec8b2c58e5bfcbb6febc2d45132107708368cf014cbf09b9"
+  },
+  "compile_proof": {
+    "command_id": 32826,
+    "command_name": "ID_PROGRAM_ERRORCHECK",
+    "success": true,
+    "error_count": 0,
+    "warning_count": 0,
+    "duration_sec": 6.123
+  },
+  "hardware_safety": {
+    "zero_physical_plc": true,
+    "download_lockout_enforced": true,
+    "locked_command_ids": [
+      32827,
+      33149
+    ]
+  },
+  "modal_dialogs": {
+    "pre_sweep_dismissed": 0,
+    "post_sweep_dismissed": 2
+  },
+  "dual_root_parity": true,
+  "roots_verified": {
+    "horner_root": "C:\\HornerAI\\horner-cscape-mcp",
+    "user_root": "C:\\Users\\ArmandoSilva"
+  }
+}

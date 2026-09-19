@@ -1,0 +1,223 @@
+{
+  "step": 46,
+  "audit_title": "Redundant Dual-Transmitter Voting (1oo2 / 2oo2 Drift & Discrepancy Failsafe Interlock) Closed-Loop Audit",
+  "timestamp_start": "2026-09-05T09:44:48.284Z",
+  "timestamp_end": "2026-09-05T09:44:54.516Z",
+  "status": "VERIFIED_LIVE",
+  "cscape_active_process": {
+    "healthy": true,
+    "pid": 11808,
+    "hwnd": "0x1f00670",
+    "desktop": "Default",
+    "is_hung": false,
+    "wm_null_ping_ok": true,
+    "working_set_mb": 204.89,
+    "uptime_seconds": 882.83,
+    "thread_count": 10,
+    "gate_status": "READY_FOR_TESTS",
+    "window_title": "Cscape - Logged In : \"armando@controlnautas.com\" - [TankLevelClosedLoop.csp]"
+  },
+  "cscape_gate": {
+    "ready_for_tests": true,
+    "status": "READY_FOR_TESTS",
+    "pid": 11808,
+    "hwnd": "0x01F00670",
+    "window_title": "Cscape - Logged In : \"armando@controlnautas.com\" - [TankLevelClosedLoop.csp]",
+    "project_file": "C:\\Users\\ArmandoSilva\\artifacts\\projects\\TankLevelClosedLoop\\TankLevelClosedLoop.csp",
+    "exit_code": null,
+    "reason": "TankLevelClosedLoop verified active and responsive",
+    "cycle": 1,
+    "timestamp_utc": "2026-09-05T09:44:46.978Z"
+  },
+  "gui_compilation": {
+    "command_id": 32826,
+    "status": "success",
+    "errors": 0,
+    "warnings": 0
+  },
+  "redundancy_metrics": {
+    "total_cycles": 350,
+    "discrepancy_threshold_pct": 3.0,
+    "critical_2oo2_threshold_pct": 10.0,
+    "phase1_final_error_percent": 0.022,
+    "phase2_quarantine_verified": true,
+    "phase3_primary_a_retention_verified": true,
+    "phase4_failsafe_2oo2_clamp_verified": true,
+    "phase5_bumpless_recovery_verified": true,
+    "phase5_recovery_final_error_percent": 0.0037,
+    "phase5_mean_last15_error_percent": 0.032
+  },
+  "safety_audit": {
+    "physical_plc_download_blocked": true,
+    "blocked_command_id": 32827,
+    "zero_physical_hardware_touched": true,
+    "zero_straton_dependencies": true
+  },
+  "sample_trace": [
+    {
+      "cycle": 0,
+      "phase": "PHASE_1_NOMINAL_DUAL",
+      "voting_mode": "DUAL_AVERAGE",
+      "sensor_a": 50.05,
+      "sensor_b": 49.96,
+      "discrepancy": 0.09,
+      "pv_plant": 51.8239,
+      "cv": 86.4772,
+      "error": 8.1761
+    },
+    {
+      "cycle": 50,
+      "phase": "PHASE_1_NOMINAL_DUAL",
+      "voting_mode": "DUAL_AVERAGE",
+      "sensor_a": 60.5,
+      "sensor_b": 60.41,
+      "discrepancy": 0.09,
+      "pv_plant": 60.4235,
+      "cv": 59.8638,
+      "error": 0.4235
+    },
+    {
+      "cycle": 100,
+      "phase": "PHASE_1_NOMINAL_DUAL",
+      "voting_mode": "DUAL_AVERAGE",
+      "sensor_a": 60.03,
+      "sensor_b": 59.94,
+      "discrepancy": 0.09,
+      "pv_plant": 59.978,
+      "cv": 59.9678,
+      "error": 0.022
+    },
+    {
+      "cycle": 101,
+      "phase": "PHASE_2_SLOW_DRIFT_B",
+      "voting_mode": "DUAL_AVERAGE",
+      "sensor_a": 59.93,
+      "sensor_b": 60.08,
+      "discrepancy": 0.15,
+      "pv_plant": 59.9755,
+      "cv": 59.9267,
+      "error": 0.0245
+    },
+    {
+      "cycle": 130,
+      "phase": "PHASE_2_SLOW_DRIFT_B",
+      "voting_mode": "DUAL_AVERAGE",
+      "sensor_a": 58.97,
+      "sensor_b": 61.92,
+      "discrepancy": 2.95,
+      "pv_plant": 58.8605,
+      "cv": 57.6987,
+      "error": 1.1395
+    },
+    {
+      "cycle": 160,
+      "phase": "PHASE_2_SLOW_DRIFT_B",
+      "voting_mode": "1OO1_PRIMARY_A",
+      "sensor_a": 60.06,
+      "sensor_b": 66.01,
+      "discrepancy": 5.95,
+      "pv_plant": 60.0007,
+      "cv": 59.8659,
+      "error": 0.0007
+    },
+    {
+      "cycle": 161,
+      "phase": "PHASE_3_HARD_FAULT_B",
+      "voting_mode": "1OO1_PRIMARY_A",
+      "sensor_a": 59.95,
+      "sensor_b": 0.0,
+      "discrepancy": 59.95,
+      "pv_plant": 60.0263,
+      "cv": 60.5125,
+      "error": 0.0263
+    },
+    {
+      "cycle": 190,
+      "phase": "PHASE_3_HARD_FAULT_B",
+      "voting_mode": "1OO1_PRIMARY_A",
+      "sensor_a": 60.09,
+      "sensor_b": 0.0,
+      "discrepancy": 60.09,
+      "pv_plant": 60.0178,
+      "cv": 59.6589,
+      "error": 0.0178
+    },
+    {
+      "cycle": 220,
+      "phase": "PHASE_3_HARD_FAULT_B",
+      "voting_mode": "1OO1_PRIMARY_A",
+      "sensor_a": 60.06,
+      "sensor_b": 0.0,
+      "discrepancy": 60.06,
+      "pv_plant": 59.9895,
+      "cv": 59.672,
+      "error": 0.0105
+    },
+    {
+      "cycle": 221,
+      "phase": "PHASE_4_2OO2_SAFETY_TRIP",
+      "voting_mode": "2OO2_SAFETY_CLAMP",
+      "sensor_a": 74.99,
+      "sensor_b": 0.0,
+      "discrepancy": 74.99,
+      "pv_plant": 59.8395,
+      "cv": 0.0,
+      "error": 0.1605
+    },
+    {
+      "cycle": 245,
+      "phase": "PHASE_4_2OO2_SAFETY_TRIP",
+      "voting_mode": "2OO2_SAFETY_CLAMP",
+      "sensor_a": 71.39,
+      "sensor_b": 0.0,
+      "discrepancy": 71.39,
+      "pv_plant": 56.2395,
+      "cv": 0.0,
+      "error": 3.7605
+    },
+    {
+      "cycle": 270,
+      "phase": "PHASE_4_2OO2_SAFETY_TRIP",
+      "voting_mode": "2OO2_SAFETY_CLAMP",
+      "sensor_a": 67.64,
+      "sensor_b": 0.0,
+      "discrepancy": 67.64,
+      "pv_plant": 52.4895,
+      "cv": 0.0,
+      "error": 7.5105
+    },
+    {
+      "cycle": 271,
+      "phase": "PHASE_5_CALIBRATED_RECOVERY",
+      "voting_mode": "DUAL_AVERAGE",
+      "sensor_a": 52.44,
+      "sensor_b": 52.53,
+      "discrepancy": 0.09,
+      "pv_plant": 54.6251,
+      "cv": 95.2028,
+      "error": 5.3749
+    },
+    {
+      "cycle": 300,
+      "phase": "PHASE_5_CALIBRATED_RECOVERY",
+      "voting_mode": "DUAL_AVERAGE",
+      "sensor_a": 60.3,
+      "sensor_b": 60.21,
+      "discrepancy": 0.09,
+      "pv_plant": 60.2923,
+      "cv": 61.0632,
+      "error": 0.2923
+    },
+    {
+      "cycle": 349,
+      "phase": "PHASE_5_CALIBRATED_RECOVERY",
+      "voting_mode": "DUAL_AVERAGE",
+      "sensor_a": 59.95,
+      "sensor_b": 60.04,
+      "discrepancy": 0.09,
+      "pv_plant": 59.9963,
+      "cv": 59.9701,
+      "error": 0.0037
+    }
+  ]
+}

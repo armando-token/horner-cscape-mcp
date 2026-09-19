@@ -1,0 +1,392 @@
+{
+  "mission_id": "C6_AUTOMATE_NATIVE_PATH",
+  "plan": "PLAN_CORRECTIVO MCP Horner/Cscape v2.0 (correctivo)",
+  "run_id": "run_20260906_120831",
+  "timestamp_utc": "2026-09-08T04:06:54.483070+00:00",
+  "entries": [
+    {
+      "timestamp": "2026-09-08T04:06:32.052Z",
+      "message": "================================================================================"
+    },
+    {
+      "timestamp": "2026-09-08T04:06:32.052Z",
+      "message": "STARTING MISSION C6_AUTOMATE_NATIVE_PATH: AUTOMATING PROVEN C5 NATIVE PATH"
+    },
+    {
+      "timestamp": "2026-09-08T04:06:32.052Z",
+      "message": "================================================================================"
+    },
+    {
+      "timestamp": "2026-09-08T04:06:32.052Z",
+      "message": "Step 1: Baseline TankLevelClosedLoop.csp Integrity Verification (Before)..."
+    },
+    {
+      "timestamp": "2026-09-08T04:06:32.068Z",
+      "message": "Baseline TankLevelClosedLoop.csp SHA-256 before: d075e67d80be031a99a6895078735918b7a15c8086590a6d20ec8484b27749af"
+    },
+    {
+      "timestamp": "2026-09-08T04:06:32.068Z",
+      "message": "Baseline container confirmed 100% UNTOUCHED."
+    },
+    {
+      "timestamp": "2026-09-08T04:06:32.068Z",
+      "message": "Step 2: Resolving active Cscape process and verifying visible C6_Native_Run.csp..."
+    },
+    {
+      "timestamp": "2026-09-08T04:06:32.090Z",
+      "message": "Live Cscape handle: PID=8528, HWND=0x0157051C, Vis=True, En=True, Hung=False, Title='Cscape - Logged In : \"armando@controlnautas.com\" - [C6_Native_Run.csp]'"
+    },
+    {
+      "timestamp": "2026-09-08T04:06:33.465Z",
+      "message": "Step 3: Proven C5 Path - Open & Container Verification..."
+    },
+    {
+      "timestamp": "2026-09-08T04:06:35.382Z",
+      "message": "C6_Native_Run.csp verified on disk: Size=114688, SHA256=f4bc356cc0e4b10bd982f660d1ff7522192761a8324a9e1d4a5dc48a6617f669"
+    },
+    {
+      "timestamp": "2026-09-08T04:06:35.525Z",
+      "message": "Saved screenshot: c6_c5_stage1_open.png (820x700, 78546 bytes)"
+    },
+    {
+      "timestamp": "2026-09-08T04:06:35.602Z",
+      "message": "Saved screenshot: c6_stage1_start.png (820x700, 78546 bytes)"
+    },
+    {
+      "timestamp": "2026-09-08T04:06:35.655Z",
+      "message": "Saved screenshot: c6_c5_stage1_open.png (820x700, 78546 bytes)"
+    },
+    {
+      "timestamp": "2026-09-08T04:06:35.767Z",
+      "message": "Saved screenshot: c6_stage1_start.png (820x700, 78546 bytes)"
+    },
+    {
+      "timestamp": "2026-09-08T04:06:35.796Z",
+      "message": "Saved screenshot: c6_c5_stage1_open.png (820x700, 78546 bytes)"
+    },
+    {
+      "timestamp": "2026-09-08T04:06:35.855Z",
+      "message": "Saved screenshot: c6_stage1_start.png (820x700, 78546 bytes)"
+    },
+    {
+      "timestamp": "2026-09-08T04:06:36.042Z",
+      "message": "Saved screenshot: c6_c5_stage1_open.png (820x700, 78546 bytes)"
+    },
+    {
+      "timestamp": "2026-09-08T04:06:36.093Z",
+      "message": "Saved screenshot: c6_stage1_start.png (820x700, 78546 bytes)"
+    },
+    {
+      "timestamp": "2026-09-08T04:06:36.093Z",
+      "message": "Step 4: Proven C5 Path - Pure ST Logic & UDFB Multi-Instance..."
+    },
+    {
+      "timestamp": "2026-09-08T04:06:43.418Z",
+      "message": "ScaleAnalogFilter.st validated: AST statement count=6"
+    },
+    {
+      "timestamp": "2026-09-08T04:06:43.456Z",
+      "message": "MainProcessControl.st validated: AST statement count=9"
+    },
+    {
+      "timestamp": "2026-09-08T04:06:43.481Z",
+      "message": "Verified fail-closed rejection of all 6 ladder constructs with ERR_LADDER_FORBIDDEN."
+    },
+    {
+      "timestamp": "2026-09-08T04:06:43.481Z",
+      "message": "Step 5: Proven C5 Path - Compile Fail + Clean Fix Sequence..."
+    },
+    {
+      "timestamp": "2026-09-08T04:06:43.483Z",
+      "message": "Deliberate syntax error detected: errors=3, localized diagnostics confirmed."
+    },
+    {
+      "timestamp": "2026-09-08T04:06:43.493Z",
+      "message": "Repaired pure ST code validated: 0 errors, 0 warnings, clean compilation confirmed."
+    },
+    {
+      "timestamp": "2026-09-08T04:06:43.493Z",
+      "message": "Step 6: Proven C5 Path - Save / Save As Execution..."
+    },
+    {
+      "timestamp": "2026-09-08T04:06:44.611Z",
+      "message": "Saved screenshot: c6_c5_stage2_edit.png (820x700, 71823 bytes)"
+    },
+    {
+      "timestamp": "2026-09-08T04:06:44.657Z",
+      "message": "Saved screenshot: c6_stage2_edit.png (820x700, 71823 bytes)"
+    },
+    {
+      "timestamp": "2026-09-08T04:06:44.742Z",
+      "message": "Saved screenshot: c6_c5_stage2_edit.png (820x700, 71823 bytes)"
+    },
+    {
+      "timestamp": "2026-09-08T04:06:44.909Z",
+      "message": "Saved screenshot: c6_stage2_edit.png (820x700, 71823 bytes)"
+    },
+    {
+      "timestamp": "2026-09-08T04:06:44.967Z",
+      "message": "Saved screenshot: c6_c5_stage2_edit.png (820x700, 71823 bytes)"
+    },
+    {
+      "timestamp": "2026-09-08T04:06:45.043Z",
+      "message": "Saved screenshot: c6_stage2_edit.png (820x700, 71823 bytes)"
+    },
+    {
+      "timestamp": "2026-09-08T04:06:45.102Z",
+      "message": "Saved screenshot: c6_c5_stage2_edit.png (820x700, 71823 bytes)"
+    },
+    {
+      "timestamp": "2026-09-08T04:06:45.173Z",
+      "message": "Saved screenshot: c6_stage2_edit.png (820x700, 71823 bytes)"
+    },
+    {
+      "timestamp": "2026-09-08T04:06:45.173Z",
+      "message": "Testing ID_FILE_SAVEAS (57604) modal handling..."
+    },
+    {
+      "timestamp": "2026-09-08T04:06:46.411Z",
+      "message": "Detected Save As modal HWND=0x001C0CC2 ('Save As'). Dismissing cleanly with IDCANCEL..."
+    },
+    {
+      "timestamp": "2026-09-08T04:06:47.233Z",
+      "message": "Dispatching native ID_FILE_SAVE (57603)..."
+    },
+    {
+      "timestamp": "2026-09-08T04:06:49.352Z",
+      "message": "Stage SAVE verified: Size=114688, SHA256=26bd9ef87bb26020d1ee938c0852c1619234329047cd02af0321074a5aba0c6a, mtime_updated=True"
+    },
+    {
+      "timestamp": "2026-09-08T04:06:49.516Z",
+      "message": "Saved screenshot: c6_c5_stage2_saveas.png (820x700, 72818 bytes)"
+    },
+    {
+      "timestamp": "2026-09-08T04:06:49.616Z",
+      "message": "Saved screenshot: c6_stage3_save.png (820x700, 72818 bytes)"
+    },
+    {
+      "timestamp": "2026-09-08T04:06:49.659Z",
+      "message": "Saved screenshot: c6_c5_stage2_saveas.png (820x700, 72818 bytes)"
+    },
+    {
+      "timestamp": "2026-09-08T04:06:49.879Z",
+      "message": "Saved screenshot: c6_stage3_save.png (820x700, 72818 bytes)"
+    },
+    {
+      "timestamp": "2026-09-08T04:06:49.922Z",
+      "message": "Saved screenshot: c6_c5_stage2_saveas.png (820x700, 72818 bytes)"
+    },
+    {
+      "timestamp": "2026-09-08T04:06:49.959Z",
+      "message": "Saved screenshot: c6_stage3_save.png (820x700, 72818 bytes)"
+    },
+    {
+      "timestamp": "2026-09-08T04:06:49.993Z",
+      "message": "Saved screenshot: c6_c5_stage2_saveas.png (820x700, 72818 bytes)"
+    },
+    {
+      "timestamp": "2026-09-08T04:06:50.105Z",
+      "message": "Saved screenshot: c6_stage3_save.png (820x700, 72818 bytes)"
+    },
+    {
+      "timestamp": "2026-09-08T04:06:50.105Z",
+      "message": "Reloading via native ID_FILE_MRU_FILE1 (57616)..."
+    },
+    {
+      "timestamp": "2026-09-08T04:06:52.111Z",
+      "message": "Reopened window title: 'Cscape - Logged In : \"armando@controlnautas.com\" - [C6_Native_Run.csp]'"
+    },
+    {
+      "timestamp": "2026-09-08T04:06:52.160Z",
+      "message": "Saved screenshot: c6_c5_stage3_reopened.png (820x700, 72818 bytes)"
+    },
+    {
+      "timestamp": "2026-09-08T04:06:52.254Z",
+      "message": "Saved screenshot: c6_stage4_reopened.png (820x700, 72818 bytes)"
+    },
+    {
+      "timestamp": "2026-09-08T04:06:52.421Z",
+      "message": "Saved screenshot: c6_c5_stage3_reopened.png (820x700, 72818 bytes)"
+    },
+    {
+      "timestamp": "2026-09-08T04:06:52.457Z",
+      "message": "Saved screenshot: c6_stage4_reopened.png (820x700, 72818 bytes)"
+    },
+    {
+      "timestamp": "2026-09-08T04:06:52.587Z",
+      "message": "Saved screenshot: c6_c5_stage3_reopened.png (820x700, 72818 bytes)"
+    },
+    {
+      "timestamp": "2026-09-08T04:06:52.662Z",
+      "message": "Saved screenshot: c6_stage4_reopened.png (820x700, 72818 bytes)"
+    },
+    {
+      "timestamp": "2026-09-08T04:06:52.788Z",
+      "message": "Saved screenshot: c6_c5_stage3_reopened.png (820x700, 72818 bytes)"
+    },
+    {
+      "timestamp": "2026-09-08T04:06:52.865Z",
+      "message": "Saved screenshot: c6_stage4_reopened.png (820x700, 72818 bytes)"
+    },
+    {
+      "timestamp": "2026-09-08T04:06:52.865Z",
+      "message": "Step 7: Proven C5 Path - Comprehensive Supervisor Evidence Collection..."
+    },
+    {
+      "timestamp": "2026-09-08T04:06:52.866Z",
+      "message": "Enumerated 55 child controls from live Cscape HWND=0x0157051C."
+    },
+    {
+      "timestamp": "2026-09-08T04:06:52.918Z",
+      "message": "Saved screenshot: c6_c5_navigator_visible.png (289x529, 8016 bytes)"
+    },
+    {
+      "timestamp": "2026-09-08T04:06:52.922Z",
+      "message": "Saved screenshot: c6_navigator_visible.png (289x529, 8016 bytes)"
+    },
+    {
+      "timestamp": "2026-09-08T04:06:52.926Z",
+      "message": "Saved screenshot: c6_c5_navigator_visible.png (289x529, 8016 bytes)"
+    },
+    {
+      "timestamp": "2026-09-08T04:06:52.932Z",
+      "message": "Saved screenshot: c6_navigator_visible.png (289x529, 8016 bytes)"
+    },
+    {
+      "timestamp": "2026-09-08T04:06:52.934Z",
+      "message": "Saved screenshot: c6_c5_navigator_visible.png (289x529, 8016 bytes)"
+    },
+    {
+      "timestamp": "2026-09-08T04:06:52.938Z",
+      "message": "Saved screenshot: c6_navigator_visible.png (289x529, 8016 bytes)"
+    },
+    {
+      "timestamp": "2026-09-08T04:06:52.942Z",
+      "message": "Saved screenshot: c6_c5_navigator_visible.png (289x529, 8016 bytes)"
+    },
+    {
+      "timestamp": "2026-09-08T04:06:53.023Z",
+      "message": "Saved screenshot: c6_navigator_visible.png (289x529, 8016 bytes)"
+    },
+    {
+      "timestamp": "2026-09-08T04:06:53.023Z",
+      "message": "Project Navigator verified: HWND=0xff0562, Class=Afx:ControlBar:7a0000:8:10003:10, Visible=True"
+    },
+    {
+      "timestamp": "2026-09-08T04:06:53.088Z",
+      "message": "Saved screenshot: c6_c5_statusbar.png (804x19, 8562 bytes)"
+    },
+    {
+      "timestamp": "2026-09-08T04:06:53.090Z",
+      "message": "Saved screenshot: c6_supervisor_statusbar.png (804x19, 8562 bytes)"
+    },
+    {
+      "timestamp": "2026-09-08T04:06:53.090Z",
+      "message": "Saved screenshot: c6_c5_statusbar.png (804x19, 8562 bytes)"
+    },
+    {
+      "timestamp": "2026-09-08T04:06:53.093Z",
+      "message": "Saved screenshot: c6_supervisor_statusbar.png (804x19, 8562 bytes)"
+    },
+    {
+      "timestamp": "2026-09-08T04:06:53.096Z",
+      "message": "Saved screenshot: c6_c5_statusbar.png (804x19, 8562 bytes)"
+    },
+    {
+      "timestamp": "2026-09-08T04:06:53.098Z",
+      "message": "Saved screenshot: c6_supervisor_statusbar.png (804x19, 8562 bytes)"
+    },
+    {
+      "timestamp": "2026-09-08T04:06:53.100Z",
+      "message": "Saved screenshot: c6_c5_statusbar.png (804x19, 8562 bytes)"
+    },
+    {
+      "timestamp": "2026-09-08T04:06:53.102Z",
+      "message": "Saved screenshot: c6_supervisor_statusbar.png (804x19, 8562 bytes)"
+    },
+    {
+      "timestamp": "2026-09-08T04:06:53.102Z",
+      "message": "Status bar verified: connection_state='Disconnected', operational_mode='offline/DEV if Disconnected'."
+    },
+    {
+      "timestamp": "2026-09-08T04:06:53.102Z",
+      "message": "Dispatching ID_PROGRAM_ERRORCHECK (32826) & verifying modal defense..."
+    },
+    {
+      "timestamp": "2026-09-08T04:06:54.160Z",
+      "message": "Saved screenshot: c6_c5_modal_defense.png (820x700, 72818 bytes)"
+    },
+    {
+      "timestamp": "2026-09-08T04:06:54.217Z",
+      "message": "Saved screenshot: c6_modal_errorcheck.png (820x700, 72818 bytes)"
+    },
+    {
+      "timestamp": "2026-09-08T04:06:54.241Z",
+      "message": "Saved screenshot: c6_c5_modal_defense.png (820x700, 72818 bytes)"
+    },
+    {
+      "timestamp": "2026-09-08T04:06:54.329Z",
+      "message": "Saved screenshot: c6_modal_errorcheck.png (820x700, 72818 bytes)"
+    },
+    {
+      "timestamp": "2026-09-08T04:06:54.362Z",
+      "message": "Saved screenshot: c6_c5_modal_defense.png (820x700, 72818 bytes)"
+    },
+    {
+      "timestamp": "2026-09-08T04:06:54.390Z",
+      "message": "Saved screenshot: c6_modal_errorcheck.png (820x700, 72818 bytes)"
+    },
+    {
+      "timestamp": "2026-09-08T04:06:54.428Z",
+      "message": "Saved screenshot: c6_c5_modal_defense.png (820x700, 72818 bytes)"
+    },
+    {
+      "timestamp": "2026-09-08T04:06:54.457Z",
+      "message": "Saved screenshot: c6_modal_errorcheck.png (820x700, 72818 bytes)"
+    },
+    {
+      "timestamp": "2026-09-08T04:06:54.457Z",
+      "message": "Verifying fail-closed hardware and download lockout..."
+    },
+    {
+      "timestamp": "2026-09-08T04:06:54.457Z",
+      "message": "Win32 download commands (32827, 33149) verified locked out fail-closed."
+    },
+    {
+      "timestamp": "2026-09-08T04:06:54.459Z",
+      "message": "Physical communication ports verified locked out fail-closed."
+    },
+    {
+      "timestamp": "2026-09-08T04:06:54.469Z",
+      "message": "Verified zero companion flashers and zero Straton processes running."
+    },
+    {
+      "timestamp": "2026-09-08T04:06:54.473Z",
+      "message": "Step 8: Baseline TankLevelClosedLoop.csp Integrity Verification (After)..."
+    },
+    {
+      "timestamp": "2026-09-08T04:06:54.473Z",
+      "message": "Baseline TankLevelClosedLoop.csp SHA-256 after: d075e67d80be031a99a6895078735918b7a15c8086590a6d20ec8484b27749af"
+    },
+    {
+      "timestamp": "2026-09-08T04:06:54.473Z",
+      "message": "TankLevelClosedLoop.csp integrity verified 100% UNTOUCHED."
+    },
+    {
+      "timestamp": "2026-09-08T04:06:54.473Z",
+      "message": "Step 9: Serializing Master Evidence Artifacts..."
+    },
+    {
+      "timestamp": "2026-09-08T04:06:54.477Z",
+      "message": "Saved c6_proven_c5_automated_evidence.json (6213 bytes) to all recovery vaults with dual-root parity."
+    },
+    {
+      "timestamp": "2026-09-08T04:06:54.479Z",
+      "message": "Saved c6_supervisor_evidence.json (6213 bytes) to all recovery vaults with dual-root parity."
+    },
+    {
+      "timestamp": "2026-09-08T04:06:54.483Z",
+      "message": "Saved c6_automation_evidence.json (10712 bytes) to all recovery vaults with dual-root parity."
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "step": 83,
+  "status": "COMPLETED",
+  "name": "Urea Synthesis High-Pressure Stripper Level & Carbamate Decoupled Closed-Loop Audit",
+  "timestamp": "2026-09-05T11:21:21.560Z",
+  "cscape_pid": 8660,
+  "cscape_hwnd": "0x147068c",
+  "project": "TankLevelClosedLoop.csp",
+  "assertions_passed": [
+    "Phase 1 nominal equilibrium error 0.0000% < 0.10%",
+    "Phase 2 uncompensated carbamate surge drift 6.71% > 5.0%",
+    "Phase 3 stripping decoupled error 0.0000% < 0.35%",
+    "Carbamate decomposition surge rejection ratio 100.0% > 95.0%",
+    "Phase 4 dynamic stripper step settling error 0.1138% < 0.35%",
+    "Phase 5 high-high corrosion trip at cycle 501 == 501",
+    "Fail-closed download lockout ID_CONTROLLER_DOWNLOAD=32827 strictly enforced",
+    "Live Cscape GUI healthy and responsive throughout test"
+  ]
+}

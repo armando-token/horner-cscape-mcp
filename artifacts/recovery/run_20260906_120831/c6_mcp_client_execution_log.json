@@ -1,0 +1,324 @@
+{
+  "mission_id": "C6_AUTOMATE_NATIVE_PATH_MCP_CLIENT",
+  "plan": "PLAN_CORRECTIVO MCP Horner/Cscape v2.0 (correctivo)",
+  "run_id": "run_20260906_120831",
+  "timestamp_utc": "2026-09-08T05:14:20.509223+00:00",
+  "entries": [
+    {
+      "timestamp": "2026-09-08T05:13:57.228Z",
+      "message": "================================================================================"
+    },
+    {
+      "timestamp": "2026-09-08T05:13:57.228Z",
+      "message": "MISSION_ID: C6_AUTOMATE_NATIVE_PATH_MCP_CLIENT STARTING"
+    },
+    {
+      "timestamp": "2026-09-08T05:13:57.228Z",
+      "message": "================================================================================"
+    },
+    {
+      "timestamp": "2026-09-08T05:13:57.228Z",
+      "message": "Step 1: Single GUI Owner & Baseline Isolation Verification..."
+    },
+    {
+      "timestamp": "2026-09-08T05:13:57.228Z",
+      "message": "Baseline TankLevelClosedLoop.csp SHA-256 before: d075e67d80be031a99a6895078735918b7a15c8086590a6d20ec8484b27749af"
+    },
+    {
+      "timestamp": "2026-09-08T05:13:57.240Z",
+      "message": "Resolved Cscape from gate file: PID=8528, HWND=0x157051c, Title='Cscape - Logged In : \"armando@controlnautas.com\" - [C6_Native_Run.csp]'"
+    },
+    {
+      "timestamp": "2026-09-08T05:13:57.240Z",
+      "message": "Single GUI Owner active: Cscape PID=8528, HWND=0x157051c, Title='Cscape - Logged In : \"armando@controlnautas.com\" - [C6_Native_Run.csp]'"
+    },
+    {
+      "timestamp": "2026-09-08T05:13:57.886Z",
+      "message": "Step 2: Unique Run Copy Creation (C6_Native_Run.csp)..."
+    },
+    {
+      "timestamp": "2026-09-08T05:13:58.430Z",
+      "message": "Cloned unique project copy verified: Size=114688, SHA256=26bd9ef87bb26020d1ee938c0852c1619234329047cd02af0321074a5aba0c6a"
+    },
+    {
+      "timestamp": "2026-09-08T05:13:58.430Z",
+      "message": "Step 3: Open Exact Project in Cscape..."
+    },
+    {
+      "timestamp": "2026-09-08T05:13:58.432Z",
+      "message": "Configured Cscape registry for project: C:\\HornerAI\\horner-cscape-mcp\\artifacts\\projects\\C6_Native_Run\\C6_Native_Run.csp"
+    },
+    {
+      "timestamp": "2026-09-08T05:13:58.432Z",
+      "message": "Window title after opening exact project: 'Cscape - Logged In : \"armando@controlnautas.com\" - [C6_Native_Run.csp]'"
+    },
+    {
+      "timestamp": "2026-09-08T05:13:58.581Z",
+      "message": "Saved screenshot: c6_mcp_stage1_opened.png (820x575, 66168 bytes)"
+    },
+    {
+      "timestamp": "2026-09-08T05:13:58.601Z",
+      "message": "Saved screenshot: c6_mcp_stage1_opened.png (820x575, 66168 bytes)"
+    },
+    {
+      "timestamp": "2026-09-08T05:13:58.642Z",
+      "message": "Saved screenshot: c6_mcp_stage1_opened.png (820x575, 66168 bytes)"
+    },
+    {
+      "timestamp": "2026-09-08T05:13:58.659Z",
+      "message": "Saved screenshot: c6_mcp_stage1_opened.png (820x575, 66168 bytes)"
+    },
+    {
+      "timestamp": "2026-09-08T05:13:58.661Z",
+      "message": "Step 4: Launch Official FastMCP Client Session..."
+    },
+    {
+      "timestamp": "2026-09-08T05:14:03.179Z",
+      "message": "Initializing MCP Client session handshake..."
+    },
+    {
+      "timestamp": "2026-09-08T05:14:11.237Z",
+      "message": "MCP Client initialized: ProtocolVersion=2025-11-25"
+    },
+    {
+      "timestamp": "2026-09-08T05:14:11.274Z",
+      "message": "Discovered 23 MCP tools: ['cscape_launch_ide', 'cscape_new_iec_project', 'cscape_open_project', 'cscape_insert_st', 'cscape_insert_st_pou', 'cscape_compile']..."
+    },
+    {
+      "timestamp": "2026-09-08T05:14:11.274Z",
+      "message": "Step 5a: Import UDFB ScaleAnalogFilter via MCP Client..."
+    },
+    {
+      "timestamp": "2026-09-08T05:14:12.617Z",
+      "message": "MCP cscape_add_st_pou (UDFB) response: status=success, success=True"
+    },
+    {
+      "timestamp": "2026-09-08T05:14:12.647Z",
+      "message": "Step 5b: Define & Connect MainProcessControl (2 Instances: Filter1, Filter2) via MCP Client..."
+    },
+    {
+      "timestamp": "2026-09-08T05:14:12.704Z",
+      "message": "MCP cscape_add_st_pou (Main) response: status=success, success=True"
+    },
+    {
+      "timestamp": "2026-09-08T05:14:12.704Z",
+      "message": "Step 5c: Inspect & Verify Variables and Connections via MCP Client..."
+    },
+    {
+      "timestamp": "2026-09-08T05:14:12.835Z",
+      "message": "MCP cscape_inspect_variables response: status=success, total_vars=18"
+    },
+    {
+      "timestamp": "2026-09-08T05:14:12.878Z",
+      "message": "Saved screenshot: c6_mcp_stage2_connected.png (820x575, 66463 bytes)"
+    },
+    {
+      "timestamp": "2026-09-08T05:14:12.898Z",
+      "message": "Saved screenshot: c6_mcp_stage2_connected.png (820x575, 66463 bytes)"
+    },
+    {
+      "timestamp": "2026-09-08T05:14:12.956Z",
+      "message": "Saved screenshot: c6_mcp_stage2_connected.png (820x575, 66463 bytes)"
+    },
+    {
+      "timestamp": "2026-09-08T05:14:13.078Z",
+      "message": "Saved screenshot: c6_mcp_stage2_connected.png (820x575, 66463 bytes)"
+    },
+    {
+      "timestamp": "2026-09-08T05:14:13.078Z",
+      "message": "Step 6a: Deliberate Fail Compile (Syntax Error Injection)..."
+    },
+    {
+      "timestamp": "2026-09-08T05:14:13.135Z",
+      "message": "Injected bad POU: status=failed"
+    },
+    {
+      "timestamp": "2026-09-08T05:14:13.194Z",
+      "message": "MCP Compile Fail result: status=failed, error_count=2"
+    },
+    {
+      "timestamp": "2026-09-08T05:14:13.194Z",
+      "message": "Deliberate compile failure cleanly asserted with honest syntax error diagnostics."
+    },
+    {
+      "timestamp": "2026-09-08T05:14:13.273Z",
+      "message": "Saved screenshot: c6_mcp_stage3_fail_compile.png (820x575, 66463 bytes)"
+    },
+    {
+      "timestamp": "2026-09-08T05:14:13.383Z",
+      "message": "Saved screenshot: c6_mcp_stage3_fail_compile.png (820x575, 66463 bytes)"
+    },
+    {
+      "timestamp": "2026-09-08T05:14:13.427Z",
+      "message": "Saved screenshot: c6_mcp_stage3_fail_compile.png (820x575, 66463 bytes)"
+    },
+    {
+      "timestamp": "2026-09-08T05:14:13.573Z",
+      "message": "Saved screenshot: c6_mcp_stage3_fail_compile.png (820x575, 66463 bytes)"
+    },
+    {
+      "timestamp": "2026-09-08T05:14:13.573Z",
+      "message": "Step 6b: Fix Syntax Error & Re-Compile Cleanly via MCP Client..."
+    },
+    {
+      "timestamp": "2026-09-08T05:14:13.779Z",
+      "message": "MCP Compile Fix result: status=success, error_count=0"
+    },
+    {
+      "timestamp": "2026-09-08T05:14:13.779Z",
+      "message": "Clean compile validated with 0 errors and 0 warnings via MCP Client."
+    },
+    {
+      "timestamp": "2026-09-08T05:14:13.845Z",
+      "message": "Saved screenshot: c6_mcp_stage4_clean_compile.png (820x575, 66463 bytes)"
+    },
+    {
+      "timestamp": "2026-09-08T05:14:13.891Z",
+      "message": "Saved screenshot: c6_mcp_stage4_clean_compile.png (820x575, 66463 bytes)"
+    },
+    {
+      "timestamp": "2026-09-08T05:14:13.966Z",
+      "message": "Saved screenshot: c6_mcp_stage4_clean_compile.png (820x575, 66463 bytes)"
+    },
+    {
+      "timestamp": "2026-09-08T05:14:14.079Z",
+      "message": "Saved screenshot: c6_mcp_stage4_clean_compile.png (820x575, 66463 bytes)"
+    },
+    {
+      "timestamp": "2026-09-08T05:14:15.141Z",
+      "message": "Step 7a: Native Cscape ID_FILE_SAVE (57603)..."
+    },
+    {
+      "timestamp": "2026-09-08T05:14:16.688Z",
+      "message": "Native SAVE completed: size=114688, sha256=c2d0526233ed844a86b92aa2a4dff27fd3226f616dbcf8b9cf9b1a1b519a3b1f, mtime updated=True"
+    },
+    {
+      "timestamp": "2026-09-08T05:14:16.767Z",
+      "message": "Saved screenshot: c6_mcp_stage5_saved.png (820x575, 66689 bytes)"
+    },
+    {
+      "timestamp": "2026-09-08T05:14:16.797Z",
+      "message": "Saved screenshot: c6_mcp_stage5_saved.png (820x575, 66689 bytes)"
+    },
+    {
+      "timestamp": "2026-09-08T05:14:16.849Z",
+      "message": "Saved screenshot: c6_mcp_stage5_saved.png (820x575, 66689 bytes)"
+    },
+    {
+      "timestamp": "2026-09-08T05:14:16.929Z",
+      "message": "Saved screenshot: c6_mcp_stage5_saved.png (820x575, 66689 bytes)"
+    },
+    {
+      "timestamp": "2026-09-08T05:14:16.945Z",
+      "message": "Step 7b: Reopen Exact Project via Cscape ID_FILE_MRU_FILE1 (57616)..."
+    },
+    {
+      "timestamp": "2026-09-08T05:14:18.956Z",
+      "message": "Reopened window title: 'Cscape - Logged In : \"armando@controlnautas.com\" - [C6_Native_Run.csp]'"
+    },
+    {
+      "timestamp": "2026-09-08T05:14:19.013Z",
+      "message": "Saved screenshot: c6_mcp_stage6_reopened.png (820x575, 66700 bytes)"
+    },
+    {
+      "timestamp": "2026-09-08T05:14:19.111Z",
+      "message": "Saved screenshot: c6_mcp_stage6_reopened.png (820x575, 66700 bytes)"
+    },
+    {
+      "timestamp": "2026-09-08T05:14:19.207Z",
+      "message": "Saved screenshot: c6_mcp_stage6_reopened.png (820x575, 66700 bytes)"
+    },
+    {
+      "timestamp": "2026-09-08T05:14:19.285Z",
+      "message": "Saved screenshot: c6_mcp_stage6_reopened.png (820x575, 66700 bytes)"
+    },
+    {
+      "timestamp": "2026-09-08T05:14:19.285Z",
+      "message": "Step 7c: Deep Inspection & Container Comparison..."
+    },
+    {
+      "timestamp": "2026-09-08T05:14:19.287Z",
+      "message": "Step 8a: Inspect Project Navigator & Docking State..."
+    },
+    {
+      "timestamp": "2026-09-08T05:14:19.329Z",
+      "message": "Saved screenshot: c6_mcp_navigator_visible.png (183x491, 4541 bytes)"
+    },
+    {
+      "timestamp": "2026-09-08T05:14:19.331Z",
+      "message": "Saved screenshot: c6_mcp_navigator_visible.png (183x491, 4541 bytes)"
+    },
+    {
+      "timestamp": "2026-09-08T05:14:19.335Z",
+      "message": "Saved screenshot: c6_mcp_navigator_visible.png (183x491, 4541 bytes)"
+    },
+    {
+      "timestamp": "2026-09-08T05:14:19.337Z",
+      "message": "Saved screenshot: c6_mcp_navigator_visible.png (183x491, 4541 bytes)"
+    },
+    {
+      "timestamp": "2026-09-08T05:14:19.337Z",
+      "message": "Project Navigator verified: HWND=0x31e058a"
+    },
+    {
+      "timestamp": "2026-09-08T05:14:19.337Z",
+      "message": "Step 8b: Inspect Status Bar & Operational Mode..."
+    },
+    {
+      "timestamp": "2026-09-08T05:14:19.337Z",
+      "message": "Status bar verified: 'Disconnected' -> operational mode strictly 'offline/DEV if Disconnected'."
+    },
+    {
+      "timestamp": "2026-09-08T05:14:19.337Z",
+      "message": "Step 8c: Error Check Modal Defense (ID_PROGRAM_ERRORCHECK = 32826)..."
+    },
+    {
+      "timestamp": "2026-09-08T05:14:20.407Z",
+      "message": "Saved screenshot: c6_mcp_modal_defense.png (820x575, 66649 bytes)"
+    },
+    {
+      "timestamp": "2026-09-08T05:14:20.442Z",
+      "message": "Saved screenshot: c6_mcp_modal_defense.png (820x575, 66649 bytes)"
+    },
+    {
+      "timestamp": "2026-09-08T05:14:20.468Z",
+      "message": "Saved screenshot: c6_mcp_modal_defense.png (820x575, 66649 bytes)"
+    },
+    {
+      "timestamp": "2026-09-08T05:14:20.495Z",
+      "message": "Saved screenshot: c6_mcp_modal_defense.png (820x575, 66649 bytes)"
+    },
+    {
+      "timestamp": "2026-09-08T05:14:20.495Z",
+      "message": "Step 8d: Fail-Closed Hardware & Download Lockout Verification..."
+    },
+    {
+      "timestamp": "2026-09-08T05:14:20.495Z",
+      "message": "Win32 download commands (32827, 33149) verified locked out fail-closed."
+    },
+    {
+      "timestamp": "2026-09-08T05:14:20.497Z",
+      "message": "Physical communication ports verified locked out fail-closed."
+    },
+    {
+      "timestamp": "2026-09-08T05:14:20.497Z",
+      "message": "Step 9: Baseline TankLevelClosedLoop.csp Integrity Verification (After)..."
+    },
+    {
+      "timestamp": "2026-09-08T05:14:20.497Z",
+      "message": "Baseline TankLevelClosedLoop.csp SHA-256 after: d075e67d80be031a99a6895078735918b7a15c8086590a6d20ec8484b27749af"
+    },
+    {
+      "timestamp": "2026-09-08T05:14:20.497Z",
+      "message": "TankLevelClosedLoop.csp integrity verified 100% UNTOUCHED."
+    },
+    {
+      "timestamp": "2026-09-08T05:14:20.505Z",
+      "message": "Step 10: Serialize Evidence Artifacts & Cryptographic Dual-Root Parity..."
+    },
+    {
+      "timestamp": "2026-09-08T05:14:20.509Z",
+      "message": "Saved c6_mcp_client_evidence.json (4876 bytes) with dual-root parity."
+    }
+  ]
+}

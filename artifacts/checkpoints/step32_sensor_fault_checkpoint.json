@@ -1,0 +1,16 @@
+{
+  "step": 32,
+  "name": "step32_sensor_fault_checkpoint",
+  "description": "Sensor fault injection and hardware limit cutoffs verified across 500 cycles with 100% open-circuit pump cavitation cutoff, 100% saturation overflow cutoff, sub-0.05% nominal recovery, and zero hardware interaction",
+  "timestamp_utc": "2026-09-05T07:30:28.725Z",
+  "cscape_pid": 15240,
+  "cscape_hwnd": "0x00710582",
+  "cscape_healthy": true,
+  "total_cycles": 500,
+  "open_circuit_pump_cutoff_pct": 100.0,
+  "saturation_inflow_cutoff_pct": 100.0,
+  "final_error_pct": 0.0,
+  "hardware_lockout_enforced": true,
+  "audit_log": "C:\\Users\\ArmandoSilva\\artifacts\\logs\\mcp_sensor_fault_cutoff_audit.json",
+  "status": "VERIFIED_LIVE"
+}

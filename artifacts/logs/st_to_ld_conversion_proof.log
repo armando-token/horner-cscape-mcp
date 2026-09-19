@@ -1,0 +1,806 @@
+================================================================================
+STEP 5: ST -> LD CONVERSION PROOF & LIVE GUI MCP TOOL EXECUTION
+================================================================================
+Timestamp UTC  : 2026-09-05T01:47:42.193Z
+Project File   : C:\Users\ArmandoSilva\artifacts\projects\TankLevelClosedLoop\TankLevelClosedLoop.csp
+ST POU File    : C:\Users\ArmandoSilva\artifacts\projects\TankLevelClosedLoop\pous\TankLevelClosedLoop.st
+
+[GATE_CHECK] Verifying Cscape GUI stability and TankLevelClosedLoop title...
+  -> Cscape Status : READY_FOR_TESTS (Ready=True)
+  -> PID           : 9268
+  -> HWND          : 0x01DF047A (31392890)
+  -> Window Title  : 'Cscape - Logged In : "armando@controlnautas.com" - [TankLevelClosedLoop.csp]'
+
+------------------------------------------------------------
+PART 1: ST -> LD CONVERSION PROOF ON TankLevelClosedLoop
+------------------------------------------------------------
+  Loaded source ST: 2503 characters, 96 lines
+  Successfully converted POU 'TankLevelClosedLoop' to IEC 61131-3 Ladder AST:
+  -> Total Variables Declared : 24
+  -> Total Ladder Rungs       : 10
+     * Rung 01 [MATH  ]: CycleCounter Math Calculation  | Recipe: MATH_BOX
+     * Rung 02 [MATH  ]: TankLevelPV Math Calculation   | Recipe: MATH_BOX
+     * Rung 03 [MATH  ]: Error Math Calculation         | Recipe: MATH_BOX
+     * Rung 04 [COIL  ]: LastError Control Logic        | Recipe: COIL_NORMAL
+     * Rung 05 [COIL  ]: RawPumpOutput Control Logic    | Recipe: COIL_NORMAL
+     * Rung 06 [COIL  ]: RawValveOutput Control Logic   | Recipe: COIL_NORMAL
+     * Rung 07 [COIL  ]: AlarmHighHigh Latch (Set Coil) | Recipe: COIL_SET
+     * Rung 08 [COIL  ]: AlarmHigh Latch (Set Coil)     | Recipe: COIL_SET
+     * Rung 09 [COIL  ]: AlarmLow Latch (Set Coil)      | Recipe: COIL_SET
+     * Rung 10 [COIL  ]: InflowValveCmd Latch (Set Coil) | Recipe: COIL_SET
+  -> ASCII Ladder Diagram Proof saved to: artifacts/proofs/tank_level_ladder_diagram.txt
+  -> Structured Ladder AST JSON saved to: artifacts/proofs/tank_level_ladder_ast.json
+
+[INTEROP_GUARD] Verifying fail-closed rejection of ladder constructs in ST...
+  [PASS] Ladder construct injection strictly rejected fail-closed: ASCII_NO_CONTACT
+
+------------------------------------------------------------
+PART 2: LIVE MCP TOOLS E2E LIST / CALL AGAINST ACTIVE GUI
+------------------------------------------------------------
+  [01/16] cscape_open_project        | Status: PASS |   37.6ms | Cscape project 'TankLevelClosedLoop.csp' verified (CFBF=True
+  [02/16] cscape_read_variables      | Status: PASS |    6.0ms | Successfully read and validated 21 variables from variables.
+  [03/16] cscape_inspect_variables   | Status: PASS |   33.3ms | success
+  [04/16] cscape_validate_st         | Status: PASS |    0.0ms | {
+  "valid": true,
+  "pou_name": "ValidCheck",
+  "pou_type":
+  [05/16] cscape_compile_project     | Status: PASS |   22.1ms | Compilation completed: SUCCESS (0 errors, 0 warnings)
+  [06/16] cscape_compile             | Status: PASS | 1151.7ms | Live Cscape error check completed (0 errors, 0 warnings)
+  [07/16] cscape_get_build_output    | Status: PASS |    0.0ms | Retrieved 0 diagnostics from build log.
+  [08/16] cscape_get_diagnostics     | Status: PASS |   18.1ms | Retrieved 0 diagnostics from build log.
+  [09/16] cscape_simulate_cycle      | Status: PASS |    5.8ms | Cycle 0 executed successfully at t=0.0ms.
+  [10/16] cscape_simulate_pou        | Status: PASS |    1.4ms | {
+  "success": true,
+  "steps_executed": 3,
+  "total_cycles"
+  [11/16] cscape_run_simulation      | Status: PASS |    2.0ms | Executed 5 simulation cycles (software-only).
+  [12/16] cscape_read_register       | Status: PASS |    2.0ms | Read register %R100 = 0 (INT).
+  [13/16] cscape_write_register      | Status: PASS |    2.0ms | Wrote register %R100 = 16000 (INT).
+  [14/16] cscape_export_variables    | Status: PASS |    4.0ms | Successfully wrote 0 variables to exported_vars.csv in CSV f
+  [15/16] cscape_import_variables    | Status: PASS |    7.8ms | Successfully read and validated 21 variables from variables.
+  [16/16] cscape_export_project      | Status: PASS |    2.0ms | success
+
+Checkpoint saved to: C:\Users\ArmandoSilva\artifacts\checkpoints\step5_st_ld_conversion_checkpoint.json
+
+Checkpoint saved to: C:\HornerAI\horner-cscape-mcp\artifacts\checkpoints\step5_st_ld_conversion_checkpoint.json
+================================================================================
+STEP 5: ST -> LD CONVERSION PROOF & LIVE GUI MCP TESTS COMPLETED SUCCESSFULLY
+================================================================================
+================================================================================
+STEP 5: ST -> LD CONVERSION PROOF & LIVE GUI MCP TOOL EXECUTION
+================================================================================
+Timestamp UTC  : 2026-09-05T01:58:18.356Z
+Project File   : C:\Users\ArmandoSilva\artifacts\projects\TankLevelClosedLoop\TankLevelClosedLoop.csp
+ST POU File    : C:\Users\ArmandoSilva\artifacts\projects\TankLevelClosedLoop\pous\TankLevelClosedLoop.st
+
+[GATE_CHECK] Verifying Cscape GUI stability and TankLevelClosedLoop title...
+  -> Cscape Status : READY_FOR_TESTS (Ready=True)
+  -> PID           : 7956
+  -> HWND          : 0x01B403F8 (28574712)
+  -> Window Title  : 'Cscape - Logged In : "armando@controlnautas.com" - [TankLevelClosedLoop.csp]'
+
+------------------------------------------------------------
+PART 1: ST -> LD CONVERSION PROOF ON TankLevelClosedLoop
+------------------------------------------------------------
+  Loaded source ST: 2503 characters, 96 lines
+  Successfully converted POU 'TankLevelClosedLoop' to IEC 61131-3 Ladder AST:
+  -> Total Variables Declared : 24
+  -> Total Ladder Rungs       : 10
+     * Rung 01 [MATH  ]: CycleCounter Math Calculation  | Recipe: MATH_BOX
+     * Rung 02 [MATH  ]: TankLevelPV Math Calculation   | Recipe: MATH_BOX
+     * Rung 03 [MATH  ]: Error Math Calculation         | Recipe: MATH_BOX
+     * Rung 04 [COIL  ]: LastError Control Logic        | Recipe: COIL_NORMAL
+     * Rung 05 [COIL  ]: RawPumpOutput Control Logic    | Recipe: COIL_NORMAL
+     * Rung 06 [COIL  ]: RawValveOutput Control Logic   | Recipe: COIL_NORMAL
+     * Rung 07 [COIL  ]: AlarmHighHigh Latch (Set Coil) | Recipe: COIL_SET
+     * Rung 08 [COIL  ]: AlarmHigh Latch (Set Coil)     | Recipe: COIL_SET
+     * Rung 09 [COIL  ]: AlarmLow Latch (Set Coil)      | Recipe: COIL_SET
+     * Rung 10 [COIL  ]: InflowValveCmd Latch (Set Coil) | Recipe: COIL_SET
+  -> ASCII Ladder Diagram Proof saved to: artifacts/proofs/tank_level_ladder_diagram.txt
+  -> Structured Ladder AST JSON saved to: artifacts/proofs/tank_level_ladder_ast.json
+
+[INTEROP_GUARD] Verifying fail-closed rejection of ladder constructs in ST...
+  [PASS] Ladder construct injection strictly rejected fail-closed: ASCII_NO_CONTACT
+
+------------------------------------------------------------
+PART 2: LIVE MCP TOOLS E2E LIST / CALL AGAINST ACTIVE GUI
+------------------------------------------------------------
+  [01/16] cscape_open_project        | Status: PASS |   88.9ms | Cscape project 'TankLevelClosedLoop.csp' verified (CFBF=True
+  [02/16] cscape_read_variables      | Status: PASS |    6.3ms | Successfully read and validated 21 variables from variables.
+  [03/16] cscape_inspect_variables   | Status: PASS |   47.7ms | success
+  [04/16] cscape_validate_st         | Status: PASS |    2.5ms | {
+  "valid": true,
+  "pou_name": "ValidCheck",
+  "pou_type":
+  [05/16] cscape_compile_project     | Status: PASS |   17.6ms | Compilation completed: SUCCESS (0 errors, 0 warnings)
+  [06/16] cscape_compile             | Status: PASS | 1177.2ms | Live Cscape error check completed (0 errors, 0 warnings)
+  [07/16] cscape_get_build_output    | Status: PASS |    1.5ms | Retrieved 0 diagnostics from build log.
+  [08/16] cscape_get_diagnostics     | Status: PASS |    9.5ms | Retrieved 0 diagnostics from build log.
+  [09/16] cscape_simulate_cycle      | Status: PASS |    7.0ms | Cycle 0 executed successfully at t=0.0ms.
+  [10/16] cscape_simulate_pou        | Status: PASS |    2.0ms | {
+  "success": true,
+  "steps_executed": 3,
+  "total_cycles"
+  [11/16] cscape_run_simulation      | Status: PASS |    0.0ms | Executed 5 simulation cycles (software-only).
+  [12/16] cscape_read_register       | Status: PASS |    0.0ms | Read register %R100 = 0 (INT).
+  [13/16] cscape_write_register      | Status: PASS |    9.0ms | Wrote register %R100 = 16000 (INT).
+  [14/16] cscape_export_variables    | Status: PASS |    2.0ms | Successfully wrote 0 variables to exported_vars.csv in CSV f
+  [15/16] cscape_import_variables    | Status: PASS |    5.8ms | Successfully read and validated 21 variables from variables.
+  [16/16] cscape_export_project      | Status: PASS |    2.0ms | success
+
+Checkpoint saved to: C:\Users\ArmandoSilva\artifacts\checkpoints\step5_st_ld_conversion_checkpoint.json
+
+Checkpoint saved to: C:\HornerAI\horner-cscape-mcp\artifacts\checkpoints\step5_st_ld_conversion_checkpoint.json
+================================================================================
+STEP 5: ST -> LD CONVERSION PROOF & LIVE GUI MCP TESTS COMPLETED SUCCESSFULLY
+================================================================================
+================================================================================
+STEP 5: ST -> LD CONVERSION PROOF & LIVE GUI MCP TOOL EXECUTION
+================================================================================
+Timestamp UTC  : 2026-09-05T03:08:43.242Z
+Project File   : C:\Users\ArmandoSilva\artifacts\projects\TankLevelClosedLoop\TankLevelClosedLoop.csp
+ST POU File    : C:\Users\ArmandoSilva\artifacts\projects\TankLevelClosedLoop\pous\TankLevelClosedLoop.st
+
+[GATE_CHECK] Verifying Cscape GUI stability and TankLevelClosedLoop title...
+  -> Cscape Status : READY_FOR_TESTS (Ready=True)
+  -> PID           : 11324
+  -> HWND          : 0x01C303FC (29557756)
+  -> Window Title  : 'Cscape - Logged In : "armando@controlnautas.com" - [TankLevelClosedLoop.csp]'
+
+------------------------------------------------------------
+PART 1: ST -> LD CONVERSION PROOF ON TankLevelClosedLoop
+------------------------------------------------------------
+  Loaded source ST: 2503 characters, 96 lines
+  Successfully converted POU 'TankLevelClosedLoop' to IEC 61131-3 Ladder AST:
+  -> Total Variables Declared : 24
+  -> Total Ladder Rungs       : 10
+     * Rung 01 [MATH  ]: CycleCounter Math Calculation  | Recipe: MATH_BOX
+     * Rung 02 [MATH  ]: TankLevelPV Math Calculation   | Recipe: MATH_BOX
+     * Rung 03 [MATH  ]: Error Math Calculation         | Recipe: MATH_BOX
+     * Rung 04 [COIL  ]: LastError Control Logic        | Recipe: COIL_NORMAL
+     * Rung 05 [COIL  ]: RawPumpOutput Control Logic    | Recipe: COIL_NORMAL
+     * Rung 06 [COIL  ]: RawValveOutput Control Logic   | Recipe: COIL_NORMAL
+     * Rung 07 [COIL  ]: AlarmHighHigh Latch (Set Coil) | Recipe: COIL_SET
+     * Rung 08 [COIL  ]: AlarmHigh Latch (Set Coil)     | Recipe: COIL_SET
+     * Rung 09 [COIL  ]: AlarmLow Latch (Set Coil)      | Recipe: COIL_SET
+     * Rung 10 [COIL  ]: InflowValveCmd Latch (Set Coil) | Recipe: COIL_SET
+  -> ASCII Ladder Diagram Proof saved to: artifacts/proofs/tank_level_ladder_diagram.txt
+  -> Structured Ladder AST JSON saved to: artifacts/proofs/tank_level_ladder_ast.json
+
+[INTEROP_GUARD] Verifying fail-closed rejection of ladder constructs in ST...
+  [PASS] Ladder construct injection strictly rejected fail-closed: ASCII_NO_CONTACT
+
+------------------------------------------------------------
+PART 2: LIVE MCP TOOLS E2E LIST / CALL AGAINST ACTIVE GUI
+------------------------------------------------------------
+  [01/16] cscape_open_project        | Status: PASS |   52.7ms | Cscape project 'TankLevelClosedLoop.csp' verified (CFBF=True
+  [02/16] cscape_read_variables      | Status: PASS |    7.6ms | Successfully read and validated 21 variables from variables.
+  [03/16] cscape_inspect_variables   | Status: PASS |   54.6ms | success
+  [04/16] cscape_validate_st         | Status: PASS |    2.0ms | {
+  "valid": true,
+  "pou_name": "ValidCheck",
+  "pou_type":
+  [05/16] cscape_compile_project     | Status: PASS |   15.9ms | Compilation completed: SUCCESS (0 errors, 0 warnings)
+  [06/16] cscape_compile             | Status: PASS | 1166.2ms | Live Cscape error check completed (0 errors, 0 warnings)
+  [07/16] cscape_get_build_output    | Status: PASS |    0.0ms | Retrieved 0 diagnostics from build log.
+  [08/16] cscape_get_diagnostics     | Status: PASS |   10.7ms | Retrieved 0 diagnostics from build log.
+  [09/16] cscape_simulate_cycle      | Status: PASS |    7.5ms | Cycle 0 executed successfully at t=0.0ms.
+  [10/16] cscape_simulate_pou        | Status: PASS |    2.0ms | {
+  "success": true,
+  "steps_executed": 3,
+  "total_cycles"
+  [11/16] cscape_run_simulation      | Status: PASS |    2.0ms | Executed 5 simulation cycles (software-only).
+  [12/16] cscape_read_register       | Status: PASS |    2.0ms | Read register %R100 = 0 (INT).
+  [13/16] cscape_write_register      | Status: PASS |    0.0ms | Wrote register %R100 = 16000 (INT).
+  [14/16] cscape_export_variables    | Status: PASS |    2.0ms | Successfully wrote 0 variables to exported_vars.csv in CSV f
+  [15/16] cscape_import_variables    | Status: PASS |    4.5ms | Successfully read and validated 21 variables from variables.
+  [16/16] cscape_export_project      | Status: PASS |    0.0ms | success
+
+Checkpoint saved to: C:\Users\ArmandoSilva\artifacts\checkpoints\step5_st_ld_conversion_checkpoint.json
+
+Checkpoint saved to: C:\HornerAI\horner-cscape-mcp\artifacts\checkpoints\step5_st_ld_conversion_checkpoint.json
+================================================================================
+STEP 5: ST -> LD CONVERSION PROOF & LIVE GUI MCP TESTS COMPLETED SUCCESSFULLY
+================================================================================
+================================================================================
+STEP 5: ST -> LD CONVERSION PROOF & LIVE GUI MCP TOOL EXECUTION
+================================================================================
+Timestamp UTC  : 2026-09-05T03:21:15.880Z
+Project File   : C:\Users\ArmandoSilva\artifacts\projects\TankLevelClosedLoop\TankLevelClosedLoop.csp
+ST POU File    : C:\Users\ArmandoSilva\artifacts\projects\TankLevelClosedLoop\pous\TankLevelClosedLoop.st
+
+[GATE_CHECK] Verifying Cscape GUI stability and TankLevelClosedLoop title...
+  -> Cscape Status : READY_FOR_TESTS (Ready=True)
+  -> PID           : 7608
+  -> HWND          : 0x00AC0754 (11274068)
+  -> Window Title  : 'Cscape - Logged In : "armando@controlnautas.com" - [TankLevelClosedLoop.csp]'
+
+------------------------------------------------------------
+PART 1: ST -> LD CONVERSION PROOF ON TankLevelClosedLoop
+------------------------------------------------------------
+  Loaded source ST: 2503 characters, 96 lines
+  Successfully converted POU 'TankLevelClosedLoop' to IEC 61131-3 Ladder AST:
+  -> Total Variables Declared : 24
+  -> Total Ladder Rungs       : 10
+     * Rung 01 [MATH  ]: CycleCounter Math Calculation  | Recipe: MATH_BOX
+     * Rung 02 [MATH  ]: TankLevelPV Math Calculation   | Recipe: MATH_BOX
+     * Rung 03 [MATH  ]: Error Math Calculation         | Recipe: MATH_BOX
+     * Rung 04 [COIL  ]: LastError Control Logic        | Recipe: COIL_NORMAL
+     * Rung 05 [COIL  ]: RawPumpOutput Control Logic    | Recipe: COIL_NORMAL
+     * Rung 06 [COIL  ]: RawValveOutput Control Logic   | Recipe: COIL_NORMAL
+     * Rung 07 [COIL  ]: AlarmHighHigh Latch (Set Coil) | Recipe: COIL_SET
+     * Rung 08 [COIL  ]: AlarmHigh Latch (Set Coil)     | Recipe: COIL_SET
+     * Rung 09 [COIL  ]: AlarmLow Latch (Set Coil)      | Recipe: COIL_SET
+     * Rung 10 [COIL  ]: InflowValveCmd Latch (Set Coil) | Recipe: COIL_SET
+  -> ASCII Ladder Diagram Proof saved to: artifacts/proofs/tank_level_ladder_diagram.txt
+  -> Structured Ladder AST JSON saved to: artifacts/proofs/tank_level_ladder_ast.json
+
+[INTEROP_GUARD] Verifying fail-closed rejection of ladder constructs in ST...
+  [PASS] Ladder construct injection strictly rejected fail-closed: ASCII_NO_CONTACT
+
+------------------------------------------------------------
+PART 2: LIVE MCP TOOLS E2E LIST / CALL AGAINST ACTIVE GUI
+------------------------------------------------------------
+  [01/16] cscape_open_project        | Status: PASS |   48.7ms | Cscape project 'TankLevelClosedLoop.csp' verified (CFBF=True
+  [02/16] cscape_read_variables      | Status: PASS |    5.5ms | Successfully read and validated 21 variables from variables.
+  [03/16] cscape_inspect_variables   | Status: PASS |   41.6ms | success
+  [04/16] cscape_validate_st         | Status: PASS |    2.0ms | {
+  "valid": true,
+  "pou_name": "ValidCheck",
+  "pou_type":
+  [05/16] cscape_compile_project     | Status: PASS |   18.6ms | Compilation completed: SUCCESS (0 errors, 0 warnings)
+  [06/16] cscape_compile             | Status: PASS | 1071.1ms | Live Cscape error check completed (0 errors, 0 warnings)
+  [07/16] cscape_get_build_output    | Status: PASS |    1.0ms | Retrieved 0 diagnostics from build log.
+  [08/16] cscape_get_diagnostics     | Status: PASS |   10.1ms | Retrieved 0 diagnostics from build log.
+  [09/16] cscape_simulate_cycle      | Status: PASS |    6.1ms | Cycle 0 executed successfully at t=0.0ms.
+  [10/16] cscape_simulate_pou        | Status: PASS |    2.0ms | {
+  "success": true,
+  "steps_executed": 3,
+  "total_cycles"
+  [11/16] cscape_run_simulation      | Status: PASS |    2.0ms | Executed 5 simulation cycles (software-only).
+  [12/16] cscape_read_register       | Status: PASS |    2.0ms | Read register %R100 = 0 (INT).
+  [13/16] cscape_write_register      | Status: PASS |    0.0ms | Wrote register %R100 = 16000 (INT).
+  [14/16] cscape_export_variables    | Status: PASS |    2.0ms | Successfully wrote 0 variables to exported_vars.csv in CSV f
+  [15/16] cscape_import_variables    | Status: PASS |    5.8ms | Successfully read and validated 21 variables from variables.
+  [16/16] cscape_export_project      | Status: PASS |    2.0ms | success
+
+Checkpoint saved to: C:\Users\ArmandoSilva\artifacts\checkpoints\step5_st_ld_conversion_checkpoint.json
+
+Checkpoint saved to: C:\HornerAI\horner-cscape-mcp\artifacts\checkpoints\step5_st_ld_conversion_checkpoint.json
+================================================================================
+STEP 5: ST -> LD CONVERSION PROOF & LIVE GUI MCP TESTS COMPLETED SUCCESSFULLY
+================================================================================
+================================================================================
+STEP 5: ST -> LD CONVERSION PROOF & LIVE GUI MCP TOOL EXECUTION
+================================================================================
+Timestamp UTC  : 2026-09-05T03:56:58.685Z
+Project File   : C:\Users\ArmandoSilva\artifacts\projects\TankLevelClosedLoop\TankLevelClosedLoop.csp
+ST POU File    : C:\Users\ArmandoSilva\artifacts\projects\TankLevelClosedLoop\pous\TankLevelClosedLoop.st
+
+[GATE_CHECK] Verifying Cscape GUI stability and TankLevelClosedLoop title...
+  -> Cscape Status : READY_FOR_TESTS (Ready=True)
+  -> PID           : 6632
+  -> HWND          : 0x025603DE (39191518)
+  -> Window Title  : 'Cscape - Logged In : "armando@controlnautas.com" - [TankLevelClosedLoop.csp]'
+
+------------------------------------------------------------
+PART 1: ST -> LD CONVERSION PROOF ON TankLevelClosedLoop
+------------------------------------------------------------
+  Loaded source ST: 2503 characters, 96 lines
+  Successfully converted POU 'TankLevelClosedLoop' to IEC 61131-3 Ladder AST:
+  -> Total Variables Declared : 24
+  -> Total Ladder Rungs       : 10
+     * Rung 01 [MATH  ]: CycleCounter Math Calculation  | Recipe: MATH_BOX
+     * Rung 02 [MATH  ]: TankLevelPV Math Calculation   | Recipe: MATH_BOX
+     * Rung 03 [MATH  ]: Error Math Calculation         | Recipe: MATH_BOX
+     * Rung 04 [COIL  ]: LastError Control Logic        | Recipe: COIL_NORMAL
+     * Rung 05 [COIL  ]: RawPumpOutput Control Logic    | Recipe: COIL_NORMAL
+     * Rung 06 [COIL  ]: RawValveOutput Control Logic   | Recipe: COIL_NORMAL
+     * Rung 07 [COIL  ]: AlarmHighHigh Latch (Set Coil) | Recipe: COIL_SET
+     * Rung 08 [COIL  ]: AlarmHigh Latch (Set Coil)     | Recipe: COIL_SET
+     * Rung 09 [COIL  ]: AlarmLow Latch (Set Coil)      | Recipe: COIL_SET
+     * Rung 10 [COIL  ]: InflowValveCmd Latch (Set Coil) | Recipe: COIL_SET
+  -> ASCII Ladder Diagram Proof saved to: artifacts/proofs/tank_level_ladder_diagram.txt
+  -> Structured Ladder AST JSON saved to: artifacts/proofs/tank_level_ladder_ast.json
+
+[INTEROP_GUARD] Verifying fail-closed rejection of ladder constructs in ST...
+  [PASS] Ladder construct injection strictly rejected fail-closed: ASCII_NO_CONTACT
+
+------------------------------------------------------------
+PART 2: LIVE MCP TOOLS E2E LIST / CALL AGAINST ACTIVE GUI
+------------------------------------------------------------
+  [01/16] cscape_open_project        | Status: PASS |   55.6ms | Cscape project 'TankLevelClosedLoop.csp' verified (CFBF=True
+  [02/16] cscape_read_variables      | Status: PASS |    6.0ms | Successfully read and validated 21 variables from variables.
+  [03/16] cscape_inspect_variables   | Status: PASS |   41.5ms | success
+  [04/16] cscape_validate_st         | Status: PASS |    2.0ms | {
+  "valid": true,
+  "pou_name": "ValidCheck",
+  "pou_type":
+  [05/16] cscape_compile_project     | Status: PASS |   18.4ms | Compilation completed: SUCCESS (0 errors, 0 warnings)
+  [06/16] cscape_compile             | Status: PASS | 1006.5ms | Live Cscape error check completed (0 errors, 0 warnings)
+  [07/16] cscape_get_build_output    | Status: PASS |    2.1ms | Retrieved 0 diagnostics from build log.
+  [08/16] cscape_get_diagnostics     | Status: PASS |   12.9ms | Retrieved 0 diagnostics from build log.
+  [09/16] cscape_simulate_cycle      | Status: PASS |   12.3ms | Cycle 0 executed successfully at t=0.0ms.
+  [10/16] cscape_simulate_pou        | Status: PASS |    2.0ms | {
+  "success": true,
+  "steps_executed": 3,
+  "total_cycles"
+  [11/16] cscape_run_simulation      | Status: PASS |    1.8ms | Executed 5 simulation cycles (software-only).
+  [12/16] cscape_read_register       | Status: PASS |    2.0ms | Read register %R100 = 0 (INT).
+  [13/16] cscape_write_register      | Status: PASS |    0.5ms | Wrote register %R100 = 16000 (INT).
+  [14/16] cscape_export_variables    | Status: PASS |    2.0ms | Successfully wrote 0 variables to exported_vars.csv in CSV f
+  [15/16] cscape_import_variables    | Status: PASS |    4.8ms | Successfully read and validated 21 variables from variables.
+  [16/16] cscape_export_project      | Status: PASS |    2.0ms | success
+
+Checkpoint saved to: C:\Users\ArmandoSilva\artifacts\checkpoints\step5_st_ld_conversion_checkpoint.json
+
+Checkpoint saved to: C:\HornerAI\horner-cscape-mcp\artifacts\checkpoints\step5_st_ld_conversion_checkpoint.json
+================================================================================
+STEP 5: ST -> LD CONVERSION PROOF & LIVE GUI MCP TESTS COMPLETED SUCCESSFULLY
+================================================================================
+================================================================================
+STEP 5: ST -> LD CONVERSION PROOF & LIVE GUI MCP TOOL EXECUTION
+================================================================================
+Timestamp UTC  : 2026-09-05T04:23:53.124Z
+Project File   : C:\Users\ArmandoSilva\artifacts\projects\TankLevelClosedLoop\TankLevelClosedLoop.csp
+ST POU File    : C:\Users\ArmandoSilva\artifacts\projects\TankLevelClosedLoop\pous\TankLevelClosedLoop.st
+
+[GATE_CHECK] Verifying Cscape GUI stability and TankLevelClosedLoop title...
+  -> Cscape Status : READY_FOR_TESTS (Ready=True)
+  -> PID           : 8180
+  -> HWND          : 0x025803DE (39322590)
+  -> Window Title  : 'Cscape - Logged In : "armando@controlnautas.com" - [TankLevelClosedLoop.csp]'
+
+------------------------------------------------------------
+PART 1: ST -> LD CONVERSION PROOF ON TankLevelClosedLoop
+------------------------------------------------------------
+  Loaded source ST: 2503 characters, 96 lines
+  Successfully converted POU 'TankLevelClosedLoop' to IEC 61131-3 Ladder AST:
+  -> Total Variables Declared : 24
+  -> Total Ladder Rungs       : 10
+     * Rung 01 [MATH  ]: CycleCounter Math Calculation  | Recipe: MATH_BOX
+     * Rung 02 [MATH  ]: TankLevelPV Math Calculation   | Recipe: MATH_BOX
+     * Rung 03 [MATH  ]: Error Math Calculation         | Recipe: MATH_BOX
+     * Rung 04 [COIL  ]: LastError Control Logic        | Recipe: COIL_NORMAL
+     * Rung 05 [COIL  ]: RawPumpOutput Control Logic    | Recipe: COIL_NORMAL
+     * Rung 06 [COIL  ]: RawValveOutput Control Logic   | Recipe: COIL_NORMAL
+     * Rung 07 [COIL  ]: AlarmHighHigh Latch (Set Coil) | Recipe: COIL_SET
+     * Rung 08 [COIL  ]: AlarmHigh Latch (Set Coil)     | Recipe: COIL_SET
+     * Rung 09 [COIL  ]: AlarmLow Latch (Set Coil)      | Recipe: COIL_SET
+     * Rung 10 [COIL  ]: InflowValveCmd Latch (Set Coil) | Recipe: COIL_SET
+  -> ASCII Ladder Diagram Proof saved to: artifacts/proofs/tank_level_ladder_diagram.txt
+  -> Structured Ladder AST JSON saved to: artifacts/proofs/tank_level_ladder_ast.json
+
+[INTEROP_GUARD] Verifying fail-closed rejection of ladder constructs in ST...
+  [PASS] Ladder construct injection strictly rejected fail-closed: ASCII_NO_CONTACT
+
+------------------------------------------------------------
+PART 2: LIVE MCP TOOLS E2E LIST / CALL AGAINST ACTIVE GUI
+------------------------------------------------------------
+  [01/16] cscape_open_project        | Status: PASS |   47.3ms | Cscape project 'TankLevelClosedLoop.csp' verified (CFBF=True
+  [02/16] cscape_read_variables      | Status: PASS |    8.1ms | Successfully read and validated 21 variables from variables.
+  [03/16] cscape_inspect_variables   | Status: PASS |   43.6ms | success
+  [04/16] cscape_validate_st         | Status: PASS |    2.0ms | {
+  "valid": true,
+  "pou_name": "ValidCheck",
+  "pou_type":
+  [05/16] cscape_compile_project     | Status: PASS |   18.6ms | Compilation completed: SUCCESS (0 errors, 0 warnings)
+  [06/16] cscape_compile             | Status: PASS | 1151.8ms | Live Cscape error check completed (0 errors, 0 warnings)
+  [07/16] cscape_get_build_output    | Status: PASS |    1.0ms | Retrieved 0 diagnostics from build log.
+  [08/16] cscape_get_diagnostics     | Status: PASS |   13.0ms | Retrieved 0 diagnostics from build log.
+  [09/16] cscape_simulate_cycle      | Status: PASS |   14.1ms | Cycle 0 executed successfully at t=0.0ms.
+  [10/16] cscape_simulate_pou        | Status: PASS |    1.4ms | {
+  "success": true,
+  "steps_executed": 3,
+  "total_cycles"
+  [11/16] cscape_run_simulation      | Status: PASS |    2.0ms | Executed 5 simulation cycles (software-only).
+  [12/16] cscape_read_register       | Status: PASS |    2.0ms | Read register %R100 = 0 (INT).
+  [13/16] cscape_write_register      | Status: PASS |    0.0ms | Wrote register %R100 = 16000 (INT).
+  [14/16] cscape_export_variables    | Status: PASS |    2.0ms | Successfully wrote 0 variables to exported_vars.csv in CSV f
+  [15/16] cscape_import_variables    | Status: PASS |    6.0ms | Successfully read and validated 21 variables from variables.
+  [16/16] cscape_export_project      | Status: PASS |    2.0ms | success
+
+Checkpoint saved to: C:\Users\ArmandoSilva\artifacts\checkpoints\step5_st_ld_conversion_checkpoint.json
+
+Checkpoint saved to: C:\HornerAI\horner-cscape-mcp\artifacts\checkpoints\step5_st_ld_conversion_checkpoint.json
+================================================================================
+STEP 5: ST -> LD CONVERSION PROOF & LIVE GUI MCP TESTS COMPLETED SUCCESSFULLY
+================================================================================
+================================================================================
+STEP 5: ST -> LD CONVERSION PROOF & LIVE GUI MCP TOOL EXECUTION
+================================================================================
+Timestamp UTC  : 2026-09-05T04:50:03.782Z
+Project File   : C:\Users\ArmandoSilva\artifacts\projects\TankLevelClosedLoop\TankLevelClosedLoop.csp
+ST POU File    : C:\Users\ArmandoSilva\artifacts\projects\TankLevelClosedLoop\pous\TankLevelClosedLoop.st
+
+[GATE_CHECK] Verifying Cscape GUI stability and TankLevelClosedLoop title...
+  -> Cscape Status : READY_FOR_TESTS (Ready=True)
+  -> PID           : 5276
+  -> HWND          : 0x008C093A (9177402)
+  -> Window Title  : 'Cscape - Logged In : "armando@controlnautas.com" - [TankLevelClosedLoop.csp]'
+
+------------------------------------------------------------
+PART 1: ST -> LD CONVERSION PROOF ON TankLevelClosedLoop
+------------------------------------------------------------
+  Loaded source ST: 2503 characters, 96 lines
+  Successfully converted POU 'TankLevelClosedLoop' to IEC 61131-3 Ladder AST:
+  -> Total Variables Declared : 24
+  -> Total Ladder Rungs       : 10
+     * Rung 01 [MATH  ]: CycleCounter Math Calculation  | Recipe: MATH_BOX
+     * Rung 02 [MATH  ]: TankLevelPV Math Calculation   | Recipe: MATH_BOX
+     * Rung 03 [MATH  ]: Error Math Calculation         | Recipe: MATH_BOX
+     * Rung 04 [COIL  ]: LastError Control Logic        | Recipe: COIL_NORMAL
+     * Rung 05 [COIL  ]: RawPumpOutput Control Logic    | Recipe: COIL_NORMAL
+     * Rung 06 [COIL  ]: RawValveOutput Control Logic   | Recipe: COIL_NORMAL
+     * Rung 07 [COIL  ]: AlarmHighHigh Latch (Set Coil) | Recipe: COIL_SET
+     * Rung 08 [COIL  ]: AlarmHigh Latch (Set Coil)     | Recipe: COIL_SET
+     * Rung 09 [COIL  ]: AlarmLow Latch (Set Coil)      | Recipe: COIL_SET
+     * Rung 10 [COIL  ]: InflowValveCmd Latch (Set Coil) | Recipe: COIL_SET
+  -> ASCII Ladder Diagram Proof saved to: artifacts/proofs/tank_level_ladder_diagram.txt
+  -> Structured Ladder AST JSON saved to: artifacts/proofs/tank_level_ladder_ast.json
+
+[INTEROP_GUARD] Verifying fail-closed rejection of ladder constructs in ST...
+  [PASS] Ladder construct injection strictly rejected fail-closed: ASCII_NO_CONTACT
+
+------------------------------------------------------------
+PART 2: LIVE MCP TOOLS E2E LIST / CALL AGAINST ACTIVE GUI
+------------------------------------------------------------
+  [01/16] cscape_open_project        | Status: PASS |   54.3ms | Cscape project 'TankLevelClosedLoop.csp' verified (CFBF=True
+  [02/16] cscape_read_variables      | Status: PASS |    6.0ms | Successfully read and validated 21 variables from variables.
+  [03/16] cscape_inspect_variables   | Status: PASS |   44.9ms | success
+  [04/16] cscape_validate_st         | Status: PASS |    1.4ms | {
+  "valid": true,
+  "pou_name": "ValidCheck",
+  "pou_type":
+  [05/16] cscape_compile_project     | Status: PASS |   19.2ms | Compilation completed: SUCCESS (0 errors, 0 warnings)
+  [06/16] cscape_compile             | Status: PASS | 1012.0ms | Live Cscape error check completed (0 errors, 0 warnings)
+  [07/16] cscape_get_build_output    | Status: PASS |    2.0ms | Retrieved 0 diagnostics from build log.
+  [08/16] cscape_get_diagnostics     | Status: PASS |   11.7ms | Retrieved 0 diagnostics from build log.
+  [09/16] cscape_simulate_cycle      | Status: PASS |   12.5ms | Cycle 0 executed successfully at t=0.0ms.
+  [10/16] cscape_simulate_pou        | Status: PASS |    2.0ms | {
+  "success": true,
+  "steps_executed": 3,
+  "total_cycles"
+  [11/16] cscape_run_simulation      | Status: PASS |    2.4ms | Executed 5 simulation cycles (software-only).
+  [12/16] cscape_read_register       | Status: PASS |    0.0ms | Read register %R100 = 0 (INT).
+  [13/16] cscape_write_register      | Status: PASS |    1.2ms | Wrote register %R100 = 16000 (INT).
+  [14/16] cscape_export_variables    | Status: PASS |    2.8ms | Successfully wrote 0 variables to exported_vars.csv in CSV f
+  [15/16] cscape_import_variables    | Status: PASS |    4.1ms | Successfully read and validated 21 variables from variables.
+  [16/16] cscape_export_project      | Status: PASS |    0.0ms | success
+
+Checkpoint saved to: C:\Users\ArmandoSilva\artifacts\checkpoints\step5_st_ld_conversion_checkpoint.json
+
+Checkpoint saved to: C:\HornerAI\horner-cscape-mcp\artifacts\checkpoints\step5_st_ld_conversion_checkpoint.json
+================================================================================
+STEP 5: ST -> LD CONVERSION PROOF & LIVE GUI MCP TESTS COMPLETED SUCCESSFULLY
+================================================================================
+================================================================================
+STEP 5: ST -> LD CONVERSION PROOF & LIVE GUI MCP TOOL EXECUTION
+================================================================================
+Timestamp UTC  : 2026-09-05T04:51:26.221Z
+Project File   : C:\Users\ArmandoSilva\artifacts\projects\TankLevelClosedLoop\TankLevelClosedLoop.csp
+ST POU File    : C:\Users\ArmandoSilva\artifacts\projects\TankLevelClosedLoop\pous\TankLevelClosedLoop.st
+
+[GATE_CHECK] Verifying Cscape GUI stability and TankLevelClosedLoop title...
+  -> Cscape Status : READY_FOR_TESTS (Ready=True)
+  -> PID           : 1428
+  -> HWND          : 0x024D0380 (38601600)
+  -> Window Title  : 'Cscape - Logged In : "armando@controlnautas.com" - [TankLevelClosedLoop.csp]'
+
+------------------------------------------------------------
+PART 1: ST -> LD CONVERSION PROOF ON TankLevelClosedLoop
+------------------------------------------------------------
+  Loaded source ST: 2503 characters, 96 lines
+  Successfully converted POU 'TankLevelClosedLoop' to IEC 61131-3 Ladder AST:
+  -> Total Variables Declared : 24
+  -> Total Ladder Rungs       : 10
+     * Rung 01 [MATH  ]: CycleCounter Math Calculation  | Recipe: MATH_BOX
+     * Rung 02 [MATH  ]: TankLevelPV Math Calculation   | Recipe: MATH_BOX
+     * Rung 03 [MATH  ]: Error Math Calculation         | Recipe: MATH_BOX
+     * Rung 04 [COIL  ]: LastError Control Logic        | Recipe: COIL_NORMAL
+     * Rung 05 [COIL  ]: RawPumpOutput Control Logic    | Recipe: COIL_NORMAL
+     * Rung 06 [COIL  ]: RawValveOutput Control Logic   | Recipe: COIL_NORMAL
+     * Rung 07 [COIL  ]: AlarmHighHigh Latch (Set Coil) | Recipe: COIL_SET
+     * Rung 08 [COIL  ]: AlarmHigh Latch (Set Coil)     | Recipe: COIL_SET
+     * Rung 09 [COIL  ]: AlarmLow Latch (Set Coil)      | Recipe: COIL_SET
+     * Rung 10 [COIL  ]: InflowValveCmd Latch (Set Coil) | Recipe: COIL_SET
+  -> ASCII Ladder Diagram Proof saved to: artifacts/proofs/tank_level_ladder_diagram.txt
+  -> Structured Ladder AST JSON saved to: artifacts/proofs/tank_level_ladder_ast.json
+
+[INTEROP_GUARD] Verifying fail-closed rejection of ladder constructs in ST...
+  [PASS] Ladder construct injection strictly rejected fail-closed: ASCII_NO_CONTACT
+
+------------------------------------------------------------
+PART 2: LIVE MCP TOOLS E2E LIST / CALL AGAINST ACTIVE GUI
+------------------------------------------------------------
+  [01/16] cscape_open_project        | Status: PASS |  144.6ms | Cscape project 'TankLevelClosedLoop.csp' verified (CFBF=True
+  [02/16] cscape_read_variables      | Status: PASS |    6.0ms | Successfully read and validated 21 variables from variables.
+  [03/16] cscape_inspect_variables   | Status: PASS |   57.4ms | success
+  [04/16] cscape_validate_st         | Status: PASS |    1.0ms | {
+  "valid": true,
+  "pou_name": "ValidCheck",
+  "pou_type":
+  [05/16] cscape_compile_project     | Status: PASS |   25.8ms | Compilation completed: SUCCESS (0 errors, 0 warnings)
+  [06/16] cscape_compile             | Status: PASS | 1015.9ms | Live Cscape error check completed (0 errors, 0 warnings)
+  [07/16] cscape_get_build_output    | Status: PASS |    2.5ms | Retrieved 0 diagnostics from build log.
+  [08/16] cscape_get_diagnostics     | Status: PASS |   12.2ms | Retrieved 0 diagnostics from build log.
+  [09/16] cscape_simulate_cycle      | Status: PASS |   13.7ms | Cycle 0 executed successfully at t=0.0ms.
+  [10/16] cscape_simulate_pou        | Status: PASS |    0.0ms | {
+  "success": true,
+  "steps_executed": 3,
+  "total_cycles"
+  [11/16] cscape_run_simulation      | Status: PASS |    0.0ms | Executed 5 simulation cycles (software-only).
+  [12/16] cscape_read_register       | Status: PASS |    0.5ms | Read register %R100 = 0 (INT).
+  [13/16] cscape_write_register      | Status: PASS |    0.0ms | Wrote register %R100 = 16000 (INT).
+  [14/16] cscape_export_variables    | Status: PASS |    3.5ms | Successfully wrote 0 variables to exported_vars.csv in CSV f
+  [15/16] cscape_import_variables    | Status: PASS |    6.5ms | Successfully read and validated 21 variables from variables.
+  [16/16] cscape_export_project      | Status: PASS |    2.0ms | success
+
+Checkpoint saved to: C:\Users\ArmandoSilva\artifacts\checkpoints\step5_st_ld_conversion_checkpoint.json
+
+Checkpoint saved to: C:\HornerAI\horner-cscape-mcp\artifacts\checkpoints\step5_st_ld_conversion_checkpoint.json
+================================================================================
+STEP 5: ST -> LD CONVERSION PROOF & LIVE GUI MCP TESTS COMPLETED SUCCESSFULLY
+================================================================================
+================================================================================
+STEP 5: ST -> LD CONVERSION PROOF & LIVE GUI MCP TOOL EXECUTION
+================================================================================
+Timestamp UTC  : 2026-09-05T04:59:36.214Z
+Project File   : C:\Users\ArmandoSilva\artifacts\projects\TankLevelClosedLoop\TankLevelClosedLoop.csp
+ST POU File    : C:\Users\ArmandoSilva\artifacts\projects\TankLevelClosedLoop\pous\TankLevelClosedLoop.st
+
+[GATE_CHECK] Verifying Cscape GUI stability and TankLevelClosedLoop title...
+  -> Cscape Status : READY_FOR_TESTS (Ready=True)
+  -> PID           : 1428
+  -> HWND          : 0x024D0380 (38601600)
+  -> Window Title  : 'Cscape - Logged In : "armando@controlnautas.com" - [TankLevelClosedLoop.csp]'
+
+------------------------------------------------------------
+PART 1: ST -> LD CONVERSION PROOF ON TankLevelClosedLoop
+------------------------------------------------------------
+  Loaded source ST: 2503 characters, 96 lines
+  Successfully converted POU 'TankLevelClosedLoop' to IEC 61131-3 Ladder AST:
+  -> Total Variables Declared : 24
+  -> Total Ladder Rungs       : 10
+     * Rung 01 [MATH  ]: CycleCounter Math Calculation  | Recipe: MATH_BOX
+     * Rung 02 [MATH  ]: TankLevelPV Math Calculation   | Recipe: MATH_BOX
+     * Rung 03 [MATH  ]: Error Math Calculation         | Recipe: MATH_BOX
+     * Rung 04 [COIL  ]: LastError Control Logic        | Recipe: COIL_NORMAL
+     * Rung 05 [COIL  ]: RawPumpOutput Control Logic    | Recipe: COIL_NORMAL
+     * Rung 06 [COIL  ]: RawValveOutput Control Logic   | Recipe: COIL_NORMAL
+     * Rung 07 [COIL  ]: AlarmHighHigh Latch (Set Coil) | Recipe: COIL_SET
+     * Rung 08 [COIL  ]: AlarmHigh Latch (Set Coil)     | Recipe: COIL_SET
+     * Rung 09 [COIL  ]: AlarmLow Latch (Set Coil)      | Recipe: COIL_SET
+     * Rung 10 [COIL  ]: InflowValveCmd Latch (Set Coil) | Recipe: COIL_SET
+  -> ASCII Ladder Diagram Proof saved to: artifacts/proofs/tank_level_ladder_diagram.txt
+  -> Structured Ladder AST JSON saved to: artifacts/proofs/tank_level_ladder_ast.json
+
+[INTEROP_GUARD] Verifying fail-closed rejection of ladder constructs in ST...
+  [PASS] Ladder construct injection strictly rejected fail-closed: ASCII_NO_CONTACT
+
+------------------------------------------------------------
+PART 2: LIVE MCP TOOLS E2E LIST / CALL AGAINST ACTIVE GUI
+------------------------------------------------------------
+  [01/16] cscape_open_project        | Status: PASS |   67.4ms | Cscape project 'TankLevelClosedLoop.csp' verified (CFBF=True
+  [02/16] cscape_read_variables      | Status: PASS |    4.6ms | Successfully read and validated 21 variables from variables.
+  [03/16] cscape_inspect_variables   | Status: PASS |   44.9ms | success
+  [04/16] cscape_validate_st         | Status: PASS |    2.9ms | {
+  "valid": true,
+  "pou_name": "ValidCheck",
+  "pou_type":
+  [05/16] cscape_compile_project     | Status: PASS |   24.3ms | Compilation completed: SUCCESS (0 errors, 0 warnings)
+  [06/16] cscape_compile             | Status: PASS | 1508.0ms | Live Cscape error check completed (0 errors, 0 warnings)
+  [07/16] cscape_get_build_output    | Status: PASS |    0.9ms | Retrieved 0 diagnostics from build log.
+  [08/16] cscape_get_diagnostics     | Status: PASS |   12.9ms | Retrieved 0 diagnostics from build log.
+  [09/16] cscape_simulate_cycle      | Status: PASS |   12.5ms | Cycle 0 executed successfully at t=0.0ms.
+  [10/16] cscape_simulate_pou        | Status: PASS |    1.0ms | {
+  "success": true,
+  "steps_executed": 3,
+  "total_cycles"
+  [11/16] cscape_run_simulation      | Status: PASS |    1.0ms | Executed 5 simulation cycles (software-only).
+  [12/16] cscape_read_register       | Status: PASS |    1.5ms | Read register %R100 = 0 (INT).
+  [13/16] cscape_write_register      | Status: PASS |    0.0ms | Wrote register %R100 = 16000 (INT).
+  [14/16] cscape_export_variables    | Status: PASS |    2.4ms | Successfully wrote 0 variables to exported_vars.csv in CSV f
+  [15/16] cscape_import_variables    | Status: PASS |    5.0ms | Successfully read and validated 21 variables from variables.
+  [16/16] cscape_export_project      | Status: PASS |    1.0ms | success
+
+Checkpoint saved to: C:\Users\ArmandoSilva\artifacts\checkpoints\step5_st_ld_conversion_checkpoint.json
+
+Checkpoint saved to: C:\HornerAI\horner-cscape-mcp\artifacts\checkpoints\step5_st_ld_conversion_checkpoint.json
+================================================================================
+STEP 5: ST -> LD CONVERSION PROOF & LIVE GUI MCP TESTS COMPLETED SUCCESSFULLY
+================================================================================
+================================================================================
+STEP 5: ST -> LD CONVERSION PROOF & LIVE GUI MCP TOOL EXECUTION
+================================================================================
+Timestamp UTC  : 2026-09-06T01:39:33.760Z
+Project File   : C:\Users\ArmandoSilva\artifacts\projects\TankLevelClosedLoop\TankLevelClosedLoop.csp
+ST POU File    : C:\Users\ArmandoSilva\artifacts\projects\TankLevelClosedLoop\pous\TankLevelClosedLoop.st
+
+[GATE_CHECK] Verifying Cscape GUI stability and TankLevelClosedLoop title...
+  -> Cscape Status : READY_FOR_TESTS (Ready=True)
+  -> PID           : 1708
+  -> HWND          : 0x02800066 (41943142)
+  -> Window Title  : 'Cscape - Logged In : "armando@controlnautas.com" - [TankLevelClosedLoop.csp]'
+
+------------------------------------------------------------
+PART 1: ST -> LD CONVERSION PROOF ON TankLevelClosedLoop
+------------------------------------------------------------
+  Loaded source ST: 2503 characters, 96 lines
+  Successfully converted POU 'TankLevelClosedLoop' to IEC 61131-3 Ladder AST:
+  -> Total Variables Declared : 24
+  -> Total Ladder Rungs       : 10
+     * Rung 01 [MATH  ]: CycleCounter Math Calculation  | Recipe: MATH_BOX
+     * Rung 02 [MATH  ]: TankLevelPV Math Calculation   | Recipe: MATH_BOX
+     * Rung 03 [MATH  ]: Error Math Calculation         | Recipe: MATH_BOX
+     * Rung 04 [COIL  ]: LastError Control Logic        | Recipe: COIL_NORMAL
+     * Rung 05 [COIL  ]: RawPumpOutput Control Logic    | Recipe: COIL_NORMAL
+     * Rung 06 [COIL  ]: RawValveOutput Control Logic   | Recipe: COIL_NORMAL
+     * Rung 07 [COIL  ]: AlarmHighHigh Latch (Set Coil) | Recipe: COIL_SET
+     * Rung 08 [COIL  ]: AlarmHigh Latch (Set Coil)     | Recipe: COIL_SET
+     * Rung 09 [COIL  ]: AlarmLow Latch (Set Coil)      | Recipe: COIL_SET
+     * Rung 10 [COIL  ]: InflowValveCmd Latch (Set Coil) | Recipe: COIL_SET
+  -> ASCII Ladder Diagram Proof saved to: artifacts/proofs/tank_level_ladder_diagram.txt
+  -> Structured Ladder AST JSON saved to: artifacts/proofs/tank_level_ladder_ast.json
+
+[INTEROP_GUARD] Verifying fail-closed rejection of ladder constructs in ST...
+  [PASS] Ladder construct injection strictly rejected fail-closed: ASCII_NO_CONTACT
+
+------------------------------------------------------------
+PART 2: LIVE MCP TOOLS E2E LIST / CALL AGAINST ACTIVE GUI
+------------------------------------------------------------
+  [01/16] cscape_open_project        | Status: PASS |   42.1ms | Cscape project 'TankLevelClosedLoop.csp' verified (CFBF=True
+  [02/16] cscape_read_variables      | Status: PASS |    4.0ms | Successfully read and validated 21 variables from variables.
+  [03/16] cscape_inspect_variables   | Status: PASS |   45.6ms | success
+  [04/16] cscape_validate_st         | Status: PASS |    2.4ms | {
+  "valid": true,
+  "pou_name": "ValidCheck",
+  "pou_type":
+  [05/16] cscape_compile_project     | Status: PASS | 6017.8ms | Live Cscape error check completed (0 errors, 0 warnings)
+  [06/16] cscape_compile             | Status: PASS | 6065.4ms | Live Cscape error check completed (0 errors, 0 warnings)
+  [07/16] cscape_get_build_output    | Status: PASS |    2.6ms | Retrieved 0 diagnostics from build log.
+  [08/16] cscape_get_diagnostics     | Status: PASS |   11.8ms | Retrieved 0 diagnostics from build log.
+  [09/16] cscape_simulate_cycle      | Status: PASS |   51.3ms | Cycle 0 executed successfully at t=0.0ms.
+  [10/16] cscape_simulate_pou        | Status: PASS |    2.5ms | {
+  "success": true,
+  "steps_executed": 3,
+  "total_cycles"
+  [11/16] cscape_run_simulation      | Status: PASS |    2.5ms | Executed 5 simulation cycles (software-only).
+  [12/16] cscape_read_register       | Status: PASS |    2.0ms | Read register %R100 = 0 (INT).
+  [13/16] cscape_write_register      | Status: PASS |    0.0ms | Wrote register %R100 = 16000 (INT).
+================================================================================
+STEP 5: ST -> LD CONVERSION PROOF & LIVE GUI MCP TOOL EXECUTION
+================================================================================
+Timestamp UTC  : 2026-09-06T01:41:03.132Z
+Project File   : C:\Users\ArmandoSilva\artifacts\projects\TankLevelClosedLoop\TankLevelClosedLoop.csp
+ST POU File    : C:\Users\ArmandoSilva\artifacts\projects\TankLevelClosedLoop\pous\TankLevelClosedLoop.st
+
+[GATE_CHECK] Verifying Cscape GUI stability and TankLevelClosedLoop title...
+  -> Cscape Status : READY_FOR_TESTS (Ready=True)
+  -> PID           : 1708
+  -> HWND          : 0x02800066 (41943142)
+  -> Window Title  : 'Cscape - Logged In : "armando@controlnautas.com" - [TankLevelClosedLoop.csp]'
+
+------------------------------------------------------------
+PART 1: ST -> LD CONVERSION PROOF ON TankLevelClosedLoop
+------------------------------------------------------------
+  Loaded source ST: 2503 characters, 96 lines
+  Successfully converted POU 'TankLevelClosedLoop' to IEC 61131-3 Ladder AST:
+  -> Total Variables Declared : 24
+  -> Total Ladder Rungs       : 10
+     * Rung 01 [MATH  ]: CycleCounter Math Calculation  | Recipe: MATH_BOX
+     * Rung 02 [MATH  ]: TankLevelPV Math Calculation   | Recipe: MATH_BOX
+     * Rung 03 [MATH  ]: Error Math Calculation         | Recipe: MATH_BOX
+     * Rung 04 [COIL  ]: LastError Control Logic        | Recipe: COIL_NORMAL
+     * Rung 05 [COIL  ]: RawPumpOutput Control Logic    | Recipe: COIL_NORMAL
+     * Rung 06 [COIL  ]: RawValveOutput Control Logic   | Recipe: COIL_NORMAL
+     * Rung 07 [COIL  ]: AlarmHighHigh Latch (Set Coil) | Recipe: COIL_SET
+     * Rung 08 [COIL  ]: AlarmHigh Latch (Set Coil)     | Recipe: COIL_SET
+     * Rung 09 [COIL  ]: AlarmLow Latch (Set Coil)      | Recipe: COIL_SET
+     * Rung 10 [COIL  ]: InflowValveCmd Latch (Set Coil) | Recipe: COIL_SET
+  -> ASCII Ladder Diagram Proof saved to: artifacts/proofs/tank_level_ladder_diagram.txt
+  -> Structured Ladder AST JSON saved to: artifacts/proofs/tank_level_ladder_ast.json
+
+[INTEROP_GUARD] Verifying fail-closed rejection of ladder constructs in ST...
+  [PASS] Ladder construct injection strictly rejected fail-closed: ASCII_NO_CONTACT
+
+------------------------------------------------------------
+PART 2: LIVE MCP TOOLS E2E LIST / CALL AGAINST ACTIVE GUI
+------------------------------------------------------------
+  [01/16] cscape_open_project        | Status: PASS |   38.4ms | Cscape project 'TankLevelClosedLoop.csp' verified (CFBF=True
+  [02/16] cscape_read_variables      | Status: PASS |    5.5ms | Successfully read and validated 21 variables from variables.
+  [03/16] cscape_inspect_variables   | Status: PASS |   38.2ms | success
+  [04/16] cscape_validate_st         | Status: PASS |    5.1ms | {
+  "valid": true,
+  "pou_name": "ValidCheck",
+  "pou_type":
+  [05/16] cscape_compile_project     | Status: PASS | 6027.1ms | Live Cscape error check completed (0 errors, 0 warnings)
+  [06/16] cscape_compile             | Status: PASS | 6070.4ms | Live Cscape error check completed (0 errors, 0 warnings)
+  [07/16] cscape_get_build_output    | Status: PASS |    2.0ms | Retrieved 0 diagnostics from build log.
+  [08/16] cscape_get_diagnostics     | Status: PASS |    0.0ms | Retrieved 0 diagnostics from build log.
+  [09/16] cscape_simulate_cycle      | Status: PASS |   36.0ms | Cycle 0 executed successfully at t=0.0ms.
+  [10/16] cscape_simulate_pou        | Status: PASS |    1.9ms | {
+  "success": true,
+  "steps_executed": 3,
+  "total_cycles"
+  [11/16] cscape_run_simulation      | Status: PASS |    0.0ms | Executed 5 simulation cycles (software-only).
+  [12/16] cscape_read_register       | Status: PASS |    0.0ms | Read register %R100 = 0 (INT).
+  [13/16] cscape_write_register      | Status: PASS |    0.0ms | Wrote register %R100 = 16000 (INT).
+  [14/16] cscape_export_variables    | Status: PASS |   24.0ms | Successfully wrote 0 variables to exported_vars.csv in CSV f
+  [15/16] cscape_import_variables    | Status: PASS |    7.5ms | Successfully read and validated 21 variables from variables.
+  [16/16] cscape_export_project      | Status: PASS |   23.2ms | success
+
+Checkpoint saved to: C:\Users\ArmandoSilva\artifacts\checkpoints\step5_st_ld_conversion_checkpoint.json
+
+Checkpoint saved to: C:\HornerAI\horner-cscape-mcp\artifacts\checkpoints\step5_st_ld_conversion_checkpoint.json
+================================================================================
+STEP 5: ST -> LD CONVERSION PROOF & LIVE GUI MCP TESTS COMPLETED SUCCESSFULLY
+================================================================================
+================================================================================
+STEP 5: ST -> LD CONVERSION PROOF & LIVE GUI MCP TOOL EXECUTION
+================================================================================
+Timestamp UTC  : 2026-09-06T01:52:22.479Z
+Project File   : C:\Users\ArmandoSilva\artifacts\projects\TankLevelClosedLoop\TankLevelClosedLoop.csp
+ST POU File    : C:\Users\ArmandoSilva\artifacts\projects\TankLevelClosedLoop\pous\TankLevelClosedLoop.st
+
+[GATE_CHECK] Verifying Cscape GUI stability and TankLevelClosedLoop title...
+  -> Cscape Status : READY_FOR_TESTS (Ready=True)
+  -> PID           : 16128
+  -> HWND          : 0x024903DC (38339548)
+  -> Window Title  : 'Cscape - Logged In : "armando@controlnautas.com" - [TankLevelClosedLoop.csp]'
+
+------------------------------------------------------------
+PART 1: ST -> LD CONVERSION PROOF ON TankLevelClosedLoop
+------------------------------------------------------------
+  Loaded source ST: 2503 characters, 96 lines
+  Successfully converted POU 'TankLevelClosedLoop' to IEC 61131-3 Ladder AST:
+  -> Total Variables Declared : 24
+  -> Total Ladder Rungs       : 10
+     * Rung 01 [MATH  ]: CycleCounter Math Calculation  | Recipe: MATH_BOX
+     * Rung 02 [MATH  ]: TankLevelPV Math Calculation   | Recipe: MATH_BOX
+     * Rung 03 [MATH  ]: Error Math Calculation         | Recipe: MATH_BOX
+     * Rung 04 [COIL  ]: LastError Control Logic        | Recipe: COIL_NORMAL
+     * Rung 05 [COIL  ]: RawPumpOutput Control Logic    | Recipe: COIL_NORMAL
+     * Rung 06 [COIL  ]: RawValveOutput Control Logic   | Recipe: COIL_NORMAL
+     * Rung 07 [COIL  ]: AlarmHighHigh Latch (Set Coil) | Recipe: COIL_SET
+     * Rung 08 [COIL  ]: AlarmHigh Latch (Set Coil)     | Recipe: COIL_SET
+     * Rung 09 [COIL  ]: AlarmLow Latch (Set Coil)      | Recipe: COIL_SET
+     * Rung 10 [COIL  ]: InflowValveCmd Latch (Set Coil) | Recipe: COIL_SET
+  -> ASCII Ladder Diagram Proof saved to: artifacts/proofs/tank_level_ladder_diagram.txt
+  -> Structured Ladder AST JSON saved to: artifacts/proofs/tank_level_ladder_ast.json
+
+[INTEROP_GUARD] Verifying fail-closed rejection of ladder constructs in ST...
+  [PASS] Ladder construct injection strictly rejected fail-closed: ASCII_NO_CONTACT
+
+------------------------------------------------------------
+PART 2: LIVE MCP TOOLS E2E LIST / CALL AGAINST ACTIVE GUI
+------------------------------------------------------------
+  [01/16] cscape_open_project        | Status: PASS |   48.6ms | Cscape project 'TankLevelClosedLoop.csp' verified (CFBF=True
+  [02/16] cscape_read_variables      | Status: PASS |    6.5ms | Successfully read and validated 21 variables from variables.
+  [03/16] cscape_inspect_variables   | Status: PASS |   40.6ms | success
+  [04/16] cscape_validate_st         | Status: PASS |    2.0ms | {
+  "valid": true,
+  "pou_name": "ValidCheck",
+  "pou_type":
+  [05/16] cscape_compile_project     | Status: PASS | 6027.0ms | Live Cscape error check completed (0 errors, 0 warnings)
+  [06/16] cscape_compile             | Status: PASS | 6046.1ms | Live Cscape error check completed (0 errors, 0 warnings)
+  [07/16] cscape_get_build_output    | Status: PASS |    0.0ms | Retrieved 0 diagnostics from build log.
+  [08/16] cscape_get_diagnostics     | Status: PASS |    9.7ms | Retrieved 0 diagnostics from build log.
+  [09/16] cscape_simulate_cycle      | Status: PASS |   31.5ms | Cycle 0 executed successfully at t=0.0ms.
+  [10/16] cscape_simulate_pou        | Status: PASS |    2.0ms | {
+  "success": true,
+  "steps_executed": 3,
+  "total_cycles"
+  [11/16] cscape_run_simulation      | Status: PASS |    2.0ms | Executed 5 simulation cycles (software-only).
+  [12/16] cscape_read_register       | Status: PASS |    8.6ms | Read register %R100 = 0 (INT).
+  [13/16] cscape_write_register      | Status: PASS |    0.0ms | Wrote register %R100 = 16000 (INT).
+  [14/16] cscape_export_variables    | Status: PASS |    8.4ms | Successfully wrote 0 variables to exported_vars.csv in CSV f
+  [15/16] cscape_import_variables    | Status: PASS |    8.6ms | Successfully read and validated 21 variables from variables.
+  [16/16] cscape_export_project      | Status: PASS |   24.2ms | success
+
+Checkpoint saved to: C:\Users\ArmandoSilva\artifacts\checkpoints\step5_st_ld_conversion_checkpoint.json
+
+Checkpoint saved to: C:\HornerAI\horner-cscape-mcp\artifacts\checkpoints\step5_st_ld_conversion_checkpoint.json
+================================================================================
+STEP 5: ST -> LD CONVERSION PROOF & LIVE GUI MCP TESTS COMPLETED SUCCESSFULLY
+================================================================================

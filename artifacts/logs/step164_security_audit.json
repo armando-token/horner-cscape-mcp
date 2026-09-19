@@ -1,0 +1,71 @@
+{
+  "step": 164,
+  "auditor": "Security Lockout Auditor subagent for MEGAPLAN",
+  "status": "PASSED",
+  "timestamp_start_utc": "2026-09-06T04:23:50.031173+00:00",
+  "timestamp_end_utc": "2026-09-06T04:23:56.645421+00:00",
+  "duration_seconds": 6.614248,
+  "audits": {
+    "task1_hardware_lockout": {
+      "intercept_32827": {
+        "status": "BLOCKED",
+        "exception": "Physical controller download command '32827' (ID_CONTROLLER_DOWNLOAD=32827, ID_CONTROLLER_DOWNLOAD_ALT=33149) is strictly locked out. Zero physical PLC flashing permitted."
+      },
+      "intercept_33149": {
+        "status": "BLOCKED",
+        "exception": "Physical controller download command '33149' (ID_CONTROLLER_DOWNLOAD=32827, ID_CONTROLLER_DOWNLOAD_ALT=33149) is strictly locked out. Zero physical PLC flashing permitted."
+      },
+      "guard_32827": {
+        "status": "BLOCKED",
+        "exception": "Physical controller download command '32827' (ID_CONTROLLER_DOWNLOAD=32827, ID_CONTROLLER_DOWNLOAD_ALT=33149) is strictly locked out. Zero physical PLC flashing permitted."
+      },
+      "guard_33149": {
+        "status": "BLOCKED",
+        "exception": "Physical controller download command '33149' (ID_CONTROLLER_DOWNLOAD=32827, ID_CONTROLLER_DOWNLOAD_ALT=33149) is strictly locked out. Zero physical PLC flashing permitted."
+      },
+      "compiler_32827": {
+        "status": "BLOCKED",
+        "exception": "Controller download command '32827' (ID_CONTROLLER_DOWNLOAD = 32827 / 33149) is strictly blocked fail-closed."
+      },
+      "compiler_33149": {
+        "status": "BLOCKED",
+        "exception": "Controller download command '33149' (ID_CONTROLLER_DOWNLOAD = 32827 / 33149) is strictly blocked fail-closed."
+      }
+    },
+    "task2_mcp_download_tool_rejection": {
+      "cscape_download_logic": {
+        "status": "BLOCKED_FAIL_CLOSED",
+        "response": {
+          "jsonrpc": "2.0",
+          "id": 2,
+          "result": {
+            "content": [
+              {
+                "text": "Unknown tool: cscape_download_logic",
+                "type": "text"
+              }
+            ],
+            "isError": true
+          }
+        }
+      }
+    },
+    "task3_straton_quarantine": {
+      "active_py_files_scanned": 755,
+      "straton_import_violations": 0
+    },
+    "task4_offline_gate_resilience": {
+      "offline_simulation": {
+        "status": "FAIL_CLOSED_BLOCKED",
+        "exception": "FAIL-CLOSED: Operations halted. Cscape is not ready. Status='OFFLINE', Reason='Simulated offline state for test'"
+      }
+    }
+  },
+  "summary": {
+    "hardware_lockout_enforced": true,
+    "mcp_download_tool_rejected": true,
+    "straton_quarantine_enforced": true,
+    "zero_straton_imports": true,
+    "offline_gate_fail_closed": true
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "step": "step9_compiler_mutations",
+  "status": "PASSED",
+  "timestamp_utc": "2026-09-05T05:59:30Z",
+  "project": "TankLevelClosedLoop",
+  "csp_path": "C:\\Users\\ArmandoSilva\\artifacts\\projects\\TankLevelClosedLoop\\TankLevelClosedLoop.csp",
+  "cscape_hwnd": "0x7b06d6",
+  "cscape_pid": 7616,
+  "mutation_1_syntax_error": {
+    "status": "PASSED_FAIL_CLOSED",
+    "injected": "IF (TankLevel > 80.0 AND InflowValve THEN",
+    "diagnostic": {
+      "file_path": "TankLevelClosedLoop.st",
+      "full_path": "C:\\HornerAI\\horner-cscape-mcp\\artifacts\\projects\\TankLevelClosedLoop\\pous\\TankLevelClosedLoop.st",
+      "line": 183,
+      "column": 38,
+      "error_code": "ST_SYNTAX_ERROR",
+      "severity": "ERROR",
+      "message": "Syntax error at line 183, col 38: Expected ')' after expression"
+    }
+  },
+  "mutation_2_semantic_type_mismatch": {
+    "status": "PASSED_FAIL_CLOSED",
+    "injected": "TankLevel := TRUE;",
+    "diagnostic": {
+      "file_path": "TankLevelClosedLoop.st",
+      "full_path": "C:\\HornerAI\\horner-cscape-mcp\\artifacts\\projects\\TankLevelClosedLoop\\pous\\TankLevelClosedLoop.st",
+      "line": 59,
+      "column": 1,
+      "error_code": "ERR_TYPE_MISMATCH",
+      "severity": "ERROR",
+      "message": "Type mismatch: Cannot assign BOOL literal 'TRUE' to floating-point 'TankLevel' (REAL)."
+    }
+  },
+  "mutation_3_valid_feature_addition": {
+    "status": "PASSED_CLEAN",
+    "injected": "EmergencyDumpActive : BOOL := FALSE;",
+    "clean_error_count": 0,
+    "clean_warning_count": 0,
+    "listbox_372_verified": true
+  },
+  "restoration": {
+    "sha256": "7fd73e139c3c6475dd0f4c84351c339a0c66b96f2b160f452fc2564017de7ea9",
+    "sha256_match": true,
+    "recompile_clean": true
+  },
+  "safety": {
+    "zero_physical_plc_download": true,
+    "id_controller_download_32827_blocked": true,
+    "zero_straton_k5_tools": true
+  },
+  "evidence_log": "C:\\Users\\ArmandoSilva\\artifacts\\logs\\compiler_mutation_diagnostics.json"
+}

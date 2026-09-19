@@ -1,0 +1,110 @@
+{
+  "mission_id": "MCP_HMI_SCADA_ERR_OUT_UNITS_SIL",
+  "status": "success",
+  "timestamp_utc": "2026-09-09T15:15:24.712702+00:00",
+  "environment": {
+    "cscape_version": "Horner APG Cscape 10.2 (Build 10.2.751.4)",
+    "interactive_desktop": "winsta0\\Default",
+    "live_pid": 20872,
+    "live_hwnd": "0x039D018E",
+    "window_title": "Cscape - [TankLevelClosedLoop.csp]",
+    "single_gui_boundary_preserved": true
+  },
+  "project_artifact": {
+    "file_path": "C:\\HornerAI\\horner-cscape-mcp\\artifacts\\projects\\TankLevelClosedLoop\\TankLevelClosedLoop.csp",
+    "file_size_bytes": 98304,
+    "sha256": "b7b89b9e717b4ddf4dc13d560cb9a26e11e49e8a4bfbe7fa370398883084d789",
+    "dual_root_parity": true
+  },
+  "scada_screen_verification": {
+    "screen_id": 1,
+    "screen_name": "Screen 1 (1)",
+    "editor_tab_active": true,
+    "total_objects_count": 10,
+    "elements_verified": [
+      {
+        "object_type": "Static Text Title",
+        "content": "Tank Level",
+        "position": "Canvas top-left",
+        "verified": true
+      },
+      {
+        "object_type": "Numeric Data Field",
+        "variable": "Setpoint",
+        "units": "cm",
+        "display_format": "-###########cm",
+        "verified": true
+      },
+      {
+        "object_type": "Numeric Data Field",
+        "variable": "TankLevelPV",
+        "units": "cm",
+        "display_format": "-###########cm",
+        "verified": true
+      },
+      {
+        "object_type": "Numeric Data Field",
+        "variable": "Error",
+        "units": "cm",
+        "display_format": "-###########cm",
+        "verified": true
+      },
+      {
+        "object_type": "Numeric Data Field",
+        "variable": "ControlOutput",
+        "units": "%",
+        "display_format": "-###########%",
+        "verified": true
+      },
+      {
+        "object_type": "Dial Gauge",
+        "description": "Analog dial gauge with circular scale and needle indicator",
+        "position": "Canvas bottom-center/right",
+        "verified": true
+      },
+      {
+        "object_type": "Fill Bar Graph",
+        "description": "Red liquid level bar indicator showing tank fill height",
+        "position": "Canvas right section",
+        "verified": true
+      },
+      {
+        "object_type": "Tank Silhouette Rectangle",
+        "description": "Distinct black rectangular vessel outline enclosing and framing the level bar",
+        "position": "Canvas right section framing bar",
+        "verified": true
+      },
+      {
+        "object_type": "Bar Scale and Legends",
+        "description": "Numeric vertical calibration scale (0..2048 Bar)",
+        "position": "Canvas right beside bar",
+        "verified": true
+      },
+      {
+        "object_type": "Screen Grid Frame",
+        "description": "Container canvas bounding rectangle and alignment grid",
+        "verified": true
+      }
+    ]
+  },
+  "native_save_verification": {
+    "command": "Ctrl+S / ID_FILE_SAVE (57603)",
+    "save_dispatched": true,
+    "file_updated_on_disk": true,
+    "disk_mtime": "2026-09-09T08:14:30.616000",
+    "status": "success"
+  },
+  "safety_invariants": {
+    "hardware_ports_blocked": true,
+    "download_commands_blocked": true,
+    "offline_simulation_only": true,
+    "no_plc_connection": true,
+    "no_pytest": true,
+    "no_g1_mutation": true
+  },
+  "proof_artifacts": {
+    "screenshot_proof": "C:\\HornerAI\\horner-cscape-mcp\\artifacts\\screenshots\\mcp_hmi_scada_err_out_units_sil_proof.png",
+    "screenshot_sha256": "48399ae02e9a25f0f8ea6924952f788e6c1ae2fa1b0232a7df96082b041d2655",
+    "screenshot_resolution": "1296x728"
+  }
+}

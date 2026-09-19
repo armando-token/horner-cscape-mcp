@@ -1,0 +1,121 @@
+{
+  "step": 160,
+  "name": "step160_mcp_plant_wide_integration_benchmark",
+  "status": "PASSED",
+  "mission": "Master Multi-Loop Plant-Wide Coordinated Integration Benchmark Audit",
+  "timestamp_start": "2026-09-06T12:22:59.797Z",
+  "timestamp_complete": "2026-09-06T12:23:07.635Z",
+  "duration_seconds": 7.837,
+  "gate": {
+    "ready_for_tests": true,
+    "status": "READY_FOR_TESTS",
+    "pid": 10892,
+    "hwnd": "0x01B005DC",
+    "window_title": "Cscape - Logged In : \"armando@controlnautas.com\" - [TankLevelClosedLoop.csp]",
+    "project_file": "C:\\HornerAI\\horner-cscape-mcp\\artifacts\\projects\\TankLevelClosedLoop\\TankLevelClosedLoop.csp",
+    "exit_code": null,
+    "reason": "Gate G3 Error Check and Output Scrape Verified Clean (0 errors, 0 warnings)",
+    "cycle": 17,
+    "timestamp_utc": "2026-09-06T11:43:46.709Z",
+    "heartbeat_utc": "2026-09-06T11:43:46.709Z"
+  },
+  "cscape_pid": 10892,
+  "hwnd": "0x01B005DC",
+  "scenarios_passed": 5,
+  "scenarios_total": 5,
+  "scenario_results": {
+    "scenario_a_harmonized_equilibrium": {
+      "verified": true,
+      "level_pv": 50.0,
+      "pressure_pv": 100.0,
+      "tds_pv": 2200.0,
+      "steam_flow": 25000.0,
+      "inflow_co": 50.0,
+      "vent_co": 50.0
+    },
+    "scenario_b_steam_trip_rejection": {
+      "verified": true,
+      "steam_flow_tripped": 0.0,
+      "surge_pressure": 138.0,
+      "anti_surge_vent_co": 85.0,
+      "throttled_inflow_co": 15.0,
+      "level_pv": 50.0
+    },
+    "scenario_c_multi_fault_emergency": {
+      "verified": true,
+      "overpressure_alarm": true,
+      "high_tds_alarm": true,
+      "emergency_vent": 100.0,
+      "clamped_inflow": 10.0,
+      "escalated_blowdown": 80.0,
+      "bottom_dump_active": true
+    },
+    "scenario_d_blackout_containment": {
+      "verified": true,
+      "cavitation_tripped": true,
+      "pump_isolated": true,
+      "inflow_isolated": true,
+      "dosing_isolated": true,
+      "clamped_inflow": 0.0,
+      "level_pv": 8.0
+    },
+    "scenario_e_cold_restart_equilibrium": {
+      "verified": true,
+      "cavitation_cleared": true,
+      "level_pv": 50.0,
+      "pressure_pv": 100.0,
+      "inflow_co": 50.0,
+      "vent_co": 50.0,
+      "blowdown_co": 15.0,
+      "dosing_co": 25.0
+    }
+  },
+  "telemetry_records": [
+    {
+      "scenario": "A_HARMONIZED_EQUILIBRIUM",
+      "cycle": 1,
+      "level_pv": 50.0,
+      "pressure_pv": 100.0,
+      "tds_pv": 2200.0,
+      "steam_flow": 25000.0
+    },
+    {
+      "scenario": "B_STEAM_TRIP_REJECTION",
+      "cycle": 2,
+      "pressure_pv": 138.0,
+      "vent_co": 85.0,
+      "inflow_co": 15.0,
+      "level_pv": 50.0
+    },
+    {
+      "scenario": "C_MULTI_FAULT_EMERGENCY",
+      "cycle": 3,
+      "m8": true,
+      "m11": true,
+      "vent_co": 100.0,
+      "blowdown_co": 80.0
+    },
+    {
+      "scenario": "D_BLACKOUT_CONTAINMENT",
+      "cycle": 4,
+      "m10": true,
+      "q1": false,
+      "q2": false,
+      "co_r7": 0.0
+    },
+    {
+      "scenario": "E_COLD_RESTART_EQUILIBRIUM",
+      "cycle": 5,
+      "level_pv": 50.0,
+      "pressure_pv": 100.0,
+      "inflow_co": 50.0,
+      "vent_co": 50.0
+    }
+  ],
+  "security": {
+    "hardware_download_lockout": "FAIL_CLOSED_BLOCKED",
+    "zero_straton_dependencies": true,
+    "zero_plc_hardware_interaction": true,
+    "no_gui_hwnd_command_dispatched": true
+  }
+}

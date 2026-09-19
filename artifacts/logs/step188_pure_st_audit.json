@@ -1,0 +1,794 @@
+{
+  "step": 188,
+  "name": "step188_pure_st_audit",
+  "status": "success",
+  "timestamp_utc": "2026-09-06T22:32:49.729110+00:00",
+  "mandate": "PLC / IEC 61131-3 Pure ST Audit for FB_PumpLeadLagAlternator",
+  "execution_duration_sec": 0.9466,
+  "dual_root_parity": true,
+  "cscape_gui_mode": "headless_static_analysis_only",
+  "target_pou": {
+    "name": "FB_PumpLeadLagAlternator",
+    "type": "FUNCTION_BLOCK",
+    "relative_path": "examples/st_applications/pump_lead_lag_alternator.st",
+    "sha256": "73b3669359e12aca1d50932ac65339b2b3e67e486ff84812e334e683237abaeb",
+    "expected_sha256": "73b3669359e12aca1d50932ac65339b2b3e67e486ff84812e334e683237abaeb",
+    "byte_size": 12284,
+    "lines": 263
+  },
+  "tasks": {
+    "task1_file_existence_and_parity": {
+      "status": "success",
+      "horner_file": "C:\\HornerAI\\horner-cscape-mcp\\examples\\st_applications\\pump_lead_lag_alternator.st",
+      "user_file": "C:\\Users\\ArmandoSilva\\examples\\st_applications\\pump_lead_lag_alternator.st",
+      "horner_sha256": "73b3669359e12aca1d50932ac65339b2b3e67e486ff84812e334e683237abaeb",
+      "user_sha256": "73b3669359e12aca1d50932ac65339b2b3e67e486ff84812e334e683237abaeb",
+      "expected_sha256": "73b3669359e12aca1d50932ac65339b2b3e67e486ff84812e334e683237abaeb",
+      "sha_match": true,
+      "dual_root_parity": true,
+      "diff_line_count": 0,
+      "diff": "",
+      "file_size_bytes": 12284,
+      "duration_sec": 0.0009
+    },
+    "task2_ladder_construct_scan_and_fail_closed": {
+      "status": "success",
+      "clean_scan_artifacts_count": 0,
+      "clean_scan_artifacts": [],
+      "clean_validator_errors": [],
+      "clean_st_parser_ladder_errors": [],
+      "mutation_tests_total": 12,
+      "mutation_tests_fail_closed": 12,
+      "mutation_results": [
+        {
+          "construct_name": "Normally Open Contact",
+          "construct_syntax": "---[ ]---",
+          "guard_rejected": true,
+          "validator_rejected": true,
+          "parser_rejected": true,
+          "mcp_rejected": true,
+          "fail_closed": true
+        },
+        {
+          "construct_name": "Normally Closed Contact",
+          "construct_syntax": "---[/]---",
+          "guard_rejected": true,
+          "validator_rejected": true,
+          "parser_rejected": true,
+          "mcp_rejected": true,
+          "fail_closed": true
+        },
+        {
+          "construct_name": "Spaced Inverted Contact",
+          "construct_syntax": "---[ / ]---",
+          "guard_rejected": true,
+          "validator_rejected": true,
+          "parser_rejected": true,
+          "mcp_rejected": true,
+          "fail_closed": true
+        },
+        {
+          "construct_name": "Normal Output Coil",
+          "construct_syntax": "---( )---",
+          "guard_rejected": true,
+          "validator_rejected": true,
+          "parser_rejected": true,
+          "mcp_rejected": true,
+          "fail_closed": true
+        },
+        {
+          "construct_name": "Set Latch Coil",
+          "construct_syntax": "---(S)---",
+          "guard_rejected": true,
+          "validator_rejected": true,
+          "parser_rejected": true,
+          "mcp_rejected": true,
+          "fail_closed": true
+        },
+        {
+          "construct_name": "Reset Unlatch Coil",
+          "construct_syntax": "---(R)---",
+          "guard_rejected": true,
+          "validator_rejected": true,
+          "parser_rejected": true,
+          "mcp_rejected": true,
+          "fail_closed": true
+        },
+        {
+          "construct_name": "Rung Header Marker",
+          "construct_syntax": "RUNG 1: Pump Lead Lag Alternator",
+          "guard_rejected": true,
+          "validator_rejected": true,
+          "parser_rejected": true,
+          "mcp_rejected": true,
+          "fail_closed": true
+        },
+        {
+          "construct_name": "Rung Terminator Marker",
+          "construct_syntax": "END_RUNG",
+          "guard_rejected": true,
+          "validator_rejected": true,
+          "parser_rejected": true,
+          "mcp_rejected": true,
+          "fail_closed": true
+        },
+        {
+          "construct_name": "Ladder Network Section",
+          "construct_syntax": "NETWORK 10",
+          "guard_rejected": true,
+          "validator_rejected": true,
+          "parser_rejected": true,
+          "mcp_rejected": true,
+          "fail_closed": true
+        },
+        {
+          "construct_name": "Instruction Mnemonic XIC",
+          "construct_syntax": "XIC(Auto_Enable)",
+          "guard_rejected": true,
+          "validator_rejected": true,
+          "parser_rejected": true,
+          "mcp_rejected": true,
+          "fail_closed": true
+        },
+        {
+          "construct_name": "Instruction Mnemonic XIO",
+          "construct_syntax": "XIO(Pump1_Run_Cmd)",
+          "guard_rejected": true,
+          "validator_rejected": true,
+          "parser_rejected": true,
+          "mcp_rejected": true,
+          "fail_closed": true
+        },
+        {
+          "construct_name": "Instruction Mnemonic OTE",
+          "construct_syntax": "OTE(Pump2_Run_Cmd)",
+          "guard_rejected": true,
+          "validator_rejected": true,
+          "parser_rejected": true,
+          "mcp_rejected": true,
+          "fail_closed": true
+        }
+      ],
+      "duration_sec": 0.8289
+    },
+    "task3_iec61131_syntax_and_datatypes": {
+      "status": "success",
+      "pou_name": "FB_PumpLeadLagAlternator",
+      "pou_type": "FUNCTION_BLOCK",
+      "total_variables": 44,
+      "input_count": 17,
+      "output_count": 13,
+      "local_count": 14,
+      "missing_inputs": [],
+      "missing_outputs": [],
+      "type_violations": [],
+      "iec_validator_valid": true,
+      "st_parser_valid": true,
+      "mcp_validator_valid": true,
+      "variables": [
+        {
+          "name": "Auto_Enable",
+          "data_type": "BOOL",
+          "scope": "VAR_INPUT",
+          "initial_value": "TRUE"
+        },
+        {
+          "name": "System_Pressure_PSI",
+          "data_type": "REAL",
+          "scope": "VAR_INPUT",
+          "initial_value": "55.0"
+        },
+        {
+          "name": "Lead_Start_SP",
+          "data_type": "REAL",
+          "scope": "VAR_INPUT",
+          "initial_value": "45.0"
+        },
+        {
+          "name": "Boost_Start_SP",
+          "data_type": "REAL",
+          "scope": "VAR_INPUT",
+          "initial_value": "35.0"
+        },
+        {
+          "name": "Stop_SP",
+          "data_type": "REAL",
+          "scope": "VAR_INPUT",
+          "initial_value": "60.0"
+        },
+        {
+          "name": "Pump1_Trip_Fault",
+          "data_type": "BOOL",
+          "scope": "VAR_INPUT",
+          "initial_value": "FALSE"
+        },
+        {
+          "name": "Pump2_Trip_Fault",
+          "data_type": "BOOL",
+          "scope": "VAR_INPUT",
+          "initial_value": "FALSE"
+        },
+        {
+          "name": "Manual_Mode_Select",
+          "data_type": "BOOL",
+          "scope": "VAR_INPUT",
+          "initial_value": "FALSE"
+        },
+        {
+          "name": "Pump1_Manual_Override",
+          "data_type": "BOOL",
+          "scope": "VAR_INPUT",
+          "initial_value": "FALSE"
+        },
+        {
+          "name": "Pump2_Manual_Override",
+          "data_type": "BOOL",
+          "scope": "VAR_INPUT",
+          "initial_value": "FALSE"
+        },
+        {
+          "name": "Pump1_Lockout",
+          "data_type": "BOOL",
+          "scope": "VAR_INPUT",
+          "initial_value": "FALSE"
+        },
+        {
+          "name": "Pump2_Lockout",
+          "data_type": "BOOL",
+          "scope": "VAR_INPUT",
+          "initial_value": "FALSE"
+        },
+        {
+          "name": "Fault_Reset",
+          "data_type": "BOOL",
+          "scope": "VAR_INPUT",
+          "initial_value": "FALSE"
+        },
+        {
+          "name": "Debounce_Time_Sec",
+          "data_type": "REAL",
+          "scope": "VAR_INPUT",
+          "initial_value": "2.0"
+        },
+        {
+          "name": "Min_Run_Time_Sec",
+          "data_type": "REAL",
+          "scope": "VAR_INPUT",
+          "initial_value": "15.0"
+        },
+        {
+          "name": "Min_Rest_Time_Sec",
+          "data_type": "REAL",
+          "scope": "VAR_INPUT",
+          "initial_value": "20.0"
+        },
+        {
+          "name": "Cycle_Time_Sec",
+          "data_type": "REAL",
+          "scope": "VAR_INPUT",
+          "initial_value": "0.1"
+        },
+        {
+          "name": "Pump1_Run_Cmd",
+          "data_type": "BOOL",
+          "scope": "VAR_OUTPUT",
+          "initial_value": "FALSE"
+        },
+        {
+          "name": "Pump2_Run_Cmd",
+          "data_type": "BOOL",
+          "scope": "VAR_OUTPUT",
+          "initial_value": "FALSE"
+        },
+        {
+          "name": "Lead_Pump_Id",
+          "data_type": "INT",
+          "scope": "VAR_OUTPUT",
+          "initial_value": "1"
+        },
+        {
+          "name": "Lag_Pump_Id",
+          "data_type": "INT",
+          "scope": "VAR_OUTPUT",
+          "initial_value": "2"
+        },
+        {
+          "name": "Boost_Mode_Active",
+          "data_type": "BOOL",
+          "scope": "VAR_OUTPUT",
+          "initial_value": "FALSE"
+        },
+        {
+          "name": "Failover_Active",
+          "data_type": "BOOL",
+          "scope": "VAR_OUTPUT",
+          "initial_value": "FALSE"
+        },
+        {
+          "name": "Pump1_Runtime_Hours",
+          "data_type": "REAL",
+          "scope": "VAR_OUTPUT",
+          "initial_value": "0.0"
+        },
+        {
+          "name": "Pump2_Runtime_Hours",
+          "data_type": "REAL",
+          "scope": "VAR_OUTPUT",
+          "initial_value": "0.0"
+        },
+        {
+          "name": "Pump1_Starts_Count",
+          "data_type": "DINT",
+          "scope": "VAR_OUTPUT",
+          "initial_value": "0"
+        },
+        {
+          "name": "Pump2_Starts_Count",
+          "data_type": "DINT",
+          "scope": "VAR_OUTPUT",
+          "initial_value": "0"
+        },
+        {
+          "name": "Pump1_Fault_Latched",
+          "data_type": "BOOL",
+          "scope": "VAR_OUTPUT",
+          "initial_value": "FALSE"
+        },
+        {
+          "name": "Pump2_Fault_Latched",
+          "data_type": "BOOL",
+          "scope": "VAR_OUTPUT",
+          "initial_value": "FALSE"
+        },
+        {
+          "name": "System_Fault_Alarm",
+          "data_type": "BOOL",
+          "scope": "VAR_OUTPUT",
+          "initial_value": "FALSE"
+        },
+        {
+          "name": "P1_Run_Timer",
+          "data_type": "REAL",
+          "scope": "VAR",
+          "initial_value": "0.0"
+        },
+        {
+          "name": "P2_Run_Timer",
+          "data_type": "REAL",
+          "scope": "VAR",
+          "initial_value": "0.0"
+        },
+        {
+          "name": "P1_Rest_Timer",
+          "data_type": "REAL",
+          "scope": "VAR",
+          "initial_value": "30.0"
+        },
+        {
+          "name": "P2_Rest_Timer",
+          "data_type": "REAL",
+          "scope": "VAR",
+          "initial_value": "30.0"
+        },
+        {
+          "name": "Lead_Debounce_Timer",
+          "data_type": "REAL",
+          "scope": "VAR",
+          "initial_value": "0.0"
+        },
+        {
+          "name": "Boost_Debounce_Timer",
+          "data_type": "REAL",
+          "scope": "VAR",
+          "initial_value": "0.0"
+        },
+        {
+          "name": "Stop_Debounce_Timer",
+          "data_type": "REAL",
+          "scope": "VAR",
+          "initial_value": "0.0"
+        },
+        {
+          "name": "P1_Prev_Run",
+          "data_type": "BOOL",
+          "scope": "VAR",
+          "initial_value": "FALSE"
+        },
+        {
+          "name": "P2_Prev_Run",
+          "data_type": "BOOL",
+          "scope": "VAR",
+          "initial_value": "FALSE"
+        },
+        {
+          "name": "Lead_Req_Debounced",
+          "data_type": "BOOL",
+          "scope": "VAR",
+          "initial_value": "FALSE"
+        },
+        {
+          "name": "Boost_Req_Debounced",
+          "data_type": "BOOL",
+          "scope": "VAR",
+          "initial_value": "FALSE"
+        },
+        {
+          "name": "Stop_Req_Debounced",
+          "data_type": "BOOL",
+          "scope": "VAR",
+          "initial_value": "FALSE"
+        },
+        {
+          "name": "P1_Available",
+          "data_type": "BOOL",
+          "scope": "VAR",
+          "initial_value": "TRUE"
+        },
+        {
+          "name": "P2_Available",
+          "data_type": "BOOL",
+          "scope": "VAR",
+          "initial_value": "TRUE"
+        }
+      ],
+      "duration_sec": 0.0993
+    },
+    "task4_ast_decomposition": {
+      "status": "success",
+      "pou_name": "FB_PumpLeadLagAlternator",
+      "pou_type": "FUNCTION_BLOCK",
+      "sha256": "73b3669359e12aca1d50932ac65339b2b3e67e486ff84812e334e683237abaeb",
+      "total_lines": 263,
+      "total_tokens": 916,
+      "var_blocks_count": 3,
+      "var_blocks": [
+        {
+          "block_type": "VAR_INPUT",
+          "declarations_count": 17,
+          "declarations": [
+            {
+              "name": "Auto_Enable",
+              "data_type": "BOOL",
+              "initial_value": "LiteralNode(True, 'BOOL')"
+            },
+            {
+              "name": "System_Pressure_PSI",
+              "data_type": "REAL",
+              "initial_value": "LiteralNode(55.0, 'REAL')"
+            },
+            {
+              "name": "Lead_Start_SP",
+              "data_type": "REAL",
+              "initial_value": "LiteralNode(45.0, 'REAL')"
+            },
+            {
+              "name": "Boost_Start_SP",
+              "data_type": "REAL",
+              "initial_value": "LiteralNode(35.0, 'REAL')"
+            },
+            {
+              "name": "Stop_SP",
+              "data_type": "REAL",
+              "initial_value": "LiteralNode(60.0, 'REAL')"
+            },
+            {
+              "name": "Pump1_Trip_Fault",
+              "data_type": "BOOL",
+              "initial_value": "LiteralNode(False, 'BOOL')"
+            },
+            {
+              "name": "Pump2_Trip_Fault",
+              "data_type": "BOOL",
+              "initial_value": "LiteralNode(False, 'BOOL')"
+            },
+            {
+              "name": "Manual_Mode_Select",
+              "data_type": "BOOL",
+              "initial_value": "LiteralNode(False, 'BOOL')"
+            },
+            {
+              "name": "Pump1_Manual_Override",
+              "data_type": "BOOL",
+              "initial_value": "LiteralNode(False, 'BOOL')"
+            },
+            {
+              "name": "Pump2_Manual_Override",
+              "data_type": "BOOL",
+              "initial_value": "LiteralNode(False, 'BOOL')"
+            },
+            {
+              "name": "Pump1_Lockout",
+              "data_type": "BOOL",
+              "initial_value": "LiteralNode(False, 'BOOL')"
+            },
+            {
+              "name": "Pump2_Lockout",
+              "data_type": "BOOL",
+              "initial_value": "LiteralNode(False, 'BOOL')"
+            },
+            {
+              "name": "Fault_Reset",
+              "data_type": "BOOL",
+              "initial_value": "LiteralNode(False, 'BOOL')"
+            },
+            {
+              "name": "Debounce_Time_Sec",
+              "data_type": "REAL",
+              "initial_value": "LiteralNode(2.0, 'REAL')"
+            },
+            {
+              "name": "Min_Run_Time_Sec",
+              "data_type": "REAL",
+              "initial_value": "LiteralNode(15.0, 'REAL')"
+            },
+            {
+              "name": "Min_Rest_Time_Sec",
+              "data_type": "REAL",
+              "initial_value": "LiteralNode(20.0, 'REAL')"
+            },
+            {
+              "name": "Cycle_Time_Sec",
+              "data_type": "REAL",
+              "initial_value": "LiteralNode(0.1, 'REAL')"
+            }
+          ]
+        },
+        {
+          "block_type": "VAR_OUTPUT",
+          "declarations_count": 13,
+          "declarations": [
+            {
+              "name": "Pump1_Run_Cmd",
+              "data_type": "BOOL",
+              "initial_value": "LiteralNode(False, 'BOOL')"
+            },
+            {
+              "name": "Pump2_Run_Cmd",
+              "data_type": "BOOL",
+              "initial_value": "LiteralNode(False, 'BOOL')"
+            },
+            {
+              "name": "Lead_Pump_Id",
+              "data_type": "INT",
+              "initial_value": "LiteralNode(1, 'INT')"
+            },
+            {
+              "name": "Lag_Pump_Id",
+              "data_type": "INT",
+              "initial_value": "LiteralNode(2, 'INT')"
+            },
+            {
+              "name": "Boost_Mode_Active",
+              "data_type": "BOOL",
+              "initial_value": "LiteralNode(False, 'BOOL')"
+            },
+            {
+              "name": "Failover_Active",
+              "data_type": "BOOL",
+              "initial_value": "LiteralNode(False, 'BOOL')"
+            },
+            {
+              "name": "Pump1_Runtime_Hours",
+              "data_type": "REAL",
+              "initial_value": "LiteralNode(0.0, 'REAL')"
+            },
+            {
+              "name": "Pump2_Runtime_Hours",
+              "data_type": "REAL",
+              "initial_value": "LiteralNode(0.0, 'REAL')"
+            },
+            {
+              "name": "Pump1_Starts_Count",
+              "data_type": "DINT",
+              "initial_value": "LiteralNode(0, 'INT')"
+            },
+            {
+              "name": "Pump2_Starts_Count",
+              "data_type": "DINT",
+              "initial_value": "LiteralNode(0, 'INT')"
+            },
+            {
+              "name": "Pump1_Fault_Latched",
+              "data_type": "BOOL",
+              "initial_value": "LiteralNode(False, 'BOOL')"
+            },
+            {
+              "name": "Pump2_Fault_Latched",
+              "data_type": "BOOL",
+              "initial_value": "LiteralNode(False, 'BOOL')"
+            },
+            {
+              "name": "System_Fault_Alarm",
+              "data_type": "BOOL",
+              "initial_value": "LiteralNode(False, 'BOOL')"
+            }
+          ]
+        },
+        {
+          "block_type": "VAR",
+          "declarations_count": 14,
+          "declarations": [
+            {
+              "name": "P1_Run_Timer",
+              "data_type": "REAL",
+              "initial_value": "LiteralNode(0.0, 'REAL')"
+            },
+            {
+              "name": "P2_Run_Timer",
+              "data_type": "REAL",
+              "initial_value": "LiteralNode(0.0, 'REAL')"
+            },
+            {
+              "name": "P1_Rest_Timer",
+              "data_type": "REAL",
+              "initial_value": "LiteralNode(30.0, 'REAL')"
+            },
+            {
+              "name": "P2_Rest_Timer",
+              "data_type": "REAL",
+              "initial_value": "LiteralNode(30.0, 'REAL')"
+            },
+            {
+              "name": "Lead_Debounce_Timer",
+              "data_type": "REAL",
+              "initial_value": "LiteralNode(0.0, 'REAL')"
+            },
+            {
+              "name": "Boost_Debounce_Timer",
+              "data_type": "REAL",
+              "initial_value": "LiteralNode(0.0, 'REAL')"
+            },
+            {
+              "name": "Stop_Debounce_Timer",
+              "data_type": "REAL",
+              "initial_value": "LiteralNode(0.0, 'REAL')"
+            },
+            {
+              "name": "P1_Prev_Run",
+              "data_type": "BOOL",
+              "initial_value": "LiteralNode(False, 'BOOL')"
+            },
+            {
+              "name": "P2_Prev_Run",
+              "data_type": "BOOL",
+              "initial_value": "LiteralNode(False, 'BOOL')"
+            },
+            {
+              "name": "Lead_Req_Debounced",
+              "data_type": "BOOL",
+              "initial_value": "LiteralNode(False, 'BOOL')"
+            },
+            {
+              "name": "Boost_Req_Debounced",
+              "data_type": "BOOL",
+              "initial_value": "LiteralNode(False, 'BOOL')"
+            },
+            {
+              "name": "Stop_Req_Debounced",
+              "data_type": "BOOL",
+              "initial_value": "LiteralNode(False, 'BOOL')"
+            },
+            {
+              "name": "P1_Available",
+              "data_type": "BOOL",
+              "initial_value": "LiteralNode(True, 'BOOL')"
+            },
+            {
+              "name": "P2_Available",
+              "data_type": "BOOL",
+              "initial_value": "LiteralNode(True, 'BOOL')"
+            }
+          ]
+        }
+      ],
+      "statements_count": 18,
+      "statements": [
+        {
+          "index": 1,
+          "statement_type": "IfNode",
+          "line": 90
+        },
+        {
+          "index": 2,
+          "statement_type": "IfNode",
+          "line": 96
+        },
+        {
+          "index": 3,
+          "statement_type": "IfNode",
+          "line": 100
+        },
+        {
+          "index": 4,
+          "statement_type": "AssignmentNode",
+          "line": 104
+        },
+        {
+          "index": 5,
+          "statement_type": "AssignmentNode",
+          "line": 105
+        },
+        {
+          "index": 6,
+          "statement_type": "AssignmentNode",
+          "line": 106
+        },
+        {
+          "index": 7,
+          "statement_type": "IfNode",
+          "line": 109
+        },
+        {
+          "index": 8,
+          "statement_type": "IfNode",
+          "line": 118
+        },
+        {
+          "index": 9,
+          "statement_type": "IfNode",
+          "line": 128
+        },
+        {
+          "index": 10,
+          "statement_type": "IfNode",
+          "line": 141
+        },
+        {
+          "index": 11,
+          "statement_type": "IfNode",
+          "line": 168
+        },
+        {
+          "index": 12,
+          "statement_type": "IfNode",
+          "line": 228
+        },
+        {
+          "index": 13,
+          "statement_type": "IfNode",
+          "line": 231
+        },
+        {
+          "index": 14,
+          "statement_type": "AssignmentNode",
+          "line": 234
+        },
+        {
+          "index": 15,
+          "statement_type": "IfNode",
+          "line": 237
+        },
+        {
+          "index": 16,
+          "statement_type": "AssignmentNode",
+          "line": 248
+        },
+        {
+          "index": 17,
+          "statement_type": "IfNode",
+          "line": 250
+        },
+        {
+          "index": 18,
+          "statement_type": "AssignmentNode",
+          "line": 261
+        }
+      ],
+      "duration_sec": 0.0168
+    },
+    "task5_reverify_st_to_ld_conversion_blocked": {
+      "status": "success",
+      "classification": "BLOCKED_NATIVE",
+      "directive": "DOCUMENT_ONLY",
+      "st_to_ld_conversion_allowed": false,
+      "doc_file_exists": true,
+      "doc_path": "C:\\HornerAI\\horner-cscape-mcp\\docs\\st_to_ld_conversion_blocked.md",
+      "evidence_file_exists": true,
+      "evidence_path": "C:\\HornerAI\\horner-cscape-mcp\\artifacts\\evidence\\cscape_st_to_ld_audit.json",
+      "pe_audit_zero_conversion_exports": true,
+      "guard_policy": "BLOCKED_NATIVE: DOCUMENT_ONLY",
+      "explanation": "Horner Cscape 10.2 architecture maintains strict separation between legacy Advanced Ladder and IEC 61131-3 engines with zero runtime conversion APIs.",
+      "duration_sec": 0.0005
+    }
+  }
+}

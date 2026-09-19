@@ -1,0 +1,98 @@
+================================================================================
+HORNER CSCAPE 10.2 IEC 61131-3 STRUCTURED TEXT TO LADDER CONVERSION PROOF
+POU: TankLevelControl | STANDARD: IEC 61131-3 (ST -> LD MIGRATION)
+================================================================================
+Conversion Timestamp  : 2026-09-05T00:11:38.049512+00:00
+Source Language      : IEC 61131-3 Structured Text (ST)
+Target Representation: IEC 61131-3 Ladder Diagram (LD) / Rung AST
+Total Rungs          : 6
+Recipe Catalog Keys  : COIL_NORMAL, COIL_RESET, COIL_SET, COUNTER_UP, MATH_BOX, TIMER_ON
+Security Constraint  : FAIL-CLOSED (Ladder in ST raises LadderConstructRejectedError)
+Hardware Isolation   : ZERO PHYSICAL ACCESS / DOWNLOAD PROHIBITED
+================================================================================
+
+--------------------------------------------------------------------------------
+VARIABLE DECLARATION SYMBOL TABLE:
+--------------------------------------------------------------------------------
+  VAR bStartSwitch           : BOOL       (VAR)
+  VAR bStopSwitch            : BOOL       (VAR)
+  VAR bEStop                 : BOOL       (VAR)
+  VAR bPumpRun               : BOOL       (VAR)
+  VAR bHighLevelSensor       : BOOL       (VAR)
+  VAR bResetFault            : BOOL       (VAR)
+  VAR bHighAlarmLatched      : BOOL       (VAR)
+  VAR nRawLevelSensor        : INT        (VAR)
+  VAR nScaledLevelPercent    : INT        (VAR)
+  VAR tonFillTimer           : TON        (VAR)
+  VAR bFillTimeout           : BOOL       (VAR)
+  VAR ctuBatchCounter        : CTU        (VAR)
+  VAR bBatchPulse            : BOOL       (VAR)
+  VAR bResetCounter          : BOOL       (VAR)
+  VAR bBatchComplete         : BOOL       (VAR)
+  VAR nBatchCount            : INT        (VAR)
+--------------------------------------------------------------------------------
+
+================================================================================
+LADDER DIAGRAM RUNGS (ASCII / STRUCTURED FORMAT):
+================================================================================
+
+// --- Rung 1: bPumpRun Control Logic ---
+// ST Source   : bPumpRun := ((bStartSwitch OR bPumpRun) AND NOT bStopSwitch) AND NOT bEStop
+// Recipe Key  : COIL_NORMAL (COIL)
+// Elements    : BRANCH_OR, CONTACT_NC(bStopSwitch), CONTACT_NC(bEStop), COIL_NORMAL(bPumpRun)
+|      +---[ bStartSwitch ]---+                                                  |
+|---+--+                      +--[/ bStopSwitch ]--[/ bEStop ]--( bPumpRun )---|
+|      +---[ bPumpRun     ]---+                                                  |
+
+// --- Rung 2: bHighAlarmLatched Latch (Set Coil) ---
+// ST Source   : IF bHighLevelSensor THEN
+    bHighAlarmLatched := TRUE;
+END_IF;
+// Recipe Key  : COIL_SET (COIL)
+// Elements    : CONTACT_NO(bHighLevelSensor), COIL_SET(bHighAlarmLatched)
+|---[ bHighLevelSensor ]-----------------------------(S bHighAlarmLatched )---|
+
+// --- Rung 3: bHighAlarmLatched Unlatch (Reset Coil) ---
+// ST Source   : IF bResetFault THEN
+    bHighAlarmLatched := FALSE;
+END_IF;
+// Recipe Key  : COIL_RESET (COIL)
+// Elements    : CONTACT_NO(bResetFault), COIL_RESET(bHighAlarmLatched)
+|---[ bResetFault ]-----------------------------(R bHighAlarmLatched )---|
+
+// --- Rung 4: tonFillTimer On-Delay Timer (TON) ---
+// ST Source   : tonFillTimer(IN := bPumpRun, PT := T#10s); bFillTimeout := tonFillTimer.Q;
+// Recipe Key  : TIMER_ON (TIMER)
+// Elements    : CONTACT_NO(bPumpRun), TIMER_TON(tonFillTimer), COIL_NORMAL(bFillTimeout)
+|---[ bPumpRun ]---------+-----------+----------------------------------------------|
+                         |    TON    |
+                         |tonFillTime|
+                         |IN        Q|-------------------------( bFillTimeout )---|
+                   T#10s |PT       ET|
+                         +-----------+
+
+// --- Rung 5: ctuBatchCounter Up-Counter (CTU) ---
+// ST Source   : ctuBatchCounter(CU := bBatchPulse, RESET := bResetCounter, PV := 100); bBatchComplete := ctuBatchCounter.Q; nBatchCount := ctuBatchCounter.CV;
+// Recipe Key  : COUNTER_UP (COUNTER)
+// Elements    : CONTACT_NO(bBatchPulse), CONTACT_NO(bResetCounter), COUNTER_CTU(ctuBatchCounter), COIL_NORMAL(bBatchComplete)
+|---[ bBatchPulse ]------+-----------+-------------------------------------------|
+                         |    CTU    |
+                         |ctuBatchCou|
+                         |CU        Q|--------------------( bBatchComplete )---|
+|---[ bResetCounter ]----|RESET    CV|---[ nBatchCount ]-------------------------|
+                     100 |PV         |
+                         +-----------+
+
+// --- Rung 6: nScaledLevelPercent Math Calculation ---
+// ST Source   : nScaledLevelPercent := (nRawLevelSensor * 100) / 32000
+// Recipe Key  : MATH_BOX (MATH)
+// Elements    : MATH_BOX(nScaledLevelPercent)
+|---+-------------------------------------------------------------------+---|
+    |                                 CALC                              |
+    |  Dest : nScaledLevelPercent                                     |
+    |  Expr : (nRawLevelSensor * 100) / 32000                         |
+    +-------------------------------------------------------------------+
+
+================================================================================
+END OF LADDER CONVERSION PROOF
+================================================================================

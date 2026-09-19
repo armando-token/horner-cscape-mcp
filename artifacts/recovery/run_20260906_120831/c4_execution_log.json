@@ -1,0 +1,318 @@
+[
+  {
+    "timestamp": "2026-09-07T02:26:03.044Z",
+    "message": "================================================================================"
+  },
+  {
+    "timestamp": "2026-09-07T02:26:03.044Z",
+    "message": "STARTING MISSION C4_WINDOWS_MATRIX REAL ARTIFACTS GENERATION PASS"
+  },
+  {
+    "timestamp": "2026-09-07T02:26:03.044Z",
+    "message": "================================================================================"
+  },
+  {
+    "timestamp": "2026-09-07T02:26:03.044Z",
+    "message": "TankLevelClosedLoop.csp SHA256: d075e67d80be031a99a6895078735918b7a15c8086590a6d20ec8484b27749af (MUST REMAIN UNTOUCHED)"
+  },
+  {
+    "timestamp": "2026-09-07T02:26:03.048Z",
+    "message": "Resolved active visible Cscape PID=2108 HWND=0xa9033c Title='Cscape - Logged In : \"armando@controlnautas.com\" - [LabProject_W01.csp]'"
+  },
+  {
+    "timestamp": "2026-09-07T02:26:04.264Z",
+    "message": "Saved screenshot: cscape_lab_w01_visible.png (1300x636, 85378 bytes)"
+  },
+  {
+    "timestamp": "2026-09-07T02:26:04.327Z",
+    "message": "Saved screenshot: cscape_lab_w01_visible.png (1300x636, 85378 bytes)"
+  },
+  {
+    "timestamp": "2026-09-07T02:26:04.429Z",
+    "message": "Saved screenshot: cscape_lab_w01_visible.png (1300x636, 85378 bytes)"
+  },
+  {
+    "timestamp": "2026-09-07T02:26:04.479Z",
+    "message": "Saved screenshot: cscape_lab_w01_visible.png (1300x636, 85378 bytes)"
+  },
+  {
+    "timestamp": "2026-09-07T02:26:05.507Z",
+    "message": "============================================================"
+  },
+  {
+    "timestamp": "2026-09-07T02:26:05.507Z",
+    "message": "EXECUTING W01: Minimal Project Lifecycle (Start -> Edit -> Save -> Reopen)..."
+  },
+  {
+    "timestamp": "2026-09-07T02:26:05.507Z",
+    "message": "============================================================"
+  },
+  {
+    "timestamp": "2026-09-07T02:26:05.622Z",
+    "message": "Saved screenshot: w01_stage1_start.png (1300x636, 85378 bytes)"
+  },
+  {
+    "timestamp": "2026-09-07T02:26:05.696Z",
+    "message": "Saved screenshot: w01_stage1_start.png (1300x636, 85378 bytes)"
+  },
+  {
+    "timestamp": "2026-09-07T02:26:05.802Z",
+    "message": "Saved screenshot: w01_stage1_start.png (1300x636, 85378 bytes)"
+  },
+  {
+    "timestamp": "2026-09-07T02:26:05.872Z",
+    "message": "Saved screenshot: w01_stage1_start.png (1300x636, 85378 bytes)"
+  },
+  {
+    "timestamp": "2026-09-07T02:26:05.872Z",
+    "message": "Stage 1 verified: File=LabProject_W01.csp, Size=99840 bytes, SHA256=43421dfefe0ef6a39158227ce36c8ceae9451e0855c87f9791805081a9d4e186"
+  },
+  {
+    "timestamp": "2026-09-07T02:26:07.474Z",
+    "message": "Saved screenshot: w01_stage2_edit.png (1300x636, 91443 bytes)"
+  },
+  {
+    "timestamp": "2026-09-07T02:26:07.614Z",
+    "message": "Saved screenshot: w01_stage2_edit.png (1300x636, 91443 bytes)"
+  },
+  {
+    "timestamp": "2026-09-07T02:26:07.696Z",
+    "message": "Saved screenshot: w01_stage2_edit.png (1300x636, 91443 bytes)"
+  },
+  {
+    "timestamp": "2026-09-07T02:26:07.835Z",
+    "message": "Saved screenshot: w01_stage2_edit.png (1300x636, 91443 bytes)"
+  },
+  {
+    "timestamp": "2026-09-07T02:26:07.835Z",
+    "message": "Stage 2 verified: In-GUI editing component interaction dispatched"
+  },
+  {
+    "timestamp": "2026-09-07T02:26:10.721Z",
+    "message": "Saved screenshot: w01_stage3_save.png (1300x636, 91378 bytes)"
+  },
+  {
+    "timestamp": "2026-09-07T02:26:10.853Z",
+    "message": "Saved screenshot: w01_stage3_save.png (1300x636, 91378 bytes)"
+  },
+  {
+    "timestamp": "2026-09-07T02:26:10.989Z",
+    "message": "Saved screenshot: w01_stage3_save.png (1300x636, 91378 bytes)"
+  },
+  {
+    "timestamp": "2026-09-07T02:26:11.202Z",
+    "message": "Saved screenshot: w01_stage3_save.png (1300x636, 91378 bytes)"
+  },
+  {
+    "timestamp": "2026-09-07T02:26:11.202Z",
+    "message": "Stage 3 verified: Document saved to disk. New SHA256=5ecf04840e3be0ab95540547fcfbf2a24e121d5b085a99d2aa1d38e3aa48b216, Size=99840 bytes"
+  },
+  {
+    "timestamp": "2026-09-07T02:26:14.231Z",
+    "message": "Window title after ID_FILE_MRU_FILE1: Cscape - Logged In : \"armando@controlnautas.com\" - [LabProject_W01.csp]"
+  },
+  {
+    "timestamp": "2026-09-07T02:26:14.382Z",
+    "message": "Saved screenshot: w01_stage4_reopened.png (1300x636, 91063 bytes)"
+  },
+  {
+    "timestamp": "2026-09-07T02:26:14.434Z",
+    "message": "Saved screenshot: w01_stage4_reopened.png (1300x636, 91063 bytes)"
+  },
+  {
+    "timestamp": "2026-09-07T02:26:14.589Z",
+    "message": "Saved screenshot: w01_stage4_reopened.png (1300x636, 91063 bytes)"
+  },
+  {
+    "timestamp": "2026-09-07T02:26:14.805Z",
+    "message": "Saved screenshot: w01_stage4_reopened.png (1300x636, 91063 bytes)"
+  },
+  {
+    "timestamp": "2026-09-07T02:26:14.807Z",
+    "message": "Stage 4 verified: Document successfully reloaded and verified in live GUI"
+  },
+  {
+    "timestamp": "2026-09-07T02:26:14.825Z",
+    "message": "Saved w01_lifecycle_evidence.json (2929 bytes) to all recovery vaults with dual-root parity."
+  },
+  {
+    "timestamp": "2026-09-07T02:26:14.825Z",
+    "message": "============================================================"
+  },
+  {
+    "timestamp": "2026-09-07T02:26:14.825Z",
+    "message": "EXECUTING W02: Project Navigator & Docking State Inspection..."
+  },
+  {
+    "timestamp": "2026-09-07T02:26:14.825Z",
+    "message": "============================================================"
+  },
+  {
+    "timestamp": "2026-09-07T02:26:14.826Z",
+    "message": "Found Project Navigator: HWND=0x9a065c, Rect=(48, 184, 164, 649), Visible=True"
+  },
+  {
+    "timestamp": "2026-09-07T02:26:14.874Z",
+    "message": "Saved screenshot: w02_project_navigator.png (116x465, 5685 bytes)"
+  },
+  {
+    "timestamp": "2026-09-07T02:26:14.876Z",
+    "message": "Saved screenshot: w02_project_navigator.png (116x465, 5685 bytes)"
+  },
+  {
+    "timestamp": "2026-09-07T02:26:14.878Z",
+    "message": "Saved screenshot: w02_project_navigator.png (116x465, 5685 bytes)"
+  },
+  {
+    "timestamp": "2026-09-07T02:26:14.880Z",
+    "message": "Saved screenshot: w02_project_navigator.png (116x465, 5685 bytes)"
+  },
+  {
+    "timestamp": "2026-09-07T02:26:14.946Z",
+    "message": "Saved screenshot: w02_status_bar.png (1284x19, 151 bytes)"
+  },
+  {
+    "timestamp": "2026-09-07T02:26:14.946Z",
+    "message": "Saved screenshot: w02_status_bar.png (1284x19, 151 bytes)"
+  },
+  {
+    "timestamp": "2026-09-07T02:26:14.946Z",
+    "message": "Saved screenshot: w02_status_bar.png (1284x19, 151 bytes)"
+  },
+  {
+    "timestamp": "2026-09-07T02:26:14.948Z",
+    "message": "Saved screenshot: w02_status_bar.png (1284x19, 151 bytes)"
+  },
+  {
+    "timestamp": "2026-09-07T02:26:14.950Z",
+    "message": "Saved w02_navigator_evidence.json (3649 bytes) to all recovery vaults with dual-root parity."
+  },
+  {
+    "timestamp": "2026-09-07T02:26:14.950Z",
+    "message": "W02 completed: Project Navigator & Docking State inspected and serialized."
+  },
+  {
+    "timestamp": "2026-09-07T02:26:14.950Z",
+    "message": "============================================================"
+  },
+  {
+    "timestamp": "2026-09-07T02:26:14.950Z",
+    "message": "EXECUTING W03: Modal Dialog Interception & Decision Table Formulation..."
+  },
+  {
+    "timestamp": "2026-09-07T02:26:14.950Z",
+    "message": "============================================================"
+  },
+  {
+    "timestamp": "2026-09-07T02:26:14.952Z",
+    "message": "Saved w03_modal_safety_evidence.json (2927 bytes) to all recovery vaults with dual-root parity."
+  },
+  {
+    "timestamp": "2026-09-07T02:26:14.956Z",
+    "message": "Saved c4_decision_table.json (2095 bytes) to all recovery vaults with dual-root parity."
+  },
+  {
+    "timestamp": "2026-09-07T02:26:14.958Z",
+    "message": "Saved c4_decision_table.md (1826 bytes) to all recovery vaults with dual-root parity."
+  },
+  {
+    "timestamp": "2026-09-07T02:26:14.958Z",
+    "message": "W03 completed: Modal Dialog Decision Table formulated and verified."
+  },
+  {
+    "timestamp": "2026-09-07T02:26:14.958Z",
+    "message": "============================================================"
+  },
+  {
+    "timestamp": "2026-09-07T02:26:14.958Z",
+    "message": "EXECUTING W04: Error Check (32826) Compile Dispatch & Modal Scrape..."
+  },
+  {
+    "timestamp": "2026-09-07T02:26:14.958Z",
+    "message": "============================================================"
+  },
+  {
+    "timestamp": "2026-09-07T02:26:14.958Z",
+    "message": "Posting WM_COMMAND ID_PROGRAM_ERRORCHECK (32826) to HWND=0xa9033c..."
+  },
+  {
+    "timestamp": "2026-09-07T02:26:17.461Z",
+    "message": "NON-FATAL COMPILATION MODAL DETECTED: HWND=0x290caa. Capturing screenshot and telemetry without clicking Yes!"
+  },
+  {
+    "timestamp": "2026-09-07T02:26:17.504Z",
+    "message": "Saved screenshot: modal_non_fatal_dialog.png (411x159, 5908 bytes)"
+  },
+  {
+    "timestamp": "2026-09-07T02:26:17.507Z",
+    "message": "Saved screenshot: modal_non_fatal_dialog.png (411x159, 5908 bytes)"
+  },
+  {
+    "timestamp": "2026-09-07T02:26:17.510Z",
+    "message": "Saved screenshot: modal_non_fatal_dialog.png (411x159, 5908 bytes)"
+  },
+  {
+    "timestamp": "2026-09-07T02:26:17.514Z",
+    "message": "Saved screenshot: modal_non_fatal_dialog.png (411x159, 5908 bytes)"
+  },
+  {
+    "timestamp": "2026-09-07T02:26:17.514Z",
+    "message": "Dismissing modal cleanly with IDNO (7) per fail-closed policy..."
+  },
+  {
+    "timestamp": "2026-09-07T02:26:18.919Z",
+    "message": "Scraped 13 lines from Output Window listbox."
+  },
+  {
+    "timestamp": "2026-09-07T02:26:18.923Z",
+    "message": "Saved w04_errorcheck_evidence.json (2246 bytes) to all recovery vaults with dual-root parity."
+  },
+  {
+    "timestamp": "2026-09-07T02:26:18.923Z",
+    "message": "W04 completed: Error Check compiled, modal captured & dismissed with No, status: blocked."
+  },
+  {
+    "timestamp": "2026-09-07T02:26:18.923Z",
+    "message": "============================================================"
+  },
+  {
+    "timestamp": "2026-09-07T02:26:18.923Z",
+    "message": "EXECUTING W05: Hardware Download Command Lockout verification..."
+  },
+  {
+    "timestamp": "2026-09-07T02:26:18.923Z",
+    "message": "============================================================"
+  },
+  {
+    "timestamp": "2026-09-07T02:26:18.931Z",
+    "message": "Saved w05_download_lockout_evidence.json (3746 bytes) to all recovery vaults with dual-root parity."
+  },
+  {
+    "timestamp": "2026-09-07T02:26:18.931Z",
+    "message": "W05 completed: Hardware download command lockout verified fail-closed."
+  },
+  {
+    "timestamp": "2026-09-07T02:26:18.931Z",
+    "message": "Checking original TankLevelClosedLoop.csp integrity: d075e67d80be031a99a6895078735918b7a15c8086590a6d20ec8484b27749af"
+  },
+  {
+    "timestamp": "2026-09-07T02:26:18.931Z",
+    "message": "TankLevelClosedLoop.csp integrity verified 100% UNTOUCHED."
+  },
+  {
+    "timestamp": "2026-09-07T02:26:18.936Z",
+    "message": "Saved c4_supervisor_inventory.json (1982 bytes) to all recovery vaults with dual-root parity."
+  },
+  {
+    "timestamp": "2026-09-07T02:26:18.953Z",
+    "message": "Saved environment.json (778 bytes) to all recovery vaults with dual-root parity."
+  },
+  {
+    "timestamp": "2026-09-07T02:26:18.959Z",
+    "message": "Saved c4_windows_matrix.json (9871 bytes) to all recovery vaults with dual-root parity."
+  },
+  {
+    "timestamp": "2026-09-07T02:26:18.959Z",
+    "message": "Finalizing execution log..."
+  }
+]

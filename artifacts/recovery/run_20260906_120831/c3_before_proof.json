@@ -1,0 +1,65 @@
+{
+  "phase": "C3",
+  "mission_id": "C3_OFFLINE_DEV",
+  "description": "Historical / baseline behavior prior to Phase C3 compilation, gate validation, modal safety, and simulation mock rigor contract hardening",
+  "findings": {
+    "stale_success_token": {
+      "input": "0 errors, 0 warnings",
+      "baseline_result": {
+        "is_clean": true,
+        "status_text": "SUCCESS",
+        "error_count": 0,
+        "warning_count": 0
+      },
+      "vulnerability": "extract_clean_build_proof accepted bare counter string without any compilation activity, headers, or POU validation markers as a clean build."
+    },
+    "zero_source_pous_compile": {
+      "input_project": "scratch/test_empty_proj (0 .st files)",
+      "baseline_result": {
+        "success": true,
+        "status": "SUCCESS",
+        "error_count": 0,
+        "warning_count": 0
+      },
+      "vulnerability": "compile_project appended only a log warning and returned success=True when no Structured Text POUs were present in the project."
+    },
+    "incomplete_gate_acceptance": {
+      "input_gate": {
+        "ready_for_tests": true,
+        "pid": null,
+        "hwnd": null
+      },
+      "baseline_result": {
+        "accepted": true,
+        "raised_error": false
+      },
+      "vulnerability": "assert_cscape_live accepted gate data marked ready_for_tests=True without verifying presence of valid positive PID and valid non-zero HWND."
+    },
+    "compilation_empty_output": {
+      "scenario": "Output window scraping returns empty string",
+      "baseline_result": {
+        "success": true,
+        "error_count": 0,
+        "errors": []
+      },
+      "vulnerability": "Empty compilation output was treated as success because len(errors_list) == 0."
+    },
+    "modal_auto_yes_and_foreign_handling": {
+      "scenario": "Modal #32770 dialog encountered during compilation pass",
+      "baseline_behavior": {
+        "non_fatal_dialog": "Auto-clicked IDYES (0x0111, 6) via PostMessageW to dismiss non-fatal error dialogs",
+        "foreign_modal": "No PID filtering; unrecognized dialogs unhandled without fail-closed rejection"
+      },
+      "vulnerability": "Blind auto-Yes masked non-fatal compilation faults; foreign modals could deadlock or cause unexpected UI states."
+    },
+    "simulation_live_mode_and_taxonomy": {
+      "scenario": "Caller invokes simulation with mode='VERIFIED_LIVE' or ladder logic in POU",
+      "baseline_behavior": {
+        "mode_verified_live": "Did not check or prohibit mode='VERIFIED_LIVE' on pure-software simulation",
+        "ladder_logic_in_sim": "Failed with generic exception (e.g. Unknown FB 'XIC') instead of fail-closed ERR_LADDER_FORBIDDEN",
+        "taxonomy_classification": "Missing explicit CLASSIFICATION = 'TESTED_MOCK [offline/DEV only]' constants on simulator modules"
+      },
+      "vulnerability": "Simulation could ambiguously claim live status; ladder constructs in simulation leaked through ST boundary."
+    }
+  }
+}

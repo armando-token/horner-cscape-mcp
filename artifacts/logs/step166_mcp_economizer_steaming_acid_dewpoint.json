@@ -1,0 +1,108 @@
+{
+  "step": 166,
+  "name": "step166_mcp_economizer_steaming_acid_dewpoint",
+  "status": "PASSED",
+  "mission": "Live FastMCP Economizer Flue Gas Heat Recovery & Acid Dewpoint Protection Audit",
+  "timestamp_start": "2026-09-06T12:24:03.139Z",
+  "timestamp_complete": "2026-09-06T12:24:12.878Z",
+  "duration_seconds": 9.738,
+  "gate": {
+    "ready_for_tests": true,
+    "status": "READY_FOR_TESTS",
+    "pid": 10892,
+    "hwnd": "0x01B005DC",
+    "window_title": "Cscape - Logged In : \"armando@controlnautas.com\" - [TankLevelClosedLoop.csp]",
+    "project_file": "C:\\HornerAI\\horner-cscape-mcp\\artifacts\\projects\\TankLevelClosedLoop\\TankLevelClosedLoop.csp",
+    "exit_code": null,
+    "reason": "Gate G3 Error Check and Output Scrape Verified Clean (0 errors, 0 warnings)",
+    "cycle": 17,
+    "timestamp_utc": "2026-09-06T11:43:46.709Z",
+    "heartbeat_utc": "2026-09-06T11:43:46.709Z"
+  },
+  "cscape_pid": 10892,
+  "hwnd": "0x01B005DC",
+  "scenarios_passed": 5,
+  "scenarios_total": 5,
+  "scenario_results": {
+    "scenario_a_steady_state_heat_recovery": {
+      "verified": true,
+      "eco_inlet_temp_f": 240.0,
+      "eco_outlet_temp_f": 380.0,
+      "flue_gas_outlet_temp_f": 320.0,
+      "steaming_alarm": false,
+      "acid_dewpoint_alarm": false
+    },
+    "scenario_b_steaming_economizer_prevention": {
+      "verified": true,
+      "steaming_danger_temp_f": 442.0,
+      "steaming_recirc_valve_actuated": true,
+      "gas_bypass_damper_actuated": true,
+      "steaming_alarm": true,
+      "stabilized_temp_f": 395.0
+    },
+    "scenario_c_acid_dewpoint_prevention": {
+      "verified": true,
+      "cold_flue_gas_temp_f": 265.0,
+      "preheater_bypass_actuated": true,
+      "acid_dewpoint_alarm": true,
+      "restored_flue_gas_temp_f": 295.0
+    },
+    "scenario_d_economizer_tube_rupture_isolation": {
+      "verified": true,
+      "rupture_differential_pressure_psi": 4.0,
+      "tube_rupture_alarm": true,
+      "emergency_water_bypass_open": true,
+      "economizer_isolated": true
+    },
+    "scenario_e_normal_recovery": {
+      "verified": true,
+      "eco_inlet_temp_f": 240.0,
+      "eco_outlet_temp_f": 380.0,
+      "flue_gas_outlet_temp_f": 320.0,
+      "all_alarms_cleared": true
+    }
+  },
+  "telemetry_records": [
+    {
+      "scenario": "A_STEADY_STATE_HEAT_RECOVERY",
+      "cycle": 1,
+      "tin": 240.0,
+      "tout": 380.0,
+      "tgas": 320.0
+    },
+    {
+      "scenario": "B_STEAMING_PREVENTION",
+      "cycle": 2,
+      "tout": 442.0,
+      "q17": true,
+      "m33": true
+    },
+    {
+      "scenario": "C_ACID_DEWPOINT_PREVENTION",
+      "cycle": 3,
+      "tgas": 265.0,
+      "q16": true,
+      "m34": true
+    },
+    {
+      "scenario": "D_TUBE_RUPTURE_ISOLATION",
+      "cycle": 4,
+      "dp": 4.0,
+      "m35": true,
+      "q19": true
+    },
+    {
+      "scenario": "E_NORMAL_RECOVERY",
+      "cycle": 5,
+      "tin": 240.0,
+      "tout": 380.0,
+      "tgas": 320.0
+    }
+  ],
+  "security": {
+    "hardware_download_lockout": "FAIL_CLOSED_BLOCKED",
+    "zero_straton_dependencies": true,
+    "zero_plc_hardware_interaction": true,
+    "no_gui_hwnd_command_dispatched": true
+  }
+}

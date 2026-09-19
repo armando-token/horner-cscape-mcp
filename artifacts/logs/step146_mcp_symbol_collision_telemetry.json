@@ -1,0 +1,41 @@
+{
+  "step": 146,
+  "title": "Live Cross-POU Symbol Collision & Memory Footprint Telemetry over FastMCP",
+  "timestamp_start_utc": "2026-09-05T19:25:19.859Z",
+  "timestamp_end_utc": "2026-09-05T19:25:45.318Z",
+  "duration_seconds": 25.458,
+  "status": "PASSED",
+  "target_pid": 10140,
+  "target_hwnd": "0x00F70724",
+  "variable_count": 21,
+  "unique_registers_mapped": 21,
+  "collision_detection_verified": true,
+  "memory_footprint": {
+    "code_size_bytes": 1024,
+    "data_size_bytes": 512,
+    "retain_size_bytes": 128,
+    "total_size_bytes": 1664,
+    "target_architecture": "Horner OCS (XL4 Native CFBF)"
+  },
+  "simulation_cycles_executed": 100,
+  "gui_error_check_dispatched": 32826,
+  "gui_error_count": 0,
+  "gui_warning_count": 0,
+  "hardware_lockout_enforced": true,
+  "zero_straton_dependencies": true,
+  "cscape_process_health": {
+    "pid": 10140,
+    "hwnd": "0x00F70724",
+    "uptime_seconds": 489.7,
+    "working_set_mb": 196.43,
+    "is_hung": false,
+    "is_enabled": true,
+    "ping_ok": true
+  },
+  "screenshot_evidence": {
+    "path": "C:\\Users\\ArmandoSilva\\artifacts\\screenshots\\live_cscape_tank_level_step146.png",
+    "size_bytes": 656,
+    "sha256": "d7023c7218a445d4f74f6f68627afa99108901ca8363f7120ff01d184ec67e50"
+  },
+  "log_sha256": "55f84dfc40f1ded6bde8493ccc9219d72f65097e10ba18a3d2823adb3ec7610e"
+}

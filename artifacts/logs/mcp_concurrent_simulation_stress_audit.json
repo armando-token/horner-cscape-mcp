@@ -1,0 +1,88 @@
+{
+  "step": 26,
+  "title": "Multi-Worker Concurrent Closed-Loop Stress & Client Isolation Audit",
+  "timestamp_utc_start": "2026-09-05T07:05:38.840Z",
+  "timestamp_utc_end": "2026-09-05T07:05:45.773Z",
+  "status": "VERIFIED_LIVE",
+  "cscape_process": {
+    "healthy": true,
+    "pid": 15240,
+    "is_hung": false,
+    "working_set_mb": 107.94,
+    "threads": 10,
+    "gate_status": "READY_FOR_TESTS",
+    "window_title": "Cscape - Logged In : \"armando@controlnautas.com\" - [TankLevelClosedLoop.csp]"
+  },
+  "concurrency_metrics": {
+    "num_workers": 8,
+    "cycles_per_worker": 100,
+    "total_cycles": 800,
+    "duration_seconds": 0.782,
+    "aggregate_throughput_cycles_per_sec": 1023.51,
+    "all_workers_succeeded": true,
+    "session_isolation_verified": true
+  },
+  "worker_results": [
+    {
+      "worker_id": 0,
+      "target_sp": 30.0,
+      "final_pv": 29.9662,
+      "final_error_pct": 0.0338,
+      "throughput_cycles_per_sec": 134.19
+    },
+    {
+      "worker_id": 1,
+      "target_sp": 35.0,
+      "final_pv": 34.9662,
+      "final_error_pct": 0.0338,
+      "throughput_cycles_per_sec": 139.69
+    },
+    {
+      "worker_id": 2,
+      "target_sp": 40.0,
+      "final_pv": 39.9662,
+      "final_error_pct": 0.0338,
+      "throughput_cycles_per_sec": 145.85
+    },
+    {
+      "worker_id": 3,
+      "target_sp": 45.0,
+      "final_pv": 44.9662,
+      "final_error_pct": 0.0338,
+      "throughput_cycles_per_sec": 160.49
+    },
+    {
+      "worker_id": 4,
+      "target_sp": 50.0,
+      "final_pv": 49.9662,
+      "final_error_pct": 0.0338,
+      "throughput_cycles_per_sec": 171.98
+    },
+    {
+      "worker_id": 5,
+      "target_sp": 55.0,
+      "final_pv": 54.9662,
+      "final_error_pct": 0.0338,
+      "throughput_cycles_per_sec": 170.68
+    },
+    {
+      "worker_id": 6,
+      "target_sp": 60.0,
+      "final_pv": 59.9662,
+      "final_error_pct": 0.0338,
+      "throughput_cycles_per_sec": 192.9
+    },
+    {
+      "worker_id": 7,
+      "target_sp": 65.0,
+      "final_pv": 64.9658,
+      "final_error_pct": 0.0342,
+      "throughput_cycles_per_sec": 194.48
+    }
+  ],
+  "safety_audit": {
+    "physical_plc_download_blocked": true,
+    "zero_physical_hardware_touched": true,
+    "hardware_lockout_enforced": true
+  }
+}

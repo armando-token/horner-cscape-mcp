@@ -1,0 +1,114 @@
+{
+  "step": 157,
+  "name": "step157_dual_root_sync_checkpoint",
+  "status": "PASSED",
+  "timestamp_utc": "2026-09-06T02:58:18.111Z",
+  "auditor": "Dual-Root Checkpoint Auditor subagent",
+  "mandate": "MEGAPLAN Dual-Root Checkpoint & Telemetry Verification",
+  "dual_root_parity": true,
+  "roots_verified": {
+    "horner_root": "C:\\HornerAI\\horner-cscape-mcp",
+    "user_root": "C:\\Users\\ArmandoSilva"
+  },
+  "checkpoints_and_logs": {
+    "step154": {
+      "checkpoint": {
+        "file": "artifacts/checkpoints/step154_mcp_fault_injection_interlock_cascade_checkpoint.json",
+        "exists_in_both": true,
+        "valid_json": true,
+        "status": "PASSED",
+        "file_sha256": "c7611ee40761ebf333f99d168f392316e1cbc8035b68c19916c3d0bbd0840a34",
+        "checkpoint_sha256": "9252667b5c55292cb90342344ed3c6f510bf71c804ed8c0ecb4d0ae347dde95d",
+        "roots_identical": true
+      },
+      "log": {
+        "file": "artifacts/logs/step154_mcp_fault_injection_interlock_cascade.json",
+        "exists_in_both": true,
+        "valid_json": true,
+        "status": "PASSED",
+        "file_sha256": "683ffc327a8fa1dc33ecc1b487d7eb20945a7d3b816c1abd7ea6185c282a24ca",
+        "roots_identical": true
+      }
+    },
+    "step155": {
+      "checkpoint": {
+        "file": "artifacts/checkpoints/step155_mcp_dual_transmitter_failover_checkpoint.json",
+        "exists_in_both": true,
+        "valid_json": true,
+        "status": "PASSED",
+        "file_sha256": "9cfb988d93b64730eeb5673325986fb808801acb981294d74257dca9c9094752",
+        "checkpoint_sha256": "61be5ce27043651f7af72785614d1617e0a793c640b57418c2b2296f17b4d72c",
+        "roots_identical": true
+      },
+      "log": {
+        "file": "artifacts/logs/step155_mcp_dual_transmitter_failover.json",
+        "exists_in_both": true,
+        "valid_json": true,
+        "status": "PASSED",
+        "file_sha256": "f5abcf89a5b888e18b7703831f8fc5218ecf3314d69094bcb23dea1c9096e6f3",
+        "roots_identical": true
+      }
+    },
+    "step156": {
+      "checkpoint": {
+        "file": "artifacts/checkpoints/step156_mcp_dual_pump_alternation_checkpoint.json",
+        "exists_in_both": true,
+        "valid_json": true,
+        "status": "PASSED",
+        "file_sha256": "e709f61d596bb9b51f2a0584f16aa4c3d2c949c2d7d88a6d5e24009ceeded557",
+        "checkpoint_sha256": "dde21c5ad0b2f3c32ec5f71a16a6a080114ee1fc716ee6beb98c53787cc85e25",
+        "roots_identical": true
+      },
+      "log": {
+        "file": "artifacts/logs/step156_mcp_dual_pump_alternation.json",
+        "exists_in_both": true,
+        "valid_json": true,
+        "status": "PASSED",
+        "file_sha256": "87106979b2e5cd8a869ed987c29306183d40ed57cb8113c2495ea6a4797503ac",
+        "roots_identical": true
+      }
+    }
+  },
+  "screenshots": {
+    "step154": {
+      "file": "artifacts/screenshots/live_cscape_tank_level_step154.png",
+      "exists_in_both": true,
+      "size_bytes": 868,
+      "gt_10kb": false,
+      "note": "Expected compact capture mode recorded in step 154 checkpoint and log",
+      "file_sha256": "83198ad12f58b287bfe0ba657aca97fc6effb54bc0980d88a12200c4b4c0c0e5",
+      "roots_identical": true
+    },
+    "step155": {
+      "file": "artifacts/screenshots/live_cscape_tank_level_step155.png",
+      "exists_in_both": true,
+      "size_bytes": 72837,
+      "gt_10kb": true,
+      "file_sha256": "8b9b99a615ac939fd04dad6e1674fc6355700657670bc1254d4890ab95be6261",
+      "roots_identical": true
+    },
+    "step156": {
+      "file": "artifacts/screenshots/live_cscape_tank_level_step156.png",
+      "exists_in_both": true,
+      "size_bytes": 72837,
+      "gt_10kb": true,
+      "file_sha256": "8b9b99a615ac939fd04dad6e1674fc6355700657670bc1254d4890ab95be6261",
+      "roots_identical": true
+    }
+  },
+  "scripts": {
+    "execute_tank_level_pid_scenarios": {
+      "file": "scripts/execute_tank_level_pid_scenarios.py",
+      "exists_in_both": true,
+      "cycles_351_present": true,
+      "cycles_751_present": true,
+      "cycle_ranges_verified": [
+        "range(1, 351)",
+        "range(351, 751)"
+      ],
+      "file_sha256": "e74a6282cb904a71eaeb6701da09c840670197c26676dc2605ca49b9111d26db",
+      "roots_identical": true
+    }
+  },
+  "checkpoint_sha256": "c4fa8d4b03a2cabec75d8648c36e4ca9ceb1c3bec48c3615bb6add2388258ded"
+}

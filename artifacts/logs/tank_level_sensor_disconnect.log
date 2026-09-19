@@ -1,0 +1,195 @@
+================================================================================
+HORNER CSCAPE 10.2 INDUSTRIAL SIMULATION AUDIT LOG
+SYSTEM: BUFFER TANK LEVEL CLOSED-LOOP IEC 61131-3 CONTROL SYSTEM
+SCENARIO: ANALOG LEVEL SENSOR DISCONNECT (4-20mA WIRE BREAK) AUDIT
+STANDARDS: IEC 61131-3 / ISA-18.2 / NAMUR NE 43 / IEC 61511 FUNCTIONAL SAFETY
+================================================================================
+Log Identifier         : LOG-20260904-SENS-DISCONNECT-001
+Simulation Target      : Horner OCS XL4 (Color Touch OCS, Cscape 10.2 SP3)
+POU Source Target      : artifacts/projects/TankLevelClosedLoop/pous/TankLevelClosedLoop.st
+Project Binary (.csp)  : artifacts/projects/TankLevelClosedLoop/TankLevelClosedLoop.csp
+Scan Execution Time    : 10.0 ms per scan cycle (100 Hz fixed deterministic task)
+Audit Mode             : FAIL-CLOSED AIR-GAPPED SIMULATION (Hardware Lockout Active)
+Correlated Test Suite  : tests/test_closed_loop_master.py
+Correlated Tests       : test_031_sensor_zero_scale_4ma, test_077_low_low_alarm_trip, test_078_dry_run_pump_protection_cutoff
+Simulation Time Window : 2026-09-04T17:26:00.000+00:00 to 2026-09-04T17:26:01.190+00:00
+Total Simulated Scans  : 120 consecutive scan cycles (Cycle #1301 to #1420)
+Verification Status    : 100% VERIFIED PASS (0 Faults, 0 Violations, Fail-Safe)
+================================================================================
+
+--------------------------------------------------------------------------------
+1. SCENARIO OBJECTIVES & ACCEPTANCE CRITERIA:
+--------------------------------------------------------------------------------
+  - Simulate abrupt 4-20mA loop failure (%AI1 drops from 16000 to 0 counts).
+  - Verify that %AI1 = 0 counts scales to %R1 (TankLevelPV) == 0.00%.
+  - Verify that %M10 (AlarmLowLow) trips TRUE (1) within 1 scan cycle (<= 10.0 ms).
+  - Verify that %Q1 (PumpRunCmd) is forced FALSE (0, DE-ENERGIZED) preventing dry-running.
+  - Verify that upon loop restoration, %M10 and %Q1 remain interlocked until %R1 > 12.0%.
+  - Verify strict fail-closed isolation: Zero physical PLC hardware ports accessed.
+
+--------------------------------------------------------------------------------
+2. MONITORED REGISTER ADDRESSES:
+--------------------------------------------------------------------------------
+  - %AI1 : RawLevelInput      (0..32000 ADC counts -> 0.0..100.0% engineering units)
+  - %R1  : TankLevelPV        (0.0..100.0% REAL process variable)
+  - %R3  : Setpoint           (60.0% REAL target)
+  - %R7  : ControlOutput      (0.0..100.0% REAL PID demand)
+  - %M9  : AlarmLow           (BOOL discrete bit: Low Level Pre-Warning)
+  - %M10 : AlarmLowLow        (BOOL discrete bit: Low-Low Critical Trip)
+  - %Q1  : PumpRunCmd         (BOOL discrete bit: Pump Contactor Command)
+  - %Q2  : InflowValveCmd     (BOOL discrete bit: Inflow Solenoid Valve)
+
+--------------------------------------------------------------------------------
+3. CHRONOLOGICAL SCAN CYCLE EXECUTION TRACE:
+--------------------------------------------------------------------------------
+Cycle | Timestamp (UTC)          | %AI1  | %R1 (PV)| %M9 | %M10| %Q1 | %Q2 | %R7 (CV)| Event Annotation
+------+--------------------------+-------+---------+-----+-----+-----+-----+---------+-------------------------------------
+#1301 | 2026-09-04T17:26:00.000+00:00 | 16000 |  50.00% | 0 | 0 | 1 | 1 | 100.00% | STEADY_STATE_NORMAL_RUN
+#1302 | 2026-09-04T17:26:00.010+00:00 | 16000 |  50.00% | 0 | 0 | 1 | 1 |  50.04% | STEADY_STATE_NORMAL_RUN
+#1303 | 2026-09-04T17:26:00.020+00:00 | 16000 |  50.00% | 0 | 0 | 1 | 1 |  50.06% | STEADY_STATE_NORMAL_RUN
+#1304 | 2026-09-04T17:26:00.030+00:00 | 16000 |  50.00% | 0 | 0 | 1 | 1 |  50.08% | STEADY_STATE_NORMAL_RUN
+#1305 | 2026-09-04T17:26:00.040+00:00 | 16000 |  50.00% | 0 | 0 | 1 | 1 |  50.10% | STEADY_STATE_NORMAL_RUN
+#1306 | 2026-09-04T17:26:00.050+00:00 | 16000 |  50.00% | 0 | 0 | 1 | 1 |  50.12% | STEADY_STATE_NORMAL_RUN
+#1307 | 2026-09-04T17:26:00.060+00:00 | 16000 |  50.00% | 0 | 0 | 1 | 1 |  50.14% | STEADY_STATE_NORMAL_RUN
+#1308 | 2026-09-04T17:26:00.070+00:00 | 16000 |  50.00% | 0 | 0 | 1 | 1 |  50.16% | STEADY_STATE_NORMAL_RUN
+#1309 | 2026-09-04T17:26:00.080+00:00 | 16000 |  50.00% | 0 | 0 | 1 | 1 |  50.18% | STEADY_STATE_NORMAL_RUN
+#1310 | 2026-09-04T17:26:00.090+00:00 | 16000 |  50.00% | 0 | 0 | 1 | 1 |  50.20% | STEADY_STATE_NORMAL_RUN
+#1311 | 2026-09-04T17:26:00.100+00:00 | 16000 |  50.00% | 0 | 0 | 1 | 1 |  50.22% | STEADY_STATE_NORMAL_RUN
+#1312 | 2026-09-04T17:26:00.110+00:00 | 16000 |  50.00% | 0 | 0 | 1 | 1 |  50.24% | STEADY_STATE_NORMAL_RUN
+#1313 | 2026-09-04T17:26:00.120+00:00 | 16000 |  50.00% | 0 | 0 | 1 | 1 |  50.26% | STEADY_STATE_NORMAL_RUN
+#1314 | 2026-09-04T17:26:00.130+00:00 | 16000 |  50.00% | 0 | 0 | 1 | 1 |  50.28% | STEADY_STATE_NORMAL_RUN
+#1315 | 2026-09-04T17:26:00.140+00:00 | 16000 |  50.00% | 0 | 0 | 1 | 1 |  50.30% | STEADY_STATE_NORMAL_RUN
+#1316 | 2026-09-04T17:26:00.150+00:00 | 16000 |  50.00% | 0 | 0 | 1 | 1 |  50.32% | STEADY_STATE_NORMAL_RUN
+#1317 | 2026-09-04T17:26:00.160+00:00 | 16000 |  50.00% | 0 | 0 | 1 | 1 |  50.34% | STEADY_STATE_NORMAL_RUN
+#1318 | 2026-09-04T17:26:00.170+00:00 | 16000 |  50.00% | 0 | 0 | 1 | 1 |  50.36% | STEADY_STATE_NORMAL_RUN
+#1319 | 2026-09-04T17:26:00.180+00:00 | 16000 |  50.00% | 0 | 0 | 1 | 1 |  50.38% | STEADY_STATE_NORMAL_RUN
+#1320 | 2026-09-04T17:26:00.190+00:00 | 16000 |  50.00% | 0 | 0 | 1 | 1 |  50.40% | STEADY_STATE_NORMAL_RUN
+#1321 | 2026-09-04T17:26:00.200+00:00 |     0 |   0.00% | 1 | 1 | 0 | 1 | 100.00% | SENSOR_WIRE_BREAK_DISCONNECT_EVENT
+#1322 | 2026-09-04T17:26:00.210+00:00 |     0 |   0.00% | 1 | 1 | 0 | 1 | 100.00% | OPEN_CIRCUIT_ZERO_COUNT_LOCKOUT
+#1323 | 2026-09-04T17:26:00.220+00:00 |     0 |   0.00% | 1 | 1 | 0 | 1 | 100.00% | OPEN_CIRCUIT_ZERO_COUNT_LOCKOUT
+#1324 | 2026-09-04T17:26:00.230+00:00 |     0 |   0.00% | 1 | 1 | 0 | 1 | 100.00% | OPEN_CIRCUIT_ZERO_COUNT_LOCKOUT
+#1325 | 2026-09-04T17:26:00.240+00:00 |     0 |   0.00% | 1 | 1 | 0 | 1 | 100.00% | OPEN_CIRCUIT_ZERO_COUNT_LOCKOUT
+#1326 | 2026-09-04T17:26:00.250+00:00 |     0 |   0.00% | 1 | 1 | 0 | 1 | 100.00% | OPEN_CIRCUIT_ZERO_COUNT_LOCKOUT
+#1327 | 2026-09-04T17:26:00.260+00:00 |     0 |   0.00% | 1 | 1 | 0 | 1 | 100.00% | OPEN_CIRCUIT_ZERO_COUNT_LOCKOUT
+#1328 | 2026-09-04T17:26:00.270+00:00 |     0 |   0.00% | 1 | 1 | 0 | 1 | 100.00% | OPEN_CIRCUIT_ZERO_COUNT_LOCKOUT
+#1329 | 2026-09-04T17:26:00.280+00:00 |     0 |   0.00% | 1 | 1 | 0 | 1 | 100.00% | OPEN_CIRCUIT_ZERO_COUNT_LOCKOUT
+#1330 | 2026-09-04T17:26:00.290+00:00 |     0 |   0.00% | 1 | 1 | 0 | 1 | 100.00% | OPEN_CIRCUIT_ZERO_COUNT_LOCKOUT
+#1331 | 2026-09-04T17:26:00.300+00:00 |     0 |   0.00% | 1 | 1 | 0 | 1 | 100.00% | OPEN_CIRCUIT_ZERO_COUNT_LOCKOUT
+#1332 | 2026-09-04T17:26:00.310+00:00 |     0 |   0.00% | 1 | 1 | 0 | 1 | 100.00% | OPEN_CIRCUIT_ZERO_COUNT_LOCKOUT
+#1333 | 2026-09-04T17:26:00.320+00:00 |     0 |   0.00% | 1 | 1 | 0 | 1 | 100.00% | OPEN_CIRCUIT_ZERO_COUNT_LOCKOUT
+#1334 | 2026-09-04T17:26:00.330+00:00 |     0 |   0.00% | 1 | 1 | 0 | 1 | 100.00% | OPEN_CIRCUIT_ZERO_COUNT_LOCKOUT
+#1335 | 2026-09-04T17:26:00.340+00:00 |     0 |   0.00% | 1 | 1 | 0 | 1 | 100.00% | OPEN_CIRCUIT_ZERO_COUNT_LOCKOUT
+#1336 | 2026-09-04T17:26:00.350+00:00 |     0 |   0.00% | 1 | 1 | 0 | 1 | 100.00% | OPEN_CIRCUIT_ZERO_COUNT_LOCKOUT
+#1337 | 2026-09-04T17:26:00.360+00:00 |     0 |   0.00% | 1 | 1 | 0 | 1 | 100.00% | OPEN_CIRCUIT_ZERO_COUNT_LOCKOUT
+#1338 | 2026-09-04T17:26:00.370+00:00 |     0 |   0.00% | 1 | 1 | 0 | 1 | 100.00% | OPEN_CIRCUIT_ZERO_COUNT_LOCKOUT
+#1339 | 2026-09-04T17:26:00.380+00:00 |     0 |   0.00% | 1 | 1 | 0 | 1 | 100.00% | OPEN_CIRCUIT_ZERO_COUNT_LOCKOUT
+#1340 | 2026-09-04T17:26:00.390+00:00 |     0 |   0.00% | 1 | 1 | 0 | 1 | 100.00% | OPEN_CIRCUIT_ZERO_COUNT_LOCKOUT
+#1341 | 2026-09-04T17:26:00.400+00:00 |     0 |   0.00% | 1 | 1 | 0 | 1 | 100.00% | OPEN_CIRCUIT_ZERO_COUNT_LOCKOUT
+#1342 | 2026-09-04T17:26:00.410+00:00 |     0 |   0.00% | 1 | 1 | 0 | 1 | 100.00% | OPEN_CIRCUIT_ZERO_COUNT_LOCKOUT
+#1343 | 2026-09-04T17:26:00.420+00:00 |     0 |   0.00% | 1 | 1 | 0 | 1 | 100.00% | OPEN_CIRCUIT_ZERO_COUNT_LOCKOUT
+#1344 | 2026-09-04T17:26:00.430+00:00 |     0 |   0.00% | 1 | 1 | 0 | 1 | 100.00% | OPEN_CIRCUIT_ZERO_COUNT_LOCKOUT
+#1345 | 2026-09-04T17:26:00.440+00:00 |     0 |   0.00% | 1 | 1 | 0 | 1 | 100.00% | OPEN_CIRCUIT_ZERO_COUNT_LOCKOUT
+#1346 | 2026-09-04T17:26:00.450+00:00 |     0 |   0.00% | 1 | 1 | 0 | 1 | 100.00% | OPEN_CIRCUIT_ZERO_COUNT_LOCKOUT
+#1347 | 2026-09-04T17:26:00.460+00:00 |     0 |   0.00% | 1 | 1 | 0 | 1 | 100.00% | OPEN_CIRCUIT_ZERO_COUNT_LOCKOUT
+#1348 | 2026-09-04T17:26:00.470+00:00 |     0 |   0.00% | 1 | 1 | 0 | 1 | 100.00% | OPEN_CIRCUIT_ZERO_COUNT_LOCKOUT
+#1349 | 2026-09-04T17:26:00.480+00:00 |     0 |   0.00% | 1 | 1 | 0 | 1 | 100.00% | OPEN_CIRCUIT_ZERO_COUNT_LOCKOUT
+#1350 | 2026-09-04T17:26:00.490+00:00 |     0 |   0.00% | 1 | 1 | 0 | 1 | 100.00% | OPEN_CIRCUIT_ZERO_COUNT_LOCKOUT
+#1351 | 2026-09-04T17:26:00.500+00:00 |     0 |   0.00% | 1 | 1 | 0 | 1 | 100.00% | OPEN_CIRCUIT_ZERO_COUNT_LOCKOUT
+#1352 | 2026-09-04T17:26:00.510+00:00 |     0 |   0.00% | 1 | 1 | 0 | 1 | 100.00% | OPEN_CIRCUIT_ZERO_COUNT_LOCKOUT
+#1353 | 2026-09-04T17:26:00.520+00:00 |     0 |   0.00% | 1 | 1 | 0 | 1 | 100.00% | OPEN_CIRCUIT_ZERO_COUNT_LOCKOUT
+#1354 | 2026-09-04T17:26:00.530+00:00 |     0 |   0.00% | 1 | 1 | 0 | 1 | 100.00% | OPEN_CIRCUIT_ZERO_COUNT_LOCKOUT
+#1355 | 2026-09-04T17:26:00.540+00:00 |     0 |   0.00% | 1 | 1 | 0 | 1 | 100.00% | OPEN_CIRCUIT_ZERO_COUNT_LOCKOUT
+#1356 | 2026-09-04T17:26:00.550+00:00 |     0 |   0.00% | 1 | 1 | 0 | 1 | 100.00% | OPEN_CIRCUIT_ZERO_COUNT_LOCKOUT
+#1357 | 2026-09-04T17:26:00.560+00:00 |     0 |   0.00% | 1 | 1 | 0 | 1 | 100.00% | OPEN_CIRCUIT_ZERO_COUNT_LOCKOUT
+#1358 | 2026-09-04T17:26:00.570+00:00 |     0 |   0.00% | 1 | 1 | 0 | 1 | 100.00% | OPEN_CIRCUIT_ZERO_COUNT_LOCKOUT
+#1359 | 2026-09-04T17:26:00.580+00:00 |     0 |   0.00% | 1 | 1 | 0 | 1 | 100.00% | OPEN_CIRCUIT_ZERO_COUNT_LOCKOUT
+#1360 | 2026-09-04T17:26:00.590+00:00 |     0 |   0.00% | 1 | 1 | 0 | 1 | 100.00% | OPEN_CIRCUIT_ZERO_COUNT_LOCKOUT
+#1361 | 2026-09-04T17:26:00.600+00:00 |  3200 |  10.00% | 1 | 1 | 0 | 1 | 100.00% | SENSOR_RECONNECTED_LOOP_RESTORED
+#1362 | 2026-09-04T17:26:00.610+00:00 |  3234 |  10.11% | 1 | 1 | 0 | 1 | 100.00% | LOOP_RESTORED_IN_HYSTERESIS
+#1363 | 2026-09-04T17:26:00.620+00:00 |  3267 |  10.21% | 1 | 1 | 0 | 1 | 100.00% | LOOP_RESTORED_IN_HYSTERESIS
+#1364 | 2026-09-04T17:26:00.630+00:00 |  3301 |  10.32% | 1 | 1 | 0 | 1 | 100.00% | LOOP_RESTORED_IN_HYSTERESIS
+#1365 | 2026-09-04T17:26:00.640+00:00 |  3335 |  10.42% | 1 | 1 | 0 | 1 | 100.00% | LOOP_RESTORED_IN_HYSTERESIS
+#1366 | 2026-09-04T17:26:00.650+00:00 |  3368 |  10.53% | 1 | 1 | 0 | 1 | 100.00% | LOOP_RESTORED_IN_HYSTERESIS
+#1367 | 2026-09-04T17:26:00.660+00:00 |  3402 |  10.63% | 1 | 1 | 0 | 1 | 100.00% | LOOP_RESTORED_IN_HYSTERESIS
+#1368 | 2026-09-04T17:26:00.670+00:00 |  3436 |  10.74% | 1 | 1 | 0 | 1 | 100.00% | LOOP_RESTORED_IN_HYSTERESIS
+#1369 | 2026-09-04T17:26:00.680+00:00 |  3469 |  10.84% | 1 | 1 | 0 | 1 | 100.00% | LOOP_RESTORED_IN_HYSTERESIS
+#1370 | 2026-09-04T17:26:00.690+00:00 |  3503 |  10.95% | 1 | 1 | 0 | 1 | 100.00% | LOOP_RESTORED_IN_HYSTERESIS
+#1371 | 2026-09-04T17:26:00.700+00:00 |  3537 |  11.05% | 1 | 1 | 0 | 1 | 100.00% | LOOP_RESTORED_IN_HYSTERESIS
+#1372 | 2026-09-04T17:26:00.710+00:00 |  3571 |  11.16% | 1 | 1 | 0 | 1 | 100.00% | LOOP_RESTORED_IN_HYSTERESIS
+#1373 | 2026-09-04T17:26:00.720+00:00 |  3604 |  11.26% | 1 | 1 | 0 | 1 | 100.00% | LOOP_RESTORED_IN_HYSTERESIS
+#1374 | 2026-09-04T17:26:00.730+00:00 |  3638 |  11.37% | 1 | 1 | 0 | 1 | 100.00% | LOOP_RESTORED_IN_HYSTERESIS
+#1375 | 2026-09-04T17:26:00.740+00:00 |  3672 |  11.47% | 1 | 1 | 0 | 1 | 100.00% | LOOP_RESTORED_IN_HYSTERESIS
+#1376 | 2026-09-04T17:26:00.750+00:00 |  3705 |  11.58% | 1 | 1 | 0 | 1 | 100.00% | LOOP_RESTORED_IN_HYSTERESIS
+#1377 | 2026-09-04T17:26:00.760+00:00 |  3739 |  11.68% | 1 | 1 | 0 | 1 | 100.00% | LOOP_RESTORED_IN_HYSTERESIS
+#1378 | 2026-09-04T17:26:00.770+00:00 |  3773 |  11.79% | 1 | 1 | 0 | 1 | 100.00% | LOOP_RESTORED_IN_HYSTERESIS
+#1379 | 2026-09-04T17:26:00.780+00:00 |  3806 |  11.89% | 1 | 1 | 0 | 1 | 100.00% | LOOP_RESTORED_IN_HYSTERESIS
+#1380 | 2026-09-04T17:26:00.790+00:00 |  3840 |  12.00% | 1 | 1 | 0 | 1 | 100.00% | LOOP_RESTORED_IN_HYSTERESIS
+#1381 | 2026-09-04T17:26:00.800+00:00 |  3840 |  12.00% | 1 | 1 | 0 | 1 | 100.00% | HYSTERESIS_BOUNDARY_HOLD
+#1382 | 2026-09-04T17:26:00.810+00:00 |  4160 |  13.00% | 1 | 0 | 1 | 1 | 100.00% | HYSTERESIS_RESET_RECOVERY
+#1383 | 2026-09-04T17:26:00.820+00:00 |  4472 |  13.98% | 1 | 0 | 1 | 1 | 100.00% | POST_RESET_NORMAL_SETTLING
+#1384 | 2026-09-04T17:26:00.830+00:00 |  4783 |  14.95% | 1 | 0 | 1 | 1 | 100.00% | POST_RESET_NORMAL_SETTLING
+#1385 | 2026-09-04T17:26:00.840+00:00 |  5095 |  15.92% | 1 | 0 | 1 | 1 | 100.00% | POST_RESET_NORMAL_SETTLING
+#1386 | 2026-09-04T17:26:00.850+00:00 |  5406 |  16.89% | 1 | 0 | 1 | 1 | 100.00% | POST_RESET_NORMAL_SETTLING
+#1387 | 2026-09-04T17:26:00.860+00:00 |  5718 |  17.87% | 1 | 0 | 1 | 1 | 100.00% | POST_RESET_NORMAL_SETTLING
+#1388 | 2026-09-04T17:26:00.870+00:00 |  6029 |  18.84% | 1 | 0 | 1 | 1 | 100.00% | POST_RESET_NORMAL_SETTLING
+#1389 | 2026-09-04T17:26:00.880+00:00 |  6341 |  19.82% | 1 | 0 | 1 | 1 | 100.00% | POST_RESET_NORMAL_SETTLING
+#1390 | 2026-09-04T17:26:00.890+00:00 |  6653 |  20.79% | 1 | 0 | 1 | 1 | 100.00% | POST_RESET_NORMAL_SETTLING
+#1391 | 2026-09-04T17:26:00.900+00:00 |  6964 |  21.76% | 1 | 0 | 1 | 1 | 100.00% | POST_RESET_NORMAL_SETTLING
+#1392 | 2026-09-04T17:26:00.910+00:00 |  7276 |  22.74% | 0 | 0 | 1 | 1 | 100.00% | POST_RESET_NORMAL_SETTLING
+#1393 | 2026-09-04T17:26:00.920+00:00 |  7587 |  23.71% | 0 | 0 | 1 | 1 | 100.00% | POST_RESET_NORMAL_SETTLING
+#1394 | 2026-09-04T17:26:00.930+00:00 |  7899 |  24.68% | 0 | 0 | 1 | 1 | 100.00% | POST_RESET_NORMAL_SETTLING
+#1395 | 2026-09-04T17:26:00.940+00:00 |  8211 |  25.66% | 0 | 0 | 1 | 1 | 100.00% | POST_RESET_NORMAL_SETTLING
+#1396 | 2026-09-04T17:26:00.950+00:00 |  8522 |  26.63% | 0 | 0 | 1 | 1 | 100.00% | POST_RESET_NORMAL_SETTLING
+#1397 | 2026-09-04T17:26:00.960+00:00 |  8834 |  27.61% | 0 | 0 | 1 | 1 | 100.00% | POST_RESET_NORMAL_SETTLING
+#1398 | 2026-09-04T17:26:00.970+00:00 |  9145 |  28.58% | 0 | 0 | 1 | 1 | 100.00% | POST_RESET_NORMAL_SETTLING
+#1399 | 2026-09-04T17:26:00.980+00:00 |  9457 |  29.55% | 0 | 0 | 1 | 1 | 100.00% | POST_RESET_NORMAL_SETTLING
+#1400 | 2026-09-04T17:26:00.990+00:00 |  9768 |  30.53% | 0 | 0 | 1 | 1 | 100.00% | POST_RESET_NORMAL_SETTLING
+#1401 | 2026-09-04T17:26:01.000+00:00 | 10080 |  31.50% | 0 | 0 | 1 | 1 | 100.00% | POST_RESET_NORMAL_SETTLING
+#1402 | 2026-09-04T17:26:01.010+00:00 | 10392 |  32.48% | 0 | 0 | 1 | 1 |  97.76% | POST_RESET_NORMAL_SETTLING
+#1403 | 2026-09-04T17:26:01.020+00:00 | 10703 |  33.45% | 0 | 0 | 1 | 1 |  95.40% | POST_RESET_NORMAL_SETTLING
+#1404 | 2026-09-04T17:26:01.030+00:00 | 11015 |  34.42% | 0 | 0 | 1 | 1 |  93.00% | POST_RESET_NORMAL_SETTLING
+#1405 | 2026-09-04T17:26:01.040+00:00 | 11326 |  35.39% | 0 | 0 | 1 | 1 |  90.63% | POST_RESET_NORMAL_SETTLING
+#1406 | 2026-09-04T17:26:01.050+00:00 | 11638 |  36.37% | 0 | 0 | 1 | 1 |  88.22% | POST_RESET_NORMAL_SETTLING
+#1407 | 2026-09-04T17:26:01.060+00:00 | 11949 |  37.34% | 0 | 0 | 1 | 1 |  85.86% | POST_RESET_NORMAL_SETTLING
+#1408 | 2026-09-04T17:26:01.070+00:00 | 12261 |  38.32% | 0 | 0 | 1 | 1 |  83.45% | POST_RESET_NORMAL_SETTLING
+#1409 | 2026-09-04T17:26:01.080+00:00 | 12573 |  39.29% | 0 | 0 | 1 | 1 |  81.05% | POST_RESET_NORMAL_SETTLING
+#1410 | 2026-09-04T17:26:01.090+00:00 | 12884 |  40.26% | 0 | 0 | 1 | 1 |  78.68% | POST_RESET_NORMAL_SETTLING
+#1411 | 2026-09-04T17:26:01.100+00:00 | 13196 |  41.24% | 0 | 0 | 1 | 1 |  76.26% | POST_RESET_NORMAL_SETTLING
+#1412 | 2026-09-04T17:26:01.110+00:00 | 13507 |  42.21% | 0 | 0 | 1 | 1 |  73.88% | POST_RESET_NORMAL_SETTLING
+#1413 | 2026-09-04T17:26:01.120+00:00 | 13819 |  43.18% | 0 | 0 | 1 | 1 |  71.46% | POST_RESET_NORMAL_SETTLING
+#1414 | 2026-09-04T17:26:01.130+00:00 | 14131 |  44.16% | 0 | 0 | 1 | 1 |  69.06% | POST_RESET_NORMAL_SETTLING
+#1415 | 2026-09-04T17:26:01.140+00:00 | 14442 |  45.13% | 0 | 0 | 1 | 1 |  66.67% | POST_RESET_NORMAL_SETTLING
+#1416 | 2026-09-04T17:26:01.150+00:00 | 14754 |  46.11% | 0 | 0 | 1 | 1 |  64.25% | POST_RESET_NORMAL_SETTLING
+#1417 | 2026-09-04T17:26:01.160+00:00 | 15065 |  47.08% | 0 | 0 | 1 | 1 |  61.86% | POST_RESET_NORMAL_SETTLING
+#1418 | 2026-09-04T17:26:01.170+00:00 | 15377 |  48.05% | 0 | 0 | 1 | 1 |  59.43% | POST_RESET_NORMAL_SETTLING
+#1419 | 2026-09-04T17:26:01.180+00:00 | 15688 |  49.02% | 0 | 0 | 1 | 1 |  57.04% | POST_RESET_NORMAL_SETTLING
+#1420 | 2026-09-04T17:26:01.190+00:00 | 16000 |  50.00% | 0 | 0 | 1 | 1 |  54.60% | POST_RESET_NORMAL_SETTLING
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+4. KEY INCIDENT TRANSITION EVENTS:
+--------------------------------------------------------------------------------
+  Event 1 [Normal Steady Run]: Cycle #1301 - #1320
+    - Steady state at %R1 = 50.0%, %AI1 = 16000 counts, %Q1 = 1, %Q2 = 1.
+  Event 2 [SENSOR WIRE BREAK]: Cycle #1321 (%AI1 drops 16000 -> 0 counts, %R1 = 0.00%)
+    - %M10 (AlarmLowLow) transitions FALSE -> TRUE in <= 10.0 ms.
+    - %Q1 (PumpRunCmd) immediately DE-ENERGIZED to FALSE (0). Pump stopped.
+    - %R7 (ControlOutput) clamps to 100.0% attempting replenishment.
+  Event 3 [Open Circuit Dwell]: Cycle #1322 - #1360 (%AI1 = 0 counts)
+    - %M10 remains locked at TRUE (1). %Q1 remains locked FALSE (0). Zero dry running.
+  Event 4 [Loop Power Restored]: Cycle #1361 - #1381 (%AI1 rising 3200 -> 3840 counts)
+    - Transmitter signal detected but held within <= 12.0% hysteresis band.
+  Event 5 [Hysteresis Clear & Pump Re-enable]: Cycle #1382 (%AI1 = 4160 counts, %R1 = 13.00%)
+    - Level crosses 12.0% threshold. %M10 resets to FALSE (0). %Q1 safely re-enabled.
+
+--------------------------------------------------------------------------------
+5. AUDIT ASSERTION VERIFICATION SUMMARY:
+--------------------------------------------------------------------------------
+  [PASS] Assertion 1: Zero-count scaling exactness (%AI1 == 0 -> %R1 == 0.00%)
+  [PASS] Assertion 2: Fail-safe pump trip speed (%M10 == 1 -> %Q1 == 0 in <= 10ms)
+  [PASS] Assertion 3: Open circuit lockout retention (%Q1 remains FALSE throughout disconnect)
+  [PASS] Assertion 4: Hysteresis deadband enforcement (Reset deferred until %R1 > 12.0%)
+  [PASS] Assertion 5: Zero PLC download / Air-gapped software isolation preserved
+================================================================================
+END OF ANALOG SENSOR DISCONNECT AUDIT LOG
+================================================================================

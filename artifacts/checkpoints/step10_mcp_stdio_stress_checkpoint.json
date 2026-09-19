@@ -1,0 +1,30 @@
+{
+  "checkpoint": "step10_mcp_stdio_stress_checkpoint",
+  "step": 10,
+  "status": "PASSED",
+  "timestamp_utc": "2026-09-05T06:00:00.133514+00:00",
+  "cscape_pid": 7616,
+  "cscape_hwnd": "0x007B06D6",
+  "cscape_healthy": true,
+  "total_calls": 100,
+  "successful_calls": 100,
+  "failed_calls": 0,
+  "success_rate": "100.0%",
+  "throughput_calls_per_sec": 119.76,
+  "latency_metrics_ms": {
+    "min": 19.53,
+    "median": 72.97,
+    "p95": 167.67,
+    "max": 211.75
+  },
+  "tool_distribution": {
+    "cscape_read_variables": 20,
+    "cscape_simulate_cycle": 20,
+    "cscape_read_register": 20,
+    "cscape_write_register": 20,
+    "cscape_compile_project": 20
+  },
+  "zero_plc_download_enforced": true,
+  "zero_straton_tools_enforced": true,
+  "benchmark_log_file": "artifacts/logs/mcp_stdio_stress_benchmark.json"
+}

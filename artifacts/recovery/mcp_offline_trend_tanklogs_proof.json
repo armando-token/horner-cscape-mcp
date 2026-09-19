@@ -1,0 +1,103 @@
+{
+  "mission_id": "MCP_OFFLINE_TREND_TANKLOGS_PROOF",
+  "status": "success",
+  "timestamp_utc": "2026-09-10T09:08:08.336Z",
+  "environment": {
+    "os": "Windows",
+    "winsta_desktop": "winsta0\\Default",
+    "cscape_version": "Horner APG Cscape 10.2 (Build 10.2.751.4)",
+    "pid": 19488,
+    "hwnd": "0x01AC0B88",
+    "target_csp": "C:\\HornerAI\\horner-cscape-mcp\\artifacts\\projects\\TankLevelClosedLoop\\TankLevelClosedLoop.csp",
+    "csp_sha256": "DAB6BB33FDB376BFC015F11CC960770DD7FCD547CA4704BDA5A8200F86EBD4EE",
+    "csp_size_bytes": 131072,
+    "active_tab": "Screen 2 (2)",
+    "single_gui_owner": "PID 19488 exclusive on winsta0\\Default"
+  },
+  "simulation_and_trend_spec": {
+    "engine": "STSimulator / CscapeSimulator",
+    "classification": "TESTED_MOCK [offline/DEV only]",
+    "total_time_seconds": 100.0,
+    "dt_step_seconds": 0.1,
+    "total_scan_cycles": 1000,
+    "test_phases": [
+      {
+        "phase": 1,
+        "time_range": "0.0s - 30.0s",
+        "setpoint": 60.0,
+        "initial_pv": 20.0,
+        "observed_behavior": "Low Level Alarm (LO) active initially (20% <= 35%); saturated ControlOutput (100%) drives rapid inflow; LO alarm deactivates at 35.0%; level settles to 60.0%."
+      },
+      {
+        "phase": 2,
+        "time_range": "30.0s - 65.0s",
+        "setpoint": 75.0,
+        "observed_behavior": "Positive step response; High Level Alarm (HI) triggers as PV crosses 65.0%; settles stably at 75.0%."
+      },
+      {
+        "phase": 3,
+        "time_range": "65.0s - 100.0s",
+        "setpoint": 40.0,
+        "observed_behavior": "Negative step response; ControlOutput cuts to 0%; tank drain dynamics decrease level; HI alarm deactivates below 65.0%; settles stably at 40.0%."
+      }
+    ]
+  },
+  "tanklogs_datalog_evidence": {
+    "feature": "DataLogging",
+    "group_name": "TankLogs",
+    "logged_variable": "TankLevelPV (REAL)",
+    "trigger_bit": "%T1 (DatalogEnable = TRUE)",
+    "status_register": "%R14 (DatalogStatus = 0 OK)",
+    "cadence": "1.0 second (1 sample per 10 scan cycles)",
+    "total_samples_logged": 100,
+    "schema": "New Schema (Date, Time, TankLevelPV, DatalogStatus)",
+    "log_file_primary": "C:\\HornerAI\\horner-cscape-mcp\\artifacts\\projects\\TankLevelClosedLoop\\TankLogs.csv",
+    "sample_preview": [
+      {
+        "date": "09/10/2026",
+        "time": "02:00:00",
+        "pv": 20.0,
+        "status": 0
+      },
+      {
+        "date": "09/10/2026",
+        "time": "02:00:01",
+        "pv": 26.26,
+        "status": 0
+      },
+      {
+        "date": "09/10/2026",
+        "time": "02:00:02",
+        "pv": 31.26,
+        "status": 0
+      },
+      {
+        "date": "09/10/2026",
+        "time": "02:00:03",
+        "pv": 35.25,
+        "status": 0
+      },
+      {
+        "date": "09/10/2026",
+        "time": "02:00:04",
+        "pv": 38.45,
+        "status": 0
+      }
+    ]
+  },
+  "reopen_safety_verification": {
+    "csp_container": "C:\\HornerAI\\horner-cscape-mcp\\artifacts\\projects\\TankLevelClosedLoop\\TankLevelClosedLoop.csp",
+    "cfbf_header_verified": true,
+    "sha256_unmodified": true,
+    "cscape_active_pid": 19488,
+    "screen2_tab_front": true,
+    "reopen_safe": true
+  },
+  "artifacts_generated": {
+    "trend_chart_png": "artifacts/screenshots/offline_trend_chart.png",
+    "trend_chart_svg": "artifacts/recovery/offline_trend_chart.svg",
+    "datalog_csv": "artifacts/projects/TankLevelClosedLoop/TankLogs.csv",
+    "evidence_json": "artifacts/recovery/mcp_offline_trend_tanklogs_proof.json",
+    "audit_report_txt": "artifacts/recovery/mcp_offline_trend_tanklogs_proof.txt"
+  }
+}

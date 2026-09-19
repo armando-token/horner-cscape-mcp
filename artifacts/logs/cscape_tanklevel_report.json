@@ -1,0 +1,21 @@
+{
+  "success": true,
+  "verification_status": "SUCCESS",
+  "timestamp_utc": "2026-09-05T03:52:09.229Z",
+  "project_file": "C:\\Users\\ArmandoSilva\\artifacts\\projects\\TankLevelClosedLoop\\TankLevelClosedLoop.csp",
+  "file_size_bytes": 49152,
+  "cscape_pid": 9548,
+  "main_hwnd": 14288422,
+  "main_hwnd_hex": "0x00DA0626",
+  "main_window_title": "Cscape - Logged In : \"armando@controlnautas.com\" - [untitled1]",
+  "is_hung": 0,
+  "action_taken": "LOADED_PROJECT_INTO_GUI",
+  "screenshot_paths": [
+    "C:\\Users\\ArmandoSilva\\artifacts\\screenshots\\cscape_tanklevel_loaded.png",
+    "C:\\HornerAI\\horner-cscape-mcp\\artifacts\\screenshots\\cscape_tanklevel_loaded.png"
+  ],
+  "log_paths": [
+    "C:\\Users\\ArmandoSilva\\artifacts\\logs\\cscape_tanklevel_loaded.log",
+    "C:\\HornerAI\\horner-cscape-mcp\\artifacts\\logs\\cscape_tanklevel_loaded.log"
+  ]
+}

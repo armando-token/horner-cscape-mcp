@@ -1,0 +1,22 @@
+{
+  "step": 36,
+  "name": "step36_gui_stability_pid15240_100min_checkpoint",
+  "description": "100-Minute single-process & 200-Minute cumulative stay-open benchmark verified on live Cscape PID 15240 with zero crashes, unhung UI (IsHungAppWindow=False), and high-res screenshot proof",
+  "timestamp_utc": "2026-09-05T07:43:07.688Z",
+  "cscape_pid": 15240,
+  "cscape_hwnd": "0x00710582",
+  "cscape_healthy": true,
+  "active_uptime_seconds": 6015.86,
+  "active_uptime_minutes": 100.26,
+  "cumulative_stay_open_seconds": 12004.86,
+  "cumulative_stay_open_minutes": 200.08,
+  "cumulative_stay_open_hours": 3.335,
+  "single_process_100min_verified": true,
+  "cumulative_200min_verified": true,
+  "zero_crashes_verified": true,
+  "hardware_lockout_enforced": true,
+  "screenshot_path": "C:\\Users\\ArmandoSilva\\artifacts\\screenshots\\live_cscape_tank_level_stay_open_pid15240_100min.png",
+  "screenshot_sha256": "646628be10a87df870d744cd7839768e3132713e392f913d27c138e3dc020121",
+  "audit_log": "C:\\Users\\ArmandoSilva\\artifacts\\logs\\cscape_gui_stability_pid15240_100min.json",
+  "status": "VERIFIED_LIVE"
+}

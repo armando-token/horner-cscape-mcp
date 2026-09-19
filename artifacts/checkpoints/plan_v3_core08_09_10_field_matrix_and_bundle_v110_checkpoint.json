@@ -1,0 +1,127 @@
+{
+  "checkpoint_id": "PLAN_V3_CORE08_09_10_FIELD_MATRIX_AND_BUNDLE_V110_CHECKPOINT",
+  "task_id": "CORE_08_09_10_FIELD_VERIFICATION_MATRIX_AND_BUNDLE_V110",
+  "generated_utc": "2026-09-18T01:24:28.161242+00:00",
+  "state_contract": "STATE: CORE-08 CONFIG_AND_TEST_OK RUNTIME_PENDING_P7",
+  "supervisor_offline_accepted": true,
+  "supervisor_signoff_timestamp": "2026-09-17T14:20:00-07:00",
+  "operational_mode": "offline/DEV [PRODUCT_EVIDENCE]",
+  "verified_live": false,
+  "plc_download": false,
+  "hardware_lockout": "BLOCKED_FAIL_CLOSED (COM1..COM256, companion flash tools, Win32 32827/33149)",
+  "no_error_check_loop": true,
+  "single_gui_owner": {
+    "process": "Cscape.exe",
+    "version": "10.2.751.4",
+    "pid": 12788,
+    "hwnd": 3016360,
+    "hwnd_hex": "0x002E06A8",
+    "desktop": "winsta0\\Default",
+    "status": "active_responding"
+  },
+  "active_container": {
+    "file_name": "TankLevel_P5_Dedicated.csp",
+    "sha256": "9f69f6a2ee12dab54087ab27bb839f40e01d6d65544a546139788519acd80ab1",
+    "live_mounted_sha256": "2da72f913d80a13346452ba5c3dbb9f2bf61a0c4f8d22d64a2f8bdf969e6b66b",
+    "target_hardware": "HE-XPCE2",
+    "is_valid_cfbf": true
+  },
+  "protocol_configuration": {
+    "port": "MJ1",
+    "driver": "MJ1 CT RTU Modbus CMP v5.05 (CTRtu.dll v5.5.0.0)",
+    "scan_list_status": "EMPTY_UNTIL_LIVE",
+    "native_entries_count": 0,
+    "planned_devices_count": 3,
+    "discrepancy_delta": -3,
+    "pending_gate": "P7_PHYSICAL_PLC_DOWNLOAD_AND_COMMISSIONING"
+  },
+  "agent_consortium": {
+    "active_agents": 10,
+    "roles": [
+      "Lead Orchestrator",
+      "Research Agent",
+      "Single GUI Automation Agent",
+      "PLC / IEC 61131-3 Agent",
+      "Simulation & Verification Agent",
+      "MCP Architecture Agent",
+      "Security & Safety Guard Agent",
+      "Documentation & Standards Specialist",
+      "Process Variable & Modbus Protocol Agent",
+      "Field Commissioning & P7 Prep Specialist"
+    ]
+  },
+  "deliverables": {
+    "cataloged_handoff_items": 54,
+    "primary_zip_archives": [
+      {
+        "file_name": "TankLevel_P5_Dedicated_offline_bundle_v1.1.0.zip",
+        "size_bytes": 72977,
+        "sha256": "98e53eec68d3c657b511bfd075de05f9349b9e37b9228ef51c40884bc578a7f7"
+      },
+      {
+        "file_name": "offline_evidence_bundle_v1.1.0.zip",
+        "size_bytes": 364842,
+        "sha256": "3ebfc66e7489954a243c630b6eff46da819104f44cefae78305e5669de72bed9"
+      },
+      {
+        "file_name": "offline_evidence_bundle_v1.0.0.zip",
+        "size_bytes": 335933,
+        "sha256": "16a1ac91445a9067c24617b61063ddf9585ef272af6fa1c707fd83f1d8fec512"
+      },
+      {
+        "file_name": "TankLevel_P5_Dedicated_offline_bundle_v1.0.0.zip",
+        "size_bytes": 71356,
+        "sha256": "d21df9d20c793f85274b21eb928310ef17e5034a638abbf16f92d8c95c97bc08"
+      },
+      {
+        "file_name": "horner-cscape-project-handoff-v1.0.0.zip",
+        "size_bytes": 78374,
+        "sha256": "7a3a58243be55bf561bdd8a6c803a0c72fb6cd2b58dfc63556f0fef343df44c8"
+      },
+      {
+        "file_name": "horner-cscape-mcp-v1.0.0-developer-bundle.zip",
+        "size_bytes": 351255,
+        "sha256": "e7f1b6c8c12152724e715811891c2ee7598b23a5967954accff16326b126e6a8"
+      }
+    ],
+    "advanced_gap_and_matrix_artifacts": [
+      {
+        "file_name": "CORE_08_09_10_FIELD_VERIFICATION_MATRIX.md",
+        "size_bytes": 17523,
+        "sha256": "515f769f77584b3baab575ae8d253c3a2ede5abcc9ae89fe1664e0ffc3a5e7ba"
+      },
+      {
+        "file_name": "core08_09_10_field_verification_matrix.json",
+        "size_bytes": 12178,
+        "sha256": "c76b625b32927bf2d7988d271b7d7a81c8d003beac9b893ff7e56bb7ad6b34df"
+      },
+      {
+        "file_name": "offline_evidence_bundle_v1.1.0_manifest.json",
+        "size_bytes": 11775,
+        "sha256": "0ada77b258c1ffa5de5bfe41c9fe0c6aab34aaf84592addcf0c71e47d3bd1f11"
+      },
+      {
+        "file_name": "offline_evidence_bundle_v1.1.0_manifest.md",
+        "size_bytes": 9297,
+        "sha256": "409ae5b5b1b5e5b1ee1e04d1a30c5f91cbc1b7c924f10098709678e6b5c955d5"
+      },
+      {
+        "file_name": "CORE_08_09_10_RUNTIME_GAPS_AND_ROADMAP.md",
+        "size_bytes": 11745,
+        "sha256": "b25c3b85f6ff24a6ba71fd8ffa73824543f9de0f50cb355a773d1b7c6c30130c"
+      },
+      {
+        "file_name": "PLAN_V3_OFFLINE_GAPS_AND_RESOLUTION.md",
+        "size_bytes": 20427,
+        "sha256": "55823255c01e52e6c51d90da95c900ba74d1d50739eca9bce9844f31a08c73d4"
+      }
+    ]
+  },
+  "remaining_field_gates": [
+    "Phase P7: Manual PLC Download & Initial Loop Check (Armando Silva)",
+    "CORE-08 Live Runtime: RS-485 Modbus Polling on MJ1",
+    "CORE-09: Physical HMI & WebMI Screen Verification",
+    "CORE-10: 24h Hardware Telemetry Soak Test"
+  ],
+  "checkpoint_status": "success"
+}

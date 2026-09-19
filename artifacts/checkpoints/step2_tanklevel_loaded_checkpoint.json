@@ -1,0 +1,12 @@
+{
+  "step": "step2_open_tanklevel_project",
+  "status": "PASSED",
+  "timestamp_utc": "2026-09-10T12:20:39.365Z",
+  "project_file": "C:\\Users\\ArmandoSilva\\artifacts\\projects\\TankLevelClosedLoop\\TankLevelClosedLoop.csp",
+  "target_cscape_pid": 19488,
+  "main_hwnd": "0x01AC0B88",
+  "main_window_title": "Cscape - Logged In : \"armando@controlnautas.com\" - [TankLevelClosedLoop.csp]",
+  "gui_loaded_verified": true,
+  "is_hung": 0,
+  "screenshot_proof": "C:\\Users\\ArmandoSilva\\artifacts\\screenshots\\cscape_tanklevel_loaded.png"
+}

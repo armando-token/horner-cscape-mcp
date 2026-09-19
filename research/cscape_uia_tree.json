@@ -1,0 +1,2924 @@
+{
+  "metadata": {
+    "application": "Horner Cscape",
+    "version": "10.2.751.4 Service Pack 3",
+    "executable_path": "C:\\Program Files (x86)\\Cscape 10.2\\Cscape.exe",
+    "architecture": "x86 (32-bit)",
+    "pid": 3868,
+    "timestamp": "2026-09-03 20:24:25",
+    "toolchain": "Horner Cscape 10.2 + Copa-Data Straton K5",
+    "author": "Subagent 4: UI Automation Tree Specialist",
+    "description": "Complete UI Automation hierarchy and control inventory for Horner Cscape 10.2"
+  },
+  "windows": {
+    "about_cscape_dialog": {
+      "name": "About Cscape",
+      "class_name": "#32770",
+      "control_type": "Window",
+      "automation_id": "",
+      "handle": 3015656,
+      "control_id": 0,
+      "bounding_rectangle": {
+        "left": 374,
+        "top": 143,
+        "right": 905,
+        "bottom": 569,
+        "width": 531,
+        "height": 426
+      },
+      "is_enabled": true,
+      "is_visible": true,
+      "children": [
+        {
+          "name": "Version 10.2 Service Pack 3",
+          "class_name": "Static",
+          "control_type": "Text",
+          "automation_id": "1677",
+          "handle": 984594,
+          "control_id": 1677,
+          "bounding_rectangle": {
+            "left": 393,
+            "top": 514,
+            "right": 887,
+            "bottom": 527,
+            "width": 494,
+            "height": 13
+          },
+          "is_enabled": true,
+          "is_visible": true,
+          "children": []
+        },
+        {
+          "name": "OK",
+          "class_name": "Button",
+          "control_type": "Button",
+          "automation_id": "1",
+          "handle": 5768190,
+          "control_id": 1,
+          "bounding_rectangle": {
+            "left": 834,
+            "top": 527,
+            "right": 887,
+            "bottom": 550,
+            "width": 53,
+            "height": 23
+          },
+          "is_enabled": true,
+          "is_visible": true,
+          "children": []
+        },
+        {
+          "name": "File Versions",
+          "class_name": "Button",
+          "control_type": "Button",
+          "automation_id": "1680",
+          "handle": 2688564,
+          "control_id": 1680,
+          "bounding_rectangle": {
+            "left": 393,
+            "top": 525,
+            "right": 491,
+            "bottom": 549,
+            "width": 98,
+            "height": 24
+          },
+          "is_enabled": true,
+          "is_visible": true,
+          "children": []
+        },
+        {
+          "name": "",
+          "class_name": "Static",
+          "control_type": "Image",
+          "automation_id": "",
+          "handle": 4720208,
+          "control_id": -1,
+          "bounding_rectangle": {
+            "left": 393,
+            "top": 185,
+            "right": 887,
+            "bottom": 508,
+            "width": 494,
+            "height": 323
+          },
+          "is_enabled": true,
+          "is_visible": true,
+          "children": []
+        },
+        {
+          "name": "",
+          "class_name": "",
+          "control_type": "TitleBar",
+          "automation_id": "",
+          "handle": null,
+          "control_id": null,
+          "bounding_rectangle": {
+            "left": 382,
+            "top": 146,
+            "right": 897,
+            "bottom": 174,
+            "width": 515,
+            "height": 28
+          },
+          "is_enabled": true,
+          "is_visible": true,
+          "children": [
+            {
+              "name": "Close",
+              "class_name": "",
+              "control_type": "Button",
+              "automation_id": "",
+              "handle": null,
+              "control_id": null,
+              "bounding_rectangle": {
+                "left": 864,
+                "top": 144,
+                "right": 898,
+                "bottom": 174,
+                "width": 34,
+                "height": 30
+              },
+              "is_enabled": true,
+              "is_visible": true,
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    "select_editor_type_dialog": {
+      "name": "Select Editor Type",
+      "class_name": "#32770",
+      "control_type": "Window",
+      "automation_id": "",
+      "handle": 460540,
+      "control_id": 0,
+      "bounding_rectangle": {
+        "left": 278,
+        "top": 196,
+        "right": 735,
+        "bottom": 368,
+        "width": 457,
+        "height": 172
+      },
+      "is_enabled": true,
+      "is_visible": true,
+      "children": [
+        {
+          "name": "OK",
+          "class_name": "Button",
+          "control_type": "Button",
+          "automation_id": "1",
+          "handle": 2491918,
+          "control_id": 1,
+          "bounding_rectangle": {
+            "left": 552,
+            "top": 326,
+            "right": 627,
+            "bottom": 349,
+            "width": 75,
+            "height": 23
+          },
+          "is_enabled": true,
+          "is_visible": true,
+          "children": []
+        },
+        {
+          "name": "Cancel",
+          "class_name": "Button",
+          "control_type": "Button",
+          "automation_id": "2",
+          "handle": 4392582,
+          "control_id": 2,
+          "bounding_rectangle": {
+            "left": 642,
+            "top": 326,
+            "right": 717,
+            "bottom": 349,
+            "width": 75,
+            "height": 23
+          },
+          "is_enabled": true,
+          "is_visible": true,
+          "children": []
+        },
+        {
+          "name": "Select the type of Editor to be used for developing the program:",
+          "class_name": "Static",
+          "control_type": "Text",
+          "automation_id": "",
+          "handle": 3736060,
+          "control_id": -1,
+          "bounding_rectangle": {
+            "left": 298,
+            "top": 240,
+            "right": 601,
+            "bottom": 260,
+            "width": 303,
+            "height": 20
+          },
+          "is_enabled": true,
+          "is_visible": true,
+          "children": []
+        },
+        {
+          "name": "Advanced Ladder with Register Based Addressing Editor",
+          "class_name": "Button",
+          "control_type": "RadioButton",
+          "automation_id": "1460",
+          "handle": 2228688,
+          "control_id": 1460,
+          "bounding_rectangle": {
+            "left": 309,
+            "top": 260,
+            "right": 707,
+            "bottom": 276,
+            "width": 398,
+            "height": 16
+          },
+          "is_enabled": true,
+          "is_visible": true,
+          "children": []
+        },
+        {
+          "name": "IEC 61131 Language Editors",
+          "class_name": "Button",
+          "control_type": "RadioButton",
+          "automation_id": "1461",
+          "handle": 2622164,
+          "control_id": 1461,
+          "bounding_rectangle": {
+            "left": 309,
+            "top": 281,
+            "right": 713,
+            "bottom": 297,
+            "width": 404,
+            "height": 16
+          },
+          "is_enabled": true,
+          "is_visible": true,
+          "children": []
+        },
+        {
+          "name": "Advanced Ladder with Variable Based Addressing Editor",
+          "class_name": "Button",
+          "control_type": "RadioButton",
+          "automation_id": "3757",
+          "handle": 2163452,
+          "control_id": 3757,
+          "bounding_rectangle": {
+            "left": 309,
+            "top": 302,
+            "right": 714,
+            "bottom": 318,
+            "width": 405,
+            "height": 16
+          },
+          "is_enabled": true,
+          "is_visible": true,
+          "children": []
+        },
+        {
+          "name": "",
+          "class_name": "",
+          "control_type": "TitleBar",
+          "automation_id": "",
+          "handle": null,
+          "control_id": null,
+          "bounding_rectangle": {
+            "left": 286,
+            "top": 199,
+            "right": 727,
+            "bottom": 227,
+            "width": 441,
+            "height": 28
+          },
+          "is_enabled": true,
+          "is_visible": true,
+          "children": [
+            {
+              "name": "Close",
+              "class_name": "",
+              "control_type": "Button",
+              "automation_id": "",
+              "handle": null,
+              "control_id": null,
+              "bounding_rectangle": {
+                "left": 694,
+                "top": 197,
+                "right": 728,
+                "bottom": 227,
+                "width": 34,
+                "height": 30
+              },
+              "is_enabled": true,
+              "is_visible": true,
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    "main_cscape_window": {
+      "name": "Cscape - [untitled1]",
+      "class_name": "Afx:00BC0000:8:00010003:00000000:004B052D",
+      "control_type": "Window",
+      "automation_id": "",
+      "handle": 1639356,
+      "control_id": 0,
+      "bounding_rectangle": {
+        "left": 26,
+        "top": 26,
+        "right": 986,
+        "bottom": 539,
+        "width": 960,
+        "height": 513
+      },
+      "is_enabled": true,
+      "is_visible": true,
+      "children": [
+        {
+          "name": "",
+          "class_name": "Afx:Slider:bc0000:8:10003:10",
+          "control_type": "Pane",
+          "automation_id": "",
+          "handle": 4391444,
+          "control_id": -1,
+          "bounding_rectangle": {
+            "left": 438,
+            "top": 170,
+            "right": 442,
+            "bottom": 512,
+            "width": 4,
+            "height": 342
+          },
+          "is_enabled": true,
+          "is_visible": true,
+          "children": []
+        },
+        {
+          "name": "Project Toolbox",
+          "class_name": "Afx:ControlBar:bc0000:8:10003:10",
+          "control_type": "Pane",
+          "automation_id": "37567",
+          "handle": 2164042,
+          "control_id": 37567,
+          "bounding_rectangle": {
+            "left": 238,
+            "top": 170,
+            "right": 438,
+            "bottom": 512,
+            "width": 200,
+            "height": 342
+          },
+          "is_enabled": true,
+          "is_visible": true,
+          "children": [
+            {
+              "name": "",
+              "class_name": "CProjectToolboxWnd",
+              "control_type": "Pane",
+              "automation_id": "310",
+              "handle": 656982,
+              "control_id": 310,
+              "bounding_rectangle": {
+                "left": 238,
+                "top": 190,
+                "right": 438,
+                "bottom": 512,
+                "width": 200,
+                "height": 322
+              },
+              "is_enabled": true,
+              "is_visible": true,
+              "children": [
+                {
+                  "name": "Vertical",
+                  "class_name": "",
+                  "control_type": "ScrollBar",
+                  "automation_id": "NonClientVerticalScrollBar",
+                  "handle": null,
+                  "control_id": null,
+                  "bounding_rectangle": {
+                    "left": 419,
+                    "top": 192,
+                    "right": 436,
+                    "bottom": 510,
+                    "width": 17,
+                    "height": 318
+                  },
+                  "is_enabled": true,
+                  "is_visible": true,
+                  "children": [
+                    {
+                      "name": "Line up",
+                      "class_name": "",
+                      "control_type": "Button",
+                      "automation_id": "UpButton",
+                      "handle": null,
+                      "control_id": null,
+                      "bounding_rectangle": {
+                        "left": 419,
+                        "top": 192,
+                        "right": 436,
+                        "bottom": 209,
+                        "width": 17,
+                        "height": 17
+                      },
+                      "is_enabled": true,
+                      "is_visible": true,
+                      "children": []
+                    },
+                    {
+                      "name": "Position",
+                      "class_name": "",
+                      "control_type": "Thumb",
+                      "automation_id": "ScrollbarThumb",
+                      "handle": null,
+                      "control_id": null,
+                      "bounding_rectangle": {
+                        "left": 419,
+                        "top": 209,
+                        "right": 436,
+                        "bottom": 489,
+                        "width": 17,
+                        "height": 280
+                      },
+                      "is_enabled": true,
+                      "is_visible": true,
+                      "children": []
+                    },
+                    {
+                      "name": "Page down",
+                      "class_name": "",
+                      "control_type": "Button",
+                      "automation_id": "DownPageButton",
+                      "handle": null,
+                      "control_id": null,
+                      "bounding_rectangle": {
+                        "left": 419,
+                        "top": 489,
+                        "right": 436,
+                        "bottom": 493,
+                        "width": 17,
+                        "height": 4
+                      },
+                      "is_enabled": true,
+                      "is_visible": true,
+                      "children": []
+                    },
+                    {
+                      "name": "Line down",
+                      "class_name": "",
+                      "control_type": "Button",
+                      "automation_id": "DownButton",
+                      "handle": null,
+                      "control_id": null,
+                      "bounding_rectangle": {
+                        "left": 419,
+                        "top": 493,
+                        "right": 436,
+                        "bottom": 510,
+                        "width": 17,
+                        "height": 17
+                      },
+                      "is_enabled": true,
+                      "is_visible": true,
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "",
+          "class_name": "Afx:Slider:bc0000:8:10003:10",
+          "control_type": "Pane",
+          "automation_id": "",
+          "handle": 2032590,
+          "control_id": -1,
+          "bounding_rectangle": {
+            "left": 234,
+            "top": 170,
+            "right": 238,
+            "bottom": 512,
+            "width": 4,
+            "height": 342
+          },
+          "is_enabled": true,
+          "is_visible": true,
+          "children": []
+        },
+        {
+          "name": "Project Navigator",
+          "class_name": "Afx:ControlBar:bc0000:8:10003:10",
+          "control_type": "Pane",
+          "automation_id": "45012",
+          "handle": 1115440,
+          "control_id": 45012,
+          "bounding_rectangle": {
+            "left": 34,
+            "top": 170,
+            "right": 234,
+            "bottom": 512,
+            "width": 200,
+            "height": 342
+          },
+          "is_enabled": true,
+          "is_visible": true,
+          "children": [
+            {
+              "name": "",
+              "class_name": "SysTreeView32",
+              "control_type": "Tree",
+              "automation_id": "300",
+              "handle": 1050108,
+              "control_id": 300,
+              "bounding_rectangle": {
+                "left": 34,
+                "top": 190,
+                "right": 234,
+                "bottom": 512,
+                "width": 200,
+                "height": 322
+              },
+              "is_enabled": true,
+              "is_visible": true,
+              "children": [
+                {
+                  "name": "Horizontal",
+                  "class_name": "",
+                  "control_type": "ScrollBar",
+                  "automation_id": "NonClientHorizontalScrollBar",
+                  "handle": null,
+                  "control_id": null,
+                  "bounding_rectangle": {
+                    "left": 34,
+                    "top": 495,
+                    "right": 234,
+                    "bottom": 512,
+                    "width": 200,
+                    "height": 17
+                  },
+                  "is_enabled": true,
+                  "is_visible": true,
+                  "children": [
+                    {
+                      "name": "Column left",
+                      "class_name": "",
+                      "control_type": "Button",
+                      "automation_id": "UpButton",
+                      "handle": null,
+                      "control_id": null,
+                      "bounding_rectangle": {
+                        "left": 34,
+                        "top": 495,
+                        "right": 51,
+                        "bottom": 512,
+                        "width": 17,
+                        "height": 17
+                      },
+                      "is_enabled": true,
+                      "is_visible": true,
+                      "children": []
+                    },
+                    {
+                      "name": "Position",
+                      "class_name": "",
+                      "control_type": "Thumb",
+                      "automation_id": "ScrollbarThumb",
+                      "handle": null,
+                      "control_id": null,
+                      "bounding_rectangle": {
+                        "left": 51,
+                        "top": 495,
+                        "right": 190,
+                        "bottom": 512,
+                        "width": 139,
+                        "height": 17
+                      },
+                      "is_enabled": true,
+                      "is_visible": true,
+                      "children": []
+                    },
+                    {
+                      "name": "Page right",
+                      "class_name": "",
+                      "control_type": "Button",
+                      "automation_id": "DownPageButton",
+                      "handle": null,
+                      "control_id": null,
+                      "bounding_rectangle": {
+                        "left": 190,
+                        "top": 495,
+                        "right": 217,
+                        "bottom": 512,
+                        "width": 27,
+                        "height": 17
+                      },
+                      "is_enabled": true,
+                      "is_visible": true,
+                      "children": []
+                    },
+                    {
+                      "name": "Column right",
+                      "class_name": "",
+                      "control_type": "Button",
+                      "automation_id": "DownButton",
+                      "handle": null,
+                      "control_id": null,
+                      "bounding_rectangle": {
+                        "left": 217,
+                        "top": 495,
+                        "right": 234,
+                        "bottom": 512,
+                        "width": 17,
+                        "height": 17
+                      },
+                      "is_enabled": true,
+                      "is_visible": true,
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "name": "Project Navigator",
+                  "class_name": "",
+                  "control_type": "TreeItem",
+                  "automation_id": "",
+                  "handle": null,
+                  "control_id": null,
+                  "bounding_rectangle": {
+                    "left": 72,
+                    "top": 190,
+                    "right": 168,
+                    "bottom": 208,
+                    "width": 96,
+                    "height": 18
+                  },
+                  "is_enabled": true,
+                  "is_visible": true,
+                  "children": [
+                    {
+                      "name": "untitled1 [253] [Unknown Mode]*",
+                      "class_name": "",
+                      "control_type": "TreeItem",
+                      "automation_id": "",
+                      "handle": null,
+                      "control_id": null,
+                      "bounding_rectangle": {
+                        "left": 91,
+                        "top": 208,
+                        "right": 234,
+                        "bottom": 226,
+                        "width": 143,
+                        "height": 18
+                      },
+                      "is_enabled": true,
+                      "is_visible": true,
+                      "children": [
+                        {
+                          "name": "Hardware Configuration",
+                          "class_name": "",
+                          "control_type": "TreeItem",
+                          "automation_id": "",
+                          "handle": null,
+                          "control_id": null,
+                          "bounding_rectangle": {
+                            "left": 110,
+                            "top": 226,
+                            "right": 234,
+                            "bottom": 244,
+                            "width": 124,
+                            "height": 18
+                          },
+                          "is_enabled": true,
+                          "is_visible": true,
+                          "children": []
+                        },
+                        {
+                          "name": "Control",
+                          "class_name": "",
+                          "control_type": "TreeItem",
+                          "automation_id": "",
+                          "handle": null,
+                          "control_id": null,
+                          "bounding_rectangle": {
+                            "left": 110,
+                            "top": 244,
+                            "right": 154,
+                            "bottom": 262,
+                            "width": 44,
+                            "height": 18
+                          },
+                          "is_enabled": true,
+                          "is_visible": true,
+                          "children": []
+                        },
+                        {
+                          "name": "User Interface",
+                          "class_name": "",
+                          "control_type": "TreeItem",
+                          "automation_id": "",
+                          "handle": null,
+                          "control_id": null,
+                          "bounding_rectangle": {
+                            "left": 110,
+                            "top": 262,
+                            "right": 186,
+                            "bottom": 280,
+                            "width": 76,
+                            "height": 18
+                          },
+                          "is_enabled": true,
+                          "is_visible": true,
+                          "children": []
+                        },
+                        {
+                          "name": "Networking",
+                          "class_name": "",
+                          "control_type": "TreeItem",
+                          "automation_id": "",
+                          "handle": null,
+                          "control_id": null,
+                          "bounding_rectangle": {
+                            "left": 110,
+                            "top": 280,
+                            "right": 176,
+                            "bottom": 298,
+                            "width": 66,
+                            "height": 18
+                          },
+                          "is_enabled": true,
+                          "is_visible": true,
+                          "children": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Cscape",
+          "class_name": "Afx:RibbonBar:bc0000:8:10003:10",
+          "control_type": "Pane",
+          "automation_id": "59398",
+          "handle": 1181064,
+          "control_id": 59398,
+          "bounding_rectangle": {
+            "left": 34,
+            "top": 26,
+            "right": 978,
+            "bottom": 170,
+            "width": 944,
+            "height": 144
+          },
+          "is_enabled": true,
+          "is_visible": true,
+          "children": [
+            {
+              "name": "Application menu",
+              "class_name": "",
+              "control_type": "Button",
+              "automation_id": "",
+              "handle": null,
+              "control_id": null,
+              "bounding_rectangle": {
+                "left": 34,
+                "top": 30,
+                "right": 79,
+                "bottom": 75,
+                "width": 45,
+                "height": 45
+              },
+              "is_enabled": true,
+              "is_visible": true,
+              "children": []
+            },
+            {
+              "name": "Quick Access Toolbar",
+              "class_name": "",
+              "control_type": "ToolBar",
+              "automation_id": "",
+              "handle": null,
+              "control_id": null,
+              "bounding_rectangle": {
+                "left": 81,
+                "top": 31,
+                "right": 723,
+                "bottom": 52,
+                "width": 642,
+                "height": 21
+              },
+              "is_enabled": true,
+              "is_visible": true,
+              "children": [
+                {
+                  "name": "Save",
+                  "class_name": "",
+                  "control_type": "Button",
+                  "automation_id": "",
+                  "handle": null,
+                  "control_id": null,
+                  "bounding_rectangle": {
+                    "left": 83,
+                    "top": 31,
+                    "right": 105,
+                    "bottom": 51,
+                    "width": 22,
+                    "height": 20
+                  },
+                  "is_enabled": true,
+                  "is_visible": true,
+                  "children": []
+                },
+                {
+                  "name": "Hardware Config",
+                  "class_name": "",
+                  "control_type": "Button",
+                  "automation_id": "",
+                  "handle": null,
+                  "control_id": null,
+                  "bounding_rectangle": {
+                    "left": 105,
+                    "top": 31,
+                    "right": 127,
+                    "bottom": 51,
+                    "width": 22,
+                    "height": 20
+                  },
+                  "is_enabled": true,
+                  "is_visible": true,
+                  "children": []
+                },
+                {
+                  "name": "Connection Wizard",
+                  "class_name": "",
+                  "control_type": "Button",
+                  "automation_id": "",
+                  "handle": null,
+                  "control_id": null,
+                  "bounding_rectangle": {
+                    "left": 127,
+                    "top": 31,
+                    "right": 149,
+                    "bottom": 51,
+                    "width": 22,
+                    "height": 20
+                  },
+                  "is_enabled": true,
+                  "is_visible": true,
+                  "children": []
+                },
+                {
+                  "name": "Connect",
+                  "class_name": "",
+                  "control_type": "Button",
+                  "automation_id": "",
+                  "handle": null,
+                  "control_id": null,
+                  "bounding_rectangle": {
+                    "left": 149,
+                    "top": 31,
+                    "right": 171,
+                    "bottom": 51,
+                    "width": 22,
+                    "height": 20
+                  },
+                  "is_enabled": true,
+                  "is_visible": true,
+                  "children": []
+                },
+                {
+                  "name": "Set Target  ID",
+                  "class_name": "",
+                  "control_type": "Button",
+                  "automation_id": "",
+                  "handle": null,
+                  "control_id": null,
+                  "bounding_rectangle": {
+                    "left": 171,
+                    "top": 31,
+                    "right": 193,
+                    "bottom": 51,
+                    "width": 22,
+                    "height": 20
+                  },
+                  "is_enabled": true,
+                  "is_visible": true,
+                  "children": []
+                },
+                {
+                  "name": "Run",
+                  "class_name": "",
+                  "control_type": "Button",
+                  "automation_id": "",
+                  "handle": null,
+                  "control_id": null,
+                  "bounding_rectangle": {
+                    "left": 193,
+                    "top": 31,
+                    "right": 215,
+                    "bottom": 51,
+                    "width": 22,
+                    "height": 20
+                  },
+                  "is_enabled": false,
+                  "is_visible": true,
+                  "children": []
+                },
+                {
+                  "name": "Do I/O",
+                  "class_name": "",
+                  "control_type": "Button",
+                  "automation_id": "",
+                  "handle": null,
+                  "control_id": null,
+                  "bounding_rectangle": {
+                    "left": 215,
+                    "top": 31,
+                    "right": 237,
+                    "bottom": 51,
+                    "width": 22,
+                    "height": 20
+                  },
+                  "is_enabled": false,
+                  "is_visible": true,
+                  "children": []
+                },
+                {
+                  "name": "Stop",
+                  "class_name": "",
+                  "control_type": "Button",
+                  "automation_id": "",
+                  "handle": null,
+                  "control_id": null,
+                  "bounding_rectangle": {
+                    "left": 237,
+                    "top": 31,
+                    "right": 259,
+                    "bottom": 51,
+                    "width": 22,
+                    "height": 20
+                  },
+                  "is_enabled": false,
+                  "is_visible": true,
+                  "children": []
+                },
+                {
+                  "name": "Upload",
+                  "class_name": "",
+                  "control_type": "Button",
+                  "automation_id": "",
+                  "handle": null,
+                  "control_id": null,
+                  "bounding_rectangle": {
+                    "left": 259,
+                    "top": 31,
+                    "right": 281,
+                    "bottom": 51,
+                    "width": 22,
+                    "height": 20
+                  },
+                  "is_enabled": false,
+                  "is_visible": true,
+                  "children": []
+                },
+                {
+                  "name": "Download",
+                  "class_name": "",
+                  "control_type": "Button",
+                  "automation_id": "",
+                  "handle": null,
+                  "control_id": null,
+                  "bounding_rectangle": {
+                    "left": 281,
+                    "top": 31,
+                    "right": 303,
+                    "bottom": 51,
+                    "width": 22,
+                    "height": 20
+                  },
+                  "is_enabled": false,
+                  "is_visible": true,
+                  "children": []
+                },
+                {
+                  "name": "Action",
+                  "class_name": "",
+                  "control_type": "Button",
+                  "automation_id": "",
+                  "handle": null,
+                  "control_id": null,
+                  "bounding_rectangle": {
+                    "left": 303,
+                    "top": 31,
+                    "right": 325,
+                    "bottom": 51,
+                    "width": 22,
+                    "height": 20
+                  },
+                  "is_enabled": false,
+                  "is_visible": true,
+                  "children": []
+                },
+                {
+                  "name": "Debug Mode",
+                  "class_name": "",
+                  "control_type": "Button",
+                  "automation_id": "",
+                  "handle": null,
+                  "control_id": null,
+                  "bounding_rectangle": {
+                    "left": 325,
+                    "top": 31,
+                    "right": 347,
+                    "bottom": 51,
+                    "width": 22,
+                    "height": 20
+                  },
+                  "is_enabled": false,
+                  "is_visible": true,
+                  "children": []
+                },
+                {
+                  "name": "Error Check",
+                  "class_name": "",
+                  "control_type": "Button",
+                  "automation_id": "",
+                  "handle": null,
+                  "control_id": null,
+                  "bounding_rectangle": {
+                    "left": 347,
+                    "top": 31,
+                    "right": 369,
+                    "bottom": 51,
+                    "width": 22,
+                    "height": 20
+                  },
+                  "is_enabled": true,
+                  "is_visible": true,
+                  "children": []
+                },
+                {
+                  "name": "Find",
+                  "class_name": "",
+                  "control_type": "Button",
+                  "automation_id": "",
+                  "handle": null,
+                  "control_id": null,
+                  "bounding_rectangle": {
+                    "left": 369,
+                    "top": 31,
+                    "right": 391,
+                    "bottom": 51,
+                    "width": 22,
+                    "height": 20
+                  },
+                  "is_enabled": true,
+                  "is_visible": true,
+                  "children": []
+                },
+                {
+                  "name": "Start Simulation",
+                  "class_name": "",
+                  "control_type": "Button",
+                  "automation_id": "",
+                  "handle": null,
+                  "control_id": null,
+                  "bounding_rectangle": {
+                    "left": 391,
+                    "top": 31,
+                    "right": 413,
+                    "bottom": 51,
+                    "width": 22,
+                    "height": 20
+                  },
+                  "is_enabled": false,
+                  "is_visible": true,
+                  "children": []
+                },
+                {
+                  "name": "Continue",
+                  "class_name": "",
+                  "control_type": "Button",
+                  "automation_id": "",
+                  "handle": null,
+                  "control_id": null,
+                  "bounding_rectangle": {
+                    "left": 413,
+                    "top": 31,
+                    "right": 435,
+                    "bottom": 51,
+                    "width": 22,
+                    "height": 20
+                  },
+                  "is_enabled": false,
+                  "is_visible": true,
+                  "children": []
+                },
+                {
+                  "name": "Complete Cycle",
+                  "class_name": "",
+                  "control_type": "Button",
+                  "automation_id": "",
+                  "handle": null,
+                  "control_id": null,
+                  "bounding_rectangle": {
+                    "left": 435,
+                    "top": 31,
+                    "right": 457,
+                    "bottom": 51,
+                    "width": 22,
+                    "height": 20
+                  },
+                  "is_enabled": false,
+                  "is_visible": true,
+                  "children": []
+                },
+                {
+                  "name": "Step In",
+                  "class_name": "",
+                  "control_type": "Button",
+                  "automation_id": "",
+                  "handle": null,
+                  "control_id": null,
+                  "bounding_rectangle": {
+                    "left": 457,
+                    "top": 31,
+                    "right": 479,
+                    "bottom": 51,
+                    "width": 22,
+                    "height": 20
+                  },
+                  "is_enabled": false,
+                  "is_visible": true,
+                  "children": []
+                },
+                {
+                  "name": "Step Over",
+                  "class_name": "",
+                  "control_type": "Button",
+                  "automation_id": "",
+                  "handle": null,
+                  "control_id": null,
+                  "bounding_rectangle": {
+                    "left": 479,
+                    "top": 31,
+                    "right": 501,
+                    "bottom": 51,
+                    "width": 22,
+                    "height": 20
+                  },
+                  "is_enabled": false,
+                  "is_visible": true,
+                  "children": []
+                },
+                {
+                  "name": "Step Out",
+                  "class_name": "",
+                  "control_type": "Button",
+                  "automation_id": "",
+                  "handle": null,
+                  "control_id": null,
+                  "bounding_rectangle": {
+                    "left": 501,
+                    "top": 31,
+                    "right": 523,
+                    "bottom": 51,
+                    "width": 22,
+                    "height": 20
+                  },
+                  "is_enabled": false,
+                  "is_visible": true,
+                  "children": []
+                },
+                {
+                  "name": "Set Breakpoint",
+                  "class_name": "",
+                  "control_type": "Button",
+                  "automation_id": "",
+                  "handle": null,
+                  "control_id": null,
+                  "bounding_rectangle": {
+                    "left": 523,
+                    "top": 31,
+                    "right": 545,
+                    "bottom": 51,
+                    "width": 22,
+                    "height": 20
+                  },
+                  "is_enabled": false,
+                  "is_visible": true,
+                  "children": []
+                },
+                {
+                  "name": "Set Tracepoint",
+                  "class_name": "",
+                  "control_type": "Button",
+                  "automation_id": "",
+                  "handle": null,
+                  "control_id": null,
+                  "bounding_rectangle": {
+                    "left": 545,
+                    "top": 31,
+                    "right": 567,
+                    "bottom": 51,
+                    "width": 22,
+                    "height": 20
+                  },
+                  "is_enabled": false,
+                  "is_visible": true,
+                  "children": []
+                },
+                {
+                  "name": "Remove All",
+                  "class_name": "",
+                  "control_type": "Button",
+                  "automation_id": "",
+                  "handle": null,
+                  "control_id": null,
+                  "bounding_rectangle": {
+                    "left": 567,
+                    "top": 31,
+                    "right": 589,
+                    "bottom": 51,
+                    "width": 22,
+                    "height": 20
+                  },
+                  "is_enabled": false,
+                  "is_visible": true,
+                  "children": []
+                },
+                {
+                  "name": "Enumerated Types",
+                  "class_name": "",
+                  "control_type": "Button",
+                  "automation_id": "",
+                  "handle": null,
+                  "control_id": null,
+                  "bounding_rectangle": {
+                    "left": 589,
+                    "top": 31,
+                    "right": 611,
+                    "bottom": 51,
+                    "width": 22,
+                    "height": 20
+                  },
+                  "is_enabled": false,
+                  "is_visible": true,
+                  "children": []
+                },
+                {
+                  "name": "Bitfields",
+                  "class_name": "",
+                  "control_type": "Button",
+                  "automation_id": "",
+                  "handle": null,
+                  "control_id": null,
+                  "bounding_rectangle": {
+                    "left": 611,
+                    "top": 31,
+                    "right": 633,
+                    "bottom": 51,
+                    "width": 22,
+                    "height": 20
+                  },
+                  "is_enabled": false,
+                  "is_visible": true,
+                  "children": []
+                },
+                {
+                  "name": "Structures",
+                  "class_name": "",
+                  "control_type": "Button",
+                  "automation_id": "",
+                  "handle": null,
+                  "control_id": null,
+                  "bounding_rectangle": {
+                    "left": 633,
+                    "top": 31,
+                    "right": 655,
+                    "bottom": 51,
+                    "width": 22,
+                    "height": 20
+                  },
+                  "is_enabled": false,
+                  "is_visible": true,
+                  "children": []
+                },
+                {
+                  "name": "Cscape Log In",
+                  "class_name": "",
+                  "control_type": "Button",
+                  "automation_id": "",
+                  "handle": null,
+                  "control_id": null,
+                  "bounding_rectangle": {
+                    "left": 655,
+                    "top": 31,
+                    "right": 677,
+                    "bottom": 51,
+                    "width": 22,
+                    "height": 20
+                  },
+                  "is_enabled": false,
+                  "is_visible": true,
+                  "children": []
+                },
+                {
+                  "name": "Cscape Log Out",
+                  "class_name": "",
+                  "control_type": "Button",
+                  "automation_id": "",
+                  "handle": null,
+                  "control_id": null,
+                  "bounding_rectangle": {
+                    "left": 677,
+                    "top": 31,
+                    "right": 699,
+                    "bottom": 51,
+                    "width": 22,
+                    "height": 20
+                  },
+                  "is_enabled": true,
+                  "is_visible": true,
+                  "children": []
+                },
+                {
+                  "name": "Customize Quick Access Toolbar",
+                  "class_name": "",
+                  "control_type": "SplitButton",
+                  "automation_id": "",
+                  "handle": null,
+                  "control_id": null,
+                  "bounding_rectangle": {
+                    "left": 712,
+                    "top": 29,
+                    "right": 725,
+                    "bottom": 49,
+                    "width": 13,
+                    "height": 20
+                  },
+                  "is_enabled": true,
+                  "is_visible": true,
+                  "children": []
+                }
+              ]
+            },
+            {
+              "name": "Ribbon Tabs",
+              "class_name": "",
+              "control_type": "Group",
+              "automation_id": "",
+              "handle": null,
+              "control_id": null,
+              "bounding_rectangle": {
+                "left": 80,
+                "top": 54,
+                "right": 873,
+                "bottom": 77,
+                "width": 793,
+                "height": 23
+              },
+              "is_enabled": true,
+              "is_visible": true,
+              "children": [
+                {
+                  "name": "Home",
+                  "class_name": "",
+                  "control_type": "TabItem",
+                  "automation_id": "",
+                  "handle": null,
+                  "control_id": null,
+                  "bounding_rectangle": {
+                    "left": 80,
+                    "top": 54,
+                    "right": 138,
+                    "bottom": 77,
+                    "width": 58,
+                    "height": 23
+                  },
+                  "is_enabled": true,
+                  "is_visible": true,
+                  "children": []
+                },
+                {
+                  "name": "Edit",
+                  "class_name": "",
+                  "control_type": "TabItem",
+                  "automation_id": "",
+                  "handle": null,
+                  "control_id": null,
+                  "bounding_rectangle": {
+                    "left": 138,
+                    "top": 54,
+                    "right": 186,
+                    "bottom": 77,
+                    "width": 48,
+                    "height": 23
+                  },
+                  "is_enabled": true,
+                  "is_visible": true,
+                  "children": []
+                },
+                {
+                  "name": "Logic Editing",
+                  "class_name": "",
+                  "control_type": "TabItem",
+                  "automation_id": "",
+                  "handle": null,
+                  "control_id": null,
+                  "bounding_rectangle": {
+                    "left": 186,
+                    "top": 54,
+                    "right": 283,
+                    "bottom": 77,
+                    "width": 97,
+                    "height": 23
+                  },
+                  "is_enabled": true,
+                  "is_visible": true,
+                  "children": []
+                },
+                {
+                  "name": "User Interface",
+                  "class_name": "",
+                  "control_type": "TabItem",
+                  "automation_id": "",
+                  "handle": null,
+                  "control_id": null,
+                  "bounding_rectangle": {
+                    "left": 283,
+                    "top": 54,
+                    "right": 384,
+                    "bottom": 77,
+                    "width": 101,
+                    "height": 23
+                  },
+                  "is_enabled": true,
+                  "is_visible": true,
+                  "children": []
+                },
+                {
+                  "name": "Debug",
+                  "class_name": "",
+                  "control_type": "TabItem",
+                  "automation_id": "",
+                  "handle": null,
+                  "control_id": null,
+                  "bounding_rectangle": {
+                    "left": 384,
+                    "top": 54,
+                    "right": 447,
+                    "bottom": 77,
+                    "width": 63,
+                    "height": 23
+                  },
+                  "is_enabled": true,
+                  "is_visible": true,
+                  "children": []
+                },
+                {
+                  "name": "Tools",
+                  "class_name": "",
+                  "control_type": "TabItem",
+                  "automation_id": "",
+                  "handle": null,
+                  "control_id": null,
+                  "bounding_rectangle": {
+                    "left": 447,
+                    "top": 54,
+                    "right": 501,
+                    "bottom": 77,
+                    "width": 54,
+                    "height": 23
+                  },
+                  "is_enabled": true,
+                  "is_visible": true,
+                  "children": []
+                },
+                {
+                  "name": "My Account",
+                  "class_name": "",
+                  "control_type": "TabItem",
+                  "automation_id": "",
+                  "handle": null,
+                  "control_id": null,
+                  "bounding_rectangle": {
+                    "left": 501,
+                    "top": 54,
+                    "right": 591,
+                    "bottom": 77,
+                    "width": 90,
+                    "height": 23
+                  },
+                  "is_enabled": true,
+                  "is_visible": true,
+                  "children": []
+                },
+                {
+                  "name": "Help",
+                  "class_name": "",
+                  "control_type": "TabItem",
+                  "automation_id": "",
+                  "handle": null,
+                  "control_id": null,
+                  "bounding_rectangle": {
+                    "left": 591,
+                    "top": 54,
+                    "right": 643,
+                    "bottom": 77,
+                    "width": 52,
+                    "height": 23
+                  },
+                  "is_enabled": true,
+                  "is_visible": true,
+                  "children": []
+                }
+              ]
+            },
+            {
+              "name": "Home",
+              "class_name": "",
+              "control_type": "ToolBar",
+              "automation_id": "",
+              "handle": null,
+              "control_id": null,
+              "bounding_rectangle": {
+                "left": 34,
+                "top": 77,
+                "right": 978,
+                "bottom": 170,
+                "width": 944,
+                "height": 93
+              },
+              "is_enabled": true,
+              "is_visible": true,
+              "children": [
+                {
+                  "name": "View",
+                  "class_name": "",
+                  "control_type": "ToolBar",
+                  "automation_id": "",
+                  "handle": null,
+                  "control_id": null,
+                  "bounding_rectangle": {
+                    "left": 38,
+                    "top": 80,
+                    "right": 280,
+                    "bottom": 166,
+                    "width": 242,
+                    "height": 86
+                  },
+                  "is_enabled": true,
+                  "is_visible": true,
+                  "children": [
+                    {
+                      "name": "Project Navigator",
+                      "class_name": "",
+                      "control_type": "Button",
+                      "automation_id": "",
+                      "handle": null,
+                      "control_id": null,
+                      "bounding_rectangle": {
+                        "left": 42,
+                        "top": 82,
+                        "right": 156,
+                        "bottom": 104,
+                        "width": 114,
+                        "height": 22
+                      },
+                      "is_enabled": true,
+                      "is_visible": true,
+                      "children": []
+                    },
+                    {
+                      "name": "Project Toolbox",
+                      "class_name": "",
+                      "control_type": "Button",
+                      "automation_id": "",
+                      "handle": null,
+                      "control_id": null,
+                      "bounding_rectangle": {
+                        "left": 42,
+                        "top": 104,
+                        "right": 147,
+                        "bottom": 126,
+                        "width": 105,
+                        "height": 22
+                      },
+                      "is_enabled": true,
+                      "is_visible": true,
+                      "children": []
+                    },
+                    {
+                      "name": "Output Window",
+                      "class_name": "",
+                      "control_type": "Button",
+                      "automation_id": "",
+                      "handle": null,
+                      "control_id": null,
+                      "bounding_rectangle": {
+                        "left": 42,
+                        "top": 126,
+                        "right": 153,
+                        "bottom": 148,
+                        "width": 111,
+                        "height": 22
+                      },
+                      "is_enabled": true,
+                      "is_visible": true,
+                      "children": []
+                    },
+                    {
+                      "name": "Program Variables",
+                      "class_name": "",
+                      "control_type": "Button",
+                      "automation_id": "",
+                      "handle": null,
+                      "control_id": null,
+                      "bounding_rectangle": {
+                        "left": 156,
+                        "top": 82,
+                        "right": 275,
+                        "bottom": 104,
+                        "width": 119,
+                        "height": 22
+                      },
+                      "is_enabled": true,
+                      "is_visible": true,
+                      "children": []
+                    },
+                    {
+                      "name": "Defines Window",
+                      "class_name": "",
+                      "control_type": "Button",
+                      "automation_id": "",
+                      "handle": null,
+                      "control_id": null,
+                      "bounding_rectangle": {
+                        "left": 156,
+                        "top": 104,
+                        "right": 268,
+                        "bottom": 126,
+                        "width": 112,
+                        "height": 22
+                      },
+                      "is_enabled": true,
+                      "is_visible": true,
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "name": "Controller",
+                  "class_name": "",
+                  "control_type": "ToolBar",
+                  "automation_id": "",
+                  "handle": null,
+                  "control_id": null,
+                  "bounding_rectangle": {
+                    "left": 282,
+                    "top": 80,
+                    "right": 506,
+                    "bottom": 166,
+                    "width": 224,
+                    "height": 86
+                  },
+                  "is_enabled": true,
+                  "is_visible": true,
+                  "children": [
+                    {
+                      "name": "Set Target  ID",
+                      "class_name": "",
+                      "control_type": "Button",
+                      "automation_id": "",
+                      "handle": null,
+                      "control_id": null,
+                      "bounding_rectangle": {
+                        "left": 286,
+                        "top": 82,
+                        "right": 380,
+                        "bottom": 104,
+                        "width": 94,
+                        "height": 22
+                      },
+                      "is_enabled": true,
+                      "is_visible": true,
+                      "children": []
+                    },
+                    {
+                      "name": "Set Local  ID",
+                      "class_name": "",
+                      "control_type": "Button",
+                      "automation_id": "",
+                      "handle": null,
+                      "control_id": null,
+                      "bounding_rectangle": {
+                        "left": 286,
+                        "top": 104,
+                        "right": 374,
+                        "bottom": 126,
+                        "width": 88,
+                        "height": 22
+                      },
+                      "is_enabled": false,
+                      "is_visible": true,
+                      "children": []
+                    },
+                    {
+                      "name": "Connection Wizard",
+                      "class_name": "",
+                      "control_type": "Button",
+                      "automation_id": "",
+                      "handle": null,
+                      "control_id": null,
+                      "bounding_rectangle": {
+                        "left": 286,
+                        "top": 126,
+                        "right": 411,
+                        "bottom": 148,
+                        "width": 125,
+                        "height": 22
+                      },
+                      "is_enabled": true,
+                      "is_visible": true,
+                      "children": []
+                    },
+                    {
+                      "name": "Separator",
+                      "class_name": "",
+                      "control_type": "Separator",
+                      "automation_id": "",
+                      "handle": null,
+                      "control_id": null,
+                      "bounding_rectangle": {
+                        "left": 411,
+                        "top": 82,
+                        "right": 415,
+                        "bottom": 150,
+                        "width": 4,
+                        "height": 68
+                      },
+                      "is_enabled": true,
+                      "is_visible": true,
+                      "children": []
+                    },
+                    {
+                      "name": "Hardware Config",
+                      "class_name": "",
+                      "control_type": "Button",
+                      "automation_id": "",
+                      "handle": null,
+                      "control_id": null,
+                      "bounding_rectangle": {
+                        "left": 419,
+                        "top": 82,
+                        "right": 441,
+                        "bottom": 104,
+                        "width": 22,
+                        "height": 22
+                      },
+                      "is_enabled": true,
+                      "is_visible": true,
+                      "children": []
+                    },
+                    {
+                      "name": "Connect",
+                      "class_name": "",
+                      "control_type": "Button",
+                      "automation_id": "",
+                      "handle": null,
+                      "control_id": null,
+                      "bounding_rectangle": {
+                        "left": 419,
+                        "top": 104,
+                        "right": 441,
+                        "bottom": 126,
+                        "width": 22,
+                        "height": 22
+                      },
+                      "is_enabled": true,
+                      "is_visible": true,
+                      "children": []
+                    },
+                    {
+                      "name": "Disconnect",
+                      "class_name": "",
+                      "control_type": "Button",
+                      "automation_id": "",
+                      "handle": null,
+                      "control_id": null,
+                      "bounding_rectangle": {
+                        "left": 419,
+                        "top": 126,
+                        "right": 441,
+                        "bottom": 148,
+                        "width": 22,
+                        "height": 22
+                      },
+                      "is_enabled": true,
+                      "is_visible": true,
+                      "children": []
+                    },
+                    {
+                      "name": "Separator",
+                      "class_name": "",
+                      "control_type": "Separator",
+                      "automation_id": "",
+                      "handle": null,
+                      "control_id": null,
+                      "bounding_rectangle": {
+                        "left": 441,
+                        "top": 82,
+                        "right": 445,
+                        "bottom": 150,
+                        "width": 4,
+                        "height": 68
+                      },
+                      "is_enabled": true,
+                      "is_visible": true,
+                      "children": []
+                    },
+                    {
+                      "name": "Download",
+                      "class_name": "",
+                      "control_type": "Button",
+                      "automation_id": "",
+                      "handle": null,
+                      "control_id": null,
+                      "bounding_rectangle": {
+                        "left": 449,
+                        "top": 82,
+                        "right": 471,
+                        "bottom": 104,
+                        "width": 22,
+                        "height": 22
+                      },
+                      "is_enabled": false,
+                      "is_visible": true,
+                      "children": []
+                    },
+                    {
+                      "name": "Upload",
+                      "class_name": "",
+                      "control_type": "Button",
+                      "automation_id": "",
+                      "handle": null,
+                      "control_id": null,
+                      "bounding_rectangle": {
+                        "left": 449,
+                        "top": 104,
+                        "right": 471,
+                        "bottom": 126,
+                        "width": 22,
+                        "height": 22
+                      },
+                      "is_enabled": false,
+                      "is_visible": true,
+                      "children": []
+                    },
+                    {
+                      "name": "Verify",
+                      "class_name": "",
+                      "control_type": "Button",
+                      "automation_id": "",
+                      "handle": null,
+                      "control_id": null,
+                      "bounding_rectangle": {
+                        "left": 449,
+                        "top": 126,
+                        "right": 471,
+                        "bottom": 148,
+                        "width": 22,
+                        "height": 22
+                      },
+                      "is_enabled": false,
+                      "is_visible": true,
+                      "children": []
+                    },
+                    {
+                      "name": "Separator",
+                      "class_name": "",
+                      "control_type": "Separator",
+                      "automation_id": "",
+                      "handle": null,
+                      "control_id": null,
+                      "bounding_rectangle": {
+                        "left": 471,
+                        "top": 82,
+                        "right": 475,
+                        "bottom": 150,
+                        "width": 4,
+                        "height": 68
+                      },
+                      "is_enabled": true,
+                      "is_visible": true,
+                      "children": []
+                    },
+                    {
+                      "name": "Run",
+                      "class_name": "",
+                      "control_type": "Button",
+                      "automation_id": "",
+                      "handle": null,
+                      "control_id": null,
+                      "bounding_rectangle": {
+                        "left": 479,
+                        "top": 82,
+                        "right": 501,
+                        "bottom": 104,
+                        "width": 22,
+                        "height": 22
+                      },
+                      "is_enabled": false,
+                      "is_visible": true,
+                      "children": []
+                    },
+                    {
+                      "name": "Do I/O",
+                      "class_name": "",
+                      "control_type": "Button",
+                      "automation_id": "",
+                      "handle": null,
+                      "control_id": null,
+                      "bounding_rectangle": {
+                        "left": 479,
+                        "top": 104,
+                        "right": 501,
+                        "bottom": 126,
+                        "width": 22,
+                        "height": 22
+                      },
+                      "is_enabled": false,
+                      "is_visible": true,
+                      "children": []
+                    },
+                    {
+                      "name": "Stop",
+                      "class_name": "",
+                      "control_type": "Button",
+                      "automation_id": "",
+                      "handle": null,
+                      "control_id": null,
+                      "bounding_rectangle": {
+                        "left": 479,
+                        "top": 126,
+                        "right": 501,
+                        "bottom": 148,
+                        "width": 22,
+                        "height": 22
+                      },
+                      "is_enabled": false,
+                      "is_visible": true,
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "name": "Online Change",
+                  "class_name": "",
+                  "control_type": "ToolBar",
+                  "automation_id": "",
+                  "handle": null,
+                  "control_id": null,
+                  "bounding_rectangle": {
+                    "left": 508,
+                    "top": 80,
+                    "right": 678,
+                    "bottom": 166,
+                    "width": 170,
+                    "height": 86
+                  },
+                  "is_enabled": true,
+                  "is_visible": true,
+                  "children": [
+                    {
+                      "name": "Download Online Change",
+                      "class_name": "",
+                      "control_type": "Button",
+                      "automation_id": "",
+                      "handle": null,
+                      "control_id": null,
+                      "bounding_rectangle": {
+                        "left": 512,
+                        "top": 82,
+                        "right": 673,
+                        "bottom": 104,
+                        "width": 161,
+                        "height": 22
+                      },
+                      "is_enabled": false,
+                      "is_visible": true,
+                      "children": []
+                    },
+                    {
+                      "name": "Action",
+                      "class_name": "",
+                      "control_type": "Button",
+                      "automation_id": "",
+                      "handle": null,
+                      "control_id": null,
+                      "bounding_rectangle": {
+                        "left": 512,
+                        "top": 104,
+                        "right": 555,
+                        "bottom": 126,
+                        "width": 43,
+                        "height": 22
+                      },
+                      "is_enabled": false,
+                      "is_visible": true,
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "name": "Program",
+                  "class_name": "",
+                  "control_type": "ToolBar",
+                  "automation_id": "",
+                  "handle": null,
+                  "control_id": null,
+                  "bounding_rectangle": {
+                    "left": 680,
+                    "top": 80,
+                    "right": 782,
+                    "bottom": 166,
+                    "width": 102,
+                    "height": 86
+                  },
+                  "is_enabled": true,
+                  "is_visible": true,
+                  "children": [
+                    {
+                      "name": "Error Check",
+                      "class_name": "",
+                      "control_type": "Button",
+                      "automation_id": "",
+                      "handle": null,
+                      "control_id": null,
+                      "bounding_rectangle": {
+                        "left": 684,
+                        "top": 82,
+                        "right": 706,
+                        "bottom": 104,
+                        "width": 22,
+                        "height": 22
+                      },
+                      "is_enabled": true,
+                      "is_visible": true,
+                      "children": []
+                    },
+                    {
+                      "name": "Error List",
+                      "class_name": "",
+                      "control_type": "Button",
+                      "automation_id": "",
+                      "handle": null,
+                      "control_id": null,
+                      "bounding_rectangle": {
+                        "left": 684,
+                        "top": 104,
+                        "right": 706,
+                        "bottom": 126,
+                        "width": 22,
+                        "height": 22
+                      },
+                      "is_enabled": true,
+                      "is_visible": true,
+                      "children": []
+                    },
+                    {
+                      "name": "Element Usage",
+                      "class_name": "",
+                      "control_type": "Button",
+                      "automation_id": "",
+                      "handle": null,
+                      "control_id": null,
+                      "bounding_rectangle": {
+                        "left": 684,
+                        "top": 126,
+                        "right": 706,
+                        "bottom": 148,
+                        "width": 22,
+                        "height": 22
+                      },
+                      "is_enabled": false,
+                      "is_visible": true,
+                      "children": []
+                    },
+                    {
+                      "name": "Separator",
+                      "class_name": "",
+                      "control_type": "Separator",
+                      "automation_id": "",
+                      "handle": null,
+                      "control_id": null,
+                      "bounding_rectangle": {
+                        "left": 706,
+                        "top": 82,
+                        "right": 710,
+                        "bottom": 150,
+                        "width": 4,
+                        "height": 68
+                      },
+                      "is_enabled": true,
+                      "is_visible": true,
+                      "children": []
+                    },
+                    {
+                      "name": "Messaging",
+                      "class_name": "",
+                      "control_type": "SplitButton",
+                      "automation_id": "",
+                      "handle": null,
+                      "control_id": null,
+                      "bounding_rectangle": {
+                        "left": 714,
+                        "top": 82,
+                        "right": 747,
+                        "bottom": 104,
+                        "width": 33,
+                        "height": 22
+                      },
+                      "is_enabled": true,
+                      "is_visible": true,
+                      "children": []
+                    },
+                    {
+                      "name": "Setpoints",
+                      "class_name": "",
+                      "control_type": "Button",
+                      "automation_id": "",
+                      "handle": null,
+                      "control_id": null,
+                      "bounding_rectangle": {
+                        "left": 714,
+                        "top": 104,
+                        "right": 736,
+                        "bottom": 126,
+                        "width": 22,
+                        "height": 22
+                      },
+                      "is_enabled": false,
+                      "is_visible": true,
+                      "children": []
+                    },
+                    {
+                      "name": "Download Options",
+                      "class_name": "",
+                      "control_type": "Button",
+                      "automation_id": "",
+                      "handle": null,
+                      "control_id": null,
+                      "bounding_rectangle": {
+                        "left": 714,
+                        "top": 126,
+                        "right": 736,
+                        "bottom": 148,
+                        "width": 22,
+                        "height": 22
+                      },
+                      "is_enabled": true,
+                      "is_visible": true,
+                      "children": []
+                    },
+                    {
+                      "name": "Separator",
+                      "class_name": "",
+                      "control_type": "Separator",
+                      "automation_id": "",
+                      "handle": null,
+                      "control_id": null,
+                      "bounding_rectangle": {
+                        "left": 747,
+                        "top": 82,
+                        "right": 751,
+                        "bottom": 150,
+                        "width": 4,
+                        "height": 68
+                      },
+                      "is_enabled": true,
+                      "is_visible": true,
+                      "children": []
+                    },
+                    {
+                      "name": "Protocols",
+                      "class_name": "",
+                      "control_type": "Button",
+                      "automation_id": "",
+                      "handle": null,
+                      "control_id": null,
+                      "bounding_rectangle": {
+                        "left": 755,
+                        "top": 82,
+                        "right": 777,
+                        "bottom": 104,
+                        "width": 22,
+                        "height": 22
+                      },
+                      "is_enabled": true,
+                      "is_visible": true,
+                      "children": []
+                    },
+                    {
+                      "name": "Import  L5K",
+                      "class_name": "",
+                      "control_type": "Button",
+                      "automation_id": "",
+                      "handle": null,
+                      "control_id": null,
+                      "bounding_rectangle": {
+                        "left": 755,
+                        "top": 104,
+                        "right": 777,
+                        "bottom": 126,
+                        "width": 22,
+                        "height": 22
+                      },
+                      "is_enabled": true,
+                      "is_visible": true,
+                      "children": []
+                    },
+                    {
+                      "name": "Audio",
+                      "class_name": "",
+                      "control_type": "Button",
+                      "automation_id": "",
+                      "handle": null,
+                      "control_id": null,
+                      "bounding_rectangle": {
+                        "left": 755,
+                        "top": 126,
+                        "right": 777,
+                        "bottom": 148,
+                        "width": 22,
+                        "height": 22
+                      },
+                      "is_enabled": false,
+                      "is_visible": true,
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "name": "Data",
+                  "class_name": "",
+                  "control_type": "ToolBar",
+                  "automation_id": "",
+                  "handle": null,
+                  "control_id": null,
+                  "bounding_rectangle": {
+                    "left": 784,
+                    "top": 80,
+                    "right": 906,
+                    "bottom": 166,
+                    "width": 122,
+                    "height": 86
+                  },
+                  "is_enabled": true,
+                  "is_visible": true,
+                  "children": [
+                    {
+                      "name": "Datalogging",
+                      "class_name": "",
+                      "control_type": "Button",
+                      "automation_id": "",
+                      "handle": null,
+                      "control_id": null,
+                      "bounding_rectangle": {
+                        "left": 788,
+                        "top": 82,
+                        "right": 879,
+                        "bottom": 104,
+                        "width": 91,
+                        "height": 22
+                      },
+                      "is_enabled": true,
+                      "is_visible": true,
+                      "children": []
+                    },
+                    {
+                      "name": "Reports",
+                      "class_name": "",
+                      "control_type": "Button",
+                      "automation_id": "",
+                      "handle": null,
+                      "control_id": null,
+                      "bounding_rectangle": {
+                        "left": 788,
+                        "top": 104,
+                        "right": 810,
+                        "bottom": 126,
+                        "width": 22,
+                        "height": 22
+                      },
+                      "is_enabled": true,
+                      "is_visible": true,
+                      "children": []
+                    },
+                    {
+                      "name": "Recipe Database",
+                      "class_name": "",
+                      "control_type": "Button",
+                      "automation_id": "",
+                      "handle": null,
+                      "control_id": null,
+                      "bounding_rectangle": {
+                        "left": 788,
+                        "top": 126,
+                        "right": 810,
+                        "bottom": 148,
+                        "width": 22,
+                        "height": 22
+                      },
+                      "is_enabled": true,
+                      "is_visible": true,
+                      "children": []
+                    },
+                    {
+                      "name": "File Counters",
+                      "class_name": "",
+                      "control_type": "Button",
+                      "automation_id": "",
+                      "handle": null,
+                      "control_id": null,
+                      "bounding_rectangle": {
+                        "left": 879,
+                        "top": 82,
+                        "right": 901,
+                        "bottom": 104,
+                        "width": 22,
+                        "height": 22
+                      },
+                      "is_enabled": true,
+                      "is_visible": true,
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Workspace",
+          "class_name": "MDIClient",
+          "control_type": "Pane",
+          "automation_id": "59648",
+          "handle": 3868290,
+          "control_id": 59648,
+          "bounding_rectangle": {
+            "left": 442,
+            "top": 170,
+            "right": 978,
+            "bottom": 512,
+            "width": 536,
+            "height": 342
+          },
+          "is_enabled": true,
+          "is_visible": true,
+          "children": [
+            {
+              "name": "untitled1",
+              "class_name": "Afx:00BC0000:b:00010003:00000006:003E04B3",
+              "control_type": "Window",
+              "automation_id": "65280",
+              "handle": 2557454,
+              "control_id": 65280,
+              "bounding_rectangle": {
+                "left": 434,
+                "top": 139,
+                "right": 986,
+                "bottom": 520,
+                "width": 552,
+                "height": 381
+              },
+              "is_enabled": true,
+              "is_visible": true,
+              "children": [
+                {
+                  "name": "",
+                  "class_name": "",
+                  "control_type": "TitleBar",
+                  "automation_id": "",
+                  "handle": null,
+                  "control_id": null,
+                  "bounding_rectangle": {
+                    "left": 458,
+                    "top": 147,
+                    "right": 978,
+                    "bottom": 169,
+                    "width": 520,
+                    "height": 22
+                  },
+                  "is_enabled": true,
+                  "is_visible": true,
+                  "children": [
+                    {
+                      "name": "System",
+                      "class_name": "",
+                      "control_type": "MenuBar",
+                      "automation_id": "MenuBar",
+                      "handle": null,
+                      "control_id": null,
+                      "bounding_rectangle": {
+                        "left": 442,
+                        "top": 147,
+                        "right": 464,
+                        "bottom": 169,
+                        "width": 22,
+                        "height": 22
+                      },
+                      "is_enabled": true,
+                      "is_visible": true,
+                      "children": [
+                        {
+                          "name": "System",
+                          "class_name": "",
+                          "control_type": "MenuItem",
+                          "automation_id": "",
+                          "handle": null,
+                          "control_id": null,
+                          "bounding_rectangle": {
+                            "left": 442,
+                            "top": 147,
+                            "right": 464,
+                            "bottom": 169,
+                            "width": 22,
+                            "height": 22
+                          },
+                          "is_enabled": true,
+                          "is_visible": true,
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Minimize",
+                      "class_name": "",
+                      "control_type": "Button",
+                      "automation_id": "",
+                      "handle": null,
+                      "control_id": null,
+                      "bounding_rectangle": {
+                        "left": 876,
+                        "top": 149,
+                        "right": 908,
+                        "bottom": 167,
+                        "width": 32,
+                        "height": 18
+                      },
+                      "is_enabled": true,
+                      "is_visible": true,
+                      "children": []
+                    },
+                    {
+                      "name": "Restore",
+                      "class_name": "",
+                      "control_type": "Button",
+                      "automation_id": "",
+                      "handle": null,
+                      "control_id": null,
+                      "bounding_rectangle": {
+                        "left": 910,
+                        "top": 149,
+                        "right": 942,
+                        "bottom": 167,
+                        "width": 32,
+                        "height": 18
+                      },
+                      "is_enabled": true,
+                      "is_visible": true,
+                      "children": []
+                    },
+                    {
+                      "name": "Close",
+                      "class_name": "",
+                      "control_type": "Button",
+                      "automation_id": "",
+                      "handle": null,
+                      "control_id": null,
+                      "bounding_rectangle": {
+                        "left": 944,
+                        "top": 149,
+                        "right": 976,
+                        "bottom": 167,
+                        "width": 32,
+                        "height": 18
+                      },
+                      "is_enabled": true,
+                      "is_visible": true,
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Ready",
+          "class_name": "Afx:StatusBar:bc0000:8:10003:10",
+          "control_type": "Pane",
+          "automation_id": "59393",
+          "handle": 2687056,
+          "control_id": 59393,
+          "bounding_rectangle": {
+            "left": 34,
+            "top": 512,
+            "right": 978,
+            "bottom": 531,
+            "width": 944,
+            "height": 19
+          },
+          "is_enabled": true,
+          "is_visible": true,
+          "children": []
+        },
+        {
+          "name": "",
+          "class_name": "",
+          "control_type": "TitleBar",
+          "automation_id": "",
+          "handle": null,
+          "control_id": null,
+          "bounding_rectangle": {
+            "left": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 0,
+            "width": 0,
+            "height": 0
+          },
+          "is_enabled": true,
+          "is_visible": false,
+          "children": [
+            {
+              "name": "System",
+              "class_name": "",
+              "control_type": "MenuBar",
+              "automation_id": "MenuBar",
+              "handle": null,
+              "control_id": null,
+              "bounding_rectangle": {
+                "left": 34,
+                "top": 34,
+                "right": 56,
+                "bottom": 56,
+                "width": 22,
+                "height": 22
+              },
+              "is_enabled": true,
+              "is_visible": true,
+              "children": [
+                {
+                  "name": "System",
+                  "class_name": "",
+                  "control_type": "MenuItem",
+                  "automation_id": "",
+                  "handle": null,
+                  "control_id": null,
+                  "bounding_rectangle": {
+                    "left": 34,
+                    "top": 34,
+                    "right": 56,
+                    "bottom": 56,
+                    "width": 22,
+                    "height": 22
+                  },
+                  "is_enabled": true,
+                  "is_visible": true,
+                  "children": []
+                }
+              ]
+            },
+            {
+              "name": "Minimize",
+              "class_name": "",
+              "control_type": "Button",
+              "automation_id": "",
+              "handle": null,
+              "control_id": null,
+              "bounding_rectangle": {
+                "left": 839,
+                "top": 27,
+                "right": 886,
+                "bottom": 55,
+                "width": 47,
+                "height": 28
+              },
+              "is_enabled": true,
+              "is_visible": true,
+              "children": []
+            },
+            {
+              "name": "Maximize",
+              "class_name": "",
+              "control_type": "Button",
+              "automation_id": "",
+              "handle": null,
+              "control_id": null,
+              "bounding_rectangle": {
+                "left": 886,
+                "top": 27,
+                "right": 932,
+                "bottom": 55,
+                "width": 46,
+                "height": 28
+              },
+              "is_enabled": true,
+              "is_visible": true,
+              "children": []
+            },
+            {
+              "name": "Close",
+              "class_name": "",
+              "control_type": "Button",
+              "automation_id": "",
+              "handle": null,
+              "control_id": null,
+              "bounding_rectangle": {
+                "left": 932,
+                "top": 27,
+                "right": 979,
+                "bottom": 55,
+                "width": 47,
+                "height": 28
+              },
+              "is_enabled": true,
+              "is_visible": true,
+              "children": []
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "win32_controls": {
+    "about_cscape_dialog": [
+      {
+        "control_id": 1677,
+        "automation_id": "1677",
+        "class_name": "Static",
+        "control_type": "Text",
+        "text": "Version 10.2 Service Pack 3",
+        "bounding_box": [
+          393,
+          514,
+          887,
+          527
+        ],
+        "description": "Product version and service pack display"
+      },
+      {
+        "control_id": 1,
+        "automation_id": "1",
+        "class_name": "Button",
+        "control_type": "Button",
+        "text": "OK",
+        "bounding_box": [
+          834,
+          527,
+          887,
+          550
+        ],
+        "description": "Dismisses splash screen and advances to editor selection (default button)"
+      },
+      {
+        "control_id": 1680,
+        "automation_id": "1680",
+        "class_name": "Button",
+        "control_type": "Button",
+        "text": "File Versions",
+        "bounding_box": [
+          393,
+          525,
+          491,
+          549
+        ],
+        "description": "Opens detailed DLL component versions dialog"
+      },
+      {
+        "control_id": -1,
+        "automation_id": "",
+        "class_name": "Static",
+        "control_type": "Image",
+        "text": "",
+        "bounding_box": [
+          393,
+          185,
+          887,
+          508
+        ],
+        "description": "Horner Cscape splash image and copyright branding"
+      },
+      {
+        "control_id": 2510,
+        "automation_id": "2510",
+        "class_name": "Button",
+        "control_type": "Button",
+        "text": "",
+        "bounding_box": [
+          594,
+          533,
+          669,
+          556
+        ],
+        "description": "Hidden dialog helper button"
+      }
+    ],
+    "select_editor_type_dialog": [
+      {
+        "control_id": -1,
+        "automation_id": "",
+        "class_name": "Static",
+        "control_type": "Text",
+        "text": "Select the type of Editor to be used for developing the program:",
+        "bounding_box": [
+          298,
+          240,
+          601,
+          260
+        ],
+        "description": "Header prompt label instructing user to choose editor mode"
+      },
+      {
+        "control_id": 1460,
+        "automation_id": "1460",
+        "class_name": "Button",
+        "control_type": "RadioButton",
+        "text": "Advanced Ladder with Register Based Addressing Editor",
+        "bounding_box": [
+          309,
+          260,
+          707,
+          276
+        ],
+        "description": "Radio button for legacy Horner register-based ladder editor (%R, %AI, %AQ)"
+      },
+      {
+        "control_id": 1461,
+        "automation_id": "1461",
+        "class_name": "Button",
+        "control_type": "RadioButton",
+        "text": "IEC 61131 Language Editors",
+        "bounding_box": [
+          309,
+          281,
+          713,
+          297
+        ],
+        "description": "Radio button for Copa-Data Straton K5 IEC 61131-3 engine (ST, SFC, FBD, LD, IL)"
+      },
+      {
+        "control_id": 3757,
+        "automation_id": "3757",
+        "class_name": "Button",
+        "control_type": "RadioButton",
+        "text": "Advanced Ladder with Variable Based Addressing Editor",
+        "bounding_box": [
+          309,
+          302,
+          714,
+          318
+        ],
+        "description": "Radio button for variable-based tag addressing ladder editor"
+      },
+      {
+        "control_id": 1,
+        "automation_id": "1",
+        "class_name": "Button",
+        "control_type": "Button",
+        "text": "OK",
+        "bounding_box": [
+          552,
+          326,
+          627,
+          349
+        ],
+        "description": "Confirms editor selection and opens project workspace (default button)"
+      },
+      {
+        "control_id": 2,
+        "automation_id": "2",
+        "class_name": "Button",
+        "control_type": "Button",
+        "text": "Cancel",
+        "bounding_box": [
+          642,
+          326,
+          717,
+          349
+        ],
+        "description": "Cancels editor selection"
+      }
+    ],
+    "main_cscape_window": [
+      {
+        "control_id": 59398,
+        "automation_id": "59398",
+        "class_name": "Afx:RibbonBar:bc0000:8:10003:10",
+        "control_type": "Pane",
+        "text": "Cscape",
+        "description": "MFC Ribbon Bar housing Application Menu, Quick Access Toolbar, and Tabs"
+      },
+      {
+        "control_id": 45012,
+        "automation_id": "45012",
+        "class_name": "Afx:ControlBar:bc0000:8:10003:10",
+        "control_type": "Pane",
+        "text": "Project Navigator",
+        "child_class": "SysTreeView32 (ID 300)",
+        "description": "Dockable tree containing hardware configuration, network, and program sections"
+      },
+      {
+        "control_id": 37567,
+        "automation_id": "37567",
+        "class_name": "Afx:ControlBar:bc0000:8:10003:10",
+        "control_type": "Pane",
+        "text": "Project Toolbox",
+        "child_class": "CProjectToolboxWnd (ID 310)",
+        "description": "Dockable toolbox palette with function blocks, operators, and I/O elements"
+      },
+      {
+        "control_id": 38053,
+        "automation_id": "38053",
+        "class_name": "Afx:ControlBar:bc0000:8:10003:10",
+        "control_type": "Pane",
+        "text": "Program Variables",
+        "child_class": "CProjectDatabaseWnd (ID 355), W5EditTL (ID 1603, CW5EditTLWnd_Dico)",
+        "description": "Straton variable data dictionary grid and tree editor"
+      },
+      {
+        "control_id": 38030,
+        "automation_id": "38030",
+        "class_name": "Afx:ControlBar:bc0000:8:10003:10",
+        "control_type": "Pane",
+        "text": "IEC Defines/SpyList/BitFields/Enums/Structs",
+        "child_class": "CComponentWndContainer (ID 330), SysTabControl32 (ID 150)",
+        "description": "IEC type definitions, data structures, and live spy list watch window"
+      },
+      {
+        "control_id": 38343,
+        "automation_id": "38343",
+        "class_name": "Afx:ControlBar:bc0000:8:10003:10",
+        "control_type": "Pane",
+        "text": "IEC Debugger Windows",
+        "child_class": "CComponentWndContainer (ID 467), SysTabControl32 (ID 150)",
+        "description": "Straton execution debugger watch, call stack, and breakpoint viewer"
+      },
+      {
+        "control_id": 45011,
+        "automation_id": "45011",
+        "class_name": "Afx:ControlBar:bc0000:8:10003:10",
+        "control_type": "Pane",
+        "text": "Output Window",
+        "child_class": "ListBox (ID 372)",
+        "description": "Build output, compiler error messages, and link logs"
+      },
+      {
+        "control_id": 38579,
+        "automation_id": "38579",
+        "class_name": "Afx:ControlBar:bc0000:8:10003:10",
+        "control_type": "Pane",
+        "text": "Bookmark Window",
+        "child_class": "ListBox (ID 373)",
+        "description": "Code navigation bookmarks list"
+      },
+      {
+        "control_id": 320,
+        "automation_id": "320",
+        "class_name": "Afx:ControlBar:bc0000:8:10003:10",
+        "control_type": "Pane",
+        "text": "Search",
+        "child_class": "CComponentWndContainer (ID 320), SysTabControl32 (ID 150)",
+        "description": "Find and replace results window"
+      },
+      {
+        "control_id": 59648,
+        "automation_id": "59648",
+        "class_name": "MDIClient",
+        "control_type": "Pane",
+        "text": "Workspace",
+        "child_class": "Afx:00BC0000:b:00010003:00000006 (ID 65280, untitled1)",
+        "description": "Multiple Document Interface workspace hosting Straton IEC and ladder views"
+      },
+      {
+        "control_id": 59393,
+        "automation_id": "59393",
+        "class_name": "Afx:StatusBar:bc0000:8:10003:10",
+        "control_type": "Pane",
+        "text": "Ready",
+        "description": "Application status bar with target connection status, mode, and cursor coordinates"
+      }
+    ]
+  }
+}

@@ -1,0 +1,877 @@
+{
+  "schema_version": "1.0.0",
+  "project": "horner-cscape-mcp",
+  "target_workspace": "C:\\HornerAI\\horner-cscape-mcp",
+  "dual_root_snapshot": "C:\\Users\\ArmandoSilva",
+  "plan": "Plan v3",
+  "phase": "P8",
+  "phase_status": "P8_ACCEPTED_BY_SUPERVISOR_OFFLINE",
+  "supervisor_offline_accepted": true,
+  "next_human_gate": "P7_MANUAL",
+  "verified_live": false,
+  "plc_download": false,
+  "supervisor_acceptance": {
+    "status": "ACCEPTED",
+    "accepted": true,
+    "timestamp": "2026-09-17T14:20:00-07:00",
+    "accepted_offline_deliverables": [
+      "P4/P6 evidence",
+      "scan-list tool",
+      "evidence bundle",
+      "Modbus IEC FB bridge",
+      "P5 reopen proof"
+    ],
+    "deliverables_detail": {
+      "p4_p6_evidence": "P4 selective edit proof (30/70 -> 35/75 -> 32/78) on Dedicated and P6 external multi-context relocation invariance",
+      "scan_list_tool": "FastMCP public scan-list tools (cscape_validate_scan_list_evidence, cscape_inspect_scan_list, cscape_reconcile_scan_list) with 43/43 schema parity",
+      "evidence_bundle": "Air-gapped offline evidence bundle (offline_evidence_bundle_v1.0.0.zip) with 30 cryptographic assets and manifest",
+      "modbus_iec_fb_bridge": "Pure IEC 61131-3 Structured Text FB_ModbusScaleQuality and TankLevelModbusBridge with 32/32 tests passed",
+      "p5_reopen_proof": "Native Cscape 10.2 project reopen on PID 12788 with scaling bridge logic and clean compile proof"
+    },
+    "next_human_gate": "P7_MANUAL",
+    "verified_live": false,
+    "plc_download": false,
+    "remaining_gates": [
+      {
+        "gate": "P7_PHYSICAL_PLC_DOWNLOAD_AND_COMMISSIONING",
+        "status": "DEFERRED_MANUAL_ENGINEER_LOAD",
+        "description": "Manual loading via Cscape by commissioning engineer on site; zero automated PLC download permitted",
+        "checklist": "Downloads/P7_MANUAL_LOAD_CHECKLIST.md"
+      },
+      {
+        "gate": "CORE-09_HMI_PHYSICAL_VERIFICATION",
+        "status": "PENDING_P7_COMPLETION",
+        "description": "Physical OCS screen rendering and touch responsiveness validation post-P7 download"
+      },
+      {
+        "gate": "CORE-10_HARDWARE_TELEMETRY_SOAK",
+        "status": "PENDING_P7_COMPLETION",
+        "description": "Live Modbus RTU transmitter polling soak and electrical loop check under active plant load"
+      }
+    ],
+    "summary_document": "Downloads/SUPERVISOR_OFFLINE_ACCEPTANCE.md"
+  },
+  "completed_phases": [
+    "P0_RECONCILIATION_CONTRACT_AUDIT",
+    "P1_DIAGNOSTICS_AIR_GAPPED_EXPORT_AND_NEGATIVE_TESTS",
+    "P2_NATIVE_MUTATION_AND_CORRELATED_INTEGRATION",
+    "P3_NATIVE_CSCAPE_HMI_AND_OBJECT_GROUP_BINDINGS",
+    "P4_REDO_FAIL_CLOSED_NATIVE_CSCAPE_EVIDENCE",
+    "P5_NATIVE_MODBUS_PV_PROVIDER_CONFIG",
+    "P6_STANDALONE_DELIVERY_AND_DISTRIBUTION_VERIFICATION",
+    "FASTMCP_SCAN_LIST_SCHEMA_VALIDATION",
+    "FASTMCP_PUBLIC_SCAN_LIST_TOOL",
+    "FASTMCP_PUBLIC_SCAN_LIST_RECONCILIATION",
+    "OFFLINE_AIR_GAPPED_EVIDENCE_BUNDLE_PACKAGING",
+    "OFFLINE_MODBUS_REGISTER_SCALING_IEC_FB_BRIDGE",
+    "OFFLINE_MJ1_DEVICES_AND_SCAN_LIST_STATE_DOCUMENTATION",
+    "TANKLEVEL_P5_NATIVE_REOPEN_PROOF_WITH_SCALING_BRIDGE",
+    "SUPERVISOR_OFFLINE_ACCEPTANCE"
+  ],
+  "active_task": "SUPERVISOR_OFFLINE_ACCEPTANCE",
+  "updated_at": "2026-09-17T14:20:00-07:00",
+  "product_contract": {
+    "version": "1.0.0",
+    "document": "docs/product/PRODUCT_CONTRACT.md",
+    "protocol": "FastMCP / JSON-RPC 2.0 stdio",
+    "status_contract": [
+      "success",
+      "failed",
+      "blocked",
+      "inconclusive"
+    ],
+    "fastmcp_tools_count": 43,
+    "tool_schemas_count": 43,
+    "schemas_parity": "100% matched (43/43)",
+    "resources_count": 7
+  },
+  "safety_lockout_status": {
+    "physical_ports": "BLOCKED_FAIL_CLOSED",
+    "download_command_32827": "BLOCKED_FAIL_CLOSED",
+    "download_command_33149": "BLOCKED_FAIL_CLOSED",
+    "companion_flash_tools": "BLOCKED_FAIL_CLOSED",
+    "ladder_logic_in_st": "REJECTED_ERR_LADDER_FORBIDDEN",
+    "read_only_pv_provider": "ENFORCED (Write commands FC06/FC16 rejected)",
+    "zero_plc_download_policy": "STRICTLY_ENFORCED"
+  },
+  "p3_native_hmi_summary": {
+    "status": "ACCEPTED",
+    "project_name": "TankLevel_P2_Dedicated",
+    "csp_file_path": "C:\\HornerAI\\horner-cscape-mcp\\artifacts\\projects\\TankLevel_P2_Dedicated\\TankLevel_P2_Dedicated.csp",
+    "csp_size_bytes": 139264,
+    "cscape_pid": 11576,
+    "main_hwnd": 20382400,
+    "evidence_checkpoint": "artifacts/checkpoints/p3_native_hmi_evidence.json"
+  },
+  "p4_redo_native_summary": {
+    "status": "ACCEPTED_EVIDENCE_RECONCILED",
+    "supervisor_approval": "EVIDENCE_GATHERED_AND_RECONCILED",
+    "mission_id": "P4_REDO_FAIL_CLOSED_NATIVE_CSCAPE_EVIDENCE",
+    "project_name": "TankLevel_P4_REDO",
+    "csp_file_path": "C:\\HornerAI\\horner-cscape-mcp\\artifacts\\projects\\TankLevel_P4_REDO\\TankLevel_P4_REDO.csp",
+    "csp_size_bytes": 147456,
+    "cscape_pid": 8236,
+    "main_hwnd": 3604926,
+    "path_used": "native_cscape_gui",
+    "mock": "NO_MOCKS_PERMITTED; real live Cscape GUI on winsta0\\Default",
+    "evidence_checkpoint": "artifacts/checkpoints/p4_llm_mcp_fixture_evidence.json"
+  },
+  "p5_modbus_pv_summary": {
+    "status": "ACCEPTED_BY_SUPERVISOR",
+    "supervisor_approval": "ACCEPTED_BY_SUPERVISOR_FOR_NATIVE_MODBUS_CONFIG_PERSISTENCE (MJ1 CT RTU Modbus CMP)",
+    "mission_id": "P5_NATIVE_MODBUS_PV_PROVIDER_CONFIG",
+    "project_name": "TankLevel_P5_Dedicated",
+    "csp_file_path": "C:\\HornerAI\\horner-cscape-mcp\\artifacts\\projects\\TankLevel_P5_Dedicated\\TankLevel_P5_Dedicated.csp",
+    "csp_size_bytes": 140800,
+    "cscape_pid": 12184,
+    "main_hwnd": 48431546,
+    "path_used": "native_cscape_gui",
+    "mock": "NO_MOCKS_PERMITTED; real live Cscape GUI on winsta0\\Default with pure Python Modbus test server",
+    "server_label": "[TEST_MODBUS_PV_PROVIDER]",
+    "server_endpoint": "127.0.0.1:15502",
+    "protocol_query_verified": true,
+    "raw_pv_value": 17600,
+    "scaled_tank_level_pct": 55.0,
+    "dynamic_update_75pct_verified": true,
+    "write_rejection_verified": true,
+    "durability_save_close_reopen_verified": true,
+    "clean_compile_verified": true,
+    "evidence_checkpoint": "artifacts/checkpoints/p5_modbus_pv_provider_evidence.json",
+    "transcript_file": "artifacts/logs/p5_modbus_mcp_transcript.json",
+    "screenshots": [
+      "artifacts/screenshots/p5_modbus_cscape_ui.png",
+      "artifacts/screenshots/p5_modbus_cscape_reopened.png"
+    ],
+    "physical_runtime_verification": "PENDING_P7 (Strictly deferred to Phase P7; zero PLC download; CORE-08 remains incomplete)"
+  },
+  "p6_delivery_summary": {
+    "status": "ACCEPTED",
+    "mission_id": "P6_STANDALONE_DELIVERY_AND_DISTRIBUTION_VERIFICATION",
+    "deliveries": {
+      "package_1_developer_mcp": "artifacts/delivery/horner-cscape-mcp-v1.0.0-developer-bundle.zip",
+      "package_2_controls_handoff": "artifacts/delivery/horner-cscape-project-handoff-v1.0.0.zip"
+    },
+    "external_staging_test_dir": "artifacts/delivery_stage/isolated_test_env",
+    "tools_matching_verified": true,
+    "evidence_checkpoint": "artifacts/checkpoints/p6_standalone_delivery_evidence.json"
+  },
+  "p7_physical_download": {
+    "status": "DEFERRED",
+    "mission_id": "P7_PHYSICAL_PLC_DOWNLOAD_AND_COMMISSIONING",
+    "directive": "Phase P7 physical PLC download is DEFERRED (engineer loads manually) \u00e2\u20ac\u201d do not automate download/COM transfer.",
+    "automated_download_lockout": "ENFORCED_FAIL_CLOSED",
+    "com_transfer_lockout": "ENFORCED_FAIL_CLOSED",
+    "manual_engineer_loading": "DEFERRED_TO_COMMISSIONING_ENGINEER",
+    "verified_live": false,
+    "core_08_status": "CORE-08 CONFIG_AND_TEST_OK RUNTIME_PENDING_P7"
+  },
+  "p8_expand_and_harden_summary": {
+    "status": "COMPLETED_PENDING_SUPERVISOR_REVIEW",
+    "mission_id": "P8_EXPAND_AND_HARDEN",
+    "scope": "expand and harden without losing the core (documented remaining gaps, robustness, known limitations, cleanup of false-success paths, ensure ACTIVE_TASK/STATE reflect P0-P6 accepted + P7 deferred + P8 in progress)",
+    "mcp_tools_count": 40,
+    "tool_schemas_count": 40,
+    "schemas_parity": "100% (40/40 matched)",
+    "package_exports_parity": "100% (40/40 exported in src.mcp)",
+    "false_success_negative_tests": "49/49 passed",
+    "security_tests": "227/227 passed",
+    "p8_tests": "15/15 passed",
+    "total_tests_passed": "291/291 passed",
+    "single_gui_automation_owner": "scripts/cscape_supervisor.py (PID 12184 active)",
+    "evidence_checkpoint": "artifacts/checkpoints/p8_expand_and_harden_evidence.json"
+  },
+  "p4_selective_edit_strengthened": {
+    "status": "success",
+    "client_session_type": "official_fastmcp_stdio_jsonrpc",
+    "transcript_file": "artifacts/logs/p4_selective_edit_mcp_transcript.json",
+    "llm_transcript_file": "artifacts/logs/p4_llm_mcp_transcript.json",
+    "tool_calls_recorded": 10,
+    "evidence_checkpoint": "artifacts/checkpoints/p4_llm_mcp_fixture_evidence.json",
+    "acceptance_classification": "OFFLINE_AST_CFBF_DETERMINISTIC_WITH_REAL_MCP_CLIENT",
+    "dynamic_cscape_active_process": "PID 12184, HWND 48431546",
+    "durability_check_verified": true,
+    "avoided_mock_only_acceptance": true,
+    "hardware_download_policy": "BLOCKED_FAIL_CLOSED",
+    "evidence_file": "ops/artifacts/p4_selective_edit_evidence.json",
+    "downloads_evidence_file": "Downloads/p4_selective_edit_evidence.json",
+    "evidence_paths": [
+      "ops/artifacts/p4_selective_edit_evidence.json",
+      "Downloads/p4_selective_edit_evidence.json"
+    ]
+  },
+  "p4_selective_edit_continuation": {
+    "status": "success",
+    "mission_id": "P4_FASTMCP_SELECTIVE_EDIT_CONTINUATION",
+    "stage_1_revision": "1.0.0",
+    "stage_2_revision": "1.1.0",
+    "stage_3_revision": "1.2.0",
+    "mutated_limits": {
+      "lo": 32.0,
+      "hi": 78.0
+    },
+    "mutated_label": "Buffer Tank 01 Level PV",
+    "idempotency_noop_verified": true,
+    "negative_lockout_verified": true,
+    "concurrency_protection_verified": true,
+    "verified_live": false,
+    "zero_plc_download": true,
+    "no_error_check_loop": true,
+    "downloads_evidence_files": [
+      "Downloads/p4_selective_edit_continuation_evidence.json",
+      "Downloads/p4_selective_edit_continuation_evidence.md"
+    ],
+    "ops_evidence_files": [
+      "ops/artifacts/p4_selective_edit_continuation_evidence.json",
+      "ops/artifacts/p4_selective_edit_continuation_evidence.md"
+    ]
+  },
+  "p6_external_handoff_strengthened": {
+    "status": "success",
+    "delivery_archive": "artifacts/delivery/horner-cscape-project-handoff-v1.0.0.zip",
+    "external_target_directory": "C:\\Users\\Public\\HornerHandoffTest",
+    "secondary_staging_directory": "artifacts/delivery_stage/handoff_isolated_test",
+    "manifest_verification": "9/9 matched",
+    "cfbf_container_valid": true,
+    "pure_st_ast_parsed": true,
+    "modbus_sidecars_verified": true,
+    "live_cscape_open_and_compile": "success (12 compiler output lines scraped, clean)",
+    "relocation_invariance_verified": true,
+    "evidence_checkpoint": "artifacts/checkpoints/p6_external_handoff_evidence.json",
+    "refreshed_delivery_releases": [
+      "artifacts/delivery/horner-cscape-mcp-v1.0.0-developer-bundle.zip",
+      "artifacts/delivery/horner-cscape-project-handoff-v1.0.0.zip"
+    ],
+    "evidence_file": "ops/artifacts/p6_external_handoff_evidence.json",
+    "downloads_evidence_file": "Downloads/p6_external_handoff_evidence.json",
+    "evidence_paths": [
+      "ops/artifacts/p6_external_handoff_evidence.json",
+      "Downloads/p6_external_handoff_evidence.json"
+    ],
+    "secondary_context": "C:\\Users\\Public\\HornerHandoffSecondary"
+  },
+  "p6_second_context_handoff": {
+    "status": "success",
+    "mission_id": "P6_SECOND_CONTEXT_STANDALONE_DELIVERY_VERIFICATION",
+    "second_context_directory": "C:\\Users\\Public\\HornerHandoffContext2",
+    "manifest_matched": "9/9 (100% cryptographic parity)",
+    "cfbf_container_valid": true,
+    "pure_st_ast_parsed": true,
+    "modbus_read_only_verified": true,
+    "relocation_invariance_verified": true,
+    "verified_live": false,
+    "zero_plc_download": true,
+    "no_error_check_loop": true,
+    "open_status": "success",
+    "downloads_evidence_files": [
+      "Downloads/p6_second_context_handoff_evidence.json",
+      "Downloads/p6_second_context_handoff_evidence.md"
+    ],
+    "ops_evidence_files": [
+      "ops/artifacts/p6_second_context_handoff_evidence.json",
+      "ops/artifacts/p6_second_context_handoff_evidence.md"
+    ]
+  },
+  "core08_offline_deepened": {
+    "status": "CORE-08 CONFIG_AND_TEST_OK RUNTIME_PENDING_P7",
+    "verified_live": false,
+    "p7_status": "DEFERRED_MANUAL_ENGINEER_LOAD",
+    "specification_document": "docs/CORE_08_OFFLINE_MODBUS_QUALITY.md",
+    "conversion_example_document": "docs/CORE_08_MODBUS_CONVERSION_EXAMPLE.md",
+    "inventory_file": "artifacts/projects/TankLevel_P5_Dedicated/modbus_protocol_inventory.json",
+    "devices_count": 3,
+    "scan_list_count": 3,
+    "channels_count": 3,
+    "labeled_test_server": {
+      "endpoint": "127.0.0.1:15502",
+      "label": "[TEST_MODBUS_PV_PROVIDER]",
+      "protocol_checks": "VERIFIED (FC03/FC04 across offsets 0, 1, 2)",
+      "write_lockout_check": "VERIFIED (FC06/FC16 rejected with Modbus Exception 0x01)"
+    },
+    "telemetry_quality_handling": {
+      "watchdog_check": "CommWatchdogReg <> LastWatchdogReg",
+      "comm_failure_alarm": "%M10",
+      "stale_quality_indicator": "%M11",
+      "fail_safe_action": "CLAMP_TO_FAIL_SAFE (0.0 %)"
+    },
+    "runtime_physical_verification": "PENDING_P7 (Strictly deferred to manual commissioning engineer physical loading; zero automated download)",
+    "tests_verified": "tests/test_core08_modbus_inventory.py (5/5 passed)"
+  },
+  "p8_complete_claim": {
+    "claim": true,
+    "claim_status": "CLAIMED_COMPLETE_PENDING_SUPERVISOR_REVIEW",
+    "supported_by_pass_results": true,
+    "verification_evidence": "artifacts/checkpoints/p8_expand_and_harden_evidence.json",
+    "test_results_summary": "291/291 tests passed (49 G1 negative + 15 P8 hardening + 227 security)",
+    "auto_accept": false,
+    "verified_live": false,
+    "p7_status": "DEFERRED_MANUAL_ENGINEER_LOAD",
+    "hardware_download": "BLOCKED_FAIL_CLOSED",
+    "claimed_utc": "2026-09-16T04:20:00Z"
+  },
+  "p9_offline_gaps_summary": {
+    "status": "COMPLETED_PENDING_SUPERVISOR_REVIEW",
+    "mission_id": "P9_OFFLINE_GAPS_RESOLUTION",
+    "scope": "Resolve remaining Plan v3 offline gaps: IEC 61131-3 TYPE/STRUCT/ENUM/Subranges, Horner OCS multi-word footprint checking (%R9999 REAL), modal dialog harvester, air-gapped distribution bundle tool (cscape_package_offline_bundle), and explicit mock provenance headers.",
+    "mcp_tools_count": 40,
+    "tool_schemas_count": 40,
+    "schemas_parity": "100% (40/40 matched)",
+    "package_exports_parity": "100% (40/40 exported in src.mcp)",
+    "p1_tests": "13/13 passed",
+    "p2_tests": "8/8 passed",
+    "p3_tests": "5/5 passed",
+    "p4_tests": "9/9 passed",
+    "p5_tests": "6/6 passed",
+    "p6_tests": "4/4 passed",
+    "p8_tests": "15/15 passed",
+    "p9_tests": "9/9 passed",
+    "core08_tests": "5/5 passed",
+    "g1_negative_tests": "49/49 passed",
+    "security_tests": "227/227 passed",
+    "total_priority_tests_passed": "126/126 passed",
+    "grand_total_tests_passed": "353/353 passed",
+    "offline_bundle_verified": "artifacts/delivery/TankLevel_P5_Dedicated_offline_bundle_v1.0.0.zip",
+    "single_gui_automation_owner": "scripts/cscape_supervisor.py (PID 12184 active)",
+    "verified_live": false,
+    "core_gates_claimed": "NONE (CORE-08 deferred to P7; no CORE-09/10)",
+    "hardware_download": "BLOCKED_FAIL_CLOSED",
+    "updated_utc": "2026-09-16T05:52:00Z"
+  },
+  "offline_keep_alive": {
+    "timestamp_utc": "2026-09-17T17:12:00Z",
+    "status": "ABORTED",
+    "project": "TankLevel_P5_Dedicated",
+    "cscape_pid": 928,
+    "main_hwnd": "0x0003040C",
+    "stblock1_hi_lo_confirmed": "HI>=75.0, LO<=35.0 (CONFIRMED_IN_STBLOCK1_SRC)",
+    "hmi_buffer_tank_level_pv_sp_present": true,
+    "hmi_thresholds": "HI 75.0 / LO 35.0",
+    "st_thresholds": "HI>=75.0, LO<=35.0 (CONFIRMED_IN_DEDICATED)",
+    "error_check": "CLEAN (0 errors, 0 warnings, scraped 12 lines)",
+    "project_saved": true,
+    "save_command": "ID_FILE_SAVE (57603)",
+    "screenshot": "artifacts/screenshots/keepalive_error_check_dedicated.png",
+    "downloads_handoff_present": true,
+    "mj1_channel": "CH_MJ1_RTU",
+    "mj1_driver": "CT RTU Modbus CMP v 5.05 / Modbus Master v 5.07",
+    "port": "MJ1_RS485",
+    "state": "RUNTIME_PENDING_P7",
+    "verified_live": false,
+    "hardware_download": "BLOCKED_FAIL_CLOSED",
+    "p7_status": "DEFERRED_MANUAL_ENGINEER_LOAD",
+    "directive": "STOP keep-alive and Error Check loops. TOP Plan v3 offline PRODUCT work only",
+    "note": "Hygiene keep-alive and Error Check loop was ABORTED per user directive ('STOP keep-alive and Error Check loops. Plan v3 offline PRODUCT work only')."
+  },
+  "gate_governance": {
+    "G0": "ARCHIVED_HISTORICAL",
+    "G1": "ARCHIVED_HISTORICAL",
+    "G2": "CLOSED_NOT_APPROVED_THIS_RUN",
+    "G3": "CLOSED_NOT_APPROVED_THIS_RUN",
+    "G4": "CLOSED_NOT_APPROVED_THIS_RUN",
+    "G5": "CLOSED_NOT_APPROVED_THIS_RUN",
+    "P0": "ACCEPTED",
+    "P1": "ACCEPTED",
+    "P2": "ACCEPTED",
+    "P3": "ACCEPTED",
+    "P4": "ACCEPTED_EVIDENCE_RECONCILED",
+    "P5": "ACCEPTED_BY_SUPERVISOR",
+    "P6": "ACCEPTED",
+    "P7": "DEFERRED_MANUAL_ENGINEER_LOAD",
+    "P8": "CLAIMED_COMPLETE_PENDING_SUPERVISOR_REVIEW",
+    "CORE_08": "CORE-08 CONFIG_AND_TEST_OK RUNTIME_PENDING_P7",
+    "verified_live": false,
+    "p7_deferred_manual": true,
+    "invariant": "NO_PREMATURE_VICTORY_OR_APPROVAL_CLAIMS",
+    "p7_status": "DEFERRED_MANUAL_ENGINEER_LOAD"
+  },
+  "mj1_scan_list_evidence": {
+    "status": "blocked",
+    "mission_id": "MJ1_CT_RTU_MODBUS_CMP_SCAN_LIST_EVIDENCE",
+    "project": "TankLevel_P5_Dedicated.csp",
+    "port": "MJ1",
+    "protocol": "CT RTU Modbus CMP v5.05",
+    "scan_list_status": "empty",
+    "native_fill_status": "blocked_offline",
+    "blocker": "Native add requires a configured target node/device and/or live PLC context; no PLC connection or download was permitted.",
+    "pending_gate": "P7_PHYSICAL_PLC_DOWNLOAD_AND_COMMISSIONING",
+    "plc_download": false,
+    "verified_live": false,
+    "scope": "offline_product_documentation",
+    "downloads_evidence_files": [
+      "Downloads/mj1_devices_scan_evidence.json",
+      "Downloads/mj1_devices_scan_evidence.md"
+    ],
+    "ops_evidence_files": [
+      "ops/artifacts/mj1_devices_scan_evidence.json",
+      "ops/artifacts/mj1_devices_scan_evidence.md"
+    ],
+    "proposed_next_offline_task": "Add MCP validation for scan-list evidence schema"
+  },
+  "fastmcp_scan_list_schema_validation": {
+    "status": "success",
+    "mission_id": "FASTMCP_SCAN_LIST_SCHEMA_VALIDATION",
+    "task_id": "FASTMCP_SCAN_LIST_SCHEMA_VALIDATION",
+    "tool_name": "cscape_validate_scan_list_evidence",
+    "input_schema": "CscapeValidateScanListEvidenceInput",
+    "output_schema": "CscapeValidateScanListEvidenceOutput",
+    "tool_count": 41,
+    "schemas_parity": "41/41 (100% matched)",
+    "package_exports_parity": "41/41 (100% exported in src.mcp)",
+    "target_evidence_file": "Downloads/mj1_devices_scan_evidence.json",
+    "schema_validation_results": {
+      "project": "TankLevel_P5_Dedicated.csp",
+      "port": "MJ1",
+      "protocol": "CT RTU Modbus CMP v5.05",
+      "scan_list_status": "empty",
+      "native_fill_status": "blocked_offline",
+      "blocker": "Native add requires a configured target node/device and/or live PLC context; no PLC connection or download was permitted.",
+      "plc_download": false,
+      "verified_live": false,
+      "scope": "offline_product_documentation"
+    },
+    "fail_closed_assertions": {
+      "plc_download_true_rejected": "SECURITY_BLOCKED",
+      "verified_live_true_rejected": "SECURITY_BLOCKED",
+      "extra_parameters_forbidden": "ValidationError (extra='forbid')"
+    },
+    "contract_tests": "tests/test_scan_list_evidence_schema.py (16/16 passed)",
+    "total_targeted_tests_passed": "30/30 passed",
+    "verified_live": false,
+    "zero_plc_download": true,
+    "downloads_evidence_files": [
+      "Downloads/mj1_devices_scan_evidence.json",
+      "Downloads/mj1_devices_scan_evidence.md",
+      "Downloads/mj1_scan_list_validation_evidence.json",
+      "Downloads/mj1_scan_list_validation_evidence.md"
+    ],
+    "ops_evidence_files": [
+      "ops/artifacts/mj1_devices_scan_evidence.json",
+      "ops/artifacts/mj1_devices_scan_evidence.md",
+      "ops/artifacts/mj1_scan_list_validation_evidence.json",
+      "ops/artifacts/mj1_scan_list_validation_evidence.md"
+    ]
+  },
+  "fastmcp_public_scan_list_tool": {
+    "status": "success",
+    "mission_id": "FASTMCP_PUBLIC_SCAN_LIST_TOOL",
+    "task_id": "FASTMCP_PUBLIC_SCAN_LIST_TOOL",
+    "tool_name": "cscape_inspect_scan_list",
+    "alias": "cscape_get_scan_list",
+    "input_schema": "CscapeInspectScanListInput",
+    "output_schema": "CscapeInspectScanListOutput",
+    "tool_count": 42,
+    "schemas_parity": "42/42 (100% matched)",
+    "package_exports_parity": "42/42 (100% exported in src.mcp)",
+    "fail_closed_empty_list_behavior": {
+      "default_inspection": "status: success, scan_list: [], count: 0, scan_list_status: empty, native_fill_status: blocked_offline",
+      "require_populated_true": "status: blocked, error_code: SECURITY_BLOCKED / SCAN_LIST_EMPTY_FAIL_CLOSED",
+      "request_live_fill_true": "status: blocked, error_code: SECURITY_BLOCKED / NATIVE_FILL_BLOCKED_OFFLINE",
+      "plc_download_true": "status: blocked, error_code: SECURITY_BLOCKED / PLC_DOWNLOAD_SAFETY_LOCKOUT",
+      "verified_live_true": "status: blocked, error_code: SECURITY_BLOCKED / VERIFIED_LIVE_SAFETY_LOCKOUT",
+      "physical_com_ports": "status: blocked, error_code: SECURITY_BLOCKED / PHYSICAL_PORT_LOCKOUT"
+    },
+    "contract_tests": "tests/test_scan_list_tool.py (12/12 passed)",
+    "total_targeted_tests_passed": "42/42 passed",
+    "verified_live": false,
+    "zero_plc_download": true
+  },
+  "fastmcp_public_scan_list_inspection_evidence": {
+    "status": "success",
+    "mission_id": "MJ1_SCAN_LIST_INSPECTION_FAIL_CLOSED_EVIDENCE",
+    "task_id": "FASTMCP_PUBLIC_SCAN_LIST_INSPECTION_EVIDENCE",
+    "tool_name": "cscape_inspect_scan_list",
+    "target_project": "TankLevel_P5_Dedicated.csp",
+    "port": "MJ1",
+    "protocol": "CT RTU Modbus CMP v5.05",
+    "inspection_results": {
+      "default_offline_inspection": "status: success, scan_list: [], count: 0, native_fill_status: blocked_offline",
+      "fail_closed_assertion": "status: blocked, error_code: SECURITY_BLOCKED / SCAN_LIST_EMPTY_FAIL_CLOSED (require_populated=True)"
+    },
+    "safety_enforcement": {
+      "plc_download": false,
+      "verified_live": false,
+      "zero_download_enforced": true,
+      "offline_safety_enforced": true,
+      "no_error_check_loop": true
+    },
+    "downloads_evidence_files": [
+      "Downloads/mj1_scan_list_inspection_evidence.json",
+      "Downloads/mj1_scan_list_inspection_evidence.md"
+    ],
+    "ops_evidence_files": [
+      "ops/artifacts/mj1_scan_list_inspection_evidence.json",
+      "ops/artifacts/mj1_scan_list_inspection_evidence.md"
+    ],
+    "contract_tests": "tests/test_scan_list_tool.py (12/12 passed)",
+    "next_remaining_offline_gap": {
+      "gap_id": "OFFLINE_SCAN_LIST_PLANNED_VS_NATIVE_RECONCILIATION",
+      "title": "Offline Scan-List Planned vs. Native Reconciliation Gap",
+      "description": "Native CFBF project container has 0 scan list entries (empty offline, blocked pending P7), while sidecar modbus_protocol_inventory.json specifies 3 planned Modbus RTU transactions (TX01_LEVEL_PV, TX02_INFLOW_RATE, TX03_DISCHARGE_PRESS). Implement automated offline reconciliation to diff and report discrepancy without live PLC connection.",
+      "p7_status": "DEFERRED_MANUAL_ENGINEER_LOAD (NOT P7; strictly offline product engineering)"
+    }
+  },
+  "note": "Hygiene keep-alive and Error Check loop was ABORTED per user directive ('STOP keep-alive and Error Check loops. Plan v3 offline PRODUCT work only').",
+  "next_task": "Offline Modbus register scaling & IEC FB bridge completed (32/32 tests passed); await next supervisor milestone",
+  "state": "RUNTIME_PENDING_P7",
+  "verified_live": false,
+  "fastmcp_public_scan_list_reconciliation": {
+    "status": "success",
+    "mission_id": "FASTMCP_PUBLIC_SCAN_LIST_RECONCILIATION",
+    "task_id": "FASTMCP_PUBLIC_SCAN_LIST_RECONCILIATION",
+    "tool_name": "cscape_reconcile_scan_list",
+    "target_project": "TankLevel_P5_Dedicated.csp",
+    "port": "MJ1",
+    "protocol": "CT RTU Modbus CMP v5.05",
+    "reconciliation_results": {
+      "native_count": 0,
+      "planned_count": 3,
+      "discrepancy_count": 3,
+      "reconciled": false,
+      "reconciliation_status": "pending_p7"
+    },
+    "target_registers": [
+      "%AI1",
+      "%AI2",
+      "%AI3"
+    ],
+    "discrepant_transactions": [
+      "TX01_LEVEL_PV",
+      "TX02_INFLOW_RATE",
+      "TX03_DISCHARGE_PRESS"
+    ],
+    "safety_enforcement": {
+      "plc_download": false,
+      "verified_live": false,
+      "zero_download_enforced": true,
+      "offline_safety_enforced": true,
+      "no_error_check_loop": true
+    },
+    "downloads_evidence_files": [
+      "Downloads/mj1_scan_list_reconciliation_evidence.json",
+      "Downloads/mj1_scan_list_reconciliation_evidence.md"
+    ],
+    "ops_evidence_files": [
+      "ops/artifacts/mj1_scan_list_reconciliation_evidence.json",
+      "ops/artifacts/mj1_scan_list_reconciliation_evidence.md"
+    ],
+    "contract_tests": "tests/test_scan_list_reconcile.py (14/14 passed), total targeted: 56/56 passed",
+    "next_remaining_offline_gap": {
+      "gap_id": "OFFLINE_AIR_GAPPED_EVIDENCE_BUNDLE_PACKAGING",
+      "title": "Offline Air-Gapped Evidence Bundle Packaging & Verification Gap",
+      "description": "Package all 36 delivery artifacts and complete Modbus scan-list evidence files (mj1_devices_scan_evidence.*, mj1_scan_list_validation_evidence.*, mj1_scan_list_inspection_evidence.*, mj1_scan_list_reconciliation_evidence.*) into an air-gapped distribution package using cscape_package_offline_bundle with full cryptographic verification, manifest checksums, and offline handover validation. Strictly NOT P7.",
+      "p7_status": "DEFERRED_MANUAL_ENGINEER_LOAD (NOT P7; strictly offline product engineering)"
+    }
+  },
+  "offline_air_gapped_evidence_bundle_packaging": {
+    "status": "success",
+    "mission_id": "OFFLINE_AIR_GAPPED_EVIDENCE_BUNDLE_PACKAGING",
+    "task_id": "OFFLINE_AIR_GAPPED_EVIDENCE_BUNDLE_PACKAGING",
+    "tool_name": "cscape_package_offline_bundle",
+    "bundle_zip": "Downloads/offline_evidence_bundle_v1.0.0.zip",
+    "bundle_size_bytes": 335933,
+    "bundle_sha256": "16a1ac91445a9067c24617b61063ddf9585ef272af6fa1c707fd83f1d8fec512",
+    "manifest_json": "Downloads/offline_evidence_bundle_manifest.json",
+    "manifest_json_sha256": "ac543ffbf408c1d76272cae6724814f106f43a4da2ccac0ba563ca98f35dde10",
+    "manifest_md": "Downloads/offline_evidence_bundle_manifest.md",
+    "manifest_md_sha256": "5a6fd6b4ae440a082b373a9eb5070f72e7533b2e6c20575f7ee988dc0ed76865",
+    "evidence_files_archived": 28,
+    "total_archive_items": 30,
+    "safety_enforcement": {
+      "plc_download": false,
+      "verified_live": false,
+      "zero_download_enforced": true,
+      "offline_safety_enforced": true,
+      "no_error_check_loop": true
+    },
+    "downloads_evidence_files": [
+      "Downloads/offline_evidence_bundle_v1.0.0.zip",
+      "Downloads/offline_evidence_bundle_manifest.json",
+      "Downloads/offline_evidence_bundle_manifest.md"
+    ],
+    "ops_evidence_files": [
+      "ops/artifacts/offline_evidence_bundle_v1.0.0.zip",
+      "ops/artifacts/offline_evidence_bundle_manifest.json",
+      "ops/artifacts/offline_evidence_bundle_manifest.md"
+    ],
+    "offline_gap_resolved": {
+      "gap_id": "OFFLINE_MODBUS_REGISTER_SCALING_IEC_FB_BRIDGE",
+      "status": "success",
+      "pous_implemented": [
+        "FB_ModbusScaleQuality.st",
+        "TankLevelModbusBridge.st"
+      ],
+      "resolved_utc": "2026-09-17T20:30:00Z"
+    }
+  },
+  "offline_modbus_register_scaling_iec_fb_bridge": {
+    "status": "success",
+    "mission_id": "OFFLINE_MODBUS_REGISTER_SCALING_IEC_FB_BRIDGE",
+    "task_id": "OFFLINE_MODBUS_REGISTER_SCALING_IEC_FB_BRIDGE",
+    "timestamp_utc": "2026-09-17T20:30:00Z",
+    "pous_implemented": [
+      {
+        "pou_name": "FB_ModbusScaleQuality",
+        "pou_type": "FUNCTION_BLOCK",
+        "file_path": "artifacts/projects/TankLevel_P5_Dedicated/pous/FB_ModbusScaleQuality.st",
+        "size_bytes": 1784,
+        "sha256": "53db9193692a69b2976138ac3dd364b9c2a906b06dd259b6bff73c1c28af8b5a",
+        "ast_parsed": true,
+        "statements_count": 3,
+        "variables_count": 17,
+        "pure_st_enforced": true
+      },
+      {
+        "pou_name": "TankLevelModbusBridge",
+        "pou_type": "PROGRAM",
+        "file_path": "artifacts/projects/TankLevel_P5_Dedicated/pous/TankLevelModbusBridge.st",
+        "size_bytes": 2937,
+        "sha256": "a1cd7c6c34047c1e13c9aad9d06c5c81544bdb4c50b9c261391f2794012ffbdd",
+        "ast_parsed": true,
+        "statements_count": 18,
+        "variables_count": 27,
+        "pure_st_enforced": true
+      }
+    ],
+    "python_bridge_module": {
+      "module_path": "src/iec/modbus_bridge.py",
+      "classes": [
+        "ModbusScaleQualityChannel",
+        "ModbusScaleQualityBridge"
+      ]
+    },
+    "template_catalog_integration": {
+      "template_id": "modbus_scale_quality",
+      "name": "Modbus Register Scaling & Telemetry Quality Gating",
+      "pou_type": "FUNCTION_BLOCK",
+      "catalog_accessible": true
+    },
+    "telemetry_channels_evaluated": [
+      {
+        "channel_id": "TX01_LEVEL_PV",
+        "name": "TankLevelPV",
+        "input_reg": "%AI1",
+        "output_reg": "%R101",
+        "nominal_counts": 17600,
+        "scaled_output": 55.0,
+        "engineering_unit": "%",
+        "quality_good": true
+      },
+      {
+        "channel_id": "TX02_INFLOW_RATE",
+        "name": "InflowRatePV",
+        "input_reg": "%AI2",
+        "output_reg": "%R103",
+        "nominal_counts": 16000,
+        "scaled_output": 250.0,
+        "engineering_unit": "L/min",
+        "quality_good": true
+      },
+      {
+        "channel_id": "TX03_DISCHARGE_PRESS",
+        "name": "DischargePressPV",
+        "input_reg": "%AI3",
+        "output_reg": "%R105",
+        "nominal_counts": 16000,
+        "scaled_output": 5.0,
+        "engineering_unit": "bar",
+        "quality_good": true
+      }
+    ],
+    "test_suite_summary": {
+      "test_file": "tests/test_modbus_register_scaling_bridge.py",
+      "total_tests": 32,
+      "passed_tests": 32,
+      "failed_tests": 0,
+      "status": "success"
+    },
+    "safety_enforcement": {
+      "plc_download": false,
+      "verified_live": false,
+      "zero_download_enforced": true,
+      "offline_safety_enforced": true,
+      "no_error_check_loop": true,
+      "p7_status": "DEFERRED_MANUAL_ENGINEER_LOAD (STRICTLY NOT P7; pure software offline IEC FB)"
+    },
+    "downloads_evidence_files": [
+      "Downloads/modbus_register_scaling_iec_bridge_evidence.json",
+      "Downloads/modbus_register_scaling_iec_bridge_evidence.md"
+    ],
+    "ops_evidence_files": [
+      "ops/artifacts/modbus_register_scaling_iec_bridge_evidence.json",
+      "ops/artifacts/modbus_register_scaling_iec_bridge_evidence.md"
+    ]
+  },
+  "offline_mj1_devices_and_scan_list_state_documentation": {
+    "status": "success",
+    "mission_id": "MJ1_DEVICES_AND_SCAN_LIST_STATE_DOCUMENTATION",
+    "task_id": "OFFLINE_MJ1_DEVICES_AND_SCAN_LIST_STATE_DOCUMENTATION",
+    "timestamp_utc": "2026-09-17T21:00:00Z",
+    "target_project": "TankLevel_P5_Dedicated.csp",
+    "port": "MJ1",
+    "interface": "RS-485",
+    "protocol": "CT RTU Modbus CMP v5.05",
+    "driver_label": "CT RTU Modbus CMP v 5.05 / Modbus Master v 5.07",
+    "baud_rate": 19200,
+    "framing": "8-N-1",
+    "native_scan_list_state": {
+      "count": 0,
+      "scan_list_status": "empty",
+      "native_fill_status": "blocked_offline",
+      "blocker": "Native add requires a configured target node/device and/or live PLC context; no PLC connection or download was permitted."
+    },
+    "planned_devices_count": 3,
+    "planned_devices": [
+      "DEV_LT01",
+      "DEV_FT01",
+      "DEV_PT01"
+    ],
+    "planned_transactions_count": 3,
+    "planned_transactions": [
+      "TX01_LEVEL_PV",
+      "TX02_INFLOW_RATE",
+      "TX03_DISCHARGE_PRESS"
+    ],
+    "target_ocs_registers": [
+      "%AI1",
+      "%AI2",
+      "%AI3"
+    ],
+    "reconciliation_summary": {
+      "native_count": 0,
+      "planned_count": 3,
+      "discrepancy_delta": -3,
+      "reconciled": false,
+      "reconciliation_status": "discrepancy_detected",
+      "pending_gate": "P7_PHYSICAL_PLC_DOWNLOAD_AND_COMMISSIONING"
+    },
+    "iec_61131_bridge_integration": {
+      "function_block": "FB_ModbusScaleQuality.st",
+      "program": "TankLevelModbusBridge.st",
+      "engineering_outputs": [
+        "%R101",
+        "%R103",
+        "%R105"
+      ]
+    },
+    "test_suite_summary": {
+      "test_file": "tests/test_mj1_devices_scan_list_state.py",
+      "total_tests": 11,
+      "passed_tests": 11,
+      "failed_tests": 0,
+      "status": "success"
+    },
+    "safety_enforcement": {
+      "plc_download": false,
+      "verified_live": false,
+      "zero_download_enforced": true,
+      "offline_safety_enforced": true,
+      "no_error_check_loop": true,
+      "p7_status": "DEFERRED_MANUAL_ENGINEER_LOAD (STRICTLY NOT P7; offline documentation & contract test)"
+    },
+    "downloads_evidence_files": [
+      "Downloads/mj1_devices_scan_evidence.json",
+      "Downloads/mj1_devices_scan_evidence.md",
+      "Downloads/mj1_devices_scan_list_state_evidence.json",
+      "Downloads/mj1_devices_scan_list_state_evidence.md"
+    ],
+    "ops_evidence_files": [
+      "ops/artifacts/mj1_devices_scan_evidence.json",
+      "ops/artifacts/mj1_devices_scan_evidence.md",
+      "ops/artifacts/mj1_devices_scan_list_state_evidence.json",
+      "ops/artifacts/mj1_devices_scan_list_state_evidence.md"
+    ]
+  },
+  "tanklevel_p5_native_reopen_proof_with_scaling_bridge": {
+    "status": "success",
+    "mission_id": "TANKLEVEL_P5_NATIVE_REOPEN_PROOF_WITH_SCALING_BRIDGE",
+    "task_id": "TANKLEVEL_P5_NATIVE_REOPEN_PROOF_WITH_SCALING_BRIDGE",
+    "timestamp_utc": "2026-09-17T21:05:00Z",
+    "target_project": "TankLevel_P5_Dedicated.csp",
+    "csp_file_path": "artifacts/projects/TankLevel_P5_Dedicated/TankLevel_P5_Dedicated.csp",
+    "csp_size_bytes": 132608,
+    "cscape_pid": 12788,
+    "main_hwnd": 3016360,
+    "window_title": "Cscape - Logged In : \"armando@controlnautas.com\" - [TankLevel_P5_Dedicated.csp]",
+    "window_rect": [1, 1, 1279, 567],
+    "open_mode": "live_gui",
+    "already_open": true,
+    "is_valid_cfbf": true,
+    "scaling_bridge_pous": [
+      "FB_ModbusScaleQuality.st",
+      "TankLevelModbusBridge.st",
+      "TankLevelControl.st"
+    ],
+    "pure_st_ast_verified": true,
+    "screenshot_proof": "tanklevel_p5_native_reopen_proof.png",
+    "screenshot_sha256": "75aee77a599713e5c4eb73597ee42546d3aa9825b727a769546956ba061d6074",
+    "test_suite_summary": {
+      "test_file": "tests/test_tanklevel_p5_native_reopen_proof.py",
+      "total_tests": 7,
+      "passed_tests": 7,
+      "failed_tests": 0,
+      "status": "success"
+    },
+    "safety_enforcement": {
+      "plc_download": false,
+      "verified_live": false,
+      "zero_download_enforced": true,
+      "offline_safety_enforced": true,
+      "no_error_check_loop": true,
+      "p7_status": "DEFERRED_MANUAL_ENGINEER_LOAD (STRICTLY NOT P7; offline native reopen & scaling bridge proof)"
+    },
+    "downloads_evidence_files": [
+      "Downloads/tanklevel_p5_native_reopen_proof_evidence.json",
+      "Downloads/tanklevel_p5_native_reopen_proof_evidence.md",
+      "Downloads/tanklevel_p5_native_reopen_proof.png"
+    ],
+    "ops_evidence_files": [
+      "ops/artifacts/tanklevel_p5_native_reopen_proof_evidence.json",
+      "ops/artifacts/tanklevel_p5_native_reopen_proof_evidence.md",
+      "ops/artifacts/tanklevel_p5_native_reopen_proof.png"
+    ]
+  },
+  "supervisor_offline_acceptance": {
+    "status": "success",
+    "mission_id": "SUPERVISOR_OFFLINE_ACCEPTANCE",
+    "task_id": "SUPERVISOR_OFFLINE_ACCEPTANCE",
+    "timestamp_utc": "2026-09-17T14:20:00-07:00",
+    "supervisor_offline_accepted": true,
+    "next_human_gate": "P7_MANUAL",
+    "verified_live": false,
+    "plc_download": false,
+    "accepted_offline_deliverables": [
+      "P4/P6 evidence",
+      "scan-list tool",
+      "evidence bundle",
+      "Modbus IEC FB bridge",
+      "P5 reopen proof"
+    ],
+    "remaining_human_gates": [
+      {
+        "gate": "P7_PHYSICAL_PLC_DOWNLOAD_AND_COMMISSIONING",
+        "mode": "MANUAL_FIELD_COMMISSIONING",
+        "status": "DEFERRED_MANUAL_ENGINEER_LOAD",
+        "checklist": "Downloads/P7_MANUAL_LOAD_CHECKLIST.md",
+        "procedure": "Downloads/P7_MANUAL_COMMISSIONING_PROCEDURE.md"
+      },
+      {
+        "gate": "CORE-09_HMI_PHYSICAL_VERIFICATION",
+        "mode": "MANUAL_FIELD_COMMISSIONING",
+        "status": "PENDING_P7_COMPLETION"
+      },
+      {
+        "gate": "CORE-10_HARDWARE_TELEMETRY_SOAK",
+        "mode": "MANUAL_FIELD_COMMISSIONING",
+        "status": "PENDING_P7_COMPLETION"
+      }
+    ],
+    "evidence_document": "Downloads/SUPERVISOR_OFFLINE_ACCEPTANCE.md",
+    "handoff_catalog": "HANDOFF_INDEX.md",
+    "active_cscape_process": {
+      "pid": 12788,
+      "hwnd": 3016360,
+      "visible": true,
+      "project": "TankLevel_P5_Dedicated.csp",
+      "keep_alive_loops": "ABORTED"
+    }
+  }
+}

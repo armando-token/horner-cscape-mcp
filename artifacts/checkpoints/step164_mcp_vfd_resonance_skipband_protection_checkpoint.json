@@ -1,0 +1,19 @@
+{
+  "step": 164,
+  "name": "step164_mcp_vfd_resonance_skipband_protection_checkpoint",
+  "status": "PASSED",
+  "timestamp_utc": "2026-09-06T12:23:51.379Z",
+  "cscape_pid": 10892,
+  "hwnd": "0x01B005DC",
+  "vfd_frequency_regulation_verified": true,
+  "resonance_skipband_verified": true,
+  "dc_bus_braking_chopper_verified": true,
+  "scurve_anticavitation_npsh_verified": true,
+  "dol_bypass_transfer_verified": true,
+  "zero_straton_dependencies": true,
+  "hardware_lockout_enforced": true,
+  "live_screenshot_sha256": "916254db0c33a0178e51b3c8cd37a3ac3bef6ab43f5e85cdcfa615a68e4cadaf",
+  "log_sha256": "7b2cbdf41a0994e2db703921f44b42443647994fd6cdf31485c1df20a2602ec2",
+  "dual_root_mirrored": true,
+  "checkpoint_sha256": "6321d20e8b3233070b213d46b9a6b8f025937f25535e002a04be730fa641dfec"
+}

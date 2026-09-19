@@ -1,0 +1,191 @@
+================================================================================
+HORNER CSCAPE 10.2 STRUCTURED TEXT TO IEC LADDER CONVERSION PROOF LOG
+STANDARDS: IEC 61131-3 / CSCAPE 10.2 / FAIL-CLOSED INTEROP GUARD
+================================================================================
+Execution Timestamp (UTC) : 2026-09-05T00:11:38.043963+00:00
+Host Python Environment   : C:\Users\ArmandoSilva\.venv\Scripts\python.exe (Python 3.12.10)
+Interop Module Under Test : src/cscape/st_ld_interop.py
+Target POU                : TankLevelControl (IEC 61131-3 Structured Text)
+Conversion Direction      : Structured Text (ST) -> IEC Ladder Diagram (LD) AST
+Hardware Isolation        : ACTIVE (Zero PLC download / Hardware lockout enforced)
+Straton Isolation         : ACTIVE (Standalone Straton K5 files strictly quarantined)
+Overall Status            : 100% VERIFIED & VALIDATED [ SUCCESS ]
+--------------------------------------------------------------------------------
+SECTION 1: INPUT SOURCE CODE INSPECTION & SYMBOL TABLE
+--------------------------------------------------------------------------------
+PROGRAM TankLevelControl
+VAR
+    bStartSwitch : BOOL;
+    bStopSwitch : BOOL;
+    bEStop : BOOL;
+    bPumpRun : BOOL;
+    bHighLevelSensor : BOOL;
+    bResetFault : BOOL;
+    bHighAlarmLatched : BOOL;
+    nRawLevelSensor : INT;
+    nScaledLevelPercent : INT;
+    tonFillTimer : TON;
+    bFillTimeout : BOOL;
+    ctuBatchCounter : CTU;
+    bBatchPulse : BOOL;
+    bResetCounter : BOOL;
+    bBatchComplete : BOOL;
+    nBatchCount : INT;
+END_VAR
+
+// Rung 1: Pump Control (NO Contact, NC Contact, Parallel Branch, Normal Coil)
+bPumpRun := (bStartSwitch OR bPumpRun) AND NOT bStopSwitch AND NOT bEStop;
+
+// Rung 2: High Level Alarm Latch (Set Coil)
+IF bHighLevelSensor THEN
+    bHighAlarmLatched := TRUE;
+END_IF;
+
+// Rung 3: High Level Alarm Reset (Reset Coil)
+IF bResetFault THEN
+    bHighAlarmLatched := FALSE;
+END_IF;
+
+// Rung 4: Timer On-Delay (TON Timer Block)
+tonFillTimer(IN := bPumpRun, PT := T#10s);
+bFillTimeout := tonFillTimer.Q;
+
+// Rung 5: Up Counter (CTU Counter Block)
+ctuBatchCounter(CU := bBatchPulse, RESET := bResetCounter, PV := 100);
+bBatchComplete := ctuBatchCounter.Q;
+nBatchCount := ctuBatchCounter.CV;
+
+// Rung 6: Tank Level Arithmetic Scaling (Math Calculation Box)
+nScaledLevelPercent := (nRawLevelSensor * 100) / 32000;
+END_PROGRAM
+
+Declared Variable Count: 16
+  - Symbol: bStartSwitch           Type: BOOL       Block: VAR
+  - Symbol: bStopSwitch            Type: BOOL       Block: VAR
+  - Symbol: bEStop                 Type: BOOL       Block: VAR
+  - Symbol: bPumpRun               Type: BOOL       Block: VAR
+  - Symbol: bHighLevelSensor       Type: BOOL       Block: VAR
+  - Symbol: bResetFault            Type: BOOL       Block: VAR
+  - Symbol: bHighAlarmLatched      Type: BOOL       Block: VAR
+  - Symbol: nRawLevelSensor        Type: INT        Block: VAR
+  - Symbol: nScaledLevelPercent    Type: INT        Block: VAR
+  - Symbol: tonFillTimer           Type: TON        Block: VAR
+  - Symbol: bFillTimeout           Type: BOOL       Block: VAR
+  - Symbol: ctuBatchCounter        Type: CTU        Block: VAR
+  - Symbol: bBatchPulse            Type: BOOL       Block: VAR
+  - Symbol: bResetCounter          Type: BOOL       Block: VAR
+  - Symbol: bBatchComplete         Type: BOOL       Block: VAR
+  - Symbol: nBatchCount            Type: INT        Block: VAR
+
+--------------------------------------------------------------------------------
+SECTION 2: STEP-BY-STEP AST CONVERSION & RECIPE MATCHING
+--------------------------------------------------------------------------------
+RUNG 1: bPumpRun Control Logic
+  - ST Source Statement : bPumpRun := ((bStartSwitch OR bPumpRun) AND NOT bStopSwitch) AND NOT bEStop
+  - Primary Recipe Key  : COIL_NORMAL (COIL)
+  - Recipe Description  : Normal Output Coil (OTE)
+  - Element Count       : 4
+  - Elements AST List   : [{"element_type": "BRANCH_OR", "tag": "", "sub_branches": [[{"element_type": "CONTACT_NO", "tag": "bStartSwitch"}], [{"element_type": "CONTACT_NO", "tag": "bPumpRun"}]]}, {"element_type": "CONTACT_NC", "tag": "bStopSwitch"}, {"element_type": "CONTACT_NC", "tag": "bEStop"}, {"element_type": "COIL_NORMAL", "tag": "bPumpRun"}]
+  - ASCII Rung Matrix   :
+      |      +---[ bStartSwitch ]---+                                                  |
+      |---+--+                      +--[/ bStopSwitch ]--[/ bEStop ]--( bPumpRun )---|
+      |      +---[ bPumpRun     ]---+                                                  |
+
+RUNG 2: bHighAlarmLatched Latch (Set Coil)
+  - ST Source Statement : IF bHighLevelSensor THEN
+    bHighAlarmLatched := TRUE;
+END_IF;
+  - Primary Recipe Key  : COIL_SET (COIL)
+  - Recipe Description  : Set / Latch Coil (OTL / SET)
+  - Element Count       : 2
+  - Elements AST List   : [{"element_type": "CONTACT_NO", "tag": "bHighLevelSensor"}, {"element_type": "COIL_SET", "tag": "bHighAlarmLatched"}]
+  - ASCII Rung Matrix   :
+      |---[ bHighLevelSensor ]-----------------------------(S bHighAlarmLatched )---|
+
+RUNG 3: bHighAlarmLatched Unlatch (Reset Coil)
+  - ST Source Statement : IF bResetFault THEN
+    bHighAlarmLatched := FALSE;
+END_IF;
+  - Primary Recipe Key  : COIL_RESET (COIL)
+  - Recipe Description  : Reset / Unlatch Coil (OTU / RESET)
+  - Element Count       : 2
+  - Elements AST List   : [{"element_type": "CONTACT_NO", "tag": "bResetFault"}, {"element_type": "COIL_RESET", "tag": "bHighAlarmLatched"}]
+  - ASCII Rung Matrix   :
+      |---[ bResetFault ]-----------------------------(R bHighAlarmLatched )---|
+
+RUNG 4: tonFillTimer On-Delay Timer (TON)
+  - ST Source Statement : tonFillTimer(IN := bPumpRun, PT := T#10s); bFillTimeout := tonFillTimer.Q;
+  - Primary Recipe Key  : TIMER_ON (TIMER)
+  - Recipe Description  : Timer On-Delay (TON)
+  - Element Count       : 3
+  - Elements AST List   : [{"element_type": "CONTACT_NO", "tag": "bPumpRun"}, {"element_type": "TIMER_TON", "tag": "tonFillTimer", "parameters": {"IN": "bPumpRun", "PT": "T#10s", "Q": "bFillTimeout"}}, {"element_type": "COIL_NORMAL", "tag": "bFillTimeout"}]
+  - ASCII Rung Matrix   :
+      |---[ bPumpRun ]---------+-----------+----------------------------------------------|
+                               |    TON    |
+                               |tonFillTime|
+                               |IN        Q|-------------------------( bFillTimeout )---|
+                         T#10s |PT       ET|
+                               +-----------+
+
+RUNG 5: ctuBatchCounter Up-Counter (CTU)
+  - ST Source Statement : ctuBatchCounter(CU := bBatchPulse, RESET := bResetCounter, PV := 100); bBatchComplete := ctuBatchCounter.Q; nBatchCount := ctuBatchCounter.CV;
+  - Primary Recipe Key  : COUNTER_UP (COUNTER)
+  - Recipe Description  : Up Counter (CTU)
+  - Element Count       : 4
+  - Elements AST List   : [{"element_type": "CONTACT_NO", "tag": "bBatchPulse"}, {"element_type": "CONTACT_NO", "tag": "bResetCounter"}, {"element_type": "COUNTER_CTU", "tag": "ctuBatchCounter", "parameters": {"CU": "bBatchPulse", "RESET": "bResetCounter", "PV": "100", "Q": "bBatchComplete", "CV": "nBatchCount"}}, {"element_type": "COIL_NORMAL", "tag": "bBatchComplete"}]
+  - ASCII Rung Matrix   :
+      |---[ bBatchPulse ]------+-----------+-------------------------------------------|
+                               |    CTU    |
+                               |ctuBatchCou|
+                               |CU        Q|--------------------( bBatchComplete )---|
+      |---[ bResetCounter ]----|RESET    CV|---[ nBatchCount ]-------------------------|
+                           100 |PV         |
+                               +-----------+
+
+RUNG 6: nScaledLevelPercent Math Calculation
+  - ST Source Statement : nScaledLevelPercent := (nRawLevelSensor * 100) / 32000
+  - Primary Recipe Key  : MATH_BOX (MATH)
+  - Recipe Description  : Math Operation Box (ADD, SUB, MUL, DIV)
+  - Element Count       : 1
+  - Elements AST List   : [{"element_type": "MATH_BOX", "tag": "nScaledLevelPercent", "parameters": {"expression": "(nRawLevelSensor * 100) / 32000", "dest": "nScaledLevelPercent"}}]
+  - ASCII Rung Matrix   :
+      |---+-------------------------------------------------------------------+---|
+          |                                 CALC                              |
+          |  Dest : nScaledLevelPercent                                     |
+          |  Expr : (nRawLevelSensor * 100) / 32000                         |
+          +-------------------------------------------------------------------+
+
+--------------------------------------------------------------------------------
+SECTION 3: SECURITY CONSTRAINT VERIFICATION (FAIL-CLOSED LADDER REJECTION)
+--------------------------------------------------------------------------------
+Mandate: Structured Text files must strictly reject ladder logic constructs with
+         LadderConstructRejectedError, while the interop guard provides clean
+         migration/conversion into ladder format.
+
+Rejection Test Matrix per Converted Rung:
+  [ PASS ] Rung 1  (bPumpRun Control Logic): Raised LadderConstructRejectedError with 11 violation(s) [ASCII_NC_CONTACT, ASCII_NORMAL_COIL, ASCII_NO_CONTACT, POWER_RAIL_ARTIFACT]
+  [ PASS ] Rung 2  (bHighAlarmLatched Latch (Set Coil)): Raised LadderConstructRejectedError with 4 violation(s) [ASCII_NO_CONTACT, ASCII_SET_COIL, POWER_RAIL_ARTIFACT]
+  [ PASS ] Rung 3  (bHighAlarmLatched Unlatch (Reset Coil)): Raised LadderConstructRejectedError with 4 violation(s) [ASCII_NO_CONTACT, ASCII_RESET_COIL, POWER_RAIL_ARTIFACT]
+  [ PASS ] Rung 4  (tonFillTimer On-Delay Timer (TON)): Raised LadderConstructRejectedError with 12 violation(s) [ASCII_NORMAL_COIL, ASCII_NO_CONTACT, POWER_RAIL_ARTIFACT]
+  [ PASS ] Rung 5  (ctuBatchCounter Up-Counter (CTU)): Raised LadderConstructRejectedError with 19 violation(s) [ASCII_EDGE_CONTACT, ASCII_NORMAL_COIL, ASCII_NO_CONTACT, POWER_RAIL_ARTIFACT]
+  [ PASS ] Rung 6  (nScaledLevelPercent Math Calculation): Raised LadderConstructRejectedError with 10 violation(s) [POWER_RAIL_ARTIFACT]
+
+Full Proof Artifact Rejection Test:
+  [ PASS ] Passing tank_level_st_to_ladder_proof.txt into STLadderInteropGuard.enforce_st_code()
+         strictly raised LadderConstructRejectedError with 61 violations.
+
+--------------------------------------------------------------------------------
+SECTION 4: GENERATED ARTIFACT CHECKSUMS & PROOFS
+--------------------------------------------------------------------------------
+Proof File 1 (Human-Readable ASCII Rungs):
+  Path   : artifacts/conversions/tank_level_st_to_ladder_proof.txt
+  Size   : 5394 bytes
+  SHA-256: 0bd6af7fe28b447097d24bc0b89a9ce04666bcbca44426df2cd8c0e3b8a88a6d
+Proof File 2 (JSON-Serialized Rung AST):
+  Path   : artifacts/conversions/tank_level_converted.ladder
+  Size   : 10753 bytes
+  SHA-256: 580cb1270881727c324f92722810dddbb8a2d3bfe82475cf6ed7cf4ce1c5a527
+
+================================================================================
+END OF CONVERSION PROOF LOG - STATUS: ALL ASSERTIONS PASSED (6/6 RUNGS, 100%)
+================================================================================

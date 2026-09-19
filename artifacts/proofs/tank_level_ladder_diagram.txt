@@ -1,0 +1,137 @@
+================================================================================
+HORNER CSCAPE 10.2 IEC 61131-3 STRUCTURED TEXT TO LADDER CONVERSION PROOF
+POU: TankLevelClosedLoop | STANDARD: IEC 61131-3 (ST -> LD MIGRATION)
+================================================================================
+Conversion Timestamp  : 2026-09-06T01:52:22.512058+00:00
+Source Language      : IEC 61131-3 Structured Text (ST)
+Target Representation: IEC 61131-3 Ladder Diagram (LD) / Rung AST
+Total Rungs          : 10
+Recipe Catalog Keys  : COIL_NORMAL, COIL_SET, MATH_BOX
+Security Constraint  : FAIL-CLOSED (Ladder in ST raises LadderConstructRejectedError)
+Hardware Isolation   : ZERO PHYSICAL ACCESS / DOWNLOAD PROHIBITED
+================================================================================
+
+--------------------------------------------------------------------------------
+VARIABLE DECLARATION SYMBOL TABLE:
+--------------------------------------------------------------------------------
+  VAR RawLevelInput          : INT        (VAR)
+  VAR TankLevelPV            : REAL       (VAR)
+  VAR Setpoint               : REAL       (VAR)
+  VAR ControlOutput          : REAL       (VAR)
+  VAR RawPumpOutput          : INT        (VAR)
+  VAR RawValveOutput         : INT        (VAR)
+  VAR ManualMode             : BOOL       (VAR)
+  VAR ManualOutput           : REAL       (VAR)
+  VAR Kp                     : REAL       (VAR)
+  VAR Ki                     : REAL       (VAR)
+  VAR Kd                     : REAL       (VAR)
+  VAR OutMin                 : REAL       (VAR)
+  VAR OutMax                 : REAL       (VAR)
+  VAR Error                  : REAL       (VAR)
+  VAR LastError              : REAL       (VAR)
+  VAR IntegralSum            : REAL       (VAR)
+  VAR DerivTerm              : REAL       (VAR)
+  VAR PumpRunCmd             : BOOL       (VAR)
+  VAR InflowValveCmd         : BOOL       (VAR)
+  VAR AlarmHighHigh          : BOOL       (VAR)
+  VAR AlarmHigh              : BOOL       (VAR)
+  VAR AlarmLow               : BOOL       (VAR)
+  VAR AlarmLowLow            : BOOL       (VAR)
+  VAR CycleCounter           : DINT       (VAR)
+--------------------------------------------------------------------------------
+
+================================================================================
+LADDER DIAGRAM RUNGS (ASCII / STRUCTURED FORMAT):
+================================================================================
+
+// --- Rung 1: CycleCounter Math Calculation ---
+// ST Source   : CycleCounter := CycleCounter + 1
+// Recipe Key  : MATH_BOX (MATH)
+// Elements    : MATH_BOX(CycleCounter)
+|---+-------------------------------------------------------------------+---|
+    |                                 CALC                              |
+    |  Dest : CycleCounter                                            |
+    |  Expr : CycleCounter + 1                                        |
+    +-------------------------------------------------------------------+
+
+// --- Rung 2: TankLevelPV Math Calculation ---
+// ST Source   : TankLevelPV := (INT_TO_REAL(RawLevelInput) / 32000.0) * 100.0
+// Recipe Key  : MATH_BOX (MATH)
+// Elements    : MATH_BOX(TankLevelPV)
+|---+-------------------------------------------------------------------+---|
+    |                                 CALC                              |
+    |  Dest : TankLevelPV                                             |
+    |  Expr : (INT_TO_REAL(RawLevelInput) / 32000.0) * 100.0          |
+    +-------------------------------------------------------------------+
+
+// --- Rung 3: Error Math Calculation ---
+// ST Source   : Error := Setpoint - TankLevelPV
+// Recipe Key  : MATH_BOX (MATH)
+// Elements    : MATH_BOX(Error)
+|---+-------------------------------------------------------------------+---|
+    |                                 CALC                              |
+    |  Dest : Error                                                   |
+    |  Expr : Setpoint - TankLevelPV                                  |
+    +-------------------------------------------------------------------+
+
+// --- Rung 4: LastError Control Logic ---
+// ST Source   : LastError := Error
+// Recipe Key  : COIL_NORMAL (COIL)
+// Elements    : CONTACT_NO(Error), COIL_NORMAL(LastError)
+|--[ Error ]---( LastError )---|
+
+// --- Rung 5: RawPumpOutput Control Logic ---
+// ST Source   : RawPumpOutput := REAL_TO_INT((ControlOutput / 100.0) * 32000.0)
+// Recipe Key  : COIL_NORMAL (COIL)
+// Elements    : CONTACT_NO(REAL_TO_INT  ControlOutput / 100.0  * 32000.0), COIL_NORMAL(RawPumpOutput)
+|--[ REAL_TO_INT  ControlOutput / 100.0  * 32000.0 ]---( RawPumpOutput )---|
+
+// --- Rung 6: RawValveOutput Control Logic ---
+// ST Source   : RawValveOutput := RawPumpOutput
+// Recipe Key  : COIL_NORMAL (COIL)
+// Elements    : CONTACT_NO(RawPumpOutput), COIL_NORMAL(RawValveOutput)
+|--[ RawPumpOutput ]---( RawValveOutput )---|
+
+// --- Rung 7: AlarmHighHigh Latch (Set Coil) ---
+// ST Source   : IF TankLevelPV >= 90.0 THEN
+    AlarmHighHigh := TRUE;
+ELSIF TankLevelPV < 88.0 THEN
+    AlarmHighHigh := FALSE;
+END_IF;
+// Recipe Key  : COIL_SET (COIL)
+// Elements    : CONTACT_NO(TankLevelPV >= 90.0), COIL_SET(AlarmHighHigh)
+|---[ TankLevelPV >= 90.0 ]-----------------------------(S AlarmHighHigh )---|
+
+// --- Rung 8: AlarmHigh Latch (Set Coil) ---
+// ST Source   : IF TankLevelPV >= 80.0 THEN
+    AlarmHigh := TRUE;
+ELSIF TankLevelPV < 78.0 THEN
+    AlarmHigh := FALSE;
+END_IF;
+// Recipe Key  : COIL_SET (COIL)
+// Elements    : CONTACT_NO(TankLevelPV >= 80.0), COIL_SET(AlarmHigh)
+|---[ TankLevelPV >= 80.0 ]-----------------------------(S AlarmHigh )---|
+
+// --- Rung 9: AlarmLow Latch (Set Coil) ---
+// ST Source   : IF TankLevelPV <= 20.0 THEN
+    AlarmLow := TRUE;
+ELSIF TankLevelPV > 22.0 THEN
+    AlarmLow := FALSE;
+END_IF;
+// Recipe Key  : COIL_SET (COIL)
+// Elements    : CONTACT_NO(TankLevelPV <= 20.0), COIL_SET(AlarmLow)
+|---[ TankLevelPV <= 20.0 ]-----------------------------(S AlarmLow )---|
+
+// --- Rung 10: InflowValveCmd Latch (Set Coil) ---
+// ST Source   : IF (ControlOutput > 5.0) AND NOT AlarmHighHigh THEN
+    InflowValveCmd := TRUE;
+ELSE
+    InflowValveCmd := FALSE;
+END_IF;
+// Recipe Key  : COIL_SET (COIL)
+// Elements    : CONTACT_NO((ControlOutput > 5.0) AND NOT AlarmHighHigh), COIL_SET(InflowValveCmd)
+|---[ (ControlOutput > 5.0) AND NOT AlarmHighHigh ]-----------------------------(S InflowValveCmd )---|
+
+================================================================================
+END OF LADDER CONVERSION PROOF
+================================================================================

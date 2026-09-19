@@ -1,0 +1,234 @@
+{
+  "audit_step": 75,
+  "name": "Supercritical CO2 Brayton Cycle Recuperator Inventory & Bypass Closed-Loop Audit",
+  "timestamp": "2026-09-05T10:53:40.212Z",
+  "completed_at": "2026-09-05T10:53:46.506Z",
+  "cscape_pid": 8660,
+  "cscape_hwnd": "0x147068c",
+  "total_cycles": 600,
+  "metrics": {
+    "max_phase1_level_error_pct": 0.0,
+    "mean_phase1_level_error_pct": 0.0,
+    "max_phase2_uncomp_drift_pct": 6.77,
+    "mean_phase2_uncomp_drift_pct": 4.96,
+    "max_phase3_comp_error_pct": 0.0,
+    "mean_phase3_comp_error_pct": 0.0,
+    "transcritical_density_rejection_pct": 100.0,
+    "phase4_final_level_error_pct": 0.1138,
+    "phase4_mean_tail_level_error_pct": 0.0703,
+    "high_high_rupture_interlock_trip_cycle": 501,
+    "high_high_trip_level_pct": 85.0
+  },
+  "trace_samples": [
+    {
+      "cycle": 0,
+      "phase": "PHASE_1_EQUILIBRIUM_SCO2",
+      "target_sp": 50.0,
+      "inventory": 50.0,
+      "co2_flow": 50.0,
+      "rupture_trip": false,
+      "cv_pid": 50.0
+    },
+    {
+      "cycle": 50,
+      "phase": "PHASE_1_EQUILIBRIUM_SCO2",
+      "target_sp": 50.0,
+      "inventory": 50.0,
+      "co2_flow": 50.0,
+      "rupture_trip": false,
+      "cv_pid": 50.0
+    },
+    {
+      "cycle": 100,
+      "phase": "PHASE_1_EQUILIBRIUM_SCO2",
+      "target_sp": 50.0,
+      "inventory": 50.0,
+      "co2_flow": 50.0,
+      "rupture_trip": false,
+      "cv_pid": 50.0
+    },
+    {
+      "cycle": 101,
+      "phase": "PHASE_2_TRANSCRITICAL_SWELL_UNCOMP",
+      "target_sp": 50.0,
+      "inventory": 50.023,
+      "co2_flow": 50.4,
+      "rupture_trip": false,
+      "cv_pid": 50.0
+    },
+    {
+      "cycle": 125,
+      "phase": "PHASE_2_TRANSCRITICAL_SWELL_UNCOMP",
+      "target_sp": 50.0,
+      "inventory": 54.593,
+      "co2_flow": 58.8,
+      "rupture_trip": false,
+      "cv_pid": 42.83
+    },
+    {
+      "cycle": 150,
+      "phase": "PHASE_2_TRANSCRITICAL_SWELL_UNCOMP",
+      "target_sp": 50.0,
+      "inventory": 56.716,
+      "co2_flow": 67.5,
+      "rupture_trip": false,
+      "cv_pid": 26.64
+    },
+    {
+      "cycle": 175,
+      "phase": "PHASE_2_TRANSCRITICAL_SWELL_UNCOMP",
+      "target_sp": 50.0,
+      "inventory": 55.638,
+      "co2_flow": 76.2,
+      "rupture_trip": false,
+      "cv_pid": 15.02
+    },
+    {
+      "cycle": 200,
+      "phase": "PHASE_2_TRANSCRITICAL_SWELL_UNCOMP",
+      "target_sp": 50.0,
+      "inventory": 55.575,
+      "co2_flow": 85.0,
+      "rupture_trip": false,
+      "cv_pid": 4.4
+    },
+    {
+      "cycle": 201,
+      "phase": "PHASE_3_INVENTORY_DECOUPLING",
+      "target_sp": 50.0,
+      "inventory": 50.0,
+      "co2_flow": 85.0,
+      "rupture_trip": false,
+      "cv_pid": 50.0
+    },
+    {
+      "cycle": 225,
+      "phase": "PHASE_3_INVENTORY_DECOUPLING",
+      "target_sp": 50.0,
+      "inventory": 50.0,
+      "co2_flow": 85.0,
+      "rupture_trip": false,
+      "cv_pid": 50.0
+    },
+    {
+      "cycle": 250,
+      "phase": "PHASE_3_INVENTORY_DECOUPLING",
+      "target_sp": 50.0,
+      "inventory": 50.0,
+      "co2_flow": 85.0,
+      "rupture_trip": false,
+      "cv_pid": 50.0
+    },
+    {
+      "cycle": 275,
+      "phase": "PHASE_3_INVENTORY_DECOUPLING",
+      "target_sp": 50.0,
+      "inventory": 50.0,
+      "co2_flow": 85.0,
+      "rupture_trip": false,
+      "cv_pid": 50.0
+    },
+    {
+      "cycle": 300,
+      "phase": "PHASE_3_INVENTORY_DECOUPLING",
+      "target_sp": 50.0,
+      "inventory": 50.0,
+      "co2_flow": 85.0,
+      "rupture_trip": false,
+      "cv_pid": 50.0
+    },
+    {
+      "cycle": 350,
+      "phase": "PHASE_3_INVENTORY_DECOUPLING",
+      "target_sp": 50.0,
+      "inventory": 50.0,
+      "co2_flow": 85.0,
+      "rupture_trip": false,
+      "cv_pid": 50.0
+    },
+    {
+      "cycle": 351,
+      "phase": "PHASE_4_DYNAMIC_INVENTORY_STEP",
+      "target_sp": 65.0,
+      "inventory": 51.26,
+      "co2_flow": 75.0,
+      "rupture_trip": false,
+      "cv_pid": 75.2
+    },
+    {
+      "cycle": 400,
+      "phase": "PHASE_4_DYNAMIC_INVENTORY_STEP",
+      "target_sp": 65.0,
+      "inventory": 66.427,
+      "co2_flow": 75.0,
+      "rupture_trip": false,
+      "cv_pid": 42.79
+    },
+    {
+      "cycle": 450,
+      "phase": "PHASE_4_DYNAMIC_INVENTORY_STEP",
+      "target_sp": 65.0,
+      "inventory": 65.236,
+      "co2_flow": 75.0,
+      "rupture_trip": false,
+      "cv_pid": 51.0
+    },
+    {
+      "cycle": 500,
+      "phase": "PHASE_4_DYNAMIC_INVENTORY_STEP",
+      "target_sp": 65.0,
+      "inventory": 64.886,
+      "co2_flow": 75.0,
+      "rupture_trip": false,
+      "cv_pid": 49.95
+    },
+    {
+      "cycle": 501,
+      "phase": "PHASE_5_HIGH_HIGH_RUPTURE_TRIP",
+      "target_sp": 65.0,
+      "inventory": 64.886,
+      "co2_flow": 30.0,
+      "rupture_trip": true,
+      "cv_pid": 49.96
+    },
+    {
+      "cycle": 520,
+      "phase": "PHASE_5_HIGH_HIGH_RUPTURE_TRIP",
+      "target_sp": 65.0,
+      "inventory": 64.886,
+      "co2_flow": 30.0,
+      "rupture_trip": true,
+      "cv_pid": 50.19
+    },
+    {
+      "cycle": 550,
+      "phase": "PHASE_5_HIGH_HIGH_RUPTURE_TRIP",
+      "target_sp": 65.0,
+      "inventory": 64.886,
+      "co2_flow": 30.0,
+      "rupture_trip": true,
+      "cv_pid": 50.46
+    },
+    {
+      "cycle": 599,
+      "phase": "PHASE_5_HIGH_HIGH_RUPTURE_TRIP",
+      "target_sp": 65.0,
+      "inventory": 64.886,
+      "co2_flow": 30.0,
+      "rupture_trip": true,
+      "cv_pid": 50.9
+    }
+  ],
+  "cscape_health": {
+    "healthy": true,
+    "pid": 8660,
+    "hwnd": "0x147068c",
+    "desktop": "Default",
+    "is_hung": false,
+    "wm_null_ping_ok": true,
+    "working_set_mb": 66.55,
+    "num_threads": 11,
+    "uptime_sec": 1043.12
+  },
+  "download_lockout_verified": true
+}

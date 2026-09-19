@@ -1,0 +1,76 @@
+{
+  "mission_id": "C4_WINDOWS_MATRIX",
+  "item_id": "W04",
+  "name": "Error Check Compilation Dispatch & Output Window Scrape",
+  "status": "blocked",
+  "run_id": "run_20260906_120831",
+  "completed_at_utc": "2026-09-07T02:26:18.919950+00:00",
+  "target_file": "C:\\HornerAI\\horner-cscape-mcp\\artifacts\\projects\\LabProject_W01\\LabProject_W01.csp",
+  "command_id": 32826,
+  "command_name": "ID_PROGRAM_ERRORCHECK",
+  "dispatch_target": {
+    "pid": 2108,
+    "hwnd": "0xa9033c",
+    "window_title": "Cscape - Logged In : \"armando@controlnautas.com\" - [LabProject_W01.csp]"
+  },
+  "modals_detected": 1,
+  "modal_info": {
+    "hwnd": 2690218,
+    "hwnd_hex": "0x290caa",
+    "title": "Cscape",
+    "rect": [
+      485,
+      279,
+      896,
+      438
+    ],
+    "controls": [
+      {
+        "ctrl_id": 6,
+        "class": "Button",
+        "title": "&Yes",
+        "visible": true
+      },
+      {
+        "ctrl_id": 7,
+        "class": "Button",
+        "title": "&No",
+        "visible": true
+      },
+      {
+        "ctrl_id": 20,
+        "class": "Static",
+        "title": "",
+        "visible": true
+      },
+      {
+        "ctrl_id": 65535,
+        "class": "Static",
+        "title": "Non-Fatal Compilation Errors were found. Do you want to continue?",
+        "visible": true
+      }
+    ],
+    "screenshot": "modal_non_fatal_dialog.png"
+  },
+  "output_window_scraped_lines": [
+    "Compiler V12.0.200.82",
+    "Loading application symbols...",
+    "EnhancedDisplayAttributes",
+    "No error detected",
+    "",
+    "Loading application symbols...",
+    "Building application data...",
+    "Relocating code...",
+    "No error detected",
+    "Online Change is disabled",
+    "Generate OCS code...",
+    "No error detected",
+    "Warn : Screen set as first screen is empty.Screen 1"
+  ],
+  "action_taken": "Non-Fatal Compilation dialog detected and captured; auto-Yes blocked; dismissed with IDNO (7).",
+  "meaning": "Cscape detected compiler warnings ('Warn : Screen set as first screen is empty'); prompted user confirmation. Blocked per fail-closed policy.",
+  "proof_artifacts": [
+    "modal_non_fatal_dialog.png"
+  ],
+  "visibility_classification": "PARTIAL / SUPERVISOR-DEPENDENT (visibility is NOT claimed as VERIFIED_LIVE)"
+}

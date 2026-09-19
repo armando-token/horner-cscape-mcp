@@ -1,0 +1,42 @@
+{
+  "step": 141,
+  "name": "step141_mcp_closed_loop_simulation_checkpoint",
+  "status": "PASSED",
+  "timestamp_utc": "2026-09-05T18:11:37.272244+00Z",
+  "cscape_pid": 14580,
+  "hwnd": "0x024B054A",
+  "project_file": "C:\\Users\\ArmandoSilva\\artifacts\\projects\\TankLevelClosedLoop\\TankLevelClosedLoop.csp",
+  "tools_verified": [
+    "cscape_run_simulation",
+    "cscape_simulate_cycle",
+    "cscape_read_register",
+    "cscape_write_register"
+  ],
+  "discrete_register_types": [
+    "%R_INT",
+    "%R_REAL",
+    "%R_DINT",
+    "%M",
+    "%AI",
+    "%AQ",
+    "%Q",
+    "%I",
+    "bit_of_word"
+  ],
+  "boundary_checks_passed": 13,
+  "closed_loop_cycles": 50,
+  "setpoint_tracking_verified": true,
+  "emergency_trip_shutoff_verified": true,
+  "alarm_thresholds_verified": [
+    "HH_90",
+    "H_80",
+    "L_20",
+    "LL_10"
+  ],
+  "hardware_download_lockout_32827_enforced": true,
+  "hardware_download_lockout_33149_enforced": true,
+  "zero_straton_dependencies": true,
+  "pure_software_isolation_enforced": true,
+  "log_sha256": "24fe173dc79e7d71c0aa7dd464ca0b1b5a44321171e893e94f4dd56e622332ae",
+  "checkpoint_sha256": "c356ec9b24eb6c2e70134e3dd268ce47c730dcb539713e8346230139e6763089"
+}

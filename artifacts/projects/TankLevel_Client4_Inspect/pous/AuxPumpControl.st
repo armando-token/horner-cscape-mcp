@@ -1,0 +1,4 @@
+PROGRAM AuxPumpControl
+VAR cmd : BOOL; END_VAR
+cmd := TRUE;
+END_PROGRAM

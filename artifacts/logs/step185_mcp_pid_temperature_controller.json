@@ -1,0 +1,87 @@
+{
+  "step": 185,
+  "role": "Simulation & FastMCP Verification Agent",
+  "mandate": "Step 185: FastMCP Closed-Loop Precision Temperature PID Controller Simulation Audit",
+  "classification": "offline/DEV [TESTED_MOCK]",
+  "status": "success",
+  "timestamp_start_utc": "2026-09-06T22:32:40.671Z",
+  "timestamp_complete_utc": "2026-09-06T22:32:40.673Z",
+  "duration_sec": 0.0018,
+  "target_pou": "FB_PIDTemperatureControl",
+  "target_st_file": "C:/HornerAI/horner-cscape-mcp/examples/st_applications/pid_temperature_controller.st",
+  "st_sha256": "287ab36da0e02e4771ba5004b0fb32c7c1964b12081913f90bd71f9d841230bb",
+  "register_mappings": {
+    "%R131": "Setpoint",
+    "%R132": "FilteredPV",
+    "%R133": "HeatOutput",
+    "%R134": "CoolOutput",
+    "%Q41": "PWM_Heater",
+    "%M61": "AlarmHH",
+    "%M62": "AlarmH",
+    "%M63": "AlarmL",
+    "%M64": "AlarmLL",
+    "%M65": "LoopHealthy"
+  },
+  "simulation_invariants": {
+    "status": "success",
+    "all_invariants_passed": true,
+    "invariants": {
+      "invariant_01_normal_equilibrium": {
+        "description": "Normal equilibrium at Setpoint = 150.0, zero error, null split-range effort",
+        "passed": true
+      },
+      "invariant_02_positive_error_heat_demand": {
+        "description": "Positive error heat demand: PV below SP produces modulating heat output",
+        "passed": true
+      },
+      "invariant_03_negative_error_cool_demand": {
+        "description": "Negative error cool demand: PV above SP produces modulating cool output",
+        "passed": true
+      },
+      "invariant_04_deadband_filtering": {
+        "description": "Deadband filtering: Error within +/- 0.5 suppressed to prevent actuator hunting",
+        "passed": true
+      },
+      "invariant_05_alpha_low_pass_filtering": {
+        "description": "Alpha low-pass filtering: First-order filter smooths raw analog noise",
+        "passed": true
+      },
+      "invariant_06_bumpless_transfer": {
+        "description": "Bumpless transfer: IntegralSum preloaded to manual effort prevents step disruption on mode switch",
+        "passed": true
+      },
+      "invariant_07_pwm_ssr_pulse": {
+        "description": "Time-proportional PWM SSR pulse generation: 40% duty cycle matches 20/50 scans",
+        "passed": true
+      },
+      "invariant_08_alarm_hh": {
+        "description": "AlarmHH critical trip: High-high temperature triggers latched shutdown",
+        "passed": true
+      },
+      "invariant_09_alarm_ll": {
+        "description": "AlarmLL critical trip: Low-low temperature triggers latched trip",
+        "passed": true
+      },
+      "invariant_10_alarm_hl": {
+        "description": "AlarmH/L: Unlatched high and low warning annunciations track process limits",
+        "passed": true
+      },
+      "invariant_11_sensor_fault": {
+        "description": "SensorFault: Open RTD/thermocouple fault immediately locks out heating and cooling",
+        "passed": true
+      },
+      "invariant_12_reset_alarm": {
+        "description": "ResetAlarm: Acknowledges and clears latched alarms once process normalizes",
+        "passed": true
+      },
+      "invariant_13_fastmcp_partitioned_registers": {
+        "description": "FastMCP multi-client partitioned registers %R125 vs %R135 isolation and zero cross-talk",
+        "passed": true
+      },
+      "invariant_14_download_lockout": {
+        "description": "Fail-closed download lockout for commands 32827 and 33149",
+        "passed": true
+      }
+    }
+  }
+}

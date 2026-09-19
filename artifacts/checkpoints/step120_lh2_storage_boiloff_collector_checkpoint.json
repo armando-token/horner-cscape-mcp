@@ -1,0 +1,19 @@
+{
+  "step": 120,
+  "status": "COMPLETED",
+  "name": "Liquefied Hydrogen (LH2) Vacuum-Jacketed Storage Tank Cooldown & Boil-Off Condensate Collector Audit",
+  "timestamp": "2026-09-05T12:43:52.393Z",
+  "cscape_pid": 4272,
+  "cscape_hwnd": "0x7033e",
+  "project": "TankLevelClosedLoop.csp",
+  "assertions_passed": [
+    "Phase 1 20K liquid parahydrogen transfer equilibrium error 0.0000% < 0.10%",
+    "Phase 2 vacuum insulation degradation rapid boil-off flash transient drift 8.06% > 5.0%",
+    "Phase 3 ortho-to-para cryogenic refrigeration decoupled boil-off error 0.0000% < 0.35%",
+    "Cryogenic boil-off surge rejection ratio 100.0% > 95.0%",
+    "Phase 4 cryocooler inventory recovery step settling error 0.0758% < 0.35%",
+    "Phase 5 high-high LH2 flash chamber over-pressurization safety vent trip at cycle 501 == 501",
+    "Fail-closed download lockout ID_CONTROLLER_DOWNLOAD=32827 strictly enforced",
+    "Live Cscape GUI healthy and responsive throughout test"
+  ]
+}

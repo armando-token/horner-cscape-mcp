@@ -1,0 +1,18 @@
+{
+  "step": 132,
+  "name": "step132_cscape_stay_open_pid14580_checkpoint",
+  "status": "PASSED",
+  "achieved_continuous_uptime_seconds": 4345.71,
+  "achieved_continuous_uptime_minutes": 72.43,
+  "timestamp_utc": "2026-09-05T17:15:23.732Z",
+  "cscape_pid": 14580,
+  "hwnd": "0x024B054A",
+  "cscape_title": "Cscape - Logged In : \"armando@controlnautas.com\" - [TankLevelClosedLoop.csp]",
+  "project_file": "C:\\Users\\ArmandoSilva\\artifacts\\projects\\TankLevelClosedLoop\\TankLevelClosedLoop.csp",
+  "is_hung": false,
+  "is_visible": true,
+  "cpu_percent": 0.0,
+  "memory_mb": 137.61,
+  "screenshot_proof": "C:\\Users\\ArmandoSilva\\artifacts\\screenshots\\live_cscape_tank_level_stay_open_pid14580_milestone.png",
+  "fail_closed_gate_synced": true
+}

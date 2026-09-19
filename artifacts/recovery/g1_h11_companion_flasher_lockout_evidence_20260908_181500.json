@@ -1,0 +1,26 @@
+{
+  "item_id": "H11",
+  "name": "Companion Flasher Utilities & Win32 Download Commands Blocked",
+  "mission_id": "G1_REMAINING_NEGATIVES_OFFLINE_v3",
+  "timestamp_utc": "2026-09-09T01:19:34.566673+00:00",
+  "status": "success",
+  "invariant": "Flashing utilities, download CLI switches, and Win32 download command IDs fail closed",
+  "verification": {
+    "executables_blocked": [
+      "PGMUpdateUtility.exe",
+      "DfuSeCommand.exe",
+      "STMFlashLoader.exe",
+      "WinJTAG.exe"
+    ],
+    "flags_blocked": [
+      "/d",
+      "/download",
+      "/flash",
+      "/burn",
+      "/write-flash"
+    ],
+    "command_32827_blocked": true,
+    "command_33149_blocked": true,
+    "pass": true
+  }
+}

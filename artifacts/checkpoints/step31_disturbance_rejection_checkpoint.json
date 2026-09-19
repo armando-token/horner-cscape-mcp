@@ -1,0 +1,16 @@
+{
+  "step": 31,
+  "name": "step31_disturbance_rejection_checkpoint",
+  "description": "Dual-timeconstant load disturbance rejection verified across 500 cycles with unannounced +/-25% step load changes, sub-1.0% settled errors, and zero hardware interaction",
+  "timestamp_utc": "2026-09-05T07:22:16.634Z",
+  "cscape_pid": 15240,
+  "cscape_hwnd": "0x00710582",
+  "cscape_healthy": true,
+  "total_cycles": 500,
+  "phase2_settled_error_pct": 0.3297,
+  "phase3_settled_error_pct": 0.5318,
+  "final_recovery_error_pct": 0.8667,
+  "hardware_lockout_enforced": true,
+  "audit_log": "C:\\Users\\ArmandoSilva\\artifacts\\logs\\mcp_disturbance_rejection_audit.json",
+  "status": "VERIFIED_LIVE"
+}

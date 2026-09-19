@@ -1,0 +1,19 @@
+{
+  "step": 124,
+  "status": "COMPLETED",
+  "name": "Green Ammonia Haber-Bosch Synthesis Loop High-Pressure Flash Separator Level Audit",
+  "timestamp": "2026-09-05T12:44:04.104Z",
+  "cscape_pid": 4272,
+  "cscape_hwnd": "0x7033e",
+  "project": "TankLevelClosedLoop.csp",
+  "assertions_passed": [
+    "Phase 1 150 bar liquid NH3 condensation equilibrium error 0.0000% < 0.10%",
+    "Phase 2 electrolyzer hydrogen feed surge drift 6.71% > 5.0%",
+    "Phase 3 letdown valve decoupled liquid ammonia inventory regulation error 0.0000% < 0.35%",
+    "Synthesis gas surge rejection 100.0% > 95.0%",
+    "Phase 4 refrigerated storage transfer ramp step settling error 0.0758% < 0.35%",
+    "Phase 5 high-high synthesis loop liquid carryover compressor protection ESD trip at cycle 501 == 501",
+    "Fail-closed download lockout ID_CONTROLLER_DOWNLOAD=32827 strictly enforced",
+    "Live Cscape GUI healthy and responsive throughout test"
+  ]
+}

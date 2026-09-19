@@ -1,0 +1,278 @@
+{
+  "step": 37,
+  "title": "Multi-Variable Bidirectional CSV/XML Tag Sync Audit",
+  "timestamp_start_utc": "2026-09-05T09:46:14.683Z",
+  "timestamp_end_utc": "2026-09-05T09:46:14.773Z",
+  "status": "VERIFIED_LIVE",
+  "cscape_active_process": {
+    "pid": 11808,
+    "hwnd": "0x01F00670",
+    "uptime_seconds": 963.01,
+    "working_set_mb": 215.86,
+    "thread_count": 11,
+    "is_hung": false,
+    "wm_null_ping_ok": true,
+    "desktop": "Default"
+  },
+  "variable_sync_metrics": {
+    "total_variables": 21,
+    "csv_variables_count": 21,
+    "xml_variables_count": 21,
+    "tag_match_rate_percent": 100.0,
+    "data_type_match_rate_percent": 100.0,
+    "scope_match_rate_percent": 100.0,
+    "conflicts_detected": 0,
+    "memory_collision_free": true,
+    "csv_sha256": "d78f07a0036d0f498b79192e6708a83e2a722751dc9701a0601be85709311a16",
+    "xml_sha256": "2a25cf197f5e4a66c2d5170f125d1e090252b6ad40e159f223c374a692e98d99"
+  },
+  "tag_audit_details": [
+    {
+      "name": "AlarmHigh",
+      "csv_tag": "%M8",
+      "xml_tag": "%M8",
+      "csv_type": "BOOL",
+      "xml_type": "BOOL",
+      "tag_match": true,
+      "type_match": true,
+      "scope_match": true,
+      "register_family": "%M"
+    },
+    {
+      "name": "AlarmHighHigh",
+      "csv_tag": "%M7",
+      "xml_tag": "%M7",
+      "csv_type": "BOOL",
+      "xml_type": "BOOL",
+      "tag_match": true,
+      "type_match": true,
+      "scope_match": true,
+      "register_family": "%M"
+    },
+    {
+      "name": "AlarmLow",
+      "csv_tag": "%M9",
+      "xml_tag": "%M9",
+      "csv_type": "BOOL",
+      "xml_type": "BOOL",
+      "tag_match": true,
+      "type_match": true,
+      "scope_match": true,
+      "register_family": "%M"
+    },
+    {
+      "name": "AlarmLowLow",
+      "csv_tag": "%M10",
+      "xml_tag": "%M10",
+      "csv_type": "BOOL",
+      "xml_type": "BOOL",
+      "tag_match": true,
+      "type_match": true,
+      "scope_match": true,
+      "register_family": "%M"
+    },
+    {
+      "name": "ControlOutput",
+      "csv_tag": "%R7",
+      "xml_tag": "%R7",
+      "csv_type": "REAL",
+      "xml_type": "REAL",
+      "tag_match": true,
+      "type_match": true,
+      "scope_match": true,
+      "register_family": "%R"
+    },
+    {
+      "name": "CycleCounter",
+      "csv_tag": "%R21",
+      "xml_tag": "%R21",
+      "csv_type": "DINT",
+      "xml_type": "DINT",
+      "tag_match": true,
+      "type_match": true,
+      "scope_match": true,
+      "register_family": "%R"
+    },
+    {
+      "name": "DI_EStop_Healthy",
+      "csv_tag": "%I3",
+      "xml_tag": "%I3",
+      "csv_type": "BOOL",
+      "xml_type": "BOOL",
+      "tag_match": true,
+      "type_match": true,
+      "scope_match": true,
+      "register_family": "%I"
+    },
+    {
+      "name": "DI_LSHH_Level_Float",
+      "csv_tag": "%I4",
+      "xml_tag": "%I4",
+      "csv_type": "BOOL",
+      "xml_type": "BOOL",
+      "tag_match": true,
+      "type_match": true,
+      "scope_match": true,
+      "register_family": "%I"
+    },
+    {
+      "name": "DI_System_Start_PB",
+      "csv_tag": "%I1",
+      "xml_tag": "%I1",
+      "csv_type": "BOOL",
+      "xml_type": "BOOL",
+      "tag_match": true,
+      "type_match": true,
+      "scope_match": true,
+      "register_family": "%I"
+    },
+    {
+      "name": "DI_System_Stop_PB",
+      "csv_tag": "%I2",
+      "xml_tag": "%I2",
+      "csv_type": "BOOL",
+      "xml_type": "BOOL",
+      "tag_match": true,
+      "type_match": true,
+      "scope_match": true,
+      "register_family": "%I"
+    },
+    {
+      "name": "InflowValveCmd",
+      "csv_tag": "%Q2",
+      "xml_tag": "%Q2",
+      "csv_type": "BOOL",
+      "xml_type": "BOOL",
+      "tag_match": true,
+      "type_match": true,
+      "scope_match": true,
+      "register_family": "%Q"
+    },
+    {
+      "name": "Kd",
+      "csv_tag": "%R33",
+      "xml_tag": "%R33",
+      "csv_type": "REAL",
+      "xml_type": "REAL",
+      "tag_match": true,
+      "type_match": true,
+      "scope_match": true,
+      "register_family": "%R"
+    },
+    {
+      "name": "Ki",
+      "csv_tag": "%R31",
+      "xml_tag": "%R31",
+      "csv_type": "REAL",
+      "xml_type": "REAL",
+      "tag_match": true,
+      "type_match": true,
+      "scope_match": true,
+      "register_family": "%R"
+    },
+    {
+      "name": "Kp",
+      "csv_tag": "%R29",
+      "xml_tag": "%R29",
+      "csv_type": "REAL",
+      "xml_type": "REAL",
+      "tag_match": true,
+      "type_match": true,
+      "scope_match": true,
+      "register_family": "%R"
+    },
+    {
+      "name": "ManualOutput",
+      "csv_tag": "%R9",
+      "xml_tag": "%R9",
+      "csv_type": "REAL",
+      "xml_type": "REAL",
+      "tag_match": true,
+      "type_match": true,
+      "scope_match": true,
+      "register_family": "%R"
+    },
+    {
+      "name": "PumpRunCmd",
+      "csv_tag": "%Q1",
+      "xml_tag": "%Q1",
+      "csv_type": "BOOL",
+      "xml_type": "BOOL",
+      "tag_match": true,
+      "type_match": true,
+      "scope_match": true,
+      "register_family": "%Q"
+    },
+    {
+      "name": "RawLevelInput",
+      "csv_tag": "%AI1",
+      "xml_tag": "%AI1",
+      "csv_type": "INT",
+      "xml_type": "INT",
+      "tag_match": true,
+      "type_match": true,
+      "scope_match": true,
+      "register_family": "%A"
+    },
+    {
+      "name": "RawPumpOutput",
+      "csv_tag": "%AQ1",
+      "xml_tag": "%AQ1",
+      "csv_type": "INT",
+      "xml_type": "INT",
+      "tag_match": true,
+      "type_match": true,
+      "scope_match": true,
+      "register_family": "%A"
+    },
+    {
+      "name": "RawValveOutput",
+      "csv_tag": "%AQ2",
+      "xml_tag": "%AQ2",
+      "csv_type": "INT",
+      "xml_type": "INT",
+      "tag_match": true,
+      "type_match": true,
+      "scope_match": true,
+      "register_family": "%A"
+    },
+    {
+      "name": "Setpoint",
+      "csv_tag": "%R3",
+      "xml_tag": "%R3",
+      "csv_type": "REAL",
+      "xml_type": "REAL",
+      "tag_match": true,
+      "type_match": true,
+      "scope_match": true,
+      "register_family": "%R"
+    },
+    {
+      "name": "TankLevelPV",
+      "csv_tag": "%R1",
+      "xml_tag": "%R1",
+      "csv_type": "REAL",
+      "xml_type": "REAL",
+      "tag_match": true,
+      "type_match": true,
+      "scope_match": true,
+      "register_family": "%R"
+    }
+  ],
+  "simulation_metrics": {
+    "cycles_run": 100,
+    "duration_seconds": 0.031,
+    "cycles_per_sec": 3229.1,
+    "initial_pv": 25.0,
+    "final_pv": 31.1,
+    "setpoint": 50.0,
+    "final_cv": 51.36,
+    "runtime_register_consistency_verified": true
+  },
+  "safety_audit": {
+    "physical_plc_download_blocked": true,
+    "zero_physical_hardware_touched": true,
+    "hardware_lockout_enforced": true,
+    "zero_straton_dependencies": true
+  }
+}

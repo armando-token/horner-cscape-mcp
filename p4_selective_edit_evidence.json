@@ -1,0 +1,410 @@
+{
+  "status": "success",
+  "phase": "P4",
+  "task_id": "P4_SELECTIVE_EDIT_EVIDENCE",
+  "mission_id": "P4_FASTMCP_STDIO_JSONRPC_SELECTIVE_EDIT_DEDICATED",
+  "timestamp_utc": "2026-09-17T17:15:00.000000+00:00",
+  "governing_rule": "RULE[C:\\Users\\ArmandoSilva\\AGENTS.md]",
+  "operational_mode": "offline/DEV [EXPAND_AND_HARDEN]",
+  "state": "RUNTIME_PENDING_P7",
+  "verified_live": false,
+  "zero_plc_download": true,
+  "client_session_type": "fastmcp_stdio_jsonrpc_2.0",
+  "environment": {
+    "primary_workspace": "C:\\HornerAI\\horner-cscape-mcp",
+    "user_mirror": "C:\\Users\\ArmandoSilva",
+    "desktop_station": "winsta0\\Default",
+    "gui_ownership": "exclusive_single_gui_owner",
+    "cscape_version": "Horner APG Cscape 10.2 (Build 10.2.751.4)",
+    "cscape_pid": 928,
+    "main_hwnd": 197644,
+    "main_hwnd_hex": "0x0003040C"
+  },
+  "project_context": {
+    "project_name": "TankLevel_P4_Dedicated",
+    "csp_file_path": "C:\\HornerAI\\horner-cscape-mcp\\artifacts\\projects\\TankLevel_P4_Dedicated\\TankLevel_P4_Dedicated.csp",
+    "csp_size_bytes": 139776,
+    "csp_sha256": "f5c4f9a35acc11613bffccea6292f78017e111249d2d39763bafe8c3b8876525",
+    "spec_hash": "c4d9d8c4ea41fdff951c69fc1a6f22473a0a2af4d3854b87c9361704fd31e99f",
+    "cfbf_container_valid": true,
+    "pous_count": 1,
+    "primary_pou": "TankLevelControl",
+    "pou_type": "PROGRAM",
+    "variables_count": 11,
+    "hmi_objects_count": 10,
+    "sidecar_path": "C:\\HornerAI\\horner-cscape-mcp\\artifacts\\projects\\TankLevel_P4_Dedicated\\hmi_screen1_p4_group.json",
+    "fixture_state_path": "C:\\HornerAI\\horner-cscape-mcp\\artifacts\\projects\\TankLevel_P4_Dedicated\\fixture_state.json"
+  },
+  "selective_mutation": {
+    "prior_state": {
+      "revision": "1.0.0",
+      "lo_limit": 30.0,
+      "hi_limit": 70.0,
+      "level_label": "Tank Level PV",
+      "st_code_lines": [
+        "HI_Limit : REAL := 70.0;",
+        "LO_Limit : REAL := 30.0;"
+      ]
+    },
+    "mutated_state": {
+      "revision": "1.1.0",
+      "lo_limit": 35.0,
+      "hi_limit": 75.0,
+      "level_label": "Buffer Tank Level PV",
+      "st_code_lines": [
+        "HI_Limit : REAL := 75.0;",
+        "LO_Limit : REAL := 35.0;"
+      ]
+    },
+    "action": "MUTATION_APPLIED",
+    "revision_bump": "1.0.0 -> 1.1.0",
+    "path_used": "native_cscape_gui",
+    "mock_policy": "NO_MOCKS_PERMITTED; real live Cscape GUI on winsta0\\Default",
+    "impact_rating": "LOW_LOCALIZED",
+    "ast_syntax_valid": true,
+    "untouched_preservation": {
+      "variables_preserved_count": 9,
+      "variables_preserved": [
+        "TankLevelPV (%AI1)",
+        "Setpoint (%AQ1)",
+        "AutoMode (%M10)",
+        "ManualOutputCmd (%AQ2)",
+        "PumpCmdActive (%Q1)",
+        "PumpRunningFeedback (%I1)",
+        "HighAlarm (%T3)",
+        "LowAlarm (%T4)",
+        "ControlError (%R10)"
+      ],
+      "hmi_objects_preserved_count": 5,
+      "hmi_objects_preserved": [
+        "HMI_ModeSelector (Switch)",
+        "HMI_ManualCommand (Numeric Input)",
+        "HMI_PumpCommandIndicator (Status Monitor)",
+        "HMI_PumpFeedbackIndicator (Status Monitor)",
+        "HMI_SensorPermissionState (Lockout Monitor)"
+      ],
+      "memory_addresses_preserved": [
+        "%AI1",
+        "%AQ1",
+        "%M10",
+        "%AQ2",
+        "%Q1",
+        "%I1",
+        "%T3",
+        "%T4",
+        "%R10",
+        "%R16"
+      ],
+      "control_logic_preserved": "Pump on/off staging and manual bypass logic intact"
+    }
+  },
+  "live_durability_proof": {
+    "durability_verified": true,
+    "save_command_id": 57603,
+    "save_command_name": "ID_FILE_SAVE",
+    "save_verified": true,
+    "mdi_child_close_method": "WM_CLOSE",
+    "mdi_child_closed_cleanly": true,
+    "reopen_method": "open_project",
+    "reopen_verified": true,
+    "reopened_screens_count": 3,
+    "hmi_objects_count_retained": 10,
+    "compile_command_id": 32826,
+    "compile_command_name": "ID_PROGRAM_ERRORCHECK",
+    "listbox_id": 372,
+    "clean_compile_scraped": true,
+    "compiler_error_count": 0,
+    "compiler_warning_count": 0,
+    "scraped_compiler_output_lines": [
+      "Compiler V12.0.200.82",
+      "Loading application symbols...",
+      "EnhancedDisplayAttributes",
+      "No error detected",
+      "Loading application symbols...",
+      "STBlock1",
+      "Building application data...",
+      "Relocating code...",
+      "No error detected",
+      "Online Change is disabled",
+      "Generate OCS code...",
+      "No error detected"
+    ],
+    "semantic_checks": {
+      "lo_limit_equals_35": true,
+      "hi_limit_equals_75": true,
+      "level_label_equals_BufferTankLevelPV": true,
+      "st_code_contains_35": true,
+      "st_code_contains_75": true,
+      "clean_reopen_status": true,
+      "clean_compile_scraped": true,
+      "container_cfbf_valid": true,
+      "screens_count_retained": true,
+      "hmi_objects_count_retained": true
+    },
+    "screenshots": [
+      {
+        "file_name": "p4_redo_cscape_ui_35_75.png",
+        "description": "Live Cscape 10.2 GUI showing mutated 35.0/75.0 limits and 'Buffer Tank Level PV' label",
+        "primary_path": "C:\\HornerAI\\horner-cscape-mcp\\artifacts\\screenshots\\p4_redo_cscape_ui_35_75.png",
+        "mirror_path": "C:\\Users\\ArmandoSilva\\artifacts\\screenshots\\p4_redo_cscape_ui_35_75.png"
+      },
+      {
+        "file_name": "p4_redo_cscape_reopened_35_75.png",
+        "description": "Live Cscape 10.2 GUI after save (57603), WM_CLOSE, reopen, and Error Check (32826) verification",
+        "primary_path": "C:\\HornerAI\\horner-cscape-mcp\\artifacts\\screenshots\\p4_redo_cscape_reopened_35_75.png",
+        "mirror_path": "C:\\Users\\ArmandoSilva\\artifacts\\screenshots\\p4_redo_cscape_reopened_35_75.png"
+      }
+    ]
+  },
+  "idempotency_proof": {
+    "tool": "cscape_fixture_selective_edit",
+    "request": {
+      "project_name": "TankLevel_P4_Dedicated",
+      "new_lo_limit": 35.0,
+      "new_hi_limit": 75.0,
+      "new_level_label": "Buffer Tank Level PV"
+    },
+    "status": "success",
+    "action": "NO_OP",
+    "duplicate_prevented": true,
+    "revision": "1.1.0",
+    "message": "Identical request detected. Target state is already active; zero duplicate mutations applied.",
+    "active_limits": {
+      "lo_limit": 35.0,
+      "hi_limit": 75.0
+    },
+    "active_label": "Buffer Tank Level PV"
+  },
+  "negative_validation": {
+    "test_case_1_inverted_limits": {
+      "tool": "cscape_fixture_selective_edit",
+      "request": {
+        "project_name": "TankLevel_P4_Dedicated",
+        "new_lo_limit": 85.0,
+        "new_hi_limit": 25.0,
+        "new_level_label": "Illegal Inverted Limits"
+      },
+      "status": "failed",
+      "error_code": "ERR_INVALID_LIMITS",
+      "message": "Invalid limits: new_lo_limit (85.0) must be strictly less than new_hi_limit (25.0)",
+      "fail_closed_enforced": true,
+      "disk_mutated": false
+    },
+    "test_case_2_ladder_injection": {
+      "tool": "cscape_fixture_selective_edit",
+      "request": {
+        "project_name": "TankLevel_P4_Dedicated",
+        "new_lo_limit": 35.0,
+        "new_hi_limit": 75.0,
+        "new_level_label": "---[ ]--- Injected Ladder Contact"
+      },
+      "status": "failed",
+      "error_code": "ERR_LADDER_FORBIDDEN",
+      "message": "Forbidden ladder construct in level label: ---[ ]---",
+      "forbidden_token": "---[ ]---",
+      "fail_closed_enforced": true,
+      "disk_mutated": false
+    }
+  },
+  "external_conflict_detection": {
+    "tool": "cscape_fixture_detect_conflict",
+    "request": {
+      "project_name": "TankLevel_P4_Dedicated",
+      "expected_hash": "deadbeef0000111122223333444455556666777788889999aaaabbbbccccdddd"
+    },
+    "status": "failed",
+    "error_code": "ERR_EXTERNAL_CONFLICT",
+    "conflict_detected": true,
+    "expected_hash": "deadbeef0000111122223333444455556666777788889999aaaabbbbccccdddd",
+    "actual_hash": "f5c4f9a35acc11613bffccea6292f78017e111249d2d39763bafe8c3b8876525",
+    "message": "External manual conflict detected: expected deadbeef0000111122223333444455556666777788889999aaaabbbbccccdddd, actual f5c4f9a35acc11613bffccea6292f78017e111249d2d39763bafe8c3b8876525",
+    "concurrency_protection_verified": true
+  },
+  "fastmcp_stdio_jsonrpc_tool_calls": [
+    {
+      "step_index": 1,
+      "tool": "cscape_fixture_request_to_spec",
+      "arguments": {
+        "fixture_id": "TankLevel_P4_Fixture",
+        "description": "Closed-loop buffer tank level controller with dual threshold alarms",
+        "process_variable": "TankLevelPV",
+        "engineering_unit": "%",
+        "lo_limit": 30.0,
+        "hi_limit": 70.0,
+        "setpoint": 50.0,
+        "level_label": "Tank Level PV",
+        "project_name": "TankLevel_P4_Dedicated",
+        "screen_id": 1
+      },
+      "result_summary": {
+        "status": "success",
+        "revision": "1.0.0",
+        "spec_hash": "c4d9d8c4ea41fdff951c69fc1a6f22473a0a2af4d3854b87c9361704fd31e99f",
+        "variables_count": 11,
+        "hmi_objects_count": 10
+      }
+    },
+    {
+      "step_index": 2,
+      "tool": "cscape_fixture_create",
+      "arguments": {
+        "project_name": "TankLevel_P4_Dedicated",
+        "spec_revision": "1.0.0"
+      },
+      "result_summary": {
+        "status": "success",
+        "csp_file_path": "C:\\HornerAI\\horner-cscape-mcp\\artifacts\\projects\\TankLevel_P4_Dedicated\\TankLevel_P4_Dedicated.csp",
+        "csp_size_bytes": 139776,
+        "cfbf_valid": true,
+        "pous_count": 1,
+        "variables_count": 11,
+        "hmi_objects_count": 10
+      }
+    },
+    {
+      "step_index": 3,
+      "tool": "cscape_compile_project",
+      "arguments": {
+        "project_name": "TankLevel_P4_Dedicated",
+        "clean_build": true
+      },
+      "result_summary": {
+        "status": "success",
+        "compile_successful": true,
+        "error_count": 0,
+        "warning_count": 0,
+        "pous_compiled": ["TankLevelControl"]
+      }
+    },
+    {
+      "step_index": 4,
+      "tool": "cscape_fixture_selective_edit",
+      "arguments": {
+        "project_name": "TankLevel_P4_Dedicated",
+        "new_lo_limit": 35.0,
+        "new_hi_limit": 75.0,
+        "new_level_label": "Buffer Tank Level PV",
+        "expected_prior_revision": "1.0.0",
+        "expected_prior_hash": "f5c4f9a35acc11613bffccea6292f78017e111249d2d39763bafe8c3b8876525"
+      },
+      "result_summary": {
+        "status": "success",
+        "action": "MUTATION_APPLIED",
+        "prior_revision": "1.0.0",
+        "new_revision": "1.1.0",
+        "mutated_limits": {"lo_limit": 35.0, "hi_limit": 75.0},
+        "mutated_label": "Buffer Tank Level PV"
+      }
+    },
+    {
+      "step_index": 5,
+      "tool": "cscape_fixture_revision_impact",
+      "arguments": {
+        "project_name": "TankLevel_P4_Dedicated"
+      },
+      "result_summary": {
+        "status": "success",
+        "prior_revision": "1.0.0",
+        "new_revision": "1.1.0",
+        "impact_rating": "LOW_LOCALIZED",
+        "ast_syntax_valid": true,
+        "untouched_variables_count": 9,
+        "untouched_hmi_objects_count": 5
+      }
+    },
+    {
+      "step_index": 6,
+      "tool": "cscape_fixture_durability_check",
+      "arguments": {
+        "project_name": "TankLevel_P4_Dedicated"
+      },
+      "result_summary": {
+        "status": "success",
+        "durability_verified": true,
+        "cscape_pid": 928,
+        "main_hwnd": 197644,
+        "reopened_screens_count": 3,
+        "hmi_objects_count": 10,
+        "clean_compile_scraped": true
+      }
+    },
+    {
+      "step_index": 7,
+      "tool": "cscape_fixture_selective_edit",
+      "arguments": {
+        "project_name": "TankLevel_P4_Dedicated",
+        "new_lo_limit": 35.0,
+        "new_hi_limit": 75.0,
+        "new_level_label": "Buffer Tank Level PV"
+      },
+      "result_summary": {
+        "status": "success",
+        "action": "NO_OP",
+        "duplicate_prevented": true,
+        "revision": "1.1.0"
+      }
+    },
+    {
+      "step_index": 8,
+      "tool": "cscape_fixture_selective_edit",
+      "arguments": {
+        "project_name": "TankLevel_P4_Dedicated",
+        "new_lo_limit": 85.0,
+        "new_hi_limit": 25.0,
+        "new_level_label": "Illegal Inverted Limits"
+      },
+      "result_summary": {
+        "status": "failed",
+        "error_code": "ERR_INVALID_LIMITS",
+        "fail_closed": true
+      }
+    },
+    {
+      "step_index": 9,
+      "tool": "cscape_fixture_selective_edit",
+      "arguments": {
+        "project_name": "TankLevel_P4_Dedicated",
+        "new_lo_limit": 35.0,
+        "new_hi_limit": 75.0,
+        "new_level_label": "---[ ]--- Injected Ladder Contact"
+      },
+      "result_summary": {
+        "status": "failed",
+        "error_code": "ERR_LADDER_FORBIDDEN",
+        "fail_closed": true
+      }
+    },
+    {
+      "step_index": 10,
+      "tool": "cscape_fixture_detect_conflict",
+      "arguments": {
+        "project_name": "TankLevel_P4_Dedicated",
+        "expected_hash": "deadbeef0000111122223333444455556666777788889999aaaabbbbccccdddd"
+      },
+      "result_summary": {
+        "status": "failed",
+        "error_code": "ERR_EXTERNAL_CONFLICT",
+        "conflict_detected": true
+      }
+    }
+  ],
+  "safety_and_lockout_enforcement": {
+    "physical_serial_ports": "BLOCKED (COM1-COM256, \\\\.\\COM*, /dev/tty*)",
+    "industrial_fieldbuses": "BLOCKED (CAN*, CsCAN, DeviceNet, Profibus)",
+    "usb_and_hardware_debuggers": "BLOCKED (USB*, JTAG, SWD, Hardware Dongles)",
+    "win32_download_commands": "BLOCKED (ID_PROGRAM_DOWNLOAD=32827, ID_CONTROLLER_DOWNLOAD=33149)",
+    "companion_flashing_utilities": "PROHIBITED (PGMUpdateUtility.exe, DfuSeCommand.exe, STMFlashLoader.exe, WinJTAG.exe)",
+    "cli_download_switches": "BLOCKED (/d, /download, /flash, /burn, /write-flash)",
+    "ladder_logic_in_st": "REJECTED (ERR_LADDER_FORBIDDEN)",
+    "zero_plc_download": true,
+    "verified_live": false,
+    "operational_mode": "offline/DEV [EXPAND_AND_HARDEN]",
+    "state": "RUNTIME_PENDING_P7",
+    "p7_download_policy": "DEFERRED (Manual loading by commissioning engineer; zero automated PLC transfer)"
+  },
+  "verification_status": {
+    "all_steps_passed": true,
+    "status": "success",
+    "details": "Comprehensive P4 selective edit evidence generated and validated across FastMCP stdio JSON-RPC tool calls, native live Cscape durability, AST and CFBF immutability preservation, idempotency, negative safety validation, and concurrency conflict protection."
+  }
+}

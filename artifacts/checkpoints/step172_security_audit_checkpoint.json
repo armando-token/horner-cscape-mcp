@@ -1,0 +1,38 @@
+{
+  "step": 172,
+  "name": "step172_security_audit_checkpoint",
+  "status": "PASSED",
+  "timestamp_utc": "2026-09-06T08:23:23.311Z",
+  "auditor": "Security & Safety Guard Agent",
+  "mandate": "Hardware Port & Download Lockout Enforcement",
+  "dual_root_parity": true,
+  "roots_verified": {
+    "horner_root": "C:\\HornerAI\\horner-cscape-mcp",
+    "user_root": "C:\\Users\\ArmandoSilva"
+  },
+  "safety_policies_enforced": {
+    "hardware_ports_blocked": [
+      "COM1-COM256",
+      "CAN*",
+      "USB*",
+      "JTAG"
+    ],
+    "download_command_ids_blocked": [
+      32827,
+      33149
+    ],
+    "companion_binaries_blocked": [
+      "PGMUpdateUtility.exe",
+      "DfuSeCommand.exe",
+      "STMFlashLoader.exe",
+      "WinJTAG.exe"
+    ],
+    "straton_k5_quarantine_path": "quarantine/straton_k5_legacy/"
+  },
+  "log_proof": {
+    "file": "artifacts/logs/step172_security_audit.json",
+    "size_bytes": 1565,
+    "sha256": "ffff0566b3433ff2354064ceb29301a4b50eeccfe019c591dd2a15e31b6d0bc0"
+  },
+  "checkpoint_sha256": "f1313a7a4c715f477eb35cdf4bd11ca7d72c41990668eb2743877564ed25cbab"
+}

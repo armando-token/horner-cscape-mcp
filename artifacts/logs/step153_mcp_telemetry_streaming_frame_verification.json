@@ -1,0 +1,78 @@
+{
+  "step": 153,
+  "title": "Live FastMCP Closed-Loop High-Frequency Telemetry Streaming & Variable Frame Verification Audit",
+  "timestamp_start_utc": "2026-09-05T20:12:45.818Z",
+  "timestamp_end_utc": "2026-09-05T20:13:08.918Z",
+  "duration_seconds": 23.1,
+  "status": "PASSED",
+  "target_pid": 3120,
+  "target_hwnd": "0x00830976",
+  "telemetry_frames_streamed": 200,
+  "frame_loss_percent": 0.0,
+  "streaming_throughput_fps": 256.28,
+  "mean_latency_ms": 3.83,
+  "min_latency_ms": 1.95,
+  "max_latency_ms": 265.18,
+  "sample_frames": [
+    {
+      "frame": 1,
+      "time_ms": 0.0,
+      "setpoint": 50.0,
+      "pv_level": 50.0,
+      "control_output": 0.0,
+      "alarm_hh": false,
+      "alarm_h": false,
+      "latency_ms": 2.71
+    },
+    {
+      "frame": 51,
+      "time_ms": 250.0,
+      "setpoint": 75.0,
+      "pv_level": 53.75,
+      "control_output": 100.0,
+      "alarm_hh": false,
+      "alarm_h": false,
+      "latency_ms": 2.45
+    },
+    {
+      "frame": 121,
+      "time_ms": 600.0,
+      "setpoint": 35.0,
+      "pv_level": 68.996875,
+      "control_output": 0.0,
+      "alarm_hh": false,
+      "alarm_h": false,
+      "latency_ms": 2.4
+    },
+    {
+      "frame": 200,
+      "time_ms": 995.0,
+      "setpoint": 35.0,
+      "pv_level": 35.0,
+      "control_output": 0.0,
+      "alarm_hh": false,
+      "alarm_h": false,
+      "latency_ms": 2.31
+    }
+  ],
+  "gui_error_check_dispatched": 32826,
+  "gui_error_count": 0,
+  "gui_warning_count": 0,
+  "hardware_lockout_enforced": true,
+  "zero_straton_dependencies": true,
+  "cscape_process_health": {
+    "pid": 3120,
+    "hwnd": "0x00830976",
+    "uptime_seconds": 1305.8,
+    "working_set_mb": 195.77,
+    "is_hung": false,
+    "is_enabled": true,
+    "ping_ok": true
+  },
+  "screenshot_evidence": {
+    "path": "C:\\Users\\ArmandoSilva\\artifacts\\screenshots\\live_cscape_tank_level_step153.png",
+    "size_bytes": 662,
+    "sha256": "ba028ddc59b5690ad99f67b577b41eeaf7e5b78ce1e648c31332c407d12f1817"
+  },
+  "log_sha256": "b56d6600573db7743a17a79b53ea26d9061d6cea5299b18429d212d575c84e45"
+}

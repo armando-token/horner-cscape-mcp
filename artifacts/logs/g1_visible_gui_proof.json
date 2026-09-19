@@ -1,0 +1,72 @@
+{
+  "agent": "Agent 1: Visible Cscape GUI Controller",
+  "mandate": "Exclusive Visible Cscape GUI Automation Controller",
+  "status": "success",
+  "timestamp_start_utc": "2026-09-06T11:33:33.716703+00:00",
+  "timestamp_end_utc": "2026-09-06T11:33:40.765330+00:00",
+  "duration_sec": 7.049,
+  "desktop": {
+    "name": "Default",
+    "attached": true
+  },
+  "cscape": {
+    "pid": 10892,
+    "hwnd": "0x01B005DC",
+    "hwnd_int": 28313052,
+    "window_title": "Cscape - Logged In : \"armando@controlnautas.com\" - [TankLevelClosedLoop.csp]",
+    "process_name": "Cscape.exe",
+    "uptime_sec": 7355.6,
+    "working_set_mb": 113.94,
+    "is_window": true,
+    "is_visible": true,
+    "is_enabled": true,
+    "is_hung": false,
+    "ping_responsive": true,
+    "dimensions": "1296x584",
+    "show_cmd": 3,
+    "sw_hide_detected": false
+  },
+  "modal_dialogs": {
+    "pre_sweep_dismissed": 0,
+    "post_sweep_dismissed": 0
+  },
+  "gui_compilation": {
+    "command_dispatched": 32826,
+    "command_name": "ID_PROGRAM_ERRORCHECK",
+    "command_id": 32826,
+    "success": true,
+    "error_count": 0,
+    "warning_count": 0,
+    "duration_sec": 6.046,
+    "build_log": "Compiler V12.0.200.82\nLoading application symbols...\nEnhancedDisplayAttributes\nNo error detected\n\nLoading application symbols...\nBuilding application data...\nRelocating code...\nNo error detected\nOnline Change is disabled\nGenerate OCS code...\nNo error detected\nWarn : Screen set as first screen is empty.Screen 1",
+    "controls_enumerated": 55
+  },
+  "screenshot": {
+    "horner_path": "C:\\HornerAI\\horner-cscape-mcp\\artifacts\\screenshots\\live_cscape_tank_level_g1.png",
+    "user_path": "C:\\Users\\ArmandoSilva\\artifacts\\screenshots\\live_cscape_tank_level_g1.png",
+    "size_bytes": 71589,
+    "dimensions": "1296x584",
+    "sha256": "1e338571102531a95e4afe48b0fb7333a73278dccc71dc481a0aaf43aad8bc2b",
+    "valid_png": true,
+    "dual_root_mirrored": true
+  },
+  "gate_status": {
+    "ready_for_tests": true,
+    "status": "READY_FOR_TESTS",
+    "pid": 10892,
+    "hwnd": "0x01B005DC",
+    "paths_synced": [
+      "C:\\HornerAI\\horner-cscape-mcp\\artifacts\\.cscape_live_gate.json",
+      "C:\\Users\\ArmandoSilva\\artifacts\\.cscape_live_gate.json"
+    ]
+  },
+  "safety_mandate": {
+    "hardware_lockout_enforced": true,
+    "zero_hardware_download": true,
+    "zero_plc_download": true,
+    "no_straton": true,
+    "no_fake_metrics": true,
+    "cscape_pid_preserved": true,
+    "project_preserved": "TankLevelClosedLoop.csp"
+  }
+}

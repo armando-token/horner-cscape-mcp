@@ -1,0 +1,555 @@
+{
+  "status": "success",
+  "phase": "P3",
+  "mission": "MCP_NATIVE_HMI_P2_CONTROL_AND_REPRESENTATION",
+  "timestamp_utc": "2026-09-16T00:51:30.048833+00:00",
+  "cscape_pid": 11576,
+  "main_hwnd": 20382400,
+  "project_name": "TankLevel_P2_Dedicated",
+  "csp_file_path": "C:\\HornerAI\\horner-cscape-mcp\\artifacts\\projects\\TankLevel_P2_Dedicated\\TankLevel_P2_Dedicated.csp",
+  "csp_size_bytes": 139264,
+  "cfbf_valid": true,
+  "reopened_screens_count": 3,
+  "screens": [
+    {
+      "screen_id": 1,
+      "name": "Screen 1",
+      "group": "Main Screen",
+      "is_main_screen": true,
+      "objects_count": 6,
+      "objects": [
+        {
+          "name": "TankLevelPV_Display",
+          "object_type": "NUMERIC_DATA",
+          "role": "PV Display with Unit (%)",
+          "bound_variable": "TankLevelPV",
+          "data_type": "REAL",
+          "memory_address": "%AI1",
+          "unit": "%",
+          "min_limit": 0.0,
+          "max_limit": 100.0,
+          "threshold": null,
+          "indicator_type": "FEEDBACK",
+          "permission_state": null,
+          "feedback_state": null,
+          "properties": {
+            "font": "Arial",
+            "format": "999.9",
+            "color": "DarkBlue"
+          }
+        },
+        {
+          "name": "Setpoint_Input",
+          "object_type": "NUMERIC_DATA",
+          "role": "Editable Setpoint with Limits",
+          "bound_variable": "Setpoint",
+          "data_type": "REAL",
+          "memory_address": "%AQ1",
+          "unit": "%",
+          "min_limit": 0.0,
+          "max_limit": 100.0,
+          "threshold": null,
+          "indicator_type": "COMMAND",
+          "permission_state": null,
+          "feedback_state": null,
+          "properties": {
+            "font": "Arial",
+            "format": "999.9",
+            "color": "DarkGreen"
+          }
+        },
+        {
+          "name": "TankLevel_BarGraph",
+          "object_type": "BAR_GRAPH",
+          "role": "Tank Level Silhouette Fill (0..100 %)",
+          "bound_variable": "TankLevelPV_I16",
+          "data_type": "INT",
+          "memory_address": "%R16",
+          "unit": "%",
+          "min_limit": 0.0,
+          "max_limit": 100.0,
+          "threshold": null,
+          "indicator_type": "FEEDBACK",
+          "permission_state": null,
+          "feedback_state": null,
+          "properties": {
+            "fill": "SolidRed",
+            "orientation": "Vertical"
+          }
+        },
+        {
+          "name": "HighAlarm_Lamp",
+          "object_type": "INDICATOR_LAMP",
+          "role": "High Level Alarm Trip (>= 65.0 %)",
+          "bound_variable": "STBlock1.HI",
+          "data_type": "BOOL",
+          "memory_address": "%T3",
+          "unit": null,
+          "min_limit": null,
+          "max_limit": null,
+          "threshold": 65.0,
+          "indicator_type": "ALARM",
+          "permission_state": null,
+          "feedback_state": null,
+          "properties": {
+            "color_on": "Red",
+            "color_off": "DarkGray"
+          }
+        },
+        {
+          "name": "LowAlarm_Lamp",
+          "object_type": "INDICATOR_LAMP",
+          "role": "Low Level Alarm Trip (<= 35.0 %)",
+          "bound_variable": "STBlock1.LO",
+          "data_type": "BOOL",
+          "memory_address": "%T4",
+          "unit": null,
+          "min_limit": null,
+          "max_limit": null,
+          "threshold": 35.0,
+          "indicator_type": "ALARM",
+          "permission_state": null,
+          "feedback_state": null,
+          "properties": {
+            "color_on": "Yellow",
+            "color_off": "DarkGray"
+          }
+        },
+        {
+          "name": "Error_Display",
+          "object_type": "NUMERIC_DATA",
+          "role": "Loop Tracking Error (Setpoint - PV)",
+          "bound_variable": "Error",
+          "data_type": "REAL",
+          "memory_address": "%R10",
+          "unit": "%",
+          "min_limit": -100.0,
+          "max_limit": 100.0,
+          "threshold": null,
+          "indicator_type": "FEEDBACK",
+          "permission_state": null,
+          "feedback_state": null,
+          "properties": {
+            "font": "Arial",
+            "format": "-99.9"
+          }
+        }
+      ],
+      "raw_data_size": 6106,
+      "status": "success"
+    },
+    {
+      "screen_id": 2,
+      "name": "Screen 2",
+      "group": "Group-1",
+      "is_main_screen": false,
+      "objects_count": 4,
+      "objects": [
+        {
+          "name": "TankLevelPV_Display",
+          "object_type": "NUMERIC_DATA",
+          "role": "PV Display with Unit (%)",
+          "bound_variable": "TankLevelPV",
+          "data_type": "REAL",
+          "memory_address": "%AI1",
+          "unit": "%",
+          "min_limit": 0.0,
+          "max_limit": 100.0,
+          "threshold": null,
+          "indicator_type": "FEEDBACK",
+          "permission_state": null,
+          "feedback_state": null,
+          "properties": {
+            "font": "Arial",
+            "format": "999.9",
+            "color": "DarkBlue"
+          }
+        },
+        {
+          "name": "Setpoint_Input",
+          "object_type": "NUMERIC_DATA",
+          "role": "Editable Setpoint with Limits",
+          "bound_variable": "Setpoint",
+          "data_type": "REAL",
+          "memory_address": "%AQ1",
+          "unit": "%",
+          "min_limit": 0.0,
+          "max_limit": 100.0,
+          "threshold": null,
+          "indicator_type": "COMMAND",
+          "permission_state": null,
+          "feedback_state": null,
+          "properties": {
+            "font": "Arial",
+            "format": "999.9",
+            "color": "DarkGreen"
+          }
+        },
+        {
+          "name": "TankLevel_BarGraph",
+          "object_type": "BAR_GRAPH",
+          "role": "Tank Level Silhouette Fill (0..100 %)",
+          "bound_variable": "TankLevelPV_I16",
+          "data_type": "INT",
+          "memory_address": "%R16",
+          "unit": "%",
+          "min_limit": 0.0,
+          "max_limit": 100.0,
+          "threshold": null,
+          "indicator_type": "FEEDBACK",
+          "permission_state": null,
+          "feedback_state": null,
+          "properties": {
+            "fill": "SolidRed",
+            "orientation": "Vertical"
+          }
+        },
+        {
+          "name": "HighAlarm_Lamp",
+          "object_type": "INDICATOR_LAMP",
+          "role": "High Level Alarm Trip (>= 65.0 %)",
+          "bound_variable": "STBlock1.HI",
+          "data_type": "BOOL",
+          "memory_address": "%T3",
+          "unit": null,
+          "min_limit": null,
+          "max_limit": null,
+          "threshold": 65.0,
+          "indicator_type": "ALARM",
+          "permission_state": null,
+          "feedback_state": null,
+          "properties": {
+            "color_on": "Red",
+            "color_off": "DarkGray"
+          }
+        }
+      ],
+      "raw_data_size": 4259,
+      "status": "success"
+    },
+    {
+      "screen_id": 3,
+      "name": "Screen 3",
+      "group": "Group-1",
+      "is_main_screen": false,
+      "objects_count": 3,
+      "objects": [
+        {
+          "name": "TankLevelPV_Display",
+          "object_type": "NUMERIC_DATA",
+          "role": "PV Display with Unit (%)",
+          "bound_variable": "TankLevelPV",
+          "data_type": "REAL",
+          "memory_address": "%AI1",
+          "unit": "%",
+          "min_limit": 0.0,
+          "max_limit": 100.0,
+          "threshold": null,
+          "indicator_type": "FEEDBACK",
+          "permission_state": null,
+          "feedback_state": null,
+          "properties": {
+            "font": "Arial",
+            "format": "999.9",
+            "color": "DarkBlue"
+          }
+        },
+        {
+          "name": "HighAlarm_Lamp",
+          "object_type": "INDICATOR_LAMP",
+          "role": "High Level Alarm Trip (>= 65.0 %)",
+          "bound_variable": "STBlock1.HI",
+          "data_type": "BOOL",
+          "memory_address": "%T3",
+          "unit": null,
+          "min_limit": null,
+          "max_limit": null,
+          "threshold": 65.0,
+          "indicator_type": "ALARM",
+          "permission_state": null,
+          "feedback_state": null,
+          "properties": {
+            "color_on": "Red",
+            "color_off": "DarkGray"
+          }
+        },
+        {
+          "name": "LowAlarm_Lamp",
+          "object_type": "INDICATOR_LAMP",
+          "role": "Low Level Alarm Trip (<= 35.0 %)",
+          "bound_variable": "STBlock1.LO",
+          "data_type": "BOOL",
+          "memory_address": "%T4",
+          "unit": null,
+          "min_limit": null,
+          "max_limit": null,
+          "threshold": 35.0,
+          "indicator_type": "ALARM",
+          "permission_state": null,
+          "feedback_state": null,
+          "properties": {
+            "color_on": "Yellow",
+            "color_off": "DarkGray"
+          }
+        }
+      ],
+      "raw_data_size": 8224,
+      "status": "success"
+    }
+  ],
+  "hmi_objects_count": 9,
+  "hmi_objects": [
+    {
+      "name": "HMI_TankLevelPV",
+      "object_type": "NUMERIC_DATA",
+      "role": "Process Variable Display with Engineering Unit",
+      "bound_variable": "TankLevelPV",
+      "data_type": "REAL",
+      "memory_address": "%AI1",
+      "unit": "%",
+      "min_limit": 0.0,
+      "max_limit": 100.0,
+      "threshold": null,
+      "indicator_type": "FEEDBACK",
+      "permission_state": null,
+      "feedback_state": null,
+      "properties": {
+        "label": "Tank Level PV",
+        "unit_text": "%",
+        "display_format": "999.9",
+        "x": 60,
+        "y": 80,
+        "width": 120,
+        "height": 36,
+        "font": "Arial 14 Bold",
+        "text_color": "#002060",
+        "bg_color": "#E6F0FA"
+      }
+    },
+    {
+      "name": "HMI_ModeSelector",
+      "object_type": "SELECTOR_SWITCH",
+      "role": "Manual/Auto Loop Mode Selector",
+      "bound_variable": "AutoMode",
+      "data_type": "BOOL",
+      "memory_address": "%M10",
+      "unit": null,
+      "min_limit": null,
+      "max_limit": null,
+      "threshold": null,
+      "indicator_type": "COMMAND",
+      "permission_state": null,
+      "feedback_state": null,
+      "properties": {
+        "label": "Mode: AUTO / MAN",
+        "position_true": "AUTO (Closed-Loop)",
+        "position_false": "MAN (Manual Output)",
+        "command_variable": "AutoMode",
+        "x": 220,
+        "y": 80,
+        "width": 140,
+        "height": 36,
+        "default": true
+      }
+    },
+    {
+      "name": "HMI_ManualCommand",
+      "object_type": "NUMERIC_INPUT",
+      "role": "Manual Output Command Setpoint",
+      "bound_variable": "ManualOutputCmd",
+      "data_type": "REAL",
+      "memory_address": "%AQ2",
+      "unit": "%",
+      "min_limit": 0.0,
+      "max_limit": 100.0,
+      "threshold": null,
+      "indicator_type": "COMMAND",
+      "permission_state": null,
+      "feedback_state": null,
+      "properties": {
+        "label": "Manual Cmd",
+        "unit_text": "%",
+        "display_format": "999.9",
+        "active_when": "AutoMode == FALSE",
+        "x": 380,
+        "y": 80,
+        "width": 120,
+        "height": 36,
+        "font": "Arial 12"
+      }
+    },
+    {
+      "name": "HMI_Setpoint",
+      "object_type": "NUMERIC_INPUT",
+      "role": "Target Setpoint with Upper/Lower Limits",
+      "bound_variable": "Setpoint",
+      "data_type": "REAL",
+      "memory_address": "%AQ1",
+      "unit": "%",
+      "min_limit": 0.0,
+      "max_limit": 100.0,
+      "threshold": 50.0,
+      "indicator_type": "COMMAND",
+      "permission_state": null,
+      "feedback_state": null,
+      "properties": {
+        "label": "Target Setpoint",
+        "unit_text": "%",
+        "limits": "0.0 .. 100.0 %",
+        "hi_threshold_trip": 65.0,
+        "lo_threshold_trip": 35.0,
+        "x": 60,
+        "y": 140,
+        "width": 120,
+        "height": 36,
+        "font": "Arial 12 Bold"
+      }
+    },
+    {
+      "name": "HMI_PumpCommandIndicator",
+      "object_type": "INDICATOR_LAMP",
+      "role": "Command Indicator: Commanded Pump State",
+      "bound_variable": "PumpCmdActive",
+      "data_type": "BOOL",
+      "memory_address": "%Q1",
+      "unit": null,
+      "min_limit": null,
+      "max_limit": null,
+      "threshold": null,
+      "indicator_type": "COMMAND",
+      "permission_state": null,
+      "feedback_state": null,
+      "properties": {
+        "label": "Pump Command",
+        "indicator_class": "COMMAND_DISPATCH",
+        "color_on": "#00FF00",
+        "color_off": "#404040",
+        "x": 220,
+        "y": 140,
+        "width": 140,
+        "height": 36
+      }
+    },
+    {
+      "name": "HMI_PumpFeedbackIndicator",
+      "object_type": "INDICATOR_LAMP",
+      "role": "Feedback Indicator: Physical Auxiliary Run Confirmation",
+      "bound_variable": "PumpRunningFeedback",
+      "data_type": "BOOL",
+      "memory_address": "%I1",
+      "unit": null,
+      "min_limit": null,
+      "max_limit": null,
+      "threshold": null,
+      "indicator_type": "FEEDBACK",
+      "permission_state": null,
+      "feedback_state": "DISCONNECTED (No physical PLC)",
+      "properties": {
+        "label": "Pump Run Feedback",
+        "indicator_class": "FEEDBACK_CONFIRMATION",
+        "differentiated_from_cmd": true,
+        "color_on": "#00AA00",
+        "color_off": "#303030",
+        "x": 380,
+        "y": 140,
+        "width": 140,
+        "height": 36
+      }
+    },
+    {
+      "name": "HMI_HighAlarmLamp",
+      "object_type": "INDICATOR_LAMP",
+      "role": "High Alarm Trip Indicator",
+      "bound_variable": "STBlock1.HI",
+      "data_type": "BOOL",
+      "memory_address": "%T3",
+      "unit": null,
+      "min_limit": null,
+      "max_limit": null,
+      "threshold": 65.0,
+      "indicator_type": "ALARM",
+      "permission_state": null,
+      "feedback_state": null,
+      "properties": {
+        "label": "ALARM HI (>= 65%)",
+        "trip_condition": "TankLevelPV >= 65.0",
+        "color_on": "#FF0000",
+        "color_off": "#600000",
+        "x": 60,
+        "y": 200,
+        "width": 140,
+        "height": 36
+      }
+    },
+    {
+      "name": "HMI_LowAlarmLamp",
+      "object_type": "INDICATOR_LAMP",
+      "role": "Low Alarm Trip Indicator",
+      "bound_variable": "STBlock1.LO",
+      "data_type": "BOOL",
+      "memory_address": "%T4",
+      "unit": null,
+      "min_limit": null,
+      "max_limit": null,
+      "threshold": 35.0,
+      "indicator_type": "ALARM",
+      "permission_state": null,
+      "feedback_state": null,
+      "properties": {
+        "label": "ALARM LO (<= 35%)",
+        "trip_condition": "TankLevelPV <= 35.0",
+        "color_on": "#FFA500",
+        "color_off": "#604000",
+        "x": 220,
+        "y": 200,
+        "width": 140,
+        "height": 36
+      }
+    },
+    {
+      "name": "HMI_SensorPermissionState",
+      "object_type": "STATUS_MONITOR",
+      "role": "Sensor Signal & Hardware Permission Monitor",
+      "bound_variable": "SensorHardwareState",
+      "data_type": "STRING",
+      "memory_address": "%SR043",
+      "unit": null,
+      "min_limit": null,
+      "max_limit": null,
+      "threshold": null,
+      "indicator_type": null,
+      "permission_state": "UNAVAILABLE / OFFLINE_DEV [FAIL_CLOSED]",
+      "feedback_state": "NO_PHYSICAL_FEEDBACK (Ports Locked Out)",
+      "properties": {
+        "status_text": "SENSORS: UNAVAILABLE [NO PHYSICAL PLC]",
+        "lockout_mode": "FAIL_CLOSED",
+        "com_ports": "BLOCKED (COM1..COM256)",
+        "download_commands": "BLOCKED (32827/33149)",
+        "honest_telemetry": true,
+        "x": 60,
+        "y": 260,
+        "width": 460,
+        "height": 32,
+        "bg_color": "#FFE6E6",
+        "text_color": "#990000"
+      }
+    }
+  ],
+  "lifecycle_verified": {
+    "saved": true,
+    "closed_cleanly": true,
+    "reopened": true,
+    "screens_retained": true,
+    "objects_retained": true
+  },
+  "minimum_hmi_verified": {
+    "pv_display_with_unit": true,
+    "manual_auto_selector": true,
+    "manual_command": true,
+    "editable_thresholds_with_limits": true,
+    "differentiated_command_vs_feedback": true,
+    "sensor_permission_state_fail_closed": true,
+    "no_invented_physical_feedback": true
+  },
+  "safety_lockout": "BLOCKED_FAIL_CLOSED (Zero PLC download, COM/CAN/USB blocked)"
+}

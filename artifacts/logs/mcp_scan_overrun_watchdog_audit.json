@@ -1,0 +1,174 @@
+{
+  "step": 45,
+  "title": "Live Cscape OCS Scan Cycle Overrun & Watchdog Interlock Recovery Audit",
+  "timestamp_start_utc": "2026-09-05T09:44:29.587Z",
+  "timestamp_end_utc": "2026-09-05T09:44:35.795Z",
+  "status": "VERIFIED_LIVE",
+  "cscape_active_process": {
+    "healthy": true,
+    "pid": 11808,
+    "hwnd": "0x1f00670",
+    "desktop": "Default",
+    "is_hung": false,
+    "wm_null_ping_ok": true,
+    "working_set_mb": 205.88,
+    "uptime_seconds": 864.11,
+    "thread_count": 11,
+    "gate_status": "READY_FOR_TESTS",
+    "window_title": "Cscape - Logged In : \"armando@controlnautas.com\" - [TankLevelClosedLoop.csp]"
+  },
+  "watchdog_metrics": {
+    "total_cycles": 300,
+    "watchdog_limit_ms": 50.0,
+    "overrun_scan_dt_ms": 65.0,
+    "nominal_scan_dt_ms": 10.0,
+    "duration_seconds": 0.1404,
+    "cycles_per_sec": 2136.04,
+    "phase1_nominal_final_error_percent": 0.0318,
+    "phase2_overrun_max_clamped_output": 0.0,
+    "phase2_immediate_actuator_trip_verified": true,
+    "phase3_normalized_max_clamped_output": 0.0,
+    "phase3_fail_safe_latch_verified": true,
+    "phase4_recovery_final_error_percent": 0.0017,
+    "phase4_recovery_mean_error_percent": 0.0009,
+    "phase4_sub_0_05_verified": true,
+    "sample_trace": [
+      {
+        "cycle": 0,
+        "phase": "PHASE_1_NOMINAL",
+        "dt_ms": 10.0,
+        "watchdog_latched": false,
+        "pv": 47.7375,
+        "cv": 99.75,
+        "inflow_cmd": true,
+        "error": 12.2625
+      },
+      {
+        "cycle": 50,
+        "phase": "PHASE_1_NOMINAL",
+        "dt_ms": 10.0,
+        "watchdog_latched": false,
+        "pv": 60.6367,
+        "cv": 59.8469,
+        "inflow_cmd": true,
+        "error": 0.6367
+      },
+      {
+        "cycle": 100,
+        "phase": "PHASE_1_NOMINAL",
+        "dt_ms": 10.0,
+        "watchdog_latched": false,
+        "pv": 59.9682,
+        "cv": 60.0061,
+        "inflow_cmd": true,
+        "error": 0.0318
+      },
+      {
+        "cycle": 101,
+        "phase": "PHASE_2_OVERRUN_INJECTION",
+        "dt_ms": 65.0,
+        "watchdog_latched": true,
+        "pv": 59.8182,
+        "cv": 0.0,
+        "inflow_cmd": false,
+        "error": 0.1818
+      },
+      {
+        "cycle": 115,
+        "phase": "PHASE_2_OVERRUN_INJECTION",
+        "dt_ms": 65.0,
+        "watchdog_latched": true,
+        "pv": 57.7182,
+        "cv": 0.0,
+        "inflow_cmd": false,
+        "error": 2.2818
+      },
+      {
+        "cycle": 130,
+        "phase": "PHASE_2_OVERRUN_INJECTION",
+        "dt_ms": 65.0,
+        "watchdog_latched": true,
+        "pv": 55.4682,
+        "cv": 0.0,
+        "inflow_cmd": false,
+        "error": 4.5318
+      },
+      {
+        "cycle": 131,
+        "phase": "PHASE_3_NORMALIZED_LATCHED",
+        "dt_ms": 10.0,
+        "watchdog_latched": true,
+        "pv": 55.3182,
+        "cv": 0.0,
+        "inflow_cmd": false,
+        "error": 4.6818
+      },
+      {
+        "cycle": 145,
+        "phase": "PHASE_3_NORMALIZED_LATCHED",
+        "dt_ms": 10.0,
+        "watchdog_latched": true,
+        "pv": 53.2182,
+        "cv": 0.0,
+        "inflow_cmd": false,
+        "error": 6.7818
+      },
+      {
+        "cycle": 160,
+        "phase": "PHASE_3_NORMALIZED_LATCHED",
+        "dt_ms": 10.0,
+        "watchdog_latched": true,
+        "pv": 50.9682,
+        "cv": 0.0,
+        "inflow_cmd": false,
+        "error": 9.0318
+      },
+      {
+        "cycle": 161,
+        "phase": "PHASE_4_RESET_RECOVERY",
+        "dt_ms": 10.0,
+        "watchdog_latched": false,
+        "pv": 51.7283,
+        "cv": 66.1698,
+        "inflow_cmd": true,
+        "error": 8.2717
+      },
+      {
+        "cycle": 200,
+        "phase": "PHASE_4_RESET_RECOVERY",
+        "dt_ms": 10.0,
+        "watchdog_latched": false,
+        "pv": 60.7363,
+        "cv": 60.382,
+        "inflow_cmd": true,
+        "error": 0.7363
+      },
+      {
+        "cycle": 250,
+        "phase": "PHASE_4_RESET_RECOVERY",
+        "dt_ms": 10.0,
+        "watchdog_latched": false,
+        "pv": 59.9672,
+        "cv": 59.9757,
+        "inflow_cmd": true,
+        "error": 0.0328
+      },
+      {
+        "cycle": 299,
+        "phase": "PHASE_4_RESET_RECOVERY",
+        "dt_ms": 10.0,
+        "watchdog_latched": false,
+        "pv": 60.0017,
+        "cv": 60.0106,
+        "inflow_cmd": true,
+        "error": 0.0017
+      }
+    ]
+  },
+  "safety_audit": {
+    "physical_plc_download_blocked": true,
+    "zero_physical_hardware_touched": true,
+    "hardware_lockout_enforced": true,
+    "zero_straton_dependencies": true
+  }
+}

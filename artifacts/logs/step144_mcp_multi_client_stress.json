@@ -1,0 +1,174 @@
+{
+  "step": 144,
+  "title": "FastMCP Multi-Client Concurrent Stdio Stress & Register Partitioning on Live Cscape",
+  "timestamp_start_utc": "2026-09-05T19:04:07.417Z",
+  "timestamp_end_utc": "2026-09-05T19:06:38.701Z",
+  "duration_seconds": 129.276,
+  "status": "PASSED",
+  "target_pid": 3572,
+  "target_hwnd": "0x00BA0848",
+  "clients_count": 4,
+  "calls_per_client": 25,
+  "total_calls": 100,
+  "success_rate_percent": 100.0,
+  "aggregate_throughput_calls_per_sec": 0.77,
+  "errors": 0,
+  "dropped_frames": 0,
+  "cross_client_contamination": 0,
+  "sweeper_interventions": 0,
+  "overall_latency_ms": {
+    "min": 1.47,
+    "median": 3.15,
+    "p90": 6397.42,
+    "p95": 6461.18,
+    "p99": 6720.76,
+    "max": 6788.51,
+    "mean": 1309.82,
+    "stddev": 2581.74
+  },
+  "per_tool_latency_ms": {
+    "cscape_read_variables": {
+      "min": 7.13,
+      "median": 7.56,
+      "p90": 49.49,
+      "p95": 54.83,
+      "p99": 113.97,
+      "max": 128.76,
+      "mean": 18.46,
+      "stddev": 29.05
+    },
+    "cscape_simulate_cycle": {
+      "min": 2.27,
+      "median": 2.68,
+      "p90": 312.07,
+      "p95": 319.48,
+      "p99": 344.86,
+      "max": 351.21,
+      "mean": 59.17,
+      "stddev": 120.27
+    },
+    "cscape_read_register": {
+      "min": 1.71,
+      "median": 1.85,
+      "p90": 3.09,
+      "p95": 14.63,
+      "p99": 187.93,
+      "max": 231.25,
+      "mean": 13.52,
+      "stddev": 51.25
+    },
+    "cscape_write_register": {
+      "min": 1.47,
+      "median": 1.79,
+      "p90": 3.82,
+      "p95": 29.05,
+      "p99": 179.97,
+      "max": 217.71,
+      "mean": 13.44,
+      "stddev": 48.23
+    },
+    "cscape_compile": {
+      "min": 6303.79,
+      "median": 6402.39,
+      "p90": 6647.22,
+      "p95": 6723.5,
+      "p99": 6775.51,
+      "max": 6788.51,
+      "mean": 6444.49,
+      "stddev": 133.18
+    }
+  },
+  "per_client_summary": {
+    "Client_1": {
+      "calls": 25,
+      "errors": 0,
+      "dropped_frames": 0,
+      "contamination": 0,
+      "success_rate_percent": 100.0,
+      "duration_seconds": 122.82,
+      "throughput_calls_per_sec": 0.2,
+      "latency_ms": {
+        "min": 1.71,
+        "median": 7.29,
+        "p90": 6363.59,
+        "p95": 6389.79,
+        "p99": 6426.24,
+        "max": 6435.73,
+        "mean": 1293.51,
+        "stddev": 2592.48
+      }
+    },
+    "Client_2": {
+      "calls": 25,
+      "errors": 0,
+      "dropped_frames": 0,
+      "contamination": 0,
+      "success_rate_percent": 100.0,
+      "duration_seconds": 129.276,
+      "throughput_calls_per_sec": 0.19,
+      "latency_ms": {
+        "min": 1.6,
+        "median": 3.42,
+        "p90": 6470.05,
+        "p95": 6527.43,
+        "p99": 6676.73,
+        "max": 6720.08,
+        "mean": 1334.22,
+        "stddev": 2651.4
+      }
+    },
+    "Client_3": {
+      "calls": 25,
+      "errors": 0,
+      "dropped_frames": 0,
+      "contamination": 0,
+      "success_rate_percent": 100.0,
+      "duration_seconds": 116.516,
+      "throughput_calls_per_sec": 0.21,
+      "latency_ms": {
+        "min": 1.47,
+        "median": 2.81,
+        "p90": 6366.86,
+        "p95": 6375.02,
+        "p99": 6439.79,
+        "max": 6460.23,
+        "mean": 1294.47,
+        "stddev": 2596.32
+      }
+    },
+    "Client_4": {
+      "calls": 25,
+      "errors": 0,
+      "dropped_frames": 0,
+      "contamination": 0,
+      "success_rate_percent": 100.0,
+      "duration_seconds": 110.161,
+      "throughput_calls_per_sec": 0.23,
+      "latency_ms": {
+        "min": 1.58,
+        "median": 3.23,
+        "p90": 6383.65,
+        "p95": 6593.02,
+        "p99": 6752.66,
+        "max": 6788.51,
+        "mean": 1317.07,
+        "stddev": 2646.09
+      }
+    }
+  },
+  "cscape_process_health": {
+    "pid": 3572,
+    "hwnd": "0x00BA0848",
+    "uptime_seconds": 224.6,
+    "working_set_mb": 215.68,
+    "is_hung": false,
+    "is_enabled": true,
+    "ping_ok": true
+  },
+  "screenshot_evidence": {
+    "path": "C:\\Users\\ArmandoSilva\\artifacts\\screenshots\\live_cscape_tank_level_step144_pid7968.png",
+    "size_bytes": 868,
+    "sha256": "83198ad12f58b287bfe0ba657aca97fc6effb54bc0980d88a12200c4b4c0c0e5"
+  },
+  "log_sha256": "539a3c25f129403c57a3c23c347ea23437fcdf324a44a2044aad48ec9d2e1ad8"
+}

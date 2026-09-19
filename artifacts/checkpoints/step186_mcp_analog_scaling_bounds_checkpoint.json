@@ -1,0 +1,12 @@
+{
+  "step": 186,
+  "gate": "G4",
+  "name": "step186_mcp_analog_scaling_bounds_checkpoint",
+  "classification": "offline/DEV [TESTED_MOCK]",
+  "status": "success",
+  "timestamp_utc": "2026-09-06T22:32:43.231Z",
+  "duration_sec": 0.0015,
+  "target_pou": "FB_AnalogScalingOutOfBounds",
+  "all_invariants_passed": true,
+  "invariants_count": 13
+}

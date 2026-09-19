@@ -1,0 +1,99 @@
+{
+  "step": 39,
+  "title": "FastMCP Pipelined Stdio JSON-RPC Stress Benchmark on Successor PID 15240",
+  "timestamp_start_utc": "2026-09-05T07:58:51.091Z",
+  "timestamp_end_utc": "2026-09-05T07:59:14.968Z",
+  "status": "VERIFIED_LIVE",
+  "cscape_active_process": {
+    "pid": 15240,
+    "hwnd": "0x00710582",
+    "uptime_seconds": 6983.39,
+    "working_set_mb": 119.03,
+    "is_hung": false,
+    "wm_null_ping_ok": true,
+    "desktop": "Default"
+  },
+  "stress_metrics": {
+    "total_calls": 100,
+    "concurrency": 8,
+    "duration_seconds": 21.284,
+    "throughput_calls_per_sec": 4.7,
+    "success_rate_percent": 100.0,
+    "errors": 0,
+    "overall_latency_ms": {
+      "min": 1.59,
+      "median": 20.76,
+      "p90": 6506.38,
+      "p95": 7267.5,
+      "p99": 8188.38,
+      "max": 8204.51,
+      "mean": 1419.3,
+      "stddev": 2820.18
+    },
+    "latency_by_tool_ms": {
+      "cscape_read_variables": {
+        "min": 7.55,
+        "median": 15.88,
+        "p90": 46.56,
+        "p95": 61.19,
+        "p99": 94.89,
+        "max": 103.32,
+        "mean": 26.29,
+        "stddev": 23.45
+      },
+      "cscape_simulate_cycle": {
+        "min": 2.79,
+        "median": 14.82,
+        "p90": 46.01,
+        "p95": 85.62,
+        "p99": 113.5,
+        "max": 120.47,
+        "mean": 24.78,
+        "stddev": 29.34
+      },
+      "cscape_read_register": {
+        "min": 1.73,
+        "median": 19.75,
+        "p90": 49.96,
+        "p95": 103.57,
+        "p99": 117.37,
+        "max": 120.82,
+        "mean": 27.31,
+        "stddev": 31.36
+      },
+      "cscape_write_register": {
+        "min": 1.59,
+        "median": 19.91,
+        "p90": 45.45,
+        "p95": 66.5,
+        "p99": 93.96,
+        "max": 100.83,
+        "mean": 24.44,
+        "stddev": 23.22
+      },
+      "cscape_compile_project": {
+        "min": 6348.84,
+        "median": 6518.69,
+        "p90": 8159.29,
+        "p95": 8189.03,
+        "p99": 8201.41,
+        "max": 8204.51,
+        "mean": 6993.7,
+        "stddev": 742.84
+      }
+    },
+    "tool_call_counts": {
+      "cscape_read_variables": 20,
+      "cscape_simulate_cycle": 20,
+      "cscape_read_register": 20,
+      "cscape_write_register": 20,
+      "cscape_compile_project": 20
+    }
+  },
+  "safety_audit": {
+    "physical_plc_download_blocked": true,
+    "zero_physical_hardware_touched": true,
+    "hardware_lockout_enforced": true,
+    "zero_straton_dependencies": true
+  }
+}

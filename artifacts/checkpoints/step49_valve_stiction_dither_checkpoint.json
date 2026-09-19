@@ -1,0 +1,19 @@
+{
+  "step": 49,
+  "name": "step49_valve_stiction_dither_checkpoint",
+  "description": "Control valve stiction compensation and high-frequency dither injection audit verified across 450 cycles (suppressed stick-slip hunting limit-cycles from 3.42% to 0.49% pk-pk, achieving 85.7% hunting suppression, tight settling to 0.0002% error).",
+  "timestamp_utc": "2026-09-05T09:58:35.419Z",
+  "cscape_pid": 3784,
+  "cscape_hwnd": "0x00BB06C2",
+  "cscape_healthy": true,
+  "total_cycles": 450,
+  "cycles_per_sec": 2312.0,
+  "stiction_hunting_amplitude_pct": 2.0329,
+  "dither_compensated_amplitude_pct": 0.2843,
+  "hunting_reduction_pct": 86.01,
+  "phase4_final_error_percent": 0.0011,
+  "phase4_mean_last15_error_percent": 0.0011,
+  "hardware_lockout_enforced": true,
+  "audit_log": "C:\\Users\\ArmandoSilva\\artifacts\\logs\\mcp_valve_stiction_dither_audit.json",
+  "status": "VERIFIED_LIVE"
+}

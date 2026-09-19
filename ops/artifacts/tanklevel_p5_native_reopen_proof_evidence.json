@@ -1,0 +1,125 @@
+{
+  "status": "success",
+  "task_id": "TANKLEVEL_P5_NATIVE_REOPEN_PROOF_WITH_SCALING_BRIDGE",
+  "mission_id": "TANKLEVEL_P5_NATIVE_REOPEN_PROOF_WITH_SCALING_BRIDGE",
+  "timestamp_utc": "2026-09-17T21:05:00Z",
+  "governing_rules": "RULE[C:\\Users\\ArmandoSilva\\AGENTS.md]",
+  "operational_mode": "offline/DEV [PRODUCT_EVIDENCE]",
+  "system_state": "RUNTIME_PENDING_P7",
+  "verified_live": false,
+  "zero_plc_download": true,
+  "no_error_check_loop": true,
+  "single_gui_boundary": "Cscape 10.2 on winsta0\\Default (PID 12788; HWND 3016360 / 0x2E06A8; single GUI owner)",
+  "target_project": {
+    "project_name": "TankLevel_P5_Dedicated.csp",
+    "project_path": "artifacts/projects/TankLevel_P5_Dedicated/TankLevel_P5_Dedicated.csp",
+    "cfbf_valid": true,
+    "magic_hex": "d0cf11e0a1b11ae1",
+    "sector_size": 512,
+    "file_size_bytes": 132608,
+    "cscape_version": "10.2.751.4",
+    "horner_markers": [
+      "HornerOCS",
+      "main3",
+      "Allocated",
+      "<END_RETAIN>",
+      "%AI1",
+      "%AQ1",
+      "PLC Type"
+    ]
+  },
+  "fastmcp_open_tool_execution": {
+    "tool_name": "cscape_open_project",
+    "transport": "FastMCP JSON-RPC 2.0 stdio",
+    "status": "success",
+    "open_mode": "live_gui",
+    "already_open": true,
+    "cscape_pid": 12788,
+    "main_hwnd": 3016360,
+    "main_hwnd_hex": "0x002E06A8",
+    "window_title": "Cscape - Logged In : \"armando@controlnautas.com\" - [TankLevel_P5_Dedicated.csp]",
+    "offline_safety_enforced": true,
+    "zero_download_enforced": true,
+    "verified_live": false,
+    "plc_download": false,
+    "error_count": 0,
+    "message": "Cscape project 'TankLevel_P5_Dedicated.csp' verified (CFBF=True). Project is already active in live Cscape session (PID 12788)."
+  },
+  "scaling_bridge_pous_verified": {
+    "FB_ModbusScaleQuality": {
+      "file_path": "artifacts/projects/TankLevel_P5_Dedicated/pous/FB_ModbusScaleQuality.st",
+      "size_bytes": 1784,
+      "pure_st": true,
+      "ladder_constructs_found": 0,
+      "sha256": "53db9193692a69b2976138ac3dd364b9c2a906b06dd259b6bff73c1c28af8b5a",
+      "inputs": ["RawInput : INT", "RawMin : INT", "RawMax : INT", "EUMin : REAL", "EUMax : REAL", "CommFailure : BOOL", "StaleQuality : BOOL", "FailSafeValue : REAL"],
+      "outputs": ["ScaledOutput : REAL", "QualityGood : BOOL", "AlarmActive : BOOL", "Underflow : BOOL", "Overflow : BOOL"]
+    },
+    "TankLevelModbusBridge": {
+      "file_path": "artifacts/projects/TankLevel_P5_Dedicated/pous/TankLevelModbusBridge.st",
+      "size_bytes": 2937,
+      "pure_st": true,
+      "ladder_constructs_found": 0,
+      "sha256": "a1cd7c6c34047c1e13c9aad9d06c5c81544bdb4c50b9c261391f2794012ffbdd",
+      "telemetry_inputs": ["AI_TankLevelRaw AT %AI1", "AI_InflowRaw AT %AI2", "AI_DischargeRaw AT %AI3"],
+      "engineering_outputs": ["TankLevelPV AT %R101", "InflowRatePV AT %R103", "DischargePressPV AT %R105"],
+      "quality_flags": ["LevelQualityGood AT %M21", "InflowQualityGood AT %M23", "DischargeQualityGood AT %M25"]
+    },
+    "TankLevelControl": {
+      "file_path": "artifacts/projects/TankLevel_P5_Dedicated/pous/TankLevelControl.st",
+      "size_bytes": 2251,
+      "pure_st": true,
+      "ladder_constructs_found": 0,
+      "sha256": "36612185e94bfa6b1a79a4bf1d68e0b1533558ad99b96de5a3937640f3aec714"
+    }
+  },
+  "modbus_protocol_sidecars": {
+    "modbus_protocol_inventory": {
+      "file_path": "artifacts/projects/TankLevel_P5_Dedicated/modbus_protocol_inventory.json",
+      "devices_count": 3,
+      "devices": ["DEV_LT01", "DEV_FT01", "DEV_PT01"],
+      "scan_list_count": 3,
+      "scan_list_targets": ["%AI1", "%AI2", "%AI3"],
+      "read_only_master": true
+    },
+    "modbus_pv_config": {
+      "file_path": "artifacts/projects/TankLevel_P5_Dedicated/modbus_pv_config.json",
+      "primary_pv": "TankLevelPV",
+      "ocs_register": "%AI1",
+      "modicon_1based": 40001,
+      "read_only_enforced": true
+    }
+  },
+  "screenshot_proof": {
+    "filename": "tanklevel_p5_native_reopen_proof.png",
+    "downloads_path": "C:\\Users\\ArmandoSilva\\Downloads\\tanklevel_p5_native_reopen_proof.png",
+    "ops_path": "C:\\HornerAI\\horner-cscape-mcp\\ops\\artifacts\\tanklevel_p5_native_reopen_proof.png",
+    "bytes": 84067,
+    "sha256": "75aee77a599713e5c4eb73597ee42546d3aa9825b727a769546956ba061d6074",
+    "window_rect": [1, 1, 1279, 567],
+    "window_title": "Cscape - Logged In : \"armando@controlnautas.com\" - [TankLevel_P5_Dedicated.csp]"
+  },
+  "test_verification_results": {
+    "test_suite": "tests/test_tanklevel_p5_native_reopen_proof.py",
+    "framework": "pytest 9.1.1 / Python 3.12.10",
+    "total_tests": 7,
+    "passed": 7,
+    "failed": 0,
+    "companion_suites": {
+      "tests/test_modbus_register_scaling_bridge.py": "32/32 passed",
+      "tests/test_mj1_devices_scan_list_state.py": "11/11 passed",
+      "tests/test_scan_list_reconcile.py": "14/14 passed",
+      "tests/test_p9_offline_gaps.py": "9/9 passed"
+    },
+    "total_targeted_tests_passed": 73
+  },
+  "safety_lockout_and_deferral": {
+    "plc_download": false,
+    "verified_live": false,
+    "zero_download_enforced": true,
+    "physical_port_lockout": "ENFORCED (COM1..COM256, CAN, USB, JTAG blocked)",
+    "win32_download_lockout": "ENFORCED (Command IDs 32827 and 33149 blocked)",
+    "no_error_check_loop": true,
+    "p7_status": "DEFERRED_MANUAL_ENGINEER_LOAD (STRICTLY NOT P7; offline native reopen & scaling bridge proof)"
+  }
+}

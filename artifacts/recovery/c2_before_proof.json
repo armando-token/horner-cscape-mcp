@@ -1,0 +1,42 @@
+{
+  "phase": "C2",
+  "description": "Historical / baseline behavior prior to Phase C2 CFBF and staging hardening",
+  "findings": {
+    "false_cfbf_acceptance": {
+      "input_expression": "bytes.fromhex(\"d0cf11e0a1b11ae1\") + bytes(504)",
+      "input_length_bytes": 512,
+      "baseline_inspect_project_file": {
+        "is_valid_cfbf": true,
+        "reason": "Only verified data[:8] == CFBF_MAGIC; 504 zero bytes ignored."
+      },
+      "baseline_export_project": {
+        "success": true,
+        "status": "success",
+        "is_valid_cfbf": true,
+        "reason": "Condition len(file_bytes) < 512 was false for 512-byte files; magic header matched."
+      },
+      "baseline_validate_cfbf_container": {
+        "result": true,
+        "reason": "Only checked len(data) >= 8 and data[:8] == CFBF_MAGIC."
+      }
+    },
+    "editor_empty_aux_file_fallback": {
+      "scenario": "Editor window buffer is empty (0 chars read), but POU file exists on disk",
+      "baseline_verify_editor_content": {
+        "verified": true,
+        "exact_match": true,
+        "diagnostic": "Extracted content verified via project/standalone file: ...",
+        "vulnerability": "Silent fallback to disk file masked empty/unresponsive editor window."
+      }
+    },
+    "staging_conflation": {
+      "scenario": "POU written to pous/ directory in offline DEV mode",
+      "baseline_result": {
+        "storage_mode": null,
+        "is_staged": null,
+        "is_native_persisted": null,
+        "vulnerability": "Filesystem staging was not explicitly distinguished from native OLE2 binary persistence."
+      }
+    }
+  }
+}

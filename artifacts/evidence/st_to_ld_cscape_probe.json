@@ -1,0 +1,18 @@
+{
+  "cscape_hwnd": "0x7b06d6",
+  "menu_items_count": 0,
+  "matching_menu_items": [],
+  "binary_probe": {
+    "Change Language": 0,
+    "Convert to Ladder": 0,
+    "Convert To Ladder": 0,
+    "Convert to LD": 0,
+    "Convert to ST": 0,
+    "Change POU": 0,
+    "Change Type": 0,
+    "Translate": 17,
+    "Structured Text": 12,
+    "Advanced Ladder": 23,
+    "IEC 61131": 2
+  }
+}

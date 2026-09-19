@@ -1,0 +1,18 @@
+{
+  "step": 150,
+  "name": "step150_mcp_burst_stress_checkpoint",
+  "status": "PASSED",
+  "timestamp_utc": "2026-09-05T19:53:15.634Z",
+  "cscape_pid": 3120,
+  "hwnd": "0x00830976",
+  "pipelined_calls": 150,
+  "success_rate_percent": 100.0,
+  "throughput_req_per_sec": 32.65,
+  "mean_latency_ms": 30.56,
+  "simulation_cycles": 50,
+  "gui_compile_status": "SUCCESS",
+  "zero_straton_dependencies": true,
+  "hardware_lockout_enforced": true,
+  "live_screenshot_sha256": "d7023c7218a445d4f74f6f68627afa99108901ca8363f7120ff01d184ec67e50",
+  "checkpoint_sha256": "e19e74f85e0a0a4a7e7341405125452598f735f2df64a3ae98286ec13e92496d"
+}

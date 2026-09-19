@@ -1,0 +1,164 @@
+{
+  "timestamp_utc": "2026-09-05T02:26:16.062Z",
+  "status": "ALL_PASSED",
+  "cscape": {
+    "pid": 796,
+    "hwnd": "0x00C106D2",
+    "window_title": "Cscape - Logged In : \"armando@controlnautas.com\" - [TankLevelClosedLoop.csp]",
+    "ready_for_tests": true
+  },
+  "gui_st_ld_proof": {
+    "cscape_language_menu_verified": "HMI UI localization only (Language Options/Display Language/Import/Export)",
+    "native_st_to_ld_compiler_in_cscape": false,
+    "st_ladder_interop_guard_active": true,
+    "ladder_rungs_generated": 10,
+    "ascii_proof": "C:\\Users\\ArmandoSilva\\artifacts\\proofs\\tank_level_ladder_diagram.txt",
+    "ast_proof": "C:\\Users\\ArmandoSilva\\artifacts\\proofs\\tank_level_ladder_ast.json",
+    "interop_fail_closed_verified": true
+  },
+  "mcp_stdio_e2e": {
+    "transport": "stdio",
+    "handshake_protocol_version": "2025-11-25",
+    "server_name": "horner-cscape-mcp",
+    "server_version": "1.0.0",
+    "total_calls": 19,
+    "passed_calls": 19,
+    "zero_straton_dependencies": true,
+    "zero_plc_download_enforced": true,
+    "call_records": [
+      {
+        "index": 1,
+        "tool": "cscape_open_project",
+        "status": "PASS",
+        "duration_ms": 233.5,
+        "summary": "Cscape project 'TankLevelClosedLoop.csp' verified (CFBF=True)."
+      },
+      {
+        "index": 2,
+        "tool": "cscape_read_variables",
+        "status": "PASS",
+        "duration_ms": 11.2,
+        "summary": "Successfully read and validated 21 variables from variables.csv."
+      },
+      {
+        "index": 3,
+        "tool": "cscape_inspect_variables",
+        "status": "PASS",
+        "duration_ms": 53.5,
+        "summary": "success"
+      },
+      {
+        "index": 4,
+        "tool": "cscape_validate_st",
+        "status": "PASS",
+        "duration_ms": 31.6,
+        "summary": "{\n  \"valid\": false,\n  \"pou_name\": \"TankLevelControl\",\n  \"pou"
+      },
+      {
+        "index": 5,
+        "tool": "cscape_compile_project",
+        "status": "PASS",
+        "duration_ms": 33.9,
+        "summary": "Compilation completed: SUCCESS (0 errors, 0 warnings)"
+      },
+      {
+        "index": 6,
+        "tool": "cscape_compile",
+        "status": "PASS",
+        "duration_ms": 1107.7,
+        "summary": "Live Cscape error check completed (0 errors, 0 warnings)"
+      },
+      {
+        "index": 7,
+        "tool": "cscape_get_build_output",
+        "status": "PASS",
+        "duration_ms": 7.0,
+        "summary": "Retrieved 0 diagnostics from build log."
+      },
+      {
+        "index": 8,
+        "tool": "cscape_get_diagnostics",
+        "status": "PASS",
+        "duration_ms": 17.5,
+        "summary": "Retrieved 0 diagnostics from build log."
+      },
+      {
+        "index": 9,
+        "tool": "cscape_simulate_cycle",
+        "status": "PASS",
+        "duration_ms": 11.8,
+        "summary": "Cycle 0 executed successfully at t=0.0ms."
+      },
+      {
+        "index": 10,
+        "tool": "cscape_simulate_pou",
+        "status": "PASS",
+        "duration_ms": 5.0,
+        "summary": "{\n  \"success\": true,\n  \"steps_executed\": 3,\n  \"total_cycles\""
+      },
+      {
+        "index": 11,
+        "tool": "cscape_run_simulation",
+        "status": "PASS",
+        "duration_ms": 4.0,
+        "summary": "Executed 5 simulation cycles (software-only)."
+      },
+      {
+        "index": 12,
+        "tool": "cscape_read_register",
+        "status": "PASS",
+        "duration_ms": 9.1,
+        "summary": "Read register %R100 = 0 (INT)."
+      },
+      {
+        "index": 13,
+        "tool": "cscape_write_register",
+        "status": "PASS",
+        "duration_ms": 4.0,
+        "summary": "Wrote register %R100 = 16000 (INT)."
+      },
+      {
+        "index": 14,
+        "tool": "cscape_export_variables",
+        "status": "PASS",
+        "duration_ms": 6.0,
+        "summary": "Successfully wrote 0 variables to exported_vars.csv in CSV format."
+      },
+      {
+        "index": 15,
+        "tool": "cscape_import_variables",
+        "status": "PASS",
+        "duration_ms": 9.8,
+        "summary": "Successfully read and validated 21 variables from variables.csv."
+      },
+      {
+        "index": 16,
+        "tool": "cscape_export_project",
+        "status": "PASS",
+        "duration_ms": 7.8,
+        "summary": "success"
+      },
+      {
+        "index": 17,
+        "tool": "cscape_insert_st",
+        "status": "PASS",
+        "duration_ms": 6.6,
+        "summary": "Structured Text POU 'SafetyInterlockST' validated and processed."
+      },
+      {
+        "index": 18,
+        "tool": "cscape_insert_st_pou",
+        "status": "PASS",
+        "duration_ms": 4.0,
+        "summary": "Structured Text POU 'AuxPumpControl' validated and processed."
+      },
+      {
+        "index": 19,
+        "tool": "cscape_add_st_pou",
+        "status": "PASS",
+        "duration_ms": 5.5,
+        "summary": "Structured Text POU 'AlarmMonitor' validated and processed."
+      }
+    ]
+  }
+}

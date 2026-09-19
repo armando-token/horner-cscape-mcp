@@ -1,0 +1,30 @@
+{
+  "mission_id": "C0_THEN_C1",
+  "plan": "PLAN_CORRECTIVO MCP Horner/Cscape v2.0 (correctivo)",
+  "run_id": "run_20260906_120831",
+  "timestamp_utc": "2026-09-06T19:09:14.160492+00:00",
+  "preserved_definitions_rule": "Megaplan v1 H01-H13 and G0-G5 DEFINITIONS remain; do not redefine by inventory/uptime/parity",
+  "gates": {
+    "G0": "Cscape 10.2 x86 PE binary (Build 10.2.751.4), DLL exports, and registry verified. Hazardous binaries quarantined.",
+    "G1": "False successes H01-H13 dismantled (fake export/open/compile success, silent mocks, global Allow dialogs closed; honest PARTIAL classification enforced).",
+    "G2": "Live Cscape 10.2 visible GUI on winsta0\\Default with TankLevelClosedLoop.csp and Project Navigator visible (HWND confirmed, non-hung).",
+    "G3": "Live GUI Error Check (32826) clean compile (0 errors, 0 warnings), download lockout (32827/33149 enforced fail-closed).",
+    "G4": "Pure-software closed-loop plant simulation (offline/DEV [TESTED_MOCK]). Never falsely claim VERIFIED_LIVE.",
+    "G5": "Evidence-gated final signoff & dual-root parity audit with identical SHA-256 digests across all artifacts per step."
+  },
+  "false_successes": {
+    "H01": "Fake export success without live engine. Export on non-existent project must fail closed with error messages; CFBF magic header validated.",
+    "H02": "Fake open success without live engine. Open on non-existent project or missing file must fail closed.",
+    "H03": "Fake compile success without live engine. Compile on non-existent project must fail closed; metrics must be honest AST-derived; download commands locked out.",
+    "H04": "Silent mocks disguised as live passes. Simulator must explicitly declare TESTED_MOCK [offline/DEV only]; never falsely claim VERIFIED_LIVE.",
+    "H05": "Global allow dialog bypass without modal inspection. lifecycle.py must inspect #32770 dialogs and match allowed keywords.",
+    "H06": "Straton K5 files in active code paths. Legacy Straton K5 templates must remain quarantined under quarantine/straton_k5_legacy/ with 0 active imports in src/.",
+    "H07": "Hardcoded dead PIDs treated as permanent passes. Ephemeral PID tests must be recognized as historical milestones, not invariant continuous passes.",
+    "H08": "Ladder constructs disguised as ST. Ladder contacts, coils, rungs, and mnemonics must be rejected fail-closed with ERR_LADDER_FORBIDDEN; in-GUI ST->LD conversion documented as BLOCKED_NATIVE.",
+    "H09": "Fake 100% or FINAL_REPORT claims. Premature victory declarations and FINAL_REPORT.md spam prohibited; 10-minute execution watchdog enforced.",
+    "H10": "Physical hardware port access without lockout. COM1-256, \\\\.\\COM*, CAN, USB, and JTAG ports must be unconditionally blocked fail-closed.",
+    "H11": "Companion flasher utilities allowed. Flashing utilities (PGMUpdateUtility.exe, DfuSeCommand.exe, etc.), download CLI switches, and Win32 download command IDs (32827, 33149) must be blocked.",
+    "H12": "Unsupervised naked Cscape launch claiming stability. Naked launch crash at 0x0051a4cd (0.6-11.4s) must be honestly documented vs supervisor stay-open (>7,200s).",
+    "H13": "Status contract violations. All active checkpoints and MCP tool normalization must adhere strictly to the 4-state contract: status: success | failed | blocked | inconclusive."
+  }
+}

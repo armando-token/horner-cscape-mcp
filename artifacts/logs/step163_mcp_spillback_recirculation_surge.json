@@ -1,0 +1,115 @@
+{
+  "step": 163,
+  "name": "step163_mcp_spillback_recirculation_surge",
+  "status": "PASSED",
+  "mission": "Live FastMCP Coordinated Feedwater Header Spillback Bypass & Anti-Surge Recirculation Audit",
+  "timestamp_start": "2026-09-06T12:23:26.444Z",
+  "timestamp_complete": "2026-09-06T12:23:40.541Z",
+  "duration_seconds": 14.096,
+  "gate": {
+    "ready_for_tests": true,
+    "status": "READY_FOR_TESTS",
+    "pid": 10892,
+    "hwnd": "0x01B005DC",
+    "window_title": "Cscape - Logged In : \"armando@controlnautas.com\" - [TankLevelClosedLoop.csp]",
+    "project_file": "C:\\HornerAI\\horner-cscape-mcp\\artifacts\\projects\\TankLevelClosedLoop\\TankLevelClosedLoop.csp",
+    "exit_code": null,
+    "reason": "Gate G3 Error Check and Output Scrape Verified Clean (0 errors, 0 warnings)",
+    "cycle": 17,
+    "timestamp_utc": "2026-09-06T11:43:46.709Z",
+    "heartbeat_utc": "2026-09-06T11:43:46.709Z"
+  },
+  "cscape_pid": 10892,
+  "hwnd": "0x01B005DC",
+  "scenarios_passed": 5,
+  "scenarios_total": 5,
+  "scenario_results": {
+    "scenario_a_normal_flow_spillback_closed": {
+      "verified": true,
+      "spillback_valve_closed": true,
+      "bypass_flow_gpm": 0.0,
+      "recirc_active": false,
+      "header_pressure_psi": 120.0,
+      "level_pv": 50.0
+    },
+    "scenario_b_low_flow_spillback_modulation": {
+      "verified": true,
+      "spillback_valve_modulated": true,
+      "bypass_flow_gpm": 100.0,
+      "recirc_active": true,
+      "header_pressure_psi": 122.5
+    },
+    "scenario_c_antisurge_relief": {
+      "verified": true,
+      "antisurge_valve_open": true,
+      "bypass_dump_flow_gpm": 250.0,
+      "surge_alarm": true,
+      "inflow_isolated": true,
+      "peak_surge_pressure_psi": 145.0
+    },
+    "scenario_d_sensor_discrepancy_failsafe": {
+      "verified": true,
+      "discrepancy_alarm": true,
+      "failsafe_latch_open": true,
+      "failsafe_bypass_flow_gpm": 150.0,
+      "header_pressure_psi": 125.0
+    },
+    "scenario_e_normal_recovery": {
+      "verified": true,
+      "spillback_valve_closed": true,
+      "inflow_valve_restored": true,
+      "bypass_flow_gpm": 0.0,
+      "alarms_cleared": true,
+      "header_pressure_psi": 120.0,
+      "level_pv": 50.0
+    }
+  },
+  "telemetry_records": [
+    {
+      "scenario": "A_NORMAL_FLOW_SPILLBACK_CLOSED",
+      "cycle": 1,
+      "q8": false,
+      "r43": 0.0,
+      "m23": false,
+      "p": 120.0
+    },
+    {
+      "scenario": "B_LOW_FLOW_SPILLBACK_MODULATION",
+      "cycle": 2,
+      "q8": true,
+      "r43": 100.0,
+      "m23": true,
+      "p": 122.5
+    },
+    {
+      "scenario": "C_ANTISURGE_RELIEF",
+      "cycle": 3,
+      "q8": true,
+      "r43": 250.0,
+      "m24": true,
+      "p": 145.0
+    },
+    {
+      "scenario": "D_SENSOR_DISCREPANCY_FAILSAFE",
+      "cycle": 4,
+      "m25": true,
+      "q8": true,
+      "r43": 150.0,
+      "p": 125.0
+    },
+    {
+      "scenario": "E_NORMAL_RECOVERY",
+      "cycle": 5,
+      "q8": false,
+      "q2": true,
+      "r43": 0.0,
+      "p": 120.0
+    }
+  ],
+  "security": {
+    "hardware_download_lockout": "FAIL_CLOSED_BLOCKED",
+    "zero_straton_dependencies": true,
+    "zero_plc_hardware_interaction": true,
+    "no_gui_hwnd_command_dispatched": true
+  }
+}

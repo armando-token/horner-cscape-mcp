@@ -1,0 +1,158 @@
+{
+  "step": 29,
+  "title": "Dynamic Setpoint Trajectory Tracking & Rate-Limiting Closed-Loop Audit",
+  "timestamp_utc_start": "2026-09-05T07:19:55.418Z",
+  "timestamp_utc_end": "2026-09-05T07:20:01.946Z",
+  "status": "VERIFIED_LIVE",
+  "cscape_process": {
+    "healthy": true,
+    "pid": 15240,
+    "is_hung": false,
+    "working_set_mb": 124.59,
+    "threads": 11,
+    "gate_status": "READY_FOR_TESTS",
+    "window_title": "Cscape - Logged In : \"armando@controlnautas.com\" - [TankLevelClosedLoop.csp]"
+  },
+  "simulation_summary": {
+    "total_cycles": 500,
+    "duration_seconds": 0.312,
+    "throughput_cycles_per_sec": 1603.64
+  },
+  "trajectory_metrics": {
+    "max_ramp_rate_limit_pct_per_scan": 0.5,
+    "max_rate_observed_pct_per_scan": 0.5,
+    "rate_limit_strictly_enforced": true,
+    "high_hold_cycle": 349,
+    "high_hold_error_pct": 0.0014,
+    "final_hold_cycle": 499,
+    "final_hold_error_pct": 0.0353,
+    "trajectory_tracking_verified": true
+  },
+  "safety_audit": {
+    "physical_plc_download_blocked": true,
+    "zero_physical_hardware_touched": true,
+    "hardware_lockout_enforced": true
+  },
+  "sample_trace": [
+    {
+      "cycle": 0,
+      "phase": "PHASE_1_LOW_HOLD_30PCT",
+      "target_sp": 30.0,
+      "effective_sp": 30.0,
+      "pv_plant": 28.5,
+      "cv": 0.0,
+      "int_sum": 0.0,
+      "deriv_term": 0.0,
+      "step_delta": 0.0,
+      "error": 1.5
+    },
+    {
+      "cycle": 50,
+      "phase": "PHASE_1_LOW_HOLD_30PCT",
+      "target_sp": 30.0,
+      "effective_sp": 30.0,
+      "pv_plant": 29.8972,
+      "cv": 31.3608,
+      "int_sum": 31.2577,
+      "deriv_term": -0.1687,
+      "step_delta": 0.0,
+      "error": 0.1028
+    },
+    {
+      "cycle": 100,
+      "phase": "PHASE_2_DYNAMIC_RAMP_UP_80PCT",
+      "target_sp": 80.0,
+      "effective_sp": 30.5,
+      "pv_plant": 30.1048,
+      "cv": 31.7534,
+      "int_sum": 30.0253,
+      "deriv_term": 1.0062,
+      "step_delta": 0.5,
+      "error": 0.3952
+    },
+    {
+      "cycle": 150,
+      "phase": "PHASE_2_DYNAMIC_RAMP_UP_80PCT",
+      "target_sp": 80.0,
+      "effective_sp": 55.5,
+      "pv_plant": 52.5131,
+      "cv": 62.4237,
+      "int_sum": 57.2034,
+      "deriv_term": -0.0438,
+      "step_delta": 0.5,
+      "error": 2.9869
+    },
+    {
+      "cycle": 200,
+      "phase": "PHASE_2_DYNAMIC_RAMP_UP_80PCT",
+      "target_sp": 80.0,
+      "effective_sp": 80.0,
+      "pv_plant": 77.5843,
+      "cv": 85.3259,
+      "int_sum": 82.0931,
+      "deriv_term": -1.0,
+      "step_delta": 0.0,
+      "error": 2.4157
+    },
+    {
+      "cycle": 250,
+      "phase": "PHASE_3_HIGH_HOLD_80PCT",
+      "target_sp": 80.0,
+      "effective_sp": 80.0,
+      "pv_plant": 80.1522,
+      "cv": 79.7463,
+      "int_sum": 79.965,
+      "deriv_term": 0.0438,
+      "step_delta": 0.0,
+      "error": 0.1522
+    },
+    {
+      "cycle": 300,
+      "phase": "PHASE_3_HIGH_HOLD_80PCT",
+      "target_sp": 80.0,
+      "effective_sp": 80.0,
+      "pv_plant": 79.991,
+      "cv": 80.0123,
+      "int_sum": 79.9983,
+      "deriv_term": 0.0,
+      "step_delta": 0.0,
+      "error": 0.009
+    },
+    {
+      "cycle": 350,
+      "phase": "PHASE_4_DYNAMIC_RAMP_DOWN_40PCT",
+      "target_sp": 40.0,
+      "effective_sp": 79.5,
+      "pv_plant": 79.9102,
+      "cv": 78.1766,
+      "int_sum": 79.9266,
+      "deriv_term": -1.0,
+      "step_delta": 0.5,
+      "error": 0.4102
+    },
+    {
+      "cycle": 400,
+      "phase": "PHASE_4_DYNAMIC_RAMP_DOWN_40PCT",
+      "target_sp": 40.0,
+      "effective_sp": 54.5,
+      "pv_plant": 57.4862,
+      "cv": 47.5892,
+      "int_sum": 52.7986,
+      "deriv_term": 0.05,
+      "step_delta": 0.5,
+      "error": 2.9862
+    },
+    {
+      "cycle": 450,
+      "phase": "PHASE_5_FINAL_HOLD_40PCT",
+      "target_sp": 40.0,
+      "effective_sp": 40.0,
+      "pv_plant": 39.0673,
+      "cv": 38.7509,
+      "int_sum": 37.3275,
+      "deriv_term": 0.05,
+      "step_delta": 0.0,
+      "error": 0.9327
+    }
+  ]
+}

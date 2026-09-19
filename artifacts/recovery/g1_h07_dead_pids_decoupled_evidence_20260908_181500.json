@@ -1,0 +1,13 @@
+{
+  "item_id": "H07",
+  "name": "Dead PIDs Decoupled from Permanent Invariant Passes",
+  "mission_id": "G1_REMAINING_NEGATIVES_OFFLINE_v3",
+  "timestamp_utc": "2026-09-09T01:19:34.566673+00:00",
+  "status": "success",
+  "invariant": "Ephemeral PID tests classified as historical records, not invariant passes",
+  "verification": {
+    "cap_matrix_historical_milestone_declared": true,
+    "cap_matrix_false_success_dismantled": true,
+    "pass": true
+  }
+}

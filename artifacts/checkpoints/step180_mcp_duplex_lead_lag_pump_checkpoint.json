@@ -1,0 +1,24 @@
+{
+  "gate": "G4",
+  "step": 180,
+  "role": "Simulation & Verification Agent",
+  "status": "success",
+  "mandate": "Pure-software simulation execution of Industrial Duplex Lead-Lag Alternating Pump Controller",
+  "timestamp_utc": "2026-09-06T13:24:57.459Z",
+  "duration_seconds": 17.122,
+  "verification_classification": "offline/DEV (TESTED_MOCK)",
+  "live_hardware_execution": false,
+  "straton_runtime_execution": false,
+  "dual_root_parity": true,
+  "invariants_verified": [
+    "Duty/standby wear-leveling alternation based on accumulated run hours",
+    "Automatic lag pump staging when process demand level exceeds LagStartSP (85.0%)",
+    "Auto-switchover and failover on pump thermal trip or low-suction dry-run fault",
+    "Anti-short-cycling enforcement: MinRunTimeSec (15s) and MinRestTimeSec (20s)",
+    "Emergency AllPumpsFaulted alarm assertion when both pumps are unavailable",
+    "Multi-client stdio JSON-RPC concurrency with partitioned register writes (%R200, %R201)"
+  ],
+  "st_source_sha256": "45c493c7d45e04cd83e8cb6f28efcf807f6358eb0c980068a36831656d097a0e",
+  "hardware_lockout_verified": true,
+  "straton_quarantine_verified": true
+}

@@ -1,0 +1,20 @@
+{
+  "step": 25,
+  "name": "step25_actuator_stiction_checkpoint",
+  "description": "Closed-loop actuator saturation and valve stiction non-linearities verified across 500 cycles with anti-windup clamping and sub-0.20% stiction regulation",
+  "timestamp_utc": "2026-09-05T06:56:55.288Z",
+  "cscape_pid": 7616,
+  "cscape_hwnd": "0x007B06D6",
+  "cscape_healthy": true,
+  "total_cycles": 500,
+  "phase_2_saturated_error_pct": 0.0002,
+  "phase_3_saturated_error_pct": 0.0005,
+  "phase_4_stiction_error_pct": 0.1137,
+  "cv_range_pct": [
+    0.0,
+    100.0
+  ],
+  "hardware_lockout_enforced": true,
+  "audit_log": "C:\\Users\\ArmandoSilva\\artifacts\\logs\\mcp_actuator_saturation_stiction_audit.json",
+  "status": "VERIFIED_LIVE"
+}

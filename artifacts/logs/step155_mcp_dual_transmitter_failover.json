@@ -1,0 +1,51 @@
+{
+  "step": 155,
+  "name": "step155_mcp_dual_transmitter_failover",
+  "status": "PASSED",
+  "mission": "Live FastMCP Dual-Transmitter Voting, Signal Discrepancy & Bumpless Failover Telemetry Audit",
+  "timestamp_start": "2026-09-06T02:16:39.430Z",
+  "timestamp_complete": "2026-09-06T02:16:49.468Z",
+  "duration_seconds": 10.038,
+  "gate": {
+    "ready_for_tests": true,
+    "status": "READY_FOR_TESTS",
+    "pid": 16128,
+    "hwnd": "0x024903DC",
+    "window_title": "Cscape - Logged In : \"armando@controlnautas.com\" - [TankLevelClosedLoop.csp]",
+    "project_file": "C:\\HornerAI\\horner-cscape-mcp\\artifacts\\projects\\TankLevelClosedLoop\\TankLevelClosedLoop.csp",
+    "exit_code": null,
+    "reason": "Watchdog heartbeat: Cscape active and visible on interactive desktop",
+    "cycle": 716,
+    "timestamp_utc": "2026-09-06T02:16:37.763Z",
+    "heartbeat_utc": "2026-09-06T02:16:37.763Z"
+  },
+  "cscape_pid": 16128,
+  "hwnd": "0x024903DC",
+  "voting_scenarios": {
+    "scenario_a_nominal": true,
+    "scenario_b_sensor_discrepancy": true,
+    "scenario_c_sensor_open_circuit": true,
+    "scenario_d_dual_sensor_loss": true,
+    "scenario_e_recovery": true
+  },
+  "scenarios_passed": 5,
+  "scenarios_total": 5,
+  "live_gui_compile": {
+    "success": true,
+    "command_dispatched": 32826,
+    "error_count": 0,
+    "warning_count": 0
+  },
+  "security": {
+    "hardware_download_lockout": "FAIL_CLOSED_BLOCKED",
+    "gate_offline_refusal": "VERIFIED_ACTIVE"
+  },
+  "screenshot": {
+    "paths": [
+      "C:\\Users\\ArmandoSilva\\artifacts\\screenshots\\live_cscape_tank_level_step155.png",
+      "C:\\HornerAI\\horner-cscape-mcp\\artifacts\\screenshots\\live_cscape_tank_level_step155.png"
+    ],
+    "size_bytes": 72837,
+    "sha256": "8b9b99a615ac939fd04dad6e1674fc6355700657670bc1254d4890ab95be6261"
+  }
+}

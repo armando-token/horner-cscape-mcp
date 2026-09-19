@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='utf-8'?>
+<ProjectVariables version="1.0">
+   <vargroup name="program">
+      <var name="RawLevelIn" type="INT" />
+      <var name="SetPoint" type="REAL" />
+      <var name="AutoMode" type="BOOL" />
+      <var name="PumpSpeed" type="INT" />
+      <var name="HighAlarm" type="BOOL" />
+      <var name="LevelPercent" type="REAL" />
+   </vargroup>
+</ProjectVariables>

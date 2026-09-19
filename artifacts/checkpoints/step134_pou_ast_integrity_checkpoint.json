@@ -1,0 +1,23 @@
+{
+  "step": 134,
+  "name": "step134_pou_ast_integrity_checkpoint",
+  "status": "PASSED",
+  "timestamp_utc": "2026-09-05T17:25:01.154733+00:00",
+  "target_project": "TankLevelClosedLoop",
+  "pous_evaluated": [
+    "TankLevelClosedLoop.st",
+    "AlarmMonitor.st",
+    "BrokenPOU.st",
+    "AuxPumpControl.st",
+    "SafetyInterlockST.st"
+  ],
+  "pous_parsed_successfully": 5,
+  "total_ast_nodes": 243,
+  "valid_mutations_passed": true,
+  "syntax_faults_rejected_fail_closed": true,
+  "baseline_sha256_integrity_preserved": true,
+  "zero_straton_dependencies": true,
+  "hardware_lockout_enforced": true,
+  "cscape_pid_untouched": 14580,
+  "evidence_log": "artifacts/logs/pou_ast_integrity.json"
+}

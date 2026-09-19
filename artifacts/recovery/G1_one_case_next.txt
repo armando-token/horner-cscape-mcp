@@ -1,0 +1,55 @@
+================================================================================
+HORNER CSCAPE MCP - GATE G1 ONE CASE NEXT AUDIT REPORT
+Mission ID: G1_NEXT_CASE_AFTER_FAILCLOSED
+Generated (UTC): 2026-09-09T05:12:00Z
+Classification: STRICT OFFLINE FAIL-CLOSED HARDENING & VERIFICATION
+Status Contract Invariant: success | failed | blocked | inconclusive
+================================================================================
+
+1. CASE IDENTIFICATION
+--------------------------------------------------------------------------------
+- Case ID: CASE 49
+- Vulnerability Title: cscape_compile_project Path Traversal, Dot/Slash Escapes, & Uncontained Directory Compilation Bypass
+- Component: FastMCP Project Compilation & Safety Boundary
+- Target Source File: src/mcp/tools.py (Lines 2732-2805)
+- Target Test File: tests/test_g1_false_success_negative_cases.py (test_case49)
+- Test Identifier: tests/test_g1_false_success_negative_cases.py::test_case49_compile_project_path_traversal_and_escapes_fail_closed
+
+2. FILES CHANGED / TO BE CHANGED
+--------------------------------------------------------------------------------
+1. src/mcp/tools.py (cscape_compile_project):
+   - Enforce SafetyGuard.validate_project_name(project_name) on candidate project names.
+   - Reject path traversal sequences ('..', '/', '\') and dot/slash directories ('.', './').
+   - Require authentic project container (.csp, .cpj, cscape_project.json) in project directory.
+   - Fail closed immediately with error_code='SECURITY_BLOCKED' or 'PROJECT_NOT_FOUND' and status='failed'.
+2. tests/test_g1_false_success_negative_cases.py:
+   - Add test_case49_compile_project_path_traversal_and_escapes_fail_closed.
+3. Dual-Root Parity:
+   - Synchronized across C:\HornerAI\horner-cscape-mcp and C:\Users\ArmandoSilva.
+
+3. VULNERABILITY ANALYSIS & FAIL-CLOSED HAZARD
+--------------------------------------------------------------------------------
+- Trigger Conditions:
+  1. Invoking cscape_compile_project(project_name=".") or project_name="./"
+  2. Invoking cscape_compile_project(project_name="../../escape") with traversal sequences.
+  3. Invoking cscape_compile_project on an arbitrary folder lacking a Cscape project container.
+- Flaw in Previous Behavior:
+  cscape_compile_project executed:
+      cand_p = Path(project_name)
+      if cand_p.is_dir():
+          proj_dir = cand_p.resolve()
+  With project_name=".", cand_p.is_dir() evaluated to True for the current working directory,
+  allowing compilation of arbitrary workspace folders rather than managed Cscape projects.
+  Furthermore, project_name was never sanitized via SafetyGuard.validate_project_name(),
+  permitting path traversal to escape the artifacts/projects hierarchy.
+
+4. OPERATIONAL DIRECTIVES COMPLIANCE
+--------------------------------------------------------------------------------
+- Single Case: Case 49 only.
+- Checkpoint to disk first: Written prior to test execution.
+- No PLC / Physical Hardware: Offline DEV only, hardware lockout enforced.
+- No New GUI Windows: Headless AST / offline execution only; Cscape on winsta0\Default untouched.
+- Status Contract: Canonical 4-state contract (success | failed | blocked | inconclusive) strictly enforced.
+================================================================================
+END OF GATE G1 ONE CASE NEXT AUDIT REPORT
+================================================================================

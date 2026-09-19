@@ -1,0 +1,38 @@
+# LEEME - RESUMEN DE ENTREGA Y EVIDENCIAS OFFLINE
+Estado: CORE-08 CONFIG_AND_TEST_OK RUNTIME_PENDING_P7
+Tarea Activa: SUPERVISOR_OFFLINE_ACCEPTANCE (49 archivos de entrega, aceptación formal de supervisor confirmada, entregas offline cerradas y aprobadas)
+Hito de Campo: P7_MANUAL (Carga manual en campo por ingeniero comisionador; descarga física P7 estrictamente aplazada; sin bucles de Error Check)
+Invariantes Estrictos: NO VERIFIED_LIVE | P7 DEFERRED MANUAL | ZERO PLC DOWNLOAD | NO ERROR CHECK LOOP
+Propietario de GUI: Cscape PID 12788 visible en winsta0\Default (Continuidad: 1 Dedicated preservado)
+
+Consulte LEEME_HANDOFF.txt y HANDOFF_INDEX.md para el desglose detallado de los 49 archivos de entrega:
+- Zips P6 Distribución: TankLevel_P5_Dedicated_offline_bundle_v1.0.0.zip, horner-cscape-project-handoff-v1.0.0.zip, horner-cscape-mcp-v1.0.0-developer-bundle.zip
+- Procedimiento y Seguridad P7: P7_MANUAL_COMMISSIONING_PROCEDURE.md, P7_MANUAL_LOAD_CHECKLIST.md (refrescado: HE-XPCE2, MJ1 CT RTU Modbus CMP v5.05, scan list vacío hasta conexión en vivo, punteros a aceptación y bundle), P7_COMMISSIONING_PREP_MANIFEST.md
+- Aceptación Formal de Supervisor: SUPERVISOR_OFFLINE_ACCEPTANCE.md (Firma 2026-09-17T14:20:00-07:00, supervisor_offline_accepted = true)
+- Auditoría de Brechas y Roadmap: PLAN_V3_OFFLINE_GAPS_AND_RESOLUTION.md (Resolución formal de 43 herramientas FastMCP, límites de GUI y scan-list), CORE_08_09_10_RUNTIME_GAPS_AND_ROADMAP.md (Hoja de ruta para CORE-08 runtime, CORE-09 HMI y CORE-10 soak de 24h)
+- Limitaciones P8: P8_HARDENING_AND_KNOWN_LIMITATIONS.md
+- Configuración y Evidencia CORE-08: modbus_protocol_inventory.json, modbus_pv_config.json, core08_labeled_test_server_verification.json, core08_cscape_gui_evidence.json, core08_security_lockout_evidence.json
+- Proyecto CSP: TankLevel_P5_Dedicated.csp (XL4 Prime HE-XPCE2, compilación limpia 0 errores / 0 warnings)
+- Especificaciones Técnicas: CORE_08_MODBUS_CONVERSION_EXAMPLE.md, CORE_08_PROTOCOL_DRIVER_FORENSICS.md
+- Evidencias Fase P4 (Edición Selectiva FastMCP y Continuación):
+  * p4_selective_edit_evidence.json, p4_selective_edit_evidence.md (Límites 30/70 -> 35/75, renombrado etiqueta)
+  * p4_selective_edit_continuation_evidence.json, p4_selective_edit_continuation_evidence.md (Etapa 3: Rev 1.2.0, límites 32/78, etiqueta Buffer Tank 01)
+- Evidencias Fase P6 (Extracción y Validación en Contextos Secundarios):
+  * p6_external_handoff_evidence.json, p6_external_handoff_evidence.md (Validación en C:\Users\Public\HornerHandoffSecondary)
+  * p6_second_context_handoff_evidence.json, p6_second_context_handoff_evidence.md (Validación en C:\Users\Public\HornerHandoffContext2)
+- Nota de Advertencia de Guardado en Cscape (save_failed_caveat.txt):
+  * Documenta la condición de aparición del diálogo modal recurrente "Failed to save document." en Cscape 10.2.
+  * Diagnóstico Forense y Workaround Seguro: cscape_save_failed_diagnosis.md, cscape_save_failed_evidence.json, cscape_save_failed_reproduction.png.
+  * Regla operativa: Evitar guardar directo (Ctrl+S / 57603) sobre archivos modificados externamente; utilizar siempre "Save As" (57604) con ruta absoluta canónica y versión aislada.
+- Evidencias y Validación de Scan List MJ1 (Modbus Offline):
+  * mj1_devices_scan_evidence.json, mj1_devices_scan_evidence.md (Registro de inspección: scan list vacío, adición bloqueada offline).
+  * mj1_scan_list_validation_evidence.json, mj1_scan_list_validation_evidence.md (Validación FastMCP con contrato de 4 estados, cero descargas a PLC).
+  * mj1_scan_list_inspection_evidence.json, mj1_scan_list_inspection_evidence.md (Captura de ejecución de cscape_inspect_scan_list, línea base de lista vacía y rechazo fail-closed si require_populated=True).
+  * mj1_scan_list_reconciliation_evidence.json, mj1_scan_list_reconciliation_evidence.md (Auditoría de conciliación offline entre inventario planificado de 3 transacciones y contenedor nativo CFBF con 0 entradas; explicación fail-closed del bloqueo offline).
+  * offline_evidence_bundle_v1.0.0.zip, offline_evidence_bundle_manifest.json, offline_evidence_bundle_manifest.md (Paquete air-gapped que consolida las 28 evidencias forenses, validaciones, conciliaciones y diagnósticos de fallo de guardado recientes con manifiesto criptográfico SHA-256).
+- Evidencias de Escalamiento Modbus e Integración IEC FB:
+  * modbus_register_scaling_iec_bridge_evidence.json, modbus_register_scaling_iec_bridge_evidence.md (FB_ModbusScaleQuality y TankLevelModbusBridge en puro ST, 32 pruebas superadas).
+- Evidencias de Estado de Scan List y Dispositivos MJ1:
+  * mj1_devices_scan_list_state_evidence.json, mj1_devices_scan_list_state_evidence.md (Documentación exhaustiva de puerto MJ1, estado vacío y bloqueo offline).
+- Evidencias de Prueba de Reapertura Nativa en Cscape (TankLevel_P5_Dedicated):
+  * tanklevel_p5_native_reopen_proof_evidence.json, tanklevel_p5_native_reopen_proof_evidence.md, tanklevel_p5_native_reopen_proof.png (Prueba de reapertura nativa con herramienta FastMCP cscape_open_project en Cscape 10.2 PID 12788 visible, captura fotográfica y 7 pruebas de contrato superadas).

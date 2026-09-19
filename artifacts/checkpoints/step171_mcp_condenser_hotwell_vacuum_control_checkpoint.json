@@ -1,0 +1,21 @@
+{
+  "step": 171,
+  "name": "step171_mcp_condenser_hotwell_vacuum_control_checkpoint",
+  "status": "PASSED",
+  "timestamp_utc": "2026-09-06T12:24:55.225Z",
+  "auditor": "Simulation & FastMCP Architecture Agent",
+  "mandate": "Condenser Hotwell Level & Vacuum Simulation Verification",
+  "dual_root_parity": true,
+  "roots_verified": {
+    "horner_root": "C:\\HornerAI\\horner-cscape-mcp",
+    "user_root": "C:\\Users\\ArmandoSilva"
+  },
+  "scenarios_passed": 6,
+  "hardware_lockout_verified": true,
+  "log_proof": {
+    "file": "artifacts/logs/step171_mcp_condenser_hotwell_vacuum_control.json",
+    "size_bytes": 670,
+    "sha256": "ae3c48bbd590ed0784fdbb977dda9826f49a47b7c650759e91c03d42fc14bcb6"
+  },
+  "checkpoint_sha256": "96c038b55195db6313f5b754b3a43d84d7dbc38c2d9d558298702b94231c4f61"
+}

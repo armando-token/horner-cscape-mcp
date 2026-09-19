@@ -1,0 +1,50 @@
+{
+  "step": 178,
+  "role": "Visible Cscape GUI Driver",
+  "mandate": "Exclusive Visible Cscape GUI Automation Gate G1 Live Evidence",
+  "status": "success",
+  "start_time_utc": "2026-09-06T10:50:14.594837+00:00",
+  "completion_time_utc": "2026-09-06T10:50:21.000945+00:00",
+  "execution_duration_sec": 6.406,
+  "cscape": {
+    "pid": 10892,
+    "hwnd_hex": "0x01B005DC",
+    "hwnd_int": 28313052,
+    "process_name": "Cscape.exe",
+    "uptime_sec": 4756.430381298065,
+    "working_set_mb": 115.86,
+    "window_title": "Cscape - Logged In : \"armando@controlnautas.com\" - [TankLevelClosedLoop.csp]",
+    "is_window": true,
+    "is_visible": true,
+    "is_hung": false,
+    "is_enabled": true,
+    "responsive_ping": true,
+    "desktop": "Default",
+    "project_file": "C:\\HornerAI\\horner-cscape-mcp\\artifacts\\projects\\TankLevelClosedLoop\\TankLevelClosedLoop.csp"
+  },
+  "tasks": {
+    "task1_gate_verified": true,
+    "task2_window_attached_default_desktop": true,
+    "task3_pre_and_post_modal_dialogs_swept": {
+      "pre_sweep": 0,
+      "post_sweep": 0
+    },
+    "task4_live_gui_error_check_dispatched": {
+      "command_id": 32826,
+      "success": true,
+      "duration_sec": 6.034,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    "task5_high_res_screenshot_captured": {
+      "bytes": 71589,
+      "sha256": "1e338571102531a95e4afe48b0fb7333a73278dccc71dc481a0aaf43aad8bc2b",
+      "dual_root_identical": true
+    }
+  },
+  "dual_root_parity": true,
+  "roots_verified": {
+    "horner_root": "C:\\HornerAI\\horner-cscape-mcp",
+    "user_root": "C:\\Users\\ArmandoSilva"
+  }
+}

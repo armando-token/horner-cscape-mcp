@@ -1,0 +1,109 @@
+{
+  "step": 170,
+  "name": "step170_mcp_master_header_pressure_grid_balance",
+  "status": "PASSED",
+  "mission": "Live FastMCP Master Header Pressure Grid Balance & Load Shedding Audit",
+  "timestamp_start": "2026-09-06T12:24:43.143Z",
+  "timestamp_complete": "2026-09-06T12:24:50.774Z",
+  "duration_seconds": 7.633,
+  "gate": {
+    "ready_for_tests": true,
+    "status": "READY_FOR_TESTS",
+    "pid": 10892,
+    "hwnd": "0x01B005DC",
+    "window_title": "Cscape - Logged In : \"armando@controlnautas.com\" - [TankLevelClosedLoop.csp]",
+    "project_file": "C:\\HornerAI\\horner-cscape-mcp\\artifacts\\projects\\TankLevelClosedLoop\\TankLevelClosedLoop.csp",
+    "exit_code": null,
+    "reason": "Gate G3 Error Check and Output Scrape Verified Clean (0 errors, 0 warnings)",
+    "cycle": 17,
+    "timestamp_utc": "2026-09-06T11:43:46.709Z",
+    "heartbeat_utc": "2026-09-06T11:43:46.709Z"
+  },
+  "cscape_pid": 10892,
+  "hwnd": "0x01B005DC",
+  "scenarios_passed": 5,
+  "scenarios_total": 5,
+  "scenario_results": {
+    "scenario_a_steady_state_header_equilibrium": {
+      "verified": true,
+      "header_pressure_psig": 600.0,
+      "turbine_bypass_valve_pct": 0.0,
+      "grid_balance_index": 1.0,
+      "load_shedding_tier1_online": true,
+      "overpressure_alarm": false
+    },
+    "scenario_b_turbine_trip_bypass_dump": {
+      "verified": true,
+      "peak_surge_pressure_psig": 665.0,
+      "bypass_valve_command_pct": 80.0,
+      "atmospheric_dump_valve_open": true,
+      "overpressure_alarm": true,
+      "stabilized_header_pressure_psig": 608.0
+    },
+    "scenario_c_two_tier_load_shedding": {
+      "verified": true,
+      "under_pressure_psig": 515.0,
+      "load_shed_tier1_tripped": true,
+      "load_shed_tier2_tripped": true,
+      "under_pressure_alarm": true,
+      "stabilized_pressure_psig": 540.0
+    },
+    "scenario_d_acoustic_water_ingress_protection": {
+      "verified": true,
+      "acoustic_spike_db": 88.0,
+      "water_ingress_alarm": true,
+      "flash_drain_trap_open": true,
+      "evacuated_acoustic_level_db": 32.0
+    },
+    "scenario_e_grid_restoration_balance": {
+      "verified": true,
+      "restored_header_pressure_psig": 600.0,
+      "tier1_load_restored": true,
+      "tier2_load_restored": true,
+      "all_alarms_cleared": true
+    }
+  },
+  "telemetry_records": [
+    {
+      "scenario": "A_HEADER_EQUILIBRIUM",
+      "cycle": 1,
+      "p": 600.0,
+      "byp": 0.0,
+      "idx": 1.0
+    },
+    {
+      "scenario": "B_TURBINE_TRIP_BYPASS_DUMP",
+      "cycle": 2,
+      "p": 665.0,
+      "byp": 80.0,
+      "m48": true
+    },
+    {
+      "scenario": "C_TWO_TIER_LOAD_SHEDDING",
+      "cycle": 3,
+      "p": 515.0,
+      "q31": false,
+      "q32": false,
+      "m47": true
+    },
+    {
+      "scenario": "D_WATER_INGRESS_PROTECTION",
+      "cycle": 4,
+      "db": 88.0,
+      "m49": true
+    },
+    {
+      "scenario": "E_GRID_RESTORATION",
+      "cycle": 5,
+      "p": 600.0,
+      "q31": true,
+      "q32": true
+    }
+  ],
+  "security": {
+    "hardware_download_lockout": "FAIL_CLOSED_BLOCKED",
+    "zero_straton_dependencies": true,
+    "zero_plc_hardware_interaction": true,
+    "no_gui_hwnd_command_dispatched": true
+  }
+}

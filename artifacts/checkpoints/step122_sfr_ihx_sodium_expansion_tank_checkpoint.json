@@ -1,0 +1,19 @@
+{
+  "step": 122,
+  "status": "COMPLETED",
+  "name": "Sodium-Cooled Fast Reactor (SFR) Intermediate Heat Exchanger (IHX) Liquid Sodium Expansion Tank Audit",
+  "timestamp": "2026-09-05T12:45:34.984Z",
+  "cscape_pid": 4272,
+  "cscape_hwnd": "0x7033e",
+  "project": "TankLevelClosedLoop.csp",
+  "assertions_passed": [
+    "Phase 1 liquid sodium primary-secondary loop thermal balance error 0.0000% < 0.10%",
+    "Phase 2 turbine load rejection thermal expansion surge drift 6.57% > 5.0%",
+    "Phase 3 argon cover gas pressure-assisted decoupled sodium level error 0.0000% < 0.35%",
+    "Surge rejection ratio 100.0% > 95.0%",
+    "Phase 4 DHRS transition step settling error 0.0379% < 0.35%",
+    "Phase 5 high-high sodium cover gas seal breach emergency isolation trip at cycle 501 == 501",
+    "Fail-closed download lockout ID_CONTROLLER_DOWNLOAD=32827 strictly enforced",
+    "Live Cscape GUI healthy and responsive throughout test"
+  ]
+}

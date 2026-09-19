@@ -1,0 +1,19 @@
+{
+  "step": 109,
+  "status": "COMPLETED",
+  "name": "Supercritical CO2 (sCO2) Brayton Cycle PCHE Sump Inventory Audit",
+  "timestamp": "2026-09-05T12:34:54.268Z",
+  "cscape_pid": 4272,
+  "cscape_hwnd": "0x7033e",
+  "project": "TankLevelClosedLoop.csp",
+  "assertions_passed": [
+    "Phase 1 high-pressure sCO2 supercritical fluid equilibrium error 0.0000% < 0.10%",
+    "Phase 2 turbine trip sCO2 re-compression surge drift 6.71% > 5.0%",
+    "Phase 3 PCHE bypass expansion valve decoupled inventory control error 0.0000% < 0.35%",
+    "Surge rejection ratio 100.0% > 95.0%",
+    "Phase 4 recuperator inventory re-balance step settling error 0.0379% < 0.35%",
+    "Phase 5 compressor liquid ingress safety ESD trip at cycle 501 == 501",
+    "Fail-closed download lockout ID_CONTROLLER_DOWNLOAD=32827 strictly enforced",
+    "Live Cscape GUI healthy and responsive throughout test"
+  ]
+}

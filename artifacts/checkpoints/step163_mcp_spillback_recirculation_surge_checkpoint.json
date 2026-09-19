@@ -1,0 +1,18 @@
+{
+  "step": 163,
+  "name": "step163_mcp_spillback_recirculation_surge_checkpoint",
+  "status": "PASSED",
+  "timestamp_utc": "2026-09-06T12:23:40.541Z",
+  "cscape_pid": 10892,
+  "hwnd": "0x01B005DC",
+  "spillback_recirculation_verified": true,
+  "antisurge_relief_verified": true,
+  "sensor_discrepancy_failsafe_verified": true,
+  "bumpless_destaging_verified": true,
+  "zero_straton_dependencies": true,
+  "hardware_lockout_enforced": true,
+  "live_screenshot_sha256": "bc43766c83319fd52574940020f6a1b1316dc6ba62fa60593dec82592cdfd0e1",
+  "log_sha256": "68d1f17461c76024becf31d71bc0ef55ebe6a3979ee8749fa8c09a047c1ea947",
+  "dual_root_mirrored": true,
+  "checkpoint_sha256": "9025b07606e2705a5d35d1f7005184dd3dd26c9302907046db15dd764af597e2"
+}

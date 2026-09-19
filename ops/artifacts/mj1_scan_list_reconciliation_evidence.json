@@ -1,0 +1,186 @@
+{
+  "status": "success",
+  "task_id": "FASTMCP_OFFLINE_SCAN_LIST_RECONCILIATION_EVIDENCE",
+  "mission_id": "MJ1_SCAN_LIST_RECONCILIATION_OFFLINE_EVIDENCE",
+  "timestamp_utc": "2026-09-17T19:42:00Z",
+  "governing_rules": "RULE[C:\\Users\\ArmandoSilva\\AGENTS.md]",
+  "operational_mode": "offline/DEV",
+  "system_state": "RUNTIME_PENDING_P7",
+  "verified_live": false,
+  "zero_plc_download": true,
+  "no_error_check_loop": true,
+  "single_gui_boundary": "Cscape 10.2 on winsta0\\Default (single GUI owner; zero keep-alive loops)",
+  "reconciliation_scope": "MJ1 Serial RS-485 Modbus RTU Scan List Planned vs. Native Container Diff",
+  "target_project_audit": {
+    "project_path": "artifacts/projects/TankLevel_P5_Dedicated/TankLevel_P5_Dedicated.csp",
+    "project_name": "TankLevel_P5_Dedicated.csp",
+    "port": "MJ1",
+    "protocol": "CT RTU Modbus CMP v5.05",
+    "cfbf_valid": true,
+    "size_bytes": 140800,
+    "offline_safety_enforced": true,
+    "zero_download_enforced": true,
+    "verified_live": false,
+    "plc_download": false
+  },
+  "planned_inventory_audit": {
+    "inventory_file": "artifacts/projects/TankLevel_P5_Dedicated/modbus_protocol_inventory.json",
+    "inventory_id": "TankLevel_P5_Dedicated_Modbus_Deep_Inventory",
+    "channel_id": "CH_MJ1_RTU",
+    "channel_name": "Serial MJ1 RS-485 Modbus RTU Master",
+    "transport": "MODBUS_RTU",
+    "serial_config": {
+      "port": "MJ1_RS485",
+      "baud_rate": 19200,
+      "data_bits": 8,
+      "parity": "NONE",
+      "stop_bits": 1,
+      "mode": "RS-485",
+      "driver_label": "CT RTU Modbus CMP v 5.05 / Modbus Master v 5.07"
+    },
+    "planned_devices_count": 3,
+    "planned_transactions_count": 3,
+    "transactions": [
+      {
+        "transaction_id": "TX01_LEVEL_PV",
+        "device_id": "DEV_LT01",
+        "device_name": "Buffer Tank Level Transmitter",
+        "unit_id": 1,
+        "function_code": 3,
+        "function_name": "Read Holding Registers (0x03)",
+        "modicon_address": 40001,
+        "wire_offset": 0,
+        "register_count": 1,
+        "target_ocs_register": "%AI1",
+        "variable_name": "TankLevelPV",
+        "raw_data_type": "UINT16",
+        "engineering_unit": "%",
+        "scaling": {
+          "raw_min": 0.0,
+          "raw_max": 32000.0,
+          "eu_min": 0.0,
+          "eu_max": 100.0
+        },
+        "comm_alarm_register": "%M10",
+        "stale_quality_register": "%M11",
+        "poll_interval_ms": 100,
+        "description": "Continuous scan of tank liquid level"
+      },
+      {
+        "transaction_id": "TX02_INFLOW_RATE",
+        "device_id": "DEV_FT01",
+        "device_name": "Inflow Coriolis Flowmeter",
+        "unit_id": 2,
+        "function_code": 3,
+        "function_name": "Read Holding Registers (0x03)",
+        "modicon_address": 40002,
+        "wire_offset": 1,
+        "register_count": 1,
+        "target_ocs_register": "%AI2",
+        "variable_name": "InflowRatePV",
+        "raw_data_type": "UINT16",
+        "engineering_unit": "L/min",
+        "scaling": {
+          "raw_min": 0.0,
+          "raw_max": 32000.0,
+          "eu_min": 0.0,
+          "eu_max": 500.0
+        },
+        "comm_alarm_register": "%M12",
+        "stale_quality_register": "%M13",
+        "poll_interval_ms": 200,
+        "description": "Cyclic scan of buffer tank inflow rate"
+      },
+      {
+        "transaction_id": "TX03_DISCHARGE_PRESS",
+        "device_id": "DEV_PT01",
+        "device_name": "Discharge Pressure Transmitter",
+        "unit_id": 3,
+        "function_code": 3,
+        "function_name": "Read Holding Registers (0x03)",
+        "modicon_address": 40003,
+        "wire_offset": 2,
+        "register_count": 1,
+        "target_ocs_register": "%AI3",
+        "variable_name": "DischargePressPV",
+        "raw_data_type": "UINT16",
+        "engineering_unit": "bar",
+        "scaling": {
+          "raw_min": 0.0,
+          "raw_max": 32000.0,
+          "eu_min": 0.0,
+          "eu_max": 10.0
+        },
+        "comm_alarm_register": "%M14",
+        "stale_quality_register": "%M15",
+        "poll_interval_ms": 200,
+        "description": "Cyclic scan of pump discharge pressure"
+      }
+    ]
+  },
+  "native_scan_list_audit": {
+    "source": "Cscape CFBF Project Container (TankLevel_P5_Dedicated.csp)",
+    "port": "MJ1",
+    "protocol": "CT RTU Modbus CMP v5.05",
+    "native_transactions_count": 0,
+    "scan_list": [],
+    "scan_list_status": "empty",
+    "native_fill_status": "blocked_offline",
+    "blocker": "Native add requires a configured target node/device and/or live PLC context; no PLC connection or download was permitted.",
+    "pending_gate": "P7_PHYSICAL_PLC_DOWNLOAD_AND_COMMISSIONING",
+    "offline_safety_enforced": true,
+    "zero_download_enforced": true,
+    "verified_live": false,
+    "plc_download": false
+  },
+  "discrepancy_breakdown": {
+    "planned_count": 3,
+    "native_count": 0,
+    "delta_variance": -3,
+    "reconciliation_status": "DISCREPANCY_EXPLAINED_OFFLINE_LOCKOUT",
+    "missing_in_native": [
+      "TX01_LEVEL_PV",
+      "TX02_INFLOW_RATE",
+      "TX03_DISCHARGE_PRESS"
+    ],
+    "unexpected_in_native": [],
+    "matched_transactions": [],
+    "root_cause_analysis": "Native Cscape 10.2 CFBF container requires active serial port negotiation and live target OCS node response to bind physical Modbus RTU scan tables into the compiled binary container. In offline DEV environment, physical serial communication and PLC download are strictly locked out (fail-closed security). Therefore, the 3 planned transactions reside in the validated sidecar inventory (modbus_protocol_inventory.json) and remain unpopulated in the native CFBF container until physical commissioning.",
+    "risk_assessment": "LOW (Offline Safe). Software simulation layer emulates registers %AI1, %AI2, %AI3 via LabeledTestModbusServer without physical hardware dependencies. Zero register collisions detected across %AI, %AQ, %M, %R ranges.",
+    "reconciliation_resolution_path": "Phase P7 manual loading: Commissioning engineer enters or imports the 3 transactions into Cscape Scan List GUI using P7_MANUAL_COMMISSIONING_PROCEDURE.md and verifies wire polling on physical OCS hardware."
+  },
+  "fail_closed_lockout_matrix": {
+    "require_populated_true_on_empty": "BLOCKED_FAIL_CLOSED (SECURITY_BLOCKED / SCAN_LIST_EMPTY_FAIL_CLOSED)",
+    "request_live_fill_true": "BLOCKED_FAIL_CLOSED (SECURITY_BLOCKED / NATIVE_FILL_BLOCKED_OFFLINE)",
+    "plc_download_true": "BLOCKED_FAIL_CLOSED (SECURITY_BLOCKED / PLC_DOWNLOAD_SAFETY_LOCKOUT)",
+    "verified_live_true": "BLOCKED_FAIL_CLOSED (SECURITY_BLOCKED / VERIFIED_LIVE_SAFETY_LOCKOUT)",
+    "physical_com_ports": "BLOCKED_FAIL_CLOSED (SECURITY_BLOCKED / PHYSICAL_PORT_LOCKOUT COM1-COM256)",
+    "fieldbus_access": "BLOCKED_FAIL_CLOSED (CAN, CsCAN, DeviceNet, Profibus prohibited)",
+    "companion_flash_tools": "BLOCKED_FAIL_CLOSED (PGMUpdateUtility, DfuSeCommand, STMFlashLoader, WinJTAG prohibited)",
+    "download_cli_switches": "BLOCKED_FAIL_CLOSED (/d, /download, /flash, /burn prohibited)",
+    "win32_download_commands": "BLOCKED_FAIL_CLOSED (ID_PROGRAM_DOWNLOAD=32827, ID_CONTROLLER_DOWNLOAD=33149)",
+    "ladder_logic_in_st": "REJECTED (ERR_LADDER_FORBIDDEN)",
+    "extra_parameter_injection": "FAILED_VALIDATION (SCHEMA_VALIDATION_ERROR extra='forbid')",
+    "missing_project_file": "FAILED (PROJECT_NOT_FOUND)",
+    "invalid_cfbf_container": "FAILED (INVALID_CFBF_CONTAINER)"
+  },
+  "test_pass_results": {
+    "framework": "pytest 9.1.1 / Python 3.12.10",
+    "total_targeted_tests_passed": 42,
+    "total_targeted_tests_failed": 0,
+    "all_assertions_passed": true,
+    "suites_breakdown": {
+      "tests/test_scan_list_tool.py": "12/12 passed (cscape_inspect_scan_list fail-closed contract & schema)",
+      "tests/test_scan_list_evidence_schema.py": "16/16 passed (Pydantic v2 validation, zero download invariants)",
+      "tests/test_core08_modbus_inventory.py": "5/5 passed (deep Modbus inventory, channels, 3 planned transactions)",
+      "tests/test_p9_offline_gaps.py": "9/9 passed (FastMCP 42-tool parity, emulated provenance headers)"
+    }
+  },
+  "next_remaining_offline_gap": {
+    "gap_id": "OFFLINE_FASTMCP_SCAN_LIST_RECONCILIATION_TOOL",
+    "title": "FastMCP Scan-List Reconciliation Tool & Schema Extension (cscape_reconcile_scan_list)",
+    "description": "Implement automated FastMCP tool 'cscape_reconcile_scan_list' (tool #43) with input schema 'CscapeReconcileScanListInput' and output schema 'CscapeReconcileScanListOutput' to programmatically diff planned Modbus inventory against native Cscape CFBF scan lists and output structured reconciliation reports with zero PLC download.",
+    "scope": "Strictly pure offline software tooling and schema expansion. Does NOT involve Phase P7 physical download or live hardware access.",
+    "p7_status": "DEFERRED_MANUAL_ENGINEER_LOAD (NOT P7; strictly offline product engineering)"
+  }
+}

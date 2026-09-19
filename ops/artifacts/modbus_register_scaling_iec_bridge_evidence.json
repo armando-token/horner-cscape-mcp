@@ -1,0 +1,207 @@
+{
+  "status": "success",
+  "task_id": "OFFLINE_MODBUS_REGISTER_SCALING_IEC_FB_BRIDGE",
+  "mission_id": "OFFLINE_MODBUS_REGISTER_SCALING_IEC_FB_BRIDGE",
+  "timestamp_utc": "2026-09-17T20:30:00Z",
+  "governing_rules": "RULE[C:\\Users\\ArmandoSilva\\AGENTS.md]",
+  "operational_mode": "offline/DEV [PRODUCT_EVIDENCE]",
+  "system_state": "RUNTIME_PENDING_P7",
+  "verified_live": false,
+  "zero_plc_download": true,
+  "no_error_check_loop": true,
+  "p7_status": "DEFERRED_MANUAL_ENGINEER_LOAD (STRICTLY NOT P7; pure software offline IEC FB)",
+  "single_gui_boundary": "Cscape 10.2 on winsta0\\Default (single GUI owner; zero keep-alive loops)",
+  "pous_implemented": [
+    {
+      "pou_name": "FB_ModbusScaleQuality",
+      "pou_type": "FUNCTION_BLOCK",
+      "file_path": "artifacts/projects/TankLevel_P5_Dedicated/pous/FB_ModbusScaleQuality.st",
+      "size_bytes": 1784,
+      "sha256": "53db9193692a69b2976138ac3dd364b9c2a906b06dd259b6bff73c1c28af8b5a",
+      "ast_parsed": true,
+      "statements_count": 3,
+      "variables_count": 17,
+      "pure_st_enforced": true,
+      "ladder_constructs_detected": 0
+    },
+    {
+      "pou_name": "TankLevelModbusBridge",
+      "pou_type": "PROGRAM",
+      "file_path": "artifacts/projects/TankLevel_P5_Dedicated/pous/TankLevelModbusBridge.st",
+      "size_bytes": 2937,
+      "sha256": "a1cd7c6c34047c1e13c9aad9d06c5c81544bdb4c50b9c261391f2794012ffbdd",
+      "ast_parsed": true,
+      "statements_count": 18,
+      "variables_count": 27,
+      "pure_st_enforced": true,
+      "ladder_constructs_detected": 0
+    }
+  ],
+  "python_bridge_module": {
+    "module_path": "src/iec/modbus_bridge.py",
+    "classes": [
+      "ModbusScaleQualityChannel",
+      "ModbusScaleQualityBridge"
+    ],
+    "channels_configured": 3,
+    "ast_validation_result": {
+      "valid": true,
+      "errors": [],
+      "status": "success"
+    }
+  },
+  "template_catalog_integration": {
+    "template_id": "modbus_scale_quality",
+    "name": "Modbus Register Scaling & Telemetry Quality Gating",
+    "pou_type": "FUNCTION_BLOCK",
+    "catalog_accessible": true
+  },
+  "telemetry_channels_evaluated": [
+    {
+      "channel_id": "TX01_LEVEL_PV",
+      "name": "TankLevelPV",
+      "device_id": "DEV_LT01",
+      "unit_id": 1,
+      "modicon_address": 40001,
+      "wire_offset": 0,
+      "ocs_input_register": "%AI1",
+      "ocs_output_register": "%R101",
+      "raw_min": 0,
+      "raw_max": 32000,
+      "eu_min": 0.0,
+      "eu_max": 100.0,
+      "engineering_unit": "%",
+      "comm_failure_register": "%M10",
+      "stale_quality_register": "%M11",
+      "alarm_active_register": "%M20",
+      "quality_good_register": "%M21",
+      "underflow_register": "%M26",
+      "overflow_register": "%M27",
+      "fail_safe_value": 0.0,
+      "nominal_test_count": 17600,
+      "nominal_scaled_output": 55.0,
+      "nominal_quality_good": true,
+      "nominal_alarm_active": false
+    },
+    {
+      "channel_id": "TX02_INFLOW_RATE",
+      "name": "InflowRatePV",
+      "device_id": "DEV_FT01",
+      "unit_id": 2,
+      "modicon_address": 40002,
+      "wire_offset": 1,
+      "ocs_input_register": "%AI2",
+      "ocs_output_register": "%R103",
+      "raw_min": 0,
+      "raw_max": 32000,
+      "eu_min": 0.0,
+      "eu_max": 500.0,
+      "engineering_unit": "L/min",
+      "comm_failure_register": "%M12",
+      "stale_quality_register": "%M13",
+      "alarm_active_register": "%M22",
+      "quality_good_register": "%M23",
+      "underflow_register": "%M28",
+      "overflow_register": "%M29",
+      "fail_safe_value": 0.0,
+      "nominal_test_count": 16000,
+      "nominal_scaled_output": 250.0,
+      "nominal_quality_good": true,
+      "nominal_alarm_active": false
+    },
+    {
+      "channel_id": "TX03_DISCHARGE_PRESS",
+      "name": "DischargePressPV",
+      "device_id": "DEV_PT01",
+      "unit_id": 3,
+      "modicon_address": 40003,
+      "wire_offset": 2,
+      "ocs_input_register": "%AI3",
+      "ocs_output_register": "%R105",
+      "raw_min": 0,
+      "raw_max": 32000,
+      "eu_min": 0.0,
+      "eu_max": 10.0,
+      "engineering_unit": "bar",
+      "comm_failure_register": "%M14",
+      "stale_quality_register": "%M15",
+      "alarm_active_register": "%M24",
+      "quality_good_register": "%M25",
+      "underflow_register": "%M30",
+      "overflow_register": "%M31",
+      "fail_safe_value": 0.0,
+      "nominal_test_count": 16000,
+      "nominal_scaled_output": 5.0,
+      "nominal_quality_good": true,
+      "nominal_alarm_active": false
+    }
+  ],
+  "simulation_assertions": {
+    "engine": "cscape_simulate_pou (STSimulator pure software)",
+    "nominal_scaling_55pct": {
+      "raw_input": 17600,
+      "scaled_output": 55.0,
+      "quality_good": true,
+      "alarm_active": false,
+      "status": "passed"
+    },
+    "underflow_clamped": {
+      "raw_input": -500,
+      "underflow": true,
+      "scaled_output": 0.0,
+      "status": "passed"
+    },
+    "overflow_clamped": {
+      "raw_input": 35000,
+      "overflow": true,
+      "scaled_output": 100.0,
+      "status": "passed"
+    },
+    "comm_failure_fallback": {
+      "raw_input": 17600,
+      "comm_failure": true,
+      "alarm_active": true,
+      "quality_good": false,
+      "scaled_output": 0.0,
+      "status": "passed"
+    },
+    "stale_quality_fallback": {
+      "raw_input": 24000,
+      "stale_quality": true,
+      "alarm_active": true,
+      "quality_good": false,
+      "scaled_output": 0.0,
+      "status": "passed"
+    },
+    "fault_recovery_progression": {
+      "trajectory": [
+        {"cycle": 1, "raw": 0, "comm_fail": false, "scaled": 0.0, "quality": true},
+        {"cycle": 2, "raw": 17600, "comm_fail": false, "scaled": 55.0, "quality": true},
+        {"cycle": 3, "raw": 17600, "comm_fail": true, "scaled": 0.0, "quality": false},
+        {"cycle": 4, "raw": 24000, "comm_fail": false, "scaled": 75.0, "quality": true}
+      ],
+      "status": "passed"
+    }
+  },
+  "test_suite_summary": {
+    "test_file": "tests/test_modbus_register_scaling_bridge.py",
+    "total_tests": 32,
+    "passed_tests": 32,
+    "failed_tests": 0,
+    "execution_time_seconds": 3.84,
+    "status": "success"
+  },
+  "safety_lockout_verification": {
+    "physical_com_ports": "BLOCKED_FAIL_CLOSED (COM1..COM256)",
+    "download_command_32827": "BLOCKED_FAIL_CLOSED",
+    "download_command_33149": "BLOCKED_FAIL_CLOSED",
+    "ladder_logic_in_st": "REJECTED_ERR_LADDER_FORBIDDEN",
+    "verified_live": false,
+    "zero_plc_download_policy": "ENFORCED"
+  },
+  "documentation_deliverables": [
+    "docs/OFFLINE_MODBUS_REGISTER_SCALING_IEC_FB_BRIDGE.md",
+    "Downloads/modbus_register_scaling_iec_bridge_evidence.json",
+    "Downloads/modbus_register_scaling_iec_bridge_evidence.md"
+  ]
+}

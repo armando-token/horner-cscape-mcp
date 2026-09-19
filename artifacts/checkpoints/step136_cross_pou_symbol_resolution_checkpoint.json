@@ -1,0 +1,26 @@
+{
+  "step": 136,
+  "name": "step136_cross_pou_symbol_resolution_checkpoint",
+  "status": "PASSED",
+  "timestamp_utc": "2026-09-05T17:36:34.814635+00:00",
+  "target_project": "TankLevelClosedLoop",
+  "pous_evaluated": [
+    "TankLevelClosedLoop.st",
+    "AlarmMonitor.st",
+    "BrokenPOU.st",
+    "AuxPumpControl.st",
+    "SafetyInterlockST.st"
+  ],
+  "pous_count": 5,
+  "total_ast_nodes": 243,
+  "symbol_resolution_rate_percent": 100.0,
+  "unresolved_symbols": 0,
+  "global_variables_count": 21,
+  "baseline_register_collisions": 0,
+  "injected_collisions_detected_fail_closed": true,
+  "export_import_roundtrip_matched": true,
+  "hardware_lockout_enforced": true,
+  "zero_straton_dependencies": true,
+  "cscape_pid_untouched": 14580,
+  "evidence_log": "artifacts/logs/cross_pou_symbol_resolution.json"
+}

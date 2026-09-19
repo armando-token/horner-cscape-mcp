@@ -1,0 +1,18 @@
+{
+  "step": 130,
+  "name": "step130_mcp_stdio_stress_pid14252_checkpoint",
+  "description": "FastMCP 100-call pipelined stdio JSON-RPC stress benchmark verified on live Cscape PID 14252 with 100% success rate, 0 errors, and unhung UI.",
+  "timestamp_utc": "2026-09-05T17:11:06.383Z",
+  "cscape_pid": 14580,
+  "cscape_hwnd": "0x024B054A",
+  "cscape_healthy": true,
+  "total_calls": 100,
+  "pipeline_concurrency": 4,
+  "throughput_calls_per_sec": 0.81,
+  "median_latency_ms": 2.79,
+  "p95_latency_ms": 24639.12,
+  "error_count": 0,
+  "hardware_lockout_enforced": true,
+  "audit_log": "C:\\Users\\ArmandoSilva\\artifacts\\logs\\mcp_stdio_stress_pid14252.json",
+  "status": "VERIFIED_LIVE"
+}

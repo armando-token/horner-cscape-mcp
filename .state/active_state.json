@@ -1,0 +1,25 @@
+{
+  "state_contract": "STATE: CORE-08 CONFIG_AND_TEST_OK RUNTIME_PENDING_P7",
+  "state_token": "RUNTIME_PENDING_P7",
+  "operational_mode": "offline/DEV [PRODUCT_EVIDENCE]",
+  "hardware_policy": "NO_PLC_DOWNLOAD_FAIL_CLOSED",
+  "verified_live": false,
+  "phase_p7_policy": "DEFERRED_MANUAL_COMMISSIONING_ENGINEER_LOAD",
+  "supervisor_offline_accepted": true,
+  "supervisor_signoff_timestamp": "2026-09-17T14:20:00-07:00",
+  "gui_owner": {
+    "process": "Cscape.exe",
+    "version": "10.2.751.4",
+    "pid": 12788,
+    "hwnd": "0x002E06A8",
+    "desktop": "winsta0\\Default"
+  },
+  "active_project": "TankLevel_P5_Dedicated.csp",
+  "active_pou": "TankLevelControl.st",
+  "protocol_driver": "MJ1 CT RTU Modbus CMP v5.05 (CTRtu.dll v5.5.0.0)",
+  "scan_list_status": "EMPTY_UNTIL_LIVE",
+  "compiler_status": "CLEAN_BUILD_0_ERRORS_0_WARNINGS",
+  "cataloged_deliverables": 54,
+  "last_checkpoint": "plan_v3_core08_09_10_field_matrix_and_bundle_v110_checkpoint.json",
+  "last_verified_utc": "2026-09-18T01:24:28.161242+00:00"
+}

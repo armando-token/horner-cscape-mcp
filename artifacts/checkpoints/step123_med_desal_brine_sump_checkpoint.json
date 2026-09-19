@@ -1,0 +1,19 @@
+{
+  "step": 123,
+  "status": "COMPLETED",
+  "name": "Multi-Effect Distillation (MED) Desalination Final Effect Brine Sump Level Audit",
+  "timestamp": "2026-09-05T12:44:18.254Z",
+  "cscape_pid": 4272,
+  "cscape_hwnd": "0x7033e",
+  "project": "TankLevelClosedLoop.csp",
+  "assertions_passed": [
+    "Phase 1 falling film evaporation brine balance error 0.0000% < 0.10%",
+    "Phase 2 steam generator fluctuation distillate surge drift 6.52% > 5.0%",
+    "Phase 3 vacuum blowdown extraction pump decoupled regulation error 0.0000% < 0.35%",
+    "Surge rejection ratio 100.0% > 95.0%",
+    "Phase 4 antiscalant dosing step settling error 0.0610% < 0.35%",
+    "Phase 5 high-high brine carryover vacuum ejector fouling trip at cycle 501 == 501",
+    "Fail-closed download lockout ID_CONTROLLER_DOWNLOAD=32827 strictly enforced",
+    "Live Cscape GUI healthy and responsive throughout test"
+  ]
+}

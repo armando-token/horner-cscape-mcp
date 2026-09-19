@@ -1,0 +1,111 @@
+{
+  "timestamp_utc": "2026-09-05T05:49:02.000Z",
+  "command": "C:\\HornerAI\\horner-cscape-mcp\\.venv\\Scripts\\python.exe -m pytest tests/test_mcp_e2e_closed_loop_verification.py tests/test_live_mcp_e2e_exerciser.py tests/test_live_mcp_fail_closed_on_gui_death.py tests/test_tank_level_incident_failure.py -v",
+  "cscape_gate": {
+    "ready_for_tests": true,
+    "status": "READY_FOR_TESTS",
+    "pid": 7616,
+    "hwnd": "0x007B06D6",
+    "window_title": "Cscape - Logged In : \"armando@controlnautas.com\" - [TankLevelClosedLoop.csp]",
+    "project_file": "C:\\Users\\ArmandoSilva\\artifacts\\projects\\TankLevelClosedLoop\\TankLevelClosedLoop.csp"
+  },
+  "summary": {
+    "total": 50,
+    "passed": 50,
+    "failed": 0,
+    "skipped": 0,
+    "exit_code": 0,
+    "duration_seconds": 11.99
+  },
+  "suites": [
+    {
+      "file": "tests/test_mcp_e2e_closed_loop_verification.py",
+      "total": 7,
+      "passed": 7,
+      "failed": 0,
+      "tests": [
+        "TestMCPAll8ToolsClosedLoop::test_e2e_all_8_tools_pipeline",
+        "TestIntentionalFailureLocationVerification::test_scenario_1_syntax_error_unclosed_if",
+        "TestIntentionalFailureLocationVerification::test_scenario_2_missing_semicolon",
+        "TestIntentionalFailureLocationVerification::test_scenario_3_undeclared_variable",
+        "TestIntentionalFailureLocationVerification::test_scenario_4_ladder_logic_injection",
+        "TestIntentionalFailureLocationVerification::test_scenario_5_syntax_error_near_semicolon",
+        "TestStrictZeroPLCDownloadLockout::test_strict_zero_plc_download_lockout"
+      ]
+    },
+    {
+      "file": "tests/test_live_mcp_e2e_exerciser.py",
+      "total": 8,
+      "passed": 8,
+      "failed": 0,
+      "tests": [
+        "TestLiveMCPE2EToolExerciser::test_01_cscape_open_project_direct",
+        "TestLiveMCPE2EToolExerciser::test_01_cscape_open_project_mcp_server",
+        "TestLiveMCPE2EToolExerciser::test_02_cscape_compile_project_direct",
+        "TestLiveMCPE2EToolExerciser::test_02_cscape_compile_project_mcp_server",
+        "TestLiveMCPE2EToolExerciser::test_03_cscape_read_variables_direct",
+        "TestLiveMCPE2EToolExerciser::test_03_cscape_read_variables_mcp_server",
+        "TestLiveMCPE2EToolExerciser::test_04_cscape_simulate_cycle_direct",
+        "TestLiveMCPE2EToolExerciser::test_04_cscape_simulate_cycle_mcp_server"
+      ]
+    },
+    {
+      "file": "tests/test_live_mcp_fail_closed_on_gui_death.py",
+      "total": 5,
+      "passed": 5,
+      "failed": 0,
+      "tests": [
+        "TestLiveMCPFailClosedSemantics::test_live_gate_ready_when_cscape_open",
+        "TestLiveMCPFailClosedSemantics::test_live_mcp_compile_succeeds_under_healthy_gate",
+        "TestLiveMCPFailClosedSemantics::test_fail_closed_if_gui_dies_mid_test",
+        "TestLiveMCPFailClosedSemantics::test_fail_closed_if_gate_file_corrupt_or_missing",
+        "TestLiveMCPFailClosedSemantics::test_strict_zero_plc_download_lockout"
+      ]
+    },
+    {
+      "file": "tests/test_tank_level_incident_failure.py",
+      "total": 30,
+      "passed": 30,
+      "failed": 0,
+      "tests": [
+        "TestDryRunCutoffScenario::test_dry_run_cutoff_trip_at_10_percent",
+        "TestDryRunCutoffScenario::test_dry_run_hysteresis_deadband_retention",
+        "TestDryRunCutoffScenario::test_dry_run_hysteresis_automatic_recovery_above_12_percent",
+        "TestDryRunCutoffScenario::test_dry_run_cutoff_log_audit",
+        "TestOverfillTripScenario::test_overfill_trip_at_90_percent",
+        "TestOverfillTripScenario::test_overfill_hysteresis_deadband_retention",
+        "TestOverfillTripScenario::test_overfill_hysteresis_automatic_recovery_below_88_percent",
+        "TestOverfillTripScenario::test_overfill_trip_log_audit",
+        "TestSensorDisconnectScenario::test_sensor_disconnect_causes_failsafe_pump_shutdown",
+        "TestSensorDisconnectScenario::test_sensor_reconnection_and_recovery",
+        "TestSensorDisconnectScenario::test_sensor_disconnect_log_audit",
+        "Test13FailureModesAudit::test_fm01_high_high_overfill_trip",
+        "Test13FailureModesAudit::test_fm02_high_prewarning_alert",
+        "Test13FailureModesAudit::test_fm03_low_prewarning_alert",
+        "Test13FailureModesAudit::test_fm04_low_low_dry_run_pump_cutoff",
+        "Test13FailureModesAudit::test_fm05_sensor_wire_break_loop_loss",
+        "Test13FailureModesAudit::test_fm06_sensor_overrange_24v_short",
+        "Test13FailureModesAudit::test_fm07_pid_upper_windup_saturation",
+        "Test13FailureModesAudit::test_fm08_pid_lower_winddown_negative_saturation",
+        "Test13FailureModesAudit::test_fm09_outflow_surge_disturbance",
+        "Test13FailureModesAudit::test_fm10_supply_pressure_drop_disturbance",
+        "Test13FailureModesAudit::test_fm11_emergency_stop_hardwired_float_trip",
+        "Test13FailureModesAudit::test_fm12_unauthorized_hardware_download_attempt",
+        "Test13FailureModesAudit::test_fm13_structured_text_syntax_compilation_error",
+        "Test13FailureModesAudit::test_incident_failure_log_audit",
+        "TestStrictZeroPLCDownloadEnforcement::test_safety_policy_immutable_simulation_only",
+        "TestStrictZeroPLCDownloadEnforcement::test_hardware_com_and_can_bus_lockout",
+        "TestStrictZeroPLCDownloadEnforcement::test_cscape_ui_automation_blocks_download_commands",
+        "TestStrictZeroPLCDownloadEnforcement::test_automation_bridge_and_simulator_block_hardware_connection",
+        "TestStrictZeroPLCDownloadEnforcement::test_process_manager_blocks_flashing_utilities"
+      ]
+    }
+  ],
+  "safety_guarantees": {
+    "zero_plc_download_enforced": true,
+    "hardware_lockout_active": true,
+    "air_gapped_simulation_only": true,
+    "zero_straton_dependencies": true,
+    "fail_closed_on_cscape_death": true
+  }
+}

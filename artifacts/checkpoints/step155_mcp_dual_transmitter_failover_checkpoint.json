@@ -1,0 +1,16 @@
+{
+  "step": 155,
+  "name": "step155_mcp_dual_transmitter_failover_checkpoint",
+  "status": "PASSED",
+  "timestamp_utc": "2026-09-06T02:16:49.470Z",
+  "cscape_pid": 16128,
+  "hwnd": "0x024903DC",
+  "dual_transmitter_voting_verified": true,
+  "signal_discrepancy_verified": true,
+  "bumpless_failover_verified": true,
+  "gui_compile_status": "SUCCESS",
+  "zero_straton_dependencies": true,
+  "hardware_lockout_enforced": true,
+  "live_screenshot_sha256": "8b9b99a615ac939fd04dad6e1674fc6355700657670bc1254d4890ab95be6261",
+  "checkpoint_sha256": "61be5ce27043651f7af72785614d1617e0a793c640b57418c2b2296f17b4d72c"
+}

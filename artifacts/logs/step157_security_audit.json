@@ -1,0 +1,154 @@
+{
+  "step": 157,
+  "name": "step157_security_audit",
+  "status": "PASSED",
+  "start_time_utc": "2026-09-06T03:00:56.173Z",
+  "end_time_utc": "2026-09-06T03:01:05.866Z",
+  "auditor": "Security Lockout Auditor subagent for MEGAPLAN",
+  "mandate": "Fail-closed security validation only. Zero hardware downloads. Zero Straton imports.",
+  "results": {
+    "task1_hardware_download_lockout": {
+      "status": "PASSED",
+      "safety_py": {
+        "id_controller_download": 32827,
+        "id_controller_download_alt": 33149,
+        "intercept_tests": [
+          {
+            "cmd": "32827",
+            "blocked": true,
+            "error": "Physical controller download command '32827' (ID_CONTROLLER_DOWNLOAD=32827, ID_CONTROLLER_DOWNLOAD_ALT=33149) is strictly locked out. Zero physical PLC flashing permitted."
+          },
+          {
+            "cmd": "33149",
+            "blocked": true,
+            "error": "Physical controller download command '33149' (ID_CONTROLLER_DOWNLOAD=32827, ID_CONTROLLER_DOWNLOAD_ALT=33149) is strictly locked out. Zero physical PLC flashing permitted."
+          },
+          {
+            "cmd": "32827",
+            "blocked": true,
+            "error": "Physical controller download command '32827' (ID_CONTROLLER_DOWNLOAD=32827, ID_CONTROLLER_DOWNLOAD_ALT=33149) is strictly locked out. Zero physical PLC flashing permitted."
+          },
+          {
+            "cmd": "33149",
+            "blocked": true,
+            "error": "Physical controller download command '33149' (ID_CONTROLLER_DOWNLOAD=32827, ID_CONTROLLER_DOWNLOAD_ALT=33149) is strictly locked out. Zero physical PLC flashing permitted."
+          },
+          {
+            "cmd": "ID_CONTROLLER_DOWNLOAD",
+            "blocked": true,
+            "error": "Physical controller download command 'ID_CONTROLLER_DOWNLOAD' (ID_CONTROLLER_DOWNLOAD=32827, ID_CONTROLLER_DOWNLOAD_ALT=33149) is strictly locked out. Zero physical PLC flashing permitted."
+          },
+          {
+            "cmd": "ID_CONTROLLER_DOWNLOAD_ALT",
+            "blocked": true,
+            "error": "Physical controller download command 'ID_CONTROLLER_DOWNLOAD_ALT' (ID_CONTROLLER_DOWNLOAD=32827, ID_CONTROLLER_DOWNLOAD_ALT=33149) is strictly locked out. Zero physical PLC flashing permitted."
+          },
+          {
+            "cmd": "ID_DOWNLOAD",
+            "blocked": true,
+            "error": "Physical controller download command 'ID_DOWNLOAD' (ID_CONTROLLER_DOWNLOAD=32827, ID_CONTROLLER_DOWNLOAD_ALT=33149) is strictly locked out. Zero physical PLC flashing permitted."
+          }
+        ],
+        "guard_tests": [
+          {
+            "cmd": 32827,
+            "blocked": true,
+            "error": "Physical controller download command '32827' (ID_CONTROLLER_DOWNLOAD=32827, ID_CONTROLLER_DOWNLOAD_ALT=33149) is strictly locked out. Zero physical PLC flashing permitted."
+          },
+          {
+            "cmd": 33149,
+            "blocked": true,
+            "error": "Physical controller download command '33149' (ID_CONTROLLER_DOWNLOAD=32827, ID_CONTROLLER_DOWNLOAD_ALT=33149) is strictly locked out. Zero physical PLC flashing permitted."
+          }
+        ],
+        "passed": true
+      },
+      "compilation_py": {
+        "id_controller_download": 32827,
+        "id_program_downloadoptions": 33149,
+        "compile_tests": [
+          {
+            "cmd": 32827,
+            "blocked": true,
+            "error": "Controller download command '32827' (ID_CONTROLLER_DOWNLOAD = 32827 / 33149) is strictly blocked fail-closed."
+          },
+          {
+            "cmd": 33149,
+            "blocked": true,
+            "error": "Controller download command '33149' (ID_CONTROLLER_DOWNLOAD = 32827 / 33149) is strictly blocked fail-closed."
+          },
+          {
+            "cmd": 32827,
+            "blocked": true,
+            "error": "Controller download command '32827' (ID_CONTROLLER_DOWNLOAD = 32827 / 33149) is strictly blocked fail-closed."
+          },
+          {
+            "cmd": 33149,
+            "blocked": true,
+            "error": "Controller download command '33149' (ID_CONTROLLER_DOWNLOAD = 32827 / 33149) is strictly blocked fail-closed."
+          }
+        ],
+        "passed": true
+      }
+    },
+    "task2_mcp_download_tool_rejection": {
+      "status": "PASSED",
+      "server_script": "C:\\Users\\ArmandoSilva\\scripts\\run_mcp_server.py",
+      "init_protocol_version": "2024-11-05",
+      "tool_called": "cscape_download_logic",
+      "is_error": true,
+      "error_message": "Unknown tool: cscape_download_logic",
+      "rejection_fail_closed": true
+    },
+    "task3_straton_quarantine": {
+      "status": "PASSED",
+      "quarantine_directory": "quarantine/straton_k5_legacy",
+      "legacy_files_count": 29,
+      "legacy_files": [
+        "artifacts\\exports\\test_unit_project.k5p",
+        "artifacts\\exports\\TankLevelClosedLoop.k5p",
+        "__pycache__\\legacy_iec_project_builder.cpython-312.pyc",
+        "template_project\\project_manifest.json",
+        "__pycache__\\legacy_project_manager.cpython-312.pyc",
+        "fixtures\\sample_project\\appli.CPO",
+        "template_project\\appli.CPO",
+        "template_project\\Default\\appli.txt",
+        "__pycache__\\__init__.cpython-312.pyc",
+        "template_project\\K5DBXS.INI",
+        "fixtures\\sample_project\\Default\\appli.txt",
+        "template_project\\__Current.ARC",
+        "__pycache__\\test_legacy_iec_project_builder.cpython-312-pytest-9.1.1.pyc",
+        "template_project\\appli.k5p",
+        "fixtures\\sample_project\\appli.k5p",
+        "legacy_project_manager.py",
+        "__init__.py",
+        "test_legacy_iec_project_builder.py",
+        "template_project\\__Default.ARC",
+        "README.md",
+        "artifacts\\exports\\async_mcp_test_proj.k5p",
+        "fixtures\\sample_project\\K5DBXS.INI",
+        "legacy_automation_project_manager.py",
+        "template_project\\appli.lge",
+        "legacy_project___init__.py",
+        "legacy_iec_project_builder.py",
+        "artifacts\\exports\\test_unit_project_straton.xml",
+        "fixtures\\sample_project\\appli.lge"
+      ],
+      "total_py_files_scanned": 671,
+      "active_straton_imports_count": 0,
+      "zero_straton_imports_verified": true
+    },
+    "task4_offline_gate_simulation": {
+      "status": "PASSED",
+      "simulated_gate": {
+        "ready_for_tests": false,
+        "status": "OFFLINE_SIMULATION",
+        "reason": "Test gate forced offline to verify fail-closed lockout",
+        "timestamp_utc": "2026-09-06T03:01:05.865Z"
+      },
+      "cscape_liveness_gate_error_raised": true,
+      "exception_message": "FAIL-CLOSED: Operations halted. Cscape is not ready. Status='OFFLINE_SIMULATION', Reason='Test gate forced offline to verify fail-closed lockout'",
+      "fail_closed_verified": true
+    }
+  }
+}

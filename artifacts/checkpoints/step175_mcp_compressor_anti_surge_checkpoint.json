@@ -1,0 +1,11 @@
+{
+  "gate": "G1",
+  "step": 175,
+  "role": "MCP Simulation Agent",
+  "status": "success",
+  "mandate": "MEGAPLAN Gate G1: Pipeline Compressor Anti-Surge Multi-Phase Software Simulation",
+  "timestamp_utc": "2026-09-06T12:25:14.031Z",
+  "duration_seconds": 2.555,
+  "scenarios_passed": 5,
+  "dual_root_parity": true
+}

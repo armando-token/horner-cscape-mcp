@@ -1,0 +1,135 @@
+{
+  "gate": "G1",
+  "step": 188,
+  "name": "step188_g1_false_success_audit",
+  "status": "success",
+  "timestamp_utc": "2026-09-06T16:53:09.873920+00:00",
+  "mandate": "MEGAPLAN Gate G1: False-Success Gap Closure (H01-H13) & Strict 4-State Status Contract Audit",
+  "safety_mandate": "Absolute Hardware Lockout Policy: Zero physical PLC connections, zero flash/download, headless verification.",
+  "dual_roots_verified": {
+    "horner_root": "C:\\HornerAI\\horner-cscape-mcp",
+    "user_root": "C:\\Users\\ArmandoSilva"
+  },
+  "audits": {
+    "H01": {
+      "item": "H01",
+      "name": "Fake export success without live engine",
+      "status": "success",
+      "violations": [],
+      "elapsed_ms": 1.39,
+      "details": "Verified cscape_export_project fails closed on missing/invalid containers; zero dummy CFBF generated."
+    },
+    "H02": {
+      "item": "H02",
+      "name": "Fake open success without live engine",
+      "status": "success",
+      "violations": [],
+      "elapsed_ms": 1.95,
+      "details": "Verified cscape_open_project fails closed on missing/invalid files and distinguishes offline vs live modes."
+    },
+    "H03": {
+      "item": "H03",
+      "name": "Fake compile success without live engine",
+      "status": "success",
+      "violations": [],
+      "elapsed_ms": 24.67,
+      "details": "Verified compile fails closed on missing projects, enforces download lockout (32827/33149), and uses honest AST metrics."
+    },
+    "H04": {
+      "item": "H04",
+      "name": "Silent mocks disguised as live passes",
+      "status": "success",
+      "violations": [],
+      "elapsed_ms": 2.74,
+      "details": "Verified all simulators and offline capabilities explicitly declare TESTED_MOCK [offline/DEV only] and never claim VERIFIED_LIVE."
+    },
+    "H05": {
+      "item": "H05",
+      "name": "Global allow dialog bypass without modal inspection",
+      "status": "success",
+      "violations": [],
+      "elapsed_ms": 0.45,
+      "details": "Verified modal dialog handling inspects #32770 dialogs, filters keywords, and performs targeted window dispatch."
+    },
+    "H06": {
+      "item": "H06",
+      "name": "Straton K5 files in active code paths",
+      "status": "success",
+      "violations": [],
+      "elapsed_ms": 293.13,
+      "details": "Verified legacy Straton K5 files are quarantined; zero active imports or runtime dependencies in src/."
+    },
+    "H07": {
+      "item": "H07",
+      "name": "Hardcoded dead PIDs treated as permanent passes",
+      "status": "success",
+      "violations": [],
+      "elapsed_ms": 1.43,
+      "details": "Verified ephemeral PID tests are explicitly classified as gate-dependent historical milestones, not continuous regression passes."
+    },
+    "H08": {
+      "item": "H08",
+      "name": "Ladder constructs disguised as ST",
+      "status": "success",
+      "violations": [],
+      "elapsed_ms": 7.5,
+      "details": "Verified AST and validator guards reject all ladder constructs with ERR_LADDER_FORBIDDEN; in-GUI conversion documented as BLOCKED."
+    },
+    "H09": {
+      "item": "H09",
+      "name": "Fake 100% or FINAL_REPORT claims",
+      "status": "success",
+      "violations": [],
+      "elapsed_ms": 1.32,
+      "details": "Verified AGENTS.md mandates evidence-gated progression, forbids premature victory/100% claims, and enforces watchdog discipline."
+    },
+    "H10": {
+      "item": "H10",
+      "name": "Physical hardware port access without lockout",
+      "status": "success",
+      "violations": [],
+      "elapsed_ms": 4.21,
+      "details": "Verified absolute hardware lockout for serial COM (1-256), industrial fieldbuses (CAN), USB, and JTAG adapters."
+    },
+    "H11": {
+      "item": "H11",
+      "name": "Companion flasher utilities allowed",
+      "status": "success",
+      "violations": [],
+      "elapsed_ms": 6.63,
+      "details": "Verified blocking of companion flashers, CLI download switches, and Win32 download commands (32827/33149)."
+    },
+    "H12": {
+      "item": "H12",
+      "name": "Unsupervised naked Cscape launch claiming stability",
+      "status": "success",
+      "violations": [],
+      "elapsed_ms": 1.6,
+      "details": "Verified documentation explicitly records naked launch crash at 0x0051a4cd (0.6-11.4s) vs supervisor stay-open (>7,200s)."
+    },
+    "H13": {
+      "item": "H13",
+      "name": "Status contract violations",
+      "status": "success",
+      "violations": [],
+      "scanned_files_count": 307,
+      "canonical_files_count": 72,
+      "active_checkpoints_checked": 69,
+      "mandated_enum": [
+        "blocked",
+        "failed",
+        "inconclusive",
+        "success"
+      ],
+      "elapsed_ms": 182.25,
+      "details": "Verified 69 active checkpoints and FastMCP normalization conform strictly to ['blocked', 'failed', 'inconclusive', 'success']."
+    }
+  },
+  "summary": {
+    "total_items": 13,
+    "passed_items": 13,
+    "failed_items": 0,
+    "all_passed": true,
+    "duration_seconds": 0.53
+  }
+}

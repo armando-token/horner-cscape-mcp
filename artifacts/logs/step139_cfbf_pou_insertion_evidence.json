@@ -1,0 +1,121 @@
+{
+  "step": 139,
+  "title": "Multi-POU CFBF Project Envelope & POU Insertion Verification Evidence",
+  "timestamp_utc": "2026-09-05T17:55:47.240781+00:00",
+  "tank_level_inspection": {
+    "file_path": "C:\\Users\\ArmandoSilva\\artifacts\\projects\\TankLevelClosedLoop\\TankLevelClosedLoop.csp",
+    "file_size_bytes": 49152,
+    "is_valid_cfbf": true,
+    "magic_hex": "d0cf11e0a1b11ae1",
+    "sector_size": 512,
+    "dir_sector": 2,
+    "stream_entries": [
+      {
+        "name": "Root Entry",
+        "type": "Root",
+        "size": 0,
+        "is_stream": false
+      },
+      {
+        "name": "Contents",
+        "type": "Stream",
+        "size": 44144,
+        "is_stream": true
+      }
+    ],
+    "cscape_version": "10.2.751.4",
+    "horner_markers": [
+      "HornerOCS",
+      "main3",
+      "Allocated",
+      "<END_RETAIN>",
+      "%AI1",
+      "%AQ1",
+      "PLC Type"
+    ],
+    "has_contents_stream": true,
+    "has_iec_configuration": true
+  },
+  "reg_min_inspection": {
+    "file_path": "C:\\HornerAI\\horner-cscape-mcp\\artifacts\\projects\\reg_min.csp",
+    "file_size_bytes": 5120,
+    "is_valid_cfbf": true,
+    "magic_hex": "d0cf11e0a1b11ae1",
+    "sector_size": 512,
+    "dir_sector": 2,
+    "stream_entries": [
+      {
+        "name": "Root Entry",
+        "type": "Root",
+        "size": 1856,
+        "is_stream": false
+      },
+      {
+        "name": "Contents",
+        "type": "Stream",
+        "size": 1814,
+        "is_stream": true
+      }
+    ],
+    "cscape_version": "3.02 (build 1)",
+    "horner_markers": [],
+    "has_contents_stream": true,
+    "has_iec_configuration": true
+  },
+  "tank_level_contents_header": {
+    "valid": true,
+    "magic": 2018915346,
+    "file_format_version": 135,
+    "header_type": "modern_unicode",
+    "cscape_version": "10.2.751.4",
+    "cscape_build": null
+  },
+  "synthetic_cfbf": {
+    "length_bytes": 2048,
+    "sha256": "d6029cfb1da471eaf09745db4a5c3c0567b907f7bd17a46b16493dbde5614b86",
+    "magic": "d0cf11e0a1b11ae1"
+  },
+  "pous_verified": [
+    {
+      "name": "MainProgram",
+      "type": "PROGRAM",
+      "sha256": "3b554a88cdd4c28668448073c5b243923c20fdbe72a2a7e6623d15cdd1632bba"
+    },
+    {
+      "name": "FB_PumpController",
+      "type": "FUNCTION_BLOCK",
+      "sha256": "43c0102f94d0dcb8be11fa39a1ecf3bbbfc81d16cac1dbc3bf252a6f36a8c9a3"
+    },
+    {
+      "name": "F_ScaleAnalog",
+      "type": "FUNCTION",
+      "sha256": "64d4bc8d7d8bd7bedb1bb7cfcf38a9c154428c403c0a5d00204276350597c175"
+    }
+  ],
+  "ladder_logic_rejection": {
+    "contacts_coils_rejected": true,
+    "rungs_rejected": true,
+    "mnemonics_rejected": true,
+    "error_code": "ERR_LADDER_FORBIDDEN",
+    "fail_closed_zero_disk_write": true
+  },
+  "syntax_error_precision": {
+    "sample_code": "PROGRAM BadSyntaxPOU\\nVAR\\n    nVal : INT;\\nEND_VAR\\n    nVal := ;\\nEND_PROGRAM",
+    "line": 5,
+    "column": 13,
+    "error_code": "ST_SYNTAX_ERROR"
+  },
+  "cscape_health": {
+    "ready_for_tests": true,
+    "status": "READY_FOR_TESTS",
+    "pid": 14580,
+    "hwnd": "0x024B054A",
+    "window_title": "Cscape - Logged In : \"armando@controlnautas.com\" - [TankLevelClosedLoop.csp]",
+    "project_file": "C:\\Users\\ArmandoSilva\\artifacts\\projects\\TankLevelClosedLoop\\TankLevelClosedLoop.csp",
+    "exit_code": null,
+    "reason": "TankLevelClosedLoop verified active and responsive",
+    "cycle": 1,
+    "timestamp_utc": "2026-09-05T17:55:45.268Z",
+    "heartbeat_utc": "2026-09-05T17:55:45.268Z"
+  }
+}

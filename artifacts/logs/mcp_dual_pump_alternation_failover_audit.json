@@ -1,0 +1,243 @@
+{
+  "step": 50,
+  "audit_title": "Dual-Pump Redundancy, Run-Hour Duty Alternation & Instant Failsafe Cutover Closed-Loop Audit",
+  "timestamp_start": "2026-09-05T09:58:57.148Z",
+  "timestamp_end": "2026-09-05T09:59:03.415Z",
+  "status": "VERIFIED_LIVE",
+  "cscape_active_process": {
+    "healthy": true,
+    "pid": 3784,
+    "hwnd": "0xbb06c2",
+    "desktop": "Default",
+    "is_hung": false,
+    "wm_null_ping_ok": true,
+    "working_set_mb": 221.92,
+    "uptime_seconds": 214.55,
+    "thread_count": 15,
+    "gate_status": "READY_FOR_TESTS",
+    "window_title": "Cscape - Logged In : \"armando@controlnautas.com\" - [TankLevelClosedLoop.csp]"
+  },
+  "cscape_gate": {
+    "ready_for_tests": true,
+    "status": "READY_FOR_TESTS",
+    "pid": 3784,
+    "hwnd": "0x00BB06C2",
+    "window_title": "Cscape - Logged In : \"armando@controlnautas.com\" - [TankLevelClosedLoop.csp]",
+    "project_file": "C:\\Users\\ArmandoSilva\\artifacts\\projects\\TankLevelClosedLoop\\TankLevelClosedLoop.csp",
+    "exit_code": null,
+    "reason": "TankLevelClosedLoop verified active and responsive",
+    "cycle": 1,
+    "timestamp_utc": "2026-09-05T09:58:56.797Z"
+  },
+  "gui_compilation": {
+    "command_id": 32826,
+    "status": "success",
+    "errors": 0,
+    "warnings": 0
+  },
+  "pump_redundancy_metrics": {
+    "total_cycles": 500,
+    "pump1_operating_cycles": 420,
+    "pump2_operating_cycles": 182,
+    "phase2_duty_alternation_max_dev_pct": 0.0,
+    "phase3_trip_failover_max_dev_pct": 0.0,
+    "phase4_dual_assist_verified": true,
+    "phase5_final_error_percent": 0.0015,
+    "phase5_mean_last15_error_percent": 0.0048
+  },
+  "safety_audit": {
+    "physical_plc_download_blocked": true,
+    "blocked_command_id": 32827,
+    "zero_physical_hardware_touched": true,
+    "zero_straton_dependencies": true
+  },
+  "sample_trace": [
+    {
+      "cycle": 0,
+      "phase": "PHASE_1_LEAD_PUMP1",
+      "lead_pump": 1,
+      "pump1_cmd": 50.0,
+      "pump2_cmd": 0.0,
+      "assist": false,
+      "pump2_tripped": false,
+      "pv_plant": 50.0,
+      "error": 0.0
+    },
+    {
+      "cycle": 50,
+      "phase": "PHASE_1_LEAD_PUMP1",
+      "lead_pump": 1,
+      "pump1_cmd": 50.0,
+      "pump2_cmd": 0.0,
+      "assist": false,
+      "pump2_tripped": false,
+      "pv_plant": 50.0,
+      "error": 0.0
+    },
+    {
+      "cycle": 100,
+      "phase": "PHASE_1_LEAD_PUMP1",
+      "lead_pump": 1,
+      "pump1_cmd": 50.0,
+      "pump2_cmd": 0.0,
+      "assist": false,
+      "pump2_tripped": false,
+      "pv_plant": 50.0,
+      "error": 0.0
+    },
+    {
+      "cycle": 101,
+      "phase": "PHASE_2_DUTY_ALTERNATION",
+      "lead_pump": 2,
+      "pump1_cmd": 0.0,
+      "pump2_cmd": 50.0,
+      "assist": false,
+      "pump2_tripped": false,
+      "pv_plant": 50.0,
+      "error": 0.0
+    },
+    {
+      "cycle": 105,
+      "phase": "PHASE_2_DUTY_ALTERNATION",
+      "lead_pump": 2,
+      "pump1_cmd": 0.0,
+      "pump2_cmd": 50.0,
+      "assist": false,
+      "pump2_tripped": false,
+      "pv_plant": 50.0,
+      "error": 0.0
+    },
+    {
+      "cycle": 140,
+      "phase": "PHASE_2_DUTY_ALTERNATION",
+      "lead_pump": 2,
+      "pump1_cmd": 0.0,
+      "pump2_cmd": 50.0,
+      "assist": false,
+      "pump2_tripped": false,
+      "pv_plant": 50.0,
+      "error": 0.0
+    },
+    {
+      "cycle": 180,
+      "phase": "PHASE_2_DUTY_ALTERNATION",
+      "lead_pump": 2,
+      "pump1_cmd": 0.0,
+      "pump2_cmd": 50.0,
+      "assist": false,
+      "pump2_tripped": false,
+      "pv_plant": 50.0,
+      "error": 0.0
+    },
+    {
+      "cycle": 181,
+      "phase": "PHASE_3_PUMP2_TRIP_FAILOVER",
+      "lead_pump": 1,
+      "pump1_cmd": 50.0,
+      "pump2_cmd": 0.0,
+      "assist": false,
+      "pump2_tripped": true,
+      "pv_plant": 50.0,
+      "error": 0.0
+    },
+    {
+      "cycle": 185,
+      "phase": "PHASE_3_PUMP2_TRIP_FAILOVER",
+      "lead_pump": 1,
+      "pump1_cmd": 50.0,
+      "pump2_cmd": 0.0,
+      "assist": false,
+      "pump2_tripped": true,
+      "pv_plant": 50.0,
+      "error": 0.0
+    },
+    {
+      "cycle": 220,
+      "phase": "PHASE_3_PUMP2_TRIP_FAILOVER",
+      "lead_pump": 1,
+      "pump1_cmd": 50.0,
+      "pump2_cmd": 0.0,
+      "assist": false,
+      "pump2_tripped": true,
+      "pv_plant": 50.0,
+      "error": 0.0
+    },
+    {
+      "cycle": 260,
+      "phase": "PHASE_3_PUMP2_TRIP_FAILOVER",
+      "lead_pump": 1,
+      "pump1_cmd": 50.0,
+      "pump2_cmd": 0.0,
+      "assist": false,
+      "pump2_tripped": true,
+      "pv_plant": 50.0,
+      "error": 0.0
+    },
+    {
+      "cycle": 261,
+      "phase": "PHASE_4_DUAL_PUMP_ASSIST",
+      "lead_pump": 1,
+      "pump1_cmd": 50.0,
+      "pump2_cmd": 50.0,
+      "assist": true,
+      "pump2_tripped": false,
+      "pv_plant": 52.5,
+      "error": 27.5
+    },
+    {
+      "cycle": 300,
+      "phase": "PHASE_4_DUAL_PUMP_ASSIST",
+      "lead_pump": 1,
+      "pump1_cmd": 40.67,
+      "pump2_cmd": 40.67,
+      "assist": true,
+      "pump2_tripped": false,
+      "pv_plant": 80.1975,
+      "error": 0.1975
+    },
+    {
+      "cycle": 360,
+      "phase": "PHASE_4_DUAL_PUMP_ASSIST",
+      "lead_pump": 1,
+      "pump1_cmd": 39.99,
+      "pump2_cmd": 39.99,
+      "assist": true,
+      "pump2_tripped": false,
+      "pv_plant": 80.0582,
+      "error": 0.0582
+    },
+    {
+      "cycle": 361,
+      "phase": "PHASE_5_CALIBRATED_RECOVERY",
+      "lead_pump": 1,
+      "pump1_cmd": 0.0,
+      "pump2_cmd": 0.0,
+      "assist": true,
+      "pump2_tripped": false,
+      "pv_plant": 76.0553,
+      "error": 21.0553
+    },
+    {
+      "cycle": 420,
+      "phase": "PHASE_5_CALIBRATED_RECOVERY",
+      "lead_pump": 1,
+      "pump1_cmd": 55.03,
+      "pump2_cmd": 0.0,
+      "assist": false,
+      "pump2_tripped": false,
+      "pv_plant": 53.6893,
+      "error": 1.3107
+    },
+    {
+      "cycle": 499,
+      "phase": "PHASE_5_CALIBRATED_RECOVERY",
+      "lead_pump": 1,
+      "pump1_cmd": 55.0,
+      "pump2_cmd": 0.0,
+      "assist": false,
+      "pump2_tripped": false,
+      "pv_plant": 54.9985,
+      "error": 0.0015
+    }
+  ]
+}

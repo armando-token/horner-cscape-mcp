@@ -1,0 +1,120 @@
+{
+  "step": 168,
+  "name": "step168_dual_root_sync_audit",
+  "status": "PASSED",
+  "timestamp_start": "2026-09-06T04:32:46.060Z",
+  "timestamp_complete": "2026-09-06T04:32:46.123Z",
+  "duration_seconds": 0.064,
+  "checkpoint_sha256": "f92611359792528ef85c92e11d161ffa94a2761b6fb22ee811e5ea1d14713bf7",
+  "parity_verified": true,
+  "details": {
+    "checkpoints": {
+      "step168_visible_gui_proof_checkpoint": {
+        "file": "artifacts/checkpoints/step168_visible_gui_proof_checkpoint.json",
+        "exists_in_both": true,
+        "valid_json": true,
+        "status": "PASSED",
+        "step": 168,
+        "file_sha256": "0066a8bc13b97cd81421cbdda1ea4064da49ca165282ecf4759e6cc10e839292",
+        "roots_identical": true,
+        "size_bytes": 670
+      },
+      "step168_security_audit_checkpoint": {
+        "file": "artifacts/checkpoints/step168_security_audit_checkpoint.json",
+        "exists_in_both": true,
+        "valid_json": true,
+        "status": "PASSED",
+        "step": 168,
+        "file_sha256": "3bcd2f4581a7c21a254c8edf4a60f11c1d86cb8e0e6b84b670ed7c36b5b31f74",
+        "roots_identical": true,
+        "size_bytes": 556
+      },
+      "step168_mcp_msv_warming_water_hammer_checkpoint": {
+        "file": "artifacts/checkpoints/step168_mcp_msv_warming_water_hammer_checkpoint.json",
+        "exists_in_both": true,
+        "valid_json": true,
+        "status": "PASSED",
+        "step": 168,
+        "file_sha256": "69be234083e16d3c4e2df6c613ba9f664966061e7f429598600788fd854834d0",
+        "roots_identical": true,
+        "size_bytes": 738
+      }
+    },
+    "logs": {
+      "step168_visible_gui_proof": {
+        "file": "artifacts/logs/step168_visible_gui_proof.json",
+        "exists_in_both": true,
+        "valid_json": true,
+        "status": "PASSED",
+        "file_sha256": "a1dee69c136ea9e1a00e5a02fbd988537b13ff5509309d8f95ef405e07776deb",
+        "roots_identical": true,
+        "size_bytes": 1890
+      },
+      "step168_security_audit": {
+        "file": "artifacts/logs/step168_security_audit.json",
+        "exists_in_both": true,
+        "valid_json": true,
+        "status": "PASSED",
+        "file_sha256": "728e175c38e3ca2fdc7aa5e3f72f288cc186bbddbbf942fbf8d244cbc5b8e116",
+        "roots_identical": true,
+        "size_bytes": 2763
+      },
+      "step168_mcp_msv_warming_water_hammer": {
+        "file": "artifacts/logs/step168_mcp_msv_warming_water_hammer.json",
+        "exists_in_both": true,
+        "valid_json": true,
+        "status": "PASSED",
+        "file_sha256": "62cbfbeafd66c5335fa96303473dbac388a76df36f5c0f192363d31d1c56082b",
+        "roots_identical": true,
+        "size_bytes": 2927
+      }
+    },
+    "screenshots": {
+      "live_cscape_tank_level_step168": {
+        "file": "artifacts/screenshots/live_cscape_tank_level_step168.png",
+        "exists_in_both": true,
+        "size_bytes": 72686,
+        "gt_10kb": true,
+        "file_sha256": "4730540e881c216fe988f2ab82b86a21b3bf9b10e662d57effe44a71b6cb657f",
+        "roots_identical": true
+      }
+    },
+    "code_files": {
+      "execute_step168_visible_cscape_gui_driver.py": {
+        "file": "scripts/execute_step168_visible_cscape_gui_driver.py",
+        "exists_in_both": true,
+        "file_sha256": "10a4b1819a77c6c53becc2bb7c83efaab1a2d05366cd497aaf9ea8fa2059fae1",
+        "roots_identical": true,
+        "size_bytes": 16149
+      },
+      "execute_step168_security_audit.py": {
+        "file": "scripts/execute_step168_security_audit.py",
+        "exists_in_both": true,
+        "file_sha256": "e141cf539555bc1c36af7576e68f13bdf5536e7b617bce88190aa18e85fe5912",
+        "roots_identical": true,
+        "size_bytes": 15141
+      },
+      "execute_step168_mcp_msv_warming_water_hammer.py": {
+        "file": "scripts/execute_step168_mcp_msv_warming_water_hammer.py",
+        "exists_in_both": true,
+        "file_sha256": "115e8e21e2824bef2373a232f44d750f2298f685ca316132b992d19be2742789",
+        "roots_identical": true,
+        "size_bytes": 27941
+      },
+      "test_step168_visible_cscape_gui_driver.py": {
+        "file": "tests/test_step168_visible_cscape_gui_driver.py",
+        "exists_in_both": true,
+        "file_sha256": "ce58c8c4727b80648b52d292bb923ab4aca3051532df7335490270d6176c706e",
+        "roots_identical": true,
+        "size_bytes": 3655
+      },
+      "test_step168_mcp_msv_warming_water_hammer.py": {
+        "file": "tests/test_step168_mcp_msv_warming_water_hammer.py",
+        "exists_in_both": true,
+        "file_sha256": "3d1ea15ef7bee11c41feafc39ad09bed14f4f9f3557e76d18e03ed3cb37fc870",
+        "roots_identical": true,
+        "size_bytes": 3194
+      }
+    }
+  }
+}

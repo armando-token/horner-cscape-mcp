@@ -1,0 +1,120 @@
+{
+  "step": 166,
+  "name": "step166_dual_root_sync_audit",
+  "status": "PASSED",
+  "timestamp_start": "2026-09-06T04:26:33.946Z",
+  "timestamp_complete": "2026-09-06T04:26:34.001Z",
+  "duration_seconds": 0.056,
+  "checkpoint_sha256": "017565b10cb1f29aac9957c6a477a5485555648de7c92bd57c2d53882507b164",
+  "parity_verified": true,
+  "details": {
+    "checkpoints": {
+      "step166_visible_gui_proof_checkpoint": {
+        "file": "artifacts/checkpoints/step166_visible_gui_proof_checkpoint.json",
+        "exists_in_both": true,
+        "valid_json": true,
+        "status": "PASSED",
+        "step": 166,
+        "file_sha256": "b5cae80473c53065c557cc89c1f3bdbb357c1d8b2a8c7000e55772ca1c9817f5",
+        "roots_identical": true,
+        "size_bytes": 670
+      },
+      "step166_security_audit_checkpoint": {
+        "file": "artifacts/checkpoints/step166_security_audit_checkpoint.json",
+        "exists_in_both": true,
+        "valid_json": true,
+        "status": "PASSED",
+        "step": 166,
+        "file_sha256": "9ad0287fb7c31c4f67e2d9d9f8090a34d967a3aaf50d657d8754db8d0ae2fb24",
+        "roots_identical": true,
+        "size_bytes": 556
+      },
+      "step166_mcp_economizer_steaming_acid_dewpoint_checkpoint": {
+        "file": "artifacts/checkpoints/step166_mcp_economizer_steaming_acid_dewpoint_checkpoint.json",
+        "exists_in_both": true,
+        "valid_json": true,
+        "status": "PASSED",
+        "step": 166,
+        "file_sha256": "e1ff5ca97d6029c6697491732d62e2bd4e71f5174fdaec94dfe3dfc5ca82bb36",
+        "roots_identical": true,
+        "size_bytes": 748
+      }
+    },
+    "logs": {
+      "step166_visible_gui_proof": {
+        "file": "artifacts/logs/step166_visible_gui_proof.json",
+        "exists_in_both": true,
+        "valid_json": true,
+        "status": "PASSED",
+        "file_sha256": "b3e258186bcbdb386af7432fd33258276b967e6de581593cf9b861c238b51731",
+        "roots_identical": true,
+        "size_bytes": 1891
+      },
+      "step166_security_audit": {
+        "file": "artifacts/logs/step166_security_audit.json",
+        "exists_in_both": true,
+        "valid_json": true,
+        "status": "PASSED",
+        "file_sha256": "21e4f73393fda4540926f1525c6f1569fd43ddb18656253795269509439df7e4",
+        "roots_identical": true,
+        "size_bytes": 2762
+      },
+      "step166_mcp_economizer_steaming_acid_dewpoint": {
+        "file": "artifacts/logs/step166_mcp_economizer_steaming_acid_dewpoint.json",
+        "exists_in_both": true,
+        "valid_json": true,
+        "status": "PASSED",
+        "file_sha256": "dd6b68890f7351fbc99be02569c30df0afd6dae4d837cdfeb1eaaffa71adae62",
+        "roots_identical": true,
+        "size_bytes": 3125
+      }
+    },
+    "screenshots": {
+      "live_cscape_tank_level_step166": {
+        "file": "artifacts/screenshots/live_cscape_tank_level_step166.png",
+        "exists_in_both": true,
+        "size_bytes": 72686,
+        "gt_10kb": true,
+        "file_sha256": "4730540e881c216fe988f2ab82b86a21b3bf9b10e662d57effe44a71b6cb657f",
+        "roots_identical": true
+      }
+    },
+    "code_files": {
+      "execute_step166_visible_cscape_gui_driver.py": {
+        "file": "scripts/execute_step166_visible_cscape_gui_driver.py",
+        "exists_in_both": true,
+        "file_sha256": "d6306a3ebdb3a317985f1738883836585b825739644184e413abf399cba74a22",
+        "roots_identical": true,
+        "size_bytes": 16149
+      },
+      "execute_step166_security_audit.py": {
+        "file": "scripts/execute_step166_security_audit.py",
+        "exists_in_both": true,
+        "file_sha256": "439e8e64acdfb997e58806dc8aee63a4d9cf40b71f2009a01a75830640739399",
+        "roots_identical": true,
+        "size_bytes": 15141
+      },
+      "execute_step166_mcp_economizer_steaming_acid_dewpoint.py": {
+        "file": "scripts/execute_step166_mcp_economizer_steaming_acid_dewpoint.py",
+        "exists_in_both": true,
+        "file_sha256": "394a1c525aafe82e1c41290af67d86dc2f31bc3efd8a673669d173f9151cd4bc",
+        "roots_identical": true,
+        "size_bytes": 30972
+      },
+      "test_step166_visible_cscape_gui_driver.py": {
+        "file": "tests/test_step166_visible_cscape_gui_driver.py",
+        "exists_in_both": true,
+        "file_sha256": "ddd4402d32f682bbaed0808d0281c5b6fed08fd7cdf8ce74bb483290b0e959aa",
+        "roots_identical": true,
+        "size_bytes": 3655
+      },
+      "test_step166_mcp_economizer_steaming_acid_dewpoint.py": {
+        "file": "tests/test_step166_mcp_economizer_steaming_acid_dewpoint.py",
+        "exists_in_both": true,
+        "file_sha256": "773ad9ec744c05018011ef957a395830b2dcb40adf20d4638cbb0326053e2e51",
+        "roots_identical": true,
+        "size_bytes": 3193
+      }
+    }
+  }
+}

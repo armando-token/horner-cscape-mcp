@@ -1,0 +1,234 @@
+{
+  "audit_step": 85,
+  "name": "Polyethylene Flash Separator Drum Level & Monomer Recycle Closed-Loop Audit",
+  "timestamp": "2026-09-05T11:22:17.590Z",
+  "completed_at": "2026-09-05T11:22:23.847Z",
+  "cscape_pid": 8660,
+  "cscape_hwnd": "0x147068c",
+  "total_cycles": 600,
+  "metrics": {
+    "max_phase1_level_error_pct": 0.0,
+    "mean_phase1_level_error_pct": 0.0,
+    "max_phase2_uncomp_drift_pct": 6.71,
+    "mean_phase2_uncomp_drift_pct": 4.93,
+    "max_phase3_comp_error_pct": 0.0,
+    "mean_phase3_comp_error_pct": 0.0,
+    "bed_surge_rejection_pct": 100.0,
+    "phase4_final_level_error_pct": 0.1138,
+    "phase4_mean_tail_level_error_pct": 0.0703,
+    "high_high_fouling_interlock_trip_cycle": 501,
+    "high_high_trip_level_pct": 85.0
+  },
+  "trace_samples": [
+    {
+      "cycle": 0,
+      "phase": "PHASE_1_EQUILIBRIUM_PE_FLASH",
+      "target_sp": 50.0,
+      "bed_level": 50.0,
+      "polymer_flow": 50.0,
+      "fouling_trip": false,
+      "cv_pid": 50.0
+    },
+    {
+      "cycle": 50,
+      "phase": "PHASE_1_EQUILIBRIUM_PE_FLASH",
+      "target_sp": 50.0,
+      "bed_level": 50.0,
+      "polymer_flow": 50.0,
+      "fouling_trip": false,
+      "cv_pid": 50.0
+    },
+    {
+      "cycle": 100,
+      "phase": "PHASE_1_EQUILIBRIUM_PE_FLASH",
+      "target_sp": 50.0,
+      "bed_level": 50.0,
+      "polymer_flow": 50.0,
+      "fouling_trip": false,
+      "cv_pid": 50.0
+    },
+    {
+      "cycle": 101,
+      "phase": "PHASE_2_FLASH_GAS_SURGE_UNCOMP",
+      "target_sp": 50.0,
+      "bed_level": 50.023,
+      "polymer_flow": 50.4,
+      "fouling_trip": false,
+      "cv_pid": 50.0
+    },
+    {
+      "cycle": 125,
+      "phase": "PHASE_2_FLASH_GAS_SURGE_UNCOMP",
+      "target_sp": 50.0,
+      "bed_level": 54.558,
+      "polymer_flow": 58.8,
+      "fouling_trip": false,
+      "cv_pid": 42.88
+    },
+    {
+      "cycle": 150,
+      "phase": "PHASE_2_FLASH_GAS_SURGE_UNCOMP",
+      "target_sp": 50.0,
+      "bed_level": 56.663,
+      "polymer_flow": 67.5,
+      "fouling_trip": false,
+      "cv_pid": 26.81
+    },
+    {
+      "cycle": 175,
+      "phase": "PHASE_2_FLASH_GAS_SURGE_UNCOMP",
+      "target_sp": 50.0,
+      "bed_level": 55.594,
+      "polymer_flow": 76.2,
+      "fouling_trip": false,
+      "cv_pid": 15.29
+    },
+    {
+      "cycle": 200,
+      "phase": "PHASE_2_FLASH_GAS_SURGE_UNCOMP",
+      "target_sp": 50.0,
+      "bed_level": 55.532,
+      "polymer_flow": 85.0,
+      "fouling_trip": false,
+      "cv_pid": 4.75
+    },
+    {
+      "cycle": 201,
+      "phase": "PHASE_3_RECYCLE_DECOUPLING",
+      "target_sp": 50.0,
+      "bed_level": 50.0,
+      "polymer_flow": 85.0,
+      "fouling_trip": false,
+      "cv_pid": 50.0
+    },
+    {
+      "cycle": 225,
+      "phase": "PHASE_3_RECYCLE_DECOUPLING",
+      "target_sp": 50.0,
+      "bed_level": 50.0,
+      "polymer_flow": 85.0,
+      "fouling_trip": false,
+      "cv_pid": 50.0
+    },
+    {
+      "cycle": 250,
+      "phase": "PHASE_3_RECYCLE_DECOUPLING",
+      "target_sp": 50.0,
+      "bed_level": 50.0,
+      "polymer_flow": 85.0,
+      "fouling_trip": false,
+      "cv_pid": 50.0
+    },
+    {
+      "cycle": 275,
+      "phase": "PHASE_3_RECYCLE_DECOUPLING",
+      "target_sp": 50.0,
+      "bed_level": 50.0,
+      "polymer_flow": 85.0,
+      "fouling_trip": false,
+      "cv_pid": 50.0
+    },
+    {
+      "cycle": 300,
+      "phase": "PHASE_3_RECYCLE_DECOUPLING",
+      "target_sp": 50.0,
+      "bed_level": 50.0,
+      "polymer_flow": 85.0,
+      "fouling_trip": false,
+      "cv_pid": 50.0
+    },
+    {
+      "cycle": 350,
+      "phase": "PHASE_3_RECYCLE_DECOUPLING",
+      "target_sp": 50.0,
+      "bed_level": 50.0,
+      "polymer_flow": 85.0,
+      "fouling_trip": false,
+      "cv_pid": 50.0
+    },
+    {
+      "cycle": 351,
+      "phase": "PHASE_4_DYNAMIC_BED_LEVEL_STEP",
+      "target_sp": 65.0,
+      "bed_level": 51.26,
+      "polymer_flow": 75.0,
+      "fouling_trip": false,
+      "cv_pid": 75.2
+    },
+    {
+      "cycle": 400,
+      "phase": "PHASE_4_DYNAMIC_BED_LEVEL_STEP",
+      "target_sp": 65.0,
+      "bed_level": 66.427,
+      "polymer_flow": 75.0,
+      "fouling_trip": false,
+      "cv_pid": 42.79
+    },
+    {
+      "cycle": 450,
+      "phase": "PHASE_4_DYNAMIC_BED_LEVEL_STEP",
+      "target_sp": 65.0,
+      "bed_level": 65.236,
+      "polymer_flow": 75.0,
+      "fouling_trip": false,
+      "cv_pid": 51.0
+    },
+    {
+      "cycle": 500,
+      "phase": "PHASE_4_DYNAMIC_BED_LEVEL_STEP",
+      "target_sp": 65.0,
+      "bed_level": 64.886,
+      "polymer_flow": 75.0,
+      "fouling_trip": false,
+      "cv_pid": 49.95
+    },
+    {
+      "cycle": 501,
+      "phase": "PHASE_5_HIGH_HIGH_FOULING_TRIP",
+      "target_sp": 65.0,
+      "bed_level": 64.886,
+      "polymer_flow": 30.0,
+      "fouling_trip": true,
+      "cv_pid": 49.96
+    },
+    {
+      "cycle": 520,
+      "phase": "PHASE_5_HIGH_HIGH_FOULING_TRIP",
+      "target_sp": 65.0,
+      "bed_level": 64.886,
+      "polymer_flow": 30.0,
+      "fouling_trip": true,
+      "cv_pid": 50.19
+    },
+    {
+      "cycle": 550,
+      "phase": "PHASE_5_HIGH_HIGH_FOULING_TRIP",
+      "target_sp": 65.0,
+      "bed_level": 64.886,
+      "polymer_flow": 30.0,
+      "fouling_trip": true,
+      "cv_pid": 50.46
+    },
+    {
+      "cycle": 599,
+      "phase": "PHASE_5_HIGH_HIGH_FOULING_TRIP",
+      "target_sp": 65.0,
+      "bed_level": 64.886,
+      "polymer_flow": 30.0,
+      "fouling_trip": true,
+      "cv_pid": 50.9
+    }
+  ],
+  "cscape_health": {
+    "healthy": true,
+    "pid": 8660,
+    "hwnd": "0x147068c",
+    "desktop": "Default",
+    "is_hung": false,
+    "wm_null_ping_ok": true,
+    "working_set_mb": 73.58,
+    "num_threads": 11,
+    "uptime_sec": 2760.46
+  },
+  "download_lockout_verified": true
+}

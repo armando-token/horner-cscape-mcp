@@ -1,0 +1,19 @@
+{
+  "step": 91,
+  "status": "COMPLETED",
+  "name": "Hydrotreater High-Pressure Cold Separator (HPCS) Level & Gas Letdown Closed-Loop Audit",
+  "timestamp": "2026-09-05T11:30:34.513Z",
+  "cscape_pid": 13268,
+  "cscape_hwnd": "0x1f100e6",
+  "project": "TankLevelClosedLoop.csp",
+  "assertions_passed": [
+    "Phase 1 nominal equilibrium error 0.0000% < 0.10%",
+    "Phase 2 uncompensated flash surge drift 6.71% > 5.0%",
+    "Phase 3 letdown decoupled error 0.0000% < 0.35%",
+    "Flash gas surge rejection ratio 100.0% > 95.0%",
+    "Phase 4 dynamic level step settling error 0.1138% < 0.35%",
+    "Phase 5 high-high compressor carryover trip at cycle 501 == 501",
+    "Fail-closed download lockout ID_CONTROLLER_DOWNLOAD=32827 strictly enforced",
+    "Live Cscape GUI healthy and responsive throughout test"
+  ]
+}

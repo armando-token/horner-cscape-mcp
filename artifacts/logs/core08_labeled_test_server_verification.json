@@ -1,0 +1,121 @@
+{
+  "status": "success",
+  "error_code": null,
+  "details": "Verification of LabeledTestModbusServer '[TEST_MODBUS_PV_PROVIDER]' completed successfully on 127.0.0.1:15502. All 7 protocol and safety checks passed deterministically.",
+  "data": {
+    "mandate": "CORE-08 Offline Modbus Protocol Quality & Fail-Closed Write Lockout",
+    "server_label": "[TEST_MODBUS_PV_PROVIDER]",
+    "host": "127.0.0.1",
+    "port": 15502,
+    "start_time_utc": "2026-09-16T06:33:39.805007+00:00",
+    "end_time_utc": "2026-09-16T06:33:42.032001+00:00",
+    "total_steps": 7,
+    "steps": [
+      {
+        "step": 1,
+        "name": "server_initialization",
+        "status": "success",
+        "host": "127.0.0.1",
+        "port": 15502,
+        "label": "[TEST_MODBUS_PV_PROVIDER]",
+        "initial_registers": {
+          "0": 17600,
+          "1": 16000,
+          "2": 16000,
+          "3": 1
+        }
+      },
+      {
+        "step": 2,
+        "name": "fc03_query_offset_0",
+        "status": "success",
+        "start_address": 0,
+        "quantity": 1,
+        "raw_value": 17600,
+        "scaled_tank_level_pct": 55.0,
+        "raw_request_hex": "000100000006010300000001",
+        "raw_response_hex": "00010000000501030244C0"
+      },
+      {
+        "step": 3,
+        "name": "fc03_query_offsets_0_to_2",
+        "status": "success",
+        "start_address": 0,
+        "quantity": 3,
+        "raw_registers": [
+          17600,
+          16000,
+          16000
+        ],
+        "expected_registers": [
+          17600,
+          16000,
+          16000
+        ],
+        "raw_request_hex": "000200000006010300000003",
+        "raw_response_hex": "00020000000901030644C03E803E80"
+      },
+      {
+        "step": 4,
+        "name": "dynamic_update_register_0",
+        "status": "success",
+        "set_percentage": 75.0,
+        "expected_raw": 24000,
+        "actual_raw": 24000,
+        "actual_scaled_pct": 75.0,
+        "raw_request_hex": "000300000006010300000001",
+        "raw_response_hex": "0003000000050103025DC0"
+      },
+      {
+        "step": 5,
+        "name": "fail_closed_write_lockout_fc06",
+        "status": "success",
+        "attempted_fc": 6,
+        "response_fc": "0x86",
+        "exception_code": "0x01",
+        "exception_name": "ILLEGAL_FUNCTION",
+        "lockout_verified": true,
+        "raw_request_hex": "000400000006010600001234",
+        "raw_response_hex": "000400000003018601"
+      },
+      {
+        "step": 6,
+        "name": "fail_closed_write_lockout_fc16",
+        "status": "success",
+        "attempted_fc": 16,
+        "response_fc": "0x90",
+        "exception_code": "0x01",
+        "exception_name": "ILLEGAL_FUNCTION",
+        "lockout_verified": true,
+        "raw_request_hex": "00050000000B0110000000020412345678",
+        "raw_response_hex": "000500000003019001"
+      },
+      {
+        "step": 7,
+        "name": "server_status_inspection",
+        "status": "success",
+        "server_status": {
+          "is_running": true,
+          "label": "[TEST_MODBUS_PV_PROVIDER]",
+          "host": "127.0.0.1",
+          "port": 15502,
+          "active_connections": 1,
+          "queries_served": 6,
+          "current_raw_value": 24000,
+          "scaled_level_pct": 75.0,
+          "read_only_enforced": true
+        }
+      }
+    ],
+    "protocol_conformance": {
+      "fc03_read_single_register": "VERIFIED_PASS",
+      "fc03_read_multi_register": "VERIFIED_PASS",
+      "dynamic_telemetry_update": "VERIFIED_PASS",
+      "fc06_write_single_lockout": "VERIFIED_FAIL_CLOSED (0x86 / 0x01)",
+      "fc16_write_multi_lockout": "VERIFIED_FAIL_CLOSED (0x90 / 0x01)",
+      "read_only_enforced": true
+    },
+    "status_contract_version": "v1.0.0",
+    "sha256": "2907e43be613f72a33e847331e5ffb130021a8c7e8f5274887f18c5bbc2dee04"
+  }
+}

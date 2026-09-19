@@ -1,0 +1,57 @@
+{
+  "step": 35,
+  "name": "step35_multistep_settling_checkpoint",
+  "description": "Multi-setpoint sequence benchmark verified across 5 step jumps (30%->70%->40%->85%->50%) with all stages settling in <= 42 cycles, sub-0.15% final errors, and zero hardware interaction",
+  "timestamp_utc": "2026-09-05T07:35:15.828Z",
+  "cscape_pid": 15240,
+  "cscape_hwnd": "0x00710582",
+  "cscape_healthy": true,
+  "total_cycles": 500,
+  "all_stages_settled_verified": true,
+  "max_settling_cycles": 42,
+  "stage_metrics": {
+    "STAGE_1_30PCT": {
+      "target_sp": 30.0,
+      "settling_cycles": 42,
+      "peak_pv": 30.3281,
+      "final_pv": 30.018,
+      "final_error_pct": 0.018,
+      "settling_verified": true
+    },
+    "STAGE_2_70PCT": {
+      "target_sp": 70.0,
+      "settling_cycles": 20,
+      "peak_pv": 73.4713,
+      "final_pv": 69.8991,
+      "final_error_pct": 0.1009,
+      "settling_verified": true
+    },
+    "STAGE_3_40PCT": {
+      "target_sp": 40.0,
+      "settling_cycles": 20,
+      "peak_pv": 69.8991,
+      "final_pv": 40.0731,
+      "final_error_pct": 0.0731,
+      "settling_verified": true
+    },
+    "STAGE_4_85PCT": {
+      "target_sp": 85.0,
+      "settling_cycles": 25,
+      "peak_pv": 88.8533,
+      "final_pv": 84.8587,
+      "final_error_pct": 0.1413,
+      "settling_verified": true
+    },
+    "STAGE_5_50PCT": {
+      "target_sp": 50.0,
+      "settling_cycles": 20,
+      "peak_pv": 84.8587,
+      "final_pv": 50.0848,
+      "final_error_pct": 0.0848,
+      "settling_verified": true
+    }
+  },
+  "hardware_lockout_enforced": true,
+  "audit_log": "C:\\Users\\ArmandoSilva\\artifacts\\logs\\mcp_multistep_settling_audit.json",
+  "status": "VERIFIED_LIVE"
+}

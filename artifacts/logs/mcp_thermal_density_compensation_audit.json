@@ -1,0 +1,216 @@
+{
+  "step": 53,
+  "audit_title": "Hydrostatic Density & Thermal Expansion Compensation Closed-Loop Audit",
+  "timestamp_start": "2026-09-05T10:02:00.103Z",
+  "timestamp_end": "2026-09-05T10:02:06.568Z",
+  "status": "VERIFIED_LIVE",
+  "cscape_active_process": {
+    "healthy": true,
+    "pid": 3784,
+    "hwnd": "0xbb06c2",
+    "desktop": "Default",
+    "is_hung": false,
+    "wm_null_ping_ok": true,
+    "working_set_mb": 225.36,
+    "uptime_seconds": 397.71,
+    "thread_count": 17,
+    "gate_status": "READY_FOR_TESTS",
+    "window_title": "Cscape - Logged In : \"armando@controlnautas.com\" - [TankLevelClosedLoop.csp]"
+  },
+  "cscape_gate": {
+    "ready_for_tests": true,
+    "status": "READY_FOR_TESTS",
+    "pid": 3784,
+    "hwnd": "0x00BB06C2",
+    "window_title": "Cscape - Logged In : \"armando@controlnautas.com\" - [TankLevelClosedLoop.csp]",
+    "project_file": "C:\\Users\\ArmandoSilva\\artifacts\\projects\\TankLevelClosedLoop\\TankLevelClosedLoop.csp",
+    "exit_code": null,
+    "reason": "TankLevelClosedLoop verified active and responsive",
+    "cycle": 1,
+    "timestamp_utc": "2026-09-05T10:01:59.375Z"
+  },
+  "gui_compilation": {
+    "command_id": 32826,
+    "status": "success",
+    "errors": 0,
+    "warnings": 0
+  },
+  "thermal_compensation_metrics": {
+    "total_cycles": 450,
+    "thermal_expansion_coefficient": 0.0012,
+    "reference_temperature_c": 20.0,
+    "peak_temperature_c": 85.0,
+    "uncompensated_overfill_creep_pct": 4.7062,
+    "compensated_settled_error_pct": 0.0019,
+    "phase4_final_error_percent": 0.0015,
+    "phase4_mean_last15_error_percent": 0.0015
+  },
+  "safety_audit": {
+    "physical_plc_download_blocked": true,
+    "blocked_command_id": 32827,
+    "zero_physical_hardware_touched": true,
+    "zero_straton_dependencies": true
+  },
+  "sample_trace": [
+    {
+      "cycle": 0,
+      "phase": "PHASE_1_ISOTHERMAL_BASELINE",
+      "temp_c": 20.0,
+      "density_ratio": 1.0,
+      "dp_sensor": 60.0,
+      "feedback_level": 60.0,
+      "true_level": 60.0,
+      "overfill_error": 0.0
+    },
+    {
+      "cycle": 50,
+      "phase": "PHASE_1_ISOTHERMAL_BASELINE",
+      "temp_c": 20.0,
+      "density_ratio": 1.0,
+      "dp_sensor": 60.0,
+      "feedback_level": 60.0,
+      "true_level": 60.0,
+      "overfill_error": 0.0
+    },
+    {
+      "cycle": 100,
+      "phase": "PHASE_1_ISOTHERMAL_BASELINE",
+      "temp_c": 20.0,
+      "density_ratio": 1.0,
+      "dp_sensor": 60.0,
+      "feedback_level": 60.0,
+      "true_level": 60.0,
+      "overfill_error": 0.0
+    },
+    {
+      "cycle": 105,
+      "phase": "PHASE_2_UNCOMPENSATED_HEATING",
+      "temp_c": 25.0,
+      "density_ratio": 0.994,
+      "dp_sensor": 59.72,
+      "feedback_level": 59.72,
+      "true_level": 60.1037,
+      "overfill_error": 0.1037
+    },
+    {
+      "cycle": 130,
+      "phase": "PHASE_2_UNCOMPENSATED_HEATING",
+      "temp_c": 50.0,
+      "density_ratio": 0.9653,
+      "dp_sensor": 59.27,
+      "feedback_level": 59.27,
+      "true_level": 61.4718,
+      "overfill_error": 1.4718
+    },
+    {
+      "cycle": 165,
+      "phase": "PHASE_2_UNCOMPENSATED_HEATING",
+      "temp_c": 85.0,
+      "density_ratio": 0.9276,
+      "dp_sensor": 59.27,
+      "feedback_level": 59.27,
+      "true_level": 63.9672,
+      "overfill_error": 3.9672
+    },
+    {
+      "cycle": 200,
+      "phase": "PHASE_2_UNCOMPENSATED_HEATING",
+      "temp_c": 85.0,
+      "density_ratio": 0.9276,
+      "dp_sensor": 60.02,
+      "feedback_level": 60.02,
+      "true_level": 64.7062,
+      "overfill_error": 4.7062
+    },
+    {
+      "cycle": 201,
+      "phase": "PHASE_3_COMPENSATED_HEATING",
+      "temp_c": 21.0,
+      "density_ratio": 0.9988,
+      "dp_sensor": 64.63,
+      "feedback_level": 64.71,
+      "true_level": 59.1315,
+      "overfill_error": -0.8685
+    },
+    {
+      "cycle": 205,
+      "phase": "PHASE_3_COMPENSATED_HEATING",
+      "temp_c": 25.0,
+      "density_ratio": 0.994,
+      "dp_sensor": 59.4,
+      "feedback_level": 59.75,
+      "true_level": 59.7661,
+      "overfill_error": -0.2339
+    },
+    {
+      "cycle": 230,
+      "phase": "PHASE_3_COMPENSATED_HEATING",
+      "temp_c": 50.0,
+      "density_ratio": 0.9653,
+      "dp_sensor": 57.88,
+      "feedback_level": 59.96,
+      "true_level": 59.9654,
+      "overfill_error": -0.0346
+    },
+    {
+      "cycle": 265,
+      "phase": "PHASE_3_COMPENSATED_HEATING",
+      "temp_c": 85.0,
+      "density_ratio": 0.9276,
+      "dp_sensor": 55.66,
+      "feedback_level": 60.0,
+      "true_level": 60.0012,
+      "overfill_error": 0.0012
+    },
+    {
+      "cycle": 300,
+      "phase": "PHASE_3_COMPENSATED_HEATING",
+      "temp_c": 85.0,
+      "density_ratio": 0.9276,
+      "dp_sensor": 55.66,
+      "feedback_level": 60.0,
+      "true_level": 60.0015,
+      "overfill_error": 0.0015
+    },
+    {
+      "cycle": 301,
+      "phase": "PHASE_4_CALIBRATED_COOLDOWN",
+      "temp_c": 84.2,
+      "density_ratio": 0.9285,
+      "dp_sensor": 55.71,
+      "feedback_level": 60.0,
+      "true_level": 48.15,
+      "overfill_error": -1.85
+    },
+    {
+      "cycle": 350,
+      "phase": "PHASE_4_CALIBRATED_COOLDOWN",
+      "temp_c": 45.0,
+      "density_ratio": 0.9709,
+      "dp_sensor": 48.54,
+      "feedback_level": 49.99,
+      "true_level": 49.9948,
+      "overfill_error": -0.0052
+    },
+    {
+      "cycle": 400,
+      "phase": "PHASE_4_CALIBRATED_COOLDOWN",
+      "temp_c": 30.0,
+      "density_ratio": 0.9881,
+      "dp_sensor": 49.41,
+      "feedback_level": 50.0,
+      "true_level": 50.001,
+      "overfill_error": 0.001
+    },
+    {
+      "cycle": 449,
+      "phase": "PHASE_4_CALIBRATED_COOLDOWN",
+      "temp_c": 30.0,
+      "density_ratio": 0.9881,
+      "dp_sensor": 49.41,
+      "feedback_level": 50.0,
+      "true_level": 50.0015,
+      "overfill_error": 0.0015
+    }
+  ]
+}

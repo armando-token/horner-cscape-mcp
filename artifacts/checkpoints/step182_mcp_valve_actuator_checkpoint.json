@@ -1,0 +1,90 @@
+{
+  "step": 182,
+  "gate": "G4",
+  "name": "step182_mcp_valve_actuator_checkpoint",
+  "status": "success",
+  "timestamp_utc": "2026-09-06T14:37:52.196Z",
+  "mandate": "MEGAPLAN Gate G4: FastMCP Industrial Valve Actuator Controller Simulation Audit",
+  "execution_duration_sec": 12.587,
+  "dual_root_parity": true,
+  "live_cscape_gate": {
+    "pid": 10892,
+    "hwnd": "0x01B005DC",
+    "classification": "VERIFIED_LIVE (Live Cscape GUI Gate on winsta0\\Default)"
+  },
+  "simulation_model": {
+    "pou": "FB_ValveActuator",
+    "source_file": "examples/st_applications/valve_actuator_controller.st",
+    "sha256": "d42e07a1a149d696839e6b2d470c0939a2cf16bd442379b0161331402a1a3dc2",
+    "standard": "IEC 61131-3 Pure Structured Text",
+    "classification": "offline/DEV (TESTED_MOCK)"
+  },
+  "invariants_verified": {
+    "invariant_A_normal_stroke": {
+      "status": "success",
+      "open_transit_time_sec": 5.1,
+      "close_transit_time_sec": 4.1,
+      "total_cycles": 1,
+      "description": "Normal stroke open and close completed, transit timing captured, cycle count incremented"
+    },
+    "invariant_B_travel_timeout": {
+      "status": "success",
+      "timeout_sec": 5.0,
+      "travel_fault_asserted": true,
+      "solenoid_fail_safe_off": true,
+      "description": "TravelFault detected on jammed valve exceeding TransitTimeoutSec, solenoid fail-safe de-energized"
+    },
+    "invariant_C_dual_limit_switch_fault": {
+      "status": "success",
+      "switch_fault_asserted": true,
+      "motion_inhibited": true,
+      "description": "SwitchFault asserted on simultaneous LimitOpen and LimitClosed, all motion commands inhibited"
+    },
+    "invariant_D_safety_interlock_inhibit": {
+      "status": "success",
+      "open_inhibit_verified": true,
+      "close_inhibit_verified": true,
+      "description": "InterlockOpen and InterlockClose permissives strictly inhibit valve motion"
+    },
+    "invariant_E_pulse_mode": {
+      "status": "success",
+      "pulse_duration_sec": 1.0,
+      "pulse_timed_out_solenoid_off": true,
+      "travel_continued": true,
+      "description": "Pulse mode energizes solenoid only for PulseDurationSec while travel continues to limit switch"
+    },
+    "invariant_F_fault_reset": {
+      "status": "success",
+      "travel_fault_cleared": true,
+      "switch_fault_cleared": true,
+      "description": "ResetFault push-button successfully clears latched travel and switch faults"
+    },
+    "invariant_G_multi_client_stdio_concurrency": {
+      "status": "success",
+      "clients": 2,
+      "partitioned_registers": {
+        "%R230": 230.5,
+        "%R240": 240.5
+      },
+      "cross_contamination_detected": false,
+      "description": "Zero cross-talk verified across concurrent JSON-RPC clients on partitioned %R230 vs %R240"
+    },
+    "invariant_H_hardware_download_lockout": {
+      "status": "blocked",
+      "locked_command_ids": [
+        32827,
+        33149
+      ],
+      "guard_endpoint_lockout": true,
+      "description": "Hardware download commands 32827 and 33149 intercepted fail-closed"
+    }
+  },
+  "hardware_safety": {
+    "zero_physical_plc": true,
+    "download_lockout_enforced": true,
+    "locked_command_ids": [
+      32827,
+      33149
+    ]
+  }
+}

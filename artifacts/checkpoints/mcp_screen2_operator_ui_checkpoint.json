@@ -1,0 +1,83 @@
+{
+  "status": "success",
+  "mission": "MCP_HMI_OPERATOR_SCREEN2_OPERATOR_UI",
+  "timestamp_utc": "2026-09-10T16:19:00Z",
+  "cscape_version": "10.2.751.4",
+  "target_project": "C:\\Users\\ArmandoSilva\\artifacts\\projects\\TankLevelClosedLoop\\TankLevelClosedLoop.csp",
+  "file_size_bytes": 122368,
+  "sha256": "a36dcab5b2cdc8e52c29a0bc088d0777181d83203ee14be360b9185d79e49f9f",
+  "screen": {
+    "id": 2,
+    "name": "Screen 2 (2)",
+    "total_objects": 7,
+    "elements": [
+      {
+        "type": "Numeric Data",
+        "label": "Large PV Display",
+        "font": "San Serif 20",
+        "binding": "TankLevelPV",
+        "status": "success"
+      },
+      {
+        "type": "Numeric Data",
+        "label": "Setpoint Display",
+        "font": "San Serif 10",
+        "binding": "Setpoint",
+        "status": "success"
+      },
+      {
+        "type": "Bar Graph",
+        "label": "Level Indicator (0-100)",
+        "binding": "TankLevelPV_I16",
+        "status": "success"
+      },
+      {
+        "type": "Rectangle",
+        "label": "Tank Silhouette Boundary",
+        "pen_width": 1,
+        "role": "Encloses level bar to represent vessel silhouette",
+        "status": "success"
+      },
+      {
+        "type": "Indicator Lamp",
+        "label": "LO Lamp",
+        "binding": "STBlock1.LO",
+        "status": "success"
+      },
+      {
+        "type": "Indicator Lamp",
+        "label": "HI Lamp",
+        "binding": "STBlock1.HI",
+        "status": "success"
+      },
+      {
+        "type": "Static Text",
+        "label": "HI / LO Header Label",
+        "text": "HI / LO",
+        "position": "Centered directly above lamps",
+        "status": "success"
+      }
+    ]
+  },
+  "compilation": {
+    "command_id": 32826,
+    "command_name": "ID_PROGRAM_ERRORCHECK",
+    "errors": 0,
+    "warnings": 0,
+    "st_pou_status": "STBlock1: No error detected",
+    "ocs_code_generation": "Generate OCS code: No error detected",
+    "result": "success"
+  },
+  "safety_invariants": {
+    "screen_1_preserved": true,
+    "pytest_g1_invoked": false,
+    "plc_download_attempted": false,
+    "physical_hardware_ports_blocked": true,
+    "single_gui_owner_winsta0": true
+  },
+  "evidence_artifacts": {
+    "full_screenshot": "artifacts/screenshots/mcp_hmi_operator_screen2_proof.png",
+    "canvas_crop": "artifacts/screenshots/mcp_hmi_operator_screen2_canvas.png",
+    "dual_root_mirrored": true
+  }
+}

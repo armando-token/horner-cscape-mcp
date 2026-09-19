@@ -1,0 +1,257 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "document_id": "CORE_08_09_10_FIELD_VERIFICATION_MATRIX",
+  "version": "1.0.0",
+  "generated_utc": "2026-09-18T01:25:00Z",
+  "state_contract": "STATE: CORE-08 CONFIG_AND_TEST_OK RUNTIME_PENDING_P7",
+  "supervisor_offline_accepted": true,
+  "supervisor_signoff_timestamp": "2026-09-17T14:20:00-07:00",
+  "operational_mode": "offline/DEV [PRODUCT_EVIDENCE]",
+  "field_transition_target": "P7_MANUAL",
+  "hardware_target": {
+    "manufacturer": "Horner APG",
+    "family": "XL4 Prime OCS",
+    "model": "HE-XPCE2",
+    "display": "3.5 inch TFT 320x240 QVGA 65k colors",
+    "ports": {
+      "MJ1": "RS-485 Half-Duplex (Pins 4/5/8, 120 Ohm terminated)",
+      "MJ2": "RS-232 / RS-485",
+      "LAN1": "10/100 Mbps RJ45 Ethernet (192.168.254.128/24)",
+      "USB": "Mini-B Programming Port (Node 253)"
+    }
+  },
+  "project_container": {
+    "filename": "TankLevel_P5_Dedicated.csp",
+    "format": "CFBF / OLE2 Compound File",
+    "cscape_version": "10.2.751.4",
+    "clean_compile": true,
+    "errors": 0,
+    "warnings": 0
+  },
+  "safety_invariants": {
+    "plc_download_enforced": false,
+    "zero_download_lockout": true,
+    "verified_live": false,
+    "no_error_check_loop": true,
+    "single_gui_owner_pid": 12788,
+    "locked_ports": ["COM1..COM256", "\\\\.\\COM*", "/dev/tty*", "CAN*", "USB*"],
+    "locked_command_ids": [32827, 33149]
+  },
+  "memory_map": [
+    {"register": "%AI1", "type": "INT", "tag": "RawLevelCount", "range": "0..32000", "source": "Modbus RTU 40001 DEV_LT01", "quality_bit": "%M11", "comm_bit": "%M10"},
+    {"register": "%AI2", "type": "INT", "tag": "RawFlowCount", "range": "0..32000", "source": "Modbus RTU 40002 DEV_FT01", "quality_bit": "%M13", "comm_bit": "%M12"},
+    {"register": "%AI3", "type": "INT", "tag": "RawPressureCount", "range": "0..32000", "source": "Modbus RTU 40003 DEV_PT01", "quality_bit": "%M15", "comm_bit": "%M14"},
+    {"register": "%R101", "type": "REAL", "tag": "TankLevelPV", "range": "0.0..100.0 %", "scaled_from": "%AI1", "fb": "FB_ModbusScaleQuality"},
+    {"register": "%R103", "type": "REAL", "tag": "InletFlowRate", "range": "0.0..500.0 L/min", "scaled_from": "%AI2", "fb": "FB_ModbusScaleQuality"},
+    {"register": "%R105", "type": "REAL", "tag": "DischargePressure", "range": "0.0..10.0 bar", "scaled_from": "%AI3", "fb": "FB_ModbusScaleQuality"},
+    {"register": "%R1", "type": "REAL", "tag": "TargetSetpoint", "range": "0.0..100.0 %", "description": "HMI operator level setpoint"},
+    {"register": "%Q1", "type": "BOOL", "tag": "FeedPumpCommand", "description": "Feed pump 480VAC contactor relay", "interlock": "%M10 = 0 AND %M11 = 0"},
+    {"register": "%Q2", "type": "BOOL", "tag": "DrainValveCommand", "description": "Drain solenoid valve 24VDC"},
+    {"register": "%M1", "type": "BOOL", "tag": "AlarmHighLevel", "description": "PV > 75.0 % High alarm"},
+    {"register": "%M2", "type": "BOOL", "tag": "AlarmLowLevel", "description": "PV < 35.0 % Low warning"},
+    {"register": "%M3", "type": "BOOL", "tag": "AlarmAckPB", "description": "Momentary alarm acknowledge pushbutton"}
+  ],
+  "milestones": {
+    "CORE_08_RUNTIME": {
+      "title": "Live RS-485 Modbus RTU Half-Duplex Polling on Port MJ1",
+      "driver": "MJ1 CT RTU Modbus CMP v5.05 (CTRtu.dll v5.5.0.0)",
+      "settings": {
+        "baud_rate": 19200,
+        "data_bits": 8,
+        "parity": "None",
+        "stop_bits": 1,
+        "timeout_ms": 250,
+        "retries": 3,
+        "interframe_delay_char_times": 3.5
+      },
+      "test_cases": [
+        {
+          "test_id": "C08-T01",
+          "name": "Bus Electrical Layer Verification",
+          "precondition": "Power OFF; line wired with 120 Ohm termination resistors at both ends",
+          "action": "Measure impedance across lines A & B; apply power and measure idle DC differential",
+          "expected": "Impedance = 60 +/- 5 Ohm; idle differential V_B_A >= +200 mV; zero ground loop"
+        },
+        {
+          "test_id": "C08-T02",
+          "name": "DEV_LT01 Level Sensor Polling",
+          "precondition": "Slave Addr 1 online; tank level 25.0%",
+          "action": "Inspect %AI1, %R101, %M10, %M11 in Cscape Data Watch",
+          "expected": "%AI1 reads approx 8000; %R101 scales to 25.0% +/- 0.5%; %M10=0; %M11=0"
+        },
+        {
+          "test_id": "C08-T03",
+          "name": "DEV_FT01 Flowmeter Polling",
+          "precondition": "Slave Addr 2 online; feed pump active",
+          "action": "Inspect %AI2, %R103, %M12, %M13",
+          "expected": "%AI2 in [0..32000]; %R103 scales to 0..500 L/min; %M12=0; %M13=0"
+        },
+        {
+          "test_id": "C08-T04",
+          "name": "DEV_PT01 Pressure Sensor Polling",
+          "precondition": "Slave Addr 3 online; discharge line pressurized",
+          "action": "Inspect %AI3, %R105, %M14, %M15",
+          "expected": "%AI3 in [0..32000]; %R105 scales to 0.0..10.0 bar; %M14=0; %M15=0"
+        },
+        {
+          "test_id": "C08-T05",
+          "name": "Sensor Underflow Quality Fault Test",
+          "precondition": "DEV_LT01 loop broken (< 4 mA)",
+          "action": "Simulate raw counts < 0",
+          "expected": "%M11 sets to 1 (BAD); %R101 clamps fail-safe to 0.0%"
+        },
+        {
+          "test_id": "C08-T06",
+          "name": "Sensor Overflow Quality Fault Test",
+          "precondition": "DEV_LT01 loop over-range (> 20 mA)",
+          "action": "Simulate raw counts > 32000",
+          "expected": "%M11 sets to 1 (BAD); %R101 clamps fail-safe to 100.0%"
+        },
+        {
+          "test_id": "C08-T07",
+          "name": "Serial Disconnect Watchdog Trip & Pump Interlock",
+          "precondition": "System running in AUTO; pump %Q1 energized",
+          "action": "Disconnect MJ1 RJ45 cable for > 2.0 s",
+          "expected": "%M10 trips to 1 (Comm Fault); %M11 sets to 1; pump %Q1 immediately de-energizes"
+        },
+        {
+          "test_id": "C08-T08",
+          "name": "Auto-Recovery on Reconnect",
+          "precondition": "System in comm fault state (%M10 = 1)",
+          "action": "Reconnect MJ1 RJ45 cable",
+          "expected": "Modbus frames resume within 500 ms; %M10 and %M11 clear to 0 without PLC restart"
+        }
+      ]
+    },
+    "CORE_09_HMI_WEBMI": {
+      "title": "Physical 3.5 inch Touchscreen & WebMI Remote Streaming Verification",
+      "lan1_ip": "192.168.254.128",
+      "lan1_subnet": "255.255.255.0",
+      "webmi_ports": [80, 443],
+      "test_cases": [
+        {
+          "test_id": "C09-T01",
+          "name": "Touch Digitizer 4-Point Calibration",
+          "precondition": "Controller powered ON; System Menu active",
+          "action": "Execute 4-point crosshair calibration sequence",
+          "expected": "Coordinate error < 2 px across all 4 quadrants"
+        },
+        {
+          "test_id": "C09-T02",
+          "name": "Screen 1 Overview Panel Rendering",
+          "precondition": "Controller in RUN; default Screen 1 loaded",
+          "action": "Visually inspect layout and test jump navigation button",
+          "expected": "No text clipping; jump button switches display cleanly to Screen 2"
+        },
+        {
+          "test_id": "C09-T03",
+          "name": "Screen 2 Process Animation & Level Bar",
+          "precondition": "Screen 2 active; water level varying",
+          "action": "Vary level 20% to 80% and observe graphic bar",
+          "expected": "Tank bar animates fill level smoothly; digital readouts match %R101"
+        },
+        {
+          "test_id": "C09-T04",
+          "name": "High Alarm Banner Visual Indication",
+          "precondition": "Screen 2 active",
+          "action": "Raise tank level > 75.0%",
+          "expected": "%M1 sets to 1; red alarm banner flashes on screen"
+        },
+        {
+          "test_id": "C09-T05",
+          "name": "Low Alarm Banner Visual Indication",
+          "precondition": "Screen 2 active",
+          "action": "Lower tank level < 35.0%",
+          "expected": "%M2 sets to 1; amber warning banner flashes on screen"
+        },
+        {
+          "test_id": "C09-T06",
+          "name": "Alarm Acknowledge Touch Pushbutton",
+          "precondition": "Alarm active and flashing",
+          "action": "Press ACK ALARM touch button (%M3)",
+          "expected": "Flashing transitions to steady illuminated banner"
+        },
+        {
+          "test_id": "C09-T07",
+          "name": "Screen 3 Dual-Pen Real-Time Trend",
+          "precondition": "Controller in RUN; Screen 3 active",
+          "action": "Observe 60-second scrolling trend buffer",
+          "expected": "Dual pens (PV red, SP green) scroll at 100 ms sample rate"
+        },
+        {
+          "test_id": "C09-T08",
+          "name": "WebMI Remote Browser Mirroring",
+          "precondition": "Workstation connected to LAN1 (192.168.254.10)",
+          "action": "Open browser to http://192.168.254.128 and log in",
+          "expected": "HTML5 SVG mirror updates smoothly with latency <= 250 ms"
+        }
+      ]
+    },
+    "CORE_10_SOAK": {
+      "title": "24-Hour Continuous Telemetry Soak under Dynamic Hydraulic Load",
+      "target_duration_hours": 24.0,
+      "min_poll_transactions": 864000,
+      "max_packet_loss_percent": 0.01,
+      "test_cases": [
+        {
+          "test_id": "C10-T01",
+          "name": "Continuous Execution Stability (24h)",
+          "precondition": "Controller running continuously",
+          "action": "Log controller status every hour for 24 consecutive hours",
+          "expected": "Zero CPU faults, zero watchdog trips, zero task exceptions"
+        },
+        {
+          "test_id": "C10-T02",
+          "name": "Modbus RS-485 Cumulative Packet Reliability",
+          "precondition": "Full 24h run completed",
+          "action": "Calculate total Modbus transactions and CRC error counts",
+          "expected": "Total transactions >= 864,000; dropped packet rate < 0.01%"
+        },
+        {
+          "test_id": "C10-T03",
+          "name": "Dynamic Level Regulation Stability",
+          "precondition": "Feed pump %Q1 and drain valve %Q2 cycling",
+          "action": "Audit level deviation from setpoint over dynamic cycles",
+          "expected": "Level maintained within +/- 2.5% span without hunting"
+        },
+        {
+          "test_id": "C10-T04",
+          "name": "Thermal Drift & Environmental Stability",
+          "precondition": "Ambient temperature varying 15C to 40C",
+          "action": "Measure sensor calibration drift at min and max ambient temp",
+          "expected": "Zero drift < 0.25% span; span drift < 0.50%"
+        },
+        {
+          "test_id": "C10-T05",
+          "name": "Memory & System Resource Degradation Audit",
+          "precondition": "Hourly logging of %SR registers",
+          "action": "Plot %SR33 (Scan Time) and %SR35 (Free Memory) over 24h",
+          "expected": "Scan time stable within +/- 1 ms; zero memory leak"
+        },
+        {
+          "test_id": "C10-T06",
+          "name": "Transient Electrical Noise Immunity",
+          "precondition": "Feed pump 480VAC contactor switching",
+          "action": "Monitor serial CRC error counter during motor start inrush",
+          "expected": "Zero false communication trips or corrupted analog readings"
+        },
+        {
+          "test_id": "C10-T07",
+          "name": "End-of-Soak Fail-Safe Trip Audit",
+          "precondition": "Hour 24:00 reached",
+          "action": "Simulate emergency stop / power loss",
+          "expected": "Pump %Q1 and valve %Q2 safely transition to de-energized state"
+        }
+      ]
+    }
+  },
+  "consortium_signoff": {
+    "lead_orchestrator": {"status": "VERIFIED_OFFLINE", "date": "2026-09-18"},
+    "plc_iec_specialist": {"status": "VERIFIED_OFFLINE", "date": "2026-09-18"},
+    "simulation_specialist": {"status": "VERIFIED_OFFLINE", "date": "2026-09-18"},
+    "security_guard": {"status": "LOCKED_FAIL_CLOSED", "date": "2026-09-18"},
+    "mcp_architect": {"status": "VERIFIED_OFFLINE", "date": "2026-09-18"},
+    "gui_automation_agent": {"status": "VERIFIED_OFFLINE", "date": "2026-09-18"},
+    "standards_specialist": {"status": "VERIFIED_OFFLINE", "date": "2026-09-18"}
+  }
+}

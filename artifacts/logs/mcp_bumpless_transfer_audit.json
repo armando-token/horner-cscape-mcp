@@ -1,0 +1,158 @@
+{
+  "step": 28,
+  "title": "Bumpless Manual/Auto Transfer Dynamic Closed-Loop Audit",
+  "timestamp_utc_start": "2026-09-05T07:18:16.000Z",
+  "timestamp_utc_end": "2026-09-05T07:18:22.623Z",
+  "status": "VERIFIED_LIVE",
+  "cscape_process": {
+    "healthy": true,
+    "pid": 15240,
+    "is_hung": false,
+    "working_set_mb": 123.84,
+    "threads": 11,
+    "gate_status": "READY_FOR_TESTS",
+    "window_title": "Cscape - Logged In : \"armando@controlnautas.com\" - [TankLevelClosedLoop.csp]"
+  },
+  "simulation_summary": {
+    "total_cycles": 500,
+    "duration_seconds": 0.318,
+    "throughput_cycles_per_sec": 1574.76
+  },
+  "transfer_metrics": {
+    "manual_mode_tracking_verified": true,
+    "anti_windup_integrator_tracking_verified": true,
+    "transfer_boundary_cycle": 300,
+    "transfer_step_delta_pct": 0.0112,
+    "derivative_kick_suppression_verified": true,
+    "transfer_derivative_term": -0.005,
+    "bumpless_transfer_verified": true,
+    "final_recovery_error_pct": 0.0013
+  },
+  "safety_audit": {
+    "physical_plc_download_blocked": true,
+    "zero_physical_hardware_touched": true,
+    "hardware_lockout_enforced": true
+  },
+  "sample_trace": [
+    {
+      "cycle": 0,
+      "phase": "PHASE_1_NOMINAL_AUTO_HOLD",
+      "sp": 50.0,
+      "pv_plant": 47.5,
+      "cv": 0.0,
+      "int_sum": 0.0,
+      "deriv_term": 0.0,
+      "man_mode": false,
+      "man_out": 0.0,
+      "error": 2.5
+    },
+    {
+      "cycle": 50,
+      "phase": "PHASE_1_NOMINAL_AUTO_HOLD",
+      "sp": 50.0,
+      "pv_plant": 49.8283,
+      "cv": 52.2642,
+      "int_sum": 52.0955,
+      "deriv_term": -0.2812,
+      "man_mode": false,
+      "man_out": 0.0,
+      "error": 0.1717
+    },
+    {
+      "cycle": 100,
+      "phase": "PHASE_2_MANUAL_OVERRIDE_35PCT",
+      "sp": 50.03,
+      "pv_plant": 49.2788,
+      "cv": 35.0,
+      "int_sum": 35.0,
+      "deriv_term": 0.0,
+      "man_mode": true,
+      "man_out": 35.0,
+      "error": 0.7512
+    },
+    {
+      "cycle": 150,
+      "phase": "PHASE_2_MANUAL_OVERRIDE_35PCT",
+      "sp": 36.16,
+      "pv_plant": 36.0987,
+      "cv": 35.0,
+      "int_sum": 35.0,
+      "deriv_term": 0.0,
+      "man_mode": true,
+      "man_out": 35.0,
+      "error": 0.0613
+    },
+    {
+      "cycle": 200,
+      "phase": "PHASE_3_MANUAL_OVERRIDE_70PCT",
+      "sp": 35.09,
+      "pv_plant": 36.8345,
+      "cv": 70.0,
+      "int_sum": 70.0,
+      "deriv_term": 0.0,
+      "man_mode": true,
+      "man_out": 70.0,
+      "error": 1.7445
+    },
+    {
+      "cycle": 250,
+      "phase": "PHASE_3_MANUAL_OVERRIDE_70PCT",
+      "sp": 67.31,
+      "pv_plant": 67.4481,
+      "cv": 70.0,
+      "int_sum": 70.0,
+      "deriv_term": 0.0,
+      "man_mode": true,
+      "man_out": 70.0,
+      "error": 0.1381
+    },
+    {
+      "cycle": 300,
+      "phase": "PHASE_4_BUMPLESS_AUTO_TRANSFER",
+      "sp": 69.79,
+      "pv_plant": 69.8031,
+      "cv": 69.9888,
+      "int_sum": 69.9994,
+      "deriv_term": -0.005,
+      "man_mode": false,
+      "man_out": 0.0,
+      "error": 0.0131
+    },
+    {
+      "cycle": 350,
+      "phase": "PHASE_5_NOMINAL_AUTO_RECOVERY",
+      "sp": 50.0,
+      "pv_plant": 66.4828,
+      "cv": 0.0,
+      "int_sum": 67.0002,
+      "deriv_term": -39.96,
+      "man_mode": false,
+      "man_out": 0.0,
+      "error": 16.4828
+    },
+    {
+      "cycle": 400,
+      "phase": "PHASE_5_NOMINAL_AUTO_RECOVERY",
+      "sp": 50.0,
+      "pv_plant": 49.1443,
+      "cv": 50.21,
+      "int_sum": 48.9538,
+      "deriv_term": -0.1125,
+      "man_mode": false,
+      "man_out": 0.0,
+      "error": 0.8557
+    },
+    {
+      "cycle": 450,
+      "phase": "PHASE_5_NOMINAL_AUTO_RECOVERY",
+      "sp": 50.0,
+      "pv_plant": 50.0427,
+      "cv": 50.0011,
+      "int_sum": 50.0605,
+      "deriv_term": 0.0063,
+      "man_mode": false,
+      "man_out": 0.0,
+      "error": 0.0427
+    }
+  ]
+}

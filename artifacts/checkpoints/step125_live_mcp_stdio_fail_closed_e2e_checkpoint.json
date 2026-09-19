@@ -1,0 +1,29 @@
+{
+  "step": "step125_live_mcp_stdio_fail_closed_e2e_checkpoint",
+  "status": "PASSED",
+  "timestamp_utc": "2026-09-05T16:20:39.637202+00:00",
+  "cscape_pid": 14580,
+  "hwnd": "0x024B054A",
+  "cscape_title": "Cscape - Logged In : \"armando@controlnautas.com\" - [TankLevelClosedLoop.csp]",
+  "pytest_results": {
+    "total_tests": 10,
+    "passed_tests": 10,
+    "failed_tests": 0,
+    "duration_seconds": 17.35,
+    "suites": [
+      {
+        "name": "tests/test_live_mcp_fail_closed_on_gui_death.py",
+        "passed": 5,
+        "failed": 0
+      },
+      {
+        "name": "tests/test_live_mcp_stdio_fail_closed_e2e.py",
+        "passed": 5,
+        "failed": 0
+      }
+    ]
+  },
+  "fail_closed_enforced": true,
+  "zero_plc_download_enforced": true,
+  "zero_straton_dependencies": true
+}

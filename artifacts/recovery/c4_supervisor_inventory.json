@@ -1,0 +1,52 @@
+{
+  "scripts/cscape_supervisor.py": {
+    "path": "scripts/cscape_supervisor.py",
+    "lines": 645,
+    "sha256": "33492d25d0ce148a58395033a0fa9e1072a84d2876a0f5194fa00b243e9e686b",
+    "risks_identified": [
+      "Hardcoded to TankLevelClosedLoop.csp baseline",
+      "Invokes taskkill /IM Cscape.exe",
+      "Auto-dismisses dialogs without classification"
+    ],
+    "directives": "Superseded by C4 Windows Matrix single GUI owner model; baseline container isolated."
+  },
+  "scripts/cscape_watchdog.py": {
+    "path": "scripts/cscape_watchdog.py",
+    "lines": 850,
+    "sha256": "0e2d98c131c7e6bec75e5744c04f6371b6cd9eb76c7820abf28434c31545f454",
+    "risks_identified": [
+      "Startup taskkill /IM Cscape.exe",
+      "Heuristic modal clicking"
+    ],
+    "directives": "Keep inactive during C4 operations; zero taskkill policy enforced."
+  },
+  "scripts/cscape_keepalive_watchdog.py": {
+    "path": "scripts/cscape_keepalive_watchdog.py",
+    "lines": 86,
+    "sha256": "cbac37dfc6d4251e7112f0577e629e0cff0a657f8d3b88891a2f28a669d0c368",
+    "risks_identified": [
+      "Acquires named mutex Local\\CscapeKeepaliveMutex",
+      "24-hour stay-open loop"
+    ],
+    "directives": "Audited for process safety; non-interfering when uninvoked."
+  },
+  "scripts/watchdog_cscape_10min.py": {
+    "path": "scripts/watchdog_cscape_10min.py",
+    "lines": 1146,
+    "sha256": "13824923c623d729a068e43f59f688613b9849dcc20fbd90b5e28cd5a72d49b1",
+    "risks_identified": [
+      "taskkill /IM Cscape.exe",
+      "Hardcoded TankLevel paths"
+    ],
+    "directives": "Quarantined from C4 execution flow."
+  },
+  "src/cscape/lifecycle.py": {
+    "path": "src/cscape/lifecycle.py",
+    "lines": 2275,
+    "sha256": "1a8d3a4906b35a656618ec5d238fb0a3fae7a5ecc1d78ad6491d8cb9175794c9",
+    "risks_identified": [
+      "recycle_running_instances with taskkill.exe /F /T /IM Cscape.exe"
+    ],
+    "directives": "Do not invoke recycle_running_instances; use non-intrusive handle connection."
+  }
+}

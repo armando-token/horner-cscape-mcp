@@ -1,0 +1,648 @@
+{
+  "step": 189,
+  "name": "step189_pure_st_audit",
+  "status": "success",
+  "timestamp_utc": "2026-09-06T22:32:53.037659+00:00",
+  "mandate": "PLC / IEC 61131-3 Pure ST Audit for PipelineCompressorAntiSurge",
+  "execution_duration_sec": 0.524,
+  "dual_root_parity": true,
+  "cscape_gui_mode": "headless_static_analysis_only",
+  "target_pou": {
+    "name": "PipelineCompressorAntiSurge",
+    "type": "PROGRAM",
+    "relative_path": "examples/st_applications/pipeline_compressor_anti_surge.st",
+    "sha256": "2c996aa40d93f1f363c62b71d7255152fedd1e91576761e5509e50e5c9519b51",
+    "expected_sha256": "2c996aa40d93f1f363c62b71d7255152fedd1e91576761e5509e50e5c9519b51",
+    "byte_size": 5246,
+    "expected_byte_size": 5246,
+    "lines": 126
+  },
+  "tasks": {
+    "task1_file_existence_and_parity": {
+      "status": "success",
+      "horner_file": "C:\\HornerAI\\horner-cscape-mcp\\examples\\st_applications\\pipeline_compressor_anti_surge.st",
+      "user_file": "C:\\Users\\ArmandoSilva\\examples\\st_applications\\pipeline_compressor_anti_surge.st",
+      "horner_sha256": "2c996aa40d93f1f363c62b71d7255152fedd1e91576761e5509e50e5c9519b51",
+      "user_sha256": "2c996aa40d93f1f363c62b71d7255152fedd1e91576761e5509e50e5c9519b51",
+      "expected_sha256": "2c996aa40d93f1f363c62b71d7255152fedd1e91576761e5509e50e5c9519b51",
+      "sha_match": true,
+      "dual_root_parity": true,
+      "diff_line_count": 0,
+      "diff": "",
+      "file_size_bytes": 5246,
+      "expected_size_bytes": 5246,
+      "duration_sec": 0.0007
+    },
+    "task2_ladder_construct_scan_and_fail_closed": {
+      "status": "success",
+      "clean_scan_artifacts_count": 0,
+      "clean_scan_artifacts": [],
+      "clean_validator_errors": [],
+      "clean_st_parser_ladder_errors": [],
+      "mutation_tests_total": 16,
+      "mutation_tests_fail_closed": 16,
+      "mutation_results": [
+        {
+          "construct_name": "Normally Open Contact",
+          "construct_syntax": "---[ ]---",
+          "guard_rejected": true,
+          "validator_rejected": true,
+          "parser_rejected": true,
+          "mcp_rejected": true,
+          "fail_closed": true
+        },
+        {
+          "construct_name": "Normally Closed Contact",
+          "construct_syntax": "---[/]---",
+          "guard_rejected": true,
+          "validator_rejected": true,
+          "parser_rejected": true,
+          "mcp_rejected": true,
+          "fail_closed": true
+        },
+        {
+          "construct_name": "Spaced Inverted Contact",
+          "construct_syntax": "---[ / ]---",
+          "guard_rejected": true,
+          "validator_rejected": true,
+          "parser_rejected": true,
+          "mcp_rejected": true,
+          "fail_closed": true
+        },
+        {
+          "construct_name": "Normal Output Coil",
+          "construct_syntax": "---( )---",
+          "guard_rejected": true,
+          "validator_rejected": true,
+          "parser_rejected": true,
+          "mcp_rejected": true,
+          "fail_closed": true
+        },
+        {
+          "construct_name": "Set Latch Coil",
+          "construct_syntax": "---(S)---",
+          "guard_rejected": true,
+          "validator_rejected": true,
+          "parser_rejected": true,
+          "mcp_rejected": true,
+          "fail_closed": true
+        },
+        {
+          "construct_name": "Reset Unlatch Coil",
+          "construct_syntax": "---(R)---",
+          "guard_rejected": true,
+          "validator_rejected": true,
+          "parser_rejected": true,
+          "mcp_rejected": true,
+          "fail_closed": true
+        },
+        {
+          "construct_name": "Shorthand Set Coil",
+          "construct_syntax": "---S---",
+          "guard_rejected": true,
+          "validator_rejected": true,
+          "parser_rejected": true,
+          "mcp_rejected": true,
+          "fail_closed": true
+        },
+        {
+          "construct_name": "Shorthand Reset Coil",
+          "construct_syntax": "---R---",
+          "guard_rejected": true,
+          "validator_rejected": true,
+          "parser_rejected": true,
+          "mcp_rejected": true,
+          "fail_closed": true
+        },
+        {
+          "construct_name": "Rung Header Marker",
+          "construct_syntax": "RUNG 1: Compressor Anti-Surge",
+          "guard_rejected": true,
+          "validator_rejected": true,
+          "parser_rejected": true,
+          "mcp_rejected": true,
+          "fail_closed": true
+        },
+        {
+          "construct_name": "Rung Terminator Marker",
+          "construct_syntax": "END_RUNG",
+          "guard_rejected": true,
+          "validator_rejected": true,
+          "parser_rejected": true,
+          "mcp_rejected": true,
+          "fail_closed": true
+        },
+        {
+          "construct_name": "Ladder Network Section",
+          "construct_syntax": "NETWORK 10",
+          "guard_rejected": true,
+          "validator_rejected": true,
+          "parser_rejected": true,
+          "mcp_rejected": true,
+          "fail_closed": true
+        },
+        {
+          "construct_name": "Instruction Mnemonic XIC",
+          "construct_syntax": "XIC(CompressorRunAux)",
+          "guard_rejected": true,
+          "validator_rejected": true,
+          "parser_rejected": true,
+          "mcp_rejected": true,
+          "fail_closed": true
+        },
+        {
+          "construct_name": "Instruction Mnemonic XIO",
+          "construct_syntax": "XIO(FastBlowoffValveCmd)",
+          "guard_rejected": true,
+          "validator_rejected": true,
+          "parser_rejected": true,
+          "mcp_rejected": true,
+          "fail_closed": true
+        },
+        {
+          "construct_name": "Instruction Mnemonic OTE",
+          "construct_syntax": "OTE(RecycleValveOpenCmd)",
+          "guard_rejected": true,
+          "validator_rejected": true,
+          "parser_rejected": true,
+          "mcp_rejected": true,
+          "fail_closed": true
+        },
+        {
+          "construct_name": "Instruction Mnemonic OTL",
+          "construct_syntax": "OTL(SurgeCycleLatched)",
+          "guard_rejected": true,
+          "validator_rejected": true,
+          "parser_rejected": true,
+          "mcp_rejected": true,
+          "fail_closed": true
+        },
+        {
+          "construct_name": "Instruction Mnemonic OTU",
+          "construct_syntax": "OTU(SurgeCycleLatched)",
+          "guard_rejected": true,
+          "validator_rejected": true,
+          "parser_rejected": true,
+          "mcp_rejected": true,
+          "fail_closed": true
+        }
+      ],
+      "duration_sec": 0.478
+    },
+    "task3_iec61131_syntax_and_datatypes": {
+      "status": "success",
+      "pou_name": "PipelineCompressorAntiSurge",
+      "pou_type": "PROGRAM",
+      "total_variables": 29,
+      "r_registers_count": 7,
+      "i_registers_count": 4,
+      "q_registers_count": 4,
+      "m_registers_count": 4,
+      "address_violations": [],
+      "type_violations": [],
+      "iec_validator_valid": true,
+      "st_parser_valid": true,
+      "mcp_validator_valid": true,
+      "variables": [
+        {
+          "name": "SuctionPressure_psig",
+          "data_type": "REAL",
+          "scope": "VAR",
+          "address": "%R160",
+          "initial_value": null
+        },
+        {
+          "name": "DischargePressure_psig",
+          "data_type": "REAL",
+          "scope": "VAR",
+          "address": "%R161",
+          "initial_value": null
+        },
+        {
+          "name": "DifferentialPress_inH2O",
+          "data_type": "REAL",
+          "scope": "VAR",
+          "address": "%R162",
+          "initial_value": null
+        },
+        {
+          "name": "SuctionTemp_degF",
+          "data_type": "REAL",
+          "scope": "VAR",
+          "address": "%R163",
+          "initial_value": null
+        },
+        {
+          "name": "CompressorSpeed_RPM",
+          "data_type": "REAL",
+          "scope": "VAR",
+          "address": "%R164",
+          "initial_value": null
+        },
+        {
+          "name": "PressureRatio",
+          "data_type": "REAL",
+          "scope": "VAR",
+          "address": "%R165",
+          "initial_value": null
+        },
+        {
+          "name": "SurgeMargin_pct",
+          "data_type": "REAL",
+          "scope": "VAR",
+          "address": "%R166",
+          "initial_value": null
+        },
+        {
+          "name": "CompressorRunAux",
+          "data_type": "BOOL",
+          "scope": "VAR",
+          "address": "%I24",
+          "initial_value": null
+        },
+        {
+          "name": "ESDInhibitCmd",
+          "data_type": "BOOL",
+          "scope": "VAR",
+          "address": "%I25",
+          "initial_value": null
+        },
+        {
+          "name": "FastBlowoffTestCmd",
+          "data_type": "BOOL",
+          "scope": "VAR",
+          "address": "%I26",
+          "initial_value": null
+        },
+        {
+          "name": "SurgeDetectorResetCmd",
+          "data_type": "BOOL",
+          "scope": "VAR",
+          "address": "%I27",
+          "initial_value": null
+        },
+        {
+          "name": "RecycleValveOpenCmd",
+          "data_type": "BOOL",
+          "scope": "VAR",
+          "address": "%Q54",
+          "initial_value": null
+        },
+        {
+          "name": "FastBlowoffValveCmd",
+          "data_type": "BOOL",
+          "scope": "VAR",
+          "address": "%Q55",
+          "initial_value": null
+        },
+        {
+          "name": "SurgeEventAlarmOut",
+          "data_type": "BOOL",
+          "scope": "VAR",
+          "address": "%Q56",
+          "initial_value": null
+        },
+        {
+          "name": "TripInterlockOut",
+          "data_type": "BOOL",
+          "scope": "VAR",
+          "address": "%Q57",
+          "initial_value": null
+        },
+        {
+          "name": "SurgeMarginLowWarn",
+          "data_type": "BOOL",
+          "scope": "VAR",
+          "address": "%M75",
+          "initial_value": null
+        },
+        {
+          "name": "SurgeCycleLatched",
+          "data_type": "BOOL",
+          "scope": "VAR",
+          "address": "%M76",
+          "initial_value": null
+        },
+        {
+          "name": "RecycleModulating",
+          "data_type": "BOOL",
+          "scope": "VAR",
+          "address": "%M77",
+          "initial_value": null
+        },
+        {
+          "name": "CapacityClamped",
+          "data_type": "BOOL",
+          "scope": "VAR",
+          "address": "%M78",
+          "initial_value": null
+        },
+        {
+          "name": "MinSurgeMargin_pct",
+          "data_type": "REAL",
+          "scope": "VAR",
+          "address": null,
+          "initial_value": "10.0"
+        },
+        {
+          "name": "CriticalMargin_pct",
+          "data_type": "REAL",
+          "scope": "VAR",
+          "address": null,
+          "initial_value": "3.0"
+        },
+        {
+          "name": "MaxDischargePress_psig",
+          "data_type": "REAL",
+          "scope": "VAR",
+          "address": null,
+          "initial_value": "1200.0"
+        },
+        {
+          "name": "MinSuctionPress_psig",
+          "data_type": "REAL",
+          "scope": "VAR",
+          "address": null,
+          "initial_value": "200.0"
+        },
+        {
+          "name": "SurgeLineSlope",
+          "data_type": "REAL",
+          "scope": "VAR",
+          "address": null,
+          "initial_value": "2.50"
+        },
+        {
+          "name": "SurgeLineIntercept",
+          "data_type": "REAL",
+          "scope": "VAR",
+          "address": null,
+          "initial_value": "20.0"
+        },
+        {
+          "name": "SurgeLineDeltaP",
+          "data_type": "REAL",
+          "scope": "VAR",
+          "address": null,
+          "initial_value": null
+        },
+        {
+          "name": "SafeMarginDeltaP",
+          "data_type": "REAL",
+          "scope": "VAR",
+          "address": null,
+          "initial_value": null
+        },
+        {
+          "name": "SurgeCount",
+          "data_type": "INT",
+          "scope": "VAR",
+          "address": null,
+          "initial_value": "0"
+        },
+        {
+          "name": "MaxPermissibleSurges",
+          "data_type": "INT",
+          "scope": "VAR",
+          "address": null,
+          "initial_value": "2"
+        }
+      ],
+      "duration_sec": 0.0391
+    },
+    "task4_ast_decomposition": {
+      "status": "success",
+      "pou_name": "PipelineCompressorAntiSurge",
+      "pou_type": "PROGRAM",
+      "sha256": "2c996aa40d93f1f363c62b71d7255152fedd1e91576761e5509e50e5c9519b51",
+      "total_lines": 126,
+      "total_tokens": 402,
+      "var_blocks_count": 1,
+      "var_blocks": [
+        {
+          "block_type": "VAR",
+          "declarations_count": 29,
+          "declarations": [
+            {
+              "name": "SuctionPressure_psig",
+              "data_type": "REAL",
+              "address": "%R160",
+              "initial_value": null
+            },
+            {
+              "name": "DischargePressure_psig",
+              "data_type": "REAL",
+              "address": "%R161",
+              "initial_value": null
+            },
+            {
+              "name": "DifferentialPress_inH2O",
+              "data_type": "REAL",
+              "address": "%R162",
+              "initial_value": null
+            },
+            {
+              "name": "SuctionTemp_degF",
+              "data_type": "REAL",
+              "address": "%R163",
+              "initial_value": null
+            },
+            {
+              "name": "CompressorSpeed_RPM",
+              "data_type": "REAL",
+              "address": "%R164",
+              "initial_value": null
+            },
+            {
+              "name": "PressureRatio",
+              "data_type": "REAL",
+              "address": "%R165",
+              "initial_value": null
+            },
+            {
+              "name": "SurgeMargin_pct",
+              "data_type": "REAL",
+              "address": "%R166",
+              "initial_value": null
+            },
+            {
+              "name": "CompressorRunAux",
+              "data_type": "BOOL",
+              "address": "%I24",
+              "initial_value": null
+            },
+            {
+              "name": "ESDInhibitCmd",
+              "data_type": "BOOL",
+              "address": "%I25",
+              "initial_value": null
+            },
+            {
+              "name": "FastBlowoffTestCmd",
+              "data_type": "BOOL",
+              "address": "%I26",
+              "initial_value": null
+            },
+            {
+              "name": "SurgeDetectorResetCmd",
+              "data_type": "BOOL",
+              "address": "%I27",
+              "initial_value": null
+            },
+            {
+              "name": "RecycleValveOpenCmd",
+              "data_type": "BOOL",
+              "address": "%Q54",
+              "initial_value": null
+            },
+            {
+              "name": "FastBlowoffValveCmd",
+              "data_type": "BOOL",
+              "address": "%Q55",
+              "initial_value": null
+            },
+            {
+              "name": "SurgeEventAlarmOut",
+              "data_type": "BOOL",
+              "address": "%Q56",
+              "initial_value": null
+            },
+            {
+              "name": "TripInterlockOut",
+              "data_type": "BOOL",
+              "address": "%Q57",
+              "initial_value": null
+            },
+            {
+              "name": "SurgeMarginLowWarn",
+              "data_type": "BOOL",
+              "address": "%M75",
+              "initial_value": null
+            },
+            {
+              "name": "SurgeCycleLatched",
+              "data_type": "BOOL",
+              "address": "%M76",
+              "initial_value": null
+            },
+            {
+              "name": "RecycleModulating",
+              "data_type": "BOOL",
+              "address": "%M77",
+              "initial_value": null
+            },
+            {
+              "name": "CapacityClamped",
+              "data_type": "BOOL",
+              "address": "%M78",
+              "initial_value": null
+            },
+            {
+              "name": "MinSurgeMargin_pct",
+              "data_type": "REAL",
+              "address": null,
+              "initial_value": "LiteralNode(10.0, 'REAL')"
+            },
+            {
+              "name": "CriticalMargin_pct",
+              "data_type": "REAL",
+              "address": null,
+              "initial_value": "LiteralNode(3.0, 'REAL')"
+            },
+            {
+              "name": "MaxDischargePress_psig",
+              "data_type": "REAL",
+              "address": null,
+              "initial_value": "LiteralNode(1200.0, 'REAL')"
+            },
+            {
+              "name": "MinSuctionPress_psig",
+              "data_type": "REAL",
+              "address": null,
+              "initial_value": "LiteralNode(200.0, 'REAL')"
+            },
+            {
+              "name": "SurgeLineSlope",
+              "data_type": "REAL",
+              "address": null,
+              "initial_value": "LiteralNode(2.5, 'REAL')"
+            },
+            {
+              "name": "SurgeLineIntercept",
+              "data_type": "REAL",
+              "address": null,
+              "initial_value": "LiteralNode(20.0, 'REAL')"
+            },
+            {
+              "name": "SurgeLineDeltaP",
+              "data_type": "REAL",
+              "address": null,
+              "initial_value": null
+            },
+            {
+              "name": "SafeMarginDeltaP",
+              "data_type": "REAL",
+              "address": null,
+              "initial_value": null
+            },
+            {
+              "name": "SurgeCount",
+              "data_type": "INT",
+              "address": null,
+              "initial_value": "LiteralNode(0, 'INT')"
+            },
+            {
+              "name": "MaxPermissibleSurges",
+              "data_type": "INT",
+              "address": null,
+              "initial_value": "LiteralNode(2, 'INT')"
+            }
+          ]
+        }
+      ],
+      "statements_count": 5,
+      "statements": [
+        {
+          "index": 1,
+          "statement_type": "IfNode",
+          "line": 55
+        },
+        {
+          "index": 2,
+          "statement_type": "IfNode",
+          "line": 63
+        },
+        {
+          "index": 3,
+          "statement_type": "AssignmentNode",
+          "line": 70
+        },
+        {
+          "index": 4,
+          "statement_type": "IfNode",
+          "line": 73
+        },
+        {
+          "index": 5,
+          "statement_type": "IfNode",
+          "line": 80
+        }
+      ],
+      "duration_sec": 0.0057
+    },
+    "task5_reverify_st_to_ld_conversion_blocked": {
+      "status": "success",
+      "classification": "BLOCKED_NATIVE",
+      "directive": "DOCUMENT_ONLY",
+      "st_to_ld_conversion_allowed": false,
+      "doc_file_exists": true,
+      "doc_path": "C:\\HornerAI\\horner-cscape-mcp\\docs\\st_to_ld_conversion_blocked.md",
+      "evidence_file_exists": true,
+      "evidence_path": "C:\\HornerAI\\horner-cscape-mcp\\artifacts\\evidence\\cscape_st_to_ld_audit.json",
+      "pe_audit_zero_conversion_exports": true,
+      "guard_policy": "BLOCKED_NATIVE: DOCUMENT_ONLY",
+      "explanation": "Horner Cscape 10.2 architecture maintains strict separation between legacy Advanced Ladder and IEC 61131-3 engines with zero runtime conversion APIs.",
+      "duration_sec": 0.0004
+    }
+  }
+}

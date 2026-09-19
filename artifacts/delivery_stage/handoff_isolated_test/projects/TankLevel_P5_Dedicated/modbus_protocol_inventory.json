@@ -1,0 +1,160 @@
+{
+  "inventory_id": "TankLevel_P5_Dedicated_Modbus_Deep_Inventory",
+  "project_name": "TankLevel_P5_Dedicated",
+  "description": "Comprehensive Native Modbus Devices, Channels, and Scan List Inventory",
+  "channels": [
+    {
+      "channel_id": "CH_LAN1_TCP",
+      "channel_name": "Ethernet LAN1 Modbus TCP Client",
+      "transport": "MODBUS_TCP",
+      "role": "CLIENT_MASTER_READ_ONLY",
+      "tcp_endpoint": {
+        "ip_address": "127.0.0.1",
+        "port": 15502,
+        "connect_timeout_ms": 1000
+      },
+      "rtu_endpoint": null,
+      "max_concurrent_sockets": 4,
+      "inter_frame_delay_ms": 3.5
+    },
+    {
+      "channel_id": "CH_MJ2_RTU",
+      "channel_name": "Serial MJ2 RS-485 Modbus RTU Master",
+      "transport": "MODBUS_RTU",
+      "role": "CLIENT_MASTER_READ_ONLY",
+      "tcp_endpoint": null,
+      "rtu_endpoint": {
+        "serial_port": "MJ2_RS485",
+        "baud_rate": 19200,
+        "data_bits": 8,
+        "parity": "NONE",
+        "stop_bits": 1
+      },
+      "max_concurrent_sockets": 4,
+      "inter_frame_delay_ms": 3.5
+    }
+  ],
+  "devices": [
+    {
+      "device_id": "DEV_LT01",
+      "device_name": "Buffer Tank Level Transmitter",
+      "unit_id": 1,
+      "description": "Hydrostatic level sensor measuring 0..100 %",
+      "transport": "MODBUS_TCP",
+      "poll_interval_ms": 100,
+      "timeout_ms": 1000,
+      "retry_count": 3,
+      "fail_safe_policy": "CLAMP_TO_FAIL_SAFE"
+    },
+    {
+      "device_id": "DEV_FT01",
+      "device_name": "Inflow Coriolis Flowmeter",
+      "unit_id": 2,
+      "description": "Electromagnetic flowmeter measuring 0..500 L/min",
+      "transport": "MODBUS_TCP",
+      "poll_interval_ms": 200,
+      "timeout_ms": 1000,
+      "retry_count": 3,
+      "fail_safe_policy": "CLAMP_TO_FAIL_SAFE"
+    },
+    {
+      "device_id": "DEV_PT01",
+      "device_name": "Discharge Pressure Transmitter",
+      "unit_id": 3,
+      "description": "Piezoresistive pressure transmitter measuring 0..10 bar",
+      "transport": "MODBUS_TCP",
+      "poll_interval_ms": 200,
+      "timeout_ms": 1000,
+      "retry_count": 3,
+      "fail_safe_policy": "CLAMP_TO_FAIL_SAFE"
+    }
+  ],
+  "scan_list": [
+    {
+      "transaction_id": "TX01_LEVEL_PV",
+      "device_id": "DEV_LT01",
+      "unit_id": 1,
+      "function_code": 3,
+      "function_name": "Read Holding Registers (0x03)",
+      "modicon_address": 40001,
+      "wire_offset": 0,
+      "register_count": 1,
+      "target_ocs_register": "%AI1",
+      "variable_name": "TankLevelPV",
+      "raw_data_type": "UINT16",
+      "engineering_unit": "%",
+      "scaling": {
+        "raw_min": 0.0,
+        "raw_max": 32000.0,
+        "eu_min": 0.0,
+        "eu_max": 100.0
+      },
+      "comm_alarm_register": "%M10",
+      "stale_quality_register": "%M11",
+      "poll_interval_ms": 100,
+      "description": "Continuous scan of tank liquid level"
+    },
+    {
+      "transaction_id": "TX02_INFLOW_RATE",
+      "device_id": "DEV_FT01",
+      "unit_id": 2,
+      "function_code": 3,
+      "function_name": "Read Holding Registers (0x03)",
+      "modicon_address": 40002,
+      "wire_offset": 1,
+      "register_count": 1,
+      "target_ocs_register": "%AI2",
+      "variable_name": "InflowRatePV",
+      "raw_data_type": "UINT16",
+      "engineering_unit": "L/min",
+      "scaling": {
+        "raw_min": 0.0,
+        "raw_max": 32000.0,
+        "eu_min": 0.0,
+        "eu_max": 500.0
+      },
+      "comm_alarm_register": "%M12",
+      "stale_quality_register": "%M13",
+      "poll_interval_ms": 200,
+      "description": "Cyclic scan of buffer tank inflow rate"
+    },
+    {
+      "transaction_id": "TX03_DISCHARGE_PRESS",
+      "device_id": "DEV_PT01",
+      "unit_id": 3,
+      "function_code": 3,
+      "function_name": "Read Holding Registers (0x03)",
+      "modicon_address": 40003,
+      "wire_offset": 2,
+      "register_count": 1,
+      "target_ocs_register": "%AI3",
+      "variable_name": "DischargePressPV",
+      "raw_data_type": "UINT16",
+      "engineering_unit": "bar",
+      "scaling": {
+        "raw_min": 0.0,
+        "raw_max": 32000.0,
+        "eu_min": 0.0,
+        "eu_max": 10.0
+      },
+      "comm_alarm_register": "%M14",
+      "stale_quality_register": "%M15",
+      "poll_interval_ms": 200,
+      "description": "Cyclic scan of pump discharge pressure"
+    }
+  ],
+  "revision": "1.0.0",
+  "created_utc": "2026-09-16T05:39:39.948135+00:00",
+  "last_modified_utc": "2026-09-16T05:39:39.948135+00:00",
+  "read_only_enforced": true,
+  "safety_lockout": {
+    "physical_ports": "BLOCKED_FAIL_CLOSED (COM1-COM256)",
+    "download_commands": "BLOCKED_FAIL_CLOSED (32827/33149)",
+    "write_commands": "REJECTED_MODBUS_EXC_01_ILLEGAL_FUNCTION",
+    "physical_runtime_verification": "PENDING_P7 (Strictly deferred to Phase P7)"
+  },
+  "devices_count": 3,
+  "scan_list_count": 3,
+  "channels_count": 2,
+  "sha256": "64f15372680d25c11a96f08decec76205801b2b658445e8422b9fc2934890f8d"
+}

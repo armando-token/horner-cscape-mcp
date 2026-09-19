@@ -1,0 +1,19 @@
+{
+  "step": 42,
+  "name": "step42_discretization_invariance_checkpoint",
+  "description": "Cyclic scan jitter & discretization time invariance audit verified across 6 scan rates (1ms, 2ms, 5ms, 10ms, 20ms, 50ms) and 2,725 cycles with sub-0.05% convergence across all rates and zero spurious trips.",
+  "timestamp_utc": "2026-09-05T09:47:04.888Z",
+  "cscape_pid": 11808,
+  "cscape_hwnd": "0x01F00670",
+  "cscape_healthy": true,
+  "total_cycles": 2725,
+  "scan_rates_count": 6,
+  "cycles_per_sec": 2107.8,
+  "all_rates_sub_0_05_verified": true,
+  "dt1ms_final_error_percent": 0.0263,
+  "dt10ms_final_error_percent": 0.0016,
+  "dt50ms_final_error_percent": 0.0331,
+  "hardware_lockout_enforced": true,
+  "audit_log": "C:\\Users\\ArmandoSilva\\artifacts\\logs\\mcp_discretization_invariance_audit.json",
+  "status": "VERIFIED_LIVE"
+}

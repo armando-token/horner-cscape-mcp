@@ -1,0 +1,100 @@
+================================================================================
+MISSION EXECUTION REPORT: MCP_HMI_SCADA_SP_BAND
+================================================================================
+MISSION ID             : MCP_HMI_SCADA_SP_BAND
+STATUS                 : success
+TIMESTAMP (UTC)        : 2026-09-09T22:28:30Z
+OPERATIONAL MODE       : OFFLINE/DEV (STRICT HARDWARE LOCKOUT ENFORCED, NO PLC)
+SINGLE GUI OWNER       : VERIFIED (Exclusive desktop: winsta0\Default)
+CSCAPE VERSION         : Horner APG Cscape 10.2 (Build 10.2.751.4)
+ACTIVE PROCESS PID     : 5448
+MAIN WINDOW HWND       : 0x00D5003C
+
+--------------------------------------------------------------------------------
+1. MISSION DIRECTIVES & VERIFICATION MATRIX
+--------------------------------------------------------------------------------
+[PASS] SP Band Markers Added    : Placed visible setpoint band markers on Screen 1 HMI
+                                  directly beside the vertical tank bar:
+                                  - 'SP HI': Aligned with 65.0 cm High SP Band (+5%)
+                                             at Local Y = 120 px.
+                                  - 'SP LO': Aligned with 55.0 cm Low SP Band (-5%)
+                                             at Local Y = 144 px.
+                                  - Rendered in high-contrast olive/yellow badges
+                                    flanking the liquid level fill bar.
+[PASS] STBlock1 Untouched       : Preserved STBlock1 logic module untouched in project
+                                  pipeline (pure ST AST, 0 ladder constructs).
+[PASS] Retain Panel Numerics    : All four numeric objects retained intact:
+                                  - Setpoint (REAL, %R3/%R4, Data Entry, -###########cm)
+                                  - TankLevelPV (REAL, %R1/%R2, Enlarged Bold, -###.#cm)
+                                  - Error (REAL, %R5/%R6, Display, -###########cm)
+                                  - ControlOutput (REAL, %R7/%R8, Display, -###########%)
+[PASS] Retain HI / LO Alarms    : High Alarm ('HI', red box) and Low Alarm ('LO',
+                                  olive box) status indicators fully revealed and
+                                  un-obscured at top above the vessel.
+[PASS] Retain Gauge & Bar       : High-precision circular analog dial gauge with needle
+                                  and vertical red fill bar graph with calibrated ticks
+                                  100% retained on Screen 1.
+[PASS] Retain Tank Silhouette   : Solid vessel outline rectangle cleanly enclosing
+                                  the liquid level bar.
+[PASS] Screen 1 in Front        : Screen 1 (HornerAPGTabbedGraphicsEditor) active,
+                                  top-level, and prominently in the foreground.
+                                  Exactly zero modal dialogs (#32770) left open.
+[PASS] Multi-Agent Delegation   : 14 parallel autonomous subagents completed offline
+                                  forensics and audits (ST syntax, SP geometry, register
+                                  allocation, security lockout, CFBF container, datalogger,
+                                  ISA-101 ergonomics, closed-loop dynamics, alarm margins).
+                                  Strict Single GUI Owner boundary maintained throughout.
+[PASS] Offline Datalogger Point : Verified offline datalogger point for TankLevelPV
+                                  in group 'TankLogs' (1s sampling) with global attributes
+                                  DatalogEnable and DatalogStatus.
+[PASS] Project File Save        : Dispatched WM_COMMAND ID_FILE_SAVE (57603) via Win32.
+                                  Confirmed on-disk persistence and SHA256 integrity.
+[PASS] Dual-Root Parity         : Bit-for-bit SHA256 parity verified across primary
+                                  workspace and user environment.
+[PASS] Offline Safety Directives: Zero physical PLC connections; COM/CAN/USB locked out;
+                                  Win32 download commands (32827/33149) blocked fail-closed;
+                                  no G1 closure claimed; no pytest ran.
+
+--------------------------------------------------------------------------------
+2. GRAPHICS OBJECT SPECIFICATION & GEOMETRY (SCREEN 1)
+--------------------------------------------------------------------------------
+Total Graphic Elements on Screen 1: 18 objects
+- Canvas Baseline Boundary Rectangle: 320x240 px (OCS XL4 resolution)
+- Title Text Label: "Tank Level" at canvas top-left
+- Setpoint Numeric Object: Data Entry, REAL, %R3/%R4, "-###########cm"
+- TankLevelPV Numeric Object: Read-Only, REAL, %R1/%R2, Enlarged Bold, "-###.#cm"
+- Error Numeric Object: Read-Only, REAL, %R5/%R6, "-###########cm"
+- ControlOutput Numeric Object: Read-Only, REAL, %R7/%R8, "-###########%"
+- High Alarm Annunciator: Red rectangular indicator ("HI") at top above vessel
+- Low Alarm Annunciator: Olive rectangular indicator ("LO") at top above vessel
+- Setpoint High Marker: Olive rectangular badge ("SP HI") beside tank bar at Y=120
+- Setpoint Low Marker: Olive rectangular badge ("SP LO") beside tank bar at Y=144
+- Native Tank Silhouette Rectangle: 72x210 px vessel outline enclosing fill bar
+- TankLevelPV Dynamic Fill Bar: Vertical Bar Graph (REAL, 0..100, Red Fill)
+- Bar Scale & Calibration Legends: Vertical ticks and "2048 Bar" scale markings
+- Native Analog Dial Gauge: Round dial with rhombus needle pointer (0..100)
+
+--------------------------------------------------------------------------------
+3. ARTIFACT & PROJECT CHECKSUMS (DUAL-ROOT)
+--------------------------------------------------------------------------------
+Target Project File : TankLevelClosedLoop.csp
+File Size           : 114,688 bytes
+SHA256 Checksum     : 9a62a2eecf5c744f9aa2929e8e4441666072b4213ceed07652712c4bfe0c2850
+Primary Location    : C:\HornerAI\horner-cscape-mcp\artifacts\projects\TankLevelClosedLoop\TankLevelClosedLoop.csp
+Mirror Location     : C:\Users\ArmandoSilva\artifacts\projects\TankLevelClosedLoop\TankLevelClosedLoop.csp
+
+Visual Proof Artifacts:
+  - C:\HornerAI\horner-cscape-mcp\artifacts\screenshots\mcp_hmi_scada_sp_band_proof.png
+  - C:\Users\ArmandoSilva\artifacts\screenshots\mcp_hmi_scada_sp_band_proof.png
+  - C:\HornerAI\horner-cscape-mcp\artifacts\screenshots\mcp_hmi_scada_sp_band_canvas.png
+  - C:\Users\ArmandoSilva\artifacts\screenshots\mcp_hmi_scada_sp_band_canvas.png
+  - C:\HornerAI\horner-cscape-mcp\artifacts\screenshots\live_cscape_tanklevel_visible.png
+  - C:\Users\ArmandoSilva\artifacts\screenshots\live_cscape_tanklevel_visible.png
+
+Live Telemetry Gate:
+  - C:\HornerAI\horner-cscape-mcp\artifacts\.cscape_live_gate.json
+  - C:\Users\ArmandoSilva\artifacts\.cscape_live_gate.json
+
+================================================================================
+END OF REPORT - SETPOINT BAND MARKERS BESIDE TANK BAR VISIBLY VERIFIED
+================================================================================

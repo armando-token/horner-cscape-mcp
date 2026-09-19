@@ -1,0 +1,19 @@
+{
+  "step": 182,
+  "gate": "G4",
+  "name": "step182_pure_st_audit_checkpoint",
+  "status": "success",
+  "timestamp_utc": "2026-09-06T22:32:34.006226+00:00",
+  "mandate": "PLC / IEC 61131-3 Pure ST Audit: valve_actuator_controller.st",
+  "execution_duration_sec": 0.4836,
+  "dual_root_parity": true,
+  "sha256": "d42e07a1a149d696839e6b2d470c0939a2cf16bd442379b0161331402a1a3dc2",
+  "expected_sha256": "d42e07a1a149d696839e6b2d470c0939a2cf16bd442379b0161331402a1a3dc2",
+  "pure_iec61131_3_verified": true,
+  "ladder_artifacts_detected": 0,
+  "ladder_mutations_rejected_fail_closed": 12,
+  "pou": "FB_ValveActuator",
+  "pou_type": "FUNCTION_BLOCK",
+  "total_variables": 24,
+  "total_ast_statements": 8
+}

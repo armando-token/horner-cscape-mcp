@@ -1,0 +1,115 @@
+{
+  "mission_id": "C0_THEN_C1",
+  "phase": "C1",
+  "plan": "PLAN_CORRECTIVO MCP Horner/Cscape v2.0 (correctivo)",
+  "run_id": "run_20260906_120831",
+  "timestamp_utc": "2026-09-06T19:29:21.404261+00:00",
+  "execution_mode": "Headless / Offline DEV (Zero Live GUI mutation; Leave Cscape untouched)",
+  "cscape_process_safety": {
+    "observed_pid": 16564,
+    "observed_hwnd": "0x00F60868",
+    "gui_mutated": false,
+    "gui_automation_triggered": false,
+    "process_state": "UNTOUCHED"
+  },
+  "implementation_summary": {
+    "critical_path_task": "Normalizer and Status Contract Hardening (C1)",
+    "files_modified": [
+      "AGENTS.md",
+      "src/mcp/tools.py",
+      "tests/test_c1_contract_hardening.py",
+      "tests/test_mcp_status_contract.py"
+    ],
+    "mandates_enforced": [
+      "Empty dict {} rejected as status: inconclusive, success: False, error_code: INVALID_RESULT_CONTRACT (C1-N01)",
+      "Status VERIFIED rejected as status: inconclusive, success: False, error_code: INVALID_RESULT_CONTRACT (C1-N02)",
+      "Status 100% rejected as status: inconclusive, success: False, error_code: INVALID_RESULT_CONTRACT (C1-N03)",
+      "Unknown status rejected as status: inconclusive, success: False, error_code: INVALID_RESULT_CONTRACT (C1-N04)",
+      "Decorated None rejected as status: inconclusive, success: False, error_code: INVALID_RESULT_CONTRACT (C1-N05)",
+      "Contradiction between success=True and ERROR diagnostic forces status: failed, success: False, error_code: INVALID_RESULT_CONTRACT (C1-N06)",
+      "Unlocated errors preserve line: None, column: None without inventing line 1, col 1",
+      "Preserve status: blocked for physical hardware ports and download lockout",
+      "Positive contract preservation verified for valid success and valid blocked payloads (C1-P01)",
+      "Contradiction between success=True and error_count > 0 forces status: failed, success: False, error_code: INVALID_RESULT_CONTRACT (C1-N07)",
+      "Error count > 0 without status fails closed with non-empty errors (C1-N08)",
+      "Claims status=success with non-empty errors strictly rejected fail-closed (C1-N09)",
+      "is_clean=False fails closed (C1-N10)",
+      "Contradiction between status=success and compile_successful=False or build_successful=False fails closed (C1-N11)",
+      "Contradiction between status=success and valid=False fails closed (C1-N12)",
+      "Gate ready_for_tests=False forced to status: inconclusive (C1-N13)",
+      "failed=True flag rejected fail-closed (C1-N14)",
+      "Process exit_code != 0 rejected fail-closed (C1-N15)",
+      "Operation timeout (timed_out=True) rejected fail-closed (C1-N16)",
+      "Contradiction between success=True and failure_locations containing ERROR severity rejected fail-closed (C1-N17)"
+    ],
+    "scope_boundary_notice": "Phase C1 is strictly confined to normalizer and decorator contract hardening. It does NOT claim native H01 (CFBF project export) or H05 (live modal dialog handling) closure, which require dedicated live Cscape GUI / lifecycle verification. Phase C2 is NOT started."
+  },
+  "verification_evidence": {
+    "c1_targeted_suite": {
+      "test_file": "tests/test_c1_contract_hardening.py",
+      "tests_collected": 48,
+      "tests_passed": 48,
+      "tests_failed": 0,
+      "status": "success"
+    },
+    "combined_contract_and_security_suite": {
+      "test_files": [
+        "tests/test_c1_contract_hardening.py",
+        "tests/test_mcp_status_contract.py",
+        "tests/test_security.py"
+      ],
+      "tests_collected": 324,
+      "tests_passed": 324,
+      "tests_failed": 0,
+      "status": "success"
+    },
+    "core_pipeline_suite": {
+      "test_files": [
+        "tests/test_compiler.py",
+        "tests/test_parser.py",
+        "tests/test_mcp_tools.py",
+        "tests/test_c1_contract_hardening.py"
+      ],
+      "tests_collected": 102,
+      "tests_passed": 102,
+      "tests_failed": 0,
+      "status": "success"
+    }
+  },
+  "proof_artifacts": {
+    "c1_before_proof": {
+      "file": "artifacts/recovery/run_20260906_120831/c1_before_proof.json",
+      "sha256": "4b56633b93f4196ed9482e2bbb0e8f00e99993d3ba6632b2dd4fc70c7f8724c8",
+      "size_bytes": 1966
+    },
+    "c1_after_proof": {
+      "file": "artifacts/recovery/run_20260906_120831/c1_after_proof.json",
+      "sha256": "f6ca768aa535d98317429419722d18008a5dbb87d14bea0d6dca8e7615c97261",
+      "size_bytes": 8820
+    },
+    "c1_unified_diff": {
+      "file": "artifacts/recovery/run_20260906_120831/c1_unified_diff.patch",
+      "sha256": "6b8b8b16a37a21a4dcce53afcd7c842e489429e4061c630b65333fbd54d2c6fb",
+      "size_bytes": 249789
+    }
+  },
+  "deliverable_hashes": {
+    "AGENTS.md": {
+      "sha256": "448b09c7f4f6d5db30edab33dcafa68bf0df7aa0733681fd40508a0b65b49c5a",
+      "size_bytes": 18769
+    },
+    "src/mcp/tools.py": {
+      "sha256": "a09bbacd6cfa01cf58b052aac451ac0bdd5df22fa14151e495db661639c9ea1e",
+      "size_bytes": 138127
+    },
+    "tests/test_c1_contract_hardening.py": {
+      "sha256": "28b21ec487173518a252240285422dbf77cefa688fa50979ac7a502c51525adb",
+      "size_bytes": 19719
+    },
+    "tests/test_mcp_status_contract.py": {
+      "sha256": "0cbddb051cf3369634330664989cd27eac2bf4b2590f6dfb4561d13179c37786",
+      "size_bytes": 29100
+    }
+  },
+  "status": "success"
+}

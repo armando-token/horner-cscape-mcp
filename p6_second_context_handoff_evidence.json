@@ -1,0 +1,170 @@
+{
+  "status": "success",
+  "phase": "P6",
+  "task_id": "P6_SECOND_CONTEXT_HANDOFF_EVIDENCE",
+  "mission_id": "P6_SECOND_CONTEXT_STANDALONE_DELIVERY_VERIFICATION",
+  "timestamp_utc": "2026-09-17T17:32:32.823027+00:00",
+  "governing_rule": "RULE[C:\\Users\\ArmandoSilva\\AGENTS.md]",
+  "operational_mode": "offline/DEV [PRODUCT_EVIDENCE]",
+  "state": "RUNTIME_PENDING_P7",
+  "verified_live": false,
+  "zero_plc_download": true,
+  "no_error_check_loop": true,
+  "open_status": "success",
+  "handoff_archives": [
+    {
+      "archive_name": "horner-cscape-project-handoff-v1.0.0.zip",
+      "path": "C:\\HornerAI\\horner-cscape-mcp\\artifacts\\delivery\\horner-cscape-project-handoff-v1.0.0.zip",
+      "size_bytes": 78374,
+      "sha256": "7a3a58243be55bf561bdd8a6c803a0c72fb6cd2b58dfc63556f0fef343df44c8"
+    },
+    {
+      "archive_name": "TankLevelClosedLoop_OFFLINE_HANDOFF.zip",
+      "path": "C:\\HornerAI\\horner-cscape-mcp\\artifacts\\delivery\\TankLevelClosedLoop_OFFLINE_HANDOFF.zip",
+      "size_bytes": 41742,
+      "sha256": "58bb1223659eb7a47922a0f89732caaa5cddac8f06a3e4c3ee88594650488c20"
+    }
+  ],
+  "second_context_environment": {
+    "context_path": "C:\\Users\\Public\\HornerHandoffContext2",
+    "project_extract_dir": "C:\\Users\\Public\\HornerHandoffContext2\\project_handoff",
+    "offline_extract_dir": "C:\\Users\\Public\\HornerHandoffContext2\\offline_handoff",
+    "total_files_extracted": 19
+  },
+  "manifest_cryptographic_verification": {
+    "status": "success",
+    "matched_files_count": 9,
+    "total_manifest_files": 9,
+    "all_matched": true,
+    "results": [
+      {
+        "file": "docs/ACCEPTANCE_AND_LIMITATIONS.md",
+        "size_bytes": 1746,
+        "expected_sha256": "1feabcd6a3716955483c46384bc4356dad5e4530136a51ea751d474a7b000335",
+        "actual_sha256": "1feabcd6a3716955483c46384bc4356dad5e4530136a51ea751d474a7b000335",
+        "match": true
+      },
+      {
+        "file": "docs/MODBUS_PV_CONVERSION_SPEC.md",
+        "size_bytes": 1889,
+        "expected_sha256": "3ec23cda7c4948e95c275dbc4f0e70dec9aba3ebcba743dc07895f5a6262b273",
+        "actual_sha256": "3ec23cda7c4948e95c275dbc4f0e70dec9aba3ebcba743dc07895f5a6262b273",
+        "match": true
+      },
+      {
+        "file": "docs/SUPPORTED_HARDWARE_PROFILE.md",
+        "size_bytes": 974,
+        "expected_sha256": "c3987039ecbe34e8cf24faf2f5705001a2fe766b1e26aad893521f1f861ca42a",
+        "actual_sha256": "c3987039ecbe34e8cf24faf2f5705001a2fe766b1e26aad893521f1f861ca42a",
+        "match": true
+      },
+      {
+        "file": "docs/TRANSFER_AND_OPEN_GUIDE.md",
+        "size_bytes": 1800,
+        "expected_sha256": "95893570b11ed0d33623df6a156e2a4d7b0480ec77af34dd30d7ced4efc3da7f",
+        "actual_sha256": "95893570b11ed0d33623df6a156e2a4d7b0480ec77af34dd30d7ced4efc3da7f",
+        "match": true
+      },
+      {
+        "file": "projects/TankLevel_P5_Dedicated/modbus_protocol_inventory.json",
+        "size_bytes": 5074,
+        "expected_sha256": "06e3c1ccfea1ad135fd92a0a7be7817cf7b28fef35182823703574ff88c629ce",
+        "actual_sha256": "06e3c1ccfea1ad135fd92a0a7be7817cf7b28fef35182823703574ff88c629ce",
+        "match": true
+      },
+      {
+        "file": "projects/TankLevel_P5_Dedicated/modbus_pv_config.json",
+        "size_bytes": 1675,
+        "expected_sha256": "fb06d8740cccaf3f90312715723b1960971ad4da15b34f21c0d305380b91314d",
+        "actual_sha256": "fb06d8740cccaf3f90312715723b1960971ad4da15b34f21c0d305380b91314d",
+        "match": true
+      },
+      {
+        "file": "projects/TankLevel_P5_Dedicated/pous/TankLevelControl.st",
+        "size_bytes": 2251,
+        "expected_sha256": "36612185e94bfa6b1a79a4bf1d68e0b1533558ad99b96de5a3937640f3aec714",
+        "actual_sha256": "36612185e94bfa6b1a79a4bf1d68e0b1533558ad99b96de5a3937640f3aec714",
+        "match": true
+      },
+      {
+        "file": "projects/TankLevel_P5_Dedicated/TankLevel_P5_Dedicated.csp",
+        "size_bytes": 140800,
+        "expected_sha256": "9f69f6a2ee12dab54087ab27bb839f40e01d6d65544a546139788519acd80ab1",
+        "actual_sha256": "9f69f6a2ee12dab54087ab27bb839f40e01d6d65544a546139788519acd80ab1",
+        "match": true
+      },
+      {
+        "file": "test_tools/test_modbus_server.py",
+        "size_bytes": 11994,
+        "expected_sha256": "a848de781bf4da443a4c67b84416fb5fab4c91992a39dbabc942e42418ee8a0e",
+        "actual_sha256": "a848de781bf4da443a4c67b84416fb5fab4c91992a39dbabc942e42418ee8a0e",
+        "match": true
+      }
+    ]
+  },
+  "cfbf_container_verification": [
+    {
+      "container_name": "TankLevel_P5_Dedicated.csp",
+      "path": "C:\\Users\\Public\\HornerHandoffContext2\\project_handoff\\projects\\TankLevel_P5_Dedicated\\TankLevel_P5_Dedicated.csp",
+      "size_bytes": 140800,
+      "sha256": "9f69f6a2ee12dab54087ab27bb839f40e01d6d65544a546139788519acd80ab1",
+      "is_valid_cfbf": true,
+      "streams_count": 1,
+      "streams": [
+        "Contents"
+      ]
+    },
+    {
+      "container_name": "TankLevelClosedLoop.csp",
+      "path": "C:\\Users\\Public\\HornerHandoffContext2\\offline_handoff\\TankLevelClosedLoop.csp",
+      "size_bytes": 81920,
+      "sha256": "8ae2b15e261a7a31cfdbd6340ee0e617c45e1a36d5930eb6b1438ada0159612c",
+      "is_valid_cfbf": true
+    }
+  ],
+  "pure_st_ast_verification": {
+    "file_path": "C:\\Users\\Public\\HornerHandoffContext2\\project_handoff\\projects\\TankLevel_P5_Dedicated\\pous\\TankLevelControl.st",
+    "size_bytes": 2251,
+    "sha256": "36612185e94bfa6b1a79a4bf1d68e0b1533558ad99b96de5a3937640f3aec714",
+    "pou_name": "TankLevelControl",
+    "pou_type": "PROGRAM",
+    "zero_ladder_enforced": true,
+    "ast_syntax_valid": true
+  },
+  "modbus_configuration": {
+    "config_file": "C:\\Users\\Public\\HornerHandoffContext2\\project_handoff\\projects\\TankLevel_P5_Dedicated\\modbus_pv_config.json",
+    "sha256": "fb06d8740cccaf3f90312715723b1960971ad4da15b34f21c0d305380b91314d",
+    "target_register": "%AI1",
+    "modicon_address": 40001,
+    "raw_scaling": "0.0..32000.0",
+    "eu_scaling": "0.0..100.0 %",
+    "action_on_stale": "CLAMP_TO_FAIL_SAFE"
+  },
+  "modbus_deep_inventory": {
+    "inventory_file": "C:\\Users\\Public\\HornerHandoffContext2\\project_handoff\\projects\\TankLevel_P5_Dedicated\\modbus_protocol_inventory.json",
+    "sha256": "06e3c1ccfea1ad135fd92a0a7be7817cf7b28fef35182823703574ff88c629ce",
+    "devices_count": 3,
+    "channels_count": 2,
+    "scan_list_count": 3,
+    "read_only_enforced": true
+  },
+  "relocation_invariance": {
+    "status": "success",
+    "manifest_sha256": "9f69f6a2ee12dab54087ab27bb839f40e01d6d65544a546139788519acd80ab1",
+    "second_context_sha256": "9f69f6a2ee12dab54087ab27bb839f40e01d6d65544a546139788519acd80ab1",
+    "matched": true
+  },
+  "safety_lockout": {
+    "physical_ports": "BLOCKED_FAIL_CLOSED (COM1-COM256, \\\\.\\COM*, /dev/tty*, CAN*, USB*, JTAG)",
+    "download_commands": "BLOCKED_FAIL_CLOSED (32827, 33149)",
+    "companion_flash_tools": "BLOCKED_FAIL_CLOSED (PGMUpdateUtility, DfuSeCommand, STMFlashLoader, WinJTAG)",
+    "zero_plc_download_policy": "STRICTLY_ENFORCED",
+    "phase_p7_status": "DEFERRED_MANUAL_ENGINEER_LOAD",
+    "verified_live": false,
+    "no_error_check_loop": true
+  },
+  "audit_signoff": {
+    "status": "success",
+    "details": "P6 handoff verification across second isolated external context completed deterministically with 100% manifest match, valid CFBF structure, pure ST AST syntax, Modbus read-only persistence, and zero Error Check loops."
+  }
+}

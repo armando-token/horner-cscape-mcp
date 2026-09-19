@@ -1,0 +1,52 @@
+{
+  "phase": "C3",
+  "mission_id": "C3_OFFLINE_DEV",
+  "description": "Deterministic post-hardening execution proof verifying fail-closed compilation empty-output rejection, stale success token defense, incomplete gate data rejection, zero source POU compilation failure, modal auto-Yes elimination / foreign modal defense, and pure-software simulation mock rigor / taxonomy contracts",
+  "results": {
+    "compilation_empty_output_hardening": {
+      "empty_output_fails_closed": true,
+      "whitespace_output_fails_closed": true,
+      "error_code_returned": "COMPILATION_OUTPUT_EMPTY",
+      "status_returned": "failed"
+    },
+    "stale_success_token_hardening": {
+      "stale_tokens_without_activity_rejected": true,
+      "bare_success_status_rejected": true,
+      "genuine_clean_compile_proof_accepted": true,
+      "status_on_stale": "FAILED",
+      "is_clean_on_stale": false
+    },
+    "zero_source_pous_hardening": {
+      "zero_st_files_fails_closed": true,
+      "status_returned": "FAILED",
+      "error_code": "NO_SOURCE_POUS"
+    },
+    "gate_data_validation_hardening": {
+      "missing_pid_fails_closed": true,
+      "missing_hwnd_fails_closed": true,
+      "pid_zero_or_negative_fails_closed": true,
+      "hwnd_zero_or_empty_fails_closed": true,
+      "get_gate_status_forces_ready_false_on_missing_fields": true,
+      "error_code": "INCOMPLETE_GATE_DATA"
+    },
+    "modal_dialog_safety_hardening": {
+      "non_fatal_auto_yes_eliminated": true,
+      "non_fatal_dialog_classified_fail_closed": true,
+      "foreign_modal_blind_dismissal_prohibited": true,
+      "modal_pid_filtering_enforced": true,
+      "error_code": "NON_FATAL_ERROR / FOREIGN_MODAL"
+    },
+    "simulation_mock_rigor_and_taxonomy": {
+      "mode_verified_live_prohibited": true,
+      "verified_live_error_code": "ERR_VERIFIED_LIVE_PROHIBITED_ON_SIMULATION",
+      "ladder_injection_in_sim_fails_closed": true,
+      "ladder_error_code": "ERR_LADDER_FORBIDDEN",
+      "syntax_error_in_sim_fails_closed": true,
+      "syntax_error_code": "ST_SYNTAX_ERROR",
+      "all_simulator_modules_declare_tested_mock": true,
+      "taxonomy_classification": "TESTED_MOCK [offline/DEV only]",
+      "verification_classification": "TESTED_MOCK [offline/DEV only]",
+      "schema_contract_conformance": true
+    }
+  }
+}

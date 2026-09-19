@@ -1,0 +1,94 @@
+{
+  "benchmark": "cscape_live_gui_stability_50min",
+  "status": "PASSED",
+  "timestamp_utc": "2026-09-05T06:08:46.062Z",
+  "cscape_pid": 7616,
+  "cscape_hwnd": "0x007B06D6",
+  "cscape_title": "Cscape - Logged In : \"armando@controlnautas.com\" - [TankLevelClosedLoop.csp]",
+  "window_state": {
+    "is_window": true,
+    "is_hung": false,
+    "zero_ui_freezes": true,
+    "wm_null_responsive": true,
+    "desktop_station": "exebox-SFKDH7PVZHHA5N3KL2KU2F6TB4",
+    "resolution": "820x513"
+  },
+  "process_metrics": {
+    "pid": 7616,
+    "process_name": "Cscape.exe",
+    "uptime_seconds": 3023.68,
+    "uptime_minutes": 50.39,
+    "stay_open_50min_exceeded": true,
+    "working_set_bytes": 136458240,
+    "working_set_mb": 130.14,
+    "virtual_memory_mb": 224.16,
+    "thread_count": 15,
+    "cpu_percent": 0.0
+  },
+  "gui_controls": {
+    "total_child_controls": 55,
+    "frame_45011": {
+      "hwnd": "0x021305C2",
+      "hwnd_int": 34801090,
+      "control_id": 45011,
+      "class_name": "Afx:ControlBar:7a0000:8:10003:10",
+      "title": "Output Window",
+      "parent_hwnd": "0x007B06D6",
+      "parent_hwnd_int": 8062678,
+      "rect": [
+        442,
+        341,
+        838,
+        512
+      ]
+    },
+    "listbox_372": {
+      "hwnd": "0x021603F8",
+      "hwnd_int": 34997240,
+      "control_id": 372,
+      "class_name": "ListBox",
+      "title": "",
+      "parent_hwnd": "0x021305C2",
+      "parent_hwnd_int": 34801090,
+      "rect": [
+        442,
+        361,
+        838,
+        512
+      ]
+    },
+    "scraped_line_count": 12,
+    "sample_lines": [
+      "Compiler V12.0.200.82",
+      "Loading application symbols...",
+      "EnhancedDisplayAttributes",
+      "No error detected",
+      "Loading application symbols...",
+      "Building application data...",
+      "Relocating code...",
+      "No error detected",
+      "Online Change is disabled",
+      "Generate OCS code..."
+    ]
+  },
+  "screenshot_evidence": [
+    {
+      "path": "C:\\Users\\ArmandoSilva\\artifacts\\screenshots\\live_cscape_tank_level_stay_open_50min.png",
+      "size_bytes": 66298,
+      "resolution": "820x513"
+    },
+    {
+      "path": "C:\\HornerAI\\horner-cscape-mcp\\artifacts\\screenshots\\live_cscape_tank_level_stay_open_50min.png",
+      "size_bytes": 66298,
+      "resolution": "820x513"
+    }
+  ],
+  "safety_enforcement": {
+    "zero_physical_plc_downloads": true,
+    "id_controller_download_32827_blocked": true,
+    "id_program_downloadoptions_33149_blocked": true,
+    "zero_straton_k5_tools": true,
+    "active_straton_processes": 0,
+    "fail_closed_guarantee": true
+  }
+}

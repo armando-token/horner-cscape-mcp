@@ -1,0 +1,76 @@
+{
+  "step": 184,
+  "role": "Simulation & MCP Architecture Agent",
+  "mandate": "Step 184: FastMCP Turbine Surface Condenser Hotwell Level & Vacuum Simulation Audit",
+  "classification": "offline/DEV [TESTED_MOCK]",
+  "status": "success",
+  "timestamp_start_utc": "2026-09-06T22:32:38.538Z",
+  "timestamp_complete_utc": "2026-09-06T22:32:38.540Z",
+  "duration_sec": 0.0013,
+  "target_pou": "FB_CondenserHotwellVacuumControl",
+  "target_st_file": "C:/HornerAI/horner-cscape-mcp/examples/st_applications/condenser_hotwell_vacuum_control.st",
+  "st_sha256": "7a6513aa5a08468597ad2ccce03029447fc8df5cea3a031f86359423f35db1de",
+  "register_mappings": {
+    "%R125": "Hotwell_Level_PV",
+    "%R126": "Condenser_Vacuum_PV",
+    "%R127": "Condensate_Dump_CV",
+    "%R128": "Condensate_Makeup_CV",
+    "%R129": "Cooling_Tower_Basin_Temp_PV",
+    "%R130": "Cation_Conductivity_PV",
+    "%Q35": "Condensate_Pumps_Run",
+    "%Q36": "SJAE_Aux_Vacuum_Ejector",
+    "%Q37": "Cooling_Tower_Fan1",
+    "%Q38": "Cooling_Tower_Fan2",
+    "%Q39": "Condensate_Polisher_Bypass_Permit",
+    "%M51": "Hotwell_Level_LowLow_Trip",
+    "%M52": "Condenser_Vacuum_HighHigh_Trip",
+    "%M53": "Hotwell_Level_High_Alarm",
+    "%M54": "Condenser_Tube_Leak_Alarm"
+  },
+  "simulation_invariants": {
+    "status": "success",
+    "all_invariants_passed": true,
+    "invariants": {
+      "invariant_a": {
+        "description": "Normal hotwell equilibrium baseline",
+        "passed": true
+      },
+      "invariant_b": {
+        "description": "Low-Low level cavitation protection trip",
+        "passed": true
+      },
+      "invariant_c": {
+        "description": "High hotwell level dump operation",
+        "passed": true
+      },
+      "invariant_d": {
+        "description": "Low hotwell level makeup operation",
+        "passed": true
+      },
+      "invariant_e": {
+        "description": "Vacuum deterioration auxiliary ejector engagement",
+        "passed": true
+      },
+      "invariant_f": {
+        "description": "Vacuum loss high-high trip",
+        "passed": true
+      },
+      "invariant_g": {
+        "description": "Cooling tower fan staging",
+        "passed": true
+      },
+      "invariant_h": {
+        "description": "Tube leak raw cooling water ingress alert",
+        "passed": true
+      },
+      "invariant_i": {
+        "description": "Alarm reset and latch clearing",
+        "passed": true
+      },
+      "invariant_k": {
+        "description": "Fail-closed download lockout for commands 32827 and 33149",
+        "passed": true
+      }
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "step": 184,
+  "gate": "G4",
+  "name": "step184_pure_st_audit_checkpoint",
+  "status": "success",
+  "timestamp_utc": "2026-09-06T22:32:39.275098+00:00",
+  "mandate": "PLC / IEC 61131-3 Pure ST Audit: condenser_hotwell_vacuum_control.st",
+  "execution_duration_sec": 0.4242,
+  "dual_root_parity": true,
+  "sha256": "7a6513aa5a08468597ad2ccce03029447fc8df5cea3a031f86359423f35db1de",
+  "expected_sha256": "7a6513aa5a08468597ad2ccce03029447fc8df5cea3a031f86359423f35db1de",
+  "pure_iec61131_3_verified": true,
+  "ladder_artifacts_detected": 0,
+  "ladder_mutations_rejected_fail_closed": 12,
+  "pou": "FB_CondenserHotwellVacuumControl",
+  "pou_type": "FUNCTION_BLOCK",
+  "total_variables": 18,
+  "total_ast_statements": 5
+}

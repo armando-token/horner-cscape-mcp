@@ -1,0 +1,18 @@
+{
+  "step": 147,
+  "name": "step147_mcp_fault_injection_recovery_checkpoint",
+  "status": "PASSED",
+  "timestamp_utc": "2026-09-05T19:31:36.573Z",
+  "cscape_pid": 15624,
+  "hwnd": "0x0167056A",
+  "fault_pou": "BrokenPOU.st",
+  "fault_line": 6,
+  "fault_caught": true,
+  "recovery_status": "SUCCESS",
+  "simulation_cycles": 50,
+  "gui_compile_status": "SUCCESS",
+  "zero_straton_dependencies": true,
+  "hardware_lockout_enforced": true,
+  "live_screenshot_sha256": "83198ad12f58b287bfe0ba657aca97fc6effb54bc0980d88a12200c4b4c0c0e5",
+  "checkpoint_sha256": "e25f6b8c79b7b586020e17227d76f2e18649951ac7cf2e06aa9d8bddba1c9e4e"
+}

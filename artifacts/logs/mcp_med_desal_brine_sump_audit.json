@@ -1,0 +1,234 @@
+{
+  "audit_step": 123,
+  "name": "Multi-Effect Distillation (MED) Desalination Final Effect Brine Sump Level Audit",
+  "timestamp": "2026-09-05T12:44:11.412Z",
+  "completed_at": "2026-09-05T12:44:18.254Z",
+  "cscape_pid": 4272,
+  "cscape_hwnd": "0x7033e",
+  "total_cycles": 600,
+  "metrics": {
+    "max_phase1_level_error_pct": 0.0,
+    "mean_phase1_level_error_pct": 0.0,
+    "max_phase2_uncomp_drift_pct": 6.52,
+    "mean_phase2_uncomp_drift_pct": 4.78,
+    "max_phase3_comp_error_pct": 0.0,
+    "mean_phase3_comp_error_pct": 0.0,
+    "surge_rejection_pct": 100.0,
+    "phase4_final_level_error_pct": 0.061,
+    "phase4_mean_tail_level_error_pct": 0.0377,
+    "brine_carryover_trip_cycle": 501,
+    "high_high_trip_level_pct": 85.0
+  },
+  "trace_samples": [
+    {
+      "cycle": 0,
+      "phase": "PHASE_1_FALLING_FILM_EVAPORATION_EQUILIBRIUM",
+      "target_sp": 50.0,
+      "brine_sump_level": 50.0,
+      "seawater_flow": 60.0,
+      "interlock_trip": false,
+      "cv_pid": 50.0
+    },
+    {
+      "cycle": 50,
+      "phase": "PHASE_1_FALLING_FILM_EVAPORATION_EQUILIBRIUM",
+      "target_sp": 50.0,
+      "brine_sump_level": 50.0,
+      "seawater_flow": 60.0,
+      "interlock_trip": false,
+      "cv_pid": 50.0
+    },
+    {
+      "cycle": 100,
+      "phase": "PHASE_1_FALLING_FILM_EVAPORATION_EQUILIBRIUM",
+      "target_sp": 50.0,
+      "brine_sump_level": 50.0,
+      "seawater_flow": 60.0,
+      "interlock_trip": false,
+      "cv_pid": 50.0
+    },
+    {
+      "cycle": 101,
+      "phase": "PHASE_2_STEAM_GEN_FLUCTUATION_DISTILLATE_SURGE",
+      "target_sp": 50.0,
+      "brine_sump_level": 50.022,
+      "seawater_flow": 60.3,
+      "interlock_trip": false,
+      "cv_pid": 50.0
+    },
+    {
+      "cycle": 125,
+      "phase": "PHASE_2_STEAM_GEN_FLUCTUATION_DISTILLATE_SURGE",
+      "target_sp": 50.0,
+      "brine_sump_level": 54.428,
+      "seawater_flow": 68.5,
+      "interlock_trip": false,
+      "cv_pid": 43.09
+    },
+    {
+      "cycle": 150,
+      "phase": "PHASE_2_STEAM_GEN_FLUCTUATION_DISTILLATE_SURGE",
+      "target_sp": 50.0,
+      "brine_sump_level": 56.474,
+      "seawater_flow": 77.0,
+      "interlock_trip": false,
+      "cv_pid": 27.48
+    },
+    {
+      "cycle": 175,
+      "phase": "PHASE_2_STEAM_GEN_FLUCTUATION_DISTILLATE_SURGE",
+      "target_sp": 50.0,
+      "brine_sump_level": 55.434,
+      "seawater_flow": 85.5,
+      "interlock_trip": false,
+      "cv_pid": 16.28
+    },
+    {
+      "cycle": 200,
+      "phase": "PHASE_2_STEAM_GEN_FLUCTUATION_DISTILLATE_SURGE",
+      "target_sp": 50.0,
+      "brine_sump_level": 55.374,
+      "seawater_flow": 94.0,
+      "interlock_trip": false,
+      "cv_pid": 6.04
+    },
+    {
+      "cycle": 201,
+      "phase": "PHASE_3_VACUUM_BLOWDOWN_EXTRACTION_DECOUPLED",
+      "target_sp": 50.0,
+      "brine_sump_level": 50.0,
+      "seawater_flow": 94.0,
+      "interlock_trip": false,
+      "cv_pid": 50.0
+    },
+    {
+      "cycle": 225,
+      "phase": "PHASE_3_VACUUM_BLOWDOWN_EXTRACTION_DECOUPLED",
+      "target_sp": 50.0,
+      "brine_sump_level": 50.0,
+      "seawater_flow": 94.0,
+      "interlock_trip": false,
+      "cv_pid": 50.0
+    },
+    {
+      "cycle": 250,
+      "phase": "PHASE_3_VACUUM_BLOWDOWN_EXTRACTION_DECOUPLED",
+      "target_sp": 50.0,
+      "brine_sump_level": 50.0,
+      "seawater_flow": 94.0,
+      "interlock_trip": false,
+      "cv_pid": 50.0
+    },
+    {
+      "cycle": 275,
+      "phase": "PHASE_3_VACUUM_BLOWDOWN_EXTRACTION_DECOUPLED",
+      "target_sp": 50.0,
+      "brine_sump_level": 50.0,
+      "seawater_flow": 94.0,
+      "interlock_trip": false,
+      "cv_pid": 50.0
+    },
+    {
+      "cycle": 300,
+      "phase": "PHASE_3_VACUUM_BLOWDOWN_EXTRACTION_DECOUPLED",
+      "target_sp": 50.0,
+      "brine_sump_level": 50.0,
+      "seawater_flow": 94.0,
+      "interlock_trip": false,
+      "cv_pid": 50.0
+    },
+    {
+      "cycle": 350,
+      "phase": "PHASE_3_VACUUM_BLOWDOWN_EXTRACTION_DECOUPLED",
+      "target_sp": 50.0,
+      "brine_sump_level": 50.0,
+      "seawater_flow": 94.0,
+      "interlock_trip": false,
+      "cv_pid": 50.0
+    },
+    {
+      "cycle": 351,
+      "phase": "PHASE_4_ANTISCALANT_DOSING_STEP_CHANGE",
+      "target_sp": 42.0,
+      "brine_sump_level": 49.328,
+      "seawater_flow": 76.0,
+      "interlock_trip": false,
+      "cv_pid": 36.56
+    },
+    {
+      "cycle": 400,
+      "phase": "PHASE_4_ANTISCALANT_DOSING_STEP_CHANGE",
+      "target_sp": 42.0,
+      "brine_sump_level": 41.239,
+      "seawater_flow": 76.0,
+      "interlock_trip": false,
+      "cv_pid": 53.85
+    },
+    {
+      "cycle": 450,
+      "phase": "PHASE_4_ANTISCALANT_DOSING_STEP_CHANGE",
+      "target_sp": 42.0,
+      "brine_sump_level": 41.875,
+      "seawater_flow": 76.0,
+      "interlock_trip": false,
+      "cv_pid": 49.47
+    },
+    {
+      "cycle": 500,
+      "phase": "PHASE_4_ANTISCALANT_DOSING_STEP_CHANGE",
+      "target_sp": 42.0,
+      "brine_sump_level": 42.061,
+      "seawater_flow": 76.0,
+      "interlock_trip": false,
+      "cv_pid": 50.03
+    },
+    {
+      "cycle": 501,
+      "phase": "PHASE_5_BRINE_CARRYOVER_EJECTOR_FOULING_TRIP",
+      "target_sp": 42.0,
+      "brine_sump_level": 42.061,
+      "seawater_flow": 30.0,
+      "interlock_trip": true,
+      "cv_pid": 50.02
+    },
+    {
+      "cycle": 520,
+      "phase": "PHASE_5_BRINE_CARRYOVER_EJECTOR_FOULING_TRIP",
+      "target_sp": 42.0,
+      "brine_sump_level": 42.061,
+      "seawater_flow": 30.0,
+      "interlock_trip": true,
+      "cv_pid": 49.9
+    },
+    {
+      "cycle": 550,
+      "phase": "PHASE_5_BRINE_CARRYOVER_EJECTOR_FOULING_TRIP",
+      "target_sp": 42.0,
+      "brine_sump_level": 42.061,
+      "seawater_flow": 30.0,
+      "interlock_trip": true,
+      "cv_pid": 49.75
+    },
+    {
+      "cycle": 599,
+      "phase": "PHASE_5_BRINE_CARRYOVER_EJECTOR_FOULING_TRIP",
+      "target_sp": 42.0,
+      "brine_sump_level": 42.061,
+      "seawater_flow": 30.0,
+      "interlock_trip": true,
+      "cv_pid": 49.5
+    }
+  ],
+  "cscape_health": {
+    "healthy": true,
+    "pid": 4272,
+    "hwnd": "0x7033e",
+    "desktop": "Default",
+    "is_hung": false,
+    "wm_null_ping_ok": true,
+    "working_set_mb": 168.76,
+    "num_threads": 11,
+    "uptime_sec": 1959.75
+  },
+  "download_lockout_verified": true
+}

@@ -1,0 +1,35 @@
+{
+  "gate": "G1",
+  "step": 177,
+  "role": "Visible Cscape GUI Driver",
+  "status": "success",
+  "mandate": "MEGAPLAN Gate G1: Live Visible Cscape GUI Evidence with TankLevelClosedLoop",
+  "timestamp_utc": "2026-09-06T18:13:21.996696+00:00",
+  "execution_duration_sec": 3.131,
+  "live_cscape": {
+    "pid": 5196,
+    "hwnd": "0x02F2058A",
+    "project": "TankLevelClosedLoop.csp",
+    "window_title": "Cscape - Logged In : \"armando@controlnautas.com\" - [TankLevelClosedLoop.csp]",
+    "desktop": "Default",
+    "visible": true,
+    "enabled": true,
+    "responsive": true
+  },
+  "screenshot_proof": {
+    "file": "artifacts\\screenshots\\live_cscape_tank_level_step177.png",
+    "size_bytes": 2187,
+    "sha256": "fd7422a64e2c4fadbd2acfa488ac02c1d03f3ba4d4d7e6cec879e38dade49a8d"
+  },
+  "compile_proof": {
+    "command_id": 32826,
+    "success": true,
+    "error_count": 0,
+    "duration_sec": 2.951
+  },
+  "dual_root_parity": true,
+  "roots_verified": {
+    "horner_root": "C:\\HornerAI\\horner-cscape-mcp",
+    "user_root": "C:\\Users\\ArmandoSilva"
+  }
+}

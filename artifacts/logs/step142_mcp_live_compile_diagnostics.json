@@ -1,0 +1,81 @@
+{
+  "step": 142,
+  "title": "FastMCP Live Project Compilation & Build Diagnostics Scrape Against Live GUI Gate",
+  "timestamp_start_utc": "2026-09-05T18:19:57.712051+00:00",
+  "timestamp_end_utc": "2026-09-05T18:20:16.048388+00:00",
+  "duration_seconds": 18.336,
+  "status": "PASSED",
+  "cscape_active_process": {
+    "pid": 7968,
+    "hwnd": "0x00B302DE",
+    "healthy": true,
+    "is_hung": false,
+    "ping_ok": true,
+    "uptime_seconds": 601.14,
+    "working_set_mb": 200.36,
+    "window_title": "Cscape - Logged In : \"armando@controlnautas.com\" - [TankLevelClosedLoop.csp]"
+  },
+  "tools_verified": {
+    "cscape_compile": {
+      "verified": true,
+      "command_dispatched": 32826,
+      "command_name": "ID_PROGRAM_ERRORCHECK",
+      "controls_enumerated": 55,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    "cscape_compile_project": {
+      "verified": true,
+      "clean_build": true,
+      "pous_compiled": [
+        "AlarmMonitor",
+        "AuxPumpControl",
+        "BrokenPOU",
+        "SafetyInterlockST",
+        "TankLevelClosedLoop"
+      ],
+      "compile_successful": true
+    },
+    "cscape_get_build_output": {
+      "verified": true,
+      "build_successful": true,
+      "error_count": 0
+    },
+    "cscape_get_diagnostics": {
+      "verified": true,
+      "compile_successful": true,
+      "failure_locations_count": 0
+    }
+  },
+  "fault_injection_scenarios": {
+    "syntax_fault": {
+      "injected_code": "IncompleteVal : INT := ;",
+      "rejected_fail_closed": true,
+      "line_reported": 3,
+      "column_reported": 28,
+      "error_code": "ST_SYNTAX_ERROR"
+    },
+    "ladder_construct": {
+      "injected_construct": "---[ ]---",
+      "rejected_fail_closed": true,
+      "error_code": "ERR_LADDER_FORBIDDEN"
+    },
+    "recovery_restored": true
+  },
+  "safety_audit": {
+    "lockout_32827_enforced": true,
+    "lockout_33149_enforced": true,
+    "compiler_trigger_lockout_32827": true,
+    "compiler_trigger_lockout_33149": true,
+    "pure_software_isolation_enforced": true,
+    "zero_straton_dependencies": true,
+    "zero_physical_hardware_touched": true
+  },
+  "fastmcp_rpc_dispatch": {
+    "mcp_rpc_cscape_compile_success": true,
+    "mcp_rpc_cscape_get_build_output_success": true,
+    "mcp_rpc_cscape_get_diagnostics_success": true,
+    "mcp_rpc_cscape_compile_project_success": true
+  },
+  "log_sha256": "a3915eb15b9428363f0d508818b5f2ececdcfc7114ab97ceb5ea3c76ed9d8264"
+}

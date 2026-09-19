@@ -1,0 +1,524 @@
+[
+  {
+    "tool": "cscape_modbus_create_config",
+    "arguments": {
+      "project_name": "TankLevel_P5_Dedicated",
+      "transport": "MODBUS_TCP",
+      "ip_address": "127.0.0.1",
+      "port": 15502,
+      "unit_id": 1,
+      "function_code": 3,
+      "modicon_address": 40001,
+      "wire_offset": 0,
+      "ocs_register": "%AI1",
+      "variable_name": "TankLevelPV",
+      "raw_min": 0.0,
+      "raw_max": 32000.0,
+      "eu_min": 0.0,
+      "eu_max": 100.0,
+      "poll_interval_ms": 100,
+      "timeout_ms": 1000,
+      "stale_timeout_ms": 2000
+    },
+    "response": {
+      "config_id": "TankLevel_P5_Dedicated_ModbusPV_Config",
+      "description": "Native Cscape Modbus PV Provider Configuration for TankLevel_P5_Dedicated",
+      "transport": "MODBUS_TCP",
+      "role": "CLIENT_MASTER_READ_ONLY",
+      "unit_id": 1,
+      "function_code": 3,
+      "function_name": "Read Holding Registers (0x03)",
+      "tcp_endpoint": {
+        "ip_address": "127.0.0.1",
+        "port": 15502,
+        "connect_timeout_ms": 1000
+      },
+      "rtu_endpoint": {
+        "serial_port": "MJ2_RS485",
+        "baud_rate": 19200,
+        "data_bits": 8,
+        "parity": "NONE",
+        "stop_bits": 1
+      },
+      "address_mapping": {
+        "modicon_1based": 40001,
+        "wire_offset_0based": 0,
+        "register_count": 1,
+        "horner_ocs_register": "%AI1",
+        "variable_name": "TankLevelPV"
+      },
+      "raw_data_type": "UINT16",
+      "endianness": "BIG_ENDIAN_AB",
+      "scaling": {
+        "raw_min": 0.0,
+        "raw_max": 32000.0,
+        "eu_min": 0.0,
+        "eu_max": 100.0,
+        "engineering_unit": "%",
+        "clamp_to_limits": true,
+        "fail_safe_value": 0.0
+      },
+      "policy": {
+        "poll_interval_ms": 100,
+        "response_timeout_ms": 1000,
+        "retry_count": 3,
+        "stale_timeout_ms": 2000,
+        "comm_failure_alarm_reg": "%M10",
+        "stale_quality_bit_reg": "%M11",
+        "action_on_stale": "CLAMP_TO_FAIL_SAFE"
+      },
+      "revision": "1.0.0",
+      "created_utc": "2026-09-16T03:00:32.807171+00:00",
+      "last_modified_utc": "2026-09-16T03:00:32.807171+00:00",
+      "read_only_enforced": true,
+      "safety_lockout_verified": true,
+      "physical_runtime_verification": "PENDING_P7 (Strictly deferred to Phase P7; zero PLC download)",
+      "sha256": "b0c33664dd330e457bbac4cea94663dd98b6c22f76c1057c66c2e7b59d928887",
+      "status": "success",
+      "success": true,
+      "errors": [],
+      "warnings": [],
+      "diagnostics": [],
+      "failure_locations": [],
+      "failure_location": null
+    },
+    "timestamp_utc": "2026-09-16T03:00:32.745736+00:00"
+  },
+  {
+    "tool": "cscape_modbus_persist_config",
+    "arguments": {
+      "project_name": "TankLevel_P5_Dedicated",
+      "config": {
+        "config_id": "TankLevel_P5_Dedicated_ModbusPV_Config",
+        "description": "Native Cscape Modbus PV Provider Configuration for TankLevel_P5_Dedicated",
+        "transport": "MODBUS_TCP",
+        "role": "CLIENT_MASTER_READ_ONLY",
+        "unit_id": 1,
+        "function_code": 3,
+        "function_name": "Read Holding Registers (0x03)",
+        "tcp_endpoint": {
+          "ip_address": "127.0.0.1",
+          "port": 15502,
+          "connect_timeout_ms": 1000
+        },
+        "rtu_endpoint": {
+          "serial_port": "MJ2_RS485",
+          "baud_rate": 19200,
+          "data_bits": 8,
+          "parity": "NONE",
+          "stop_bits": 1
+        },
+        "address_mapping": {
+          "modicon_1based": 40001,
+          "wire_offset_0based": 0,
+          "register_count": 1,
+          "horner_ocs_register": "%AI1",
+          "variable_name": "TankLevelPV"
+        },
+        "raw_data_type": "UINT16",
+        "endianness": "BIG_ENDIAN_AB",
+        "scaling": {
+          "raw_min": 0.0,
+          "raw_max": 32000.0,
+          "eu_min": 0.0,
+          "eu_max": 100.0,
+          "engineering_unit": "%",
+          "clamp_to_limits": true,
+          "fail_safe_value": 0.0
+        },
+        "policy": {
+          "poll_interval_ms": 100,
+          "response_timeout_ms": 1000,
+          "retry_count": 3,
+          "stale_timeout_ms": 2000,
+          "comm_failure_alarm_reg": "%M10",
+          "stale_quality_bit_reg": "%M11",
+          "action_on_stale": "CLAMP_TO_FAIL_SAFE"
+        },
+        "revision": "1.0.0",
+        "created_utc": "2026-09-16T03:00:32.807171+00:00",
+        "last_modified_utc": "2026-09-16T03:00:32.807171+00:00",
+        "read_only_enforced": true,
+        "safety_lockout_verified": true,
+        "physical_runtime_verification": "PENDING_P7 (Strictly deferred to Phase P7; zero PLC download)",
+        "sha256": "b0c33664dd330e457bbac4cea94663dd98b6c22f76c1057c66c2e7b59d928887",
+        "status": "success",
+        "success": true,
+        "errors": [],
+        "warnings": [],
+        "diagnostics": [],
+        "failure_locations": [],
+        "failure_location": null
+      }
+    },
+    "response": {
+      "status": "success",
+      "project_name": "TankLevel_P5_Dedicated",
+      "sidecar_file": "C:\\HornerAI\\horner-cscape-mcp\\artifacts\\projects\\TankLevel_P5_Dedicated\\modbus_pv_config.json",
+      "inventory_file": "C:\\HornerAI\\horner-cscape-mcp\\artifacts\\projects\\TankLevel_P5_Dedicated\\modbus_protocol_inventory.json",
+      "pou_file": "C:\\HornerAI\\horner-cscape-mcp\\artifacts\\projects\\TankLevel_P5_Dedicated\\pous\\TankLevelControl.st",
+      "sha256": "b0c33664dd330e457bbac4cea94663dd98b6c22f76c1057c66c2e7b59d928887",
+      "read_only_enforced": true,
+      "physical_runtime_verification": "PENDING_P7",
+      "success": true,
+      "errors": [],
+      "warnings": [],
+      "diagnostics": [],
+      "failure_locations": [],
+      "failure_location": null
+    },
+    "timestamp_utc": "2026-09-16T03:00:33.200029+00:00"
+  },
+  {
+    "tool": "cscape_modbus_protocol_check",
+    "arguments": {
+      "host": "127.0.0.1",
+      "port": 15502,
+      "unit_id": 1,
+      "function_code": 3,
+      "start_address": 0,
+      "quantity": 1,
+      "simulated_raw_value": null
+    },
+    "response": {
+      "status": "success",
+      "host": "127.0.0.1",
+      "port": 15502,
+      "unit_id": 1,
+      "function_code": 3,
+      "registers_count": 1,
+      "raw_registers": [
+        17600
+      ],
+      "raw_pv_value": 17600,
+      "raw_pv_hex": "0x44C0",
+      "scaled_tank_level_pct": 55.0,
+      "engineering_unit": "%",
+      "elapsed_ms": 22.26,
+      "raw_request_hex": "123400000006010300000001",
+      "raw_response_hex": "12340000000501030244C0",
+      "server_label": "[TEST_MODBUS_PV_PROVIDER]",
+      "read_only_verified": true,
+      "physical_runtime_verification": "PENDING_P7 (Protocol verified against labeled test endpoint)",
+      "success": true,
+      "errors": [],
+      "warnings": [],
+      "diagnostics": [],
+      "failure_locations": [],
+      "failure_location": null
+    },
+    "timestamp_utc": "2026-09-16T03:00:33.463559+00:00"
+  },
+  {
+    "tool": "cscape_modbus_protocol_check",
+    "arguments": {
+      "host": "127.0.0.1",
+      "port": 15502,
+      "unit_id": 1,
+      "function_code": 3,
+      "start_address": 0,
+      "quantity": 1,
+      "simulated_raw_value": null
+    },
+    "response": {
+      "status": "success",
+      "host": "127.0.0.1",
+      "port": 15502,
+      "unit_id": 1,
+      "function_code": 3,
+      "registers_count": 1,
+      "raw_registers": [
+        24000
+      ],
+      "raw_pv_value": 24000,
+      "raw_pv_hex": "0x5DC0",
+      "scaled_tank_level_pct": 75.0,
+      "engineering_unit": "%",
+      "elapsed_ms": 43.53,
+      "raw_request_hex": "123400000006010300000001",
+      "raw_response_hex": "1234000000050103025DC0",
+      "server_label": "[TEST_MODBUS_PV_PROVIDER]",
+      "read_only_verified": true,
+      "physical_runtime_verification": "PENDING_P7 (Protocol verified against labeled test endpoint)",
+      "success": true,
+      "errors": [],
+      "warnings": [],
+      "diagnostics": [],
+      "failure_locations": [],
+      "failure_location": null
+    },
+    "timestamp_utc": "2026-09-16T03:00:33.493598+00:00"
+  },
+  {
+    "tool": "cscape_modbus_protocol_check",
+    "arguments": {
+      "host": "127.0.0.1",
+      "port": 15502,
+      "unit_id": 1,
+      "function_code": 6,
+      "start_address": 0,
+      "quantity": 1,
+      "simulated_raw_value": null
+    },
+    "response": {
+      "status": "failed",
+      "error_code": "MODBUS_EXCEPTION_0x01",
+      "elapsed_ms": 29.43,
+      "raw_request_hex": "123400000006010600000001",
+      "raw_response_hex": "123400000003018601",
+      "server_label": "[TEST_MODBUS_PV_PROVIDER]",
+      "read_only_verified": true,
+      "physical_runtime_verification": "PENDING_P7 (Protocol verified against labeled test endpoint)",
+      "success": false,
+      "errors": [
+        "Operation 'ModbusProtocolCheck' failed."
+      ],
+      "warnings": [],
+      "diagnostics": [
+        {
+          "level": "ERROR",
+          "severity": "ERROR",
+          "message": "Operation 'ModbusProtocolCheck' failed.",
+          "file_path": "ModbusProtocolCheck"
+        }
+      ],
+      "failure_locations": [
+        {
+          "file_path": "ModbusProtocolCheck",
+          "full_path": "ModbusProtocolCheck",
+          "line": null,
+          "column": null,
+          "error_code": "MODBUS_EXCEPTION_0x01",
+          "severity": "ERROR",
+          "message": "Operation 'ModbusProtocolCheck' failed."
+        }
+      ],
+      "failure_location": {
+        "file_path": "ModbusProtocolCheck",
+        "full_path": "ModbusProtocolCheck",
+        "line": null,
+        "column": null,
+        "error_code": "MODBUS_EXCEPTION_0x01",
+        "severity": "ERROR",
+        "message": "Operation 'ModbusProtocolCheck' failed."
+      }
+    },
+    "timestamp_utc": "2026-09-16T03:00:33.541145+00:00"
+  },
+  {
+    "tool": "cscape_modbus_conversion_doc",
+    "arguments": {
+      "level_pct": 55.0
+    },
+    "response": {
+      "example_name": "Tank Level PV Modbus Telemetry Acquisition Walkthrough",
+      "parameters": {
+        "target_level_percent": 55.0,
+        "raw_min": 0.0,
+        "raw_max": 32000.0,
+        "eu_min": 0.0,
+        "eu_max": 100.0,
+        "engineering_unit": "%",
+        "unit_id": 1,
+        "modicon_1based_address": 40001,
+        "wire_0based_offset": "0x0000 (0)",
+        "function_code": "0x03 (FC03)",
+        "horner_target_register": "%AI1",
+        "variable_name": "TankLevelPV"
+      },
+      "step1_mathematical_conversion": {
+        "description": "Calculate raw integer register count from engineering level percentage",
+        "formula": "Raw = ((PV_EU - EU_Min) * (Raw_Max - Raw_Min) / (EU_Max - EU_Min)) + Raw_Min",
+        "substitution": "Raw = ((55.0 - 0.0) * (32000.0 - 0.0) / (100.0 - 0.0)) + 0.0",
+        "calculation": "Raw = (55.0 * 32000.0 / 100.0) = 17600",
+        "raw_integer_value": 17600,
+        "raw_hex_word": "0x44C0",
+        "high_byte": "0x44",
+        "low_byte": "0xC0"
+      },
+      "step2_protocol_request_frame": {
+        "description": "Modbus TCP Client Request (OCS Master queries remote sensor)",
+        "mbap_header": {
+          "transaction_id": "0x0001 (1)",
+          "protocol_id": "0x0000 (Modbus TCP)",
+          "length": "0x0006 (6 bytes follow)",
+          "unit_id": "0x01 (1)"
+        },
+        "pdu": {
+          "function_code": "0x03 (Read Holding Registers)",
+          "starting_address": "0x0000 (Offset 0 for register 40001)",
+          "quantity": "0x0001 (1 register)"
+        },
+        "complete_frame_hex": "00 01 00 00 00 06 01 03 00 00 00 01",
+        "frame_length_bytes": 12
+      },
+      "step3_protocol_response_frame": {
+        "description": "Modbus TCP Server Response (Sensor replies with raw telemetry)",
+        "mbap_header": {
+          "transaction_id": "0x0001 (Echoed)",
+          "protocol_id": "0x0000 (Modbus TCP)",
+          "length": "0x0005 (5 bytes follow)",
+          "unit_id": "0x01 (1)"
+        },
+        "pdu": {
+          "function_code": "0x03 (Read Holding Registers)",
+          "byte_count": "0x02 (2 bytes)",
+          "register_data_hex": "0x44C0 (17600)"
+        },
+        "complete_frame_hex": "00 01 00 00 00 05 01 03 02 44 C0",
+        "frame_length_bytes": 11
+      },
+      "step4_horner_memory_and_st_scaling": {
+        "description": "Horner OCS driver moves 0x44C0 into %AI1; ST POU executes engineering unit conversion",
+        "st_code_snippet": [
+          "(* Channel 1: Hydrostatic Level Transmitter via Modbus *)",
+          "RawAnalogInput := %AI1; (* Receives 17600 (0x44C0) *)",
+          "IF NOT CommFailureAlarm THEN",
+          "    TankLevelPV := WORD_TO_REAL(RawAnalogInput) * 100.0 / 32000.0;",
+          "    TankLevelPV := LIMIT(0.0, TankLevelPV, 100.0);",
+          "ELSE",
+          "    TankLevelPV := 0.0; (* Fail-safe clamp *)",
+          "END_IF;"
+        ],
+        "computed_pv_value": 55.0,
+        "engineering_unit": "%",
+        "quality": "GOOD"
+      },
+      "step5_stale_and_timeout_behavior": {
+        "response_timeout": "1000 ms",
+        "max_retries": 3,
+        "stale_timeout": "2000 ms",
+        "comm_failure_bit": "%M10",
+        "stale_bit": "%M11",
+        "fail_safe_behavior": "If no reply within 1000ms, retry up to 3 times. If unacknowledged for > 2000ms, set %M10 (CommFailureAlarm) = TRUE, set %M11 (TankLevelPV_Stale) = TRUE, and clamp TankLevelPV to 0.0%."
+      },
+      "safety_declaration": "Physical/runtime verification PENDING_P7 (Strictly deferred to Phase P7). Do not claim live sensor/PLC success. Zero PLC download.",
+      "status": "success",
+      "success": true,
+      "errors": [],
+      "warnings": [],
+      "diagnostics": [],
+      "failure_locations": [],
+      "failure_location": null
+    },
+    "timestamp_utc": "2026-09-16T03:00:33.576603+00:00"
+  },
+  {
+    "tool": "cscape_modbus_read_config",
+    "arguments": {
+      "project_name": "TankLevel_P5_Dedicated"
+    },
+    "response": {
+      "config_id": "TankLevel_P5_Dedicated_ModbusPV_Config",
+      "description": "Native Cscape Modbus PV Provider Configuration for TankLevel_P5_Dedicated",
+      "transport": "MODBUS_TCP",
+      "role": "CLIENT_MASTER_READ_ONLY",
+      "unit_id": 1,
+      "function_code": 3,
+      "function_name": "Read Holding Registers (0x03)",
+      "tcp_endpoint": {
+        "ip_address": "127.0.0.1",
+        "port": 15502,
+        "connect_timeout_ms": 1000
+      },
+      "rtu_endpoint": {
+        "serial_port": "MJ2_RS485",
+        "baud_rate": 19200,
+        "data_bits": 8,
+        "parity": "NONE",
+        "stop_bits": 1
+      },
+      "address_mapping": {
+        "modicon_1based": 40001,
+        "wire_offset_0based": 0,
+        "register_count": 1,
+        "horner_ocs_register": "%AI1",
+        "variable_name": "TankLevelPV"
+      },
+      "raw_data_type": "UINT16",
+      "endianness": "BIG_ENDIAN_AB",
+      "scaling": {
+        "raw_min": 0.0,
+        "raw_max": 32000.0,
+        "eu_min": 0.0,
+        "eu_max": 100.0,
+        "engineering_unit": "%",
+        "clamp_to_limits": true,
+        "fail_safe_value": 0.0
+      },
+      "policy": {
+        "poll_interval_ms": 100,
+        "response_timeout_ms": 1000,
+        "retry_count": 3,
+        "stale_timeout_ms": 2000,
+        "comm_failure_alarm_reg": "%M10",
+        "stale_quality_bit_reg": "%M11",
+        "action_on_stale": "CLAMP_TO_FAIL_SAFE"
+      },
+      "revision": "1.0.0",
+      "created_utc": "2026-09-16T03:00:32.807171+00:00",
+      "last_modified_utc": "2026-09-16T03:00:32.807171+00:00",
+      "read_only_enforced": true,
+      "safety_lockout_verified": true,
+      "physical_runtime_verification": "PENDING_P7 (Strictly deferred to Phase P7; zero PLC download)",
+      "sha256": "b0c33664dd330e457bbac4cea94663dd98b6c22f76c1057c66c2e7b59d928887",
+      "status": "success",
+      "success": true,
+      "errors": [],
+      "warnings": [],
+      "diagnostics": [],
+      "failure_locations": [],
+      "failure_location": null
+    },
+    "timestamp_utc": "2026-09-16T03:00:48.340660+00:00"
+  },
+  {
+    "tool": "cscape_fixture_detect_conflict",
+    "arguments": {
+      "project_name": "TankLevel_P5_Dedicated",
+      "expected_hash": "deadbeef0000111122223333444455556666777788889999aaaabbbbccccdddd"
+    },
+    "response": {
+      "status": "failed",
+      "error_code": "ERR_EXTERNAL_CONFLICT",
+      "conflict_detected": true,
+      "expected_hash": "deadbeef0000111122223333444455556666777788889999aaaabbbbccccdddd",
+      "actual_hash": "8928dab87fd9fa130a15b9bf49db36c7a88541b1e65c1e05243a6e11e158ad08",
+      "message": "External manual conflict detected: expected deadbeef0000111122223333444455556666777788889999aaaabbbbccccdddd, actual 8928dab87fd9fa130a15b9bf49db36c7a88541b1e65c1e05243a6e11e158ad08",
+      "success": false,
+      "errors": [
+        "External manual conflict detected: expected deadbeef0000111122223333444455556666777788889999aaaabbbbccccdddd, actual 8928dab87fd9fa130a15b9bf49db36c7a88541b1e65c1e05243a6e11e158ad08"
+      ],
+      "warnings": [],
+      "diagnostics": [
+        {
+          "level": "ERROR",
+          "severity": "ERROR",
+          "message": "External manual conflict detected: expected deadbeef0000111122223333444455556666777788889999aaaabbbbccccdddd, actual 8928dab87fd9fa130a15b9bf49db36c7a88541b1e65c1e05243a6e11e158ad08",
+          "file_path": "TankLevel_P5_Dedicated"
+        }
+      ],
+      "failure_locations": [
+        {
+          "file_path": "TankLevel_P5_Dedicated",
+          "full_path": "TankLevel_P5_Dedicated",
+          "line": null,
+          "column": null,
+          "error_code": "ERR_EXTERNAL_CONFLICT",
+          "severity": "ERROR",
+          "message": "External manual conflict detected: expected deadbeef0000111122223333444455556666777788889999aaaabbbbccccdddd, actual 8928dab87fd9fa130a15b9bf49db36c7a88541b1e65c1e05243a6e11e158ad08"
+        }
+      ],
+      "failure_location": {
+        "file_path": "TankLevel_P5_Dedicated",
+        "full_path": "TankLevel_P5_Dedicated",
+        "line": null,
+        "column": null,
+        "error_code": "ERR_EXTERNAL_CONFLICT",
+        "severity": "ERROR",
+        "message": "External manual conflict detected: expected deadbeef0000111122223333444455556666777788889999aaaabbbbccccdddd, actual 8928dab87fd9fa130a15b9bf49db36c7a88541b1e65c1e05243a6e11e158ad08"
+      }
+    },
+    "timestamp_utc": "2026-09-16T03:00:48.410126+00:00"
+  }
+]

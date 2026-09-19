@@ -1,0 +1,100 @@
+{
+  "step": 168,
+  "name": "step168_mcp_msv_warming_water_hammer",
+  "status": "PASSED",
+  "mission": "Live FastMCP Main Steam Valve Warming Bypass & Water Hammer Prevention Audit",
+  "timestamp_start": "2026-09-06T12:24:21.776Z",
+  "timestamp_complete": "2026-09-06T12:24:31.387Z",
+  "duration_seconds": 9.61,
+  "gate": {
+    "ready_for_tests": true,
+    "status": "READY_FOR_TESTS",
+    "pid": 10892,
+    "hwnd": "0x01B005DC",
+    "window_title": "Cscape - Logged In : \"armando@controlnautas.com\" - [TankLevelClosedLoop.csp]",
+    "project_file": "C:\\HornerAI\\horner-cscape-mcp\\artifacts\\projects\\TankLevelClosedLoop\\TankLevelClosedLoop.csp",
+    "exit_code": null,
+    "reason": "Gate G3 Error Check and Output Scrape Verified Clean (0 errors, 0 warnings)",
+    "cycle": 17,
+    "timestamp_utc": "2026-09-06T11:43:46.709Z",
+    "heartbeat_utc": "2026-09-06T11:43:46.709Z"
+  },
+  "cscape_pid": 10892,
+  "hwnd": "0x01B005DC",
+  "scenarios_passed": 5,
+  "scenarios_total": 5,
+  "scenario_results": {
+    "scenario_a_warmup_initiation_drain_purge": {
+      "verified": true,
+      "msv_locked_closed": true,
+      "warming_bypass_engaged": true,
+      "condensate_drains_purging": true,
+      "opening_permissive_interlocked": true
+    },
+    "scenario_b_water_hammer_surge_attenuation": {
+      "verified": true,
+      "peak_shock_acceleration_g": 45.0,
+      "water_hammer_alarm_actuated": true,
+      "attenuated_shock_g": 4.2
+    },
+    "scenario_c_thermal_bowing_protection": {
+      "verified": true,
+      "peak_stratification_delta_f": 110.0,
+      "thermal_bowing_alarm_actuated": true,
+      "equalized_delta_f": 22.0
+    },
+    "scenario_d_msv_open_permissive_satisfied": {
+      "verified": true,
+      "warmup_permissive_satisfied": true,
+      "main_msv_opened": true,
+      "warming_bypass_de_energized": true,
+      "header_pressure_psig": 580.0
+    },
+    "scenario_e_normal_steady_state_distribution": {
+      "verified": true,
+      "pipe_metal_temp_f": 890.0,
+      "acoustic_vibration_g": 1.2000000476837158,
+      "all_alarms_cleared": true
+    }
+  },
+  "telemetry_records": [
+    {
+      "scenario": "A_WARMUP_INITIATION",
+      "cycle": 1,
+      "msv": false,
+      "byp": true,
+      "perm": false
+    },
+    {
+      "scenario": "B_WATER_HAMMER_SURGE",
+      "cycle": 2,
+      "g": 45.0,
+      "m40": true
+    },
+    {
+      "scenario": "C_THERMAL_BOWING_PROTECTION",
+      "cycle": 3,
+      "delta": 110.0,
+      "m41": true
+    },
+    {
+      "scenario": "D_MSV_OPEN_PERMISSIVE",
+      "cycle": 4,
+      "perm": true,
+      "msv": true,
+      "byp": false
+    },
+    {
+      "scenario": "E_NORMAL_STEADY_STATE",
+      "cycle": 5,
+      "tpipe": 890.0,
+      "vib": 1.2000000476837158
+    }
+  ],
+  "security": {
+    "hardware_download_lockout": "FAIL_CLOSED_BLOCKED",
+    "zero_straton_dependencies": true,
+    "zero_plc_hardware_interaction": true,
+    "no_gui_hwnd_command_dispatched": true
+  }
+}

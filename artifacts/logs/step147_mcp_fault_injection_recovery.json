@@ -1,0 +1,35 @@
+{
+  "step": 147,
+  "title": "Live Multi-POU Fault Injection, Error Scraper & Reversion Recovery over FastMCP",
+  "timestamp_start_utc": "2026-09-05T19:31:07.824Z",
+  "timestamp_end_utc": "2026-09-05T19:31:36.573Z",
+  "duration_seconds": 28.749,
+  "status": "PASSED",
+  "target_pid": 15624,
+  "target_hwnd": "0x0167056A",
+  "fault_injected_pou": "BrokenPOU.st",
+  "fault_line_detected": 6,
+  "fault_injection_caught": true,
+  "self_healing_recovery_verified": true,
+  "simulation_cycles_executed": 50,
+  "gui_error_check_dispatched": 32826,
+  "gui_error_count": 0,
+  "gui_warning_count": 0,
+  "hardware_lockout_enforced": true,
+  "zero_straton_dependencies": true,
+  "cscape_process_health": {
+    "pid": 15624,
+    "hwnd": "0x0167056A",
+    "uptime_seconds": 1840.7,
+    "working_set_mb": 166.9,
+    "is_hung": false,
+    "is_enabled": true,
+    "ping_ok": true
+  },
+  "screenshot_evidence": {
+    "path": "C:\\Users\\ArmandoSilva\\artifacts\\screenshots\\live_cscape_tank_level_step147.png",
+    "size_bytes": 868,
+    "sha256": "83198ad12f58b287bfe0ba657aca97fc6effb54bc0980d88a12200c4b4c0c0e5"
+  },
+  "log_sha256": "13ee184cd6175489dcb16dd374563d1849f8591d8a1a6d32f331531393fc4109"
+}

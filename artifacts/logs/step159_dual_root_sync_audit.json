@@ -1,0 +1,120 @@
+{
+  "step": 159,
+  "name": "step159_dual_root_sync_audit",
+  "status": "PASSED",
+  "timestamp_start": "2026-09-06T03:49:19.317Z",
+  "timestamp_complete": "2026-09-06T03:49:19.391Z",
+  "duration_seconds": 0.073,
+  "checkpoint_sha256": "2f92d0632c2785bb9856d760d5e8390f78b941440dd158a84b6fad006de6c1a6",
+  "parity_verified": true,
+  "details": {
+    "checkpoints": {
+      "step159_visible_gui_proof_checkpoint": {
+        "file": "artifacts/checkpoints/step159_visible_gui_proof_checkpoint.json",
+        "exists_in_both": true,
+        "valid_json": true,
+        "status": "PASSED",
+        "step": 159,
+        "file_sha256": "bad5218c239891f4e0bda64fd03bd108efd7a15167259ebf5451b4356e3b3b12",
+        "roots_identical": true,
+        "size_bytes": 670
+      },
+      "step159_security_audit_checkpoint": {
+        "file": "artifacts/checkpoints/step159_security_audit_checkpoint.json",
+        "exists_in_both": true,
+        "valid_json": true,
+        "status": "PASSED",
+        "step": 159,
+        "file_sha256": "8eb4e0b44c56fe0a6f7f563b3e72b6072b7667b0f1d8bc7ecacacbcb21a9a87d",
+        "roots_identical": true,
+        "size_bytes": 556
+      },
+      "step159_mcp_coordinated_blowdown_dosing_checkpoint": {
+        "file": "artifacts/checkpoints/step159_mcp_coordinated_blowdown_dosing_checkpoint.json",
+        "exists_in_both": true,
+        "valid_json": true,
+        "status": "PASSED",
+        "step": 159,
+        "file_sha256": "7258217875fd820531cf3d883a0160640d80526a92430dfc184675f023e19d6d",
+        "roots_identical": true,
+        "size_bytes": 769
+      }
+    },
+    "logs": {
+      "step159_visible_gui_proof": {
+        "file": "artifacts/logs/step159_visible_gui_proof.json",
+        "exists_in_both": true,
+        "valid_json": true,
+        "status": "PASSED",
+        "file_sha256": "e0e0ea907ce627f5aad5043d650c3010bf68424bb66be11f108f1c1efa4ffb97",
+        "roots_identical": true,
+        "size_bytes": 1891
+      },
+      "step159_security_audit": {
+        "file": "artifacts/logs/step159_security_audit.json",
+        "exists_in_both": true,
+        "valid_json": true,
+        "status": "PASSED",
+        "file_sha256": "426b3571992dd70b8c41d897563da0b4f98a1d82f0399b2bc50025c4d111b831",
+        "roots_identical": true,
+        "size_bytes": 2763
+      },
+      "step159_mcp_coordinated_blowdown_dosing": {
+        "file": "artifacts/logs/step159_mcp_coordinated_blowdown_dosing.json",
+        "exists_in_both": true,
+        "valid_json": true,
+        "status": "PASSED",
+        "file_sha256": "6ba3a8f5dd517744953c4286546e7e732e350497b3acef33faf44073b689dd7f",
+        "roots_identical": true,
+        "size_bytes": 3332
+      }
+    },
+    "screenshots": {
+      "live_cscape_tank_level_step159": {
+        "file": "artifacts/screenshots/live_cscape_tank_level_step159.png",
+        "exists_in_both": true,
+        "size_bytes": 72686,
+        "gt_10kb": true,
+        "file_sha256": "4730540e881c216fe988f2ab82b86a21b3bf9b10e662d57effe44a71b6cb657f",
+        "roots_identical": true
+      }
+    },
+    "code_files": {
+      "execute_step159_visible_cscape_gui_driver.py": {
+        "file": "scripts/execute_step159_visible_cscape_gui_driver.py",
+        "exists_in_both": true,
+        "file_sha256": "e9893bd2444e4335f1f87ea5a32f92c01735730404716db72d5ffd4a29d83e87",
+        "roots_identical": true,
+        "size_bytes": 16149
+      },
+      "execute_step159_security_audit.py": {
+        "file": "scripts/execute_step159_security_audit.py",
+        "exists_in_both": true,
+        "file_sha256": "a2cf1131e0e4385b77d7adb65dcc6cf099e8ceedd64996c96dbe8d77b309c7dc",
+        "roots_identical": true,
+        "size_bytes": 15141
+      },
+      "execute_step159_mcp_coordinated_blowdown_dosing.py": {
+        "file": "scripts/execute_step159_mcp_coordinated_blowdown_dosing.py",
+        "exists_in_both": true,
+        "file_sha256": "dab99117773e294f6eeea4fb4dc7444ff7593ca4dab4e23aaf8c135c9fbf38c0",
+        "roots_identical": true,
+        "size_bytes": 32964
+      },
+      "test_step159_visible_cscape_gui_driver.py": {
+        "file": "tests/test_step159_visible_cscape_gui_driver.py",
+        "exists_in_both": true,
+        "file_sha256": "405d0fc2f74b3bfe3e548533bd2e9cface82dd4f7e8e823e052735a7ae43bdcb",
+        "roots_identical": true,
+        "size_bytes": 3655
+      },
+      "test_step159_mcp_coordinated_blowdown_dosing.py": {
+        "file": "tests/test_step159_mcp_coordinated_blowdown_dosing.py",
+        "exists_in_both": true,
+        "file_sha256": "e685eadb4024b27a88b6de231176bce7977d635281480a5fff600c12ff5c9a10",
+        "roots_identical": true,
+        "size_bytes": 3418
+      }
+    }
+  }
+}

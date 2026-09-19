@@ -1,0 +1,17 @@
+{
+  "step": 146,
+  "name": "step146_mcp_symbol_collision_telemetry_checkpoint",
+  "status": "PASSED",
+  "timestamp_utc": "2026-09-05T19:25:45.318Z",
+  "cscape_pid": 10140,
+  "hwnd": "0x00F70724",
+  "variable_count": 21,
+  "unique_registers": 21,
+  "simulation_cycles": 100,
+  "memory_footprint_total_bytes": 1664,
+  "gui_compile_status": "SUCCESS",
+  "zero_straton_dependencies": true,
+  "hardware_lockout_enforced": true,
+  "live_screenshot_sha256": "d7023c7218a445d4f74f6f68627afa99108901ca8363f7120ff01d184ec67e50",
+  "checkpoint_sha256": "0012a6b400ad98f7758590fa5908a566b4c2064b5f146c4b8506ae9cf07d600d"
+}

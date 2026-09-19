@@ -1,0 +1,2366 @@
+{
+  "metadata": {
+    "title": "Horner Cscape 10.2 Registry & COM Audit",
+    "date": "2026-09-03",
+    "cscape_version": "10.2.751.4",
+    "target_architecture": "32-bit x86 (WOW64 on Windows 64-bit)",
+    "cscape_directory": "C:\\Program Files (x86)\\Cscape 10.2"
+  },
+  "registry": {
+    "HKCU": {
+      "Software\\Horner_Electric\\Cscape": {
+        "path": "Software\\Horner_Electric\\Cscape",
+        "values": {},
+        "subkeys": {
+          "ApplicationLook": {
+            "path": "Software\\Horner_Electric\\Cscape\\ApplicationLook",
+            "values": {
+              "RibbonTheme": {
+                "reg_type": "REG_DWORD",
+                "raw_value": 0
+              }
+            },
+            "subkeys": {}
+          },
+          "Colors": {
+            "path": "Software\\Horner_Electric\\Cscape\\Colors",
+            "values": {
+              "Background": {
+                "reg_type": "REG_DWORD",
+                "raw_value": 12632256
+              },
+              "PreviousColorSchemeIndex": {
+                "reg_type": "REG_DWORD",
+                "raw_value": 0
+              }
+            },
+            "subkeys": {
+              "Classic": {
+                "path": "Software\\Horner_Electric\\Cscape\\Colors\\Classic",
+                "values": {
+                  "BackGroundColor": {
+                    "reg_type": "REG_DWORD",
+                    "raw_value": 13816530
+                  },
+                  "ColumnColor": {
+                    "reg_type": "REG_DWORD",
+                    "raw_value": 0
+                  },
+                  "FunctionBlockColor": {
+                    "reg_type": "REG_DWORD",
+                    "raw_value": 11842740
+                  },
+                  "FunctionBlockTextColor": {
+                    "reg_type": "REG_DWORD",
+                    "raw_value": 0
+                  },
+                  "GridColor": {
+                    "reg_type": "REG_DWORD",
+                    "raw_value": 16777215
+                  },
+                  "LabelColor": {
+                    "reg_type": "REG_DWORD",
+                    "raw_value": 0
+                  },
+                  "WiringColor": {
+                    "reg_type": "REG_DWORD",
+                    "raw_value": 0
+                  },
+                  "CommentFontTextColor": {
+                    "reg_type": "REG_DWORD",
+                    "raw_value": 0
+                  },
+                  "ColumnRowBackGroundColor": {
+                    "reg_type": "REG_DWORD",
+                    "raw_value": 11842740
+                  },
+                  "CommentTextFontSize": {
+                    "reg_type": "REG_DWORD",
+                    "raw_value": 14
+                  },
+                  "ColumnFontSize": {
+                    "reg_type": "REG_DWORD",
+                    "raw_value": 14
+                  },
+                  "FunctionBlockStyle": {
+                    "reg_type": "REG_SZ",
+                    "raw_value": "Rectangle"
+                  },
+                  "FunctionBlockTextSize": {
+                    "reg_type": "REG_DWORD",
+                    "raw_value": 14
+                  },
+                  "GridLineThickness": {
+                    "reg_type": "REG_DWORD",
+                    "raw_value": 1
+                  },
+                  "GridStyle": {
+                    "reg_type": "REG_SZ",
+                    "raw_value": "Dot"
+                  },
+                  "LabelFontSize": {
+                    "reg_type": "REG_DWORD",
+                    "raw_value": 14
+                  },
+                  "PowerBarThickness": {
+                    "reg_type": "REG_DWORD",
+                    "raw_value": 1
+                  },
+                  "WiringThickness": {
+                    "reg_type": "REG_DWORD",
+                    "raw_value": 1
+                  },
+                  "ColumnFontStyle": {
+                    "reg_type": "REG_SZ",
+                    "raw_value": "Franklin Gothic Medium"
+                  },
+                  "FunctionBlockFontStyle": {
+                    "reg_type": "REG_SZ",
+                    "raw_value": "Franklin Gothic Medium"
+                  },
+                  "LabelFontStyle": {
+                    "reg_type": "REG_SZ",
+                    "raw_value": "Franklin Gothic Medium"
+                  },
+                  "CommentTextFontStyle": {
+                    "reg_type": "REG_SZ",
+                    "raw_value": "Franklin Gothic Medium"
+                  },
+                  "ShowScrewTerminal": {
+                    "reg_type": "REG_DWORD",
+                    "raw_value": 1
+                  },
+                  "MaxVarIoName": {
+                    "reg_type": "REG_DWORD",
+                    "raw_value": 65535
+                  }
+                },
+                "subkeys": {}
+              },
+              "Dark": {
+                "path": "Software\\Horner_Electric\\Cscape\\Colors\\Dark",
+                "values": {
+                  "BackGroundColor": {
+                    "reg_type": "REG_DWORD",
+                    "raw_value": 5908766
+                  },
+                  "ColumnColor": {
+                    "reg_type": "REG_DWORD",
+                    "raw_value": 16777215
+                  },
+                  "FunctionBlockColor": {
+                    "reg_type": "REG_DWORD",
+                    "raw_value": 3866624
+                  },
+                  "FunctionBlockTextColor": {
+                    "reg_type": "REG_DWORD",
+                    "raw_value": 10551295
+                  },
+                  "GridColor": {
+                    "reg_type": "REG_DWORD",
+                    "raw_value": 16777215
+                  },
+                  "LabelColor": {
+                    "reg_type": "REG_DWORD",
+                    "raw_value": 12632256
+                  },
+                  "WiringColor": {
+                    "reg_type": "REG_DWORD",
+                    "raw_value": 12632256
+                  },
+                  "CommentFontTextColor": {
+                    "reg_type": "REG_DWORD",
+                    "raw_value": 10551295
+                  },
+                  "ColumnRowBackGroundColor": {
+                    "reg_type": "REG_DWORD",
+                    "raw_value": 3866624
+                  },
+                  "CommentTextFontSize": {
+                    "reg_type": "REG_DWORD",
+                    "raw_value": 14
+                  },
+                  "ColumnFontSize": {
+                    "reg_type": "REG_DWORD",
+                    "raw_value": 14
+                  },
+                  "FunctionBlockStyle": {
+                    "reg_type": "REG_SZ",
+                    "raw_value": "Rounded Rectangle"
+                  },
+                  "FunctionBlockTextSize": {
+                    "reg_type": "REG_DWORD",
+                    "raw_value": 14
+                  },
+                  "GridLineThickness": {
+                    "reg_type": "REG_DWORD",
+                    "raw_value": 1
+                  },
+                  "GridStyle": {
+                    "reg_type": "REG_SZ",
+                    "raw_value": "Dot"
+                  },
+                  "LabelFontSize": {
+                    "reg_type": "REG_DWORD",
+                    "raw_value": 14
+                  },
+                  "PowerBarThickness": {
+                    "reg_type": "REG_DWORD",
+                    "raw_value": 2
+                  },
+                  "WiringThickness": {
+                    "reg_type": "REG_DWORD",
+                    "raw_value": 2
+                  },
+                  "ColumnFontStyle": {
+                    "reg_type": "REG_SZ",
+                    "raw_value": "Franklin Gothic Medium"
+                  },
+                  "FunctionBlockFontStyle": {
+                    "reg_type": "REG_SZ",
+                    "raw_value": "Franklin Gothic Medium"
+                  },
+                  "LabelFontStyle": {
+                    "reg_type": "REG_SZ",
+                    "raw_value": "Franklin Gothic Medium"
+                  },
+                  "CommentTextFontStyle": {
+                    "reg_type": "REG_SZ",
+                    "raw_value": "Franklin Gothic Medium"
+                  },
+                  "ShowScrewTerminal": {
+                    "reg_type": "REG_DWORD",
+                    "raw_value": 1
+                  },
+                  "MaxVarIoName": {
+                    "reg_type": "REG_DWORD",
+                    "raw_value": 65535
+                  }
+                },
+                "subkeys": {}
+              },
+              "Light": {
+                "path": "Software\\Horner_Electric\\Cscape\\Colors\\Light",
+                "values": {
+                  "BackGroundColor": {
+                    "reg_type": "REG_DWORD",
+                    "raw_value": 16445670
+                  },
+                  "ColumnColor": {
+                    "reg_type": "REG_DWORD",
+                    "raw_value": 3866624
+                  },
+                  "FunctionBlockColor": {
+                    "reg_type": "REG_DWORD",
+                    "raw_value": 9554651
+                  },
+                  "FunctionBlockTextColor": {
+                    "reg_type": "REG_DWORD",
+                    "raw_value": 65535
+                  },
+                  "GridColor": {
+                    "reg_type": "REG_DWORD",
+                    "raw_value": 16777215
+                  },
+                  "LabelColor": {
+                    "reg_type": "REG_DWORD",
+                    "raw_value": 3866624
+                  },
+                  "WiringColor": {
+                    "reg_type": "REG_DWORD",
+                    "raw_value": 3866624
+                  },
+                  "ColumnRowBackGroundColor": {
+                    "reg_type": "REG_DWORD",
+                    "raw_value": 9554651
+                  },
+                  "CommentFontTextColor": {
+                    "reg_type": "REG_DWORD",
+                    "raw_value": 3866624
+                  },
+                  "CommentTextFontSize": {
+                    "reg_type": "REG_DWORD",
+                    "raw_value": 14
+                  },
+                  "ColumnFontSize": {
+                    "reg_type": "REG_DWORD",
+                    "raw_value": 14
+                  },
+                  "FunctionBlockStyle": {
+                    "reg_type": "REG_SZ",
+                    "raw_value": "Rounded Rectangle"
+                  },
+                  "FunctionBlockTextSize": {
+                    "reg_type": "REG_DWORD",
+                    "raw_value": 14
+                  },
+                  "GridLineThickness": {
+                    "reg_type": "REG_DWORD",
+                    "raw_value": 1
+                  },
+                  "GridStyle": {
+                    "reg_type": "REG_SZ",
+                    "raw_value": "Dot"
+                  },
+                  "LabelFontSize": {
+                    "reg_type": "REG_DWORD",
+                    "raw_value": 14
+                  },
+                  "PowerBarThickness": {
+                    "reg_type": "REG_DWORD",
+                    "raw_value": 1
+                  },
+                  "WiringThickness": {
+                    "reg_type": "REG_DWORD",
+                    "raw_value": 1
+                  },
+                  "ColumnFontStyle": {
+                    "reg_type": "REG_SZ",
+                    "raw_value": "Franklin Gothic Medium"
+                  },
+                  "FunctionBlockFontStyle": {
+                    "reg_type": "REG_SZ",
+                    "raw_value": "Franklin Gothic Medium"
+                  },
+                  "LabelFontStyle": {
+                    "reg_type": "REG_SZ",
+                    "raw_value": "Franklin Gothic Medium"
+                  },
+                  "CommentTextFontStyle": {
+                    "reg_type": "REG_SZ",
+                    "raw_value": "Franklin Gothic Medium"
+                  },
+                  "ShowScrewTerminal": {
+                    "reg_type": "REG_DWORD",
+                    "raw_value": 1
+                  },
+                  "MaxVarIoName": {
+                    "reg_type": "REG_DWORD",
+                    "raw_value": 65535
+                  }
+                },
+                "subkeys": {}
+              }
+            }
+          },
+          "Editor": {
+            "path": "Software\\Horner_Electric\\Cscape\\Editor",
+            "values": {
+              "AutoSave": {
+                "reg_type": "REG_DWORD",
+                "raw_value": 0
+              },
+              "AutoSaveMinutes": {
+                "reg_type": "REG_DWORD",
+                "raw_value": 3
+              },
+              "AllowBackup": {
+                "reg_type": "REG_DWORD",
+                "raw_value": 0
+              },
+              "HideQuickAccessToolbar": {
+                "reg_type": "REG_DWORD",
+                "raw_value": 0
+              },
+              "AllowBackupLevel": {
+                "reg_type": "REG_DWORD",
+                "raw_value": 1
+              },
+              "DirFromDoc": {
+                "reg_type": "REG_DWORD",
+                "raw_value": 1
+              },
+              "NewLookAndFeel": {
+                "reg_type": "REG_DWORD",
+                "raw_value": 1
+              },
+              "OpenLast": {
+                "reg_type": "REG_DWORD",
+                "raw_value": 0
+              },
+              "AllowUserToChooseProgram": {
+                "reg_type": "REG_DWORD",
+                "raw_value": 0
+              },
+              "SwitchBetweenPrograms": {
+                "reg_type": "REG_DWORD",
+                "raw_value": 1
+              },
+              "AllowUserProgramTypeCreate": {
+                "reg_type": "REG_DWORD",
+                "raw_value": 1
+              },
+              "ProgramTypeToCreate": {
+                "reg_type": "REG_DWORD",
+                "raw_value": 0
+              },
+              "AdvLdrToolbarButtonNames": {
+                "reg_type": "REG_DWORD",
+                "raw_value": 0
+              },
+              "IECEditorToolbarButtonNames": {
+                "reg_type": "REG_DWORD",
+                "raw_value": 0
+              },
+              "UpdateBaud": {
+                "reg_type": "REG_DWORD",
+                "raw_value": 57600
+              },
+              "kcar": {
+                "reg_type": "REG_DWORD",
+                "raw_value": 0
+              },
+              "WarnMaxBaud": {
+                "reg_type": "REG_DWORD",
+                "raw_value": 1
+              },
+              "WarnFirmwareCable": {
+                "reg_type": "REG_DWORD",
+                "raw_value": 1
+              },
+              "WarnIOStop": {
+                "reg_type": "REG_DWORD",
+                "raw_value": 1
+              },
+              "UseClassicToolbars": {
+                "reg_type": "REG_DWORD",
+                "raw_value": 0
+              },
+              "PopulateRegistersBasedOnIONames": {
+                "reg_type": "REG_DWORD",
+                "raw_value": 0
+              },
+              "DefaultDir": {
+                "reg_type": "REG_SZ",
+                "raw_value": ""
+              },
+              "PrgmTypeToCreateIsAddvLadderEditor": {
+                "reg_type": "REG_DWORD",
+                "raw_value": 1
+              },
+              "PrgmTypeToCreateIsIECTagEditor": {
+                "reg_type": "REG_DWORD",
+                "raw_value": 1
+              },
+              "PrgmTypeToCreateIsAddvLadderWithTagAddrEditor": {
+                "reg_type": "REG_DWORD",
+                "raw_value": 1
+              },
+              "PrgmTypeToCreateIsEnhancedIECDefaultEnable": {
+                "reg_type": "REG_DWORD",
+                "raw_value": 0
+              },
+              "IsVariableSelectionByUserGroup": {
+                "reg_type": "REG_DWORD",
+                "raw_value": 0
+              },
+              "AppFTL": {
+                "reg_type": "REG_DWORD",
+                "raw_value": 4278784000
+              },
+              "CreateBlankProgram": {
+                "reg_type": "REG_DWORD",
+                "raw_value": 1
+              },
+              "autoRegisterOnGraphicObject": {
+                "reg_type": "REG_DWORD",
+                "raw_value": 0
+              },
+              "AutoPropertiesOnSnap": {
+                "reg_type": "REG_DWORD",
+                "raw_value": 0
+              },
+              "AutoStartRungType": {
+                "reg_type": "REG_DWORD",
+                "raw_value": 0
+              },
+              "GridLines": {
+                "reg_type": "REG_DWORD",
+                "raw_value": 1
+              },
+              "Deselect": {
+                "reg_type": "REG_DWORD",
+                "raw_value": 0
+              },
+              "ExportSetpoint": {
+                "reg_type": "REG_DWORD",
+                "raw_value": 0
+              },
+              "AggressiveDebug": {
+                "reg_type": "REG_DWORD",
+                "raw_value": 1
+              },
+              "ShowNames": {
+                "reg_type": "REG_DWORD",
+                "raw_value": 1
+              },
+              "MultiCoil": {
+                "reg_type": "REG_DWORD",
+                "raw_value": 1
+              },
+              "Functionkeys": {
+                "reg_type": "REG_DWORD",
+                "raw_value": 1
+              },
+              "Check REAL/DINT": {
+                "reg_type": "REG_DWORD",
+                "raw_value": 1
+              },
+              "Timer Register": {
+                "reg_type": "REG_DWORD",
+                "raw_value": 1
+              },
+              "DintUint Register": {
+                "reg_type": "REG_DWORD",
+                "raw_value": 1
+              },
+              "OrBlocks": {
+                "reg_type": "REG_DWORD",
+                "raw_value": 0
+              },
+              "LadderNums": {
+                "reg_type": "REG_DWORD",
+                "raw_value": 3
+              },
+              "SearchWindowsLimit": {
+                "reg_type": "REG_DWORD",
+                "raw_value": 2
+              },
+              "SearchInAllLogicBlocks": {
+                "reg_type": "REG_DWORD",
+                "raw_value": 0
+              }
+            },
+            "subkeys": {}
+          },
+          "GrEdit": {
+            "path": "Software\\Horner_Electric\\Cscape\\GrEdit",
+            "values": {},
+            "subkeys": {
+              "Recent File List": {
+                "path": "Software\\Horner_Electric\\Cscape\\GrEdit\\Recent File List",
+                "values": {},
+                "subkeys": {}
+              },
+              "Settings": {
+                "path": "Software\\Horner_Electric\\Cscape\\GrEdit\\Settings",
+                "values": {},
+                "subkeys": {}
+              }
+            }
+          },
+          "HornerIDReg": {
+            "path": "Software\\Horner_Electric\\Cscape\\HornerIDReg",
+            "values": {
+              "HornerEnableRememberMyID": {
+                "reg_type": "REG_DWORD",
+                "raw_value": 1
+              },
+              "HornerID": {
+                "reg_type": "REG_SZ",
+                "raw_value": "armando@controlnautas.com"
+              },
+              "HornerIDRegisterLater": {
+                "reg_type": "REG_SZ",
+                "raw_value": ""
+              },
+              "HornerKeepMeLoggedIn": {
+                "reg_type": "REG_DWORD",
+                "raw_value": 1
+              },
+              "Password": {
+                "reg_type": "REG_SZ",
+                "raw_value": "ol/C7WerxGuKOCgr0Hlb7Q=="
+              },
+              "PCUniqueID": {
+                "reg_type": "REG_SZ",
+                "raw_value": "199257c1-3c1c-b3ce-6a22-d93eb3db8f19"
+              },
+              "StatisticFlag": {
+                "reg_type": "REG_DWORD",
+                "raw_value": 0
+              }
+            },
+            "subkeys": {
+              "Users": {
+                "path": "Software\\Horner_Electric\\Cscape\\HornerIDReg\\Users",
+                "values": {},
+                "subkeys": {
+                  "User1": {
+                    "path": "Software\\Horner_Electric\\Cscape\\HornerIDReg\\Users\\User1",
+                    "values": {
+                      "Password": {
+                        "reg_type": "REG_SZ",
+                        "raw_value": "ol/C7WerxGuKOCgr0Hlb7Q=="
+                      },
+                      "UserID": {
+                        "reg_type": "REG_SZ",
+                        "raw_value": "armando@controlnautas.com"
+                      }
+                    },
+                    "subkeys": {}
+                  },
+                  "User10": {
+                    "path": "Software\\Horner_Electric\\Cscape\\HornerIDReg\\Users\\User10",
+                    "values": {
+                      "Password": {
+                        "reg_type": "REG_SZ",
+                        "raw_value": ""
+                      },
+                      "UserID": {
+                        "reg_type": "REG_SZ",
+                        "raw_value": ""
+                      }
+                    },
+                    "subkeys": {}
+                  },
+                  "User2": {
+                    "path": "Software\\Horner_Electric\\Cscape\\HornerIDReg\\Users\\User2",
+                    "values": {
+                      "UserID": {
+                        "reg_type": "REG_SZ",
+                        "raw_value": ""
+                      },
+                      "Password": {
+                        "reg_type": "REG_SZ",
+                        "raw_value": ""
+                      }
+                    },
+                    "subkeys": {}
+                  },
+                  "User3": {
+                    "path": "Software\\Horner_Electric\\Cscape\\HornerIDReg\\Users\\User3",
+                    "values": {
+                      "UserID": {
+                        "reg_type": "REG_SZ",
+                        "raw_value": ""
+                      },
+                      "Password": {
+                        "reg_type": "REG_SZ",
+                        "raw_value": ""
+                      }
+                    },
+                    "subkeys": {}
+                  },
+                  "User4": {
+                    "path": "Software\\Horner_Electric\\Cscape\\HornerIDReg\\Users\\User4",
+                    "values": {
+                      "UserID": {
+                        "reg_type": "REG_SZ",
+                        "raw_value": ""
+                      },
+                      "Password": {
+                        "reg_type": "REG_SZ",
+                        "raw_value": ""
+                      }
+                    },
+                    "subkeys": {}
+                  },
+                  "User5": {
+                    "path": "Software\\Horner_Electric\\Cscape\\HornerIDReg\\Users\\User5",
+                    "values": {
+                      "Password": {
+                        "reg_type": "REG_SZ",
+                        "raw_value": ""
+                      },
+                      "UserID": {
+                        "reg_type": "REG_SZ",
+                        "raw_value": ""
+                      }
+                    },
+                    "subkeys": {}
+                  },
+                  "User6": {
+                    "path": "Software\\Horner_Electric\\Cscape\\HornerIDReg\\Users\\User6",
+                    "values": {
+                      "Password": {
+                        "reg_type": "REG_SZ",
+                        "raw_value": ""
+                      },
+                      "UserID": {
+                        "reg_type": "REG_SZ",
+                        "raw_value": ""
+                      }
+                    },
+                    "subkeys": {}
+                  },
+                  "User7": {
+                    "path": "Software\\Horner_Electric\\Cscape\\HornerIDReg\\Users\\User7",
+                    "values": {
+                      "Password": {
+                        "reg_type": "REG_SZ",
+                        "raw_value": ""
+                      },
+                      "UserID": {
+                        "reg_type": "REG_SZ",
+                        "raw_value": ""
+                      }
+                    },
+                    "subkeys": {}
+                  },
+                  "User8": {
+                    "path": "Software\\Horner_Electric\\Cscape\\HornerIDReg\\Users\\User8",
+                    "values": {
+                      "Password": {
+                        "reg_type": "REG_SZ",
+                        "raw_value": ""
+                      },
+                      "UserID": {
+                        "reg_type": "REG_SZ",
+                        "raw_value": ""
+                      }
+                    },
+                    "subkeys": {}
+                  },
+                  "User9": {
+                    "path": "Software\\Horner_Electric\\Cscape\\HornerIDReg\\Users\\User9",
+                    "values": {
+                      "Password": {
+                        "reg_type": "REG_SZ",
+                        "raw_value": ""
+                      },
+                      "UserID": {
+                        "reg_type": "REG_SZ",
+                        "raw_value": ""
+                      }
+                    },
+                    "subkeys": {}
+                  }
+                }
+              }
+            }
+          },
+          "HornerNodeLock": {
+            "path": "Software\\Horner_Electric\\Cscape\\HornerNodeLock",
+            "values": {
+              "NodeKey": {
+                "reg_type": "REG_DWORD",
+                "raw_value": 0
+              }
+            },
+            "subkeys": {}
+          },
+          "IECEditor": {
+            "path": "Software\\Horner_Electric\\Cscape\\IECEditor",
+            "values": {
+              "EnableDragDrop": {
+                "reg_type": "REG_DWORD",
+                "raw_value": 1
+              },
+              "UndoRedoStackSize": {
+                "reg_type": "REG_DWORD",
+                "raw_value": 16
+              },
+              "TabSize": {
+                "reg_type": "REG_DWORD",
+                "raw_value": 4
+              },
+              "SearchWindowsLimit": {
+                "reg_type": "REG_DWORD",
+                "raw_value": 2
+              },
+              "SearchInAllLogicBlocks": {
+                "reg_type": "REG_DWORD",
+                "raw_value": 0
+              },
+              "CopyBitmapToClipboard": {
+                "reg_type": "REG_DWORD",
+                "raw_value": 1
+              },
+              "QueryVarDeclaration": {
+                "reg_type": "REG_DWORD",
+                "raw_value": 1
+              },
+              "EnablePulseForElements": {
+                "reg_type": "REG_DWORD",
+                "raw_value": 1
+              },
+              "PromptForVariableName": {
+                "reg_type": "REG_DWORD",
+                "raw_value": 0
+              },
+              "RestoreFBDSelectionMode": {
+                "reg_type": "REG_DWORD",
+                "raw_value": 0
+              },
+              "defaultFBDVariableWidth": {
+                "reg_type": "REG_DWORD",
+                "raw_value": 8
+              },
+              "postVariableInsertAction": {
+                "reg_type": "REG_DWORD",
+                "raw_value": 0
+              },
+              "fbdVariableInfoType": {
+                "reg_type": "REG_DWORD",
+                "raw_value": 0
+              },
+              "editionTooltipsInfo": {
+                "reg_type": "REG_SZ",
+                "raw_value": "0"
+              },
+              "debugTooltipsInfo": {
+                "reg_type": "REG_SZ",
+                "raw_value": "0"
+              }
+            },
+            "subkeys": {}
+          },
+          "IO_CFG": {
+            "path": "Software\\Horner_Electric\\Cscape\\IO_CFG",
+            "values": {},
+            "subkeys": {
+              "settings": {
+                "path": "Software\\Horner_Electric\\Cscape\\IO_CFG\\settings",
+                "values": {},
+                "subkeys": {}
+              }
+            }
+          },
+          "Messaging": {
+            "path": "Software\\Horner_Electric\\Cscape\\Messaging",
+            "values": {},
+            "subkeys": {
+              "Settings": {
+                "path": "Software\\Horner_Electric\\Cscape\\Messaging\\Settings",
+                "values": {},
+                "subkeys": {}
+              }
+            }
+          },
+          "Modem": {
+            "path": "Software\\Horner_Electric\\Cscape\\Modem",
+            "values": {
+              "Init String": {
+                "reg_type": "REG_SZ",
+                "raw_value": "ATZ&D0&K0"
+              },
+              "Dial String": {
+                "reg_type": "REG_SZ",
+                "raw_value": "ATDT"
+              },
+              "Last Number": {
+                "reg_type": "REG_SZ",
+                "raw_value": ""
+              }
+            },
+            "subkeys": {}
+          },
+          "OcsModelDatabase": {
+            "path": "Software\\Horner_Electric\\Cscape\\OcsModelDatabase",
+            "values": {},
+            "subkeys": {
+              "Settings": {
+                "path": "Software\\Horner_Electric\\Cscape\\OcsModelDatabase\\Settings",
+                "values": {
+                  "AbbreviatedPartNumbers": {
+                    "reg_type": "REG_DWORD",
+                    "raw_value": 1
+                  }
+                },
+                "subkeys": {}
+              }
+            }
+          },
+          "Options": {
+            "path": "Software\\Horner_Electric\\Cscape\\Options",
+            "values": {},
+            "subkeys": {}
+          },
+          "Printing": {
+            "path": "Software\\Horner_Electric\\Cscape\\Printing",
+            "values": {
+              "LadderProg": {
+                "reg_type": "REG_DWORD",
+                "raw_value": 1
+              },
+              "LadderNum": {
+                "reg_type": "REG_DWORD",
+                "raw_value": 0
+              },
+              "LadderScale": {
+                "reg_type": "REG_DWORD",
+                "raw_value": 5
+              },
+              "LadderScaleV": {
+                "reg_type": "REG_DWORD",
+                "raw_value": 5
+              },
+              "TextScrn": {
+                "reg_type": "REG_DWORD",
+                "raw_value": 0
+              },
+              "Thumb": {
+                "reg_type": "REG_DWORD",
+                "raw_value": 0
+              },
+              "TextScrnNum": {
+                "reg_type": "REG_DWORD",
+                "raw_value": 0
+              },
+              "TextTables": {
+                "reg_type": "REG_DWORD",
+                "raw_value": 0
+              },
+              "TextTblsNum": {
+                "reg_type": "REG_DWORD",
+                "raw_value": 0
+              },
+              "NetworkMap": {
+                "reg_type": "REG_DWORD",
+                "raw_value": 0
+              },
+              "IoNames": {
+                "reg_type": "REG_DWORD",
+                "raw_value": 0
+              },
+              "IoUsed": {
+                "reg_type": "REG_DWORD",
+                "raw_value": 0
+              },
+              "FileSummary": {
+                "reg_type": "REG_DWORD",
+                "raw_value": 0
+              },
+              "IoConfig": {
+                "reg_type": "REG_DWORD",
+                "raw_value": 0
+              },
+              "SecurityInfo": {
+                "reg_type": "REG_DWORD",
+                "raw_value": 0
+              },
+              "SetPoints": {
+                "reg_type": "REG_DWORD",
+                "raw_value": 0
+              },
+              "RungStart": {
+                "reg_type": "REG_DWORD",
+                "raw_value": 1
+              },
+              "RungEnd": {
+                "reg_type": "REG_DWORD",
+                "raw_value": 1
+              },
+              "TSrcnStart": {
+                "reg_type": "REG_DWORD",
+                "raw_value": 1
+              },
+              "TScrnEnd": {
+                "reg_type": "REG_DWORD",
+                "raw_value": 1
+              },
+              "TTblsStart": {
+                "reg_type": "REG_DWORD",
+                "raw_value": 1
+              },
+              "TTblsEnd": {
+                "reg_type": "REG_DWORD",
+                "raw_value": 1
+              }
+            },
+            "subkeys": {
+              "IECEditors": {
+                "path": "Software\\Horner_Electric\\Cscape\\Printing\\IECEditors",
+                "values": {
+                  "AllowLogicModuleSelection": {
+                    "reg_type": "REG_DWORD",
+                    "raw_value": 1
+                  },
+                  "PrintProgramLogicInformation": {
+                    "reg_type": "REG_DWORD",
+                    "raw_value": 1
+                  },
+                  "PrintIECProgramLogicModuleInfo": {
+                    "reg_type": "REG_DWORD",
+                    "raw_value": 1
+                  },
+                  "PrintScreenThumbnails": {
+                    "reg_type": "REG_DWORD",
+                    "raw_value": 0
+                  },
+                  "PrintTextScreens": {
+                    "reg_type": "REG_DWORD",
+                    "raw_value": 0
+                  },
+                  "PrintSelectedTextScreens": {
+                    "reg_type": "REG_DWORD",
+                    "raw_value": 0
+                  },
+                  "PrintTextTables": {
+                    "reg_type": "REG_DWORD",
+                    "raw_value": 0
+                  },
+                  "PrintSelectedTextTables": {
+                    "reg_type": "REG_DWORD",
+                    "raw_value": 0
+                  },
+                  "PrintScreenStartValue": {
+                    "reg_type": "REG_DWORD",
+                    "raw_value": 1
+                  },
+                  "PrintScreenEndValue": {
+                    "reg_type": "REG_DWORD",
+                    "raw_value": 1
+                  },
+                  "PrintStartTextTableValue": {
+                    "reg_type": "REG_DWORD",
+                    "raw_value": 1
+                  },
+                  "PrintEndTextTableValue": {
+                    "reg_type": "REG_DWORD",
+                    "raw_value": 1
+                  },
+                  "Configuration": {
+                    "reg_type": "REG_DWORD",
+                    "raw_value": 0
+                  },
+                  "FileSummary": {
+                    "reg_type": "REG_DWORD",
+                    "raw_value": 0
+                  },
+                  "NetworkMapping": {
+                    "reg_type": "REG_DWORD",
+                    "raw_value": 0
+                  },
+                  "SecuritySettings": {
+                    "reg_type": "REG_DWORD",
+                    "raw_value": 0
+                  },
+                  "GlobalDefines": {
+                    "reg_type": "REG_DWORD",
+                    "raw_value": 0
+                  },
+                  "LibraryDefines": {
+                    "reg_type": "REG_DWORD",
+                    "raw_value": 0
+                  },
+                  "LogicModuleDefines": {
+                    "reg_type": "REG_DWORD",
+                    "raw_value": 0
+                  },
+                  "GlobalVariables": {
+                    "reg_type": "REG_DWORD",
+                    "raw_value": 1
+                  },
+                  "RetainVariables": {
+                    "reg_type": "REG_DWORD",
+                    "raw_value": 1
+                  },
+                  "LogicModuleVariables": {
+                    "reg_type": "REG_DWORD",
+                    "raw_value": 1
+                  },
+                  "SFCModuleSecondaryEditors": {
+                    "reg_type": "REG_DWORD",
+                    "raw_value": 0
+                  },
+                  "VariableName": {
+                    "reg_type": "REG_DWORD",
+                    "raw_value": 1
+                  },
+                  "VariableType": {
+                    "reg_type": "REG_DWORD",
+                    "raw_value": 1
+                  },
+                  "VariableDimension": {
+                    "reg_type": "REG_DWORD",
+                    "raw_value": 0
+                  },
+                  "VariableInitialValue": {
+                    "reg_type": "REG_DWORD",
+                    "raw_value": 0
+                  },
+                  "VariableTag": {
+                    "reg_type": "REG_DWORD",
+                    "raw_value": 0
+                  },
+                  "VariableDescription": {
+                    "reg_type": "REG_DWORD",
+                    "raw_value": 0
+                  }
+                },
+                "subkeys": {}
+              }
+            }
+          },
+          "ProgramVariables": {
+            "path": "Software\\Horner_Electric\\Cscape\\ProgramVariables",
+            "values": {
+              "TotalVisibleColumn": {
+                "reg_type": "REG_DWORD",
+                "raw_value": 8
+              },
+              "ColumnName": {
+                "reg_type": "REG_SZ",
+                "raw_value": "Name#@#Type#@#Dim.#@#Attrib.#@#Init value#@#User Group#@#Mapping#@#Description"
+              },
+              "Width": {
+                "reg_type": "REG_SZ",
+                "raw_value": "100,80,40,75,60,50,50,500"
+              }
+            },
+            "subkeys": {}
+          },
+          "Recent File List": {
+            "path": "Software\\Horner_Electric\\Cscape\\Recent File List",
+            "values": {},
+            "subkeys": {}
+          },
+          "Settings": {
+            "path": "Software\\Horner_Electric\\Cscape\\Settings",
+            "values": {},
+            "subkeys": {
+              "Bars": {
+                "path": "Software\\Horner_Electric\\Cscape\\Settings\\Bars",
+                "values": {},
+                "subkeys": {
+                  "Toolbar State-Bar15": {
+                    "path": "Software\\Horner_Electric\\Cscape\\Settings\\Bars\\Toolbar State-Bar15",
+                    "values": {},
+                    "subkeys": {}
+                  }
+                }
+              }
+            }
+          },
+          "Setup": {
+            "path": "Software\\Horner_Electric\\Cscape\\Setup",
+            "values": {
+              "CscapeExitedCorrectly": {
+                "reg_type": "REG_DWORD",
+                "raw_value": 0
+              },
+              "Show LEDs": {
+                "reg_type": "REG_DWORD",
+                "raw_value": 0
+              },
+              "Connection": {
+                "reg_type": "REG_SZ",
+                "raw_value": "Name:Default\r\n COM1:\r\n MaxBaud:57600\r\nTimeout:1000"
+              },
+              "F1 Label": {
+                "reg_type": "REG_SZ",
+                "raw_value": "F1"
+              },
+              "F2 Label": {
+                "reg_type": "REG_SZ",
+                "raw_value": "F2"
+              },
+              "F3 Label": {
+                "reg_type": "REG_SZ",
+                "raw_value": "F3"
+              },
+              "F4 Label": {
+                "reg_type": "REG_SZ",
+                "raw_value": "F4"
+              },
+              "F5 Label": {
+                "reg_type": "REG_SZ",
+                "raw_value": "F5"
+              },
+              "F6 Label": {
+                "reg_type": "REG_SZ",
+                "raw_value": "F6"
+              },
+              "F7 Label": {
+                "reg_type": "REG_SZ",
+                "raw_value": "F7"
+              },
+              "F8 Label": {
+                "reg_type": "REG_SZ",
+                "raw_value": "F8"
+              },
+              "F9 Label": {
+                "reg_type": "REG_SZ",
+                "raw_value": "F9"
+              },
+              "F10 Label": {
+                "reg_type": "REG_SZ",
+                "raw_value": "F10"
+              }
+            },
+            "subkeys": {}
+          },
+          "Workspace": {
+            "path": "Software\\Horner_Electric\\Cscape\\Workspace",
+            "values": {},
+            "subkeys": {
+              "BasePane-320": {
+                "path": "Software\\Horner_Electric\\Cscape\\Workspace\\BasePane-320",
+                "values": {
+                  "IsVisible": {
+                    "reg_type": "REG_DWORD",
+                    "raw_value": 0
+                  }
+                },
+                "subkeys": {}
+              },
+              "BasePane-37567": {
+                "path": "Software\\Horner_Electric\\Cscape\\Workspace\\BasePane-37567",
+                "values": {
+                  "IsVisible": {
+                    "reg_type": "REG_DWORD",
+                    "raw_value": 1
+                  }
+                },
+                "subkeys": {}
+              },
+              "BasePane-38030": {
+                "path": "Software\\Horner_Electric\\Cscape\\Workspace\\BasePane-38030",
+                "values": {
+                  "IsVisible": {
+                    "reg_type": "REG_DWORD",
+                    "raw_value": 0
+                  }
+                },
+                "subkeys": {}
+              },
+              "BasePane-38053": {
+                "path": "Software\\Horner_Electric\\Cscape\\Workspace\\BasePane-38053",
+                "values": {
+                  "IsVisible": {
+                    "reg_type": "REG_DWORD",
+                    "raw_value": 0
+                  }
+                },
+                "subkeys": {}
+              },
+              "BasePane-38343": {
+                "path": "Software\\Horner_Electric\\Cscape\\Workspace\\BasePane-38343",
+                "values": {
+                  "IsVisible": {
+                    "reg_type": "REG_DWORD",
+                    "raw_value": 0
+                  }
+                },
+                "subkeys": {}
+              },
+              "BasePane-38579": {
+                "path": "Software\\Horner_Electric\\Cscape\\Workspace\\BasePane-38579",
+                "values": {
+                  "IsVisible": {
+                    "reg_type": "REG_DWORD",
+                    "raw_value": 0
+                  }
+                },
+                "subkeys": {}
+              },
+              "BasePane-45011": {
+                "path": "Software\\Horner_Electric\\Cscape\\Workspace\\BasePane-45011",
+                "values": {
+                  "IsVisible": {
+                    "reg_type": "REG_DWORD",
+                    "raw_value": 0
+                  }
+                },
+                "subkeys": {}
+              },
+              "BasePane-45012": {
+                "path": "Software\\Horner_Electric\\Cscape\\Workspace\\BasePane-45012",
+                "values": {
+                  "IsVisible": {
+                    "reg_type": "REG_DWORD",
+                    "raw_value": 1
+                  }
+                },
+                "subkeys": {}
+              },
+              "BasePane-59393": {
+                "path": "Software\\Horner_Electric\\Cscape\\Workspace\\BasePane-59393",
+                "values": {
+                  "IsVisible": {
+                    "reg_type": "REG_DWORD",
+                    "raw_value": 1
+                  }
+                },
+                "subkeys": {}
+              },
+              "BasePane-59398": {
+                "path": "Software\\Horner_Electric\\Cscape\\Workspace\\BasePane-59398",
+                "values": {
+                  "IsVisible": {
+                    "reg_type": "REG_DWORD",
+                    "raw_value": 1
+                  }
+                },
+                "subkeys": {}
+              },
+              "CommandManager": {
+                "path": "Software\\Horner_Electric\\Cscape\\Workspace\\CommandManager",
+                "values": {
+                  "CommandsWithoutImages": {
+                    "reg_type": "REG_BINARY",
+                    "raw_value": {
+                      "type": "bytes_utf8",
+                      "text": "\u0000\u0000",
+                      "hex": "0000",
+                      "len": 2
+                    }
+                  },
+                  "MenuUserImages": {
+                    "reg_type": "REG_BINARY",
+                    "raw_value": {
+                      "type": "bytes_utf8",
+                      "text": "\u0000\u0000",
+                      "hex": "0000",
+                      "len": 2
+                    }
+                  }
+                },
+                "subkeys": {}
+              },
+              "ControlBars-Summary": {
+                "path": "Software\\Horner_Electric\\Cscape\\Workspace\\ControlBars-Summary",
+                "values": {
+                  "Bars": {
+                    "reg_type": "REG_DWORD",
+                    "raw_value": 0
+                  },
+                  "ScreenCX": {
+                    "reg_type": "REG_DWORD",
+                    "raw_value": 1280
+                  },
+                  "ScreenCY": {
+                    "reg_type": "REG_DWORD",
+                    "raw_value": 760
+                  }
+                },
+                "subkeys": {}
+              },
+              "ControlBarVersion": {
+                "path": "Software\\Horner_Electric\\Cscape\\Workspace\\ControlBarVersion",
+                "values": {
+                  "Major": {
+                    "reg_type": "REG_DWORD",
+                    "raw_value": 4
+                  },
+                  "Minor": {
+                    "reg_type": "REG_DWORD",
+                    "raw_value": 0
+                  }
+                },
+                "subkeys": {}
+              },
+              "DockingManager-2": {
+                "path": "Software\\Horner_Electric\\Cscape\\Workspace\\DockingManager-2",
+                "values": {
+                  "DockingPaneAndPaneDividers": {
+                    "reg_type": "REG_BINARY",
+                    "raw_value": {
+                      "type": "bytes_utf16",
+                      "text": "\u0000\u0000\u0010\u0000\u0000\u0000耀\u0000\u0000\u0000￿￿￿￿\u0000\u0000\u0000\u0000\u0004\u0000\u0004\u0000\u0000\u0000\u0001\u0000\u0004\u0000\u0001\u0000\u0000\u0000\u0000\u0000隳\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0001\u0000隳\u0000\u0001\u0000隳\u0000\u0000\u0000耀\u0000\u0000\u0000￿￿￿￿\u0000\u0000\u0000\u0000\u0004\u0000\u0004\u0000\u0000\u0000\u0001\u0000\u0004\u0000\u0001\u0000\u0000\u0000\u0000\u0000꿓\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0001\u0000꿓\u0000\u0001\u0000꿓\u0000\u0000\u0000က\u0000\u0000\u0000￿￿￿￿\u0000\u0000\u0000\u0000\u0004\u0000\u0004\u0000\u0000\u0000\u0002\u0000\u0004\u0000\u0001\u0000\u0000\u0000\u0000\u0000闇\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0001\u0000闇\u0000\u0001\u0000闇\u0000\u0000\u0000က\u0000\u0000\u0000￿￿￿￿\u0000\u0000\u0000\u0000\u0004\u0000\u0004\u0000\u0000\u0000\u0002\u0000\u0004\u0000\u0001\u0000\u0000\u0000\u0000\u0000钎\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0001\u0000钎\u0000\u0001\u0000钎\u0000\u0000\u0000耀\u0000\u0000\u0000￿￿￿￿\u0000\u0000\u0000\u0000\u0004\u0000\u0004\u0000\u0000\u0000\u0001\u0000\u0004\u0000\u0001\u0000\u0000\u0000\u0000\u0000ŀ\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0001\u0000ŀ\u0000\u0001\u0000ŀ\u0000\u0000\u0000က\u0000\u0000\u0000￿￿￿￿\u0000\u0000\u0000\u0000\u0004\u0000\u0004\u0000\u0000\u0000\u0002\u0000\u0004\u0000\u0001\u0000\u0000\u0000\u0000\u0000钥\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0001\u0000钥\u0000\u0001\u0000钥\u0000\u0000\u0000က\u0000\u0001\u0000￿￿￿￿Ɣ\u0000\u0000Ƙ\u0000Ǧ\u0000\u0001\u0000\u0002က\u0004\u0000\u0001\u0000\u0000\u0000\u0000\u0000銿\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0001\u0000銿\u0000\u0001\u0000銿\u0000\u0000\u0000က\u0000\u0001\u0000￿￿￿￿È\u0000\u0000Ì\u0000Ǧ\u0000\u0001\u0000\u0002က\u0004\u0000\u0001\u0000\u0000\u0000\u0000\u0000꿔\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0001\u0000꿔\u0000\u0001\u0000꿔\u0000\u0000\u0000\u0000\u0000\u0000\u0000",
+                      "hex": "0000000010000000000000000080000000000000ffffffffffffffff00000000000000000400000004000000000000000100000004000000010000000000000000000000b39600000000000000000000000000000000000001000000b396000001000000b3960000000000000080000000000000ffffffffffffffff00000000000000000400000004000000000000000100000004000000010000000000000000000000d3af00000000000000000000000000000000000001000000d3af000001000000d3af0000000000000010000000000000ffffffffffffffff00000000000000000400000004000000000000000200000004000000010000000000000000000000c79500000000000000000000000000000000000001000000c795000001000000c7950000000000000010000000000000ffffffffffffffff000000000000000004000000040000000000000002000000040000000100000000000000000000008e94000000000000000000000000000000000000010000008e940000010000008e940000000000000080000000000000ffffffffffffffff00000000000000000400000004000000000000000100000004000000010000000000000000000000400100000000000000000000000000000000000001000000400100000100000040010000000000000010000000000000ffffffffffffffff00000000000000000400000004000000000000000200000004000000010000000000000000000000a59400000000000000000000000000000000000001000000a594000001000000a5940000000000000010000001000000ffffffffffffffff940100009000000098010000e6010000010000000200001004000000010000000000000000000000bf9200000000000000000000000000000000000001000000bf92000001000000bf920000000000000010000001000000ffffffffffffffffc800000090000000cc000000e6010000010000000200001004000000010000000000000000000000d4af00000000000000000000000000000000000001000000d4af000001000000d4af0000000000000000000000000000",
+                      "len": 788
+                    }
+                  }
+                },
+                "subkeys": {}
+              },
+              "Keyboard-0": {
+                "path": "Software\\Horner_Electric\\Cscape\\Workspace\\Keyboard-0",
+                "values": {
+                  "Accelerators": {
+                    "reg_type": "REG_BINARY",
+                    "raw_value": {
+                      "type": "bytes_utf16",
+                      "text": "\u0003sϭ\u0003tϮ\u0007p\u0013A镽\u0013C膳\u001bD聆\u0003.\u000bC\u000b-\u000bX\u000bX\u000bF\u000bG職\u000bV\u0007-\u000bY\u000bH\u000bA\u0013\b\u000bZ\u001bE臅\u001bI膅\u000bN\u000bO\u000bP\u000bS\u0013O陗\u0013NṸ\u0003p\u001bB闃\u0003rϩ\u0003u\u0003xϪ\u0003qϨ\u0007¿腫\u0007N腯\u0007 腪\u0007P腮\u0007R腭\u0007S腬\u0013W肌\u000bD耻\u0013I聄\u0013R聅\u000bU耼\u0007u\u0013S阯\u001bO耿\u001bC镛\u000bE耺\u0013Q臈\u001bR閹\u0003\u001bp\u001bS膵\u000bT陭\u0013V钥\u0003#腛\u0003$腜",
+                      "hex": "03007300ed0303007400ee030700700045e1130041007d9513004300b3811b004400468003002e0020e10b00430022e10b002d0022e10b00580023e10b00580023e10b00460024e10b00470077800b00560025e107002d0025e10b0059002ce10b00480029e10b0041002ae1130008002be10b005a002be11b004500c5811b00490085810b004e0000e10b004f0001e10b00500007e10b00530003e113004f00579613004e00781e0300700046e11b004200c39503007200e9030300750050e103007800ea0303007100e8030700bf006b8107004e006f81070020006a81070050006e81070052006d81070053006c81130057008c800b0044003b801300490044801300520045800b0055003c800700750051e1130053002f961b004f003f801b0043005b950b0045003a8013005100c8811b005200b99503001b0070001b005300b5810b0054006d9613005600a594030023005b81030024005c81",
+                      "len": 348
+                    }
+                  }
+                },
+                "subkeys": {}
+              },
+              "MFCRibbonBar-59398": {
+                "path": "Software\\Horner_Electric\\Cscape\\Workspace\\MFCRibbonBar-59398",
+                "values": {
+                  "QuickAccessToolbarOnTop": {
+                    "reg_type": "REG_DWORD",
+                    "raw_value": 1
+                  },
+                  "QuickAccessToolbarCommands": {
+                    "reg_type": "REG_BINARY",
+                    "raw_value": {
+                      "type": "bytes_utf16",
+                      "text": "\u0010\u0000膳\u0000镽\u0000ࡀ\u0000聒\u0000聅\u0000聇\u0000聄\u0000耼\u0000耻\u0000聆\u0000耺\u0000肌\u0000\u0000脄\u0000脅\u0000",
+                      "hex": "100003e10000b38100007d95000040080000528000004580000047800000448000003c8000003b800000468000003a8000008c80000024e100000481000005810000",
+                      "len": 66
+                    }
+                  },
+                  "IsMinimized": {
+                    "reg_type": "REG_DWORD",
+                    "raw_value": 0
+                  }
+                },
+                "subkeys": {}
+              },
+              "MFCToolBarParameters": {
+                "path": "Software\\Horner_Electric\\Cscape\\Workspace\\MFCToolBarParameters",
+                "values": {
+                  "Tooltips": {
+                    "reg_type": "REG_DWORD",
+                    "raw_value": 1
+                  },
+                  "ShortcutKeys": {
+                    "reg_type": "REG_DWORD",
+                    "raw_value": 1
+                  },
+                  "LargeIcons": {
+                    "reg_type": "REG_DWORD",
+                    "raw_value": 0
+                  },
+                  "MenuAnimation": {
+                    "reg_type": "REG_DWORD",
+                    "raw_value": 0
+                  },
+                  "RecentlyUsedMenus": {
+                    "reg_type": "REG_DWORD",
+                    "raw_value": 1
+                  },
+                  "MenuShadows": {
+                    "reg_type": "REG_DWORD",
+                    "raw_value": 1
+                  },
+                  "ShowAllMenusAfterDelay": {
+                    "reg_type": "REG_DWORD",
+                    "raw_value": 1
+                  },
+                  "CommandsUsage": {
+                    "reg_type": "REG_BINARY",
+                    "raw_value": {
+                      "type": "bytes_utf8",
+                      "text": "\u0000\u0000\u0000\u0000\u0000\u0000",
+                      "hex": "000000000000",
+                      "len": 6
+                    }
+                  }
+                },
+                "subkeys": {}
+              },
+              "Pane-320": {
+                "path": "Software\\Horner_Electric\\Cscape\\Workspace\\Pane-320",
+                "values": {
+                  "ID": {
+                    "reg_type": "REG_DWORD",
+                    "raw_value": 320
+                  },
+                  "RectRecentFloat": {
+                    "reg_type": "REG_BINARY",
+                    "raw_value": {
+                      "type": "bytes_utf16",
+                      "text": "\"\u0000\u001a\u0000ê\u0000â\u0000",
+                      "hex": "220000001a000000ea000000e2000000",
+                      "len": 16
+                    }
+                  },
+                  "RectRecentDocked": {
+                    "reg_type": "REG_BINARY",
+                    "raw_value": {
+                      "type": "bytes_utf16",
+                      "text": "\u0000\u0000\u0000\u0000È\u0000«\u0000",
+                      "hex": "0000000000000000c8000000ab000000",
+                      "len": 16
+                    }
+                  },
+                  "RecentFrameAlignment": {
+                    "reg_type": "REG_DWORD",
+                    "raw_value": 32768
+                  },
+                  "RecentRowIndex": {
+                    "reg_type": "REG_DWORD",
+                    "raw_value": 0
+                  },
+                  "IsFloating": {
+                    "reg_type": "REG_DWORD",
+                    "raw_value": 0
+                  },
+                  "MRUWidth": {
+                    "reg_type": "REG_DWORD",
+                    "raw_value": 32767
+                  },
+                  "PinState": {
+                    "reg_type": "REG_DWORD",
+                    "raw_value": 0
+                  }
+                },
+                "subkeys": {}
+              },
+              "Pane-37567": {
+                "path": "Software\\Horner_Electric\\Cscape\\Workspace\\Pane-37567",
+                "values": {
+                  "ID": {
+                    "reg_type": "REG_DWORD",
+                    "raw_value": 37567
+                  },
+                  "RectRecentFloat": {
+                    "reg_type": "REG_BINARY",
+                    "raw_value": {
+                      "type": "bytes_utf16",
+                      "text": "\"\u0000\u001a\u0000ê\u0000â\u0000",
+                      "hex": "220000001a000000ea000000e2000000",
+                      "len": 16
+                    }
+                  },
+                  "RectRecentDocked": {
+                    "reg_type": "REG_BINARY",
+                    "raw_value": {
+                      "type": "bytes_utf16",
+                      "text": "Ì\u0000\u0000Ɣ\u0000Ǧ\u0000",
+                      "hex": "cc0000009000000094010000e6010000",
+                      "len": 16
+                    }
+                  },
+                  "RecentFrameAlignment": {
+                    "reg_type": "REG_DWORD",
+                    "raw_value": 4096
+                  },
+                  "RecentRowIndex": {
+                    "reg_type": "REG_DWORD",
+                    "raw_value": 0
+                  },
+                  "IsFloating": {
+                    "reg_type": "REG_DWORD",
+                    "raw_value": 0
+                  },
+                  "MRUWidth": {
+                    "reg_type": "REG_DWORD",
+                    "raw_value": 32767
+                  },
+                  "PinState": {
+                    "reg_type": "REG_DWORD",
+                    "raw_value": 0
+                  }
+                },
+                "subkeys": {}
+              },
+              "Pane-38030": {
+                "path": "Software\\Horner_Electric\\Cscape\\Workspace\\Pane-38030",
+                "values": {
+                  "ID": {
+                    "reg_type": "REG_DWORD",
+                    "raw_value": 38030
+                  },
+                  "RectRecentFloat": {
+                    "reg_type": "REG_BINARY",
+                    "raw_value": {
+                      "type": "bytes_utf16",
+                      "text": "\"\u0000\u001a\u0000ê\u0000â\u0000",
+                      "hex": "220000001a000000ea000000e2000000",
+                      "len": 16
+                    }
+                  },
+                  "RectRecentDocked": {
+                    "reg_type": "REG_BINARY",
+                    "raw_value": {
+                      "type": "bytes_utf16",
+                      "text": "\u0000\u0000\u0000\u0000È\u0000È\u0000",
+                      "hex": "0000000000000000c8000000c8000000",
+                      "len": 16
+                    }
+                  },
+                  "RecentFrameAlignment": {
+                    "reg_type": "REG_DWORD",
+                    "raw_value": 4096
+                  },
+                  "RecentRowIndex": {
+                    "reg_type": "REG_DWORD",
+                    "raw_value": 0
+                  },
+                  "IsFloating": {
+                    "reg_type": "REG_DWORD",
+                    "raw_value": 0
+                  },
+                  "MRUWidth": {
+                    "reg_type": "REG_DWORD",
+                    "raw_value": 32767
+                  },
+                  "PinState": {
+                    "reg_type": "REG_DWORD",
+                    "raw_value": 0
+                  }
+                },
+                "subkeys": {}
+              },
+              "Pane-38053": {
+                "path": "Software\\Horner_Electric\\Cscape\\Workspace\\Pane-38053",
+                "values": {
+                  "ID": {
+                    "reg_type": "REG_DWORD",
+                    "raw_value": 38053
+                  },
+                  "RectRecentFloat": {
+                    "reg_type": "REG_BINARY",
+                    "raw_value": {
+                      "type": "bytes_utf16",
+                      "text": "\"\u0000\u001a\u0000ê\u0000â\u0000",
+                      "hex": "220000001a000000ea000000e2000000",
+                      "len": 16
+                    }
+                  },
+                  "RectRecentDocked": {
+                    "reg_type": "REG_BINARY",
+                    "raw_value": {
+                      "type": "bytes_utf16",
+                      "text": "\u0000\u0000\u0000\u0000È\u0000È\u0000",
+                      "hex": "0000000000000000c8000000c8000000",
+                      "len": 16
+                    }
+                  },
+                  "RecentFrameAlignment": {
+                    "reg_type": "REG_DWORD",
+                    "raw_value": 4096
+                  },
+                  "RecentRowIndex": {
+                    "reg_type": "REG_DWORD",
+                    "raw_value": 0
+                  },
+                  "IsFloating": {
+                    "reg_type": "REG_DWORD",
+                    "raw_value": 0
+                  },
+                  "MRUWidth": {
+                    "reg_type": "REG_DWORD",
+                    "raw_value": 32767
+                  },
+                  "PinState": {
+                    "reg_type": "REG_DWORD",
+                    "raw_value": 0
+                  }
+                },
+                "subkeys": {}
+              },
+              "Pane-38343": {
+                "path": "Software\\Horner_Electric\\Cscape\\Workspace\\Pane-38343",
+                "values": {
+                  "ID": {
+                    "reg_type": "REG_DWORD",
+                    "raw_value": 38343
+                  },
+                  "RectRecentFloat": {
+                    "reg_type": "REG_BINARY",
+                    "raw_value": {
+                      "type": "bytes_utf16",
+                      "text": "\"\u0000\u001a\u0000ê\u0000â\u0000",
+                      "hex": "220000001a000000ea000000e2000000",
+                      "len": 16
+                    }
+                  },
+                  "RectRecentDocked": {
+                    "reg_type": "REG_BINARY",
+                    "raw_value": {
+                      "type": "bytes_utf16",
+                      "text": "\u0000\u0000\u0000\u0000È\u0000È\u0000",
+                      "hex": "0000000000000000c8000000c8000000",
+                      "len": 16
+                    }
+                  },
+                  "RecentFrameAlignment": {
+                    "reg_type": "REG_DWORD",
+                    "raw_value": 4096
+                  },
+                  "RecentRowIndex": {
+                    "reg_type": "REG_DWORD",
+                    "raw_value": 0
+                  },
+                  "IsFloating": {
+                    "reg_type": "REG_DWORD",
+                    "raw_value": 0
+                  },
+                  "MRUWidth": {
+                    "reg_type": "REG_DWORD",
+                    "raw_value": 32767
+                  },
+                  "PinState": {
+                    "reg_type": "REG_DWORD",
+                    "raw_value": 0
+                  }
+                },
+                "subkeys": {}
+              },
+              "Pane-38579": {
+                "path": "Software\\Horner_Electric\\Cscape\\Workspace\\Pane-38579",
+                "values": {
+                  "ID": {
+                    "reg_type": "REG_DWORD",
+                    "raw_value": 38579
+                  },
+                  "RectRecentFloat": {
+                    "reg_type": "REG_BINARY",
+                    "raw_value": {
+                      "type": "bytes_utf16",
+                      "text": "\"\u0000\u001a\u0000ê\u0000ņ\u0000",
+                      "hex": "220000001a000000ea00000046010000",
+                      "len": 16
+                    }
+                  },
+                  "RectRecentDocked": {
+                    "reg_type": "REG_BINARY",
+                    "raw_value": {
+                      "type": "bytes_utf16",
+                      "text": "\u0000\u0000\u0000\u0000È\u0000«\u0000",
+                      "hex": "0000000000000000c8000000ab000000",
+                      "len": 16
+                    }
+                  },
+                  "RecentFrameAlignment": {
+                    "reg_type": "REG_DWORD",
+                    "raw_value": 32768
+                  },
+                  "RecentRowIndex": {
+                    "reg_type": "REG_DWORD",
+                    "raw_value": 0
+                  },
+                  "IsFloating": {
+                    "reg_type": "REG_DWORD",
+                    "raw_value": 0
+                  },
+                  "MRUWidth": {
+                    "reg_type": "REG_DWORD",
+                    "raw_value": 32767
+                  },
+                  "PinState": {
+                    "reg_type": "REG_DWORD",
+                    "raw_value": 0
+                  }
+                },
+                "subkeys": {}
+              },
+              "Pane-45011": {
+                "path": "Software\\Horner_Electric\\Cscape\\Workspace\\Pane-45011",
+                "values": {
+                  "ID": {
+                    "reg_type": "REG_DWORD",
+                    "raw_value": 45011
+                  },
+                  "RectRecentFloat": {
+                    "reg_type": "REG_BINARY",
+                    "raw_value": {
+                      "type": "bytes_utf16",
+                      "text": "\"\u0000\u001a\u0000ê\u0000â\u0000",
+                      "hex": "220000001a000000ea000000e2000000",
+                      "len": 16
+                    }
+                  },
+                  "RectRecentDocked": {
+                    "reg_type": "REG_BINARY",
+                    "raw_value": {
+                      "type": "bytes_utf16",
+                      "text": "\u0000\u0000\u0000\u0000È\u0000«\u0000",
+                      "hex": "0000000000000000c8000000ab000000",
+                      "len": 16
+                    }
+                  },
+                  "RecentFrameAlignment": {
+                    "reg_type": "REG_DWORD",
+                    "raw_value": 32768
+                  },
+                  "RecentRowIndex": {
+                    "reg_type": "REG_DWORD",
+                    "raw_value": 0
+                  },
+                  "IsFloating": {
+                    "reg_type": "REG_DWORD",
+                    "raw_value": 0
+                  },
+                  "MRUWidth": {
+                    "reg_type": "REG_DWORD",
+                    "raw_value": 32767
+                  },
+                  "PinState": {
+                    "reg_type": "REG_DWORD",
+                    "raw_value": 0
+                  }
+                },
+                "subkeys": {}
+              },
+              "Pane-45012": {
+                "path": "Software\\Horner_Electric\\Cscape\\Workspace\\Pane-45012",
+                "values": {
+                  "ID": {
+                    "reg_type": "REG_DWORD",
+                    "raw_value": 45012
+                  },
+                  "RectRecentFloat": {
+                    "reg_type": "REG_BINARY",
+                    "raw_value": {
+                      "type": "bytes_utf16",
+                      "text": "\"\u0000\u001a\u0000ê\u0000â\u0000",
+                      "hex": "220000001a000000ea000000e2000000",
+                      "len": 16
+                    }
+                  },
+                  "RectRecentDocked": {
+                    "reg_type": "REG_BINARY",
+                    "raw_value": {
+                      "type": "bytes_utf16",
+                      "text": "\u0000\u0000\u0000È\u0000Ǧ\u0000",
+                      "hex": "0000000090000000c8000000e6010000",
+                      "len": 16
+                    }
+                  },
+                  "RecentFrameAlignment": {
+                    "reg_type": "REG_DWORD",
+                    "raw_value": 4096
+                  },
+                  "RecentRowIndex": {
+                    "reg_type": "REG_DWORD",
+                    "raw_value": 0
+                  },
+                  "IsFloating": {
+                    "reg_type": "REG_DWORD",
+                    "raw_value": 0
+                  },
+                  "MRUWidth": {
+                    "reg_type": "REG_DWORD",
+                    "raw_value": 32767
+                  },
+                  "PinState": {
+                    "reg_type": "REG_DWORD",
+                    "raw_value": 0
+                  }
+                },
+                "subkeys": {}
+              },
+              "Pane-59393": {
+                "path": "Software\\Horner_Electric\\Cscape\\Workspace\\Pane-59393",
+                "values": {
+                  "ID": {
+                    "reg_type": "REG_DWORD",
+                    "raw_value": 0
+                  },
+                  "RectRecentFloat": {
+                    "reg_type": "REG_BINARY",
+                    "raw_value": {
+                      "type": "bytes_utf8",
+                      "text": "\n\u0000\u0000\u0000\n\u0000\u0000\u0000n\u0000\u0000\u0000n\u0000\u0000\u0000",
+                      "hex": "0a0000000a0000006e0000006e000000",
+                      "len": 16
+                    }
+                  },
+                  "RectRecentDocked": {
+                    "reg_type": "REG_BINARY",
+                    "raw_value": {
+                      "type": "bytes_utf16",
+                      "text": "\u0000\u0000Ǧ\u0000ΰ\u0000ǹ\u0000",
+                      "hex": "00000000e6010000b0030000f9010000",
+                      "len": 16
+                    }
+                  },
+                  "RecentFrameAlignment": {
+                    "reg_type": "REG_DWORD",
+                    "raw_value": 4096
+                  },
+                  "RecentRowIndex": {
+                    "reg_type": "REG_DWORD",
+                    "raw_value": 0
+                  },
+                  "IsFloating": {
+                    "reg_type": "REG_DWORD",
+                    "raw_value": 0
+                  },
+                  "MRUWidth": {
+                    "reg_type": "REG_DWORD",
+                    "raw_value": 32767
+                  },
+                  "PinState": {
+                    "reg_type": "REG_DWORD",
+                    "raw_value": 0
+                  }
+                },
+                "subkeys": {}
+              },
+              "Pane-59398": {
+                "path": "Software\\Horner_Electric\\Cscape\\Workspace\\Pane-59398",
+                "values": {
+                  "ID": {
+                    "reg_type": "REG_DWORD",
+                    "raw_value": 0
+                  },
+                  "RectRecentFloat": {
+                    "reg_type": "REG_BINARY",
+                    "raw_value": {
+                      "type": "bytes_utf8",
+                      "text": "\n\u0000\u0000\u0000\n\u0000\u0000\u0000n\u0000\u0000\u0000n\u0000\u0000\u0000",
+                      "hex": "0a0000000a0000006e0000006e000000",
+                      "len": 16
+                    }
+                  },
+                  "RectRecentDocked": {
+                    "reg_type": "REG_BINARY",
+                    "raw_value": {
+                      "type": "bytes_utf16",
+                      "text": "\u0000\u0000\u0000\u0000ΰ\u0000\u0000",
+                      "hex": "0000000000000000b003000090000000",
+                      "len": 16
+                    }
+                  },
+                  "RecentFrameAlignment": {
+                    "reg_type": "REG_DWORD",
+                    "raw_value": 4096
+                  },
+                  "RecentRowIndex": {
+                    "reg_type": "REG_DWORD",
+                    "raw_value": 0
+                  },
+                  "IsFloating": {
+                    "reg_type": "REG_DWORD",
+                    "raw_value": 0
+                  },
+                  "MRUWidth": {
+                    "reg_type": "REG_DWORD",
+                    "raw_value": 32767
+                  },
+                  "PinState": {
+                    "reg_type": "REG_DWORD",
+                    "raw_value": 0
+                  }
+                },
+                "subkeys": {}
+              },
+              "WindowPlacement": {
+                "path": "Software\\Horner_Electric\\Cscape\\Workspace\\WindowPlacement",
+                "values": {
+                  "MainWindowRect": {
+                    "reg_type": "REG_BINARY",
+                    "raw_value": {
+                      "type": "bytes_utf16",
+                      "text": "\u001a\u0000\u001a\u0000Ϛ\u0000ț\u0000",
+                      "hex": "1a0000001a000000da0300001b020000",
+                      "len": 16
+                    }
+                  },
+                  "Flags": {
+                    "reg_type": "REG_DWORD",
+                    "raw_value": 0
+                  },
+                  "ShowCmd": {
+                    "reg_type": "REG_DWORD",
+                    "raw_value": 1
+                  }
+                },
+                "subkeys": {}
+              }
+            }
+          }
+        }
+      },
+      "Software\\Horner_Electric\\WinJTAG": {
+        "path": "Software\\Horner_Electric\\WinJTAG",
+        "values": {},
+        "subkeys": {
+          "Files": {
+            "path": "Software\\Horner_Electric\\WinJTAG\\Files",
+            "values": {
+              "(Default)": {
+                "reg_type": "REG_SZ",
+                "raw_value": ""
+              },
+              "key": {
+                "reg_type": "REG_SZ",
+                "raw_value": "\\\\Apgserver\\common files\\OCS Project\\Engine Information\\Firmware\\"
+              },
+              "sn_file": {
+                "reg_type": "REG_SZ",
+                "raw_value": "\\\\Apgserver\\common files\\DNserial\\Serial86.num"
+              }
+            },
+            "subkeys": {}
+          }
+        }
+      },
+      "Software\\Horner APG": null
+    },
+    "HKLM": {
+      "Software\\WOW6432Node\\Horner APG": null,
+      "Software\\Horner APG (64-bit)": null,
+      "Software\\WOW6432Node\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\{A780CECE-F628-4F37-86B7-1B698FB8A0AC}": {
+        "path": "Software\\WOW6432Node\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\{A780CECE-F628-4F37-86B7-1B698FB8A0AC}",
+        "values": {
+          "AuthorizedCDFPrefix": {
+            "reg_type": "REG_SZ",
+            "raw_value": ""
+          },
+          "Comments": {
+            "reg_type": "REG_SZ",
+            "raw_value": ""
+          },
+          "Contact": {
+            "reg_type": "REG_SZ",
+            "raw_value": ""
+          },
+          "DisplayVersion": {
+            "reg_type": "REG_SZ",
+            "raw_value": "10.2.751.4"
+          },
+          "HelpLink": {
+            "reg_type": "REG_EXPAND_SZ",
+            "raw_value": "https://cscapehelp.hornerautomation.com"
+          },
+          "HelpTelephone": {
+            "reg_type": "REG_SZ",
+            "raw_value": ""
+          },
+          "InstallDate": {
+            "reg_type": "REG_SZ",
+            "raw_value": "20260903"
+          },
+          "InstallLocation": {
+            "reg_type": "REG_SZ",
+            "raw_value": "C:\\Program Files (x86)\\Cscape 10.2\\"
+          },
+          "InstallSource": {
+            "reg_type": "REG_SZ",
+            "raw_value": "C:\\Users\\ArmandoSilva\\AppData\\Local\\Downloaded Installations\\{7FC21CE0-17B2-4422-BFF0-CF4D582B6ED6}\\"
+          },
+          "ModifyPath": {
+            "reg_type": "REG_EXPAND_SZ",
+            "raw_value": "MsiExec.exe /I{A780CECE-F628-4F37-86B7-1B698FB8A0AC}"
+          },
+          "Publisher": {
+            "reg_type": "REG_SZ",
+            "raw_value": "Horner APG, LLC"
+          },
+          "Readme": {
+            "reg_type": "REG_SZ",
+            "raw_value": ""
+          },
+          "Size": {
+            "reg_type": "REG_SZ",
+            "raw_value": ""
+          },
+          "EstimatedSize": {
+            "reg_type": "REG_DWORD",
+            "raw_value": 1583700
+          },
+          "UninstallString": {
+            "reg_type": "REG_EXPAND_SZ",
+            "raw_value": "MsiExec.exe /I{A780CECE-F628-4F37-86B7-1B698FB8A0AC}"
+          },
+          "URLInfoAbout": {
+            "reg_type": "REG_SZ",
+            "raw_value": "https://cscapehelp.hornerautomation.com"
+          },
+          "URLUpdateInfo": {
+            "reg_type": "REG_SZ",
+            "raw_value": ""
+          },
+          "VersionMajor": {
+            "reg_type": "REG_DWORD",
+            "raw_value": 10
+          },
+          "VersionMinor": {
+            "reg_type": "REG_DWORD",
+            "raw_value": 2
+          },
+          "WindowsInstaller": {
+            "reg_type": "REG_DWORD",
+            "raw_value": 1
+          },
+          "Version": {
+            "reg_type": "REG_DWORD",
+            "raw_value": 167903983
+          },
+          "Language": {
+            "reg_type": "REG_DWORD",
+            "raw_value": 1033
+          },
+          "DisplayName": {
+            "reg_type": "REG_SZ",
+            "raw_value": "Cscape 10.2"
+          }
+        },
+        "subkeys": {}
+      },
+      "Software\\WOW6432Node\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\SmartServo config": {
+        "path": "Software\\WOW6432Node\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\SmartServo config",
+        "values": {
+          "DisplayName": {
+            "reg_type": "REG_SZ",
+            "raw_value": "SmartServo config"
+          },
+          "DisplayVersion": {
+            "reg_type": "REG_SZ",
+            "raw_value": "1.3.2.24"
+          },
+          "VersionMajor": {
+            "reg_type": "REG_DWORD",
+            "raw_value": 1
+          },
+          "VersionMinor": {
+            "reg_type": "REG_DWORD",
+            "raw_value": 3
+          },
+          "Publisher": {
+            "reg_type": "REG_SZ",
+            "raw_value": "HornerAPG"
+          },
+          "DisplayIcon": {
+            "reg_type": "REG_SZ",
+            "raw_value": "C:\\Program Files (x86)\\HornerAPG\\SmartServo config\\Uninstall.exe"
+          },
+          "UninstallString": {
+            "reg_type": "REG_SZ",
+            "raw_value": "C:\\Program Files (x86)\\HornerAPG\\SmartServo config\\Uninstall.exe"
+          },
+          "InstallLocation": {
+            "reg_type": "REG_SZ",
+            "raw_value": "C:\\Program Files (x86)\\HornerAPG\\SmartServo config\\"
+          },
+          "InstallSource": {
+            "reg_type": "REG_SZ",
+            "raw_value": "C:\\Users\\ARMAND~1\\AppData\\Local\\Temp\\"
+          },
+          "InstallDate": {
+            "reg_type": "REG_SZ",
+            "raw_value": "20260902"
+          },
+          "Language": {
+            "reg_type": "REG_DWORD",
+            "raw_value": 1033
+          },
+          "EstimatedSize": {
+            "reg_type": "REG_DWORD",
+            "raw_value": 20170
+          },
+          "NoModify": {
+            "reg_type": "REG_DWORD",
+            "raw_value": 1
+          },
+          "NoRepair": {
+            "reg_type": "REG_DWORD",
+            "raw_value": 1
+          }
+        },
+        "subkeys": {}
+      },
+      "Software\\Microsoft\\Windows\\CurrentVersion\\App Paths\\Cscape.exe": null
+    },
+    "HKCR": {
+      ".cpj": {
+        "path": ".cpj",
+        "values": {
+          "(Default)": {
+            "reg_type": "REG_SZ",
+            "raw_value": "cpj.Cscape"
+          }
+        },
+        "subkeys": {
+          "cpj.Cscape": {
+            "path": ".cpj\\cpj.Cscape",
+            "values": {},
+            "subkeys": {
+              "ShellNew": {
+                "path": ".cpj\\cpj.Cscape\\ShellNew",
+                "values": {},
+                "subkeys": {}
+              }
+            }
+          }
+        }
+      },
+      ".csp": {
+        "path": ".csp",
+        "values": {
+          "(Default)": {
+            "reg_type": "REG_SZ",
+            "raw_value": "csp.Cscape"
+          }
+        },
+        "subkeys": {
+          "csp.Cscape": {
+            "path": ".csp\\csp.Cscape",
+            "values": {},
+            "subkeys": {
+              "ShellNew": {
+                "path": ".csp\\csp.Cscape\\ShellNew",
+                "values": {},
+                "subkeys": {}
+              }
+            }
+          }
+        }
+      },
+      ".cst": null,
+      "cpj.Cscape": {
+        "path": "cpj.Cscape",
+        "values": {
+          "(Default)": {
+            "reg_type": "REG_SZ",
+            "raw_value": "Operator Control Station Project File"
+          }
+        },
+        "subkeys": {
+          "DefaultIcon": {
+            "path": "cpj.Cscape\\DefaultIcon",
+            "values": {
+              "(Default)": {
+                "reg_type": "REG_SZ",
+                "raw_value": "C:\\Windows\\Installer\\{A780CECE-F628-4F37-86B7-1B698FB8A0AC}\\_B87AC96A_975E_4E95_B5DA_2B8468BEEBC3,0"
+              }
+            },
+            "subkeys": {}
+          },
+          "shell": {
+            "path": "cpj.Cscape\\shell",
+            "values": {},
+            "subkeys": {
+              "open": {
+                "path": "cpj.Cscape\\shell\\open",
+                "values": {},
+                "subkeys": {
+                  "command": {
+                    "path": "cpj.Cscape\\shell\\open\\command",
+                    "values": {
+                      "(Default)": {
+                        "reg_type": "REG_SZ",
+                        "raw_value": "\"C:\\Program Files (x86)\\Cscape 10.2\\Cscape.exe\" \"%1\""
+                      },
+                      "command": {
+                        "reg_type": "REG_MULTI_SZ",
+                        "raw_value": [
+                          "C*!p^y}1OA@VMkIi*!Q`AlwaysInstall>~Pw6uq0YZ9Uw.@YVA_}8 \"%1\""
+                        ]
+                      }
+                    },
+                    "subkeys": {}
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "csp.Cscape": {
+        "path": "csp.Cscape",
+        "values": {
+          "(Default)": {
+            "reg_type": "REG_SZ",
+            "raw_value": "Operator Control Station Program File"
+          }
+        },
+        "subkeys": {
+          "DefaultIcon": {
+            "path": "csp.Cscape\\DefaultIcon",
+            "values": {
+              "(Default)": {
+                "reg_type": "REG_SZ",
+                "raw_value": "C:\\Windows\\Installer\\{A780CECE-F628-4F37-86B7-1B698FB8A0AC}\\_E4D4D3DF_06E7_4A49_B11D_8547E04A3600,0"
+              }
+            },
+            "subkeys": {}
+          },
+          "shell": {
+            "path": "csp.Cscape\\shell",
+            "values": {},
+            "subkeys": {
+              "open": {
+                "path": "csp.Cscape\\shell\\open",
+                "values": {},
+                "subkeys": {
+                  "command": {
+                    "path": "csp.Cscape\\shell\\open\\command",
+                    "values": {
+                      "(Default)": {
+                        "reg_type": "REG_SZ",
+                        "raw_value": "\"C:\\Program Files (x86)\\Cscape 10.2\\Cscape.exe\" \"%1\""
+                      },
+                      "command": {
+                        "reg_type": "REG_MULTI_SZ",
+                        "raw_value": [
+                          "C*!p^y}1OA@VMkIi*!Q`AlwaysInstall>~Pw6uq0YZ9Uw.@YVA_}8 \"%1\""
+                        ]
+                      }
+                    },
+                    "subkeys": {}
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "com_activex_audit": {
+    "registered_clsids": [],
+    "registered_typelibs": [],
+    "ocx_activex_controls_found": 0,
+    "standalone_typelibs_found": 0,
+    "embedded_typelib_in_cscape_exe": true,
+    "binary_machine_type": "IMAGE_FILE_MACHINE_I386 (0x14c, 32-bit x86)",
+    "com_activation_tests": {
+      "Cscape.Application": {
+        "prog_id": "Cscape.Application",
+        "guid_found": false,
+        "guid_error": "[WinError -2147221005] Invalid class string",
+        "dispatch_success": false,
+        "dispatch_error": "(-2147221005, 'Invalid class string', None, None)"
+      },
+      "Cscape.Application.1": {
+        "prog_id": "Cscape.Application.1",
+        "guid_found": false,
+        "guid_error": "[WinError -2147221005] Invalid class string",
+        "dispatch_success": false,
+        "dispatch_error": "(-2147221005, 'Invalid class string', None, None)"
+      },
+      "Horner.Cscape": {
+        "prog_id": "Horner.Cscape",
+        "guid_found": false,
+        "guid_error": "[WinError -2147221005] Invalid class string",
+        "dispatch_success": false,
+        "dispatch_error": "(-2147221005, 'Invalid class string', None, None)"
+      },
+      "Horner.Cscape.Application": {
+        "prog_id": "Horner.Cscape.Application",
+        "guid_found": false,
+        "guid_error": "[WinError -2147221005] Invalid class string",
+        "dispatch_success": false,
+        "dispatch_error": "(-2147221005, 'Invalid class string', None, None)"
+      },
+      "cpj.Cscape": {
+        "prog_id": "cpj.Cscape",
+        "guid_found": false,
+        "guid_error": "[WinError -2147221005] Invalid class string",
+        "dispatch_success": false,
+        "dispatch_error": "(-2147221005, 'Invalid class string', None, None)"
+      },
+      "csp.Cscape": {
+        "prog_id": "csp.Cscape",
+        "guid_found": false,
+        "guid_error": "[WinError -2147221005] Invalid class string",
+        "dispatch_success": false,
+        "dispatch_error": "(-2147221005, 'Invalid class string', None, None)"
+      },
+      "Cscape.Document": {
+        "prog_id": "Cscape.Document",
+        "guid_found": false,
+        "guid_error": "[WinError -2147221005] Invalid class string",
+        "dispatch_success": false,
+        "dispatch_error": "(-2147221005, 'Invalid class string', None, None)"
+      },
+      "Cscape": {
+        "prog_id": "Cscape",
+        "guid_found": false,
+        "guid_error": "[WinError -2147221005] Invalid class string",
+        "dispatch_success": false,
+        "dispatch_error": "(-2147221005, 'Invalid class string', None, None)"
+      },
+      "Straton.Application": {
+        "prog_id": "Straton.Application",
+        "guid_found": false,
+        "guid_error": "[WinError -2147221005] Invalid class string",
+        "dispatch_success": false,
+        "dispatch_error": "(-2147221005, 'Invalid class string', None, None)"
+      },
+      "K5.Application": {
+        "prog_id": "K5.Application",
+        "guid_found": false,
+        "guid_error": "[WinError -2147221005] Invalid class string",
+        "dispatch_success": false,
+        "dispatch_error": "(-2147221005, 'Invalid class string', None, None)"
+      }
+    },
+    "conclusion": "Cscape 10.2 does NOT register or expose an OLE Automation Server (IDispatch) or ActiveX controls. Headless/external automation must rely on CLI execution, file system manipulation, or Win32 UI automation."
+  }
+}

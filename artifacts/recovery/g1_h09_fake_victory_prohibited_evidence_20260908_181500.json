@@ -1,0 +1,16 @@
+{
+  "item_id": "H09",
+  "name": "Fake 100% and Premature Victory Declarations Prohibited",
+  "mission_id": "G1_REMAINING_NEGATIVES_OFFLINE_v3",
+  "timestamp_utc": "2026-09-09T01:19:34.566673+00:00",
+  "status": "success",
+  "invariant": "AGENTS.md and agent instructions strictly ban premature victory claims and final report spam",
+  "verification": {
+    "checks": {
+      "no_claim_g2_plus_g5": true,
+      "final_report_spam_prohibited": true,
+      "watchdog_enforcement": true
+    },
+    "pass": true
+  }
+}

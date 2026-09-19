@@ -1,0 +1,11 @@
+﻿ENGINEER HANDOFF CHECKLIST - TankLevelClosedLoop
+[ ] Project: TankLevelClosedLoop.csp under C:\HornerAI\horner-cscape-mcp\
+[ ] STBlock1 loop: Setpoint, TankLevelPV, Error, ControlOutput, Kp; TankLevelPV_I16 := ANY_TO_INT(TankLevelPV); Setpoint_I16 := ANY_TO_INT(Setpoint); HI/LO.
+[ ] Screen 1: panel/gauge/bar/title/silhouette (existing).
+[ ] Screen 2 operator: tank silhouette; PV; SP; bar (I16); HI/LO lamps; ALARM HI/LO; ControlOutput %; Error cm; Kp; Jump <-> Screen 3.
+[ ] Screen 3: dual Trend pens TankLevelPV_I16 + Setpoint_I16; trigger HI; Jump <-> Screen 2.
+[ ] TankLogs: TankLevelPV %R00006 REAL 1s.
+[ ] Status: Error Check clean offline; reopen proven; Local:Disconnected; NOT VERIFIED_LIVE.
+[ ] Deployment: engineer downloads to PLC separately. No PLC download performed here.
+[ ] Trend note: Trend needs 16-bit pens.
+AlwaysOn trigger + reopen OK + 2026-09-10 20:53:00 -0700 + NOT VERIFIED_LIVE

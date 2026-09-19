@@ -1,0 +1,87 @@
+================================================================================
+MISSION EXECUTION AUDIT REPORT: MCP_HMI_OPERATOR_SCREEN2
+================================================================================
+Timestamp UTC     : 2026-09-10T08:39:18.779Z
+Mission ID        : MCP_HMI_OPERATOR_SCREEN2
+Status            : success
+Target POU/Screen : Screen 2 (2) in TankLevelClosedLoop.csp
+Cscape Version    : Horner APG Cscape 10.2 (Build 10.2.751.4)
+Interactive Desktop: winsta0\Default
+Process ID (PID)  : 19488
+Window HWND       : 0x01AC0B88
+Window Title      : Cscape - Logged In : "armando@controlnautas.com" - [TankLevelClosedLoop.csp]
+
+--------------------------------------------------------------------------------
+1. MISSION OBJECTIVES & RESULTS
+--------------------------------------------------------------------------------
+Objective (a): Screen 2 Primary Operator Layout
+  - Primary PV Display       : Variable 'TankLevelPV' (32-bit REAL) configured as largest value container at top-left
+  - Setpoint Display         : Variable 'Setpoint' (32-bit REAL) configured as target reference container at top-right
+  - Level Fill Bar Graph     : Variable 'TankLevelPV_I16' (16-bit INT, ANY_TO_INT(TankLevelPV)) horizontal bar (0..100) with red liquid fill
+  - Dual Alarm Indicator Lamps:
+      * High Alarm Lamp (HI) : Bound to 'HI' (BOOL, %T3, TankLevelPV >= 65.0) at lower-right (left lamp)
+      * Low Alarm Lamp (LO)  : Bound to 'LO' (BOOL, %T4, TankLevelPV <= 35.0) at lower-right (right lamp)
+  - Result                   : SUCCESS (5 objects verified active, visible, and properly bound)
+
+Objective (b): Tank Silhouette Boundary & Clear Visual Hierarchy
+  - Tank Vessel Boundary     : Solid rectangular silhouette framing the level bar graph
+  - High-Contrast Displays   : Beveled metallic containers for PV and SP ensuring maximum legibility
+  - Result                   : SUCCESS (Unobstructed canvas layout at 120% zoom)
+
+Objective (c): Error Check & Diagnostic Capture
+  - Compiler Check Dispatched: Command ID_PROGRAM_ERRORCHECK (32826) executed
+  - Compiler Fatal Texts     : Exactly 7 fatal I/O assignment errors from legacy Screen 1 captured into compile_fatals.txt
+  - Policy Enforcement       : No Screen 1 polish performed; non-fatal prompt dismissed fail-closed
+  - Result                   : SUCCESS (artifacts/recovery/compile_fatals.txt verified in dual roots)
+
+Objective (d): Native Project Persistence & Dual-Root Mirroring
+  - Project Container        : Compound File Binary Format (CFBF) TankLevelClosedLoop.csp (131,072 bytes)
+  - Parity Across Roots      : Primary workspace and User root 100% synchronized
+  - Result                   : SUCCESS
+
+Objective (e): Interactive Desktop & Gate G2 Invariant
+  - Desktop Boundary         : winsta0\Default
+  - Active Tab               : Screen 2 (2) left front, active, and focused
+  - Process State            : PID 19488 running continuously, visible, unminimized, and responsive
+  - Result                   : SUCCESS
+
+--------------------------------------------------------------------------------
+2. PROJECT ARTIFACT FORENSICS & DUAL-ROOT PARITY
+--------------------------------------------------------------------------------
+Primary Path    : C:\HornerAI\horner-cscape-mcp\artifacts\projects\TankLevelClosedLoop\TankLevelClosedLoop.csp
+Mirror Path     : C:\Users\ArmandoSilva\artifacts\projects\TankLevelClosedLoop\TankLevelClosedLoop.csp
+File Size       : 131072 bytes
+SHA-256 Hash    : DAB6BB33FDB376BFC015F11CC960770DD7FCD547CA4704BDA5A8200F86EBD4EE
+Dual-Root Parity: 100% MATCH (Identical byte size and SHA-256 digest)
+OLE Contents Stream Size: 59235 bytes
+Screen 2 Variable Tags: @TankLevelPV@, @Setpoint@, @TankLevelPV_I16@, @HI@, @LO@
+
+--------------------------------------------------------------------------------
+3. SCREEN 2 OBJECT INVENTORY (Total 5 Objects)
+--------------------------------------------------------------------------------
+[1] Numeric Data Display   : TankLevelPV (REAL 32-bit, Upper-Left, Beveled High-Contrast Container)
+[2] Numeric Data Display   : Setpoint (REAL 32-bit, Upper-Right, Beveled High-Contrast Container)
+[3] Horizontal Bar Graph   : TankLevelPV_I16 (INT 16-bit, Lower-Left, Graduated 0..100 Red Level Bar)
+[4] Status Indicator Lamp  : HI Alarm (BOOL %T3, Lower-Right, Left Lamp, TankLevelPV >= 65.0)
+[5] Status Indicator Lamp  : LO Alarm (BOOL %T4, Lower-Right, Right Lamp, TankLevelPV <= 35.0)
+[Frame] Vessel Silhouette  : Rectangular tank boundary framing the level bar graph
+
+--------------------------------------------------------------------------------
+4. SAFETY & BOUNDARY INVARIANTS COMPLIANCE
+--------------------------------------------------------------------------------
+- Hardware Ports Lockout   : COM1..COM256, CAN*, USB*, JTAG blocked fail-closed (SecurityError)
+- PLC Download Ban         : Win32 commands 32827 (ID_PROGRAM_DOWNLOAD) and 33149 (ID_CONTROLLER_DOWNLOAD) locked out
+- Companion Flashing Tools : Zero execution of companion flashing binaries
+- Single GUI Owner         : PID 19488 exclusive operator on winsta0\Default
+- Screen 2 Front State     : Screen 2 (2) active and in front
+
+--------------------------------------------------------------------------------
+5. VERIFICATION ARTIFACTS
+--------------------------------------------------------------------------------
+Raster Evidence 1: artifacts/screenshots/mcp_hmi_operator_screen2_proof.png
+Raster Evidence 2: artifacts/screenshots/mcp_hmi_operator_screen2_canvas.png
+Evidence JSON    : artifacts/recovery/mcp_hmi_operator_screen2_evidence.json
+Audit Report     : artifacts/recovery/mcp_hmi_operator_screen2.txt
+Compiler Fatals  : artifacts/recovery/compile_fatals.txt
+Live Gate State  : artifacts/.cscape_live_gate.json (READY_FOR_TESTS)
+================================================================================

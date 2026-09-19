@@ -1,0 +1,111 @@
+{
+  "step": 162,
+  "name": "step162_mcp_pump_sequencing_runtime_balance",
+  "status": "PASSED",
+  "mission": "Live FastMCP Dual-Redundant Feedwater Pump Auto-Lead/Lag Sequencing & Runtime Balance Audit",
+  "timestamp_start": "2026-09-06T12:23:18.301Z",
+  "timestamp_complete": "2026-09-06T12:23:26.246Z",
+  "duration_seconds": 7.945,
+  "gate": {
+    "ready_for_tests": true,
+    "status": "READY_FOR_TESTS",
+    "pid": 10892,
+    "hwnd": "0x01B005DC",
+    "window_title": "Cscape - Logged In : \"armando@controlnautas.com\" - [TankLevelClosedLoop.csp]",
+    "project_file": "C:\\HornerAI\\horner-cscape-mcp\\artifacts\\projects\\TankLevelClosedLoop\\TankLevelClosedLoop.csp",
+    "exit_code": null,
+    "reason": "Gate G3 Error Check and Output Scrape Verified Clean (0 errors, 0 warnings)",
+    "cycle": 17,
+    "timestamp_utc": "2026-09-06T11:43:46.709Z",
+    "heartbeat_utc": "2026-09-06T11:43:46.709Z"
+  },
+  "cscape_pid": 10892,
+  "hwnd": "0x01B005DC",
+  "scenarios_passed": 5,
+  "scenarios_total": 5,
+  "scenario_results": {
+    "scenario_a_auto_lead_selection": {
+      "verified": true,
+      "pump2_lead": true,
+      "pump1_standby": true,
+      "auto_lead_active": true,
+      "level_pv": 50.0
+    },
+    "scenario_b_lag_assist_staging": {
+      "verified": true,
+      "pump1_staged": true,
+      "pump2_running": true,
+      "parallel_assist_active": true,
+      "combined_flow_gpm": 850.0
+    },
+    "scenario_c_overload_failover": {
+      "verified": true,
+      "pump2_overload_alarm": true,
+      "pump2_tripped": true,
+      "pump1_standby_running": true,
+      "level_pv": 50.0
+    },
+    "scenario_d_cavitation_dual_lockout": {
+      "verified": true,
+      "pump1_cavitation": true,
+      "pump1_isolated": true,
+      "inflow_isolated": true,
+      "clamped_inflow": 0.0
+    },
+    "scenario_e_maintenance_resumption": {
+      "verified": true,
+      "pump1_fault_cleared": true,
+      "pump2_fault_cleared": true,
+      "pump2_lead_resumed": true,
+      "pump1_standby": true,
+      "inflow_co": 50.0,
+      "level_pv": 50.0
+    }
+  },
+  "telemetry_records": [
+    {
+      "scenario": "A_AUTO_LEAD_SELECTION",
+      "cycle": 1,
+      "q7": true,
+      "q1": false,
+      "m22": true
+    },
+    {
+      "scenario": "B_LAG_ASSIST_STAGING",
+      "cycle": 2,
+      "q1": true,
+      "q7": true,
+      "m21": true,
+      "total_flow": 850.0
+    },
+    {
+      "scenario": "C_OVERLOAD_FAILOVER",
+      "cycle": 3,
+      "m20": true,
+      "q7": false,
+      "q1": true
+    },
+    {
+      "scenario": "D_CAVITATION_DUAL_LOCKOUT",
+      "cycle": 4,
+      "m19": true,
+      "q1": false,
+      "q2": false,
+      "co_r7": 0.0
+    },
+    {
+      "scenario": "E_MAINTENANCE_RESUMPTION",
+      "cycle": 5,
+      "m19": false,
+      "m20": false,
+      "q7": true,
+      "q1": false
+    }
+  ],
+  "security": {
+    "hardware_download_lockout": "FAIL_CLOSED_BLOCKED",
+    "zero_straton_dependencies": true,
+    "zero_plc_hardware_interaction": true,
+    "no_gui_hwnd_command_dispatched": true
+  }
+}

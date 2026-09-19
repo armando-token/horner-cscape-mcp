@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<K5Project Name="test_unit_project" Target="T5RTI" ExportTime="2026-09-04T05:52:29.080620+00:00">
+  <Programs>
+    <Program Name="FB_ConveyorTest" Language="ST">
+      <SourceCode><![CDATA[FUNCTION_BLOCK FB_ConveyorTest
+VAR_INPUT
+    RunCmd : BOOL;
+    PE_Sensor : BOOL;
+END_VAR
+VAR_OUTPUT
+    MotorOut : BOOL;
+    BoxCount : INT := 0;
+END_VAR
+IF RunCmd THEN
+    MotorOut := TRUE;
+    IF PE_Sensor THEN
+        BoxCount := BoxCount + 1;
+    END_IF;
+ELSE
+    MotorOut := FALSE;
+END_IF;
+END_FUNCTION_BLOCK
+]]></SourceCode>
+    </Program>
+  </Programs>
+</K5Project>

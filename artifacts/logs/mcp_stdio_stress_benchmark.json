@@ -1,0 +1,1383 @@
+{
+  "benchmark": "mcp_stdio_stress_benchmark",
+  "status": "PASSED",
+  "timestamp_utc": "2026-09-05T06:00:00.133514+00:00",
+  "cscape_gate": {
+    "pid": 7616,
+    "hwnd": "0x007B06D6",
+    "window_title": "Cscape - Logged In : \"armando@controlnautas.com\" - [TankLevelClosedLoop.csp]",
+    "project_file": "C:\\Users\\ArmandoSilva\\artifacts\\projects\\TankLevelClosedLoop\\TankLevelClosedLoop.csp",
+    "unhung_and_healthy": true
+  },
+  "server_info": {
+    "name": "horner-cscape-mcp",
+    "version": "1.0.0"
+  },
+  "transport": "stdio",
+  "concurrency_settings": {
+    "pipeline_concurrency": 10,
+    "total_pipelined_calls": 100
+  },
+  "summary_metrics": {
+    "total_calls": 100,
+    "successful_calls": 100,
+    "failed_calls": 0,
+    "success_rate_pct": 100.0,
+    "total_duration_seconds": 0.835,
+    "throughput_calls_per_sec": 119.76,
+    "latency_min_ms": 19.53,
+    "latency_median_ms": 72.97,
+    "latency_p90_ms": 144.6,
+    "latency_p95_ms": 167.67,
+    "latency_p99_ms": 188.2,
+    "latency_max_ms": 211.75,
+    "latency_mean_ms": 80.57,
+    "latency_stddev_ms": 42.68
+  },
+  "per_tool_metrics": {
+    "cscape_read_variables": {
+      "min": 23.16,
+      "median": 70.74,
+      "p90": 111.65,
+      "p95": 150.41,
+      "p99": 169.86,
+      "max": 174.73,
+      "mean": 76.16,
+      "stddev": 37.54,
+      "call_count": 20
+    },
+    "cscape_simulate_cycle": {
+      "min": 19.53,
+      "median": 60.5,
+      "p90": 119.29,
+      "p95": 121.97,
+      "p99": 158.43,
+      "max": 167.55,
+      "mean": 69.38,
+      "stddev": 39.32,
+      "call_count": 20
+    },
+    "cscape_read_register": {
+      "min": 19.82,
+      "median": 64.64,
+      "p90": 116.85,
+      "p95": 129.44,
+      "p99": 161.88,
+      "max": 169.99,
+      "mean": 70.2,
+      "stddev": 38.33,
+      "call_count": 20
+    },
+    "cscape_write_register": {
+      "min": 23.56,
+      "median": 64.12,
+      "p90": 116.84,
+      "p95": 133.88,
+      "p99": 163.95,
+      "max": 171.47,
+      "mean": 72.44,
+      "stddev": 38.11,
+      "call_count": 20
+    },
+    "cscape_compile_project": {
+      "min": 39.86,
+      "median": 113.02,
+      "p90": 169.21,
+      "p95": 189.15,
+      "p99": 207.23,
+      "max": 211.75,
+      "mean": 114.67,
+      "stddev": 45.35,
+      "call_count": 20
+    }
+  },
+  "safety_and_integrity": {
+    "zero_plc_download_enforced": true,
+    "zero_straton_tools_enforced": true,
+    "hardware_lockout_active": true,
+    "software_isolation_enforced": true,
+    "cscape_pid_healthy": true
+  },
+  "calls": [
+    {
+      "call_index": 0,
+      "request_id": 3,
+      "tool": "cscape_read_variables",
+      "arguments": {
+        "file_path": "C:\\Users\\ArmandoSilva\\artifacts\\projects\\TankLevelClosedLoop\\variables.csv"
+      },
+      "latency_ms": 55.09,
+      "status": "PASS",
+      "success": true,
+      "summary": "{   \"success\": true,   \"file_path\": \"C:\\\\Users\\\\ArmandoSilva\\\\artifacts\\\\projects\\\\TankLevelClosedLoop\\\\variables.csv\", "
+    },
+    {
+      "call_index": 1,
+      "request_id": 4,
+      "tool": "cscape_simulate_cycle",
+      "arguments": {
+        "inputs": {
+          "RawLevelIn": 16050
+        }
+      },
+      "latency_ms": 113.64,
+      "status": "PASS",
+      "success": true,
+      "summary": "{   \"success\": true,   \"cycle\": 0,   \"time_ms\": 0.0,   \"dt_ms\": 10.0,   \"system_bits\": {     \"%S1\": true,     \"%S7\": fal"
+    },
+    {
+      "call_index": 2,
+      "request_id": 5,
+      "tool": "cscape_read_register",
+      "arguments": {
+        "address": "%R100"
+      },
+      "latency_ms": 127.3,
+      "status": "PASS",
+      "success": true,
+      "summary": "{   \"success\": true,   \"address\": \"%R100\",   \"value\": 0,   \"data_type\": \"INT\",   \"bound_variable\": null,   \"isolation_en"
+    },
+    {
+      "call_index": 3,
+      "request_id": 6,
+      "tool": "cscape_write_register",
+      "arguments": {
+        "address": "%R100",
+        "value": 24003
+      },
+      "latency_ms": 131.9,
+      "status": "PASS",
+      "success": true,
+      "summary": "{   \"success\": true,   \"address\": \"%R100\",   \"value\": 24003,   \"data_type\": \"INT\",   \"bound_variable\": null,   \"isolatio"
+    },
+    {
+      "call_index": 4,
+      "request_id": 7,
+      "tool": "cscape_compile_project",
+      "arguments": {
+        "project_name": "TankLevelClosedLoop",
+        "clean_build": false
+      },
+      "latency_ms": 167.12,
+      "status": "PASS",
+      "success": true,
+      "summary": "{   \"success\": true,   \"status\": \"success\",   \"project_name\": \"TankLevelClosedLoop\",   \"build_time_seconds\": 0.030036,  "
+    },
+    {
+      "call_index": 5,
+      "request_id": 8,
+      "tool": "cscape_read_variables",
+      "arguments": {
+        "file_path": "C:\\Users\\ArmandoSilva\\artifacts\\projects\\TankLevelClosedLoop\\variables.csv"
+      },
+      "latency_ms": 174.73,
+      "status": "PASS",
+      "success": true,
+      "summary": "{   \"success\": true,   \"file_path\": \"C:\\\\Users\\\\ArmandoSilva\\\\artifacts\\\\projects\\\\TankLevelClosedLoop\\\\variables.csv\", "
+    },
+    {
+      "call_index": 6,
+      "request_id": 9,
+      "tool": "cscape_simulate_cycle",
+      "arguments": {
+        "inputs": {
+          "RawLevelIn": 16300
+        }
+      },
+      "latency_ms": 167.55,
+      "status": "PASS",
+      "success": true,
+      "summary": "{   \"success\": true,   \"cycle\": 0,   \"time_ms\": 0.0,   \"dt_ms\": 10.0,   \"system_bits\": {     \"%S1\": true,     \"%S7\": fal"
+    },
+    {
+      "call_index": 7,
+      "request_id": 10,
+      "tool": "cscape_read_register",
+      "arguments": {
+        "address": "%R100"
+      },
+      "latency_ms": 169.99,
+      "status": "PASS",
+      "success": true,
+      "summary": "{   \"success\": true,   \"address\": \"%R100\",   \"value\": 24003,   \"data_type\": \"INT\",   \"bound_variable\": null,   \"isolatio"
+    },
+    {
+      "call_index": 8,
+      "request_id": 11,
+      "tool": "cscape_write_register",
+      "arguments": {
+        "address": "%R100",
+        "value": 24008
+      },
+      "latency_ms": 171.47,
+      "status": "PASS",
+      "success": true,
+      "summary": "{   \"success\": true,   \"address\": \"%R100\",   \"value\": 24008,   \"data_type\": \"INT\",   \"bound_variable\": null,   \"isolatio"
+    },
+    {
+      "call_index": 9,
+      "request_id": 12,
+      "tool": "cscape_compile_project",
+      "arguments": {
+        "project_name": "TankLevelClosedLoop",
+        "clean_build": false
+      },
+      "latency_ms": 211.75,
+      "status": "PASS",
+      "success": true,
+      "summary": "{   \"success\": true,   \"status\": \"success\",   \"project_name\": \"TankLevelClosedLoop\",   \"build_time_seconds\": 0.022059,  "
+    },
+    {
+      "call_index": 10,
+      "request_id": 13,
+      "tool": "cscape_read_variables",
+      "arguments": {
+        "file_path": "C:\\Users\\ArmandoSilva\\artifacts\\projects\\TankLevelClosedLoop\\variables.csv"
+      },
+      "latency_ms": 149.13,
+      "status": "PASS",
+      "success": true,
+      "summary": "{   \"success\": true,   \"file_path\": \"C:\\\\Users\\\\ArmandoSilva\\\\artifacts\\\\projects\\\\TankLevelClosedLoop\\\\variables.csv\", "
+    },
+    {
+      "call_index": 11,
+      "request_id": 14,
+      "tool": "cscape_simulate_cycle",
+      "arguments": {
+        "inputs": {
+          "RawLevelIn": 16550
+        }
+      },
+      "latency_ms": 87.91,
+      "status": "PASS",
+      "success": true,
+      "summary": "{   \"success\": true,   \"cycle\": 1,   \"time_ms\": 10.0,   \"dt_ms\": 10.0,   \"system_bits\": {     \"%S1\": false,     \"%S7\": t"
+    },
+    {
+      "call_index": 12,
+      "request_id": 15,
+      "tool": "cscape_read_register",
+      "arguments": {
+        "address": "%R100"
+      },
+      "latency_ms": 76.26,
+      "status": "PASS",
+      "success": true,
+      "summary": "{   \"success\": true,   \"address\": \"%R100\",   \"value\": 24008,   \"data_type\": \"INT\",   \"bound_variable\": null,   \"isolatio"
+    },
+    {
+      "call_index": 13,
+      "request_id": 16,
+      "tool": "cscape_write_register",
+      "arguments": {
+        "address": "%R100",
+        "value": 24013
+      },
+      "latency_ms": 75.67,
+      "status": "PASS",
+      "success": true,
+      "summary": "{   \"success\": true,   \"address\": \"%R100\",   \"value\": 24013,   \"data_type\": \"INT\",   \"bound_variable\": null,   \"isolatio"
+    },
+    {
+      "call_index": 14,
+      "request_id": 17,
+      "tool": "cscape_compile_project",
+      "arguments": {
+        "project_name": "TankLevelClosedLoop",
+        "clean_build": false
+      },
+      "latency_ms": 116.43,
+      "status": "PASS",
+      "success": true,
+      "summary": "{   \"success\": true,   \"status\": \"success\",   \"project_name\": \"TankLevelClosedLoop\",   \"build_time_seconds\": 0.016827,  "
+    },
+    {
+      "call_index": 15,
+      "request_id": 18,
+      "tool": "cscape_read_variables",
+      "arguments": {
+        "file_path": "C:\\Users\\ArmandoSilva\\artifacts\\projects\\TankLevelClosedLoop\\variables.csv"
+      },
+      "latency_ms": 86.64,
+      "status": "PASS",
+      "success": true,
+      "summary": "{   \"success\": true,   \"file_path\": \"C:\\\\Users\\\\ArmandoSilva\\\\artifacts\\\\projects\\\\TankLevelClosedLoop\\\\variables.csv\", "
+    },
+    {
+      "call_index": 16,
+      "request_id": 19,
+      "tool": "cscape_simulate_cycle",
+      "arguments": {
+        "inputs": {
+          "RawLevelIn": 16800
+        }
+      },
+      "latency_ms": 39.51,
+      "status": "PASS",
+      "success": true,
+      "summary": "{   \"success\": true,   \"cycle\": 2,   \"time_ms\": 20.0,   \"dt_ms\": 10.0,   \"system_bits\": {     \"%S1\": false,     \"%S7\": f"
+    },
+    {
+      "call_index": 17,
+      "request_id": 20,
+      "tool": "cscape_read_register",
+      "arguments": {
+        "address": "%R100"
+      },
+      "latency_ms": 41.94,
+      "status": "PASS",
+      "success": true,
+      "summary": "{   \"success\": true,   \"address\": \"%R100\",   \"value\": 24013,   \"data_type\": \"INT\",   \"bound_variable\": null,   \"isolatio"
+    },
+    {
+      "call_index": 18,
+      "request_id": 21,
+      "tool": "cscape_write_register",
+      "arguments": {
+        "address": "%R100",
+        "value": 24018
+      },
+      "latency_ms": 72.51,
+      "status": "PASS",
+      "success": true,
+      "summary": "{   \"success\": true,   \"address\": \"%R100\",   \"value\": 24018,   \"data_type\": \"INT\",   \"bound_variable\": null,   \"isolatio"
+    },
+    {
+      "call_index": 19,
+      "request_id": 22,
+      "tool": "cscape_compile_project",
+      "arguments": {
+        "project_name": "TankLevelClosedLoop",
+        "clean_build": false
+      },
+      "latency_ms": 106.38,
+      "status": "PASS",
+      "success": true,
+      "summary": "{   \"success\": true,   \"status\": \"success\",   \"project_name\": \"TankLevelClosedLoop\",   \"build_time_seconds\": 0.01767,   "
+    },
+    {
+      "call_index": 20,
+      "request_id": 23,
+      "tool": "cscape_read_variables",
+      "arguments": {
+        "file_path": "C:\\Users\\ArmandoSilva\\artifacts\\projects\\TankLevelClosedLoop\\variables.csv"
+      },
+      "latency_ms": 80.94,
+      "status": "PASS",
+      "success": true,
+      "summary": "{   \"success\": true,   \"file_path\": \"C:\\\\Users\\\\ArmandoSilva\\\\artifacts\\\\projects\\\\TankLevelClosedLoop\\\\variables.csv\", "
+    },
+    {
+      "call_index": 21,
+      "request_id": 24,
+      "tool": "cscape_simulate_cycle",
+      "arguments": {
+        "inputs": {
+          "RawLevelIn": 17050
+        }
+      },
+      "latency_ms": 74.1,
+      "status": "PASS",
+      "success": true,
+      "summary": "{   \"success\": true,   \"cycle\": 3,   \"time_ms\": 30.0,   \"dt_ms\": 10.0,   \"system_bits\": {     \"%S1\": false,     \"%S7\": t"
+    },
+    {
+      "call_index": 22,
+      "request_id": 25,
+      "tool": "cscape_read_register",
+      "arguments": {
+        "address": "%R100"
+      },
+      "latency_ms": 70.74,
+      "status": "PASS",
+      "success": true,
+      "summary": "{   \"success\": true,   \"address\": \"%R100\",   \"value\": 24018,   \"data_type\": \"INT\",   \"bound_variable\": null,   \"isolatio"
+    },
+    {
+      "call_index": 23,
+      "request_id": 26,
+      "tool": "cscape_write_register",
+      "arguments": {
+        "address": "%R100",
+        "value": 24023
+      },
+      "latency_ms": 71.89,
+      "status": "PASS",
+      "success": true,
+      "summary": "{   \"success\": true,   \"address\": \"%R100\",   \"value\": 24023,   \"data_type\": \"INT\",   \"bound_variable\": null,   \"isolatio"
+    },
+    {
+      "call_index": 24,
+      "request_id": 27,
+      "tool": "cscape_compile_project",
+      "arguments": {
+        "project_name": "TankLevelClosedLoop",
+        "clean_build": false
+      },
+      "latency_ms": 136.82,
+      "status": "PASS",
+      "success": true,
+      "summary": "{   \"success\": true,   \"status\": \"success\",   \"project_name\": \"TankLevelClosedLoop\",   \"build_time_seconds\": 0.023664,  "
+    },
+    {
+      "call_index": 25,
+      "request_id": 28,
+      "tool": "cscape_read_variables",
+      "arguments": {
+        "file_path": "C:\\Users\\ArmandoSilva\\artifacts\\projects\\TankLevelClosedLoop\\variables.csv"
+      },
+      "latency_ms": 96.58,
+      "status": "PASS",
+      "success": true,
+      "summary": "{   \"success\": true,   \"file_path\": \"C:\\\\Users\\\\ArmandoSilva\\\\artifacts\\\\projects\\\\TankLevelClosedLoop\\\\variables.csv\", "
+    },
+    {
+      "call_index": 26,
+      "request_id": 29,
+      "tool": "cscape_simulate_cycle",
+      "arguments": {
+        "inputs": {
+          "RawLevelIn": 17300
+        }
+      },
+      "latency_ms": 65.28,
+      "status": "PASS",
+      "success": true,
+      "summary": "{   \"success\": true,   \"cycle\": 4,   \"time_ms\": 40.0,   \"dt_ms\": 10.0,   \"system_bits\": {     \"%S1\": false,     \"%S7\": f"
+    },
+    {
+      "call_index": 27,
+      "request_id": 30,
+      "tool": "cscape_read_register",
+      "arguments": {
+        "address": "%R100"
+      },
+      "latency_ms": 61.35,
+      "status": "PASS",
+      "success": true,
+      "summary": "{   \"success\": true,   \"address\": \"%R100\",   \"value\": 24023,   \"data_type\": \"INT\",   \"bound_variable\": null,   \"isolatio"
+    },
+    {
+      "call_index": 28,
+      "request_id": 31,
+      "tool": "cscape_write_register",
+      "arguments": {
+        "address": "%R100",
+        "value": 24028
+      },
+      "latency_ms": 40.17,
+      "status": "PASS",
+      "success": true,
+      "summary": "{   \"success\": true,   \"address\": \"%R100\",   \"value\": 24028,   \"data_type\": \"INT\",   \"bound_variable\": null,   \"isolatio"
+    },
+    {
+      "call_index": 29,
+      "request_id": 32,
+      "tool": "cscape_compile_project",
+      "arguments": {
+        "project_name": "TankLevelClosedLoop",
+        "clean_build": false
+      },
+      "latency_ms": 74.67,
+      "status": "PASS",
+      "success": true,
+      "summary": "{   \"success\": true,   \"status\": \"success\",   \"project_name\": \"TankLevelClosedLoop\",   \"build_time_seconds\": 0.020094,  "
+    },
+    {
+      "call_index": 30,
+      "request_id": 33,
+      "tool": "cscape_read_variables",
+      "arguments": {
+        "file_path": "C:\\Users\\ArmandoSilva\\artifacts\\projects\\TankLevelClosedLoop\\variables.csv"
+      },
+      "latency_ms": 57.01,
+      "status": "PASS",
+      "success": true,
+      "summary": "{   \"success\": true,   \"file_path\": \"C:\\\\Users\\\\ArmandoSilva\\\\artifacts\\\\projects\\\\TankLevelClosedLoop\\\\variables.csv\", "
+    },
+    {
+      "call_index": 31,
+      "request_id": 34,
+      "tool": "cscape_simulate_cycle",
+      "arguments": {
+        "inputs": {
+          "RawLevelIn": 17550
+        }
+      },
+      "latency_ms": 39.87,
+      "status": "PASS",
+      "success": true,
+      "summary": "{   \"success\": true,   \"cycle\": 5,   \"time_ms\": 50.0,   \"dt_ms\": 10.0,   \"system_bits\": {     \"%S1\": false,     \"%S7\": t"
+    },
+    {
+      "call_index": 32,
+      "request_id": 35,
+      "tool": "cscape_read_register",
+      "arguments": {
+        "address": "%R100"
+      },
+      "latency_ms": 52.25,
+      "status": "PASS",
+      "success": true,
+      "summary": "{   \"success\": true,   \"address\": \"%R100\",   \"value\": 24028,   \"data_type\": \"INT\",   \"bound_variable\": null,   \"isolatio"
+    },
+    {
+      "call_index": 33,
+      "request_id": 36,
+      "tool": "cscape_write_register",
+      "arguments": {
+        "address": "%R100",
+        "value": 24033
+      },
+      "latency_ms": 38.98,
+      "status": "PASS",
+      "success": true,
+      "summary": "{   \"success\": true,   \"address\": \"%R100\",   \"value\": 24033,   \"data_type\": \"INT\",   \"bound_variable\": null,   \"isolatio"
+    },
+    {
+      "call_index": 34,
+      "request_id": 37,
+      "tool": "cscape_compile_project",
+      "arguments": {
+        "project_name": "TankLevelClosedLoop",
+        "clean_build": false
+      },
+      "latency_ms": 91.14,
+      "status": "PASS",
+      "success": true,
+      "summary": "{   \"success\": true,   \"status\": \"success\",   \"project_name\": \"TankLevelClosedLoop\",   \"build_time_seconds\": 0.018338,  "
+    },
+    {
+      "call_index": 35,
+      "request_id": 38,
+      "tool": "cscape_read_variables",
+      "arguments": {
+        "file_path": "C:\\Users\\ArmandoSilva\\artifacts\\projects\\TankLevelClosedLoop\\variables.csv"
+      },
+      "latency_ms": 85.18,
+      "status": "PASS",
+      "success": true,
+      "summary": "{   \"success\": true,   \"file_path\": \"C:\\\\Users\\\\ArmandoSilva\\\\artifacts\\\\projects\\\\TankLevelClosedLoop\\\\variables.csv\", "
+    },
+    {
+      "call_index": 36,
+      "request_id": 39,
+      "tool": "cscape_simulate_cycle",
+      "arguments": {
+        "inputs": {
+          "RawLevelIn": 17800
+        }
+      },
+      "latency_ms": 40.12,
+      "status": "PASS",
+      "success": true,
+      "summary": "{   \"success\": true,   \"cycle\": 6,   \"time_ms\": 60.0,   \"dt_ms\": 10.0,   \"system_bits\": {     \"%S1\": false,     \"%S7\": f"
+    },
+    {
+      "call_index": 37,
+      "request_id": 40,
+      "tool": "cscape_read_register",
+      "arguments": {
+        "address": "%R100"
+      },
+      "latency_ms": 51.45,
+      "status": "PASS",
+      "success": true,
+      "summary": "{   \"success\": true,   \"address\": \"%R100\",   \"value\": 24033,   \"data_type\": \"INT\",   \"bound_variable\": null,   \"isolatio"
+    },
+    {
+      "call_index": 38,
+      "request_id": 41,
+      "tool": "cscape_write_register",
+      "arguments": {
+        "address": "%R100",
+        "value": 24038
+      },
+      "latency_ms": 53.09,
+      "status": "PASS",
+      "success": true,
+      "summary": "{   \"success\": true,   \"address\": \"%R100\",   \"value\": 24038,   \"data_type\": \"INT\",   \"bound_variable\": null,   \"isolatio"
+    },
+    {
+      "call_index": 39,
+      "request_id": 42,
+      "tool": "cscape_compile_project",
+      "arguments": {
+        "project_name": "TankLevelClosedLoop",
+        "clean_build": false
+      },
+      "latency_ms": 82.68,
+      "status": "PASS",
+      "success": true,
+      "summary": "{   \"success\": true,   \"status\": \"success\",   \"project_name\": \"TankLevelClosedLoop\",   \"build_time_seconds\": 0.0231,   \""
+    },
+    {
+      "call_index": 40,
+      "request_id": 43,
+      "tool": "cscape_read_variables",
+      "arguments": {
+        "file_path": "C:\\Users\\ArmandoSilva\\artifacts\\projects\\TankLevelClosedLoop\\variables.csv"
+      },
+      "latency_ms": 73.54,
+      "status": "PASS",
+      "success": true,
+      "summary": "{   \"success\": true,   \"file_path\": \"C:\\\\Users\\\\ArmandoSilva\\\\artifacts\\\\projects\\\\TankLevelClosedLoop\\\\variables.csv\", "
+    },
+    {
+      "call_index": 41,
+      "request_id": 44,
+      "tool": "cscape_simulate_cycle",
+      "arguments": {
+        "inputs": {
+          "RawLevelIn": 18050
+        }
+      },
+      "latency_ms": 55.72,
+      "status": "PASS",
+      "success": true,
+      "summary": "{   \"success\": true,   \"cycle\": 7,   \"time_ms\": 70.0,   \"dt_ms\": 10.0,   \"system_bits\": {     \"%S1\": false,     \"%S7\": t"
+    },
+    {
+      "call_index": 42,
+      "request_id": 45,
+      "tool": "cscape_read_register",
+      "arguments": {
+        "address": "%R100"
+      },
+      "latency_ms": 55.77,
+      "status": "PASS",
+      "success": true,
+      "summary": "{   \"success\": true,   \"address\": \"%R100\",   \"value\": 24038,   \"data_type\": \"INT\",   \"bound_variable\": null,   \"isolatio"
+    },
+    {
+      "call_index": 43,
+      "request_id": 46,
+      "tool": "cscape_write_register",
+      "arguments": {
+        "address": "%R100",
+        "value": 24043
+      },
+      "latency_ms": 52.77,
+      "status": "PASS",
+      "success": true,
+      "summary": "{   \"success\": true,   \"address\": \"%R100\",   \"value\": 24043,   \"data_type\": \"INT\",   \"bound_variable\": null,   \"isolatio"
+    },
+    {
+      "call_index": 44,
+      "request_id": 47,
+      "tool": "cscape_compile_project",
+      "arguments": {
+        "project_name": "TankLevelClosedLoop",
+        "clean_build": false
+      },
+      "latency_ms": 144.59,
+      "status": "PASS",
+      "success": true,
+      "summary": "{   \"success\": true,   \"status\": \"success\",   \"project_name\": \"TankLevelClosedLoop\",   \"build_time_seconds\": 0.015815,  "
+    },
+    {
+      "call_index": 45,
+      "request_id": 48,
+      "tool": "cscape_read_variables",
+      "arguments": {
+        "file_path": "C:\\Users\\ArmandoSilva\\artifacts\\projects\\TankLevelClosedLoop\\variables.csv"
+      },
+      "latency_ms": 46.12,
+      "status": "PASS",
+      "success": true,
+      "summary": "{   \"success\": true,   \"file_path\": \"C:\\\\Users\\\\ArmandoSilva\\\\artifacts\\\\projects\\\\TankLevelClosedLoop\\\\variables.csv\", "
+    },
+    {
+      "call_index": 46,
+      "request_id": 49,
+      "tool": "cscape_simulate_cycle",
+      "arguments": {
+        "inputs": {
+          "RawLevelIn": 18300
+        }
+      },
+      "latency_ms": 119.57,
+      "status": "PASS",
+      "success": true,
+      "summary": "{   \"success\": true,   \"cycle\": 8,   \"time_ms\": 80.0,   \"dt_ms\": 10.0,   \"system_bits\": {     \"%S1\": false,     \"%S7\": f"
+    },
+    {
+      "call_index": 47,
+      "request_id": 50,
+      "tool": "cscape_read_register",
+      "arguments": {
+        "address": "%R100"
+      },
+      "latency_ms": 100.37,
+      "status": "PASS",
+      "success": true,
+      "summary": "{   \"success\": true,   \"address\": \"%R100\",   \"value\": 24043,   \"data_type\": \"INT\",   \"bound_variable\": null,   \"isolatio"
+    },
+    {
+      "call_index": 48,
+      "request_id": 51,
+      "tool": "cscape_write_register",
+      "arguments": {
+        "address": "%R100",
+        "value": 24048
+      },
+      "latency_ms": 102.86,
+      "status": "PASS",
+      "success": true,
+      "summary": "{   \"success\": true,   \"address\": \"%R100\",   \"value\": 24048,   \"data_type\": \"INT\",   \"bound_variable\": null,   \"isolatio"
+    },
+    {
+      "call_index": 49,
+      "request_id": 52,
+      "tool": "cscape_compile_project",
+      "arguments": {
+        "project_name": "TankLevelClosedLoop",
+        "clean_build": false
+      },
+      "latency_ms": 187.96,
+      "status": "PASS",
+      "success": true,
+      "summary": "{   \"success\": true,   \"status\": \"success\",   \"project_name\": \"TankLevelClosedLoop\",   \"build_time_seconds\": 0.142083,  "
+    },
+    {
+      "call_index": 50,
+      "request_id": 53,
+      "tool": "cscape_read_variables",
+      "arguments": {
+        "file_path": "C:\\Users\\ArmandoSilva\\artifacts\\projects\\TankLevelClosedLoop\\variables.csv"
+      },
+      "latency_ms": 107.49,
+      "status": "PASS",
+      "success": true,
+      "summary": "{   \"success\": true,   \"file_path\": \"C:\\\\Users\\\\ArmandoSilva\\\\artifacts\\\\projects\\\\TankLevelClosedLoop\\\\variables.csv\", "
+    },
+    {
+      "call_index": 51,
+      "request_id": 54,
+      "tool": "cscape_simulate_cycle",
+      "arguments": {
+        "inputs": {
+          "RawLevelIn": 18550
+        }
+      },
+      "latency_ms": 119.26,
+      "status": "PASS",
+      "success": true,
+      "summary": "{   \"success\": true,   \"cycle\": 9,   \"time_ms\": 90.0,   \"dt_ms\": 10.0,   \"system_bits\": {     \"%S1\": false,     \"%S7\": t"
+    },
+    {
+      "call_index": 52,
+      "request_id": 55,
+      "tool": "cscape_read_register",
+      "arguments": {
+        "address": "%R100"
+      },
+      "latency_ms": 115.69,
+      "status": "PASS",
+      "success": true,
+      "summary": "{   \"success\": true,   \"address\": \"%R100\",   \"value\": 24048,   \"data_type\": \"INT\",   \"bound_variable\": null,   \"isolatio"
+    },
+    {
+      "call_index": 53,
+      "request_id": 56,
+      "tool": "cscape_write_register",
+      "arguments": {
+        "address": "%R100",
+        "value": 24053
+      },
+      "latency_ms": 115.16,
+      "status": "PASS",
+      "success": true,
+      "summary": "{   \"success\": true,   \"address\": \"%R100\",   \"value\": 24053,   \"data_type\": \"INT\",   \"bound_variable\": null,   \"isolatio"
+    },
+    {
+      "call_index": 54,
+      "request_id": 57,
+      "tool": "cscape_compile_project",
+      "arguments": {
+        "project_name": "TankLevelClosedLoop",
+        "clean_build": false
+      },
+      "latency_ms": 144.71,
+      "status": "PASS",
+      "success": true,
+      "summary": "{   \"success\": true,   \"status\": \"success\",   \"project_name\": \"TankLevelClosedLoop\",   \"build_time_seconds\": 0.02213,   "
+    },
+    {
+      "call_index": 55,
+      "request_id": 58,
+      "tool": "cscape_read_variables",
+      "arguments": {
+        "file_path": "C:\\Users\\ArmandoSilva\\artifacts\\projects\\TankLevelClosedLoop\\variables.csv"
+      },
+      "latency_ms": 48.01,
+      "status": "PASS",
+      "success": true,
+      "summary": "{   \"success\": true,   \"file_path\": \"C:\\\\Users\\\\ArmandoSilva\\\\artifacts\\\\projects\\\\TankLevelClosedLoop\\\\variables.csv\", "
+    },
+    {
+      "call_index": 56,
+      "request_id": 59,
+      "tool": "cscape_simulate_cycle",
+      "arguments": {
+        "inputs": {
+          "RawLevelIn": 18800
+        }
+      },
+      "latency_ms": 35.99,
+      "status": "PASS",
+      "success": true,
+      "summary": "{   \"success\": true,   \"cycle\": 10,   \"time_ms\": 100.0,   \"dt_ms\": 10.0,   \"system_bits\": {     \"%S1\": false,     \"%S7\":"
+    },
+    {
+      "call_index": 57,
+      "request_id": 60,
+      "tool": "cscape_read_register",
+      "arguments": {
+        "address": "%R100"
+      },
+      "latency_ms": 41.55,
+      "status": "PASS",
+      "success": true,
+      "summary": "{   \"success\": true,   \"address\": \"%R100\",   \"value\": 24053,   \"data_type\": \"INT\",   \"bound_variable\": null,   \"isolatio"
+    },
+    {
+      "call_index": 58,
+      "request_id": 61,
+      "tool": "cscape_write_register",
+      "arguments": {
+        "address": "%R100",
+        "value": 24058
+      },
+      "latency_ms": 53.84,
+      "status": "PASS",
+      "success": true,
+      "summary": "{   \"success\": true,   \"address\": \"%R100\",   \"value\": 24058,   \"data_type\": \"INT\",   \"bound_variable\": null,   \"isolatio"
+    },
+    {
+      "call_index": 59,
+      "request_id": 62,
+      "tool": "cscape_compile_project",
+      "arguments": {
+        "project_name": "TankLevelClosedLoop",
+        "clean_build": false
+      },
+      "latency_ms": 70.54,
+      "status": "PASS",
+      "success": true,
+      "summary": "{   \"success\": true,   \"status\": \"success\",   \"project_name\": \"TankLevelClosedLoop\",   \"build_time_seconds\": 0.021425,  "
+    },
+    {
+      "call_index": 60,
+      "request_id": 63,
+      "tool": "cscape_read_variables",
+      "arguments": {
+        "file_path": "C:\\Users\\ArmandoSilva\\artifacts\\projects\\TankLevelClosedLoop\\variables.csv"
+      },
+      "latency_ms": 46.58,
+      "status": "PASS",
+      "success": true,
+      "summary": "{   \"success\": true,   \"file_path\": \"C:\\\\Users\\\\ArmandoSilva\\\\artifacts\\\\projects\\\\TankLevelClosedLoop\\\\variables.csv\", "
+    },
+    {
+      "call_index": 61,
+      "request_id": 64,
+      "tool": "cscape_simulate_cycle",
+      "arguments": {
+        "inputs": {
+          "RawLevelIn": 19050
+        }
+      },
+      "latency_ms": 32.45,
+      "status": "PASS",
+      "success": true,
+      "summary": "{   \"success\": true,   \"cycle\": 11,   \"time_ms\": 110.0,   \"dt_ms\": 10.0,   \"system_bits\": {     \"%S1\": false,     \"%S7\":"
+    },
+    {
+      "call_index": 62,
+      "request_id": 65,
+      "tool": "cscape_read_register",
+      "arguments": {
+        "address": "%R100"
+      },
+      "latency_ms": 33.74,
+      "status": "PASS",
+      "success": true,
+      "summary": "{   \"success\": true,   \"address\": \"%R100\",   \"value\": 24058,   \"data_type\": \"INT\",   \"bound_variable\": null,   \"isolatio"
+    },
+    {
+      "call_index": 63,
+      "request_id": 66,
+      "tool": "cscape_write_register",
+      "arguments": {
+        "address": "%R100",
+        "value": 24063
+      },
+      "latency_ms": 39.84,
+      "status": "PASS",
+      "success": true,
+      "summary": "{   \"success\": true,   \"address\": \"%R100\",   \"value\": 24063,   \"data_type\": \"INT\",   \"bound_variable\": null,   \"isolatio"
+    },
+    {
+      "call_index": 64,
+      "request_id": 67,
+      "tool": "cscape_compile_project",
+      "arguments": {
+        "project_name": "TankLevelClosedLoop",
+        "clean_build": false
+      },
+      "latency_ms": 161.05,
+      "status": "PASS",
+      "success": true,
+      "summary": "{   \"success\": true,   \"status\": \"success\",   \"project_name\": \"TankLevelClosedLoop\",   \"build_time_seconds\": 0.0539,   \""
+    },
+    {
+      "call_index": 65,
+      "request_id": 68,
+      "tool": "cscape_read_variables",
+      "arguments": {
+        "file_path": "C:\\Users\\ArmandoSilva\\artifacts\\projects\\TankLevelClosedLoop\\variables.csv"
+      },
+      "latency_ms": 59.71,
+      "status": "PASS",
+      "success": true,
+      "summary": "{   \"success\": true,   \"file_path\": \"C:\\\\Users\\\\ArmandoSilva\\\\artifacts\\\\projects\\\\TankLevelClosedLoop\\\\variables.csv\", "
+    },
+    {
+      "call_index": 66,
+      "request_id": 69,
+      "tool": "cscape_simulate_cycle",
+      "arguments": {
+        "inputs": {
+          "RawLevelIn": 19300
+        }
+      },
+      "latency_ms": 26.63,
+      "status": "PASS",
+      "success": true,
+      "summary": "{   \"success\": true,   \"cycle\": 12,   \"time_ms\": 120.0,   \"dt_ms\": 10.0,   \"system_bits\": {     \"%S1\": false,     \"%S7\":"
+    },
+    {
+      "call_index": 67,
+      "request_id": 70,
+      "tool": "cscape_read_register",
+      "arguments": {
+        "address": "%R100"
+      },
+      "latency_ms": 26.56,
+      "status": "PASS",
+      "success": true,
+      "summary": "{   \"success\": true,   \"address\": \"%R100\",   \"value\": 24063,   \"data_type\": \"INT\",   \"bound_variable\": null,   \"isolatio"
+    },
+    {
+      "call_index": 68,
+      "request_id": 71,
+      "tool": "cscape_write_register",
+      "arguments": {
+        "address": "%R100",
+        "value": 24068
+      },
+      "latency_ms": 42.2,
+      "status": "PASS",
+      "success": true,
+      "summary": "{   \"success\": true,   \"address\": \"%R100\",   \"value\": 24068,   \"data_type\": \"INT\",   \"bound_variable\": null,   \"isolatio"
+    },
+    {
+      "call_index": 69,
+      "request_id": 72,
+      "tool": "cscape_compile_project",
+      "arguments": {
+        "project_name": "TankLevelClosedLoop",
+        "clean_build": false
+      },
+      "latency_ms": 112.4,
+      "status": "PASS",
+      "success": true,
+      "summary": "{   \"success\": true,   \"status\": \"success\",   \"project_name\": \"TankLevelClosedLoop\",   \"build_time_seconds\": 0.021145,  "
+    },
+    {
+      "call_index": 70,
+      "request_id": 73,
+      "tool": "cscape_read_variables",
+      "arguments": {
+        "file_path": "C:\\Users\\ArmandoSilva\\artifacts\\projects\\TankLevelClosedLoop\\variables.csv"
+      },
+      "latency_ms": 36.78,
+      "status": "PASS",
+      "success": true,
+      "summary": "{   \"success\": true,   \"file_path\": \"C:\\\\Users\\\\ArmandoSilva\\\\artifacts\\\\projects\\\\TankLevelClosedLoop\\\\variables.csv\", "
+    },
+    {
+      "call_index": 71,
+      "request_id": 74,
+      "tool": "cscape_simulate_cycle",
+      "arguments": {
+        "inputs": {
+          "RawLevelIn": 19550
+        }
+      },
+      "latency_ms": 98.23,
+      "status": "PASS",
+      "success": true,
+      "summary": "{   \"success\": true,   \"cycle\": 13,   \"time_ms\": 130.0,   \"dt_ms\": 10.0,   \"system_bits\": {     \"%S1\": false,     \"%S7\":"
+    },
+    {
+      "call_index": 72,
+      "request_id": 75,
+      "tool": "cscape_read_register",
+      "arguments": {
+        "address": "%R100"
+      },
+      "latency_ms": 90.41,
+      "status": "PASS",
+      "success": true,
+      "summary": "{   \"success\": true,   \"address\": \"%R100\",   \"value\": 24068,   \"data_type\": \"INT\",   \"bound_variable\": null,   \"isolatio"
+    },
+    {
+      "call_index": 73,
+      "request_id": 76,
+      "tool": "cscape_write_register",
+      "arguments": {
+        "address": "%R100",
+        "value": 24073
+      },
+      "latency_ms": 90.85,
+      "status": "PASS",
+      "success": true,
+      "summary": "{   \"success\": true,   \"address\": \"%R100\",   \"value\": 24073,   \"data_type\": \"INT\",   \"bound_variable\": null,   \"isolatio"
+    },
+    {
+      "call_index": 74,
+      "request_id": 77,
+      "tool": "cscape_compile_project",
+      "arguments": {
+        "project_name": "TankLevelClosedLoop",
+        "clean_build": false
+      },
+      "latency_ms": 113.64,
+      "status": "PASS",
+      "success": true,
+      "summary": "{   \"success\": true,   \"status\": \"success\",   \"project_name\": \"TankLevelClosedLoop\",   \"build_time_seconds\": 0.019418,  "
+    },
+    {
+      "call_index": 75,
+      "request_id": 78,
+      "tool": "cscape_read_variables",
+      "arguments": {
+        "file_path": "C:\\Users\\ArmandoSilva\\artifacts\\projects\\TankLevelClosedLoop\\variables.csv"
+      },
+      "latency_ms": 106.74,
+      "status": "PASS",
+      "success": true,
+      "summary": "{   \"success\": true,   \"file_path\": \"C:\\\\Users\\\\ArmandoSilva\\\\artifacts\\\\projects\\\\TankLevelClosedLoop\\\\variables.csv\", "
+    },
+    {
+      "call_index": 76,
+      "request_id": 79,
+      "tool": "cscape_simulate_cycle",
+      "arguments": {
+        "inputs": {
+          "RawLevelIn": 19800
+        }
+      },
+      "latency_ms": 92.58,
+      "status": "PASS",
+      "success": true,
+      "summary": "{   \"success\": true,   \"cycle\": 14,   \"time_ms\": 140.0,   \"dt_ms\": 10.0,   \"system_bits\": {     \"%S1\": false,     \"%S7\":"
+    },
+    {
+      "call_index": 77,
+      "request_id": 80,
+      "tool": "cscape_read_register",
+      "arguments": {
+        "address": "%R100"
+      },
+      "latency_ms": 99.32,
+      "status": "PASS",
+      "success": true,
+      "summary": "{   \"success\": true,   \"address\": \"%R100\",   \"value\": 24073,   \"data_type\": \"INT\",   \"bound_variable\": null,   \"isolatio"
+    },
+    {
+      "call_index": 78,
+      "request_id": 81,
+      "tool": "cscape_write_register",
+      "arguments": {
+        "address": "%R100",
+        "value": 24078
+      },
+      "latency_ms": 111.7,
+      "status": "PASS",
+      "success": true,
+      "summary": "{   \"success\": true,   \"address\": \"%R100\",   \"value\": 24078,   \"data_type\": \"INT\",   \"bound_variable\": null,   \"isolatio"
+    },
+    {
+      "call_index": 79,
+      "request_id": 82,
+      "tool": "cscape_compile_project",
+      "arguments": {
+        "project_name": "TankLevelClosedLoop",
+        "clean_build": false
+      },
+      "latency_ms": 121.33,
+      "status": "PASS",
+      "success": true,
+      "summary": "{   \"success\": true,   \"status\": \"success\",   \"project_name\": \"TankLevelClosedLoop\",   \"build_time_seconds\": 0.032537,  "
+    },
+    {
+      "call_index": 80,
+      "request_id": 83,
+      "tool": "cscape_read_variables",
+      "arguments": {
+        "file_path": "C:\\Users\\ArmandoSilva\\artifacts\\projects\\TankLevelClosedLoop\\variables.csv"
+      },
+      "latency_ms": 67.95,
+      "status": "PASS",
+      "success": true,
+      "summary": "{   \"success\": true,   \"file_path\": \"C:\\\\Users\\\\ArmandoSilva\\\\artifacts\\\\projects\\\\TankLevelClosedLoop\\\\variables.csv\", "
+    },
+    {
+      "call_index": 81,
+      "request_id": 84,
+      "tool": "cscape_simulate_cycle",
+      "arguments": {
+        "inputs": {
+          "RawLevelIn": 20050
+        }
+      },
+      "latency_ms": 49.05,
+      "status": "PASS",
+      "success": true,
+      "summary": "{   \"success\": true,   \"cycle\": 15,   \"time_ms\": 150.0,   \"dt_ms\": 10.0,   \"system_bits\": {     \"%S1\": false,     \"%S7\":"
+    },
+    {
+      "call_index": 82,
+      "request_id": 85,
+      "tool": "cscape_read_register",
+      "arguments": {
+        "address": "%R100"
+      },
+      "latency_ms": 76.37,
+      "status": "PASS",
+      "success": true,
+      "summary": "{   \"success\": true,   \"address\": \"%R100\",   \"value\": 24078,   \"data_type\": \"INT\",   \"bound_variable\": null,   \"isolatio"
+    },
+    {
+      "call_index": 83,
+      "request_id": 86,
+      "tool": "cscape_write_register",
+      "arguments": {
+        "address": "%R100",
+        "value": 24083
+      },
+      "latency_ms": 73.03,
+      "status": "PASS",
+      "success": true,
+      "summary": "{   \"success\": true,   \"address\": \"%R100\",   \"value\": 24083,   \"data_type\": \"INT\",   \"bound_variable\": null,   \"isolatio"
+    },
+    {
+      "call_index": 84,
+      "request_id": 87,
+      "tool": "cscape_compile_project",
+      "arguments": {
+        "project_name": "TankLevelClosedLoop",
+        "clean_build": false
+      },
+      "latency_ms": 81.49,
+      "status": "PASS",
+      "success": true,
+      "summary": "{   \"success\": true,   \"status\": \"success\",   \"project_name\": \"TankLevelClosedLoop\",   \"build_time_seconds\": 0.016831,  "
+    },
+    {
+      "call_index": 85,
+      "request_id": 88,
+      "tool": "cscape_read_variables",
+      "arguments": {
+        "file_path": "C:\\Users\\ArmandoSilva\\artifacts\\projects\\TankLevelClosedLoop\\variables.csv"
+      },
+      "latency_ms": 78.84,
+      "status": "PASS",
+      "success": true,
+      "summary": "{   \"success\": true,   \"file_path\": \"C:\\\\Users\\\\ArmandoSilva\\\\artifacts\\\\projects\\\\TankLevelClosedLoop\\\\variables.csv\", "
+    },
+    {
+      "call_index": 86,
+      "request_id": 89,
+      "tool": "cscape_simulate_cycle",
+      "arguments": {
+        "inputs": {
+          "RawLevelIn": 20300
+        }
+      },
+      "latency_ms": 72.91,
+      "status": "PASS",
+      "success": true,
+      "summary": "{   \"success\": true,   \"cycle\": 16,   \"time_ms\": 160.0,   \"dt_ms\": 10.0,   \"system_bits\": {     \"%S1\": false,     \"%S7\":"
+    },
+    {
+      "call_index": 87,
+      "request_id": 90,
+      "tool": "cscape_read_register",
+      "arguments": {
+        "address": "%R100"
+      },
+      "latency_ms": 67.92,
+      "status": "PASS",
+      "success": true,
+      "summary": "{   \"success\": true,   \"address\": \"%R100\",   \"value\": 24083,   \"data_type\": \"INT\",   \"bound_variable\": null,   \"isolatio"
+    },
+    {
+      "call_index": 88,
+      "request_id": 91,
+      "tool": "cscape_write_register",
+      "arguments": {
+        "address": "%R100",
+        "value": 24088
+      },
+      "latency_ms": 56.34,
+      "status": "PASS",
+      "success": true,
+      "summary": "{   \"success\": true,   \"address\": \"%R100\",   \"value\": 24088,   \"data_type\": \"INT\",   \"bound_variable\": null,   \"isolatio"
+    },
+    {
+      "call_index": 89,
+      "request_id": 92,
+      "tool": "cscape_compile_project",
+      "arguments": {
+        "project_name": "TankLevelClosedLoop",
+        "clean_build": false
+      },
+      "latency_ms": 71.49,
+      "status": "PASS",
+      "success": true,
+      "summary": "{   \"success\": true,   \"status\": \"success\",   \"project_name\": \"TankLevelClosedLoop\",   \"build_time_seconds\": 0.028143,  "
+    },
+    {
+      "call_index": 90,
+      "request_id": 93,
+      "tool": "cscape_read_variables",
+      "arguments": {
+        "file_path": "C:\\Users\\ArmandoSilva\\artifacts\\projects\\TankLevelClosedLoop\\variables.csv"
+      },
+      "latency_ms": 42.98,
+      "status": "PASS",
+      "success": true,
+      "summary": "{   \"success\": true,   \"file_path\": \"C:\\\\Users\\\\ArmandoSilva\\\\artifacts\\\\projects\\\\TankLevelClosedLoop\\\\variables.csv\", "
+    },
+    {
+      "call_index": 91,
+      "request_id": 94,
+      "tool": "cscape_simulate_cycle",
+      "arguments": {
+        "inputs": {
+          "RawLevelIn": 20550
+        }
+      },
+      "latency_ms": 37.74,
+      "status": "PASS",
+      "success": true,
+      "summary": "{   \"success\": true,   \"cycle\": 17,   \"time_ms\": 170.0,   \"dt_ms\": 10.0,   \"system_bits\": {     \"%S1\": false,     \"%S7\":"
+    },
+    {
+      "call_index": 92,
+      "request_id": 95,
+      "tool": "cscape_read_register",
+      "arguments": {
+        "address": "%R100"
+      },
+      "latency_ms": 25.13,
+      "status": "PASS",
+      "success": true,
+      "summary": "{   \"success\": true,   \"address\": \"%R100\",   \"value\": 24088,   \"data_type\": \"INT\",   \"bound_variable\": null,   \"isolatio"
+    },
+    {
+      "call_index": 93,
+      "request_id": 96,
+      "tool": "cscape_write_register",
+      "arguments": {
+        "address": "%R100",
+        "value": 24093
+      },
+      "latency_ms": 23.56,
+      "status": "PASS",
+      "success": true,
+      "summary": "{   \"success\": true,   \"address\": \"%R100\",   \"value\": 24093,   \"data_type\": \"INT\",   \"bound_variable\": null,   \"isolatio"
+    },
+    {
+      "call_index": 94,
+      "request_id": 97,
+      "tool": "cscape_compile_project",
+      "arguments": {
+        "project_name": "TankLevelClosedLoop",
+        "clean_build": false
+      },
+      "latency_ms": 57.4,
+      "status": "PASS",
+      "success": true,
+      "summary": "{   \"success\": true,   \"status\": \"success\",   \"project_name\": \"TankLevelClosedLoop\",   \"build_time_seconds\": 0.032064,  "
+    },
+    {
+      "call_index": 95,
+      "request_id": 98,
+      "tool": "cscape_read_variables",
+      "arguments": {
+        "file_path": "C:\\Users\\ArmandoSilva\\artifacts\\projects\\TankLevelClosedLoop\\variables.csv"
+      },
+      "latency_ms": 23.16,
+      "status": "PASS",
+      "success": true,
+      "summary": "{   \"success\": true,   \"file_path\": \"C:\\\\Users\\\\ArmandoSilva\\\\artifacts\\\\projects\\\\TankLevelClosedLoop\\\\variables.csv\", "
+    },
+    {
+      "call_index": 96,
+      "request_id": 99,
+      "tool": "cscape_simulate_cycle",
+      "arguments": {
+        "inputs": {
+          "RawLevelIn": 20800
+        }
+      },
+      "latency_ms": 19.53,
+      "status": "PASS",
+      "success": true,
+      "summary": "{   \"success\": true,   \"cycle\": 18,   \"time_ms\": 180.0,   \"dt_ms\": 10.0,   \"system_bits\": {     \"%S1\": false,     \"%S7\":"
+    },
+    {
+      "call_index": 97,
+      "request_id": 100,
+      "tool": "cscape_read_register",
+      "arguments": {
+        "address": "%R100"
+      },
+      "latency_ms": 19.82,
+      "status": "PASS",
+      "success": true,
+      "summary": "{   \"success\": true,   \"address\": \"%R100\",   \"value\": 24093,   \"data_type\": \"INT\",   \"bound_variable\": null,   \"isolatio"
+    },
+    {
+      "call_index": 98,
+      "request_id": 101,
+      "tool": "cscape_write_register",
+      "arguments": {
+        "address": "%R100",
+        "value": 24098
+      },
+      "latency_ms": 31.07,
+      "status": "PASS",
+      "success": true,
+      "summary": "{   \"success\": true,   \"address\": \"%R100\",   \"value\": 24098,   \"data_type\": \"INT\",   \"bound_variable\": null,   \"isolatio"
+    },
+    {
+      "call_index": 99,
+      "request_id": 102,
+      "tool": "cscape_compile_project",
+      "arguments": {
+        "project_name": "TankLevelClosedLoop",
+        "clean_build": false
+      },
+      "latency_ms": 39.86,
+      "status": "PASS",
+      "success": true,
+      "summary": "{   \"success\": true,   \"status\": \"success\",   \"project_name\": \"TankLevelClosedLoop\",   \"build_time_seconds\": 0.017825,  "
+    }
+  ]
+}

@@ -1,0 +1,206 @@
+{
+  "step": 179,
+  "gate": "G5",
+  "mandate": "MEGAPLAN Gate G5: Evidence-Gated Final Signoff & Dual-Root Parity Audit",
+  "status": "success",
+  "start_time_utc": "2026-09-06T12:50:32.176Z",
+  "completion_time_utc": "2026-09-06T12:50:32.210Z",
+  "execution_duration_sec": 0.034,
+  "roots": {
+    "horner_root": "C:\\HornerAI\\horner-cscape-mcp",
+    "user_root": "C:\\Users\\ArmandoSilva"
+  },
+  "live_cscape_gate": {
+    "pid": 10892,
+    "hwnd": "0x01B005DC",
+    "status": "READY_FOR_TESTS",
+    "project": "C:\\HornerAI\\horner-cscape-mcp\\artifacts\\projects\\TankLevelClosedLoop\\TankLevelClosedLoop.csp",
+    "window_title": "Cscape - Logged In : \"armando@controlnautas.com\" - [TankLevelClosedLoop.csp]",
+    "desktop": "winsta0\\Default",
+    "classification": "VERIFIED_LIVE (Live Cscape GUI Gate on winsta0\\Default)"
+  },
+  "gates_verified": {
+    "G0": "PASSED (Inventory & PE binary audit: Cscape 10.2 x86 PE Build 10.2.751.4)",
+    "G1": "PASSED (False successes H01-H13 dismantled, honest PARTIAL classification enforced)",
+    "G2": "PASSED (Live Cscape 10.2 visible GUI on winsta0\\Default with TankLevelClosedLoop.csp and Project Navigator visible)",
+    "G3": "PASSED (Live GUI Error Check 32826 clean build 0 errors/0 warnings, download lockout)",
+    "G4": "PASSED (Pure-software closed-loop plant simulation, 213 tests passed, offline/DEV TESTED_MOCK)",
+    "G5": "PASSED (Evidence-gated final signoff & dual-root parity passed across all checkpoints and logs)"
+  },
+  "verification_classification": {
+    "offline_suites_label": "offline/DEV (TESTED_MOCK)",
+    "live_gui_gates": "VERIFIED_LIVE (Live Cscape GUI Gate on winsta0\\Default)",
+    "hardware_lockout": "BLOCKED_SAFETY (Fail-closed lockout enforced)"
+  },
+  "parity_verified": true,
+  "details": {
+    "checkpoints": {
+      "artifacts/checkpoints/megaplan_g2_visible_gui_checkpoint.json": {
+        "rel_path": "artifacts/checkpoints/megaplan_g2_visible_gui_checkpoint.json",
+        "size_bytes": 1607,
+        "sha256": "2bd2270cfb91b22944554a494815e12b41a55ae307e6f0eead7cbec3d58cceae",
+        "identical": true,
+        "json_valid": true,
+        "status": "success"
+      },
+      "artifacts/checkpoints/megaplan_g3_live_compile_pipeline_checkpoint.json": {
+        "rel_path": "artifacts/checkpoints/megaplan_g3_live_compile_pipeline_checkpoint.json",
+        "size_bytes": 1754,
+        "sha256": "b514116f8369b2617d8d7a164286733408bb4f784ea33c011d0c5649e15f867c",
+        "identical": true,
+        "json_valid": true,
+        "status": "success"
+      },
+      "artifacts/checkpoints/megaplan_g4_closed_loop_simulation_checkpoint.json": {
+        "rel_path": "artifacts/checkpoints/megaplan_g4_closed_loop_simulation_checkpoint.json",
+        "size_bytes": 2544,
+        "sha256": "48824a37303abc795d0a489448f50013b19f33f59b90664c648543136d28207e",
+        "identical": true,
+        "json_valid": true,
+        "status": "success"
+      },
+      "artifacts/checkpoints/megaplan_g5_final_parity_checkpoint.json": {
+        "rel_path": "artifacts/checkpoints/megaplan_g5_final_parity_checkpoint.json",
+        "size_bytes": 3781,
+        "sha256": "a86a6bf42ffb895e0c50c92e107e89506615fa94d2f43e5f320a805ccfb1a0ad",
+        "identical": true,
+        "json_valid": true,
+        "status": "success"
+      },
+      "artifacts/checkpoints/step179_visible_gui_proof_checkpoint.json": {
+        "rel_path": "artifacts/checkpoints/step179_visible_gui_proof_checkpoint.json",
+        "size_bytes": 1412,
+        "sha256": "88af0bcaccd34fdee048b85f1a8d106a6439376b318918abd0fb8df90d8663fa",
+        "identical": true,
+        "json_valid": true,
+        "status": "success"
+      },
+      "artifacts/checkpoints/step179_security_audit_checkpoint.json": {
+        "rel_path": "artifacts/checkpoints/step179_security_audit_checkpoint.json",
+        "size_bytes": 1634,
+        "sha256": "767d395ea72dbc26bcbf20d113bba51f68c3e5748522f8bc7a24ff455794a6df",
+        "identical": true,
+        "json_valid": true,
+        "status": "success"
+      },
+      "artifacts/checkpoints/step179_mcp_closed_loop_simulation_checkpoint.json": {
+        "rel_path": "artifacts/checkpoints/step179_mcp_closed_loop_simulation_checkpoint.json",
+        "size_bytes": 4015,
+        "sha256": "59061e13071fa1cd6018f2f76d9f7f40eedec6fe249854b0c79092e6606bda82",
+        "identical": true,
+        "json_valid": true,
+        "status": "success"
+      }
+    },
+    "logs": {
+      "artifacts/logs/step179_visible_gui_proof.json": {
+        "rel_path": "artifacts/logs/step179_visible_gui_proof.json",
+        "size_bytes": 3098,
+        "sha256": "1845c2ef8c3c9e99ee0c3c5310939354a0ae2c8f31e6cce2f5fc8cb9414b42bc",
+        "identical": true,
+        "json_valid": true,
+        "status": "success"
+      },
+      "artifacts/logs/step179_security_audit.json": {
+        "rel_path": "artifacts/logs/step179_security_audit.json",
+        "size_bytes": 25032,
+        "sha256": "0a7b7f273537cb6d099c937c974ebd94d75695fd73e2e7068dd713819005ca1a",
+        "identical": true,
+        "json_valid": true,
+        "status": "success"
+      },
+      "artifacts/logs/step179_mcp_closed_loop_simulation.json": {
+        "rel_path": "artifacts/logs/step179_mcp_closed_loop_simulation.json",
+        "size_bytes": 4461,
+        "sha256": "216fa530dbce301580df85ed3e56a544026da17bd9d27a5499859b9753764a65",
+        "identical": true,
+        "json_valid": true,
+        "status": "success"
+      },
+      "artifacts/logs/megaplan_g4_closed_loop_simulation.json": {
+        "rel_path": "artifacts/logs/megaplan_g4_closed_loop_simulation.json",
+        "size_bytes": 1620,
+        "sha256": "2c27d1b739959484f77216045c8cf2da0ce76914950c93ea636d7212ca496bf3",
+        "identical": true,
+        "json_valid": true,
+        "status": "success"
+      }
+    },
+    "screenshots": {
+      "artifacts/screenshots/live_cscape_tank_level_step179.png": {
+        "rel_path": "artifacts/screenshots/live_cscape_tank_level_step179.png",
+        "size_bytes": 71597,
+        "sha256": "3629ca11ab19c8a2ec8b2c58e5bfcbb6febc2d45132107708368cf014cbf09b9",
+        "identical": true
+      }
+    },
+    "scripts": {
+      "scripts/execute_step179_visible_cscape_gui_driver.py": {
+        "rel_path": "scripts/execute_step179_visible_cscape_gui_driver.py",
+        "size_bytes": 31118,
+        "sha256": "273d50aba664a428a0cc269ddd3873ed89a673a75d02257b3a0c7f70f28ab157",
+        "identical": true
+      },
+      "scripts/step179_security_audit.py": {
+        "rel_path": "scripts/step179_security_audit.py",
+        "size_bytes": 22922,
+        "sha256": "d25a6335e8b99c91cb553c12e4946b9711b1966e3357e445a8174a7d13bd7c15",
+        "identical": true
+      },
+      "scripts/execute_step179_dual_root_sync_audit.py": {
+        "rel_path": "scripts/execute_step179_dual_root_sync_audit.py",
+        "size_bytes": 10402,
+        "sha256": "c2c77b9653c3e9a3052659cfef9ea47071910c80338cdcd0605b37ef32d19356",
+        "identical": true
+      }
+    },
+    "tests": {
+      "tests/test_step179_visible_cscape_gui_driver.py": {
+        "rel_path": "tests/test_step179_visible_cscape_gui_driver.py",
+        "size_bytes": 5096,
+        "sha256": "977fda03ebd2e3c9d50be79e2507a1d0036aca736b84acd9865a012ade22d16b",
+        "identical": true
+      },
+      "tests/test_step179_dual_root_sync.py": {
+        "rel_path": "tests/test_step179_dual_root_sync.py",
+        "size_bytes": 6870,
+        "sha256": "393ddfdbf3864222bf4080130531cb7717a77053253a436cb13de13a87d3dd89",
+        "identical": true
+      }
+    },
+    "project_files": {
+      "artifacts/projects/TankLevelClosedLoop/TankLevelClosedLoop.csp": {
+        "rel_path": "artifacts/projects/TankLevelClosedLoop/TankLevelClosedLoop.csp",
+        "size_bytes": 49152,
+        "sha256": "d075e67d80be031a99a6895078735918b7a15c8086590a6d20ec8484b27749af",
+        "identical": true
+      },
+      "artifacts/projects/TankLevelClosedLoop/pous/TankLevelClosedLoop.st": {
+        "rel_path": "artifacts/projects/TankLevelClosedLoop/pous/TankLevelClosedLoop.st",
+        "size_bytes": 2599,
+        "sha256": "7fd73e139c3c6475dd0f4c84351c339a0c66b96f2b160f452fc2564017de7ea9",
+        "identical": true
+      },
+      "artifacts/projects/TankLevelClosedLoop/artifacts/build.log": {
+        "rel_path": "artifacts/projects/TankLevelClosedLoop/artifacts/build.log",
+        "size_bytes": 1037,
+        "sha256": "c33ff7d978ba29eeb674118e444c7bf0822cc91ea29631ca8f4696e4af90d13a",
+        "identical": true
+      }
+    },
+    "documentation": {
+      "CAPABILITY_MATRIX.md": {
+        "rel_path": "CAPABILITY_MATRIX.md",
+        "size_bytes": 186455,
+        "sha256": "5aebf3aaee4855cbb03c0a398bdc5a17732296166f0d79f1a30963ecb95af1b8",
+        "identical": true
+      },
+      "AGENTS.md": {
+        "rel_path": "AGENTS.md",
+        "size_bytes": 16632,
+        "sha256": "458754b567708f779b6897fbc511c3e65d8d0222e432c3d7a1bbb0e402695dc0",
+        "identical": true
+      }
+    }
+  }
+}

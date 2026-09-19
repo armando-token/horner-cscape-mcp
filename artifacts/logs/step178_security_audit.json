@@ -1,0 +1,45 @@
+{
+  "status": "success",
+  "step": 178,
+  "title": "Security & Safety Guard Fail-Closed Audit",
+  "start_time_utc": "2026-09-06T10:51:57.946Z",
+  "completion_time_utc": "2026-09-06T10:52:05.895Z",
+  "duration_seconds": 7.949,
+  "auditor": "Security Lockout Auditor subagent for MEGAPLAN",
+  "tasks": {
+    "task1_download_lockout": {
+      "cmd_32827_blocked": true,
+      "cmd_32827_reason": "Physical controller download command '32827' (ID_CONTROLLER_DOWNLOAD=32827, ID_CONTROLLER_DOWNLOAD_ALT=33149) is strictly locked out. Zero physical PLC flashing permitted.",
+      "cmd_33149_blocked": true,
+      "cmd_33149_reason": "Physical controller download command '33149' (ID_CONTROLLER_DOWNLOAD=32827, ID_CONTROLLER_DOWNLOAD_ALT=33149) is strictly locked out. Zero physical PLC flashing permitted.",
+      "safety_guard_validate_download_blocked": true,
+      "all_hardware_ports_blocked": true,
+      "compiler_cmd_32827_blocked": true,
+      "compiler_cmd_33149_blocked": true
+    },
+    "task2_mcp_download_tool": {
+      "mcp_tool_blocked": true,
+      "mcp_error": ""
+    },
+    "task3_straton_quarantine": {
+      "quarantine_file_count": 11,
+      "src_quarantine_violations": 0
+    },
+    "task4_offline_gate_fail_closed": {
+      "offline_gate_fail_closed": true,
+      "error_message": "FAIL-CLOSED: Operations halted. Cscape is not ready. Status='OFFLINE', Reason='Simulated offline condition for fail-closed test'",
+      "dead_pid_fail_closed": true
+    }
+  },
+  "safety_summary": {
+    "hardware_downloads_blocked": true,
+    "ports_blocked": [
+      "COM*",
+      "CAN*",
+      "USB*",
+      "/dev/tty*"
+    ],
+    "straton_k5_isolated": true,
+    "fail_closed_gate_enforced": true
+  }
+}

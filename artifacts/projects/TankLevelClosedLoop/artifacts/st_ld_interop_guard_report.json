@@ -1,0 +1,192 @@
+{
+  "project": "TankLevelClosedLoop",
+  "pou": "TankLevelClosedLoop.st",
+  "pou_sha256": "f07afce58bc74729b15a2313845d716a033f868881928f31be869f9e70b9e77f",
+  "results": {
+    "project_mode_validation": "PASS",
+    "project_enforce_st_mode": "PASS",
+    "analyze_code_pure_st": "PASS",
+    "zero_contacts": "PASS",
+    "zero_coils": "PASS",
+    "zero_rungs": "PASS",
+    "zero_rails_and_networks": "PASS",
+    "zero_legacy_registers": "PASS",
+    "ast_grammar_validation": "PASS",
+    "ladder_rejection_suite": "PASS (10/10 rejected)",
+    "project_injection_guard": "PASS",
+    "live_window_inserter_guard": "PASS",
+    "project_integrity_preserved": "PASS"
+  },
+  "rejection_suite_count": 10,
+  "rejection_logs": [
+    {
+      "test_case": "Ladder NO Contact (--[ Tag ]--)",
+      "status": "REJECTED_STRICTLY",
+      "violations": [
+        {
+          "pattern_type": "ASCII_NO_CONTACT",
+          "line_number": 6,
+          "matched_text": "--[ RawLevelInput ]--",
+          "st_recommendation": "Tag",
+          "explanation": "Normally open contact symbol detected. Structured Text uses boolean identifiers directly."
+        }
+      ],
+      "message_snippet": "[Injection_Ladder NO Contact (--[ Tag ]--)] Ladder logic construct rejected! Horner Cscape MCP strictly enforces IEC 61131-3 Structured Text (ST) only."
+    },
+    {
+      "test_case": "Ladder Empty Contact (--[ ]--)",
+      "status": "REJECTED_STRICTLY",
+      "violations": [
+        {
+          "pattern_type": "ASCII_NO_CONTACT",
+          "line_number": 5,
+          "matched_text": "--[ ]--",
+          "st_recommendation": "Tag",
+          "explanation": "Normally open contact symbol detected. Structured Text uses boolean identifiers directly."
+        }
+      ],
+      "message_snippet": "[Injection_Ladder Empty Contact (--[ ]--)] Ladder logic construct rejected! Horner Cscape MCP strictly enforces IEC 61131-3 Structured Text (ST) only."
+    },
+    {
+      "test_case": "Ladder Normally Closed Contact (--[/]--)",
+      "status": "REJECTED_STRICTLY",
+      "violations": [
+        {
+          "pattern_type": "ASCII_NC_CONTACT",
+          "line_number": 5,
+          "matched_text": "--[/ ManualMode ]--",
+          "st_recommendation": "NOT Tag",
+          "explanation": "Normally closed contact symbol detected. Structured Text uses the NOT operator."
+        }
+      ],
+      "message_snippet": "[Injection_Ladder Normally Closed Contact (--[/]--)] Ladder logic construct rejected! Horner Cscape MCP strictly enforces IEC 61131-3 Structured Text (ST) only."
+    },
+    {
+      "test_case": "Ladder Normal Coil (--( )--)",
+      "status": "REJECTED_STRICTLY",
+      "violations": [
+        {
+          "pattern_type": "ASCII_NORMAL_COIL",
+          "line_number": 5,
+          "matched_text": "--( PumpRunCmd )--",
+          "st_recommendation": "Tag := <Rung_Condition>;",
+          "explanation": "Normal output coil symbol detected. Structured Text uses variable assignment (:=)."
+        }
+      ],
+      "message_snippet": "[Injection_Ladder Normal Coil (--( )--)] Ladder logic construct rejected! Horner Cscape MCP strictly enforces IEC 61131-3 Structured Text (ST) only."
+    },
+    {
+      "test_case": "Ladder Set / Latch Coil (--(S)--)",
+      "status": "REJECTED_STRICTLY",
+      "violations": [
+        {
+          "pattern_type": "ASCII_SET_COIL",
+          "line_number": 5,
+          "matched_text": "---(S AlarmHighHigh )---",
+          "st_recommendation": "IF <Rung_Condition> THEN\n    Tag := TRUE;\nEND_IF;",
+          "explanation": "Set / Latch coil symbol detected. Structured Text uses 'IF condition THEN var := TRUE; END_IF;'."
+        }
+      ],
+      "message_snippet": "[Injection_Ladder Set / Latch Coil (--(S)--)] Ladder logic construct rejected! Horner Cscape MCP strictly enforces IEC 61131-3 Structured Text (ST) only."
+    },
+    {
+      "test_case": "Ladder Reset / Unlatch Coil (--(R)--)",
+      "status": "REJECTED_STRICTLY",
+      "violations": [
+        {
+          "pattern_type": "ASCII_RESET_COIL",
+          "line_number": 5,
+          "matched_text": "---(R AlarmHighHigh )---",
+          "st_recommendation": "IF <Rung_Condition> THEN\n    Tag := FALSE;\nEND_IF;",
+          "explanation": "Reset / Unlatch coil symbol detected. Structured Text uses 'IF condition THEN var := FALSE; END_IF;'."
+        }
+      ],
+      "message_snippet": "[Injection_Ladder Reset / Unlatch Coil (--(R)--)] Ladder logic construct rejected! Horner Cscape MCP strictly enforces IEC 61131-3 Structured Text (ST) only."
+    },
+    {
+      "test_case": "Ladder Rung Boundary (RUNG 1: PID Control)",
+      "status": "REJECTED_STRICTLY",
+      "violations": [
+        {
+          "pattern_type": "RUNG_MARKER",
+          "line_number": 5,
+          "matched_text": "RUNG 1: Tank Level PID Loop",
+          "st_recommendation": "// --- Logical Block: [Description] ---\nVariable := Expression;",
+          "explanation": "Ladder rung marker detected. In Structured Text, organize logic into clean statement blocks."
+        },
+        {
+          "pattern_type": "RUNG_MARKER",
+          "line_number": 7,
+          "matched_text": "END_RUNG",
+          "st_recommendation": "// --- Logical Block: [Description] ---\nVariable := Expression;",
+          "explanation": "Ladder rung marker detected. In Structured Text, organize logic into clean statement blocks."
+        }
+      ],
+      "message_snippet": "[Injection_Ladder Rung Boundary (RUNG 1: PID Control)] Ladder logic construct rejected! Horner Cscape MCP strictly enforces IEC 61131-3 Structured Text (ST) only."
+    },
+    {
+      "test_case": "Ladder Network Label (NETWORK 1:)",
+      "status": "REJECTED_STRICTLY",
+      "violations": [
+        {
+          "pattern_type": "NETWORK_LABEL",
+          "line_number": 5,
+          "matched_text": "NETWORK 1: Inflow Interlock",
+          "st_recommendation": "// --- Section: [Title] ---\n// Place sequential ST statements here without network boundaries.",
+          "explanation": "Ladder network label detected. Structured Text does not use graphical network segmentation; organize logic into sequential statement blocks, subroutines, or descriptive comments."
+        },
+        {
+          "pattern_type": "NETWORK_LABEL",
+          "line_number": 7,
+          "matched_text": "END_NETWORK",
+          "st_recommendation": "// --- Section: [Title] ---\n// Place sequential ST statements here without network boundaries.",
+          "explanation": "Ladder network label detected. Structured Text does not use graphical network segmentation; organize logic into sequential statement blocks, subroutines, or descriptive comments."
+        }
+      ],
+      "message_snippet": "[Injection_Ladder Network Label (NETWORK 1:)] Ladder logic construct rejected! Horner Cscape MCP strictly enforces IEC 61131-3 Structured Text (ST) only."
+    },
+    {
+      "test_case": "Ladder Mnemonic Instruction (XIC / OTE)",
+      "status": "REJECTED_STRICTLY",
+      "violations": [
+        {
+          "pattern_type": "MNEMONIC_LADDER_INSTRUCTION",
+          "line_number": 5,
+          "matched_text": "XIC(",
+          "st_recommendation": "Tag := <Rung_Condition>;",
+          "explanation": "Ladder mnemonic instruction detected. Replace with Structured Text expressions."
+        },
+        {
+          "pattern_type": "MNEMONIC_LADDER_INSTRUCTION",
+          "line_number": 5,
+          "matched_text": "OTE(",
+          "st_recommendation": "Tag := <Rung_Condition>;",
+          "explanation": "Ladder mnemonic instruction detected. Replace with Structured Text expressions."
+        }
+      ],
+      "message_snippet": "[Injection_Ladder Mnemonic Instruction (XIC / OTE)] Ladder logic construct rejected! Horner Cscape MCP strictly enforces IEC 61131-3 Structured Text (ST) only."
+    },
+    {
+      "test_case": "Legacy Register Addressing (%R0001)",
+      "status": "REJECTED_STRICTLY",
+      "violations": [
+        {
+          "pattern_type": "LEGACY_REGISTER_ACCESS",
+          "line_number": 5,
+          "matched_text": "%R0001",
+          "st_recommendation": "Replace '%R0001' with a symbolic IEC variable declared in VAR...END_VAR.",
+          "explanation": "Advanced Ladder relies on raw memory offsets. IEC 61131-3 ST strictly requires symbolic, strongly typed variable declarations."
+        },
+        {
+          "pattern_type": "LEGACY_REGISTER_ACCESS",
+          "line_number": 6,
+          "matched_text": "%M0001",
+          "st_recommendation": "Replace '%M0001' with a symbolic IEC variable declared in VAR...END_VAR.",
+          "explanation": "Advanced Ladder relies on raw memory offsets. IEC 61131-3 ST strictly requires symbolic, strongly typed variable declarations."
+        }
+      ],
+      "message_snippet": "[Injection_Legacy Register Addressing (%R0001)] Ladder logic construct rejected! Horner Cscape MCP strictly enforces IEC 61131-3 Structured Text (ST) only."
+    }
+  ],
+  "editor_windows_detected": 0
+}

@@ -1,0 +1,181 @@
+{
+  "mission_id": "C4_WINDOWS_MATRIX",
+  "item_id": "W02",
+  "name": "Project Navigator & Docking State Inspection",
+  "status": "done",
+  "run_id": "run_20260906_120831",
+  "completed_at_utc": "2026-09-07T02:26:14.948585+00:00",
+  "target_file": "C:\\HornerAI\\horner-cscape-mcp\\artifacts\\projects\\LabProject_W01\\LabProject_W01.csp",
+  "connection_status": "Disconnected",
+  "operational_mode": "offline/DEV if Disconnected",
+  "project_navigator": {
+    "hwnd": "0x9a065c",
+    "ctrl_id": 45012,
+    "class": "Afx:ControlBar:7a0000:8:10003:10",
+    "title": "Project Navigator",
+    "visible": true,
+    "docked_state": "docked_left",
+    "rect": [
+      48,
+      184,
+      164,
+      649
+    ],
+    "width": 116,
+    "height": 465,
+    "tree_control": {
+      "hwnd": "0xf8067a",
+      "ctrl_id": 300,
+      "class": "SysTreeView32",
+      "visible": true,
+      "rect": [
+        48,
+        204,
+        164,
+        649
+      ]
+    }
+  },
+  "docking_panes_summary": [
+    {
+      "ctrl_id": 38579,
+      "class": "Afx:ControlBar:7a0000:8:10003:10",
+      "title": "Bookmark Window",
+      "visible": false,
+      "rect": [
+        48,
+        40,
+        248,
+        211
+      ]
+    },
+    {
+      "ctrl_id": 45011,
+      "class": "Afx:ControlBar:7a0000:8:10003:10",
+      "title": "Output Window",
+      "visible": true,
+      "rect": [
+        377,
+        648,
+        1332,
+        649
+      ]
+    },
+    {
+      "ctrl_id": 38343,
+      "class": "Afx:ControlBar:7a0000:8:10003:10",
+      "title": "IEC Debugger Windows",
+      "visible": false,
+      "rect": [
+        48,
+        40,
+        248,
+        240
+      ]
+    },
+    {
+      "ctrl_id": 38030,
+      "class": "Afx:ControlBar:7a0000:8:10003:10",
+      "title": "IEC Defines/SpyList/BitFields/Enums/Structs",
+      "visible": false,
+      "rect": [
+        48,
+        40,
+        248,
+        240
+      ]
+    },
+    {
+      "ctrl_id": 320,
+      "class": "Afx:ControlBar:7a0000:8:10003:10",
+      "title": "Search",
+      "visible": false,
+      "rect": [
+        48,
+        40,
+        248,
+        211
+      ]
+    },
+    {
+      "ctrl_id": 38053,
+      "class": "Afx:ControlBar:7a0000:8:10003:10",
+      "title": "Program Variables",
+      "visible": true,
+      "rect": [
+        173,
+        184,
+        373,
+        649
+      ]
+    },
+    {
+      "ctrl_id": 37567,
+      "class": "Afx:ControlBar:7a0000:8:10003:10",
+      "title": "Project Toolbox",
+      "visible": true,
+      "rect": [
+        168,
+        184,
+        169,
+        649
+      ]
+    },
+    {
+      "ctrl_id": 45012,
+      "class": "Afx:ControlBar:7a0000:8:10003:10",
+      "title": "Project Navigator",
+      "visible": true,
+      "rect": [
+        48,
+        184,
+        164,
+        649
+      ]
+    },
+    {
+      "ctrl_id": 59648,
+      "class": "MDIClient",
+      "title": "",
+      "visible": true,
+      "rect": [
+        377,
+        184,
+        1332,
+        644
+      ]
+    },
+    {
+      "ctrl_id": 59393,
+      "class": "Afx:StatusBar:7a0000:8:10003:10",
+      "title": "",
+      "visible": true,
+      "rect": [
+        48,
+        649,
+        1332,
+        668
+      ]
+    }
+  ],
+  "status_bar": {
+    "hwnd": "0x5e04de",
+    "ctrl_id": 59393,
+    "class": "Afx:StatusBar:7a0000:8:10003:10",
+    "visible": true,
+    "rect": [
+      48,
+      649,
+      1332,
+      668
+    ],
+    "connection_state": "Disconnected",
+    "mode": "offline/DEV"
+  },
+  "proof_artifacts": [
+    "w02_project_navigator.png",
+    "w02_status_bar.png",
+    "cscape_lab_w01_visible.png"
+  ],
+  "visibility_classification": "PARTIAL / SUPERVISOR-DEPENDENT (visibility is NOT claimed as VERIFIED_LIVE)"
+}

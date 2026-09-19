@@ -1,0 +1,109 @@
+{
+  "step": 161,
+  "name": "step161_mcp_tmr_sensor_voting",
+  "status": "PASSED",
+  "mission": "Live FastMCP Triple Modular Redundancy (TMR) Sensor Voting & 2oo3 Degradation Audit",
+  "timestamp_start": "2026-09-06T12:23:07.820Z",
+  "timestamp_complete": "2026-09-06T12:23:18.045Z",
+  "duration_seconds": 10.225,
+  "gate": {
+    "ready_for_tests": true,
+    "status": "READY_FOR_TESTS",
+    "pid": 10892,
+    "hwnd": "0x01B005DC",
+    "window_title": "Cscape - Logged In : \"armando@controlnautas.com\" - [TankLevelClosedLoop.csp]",
+    "project_file": "C:\\HornerAI\\horner-cscape-mcp\\artifacts\\projects\\TankLevelClosedLoop\\TankLevelClosedLoop.csp",
+    "exit_code": null,
+    "reason": "Gate G3 Error Check and Output Scrape Verified Clean (0 errors, 0 warnings)",
+    "cycle": 17,
+    "timestamp_utc": "2026-09-06T11:43:46.709Z",
+    "heartbeat_utc": "2026-09-06T11:43:46.709Z"
+  },
+  "cscape_pid": 10892,
+  "hwnd": "0x01B005DC",
+  "scenarios_passed": 5,
+  "scenarios_total": 5,
+  "scenario_results": {
+    "scenario_a_harmonized_tmr": {
+      "verified": true,
+      "voted_pv": 50.0,
+      "channel_a": 50.0,
+      "channel_b": 50.20000076293945,
+      "channel_c": 49.79999923706055,
+      "inflow_co": 50.0,
+      "degraded_mode": false
+    },
+    "scenario_b_drift_degradation": {
+      "verified": true,
+      "channel_a_drift": 62.0,
+      "discrepancy_alarm": true,
+      "degraded_mode": true,
+      "undisturbed_pv": 50.0
+    },
+    "scenario_c_open_circuit_isolation": {
+      "verified": true,
+      "channel_a_wire_break": 0.0,
+      "channel_a_failed": true,
+      "stable_voted_pv": 50.0
+    },
+    "scenario_d_dual_failure_sis_trip": {
+      "verified": true,
+      "sis_critical_trip": true,
+      "pump_isolated": true,
+      "inflow_isolated": true,
+      "clamped_inflow": 0.0
+    },
+    "scenario_e_recommission_convergence": {
+      "verified": true,
+      "sis_trip_cleared": true,
+      "tmr_restored": true,
+      "voted_pv": 50.0,
+      "inflow_co": 50.0
+    }
+  },
+  "telemetry_records": [
+    {
+      "scenario": "A_HARMONIZED_TMR",
+      "cycle": 1,
+      "voted_pv": 50.0,
+      "channel_a": 50.0,
+      "channel_b": 50.20000076293945,
+      "channel_c": 49.79999923706055
+    },
+    {
+      "scenario": "B_DRIFT_DEGRADATION",
+      "cycle": 2,
+      "m14": true,
+      "m17": true,
+      "voted_pv": 50.0
+    },
+    {
+      "scenario": "C_OPEN_CIRCUIT_ISOLATION",
+      "cycle": 3,
+      "m14": true,
+      "voted_pv": 50.0
+    },
+    {
+      "scenario": "D_DUAL_FAILURE_SIS_TRIP",
+      "cycle": 4,
+      "m18": true,
+      "q1": false,
+      "q2": false,
+      "co_r7": 0.0
+    },
+    {
+      "scenario": "E_RECOMMISSION_CONVERGENCE",
+      "cycle": 5,
+      "m18": false,
+      "m17": false,
+      "voted_pv": 50.0,
+      "co_r7": 50.0
+    }
+  ],
+  "security": {
+    "hardware_download_lockout": "FAIL_CLOSED_BLOCKED",
+    "zero_straton_dependencies": true,
+    "zero_plc_hardware_interaction": true,
+    "no_gui_hwnd_command_dispatched": true
+  }
+}

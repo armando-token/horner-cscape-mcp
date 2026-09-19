@@ -1,0 +1,42 @@
+{
+  "step": 172,
+  "role": "Visible Cscape GUI Driver",
+  "mandate": "Exclusive Visible Cscape GUI Automation (Step 172 Historical Milestone - Gate G1 Discipline Enforced)",
+  "status": "PASSED",
+  "start_time_utc": "2026-09-06T08:23:08.413645+00:00",
+  "completion_time_utc": "2026-09-06T08:23:15.827994+00:00",
+  "execution_duration_sec": 7.413,
+  "cscape": {
+    "pid": 14996,
+    "hwnd_hex": "0x00130C78",
+    "hwnd_int": 1248376,
+    "window_title": "Cscape - Logged In : \"armando@controlnautas.com\" - [TankLevelClosedLoop.csp]",
+    "uptime_seconds": 3161.951359987259,
+    "memory_rss_mb": 168.77,
+    "desktop": "Default",
+    "is_window_visible": true,
+    "is_window_enabled": true,
+    "is_hung": false,
+    "ping_responsive": true
+  },
+  "dialogs": {
+    "pre_sweep_dismissed": 0,
+    "post_sweep_dismissed": 0,
+    "total_dismissed": 0
+  },
+  "gui_compilation": {
+    "command_id": 32826,
+    "command_name": "ID_PROGRAM_ERRORCHECK",
+    "success": true,
+    "error_count": 0,
+    "warning_count": 0,
+    "duration_sec": 6.292,
+    "controls_enumerated": 55
+  },
+  "screenshot": {
+    "file": "artifacts/screenshots/live_cscape_tank_level_step172.png",
+    "size_bytes": 72686,
+    "sha256": "4730540e881c216fe988f2ab82b86a21b3bf9b10e662d57effe44a71b6cb657f",
+    "dual_root_identical": true
+  }
+}

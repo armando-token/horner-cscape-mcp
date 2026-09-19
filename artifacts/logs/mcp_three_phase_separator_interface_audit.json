@@ -1,0 +1,234 @@
+{
+  "audit_step": 65,
+  "name": "Three-Phase Separator Oil/Water Interface Level & Gas Pad Closed-Loop Audit",
+  "timestamp": "2026-09-05T10:48:16.486Z",
+  "completed_at": "2026-09-05T10:48:23.005Z",
+  "cscape_pid": 8660,
+  "cscape_hwnd": "0x147068c",
+  "total_cycles": 600,
+  "metrics": {
+    "max_phase1_level_error_pct": 0.0,
+    "mean_phase1_level_error_pct": 0.0,
+    "max_phase2_uncomp_drift_pct": 7.56,
+    "mean_phase2_uncomp_drift_pct": 5.54,
+    "max_phase3_comp_error_pct": 0.0,
+    "mean_phase3_comp_error_pct": 0.0,
+    "wellhead_slug_rejection_pct": 100.0,
+    "phase4_final_level_error_pct": 0.1138,
+    "phase4_mean_tail_level_error_pct": 0.0703,
+    "high_high_carryover_interlock_trip_cycle": 501,
+    "high_high_trip_level_pct": 85.0
+  },
+  "trace_samples": [
+    {
+      "cycle": 0,
+      "phase": "PHASE_1_EQUILIBRIUM_SEPARATION",
+      "target_sp": 50.0,
+      "interface_level": 50.0,
+      "slug_flow": 60.0,
+      "carryover_trip": false,
+      "cv_pid": 50.0
+    },
+    {
+      "cycle": 50,
+      "phase": "PHASE_1_EQUILIBRIUM_SEPARATION",
+      "target_sp": 50.0,
+      "interface_level": 50.0,
+      "slug_flow": 60.0,
+      "carryover_trip": false,
+      "cv_pid": 50.0
+    },
+    {
+      "cycle": 100,
+      "phase": "PHASE_1_EQUILIBRIUM_SEPARATION",
+      "target_sp": 50.0,
+      "interface_level": 50.0,
+      "slug_flow": 60.0,
+      "carryover_trip": false,
+      "cv_pid": 50.0
+    },
+    {
+      "cycle": 101,
+      "phase": "PHASE_2_WELLHEAD_SLUG_SURGE_UNCOMP",
+      "target_sp": 50.0,
+      "interface_level": 50.026,
+      "slug_flow": 60.4,
+      "carryover_trip": false,
+      "cv_pid": 50.0
+    },
+    {
+      "cycle": 125,
+      "phase": "PHASE_2_WELLHEAD_SLUG_SURGE_UNCOMP",
+      "target_sp": 50.0,
+      "interface_level": 55.129,
+      "slug_flow": 70.0,
+      "carryover_trip": false,
+      "cv_pid": 42.0
+    },
+    {
+      "cycle": 150,
+      "phase": "PHASE_2_WELLHEAD_SLUG_SURGE_UNCOMP",
+      "target_sp": 50.0,
+      "interface_level": 57.5,
+      "slug_flow": 80.0,
+      "carryover_trip": false,
+      "cv_pid": 23.91
+    },
+    {
+      "cycle": 175,
+      "phase": "PHASE_2_WELLHEAD_SLUG_SURGE_UNCOMP",
+      "target_sp": 50.0,
+      "interface_level": 56.295,
+      "slug_flow": 90.0,
+      "carryover_trip": false,
+      "cv_pid": 10.93
+    },
+    {
+      "cycle": 200,
+      "phase": "PHASE_2_WELLHEAD_SLUG_SURGE_UNCOMP",
+      "target_sp": 50.0,
+      "interface_level": 56.292,
+      "slug_flow": 100.0,
+      "carryover_trip": false,
+      "cv_pid": 0.0
+    },
+    {
+      "cycle": 201,
+      "phase": "PHASE_3_HYDROSTATIC_DECOUPLING",
+      "target_sp": 50.0,
+      "interface_level": 50.0,
+      "slug_flow": 100.0,
+      "carryover_trip": false,
+      "cv_pid": 50.0
+    },
+    {
+      "cycle": 225,
+      "phase": "PHASE_3_HYDROSTATIC_DECOUPLING",
+      "target_sp": 50.0,
+      "interface_level": 50.0,
+      "slug_flow": 100.0,
+      "carryover_trip": false,
+      "cv_pid": 50.0
+    },
+    {
+      "cycle": 250,
+      "phase": "PHASE_3_HYDROSTATIC_DECOUPLING",
+      "target_sp": 50.0,
+      "interface_level": 50.0,
+      "slug_flow": 100.0,
+      "carryover_trip": false,
+      "cv_pid": 50.0
+    },
+    {
+      "cycle": 275,
+      "phase": "PHASE_3_HYDROSTATIC_DECOUPLING",
+      "target_sp": 50.0,
+      "interface_level": 50.0,
+      "slug_flow": 100.0,
+      "carryover_trip": false,
+      "cv_pid": 50.0
+    },
+    {
+      "cycle": 300,
+      "phase": "PHASE_3_HYDROSTATIC_DECOUPLING",
+      "target_sp": 50.0,
+      "interface_level": 50.0,
+      "slug_flow": 100.0,
+      "carryover_trip": false,
+      "cv_pid": 50.0
+    },
+    {
+      "cycle": 350,
+      "phase": "PHASE_3_HYDROSTATIC_DECOUPLING",
+      "target_sp": 50.0,
+      "interface_level": 50.0,
+      "slug_flow": 100.0,
+      "carryover_trip": false,
+      "cv_pid": 50.0
+    },
+    {
+      "cycle": 351,
+      "phase": "PHASE_4_DYNAMIC_INTERFACE_STEP",
+      "target_sp": 65.0,
+      "interface_level": 51.26,
+      "slug_flow": 85.0,
+      "carryover_trip": false,
+      "cv_pid": 75.2
+    },
+    {
+      "cycle": 400,
+      "phase": "PHASE_4_DYNAMIC_INTERFACE_STEP",
+      "target_sp": 65.0,
+      "interface_level": 66.427,
+      "slug_flow": 85.0,
+      "carryover_trip": false,
+      "cv_pid": 42.79
+    },
+    {
+      "cycle": 450,
+      "phase": "PHASE_4_DYNAMIC_INTERFACE_STEP",
+      "target_sp": 65.0,
+      "interface_level": 65.236,
+      "slug_flow": 85.0,
+      "carryover_trip": false,
+      "cv_pid": 51.0
+    },
+    {
+      "cycle": 500,
+      "phase": "PHASE_4_DYNAMIC_INTERFACE_STEP",
+      "target_sp": 65.0,
+      "interface_level": 64.886,
+      "slug_flow": 85.0,
+      "carryover_trip": false,
+      "cv_pid": 49.95
+    },
+    {
+      "cycle": 501,
+      "phase": "PHASE_5_HIGH_HIGH_CARRYOVER_TRIP",
+      "target_sp": 65.0,
+      "interface_level": 64.886,
+      "slug_flow": 40.0,
+      "carryover_trip": true,
+      "cv_pid": 49.96
+    },
+    {
+      "cycle": 520,
+      "phase": "PHASE_5_HIGH_HIGH_CARRYOVER_TRIP",
+      "target_sp": 65.0,
+      "interface_level": 64.886,
+      "slug_flow": 40.0,
+      "carryover_trip": true,
+      "cv_pid": 50.19
+    },
+    {
+      "cycle": 550,
+      "phase": "PHASE_5_HIGH_HIGH_CARRYOVER_TRIP",
+      "target_sp": 65.0,
+      "interface_level": 64.886,
+      "slug_flow": 40.0,
+      "carryover_trip": true,
+      "cv_pid": 50.46
+    },
+    {
+      "cycle": 599,
+      "phase": "PHASE_5_HIGH_HIGH_CARRYOVER_TRIP",
+      "target_sp": 65.0,
+      "interface_level": 64.886,
+      "slug_flow": 40.0,
+      "carryover_trip": true,
+      "cv_pid": 50.9
+    }
+  ],
+  "cscape_health": {
+    "healthy": true,
+    "pid": 8660,
+    "hwnd": "0x147068c",
+    "desktop": "Default",
+    "is_hung": false,
+    "wm_null_ping_ok": true,
+    "working_set_mb": 43.85,
+    "num_threads": 11,
+    "uptime_sec": 719.62
+  },
+  "download_lockout_verified": true
+}

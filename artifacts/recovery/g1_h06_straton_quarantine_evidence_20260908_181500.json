@@ -1,0 +1,14 @@
+{
+  "item_id": "H06",
+  "name": "Straton K5 Quarantine Verified",
+  "mission_id": "G1_REMAINING_NEGATIVES_OFFLINE_v3",
+  "timestamp_utc": "2026-09-09T01:19:34.566673+00:00",
+  "status": "success",
+  "invariant": "Legacy Straton templates quarantined; exactly 0 active imports in src/",
+  "verification": {
+    "quarantine_directory_exists": true,
+    "quarantined_files_count": 36,
+    "active_straton_imports_in_src": 0,
+    "pass": true
+  }
+}

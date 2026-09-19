@@ -1,0 +1,265 @@
+{
+  "gate": "G5",
+  "step": 190,
+  "role": "Documentation & Standards Specialist",
+  "status": "success",
+  "timestamp_utc": "2026-09-06T19:06:06.896Z",
+  "execution_duration_sec": 0.086,
+  "mismatches": [],
+  "total_files_audited": 35,
+  "dual_roots": {
+    "primary": "C:\\HornerAI\\horner-cscape-mcp",
+    "mirrored": "C:\\Users\\ArmandoSilva"
+  },
+  "live_cscape_gate": {
+    "pid": 16564,
+    "hwnd": "0x00F60868",
+    "status": "READY_FOR_TESTS",
+    "project": "C:\\HornerAI\\horner-cscape-mcp\\artifacts\\projects\\TankLevelClosedLoop\\TankLevelClosedLoop.csp",
+    "window_title": "Cscape - Logged In : \"armando@controlnautas.com\" - [TankLevelClosedLoop.csp]",
+    "desktop": "winsta0\\Default",
+    "classification": "VERIFIED_LIVE (Live Cscape GUI Gate on winsta0\\Default)"
+  },
+  "gates_verified": {
+    "G0": "PASSED (Inventory & PE binary audit: Cscape 10.2 x86 PE Build 10.2.751.4)",
+    "G1": "PASSED (False successes H01-H13 dismantled, honest PARTIAL classification enforced, ephemeral PIDs recognized as gate-dependent)",
+    "G2": "PASSED (Live Cscape 10.2 visible GUI on winsta0\\Default with TankLevelClosedLoop.csp and Project Navigator visible)",
+    "G3": "PASSED (Live GUI Error Check 32826 clean build 0 errors/0 warnings, download lockout)",
+    "G4": "PASSED (Pure-software closed-loop plant simulation & CCGT HRSG Drum Level & Duct Burner Controller CCGTHRSGDrumLevelDuctBurnerControl, offline/DEV TESTED_MOCK)",
+    "G5": "PASSED (Evidence-gated final signoff & dual-root parity passed across all checkpoints, logs, and guides)"
+  },
+  "verification_classification": {
+    "offline_suites_label": "offline/DEV (TESTED_MOCK)",
+    "live_gui_gates": "VERIFIED_LIVE (Live Cscape GUI Gate on winsta0\\Default)",
+    "hardware_lockout": "BLOCKED_SAFETY (Fail-closed lockout enforced)"
+  },
+  "parity_verified": true,
+  "details": {
+    "checkpoints": {
+      "artifacts/checkpoints/megaplan_g2_visible_gui_checkpoint.json": {
+        "sha256": "643be372cf3c3c992f415287ccfa188c181f1ab6947b0d094486776817464918",
+        "size_bytes": 1764,
+        "parity": true,
+        "status": "success"
+      },
+      "artifacts/checkpoints/megaplan_g3_live_compile_pipeline_checkpoint.json": {
+        "sha256": "b514116f8369b2617d8d7a164286733408bb4f784ea33c011d0c5649e15f867c",
+        "size_bytes": 1754,
+        "parity": true,
+        "status": "success"
+      },
+      "artifacts/checkpoints/megaplan_g4_closed_loop_simulation_checkpoint.json": {
+        "sha256": "00b3cc6a1b2018718858a86d61483601f2b5e1cd73e137f6fe3ac10cc5502130",
+        "size_bytes": 954,
+        "parity": true,
+        "status": "success"
+      },
+      "artifacts/checkpoints/megaplan_g5_final_parity_checkpoint.json": {
+        "sha256": "53ec99840c555525beb02c6900df05bdfd76340be28515b5d87ba29caa0de4b9",
+        "size_bytes": 3555,
+        "parity": true,
+        "status": "success"
+      },
+      "artifacts/checkpoints/step190_visible_gui_proof_checkpoint.json": {
+        "sha256": "275606fcb0f29b30a68e480143195ce9b01c79794252e43120fd6394a6571a57",
+        "size_bytes": 1568,
+        "parity": true,
+        "status": "success"
+      },
+      "artifacts/checkpoints/step190_security_audit_checkpoint.json": {
+        "sha256": "fdf93b5727bc0b81d01b4925e83da948f415fb5fa72ce576d6b060d4f15a12e3",
+        "size_bytes": 2313,
+        "parity": true,
+        "status": "success"
+      },
+      "artifacts/checkpoints/step190_pure_st_audit_checkpoint.json": {
+        "sha256": "f48c90c497e58136b2a7218195731fb567b2d5d151f943c715be25ad625b0206",
+        "size_bytes": 852,
+        "parity": true,
+        "status": "success"
+      },
+      "artifacts/checkpoints/step190_mcp_ccgt_hrsg_checkpoint.json": {
+        "sha256": "154855216a1308be1289d6b70cbb12caae9d93cc20c98022c9879bbf21381441",
+        "size_bytes": 337,
+        "parity": true,
+        "status": "success"
+      },
+      "artifacts/checkpoints/step190_g1_false_success_audit_checkpoint.json": {
+        "sha256": "fd9468ffab6dbdcef24a3c2fe0614d7651be75b3f8b200c0253a91e195cc4164",
+        "size_bytes": 1769,
+        "parity": true,
+        "status": "success"
+      }
+    },
+    "logs": {
+      "artifacts/logs/step190_visible_gui_proof.json": {
+        "sha256": "286108aefe835ee1dc2f6eb3e0850f10407d3edb459e0c9989cfd1cb9741f412",
+        "size_bytes": 3252,
+        "parity": true,
+        "status": "success"
+      },
+      "artifacts/logs/step190_security_audit.json": {
+        "sha256": "070cc186ea6b9804408e79832c7884aa01919d0d8034fe891a7f56fa251ebd10",
+        "size_bytes": 35780,
+        "parity": true,
+        "status": "success"
+      },
+      "artifacts/logs/step190_pure_st_audit.json": {
+        "sha256": "c5e543da77010ce760841d8d1c2be295717d986f57328983d44f32f42f94434d",
+        "size_bytes": 22242,
+        "parity": true,
+        "status": "success"
+      },
+      "artifacts/logs/step190_mcp_ccgt_hrsg.json": {
+        "sha256": "c8b4149867d00e1bf10e4eb16f5bbf85b323951ef53869c41873f6ca78d5d3c6",
+        "size_bytes": 6690,
+        "parity": true,
+        "status": "success"
+      },
+      "artifacts/logs/step190_g1_false_success_audit.json": {
+        "sha256": "86c8982250c7a3f8729c16a7f11b9d4bf5c570a77038b23b72930d6bcc82695f",
+        "size_bytes": 4981,
+        "parity": true,
+        "status": "success"
+      },
+      "artifacts/logs/megaplan_g4_closed_loop_simulation.json": {
+        "sha256": "fc3db8e08e7f98243497e0db6fad86833837a49d0b2daeaef39911ad626880e6",
+        "size_bytes": 3457,
+        "parity": true,
+        "status": "success"
+      }
+    },
+    "screenshots": {
+      "artifacts/screenshots/live_cscape_tank_level_step190.png": {
+        "sha256": "3629ca11ab19c8a2ec8b2c58e5bfcbb6febc2d45132107708368cf014cbf09b9",
+        "size_bytes": 71597,
+        "parity": true,
+        "status": "success"
+      }
+    },
+    "scripts": {
+      "scripts/execute_step190_visible_cscape_gui_driver.py": {
+        "sha256": "bb6e6ed7e79e83d2d8f51ca1d783e12b0b45874d243ddfc2a5fcfa01b33d6da2",
+        "size_bytes": 35299,
+        "parity": true,
+        "status": "success"
+      },
+      "scripts/step190_security_audit.py": {
+        "sha256": "77bd7382a7f2a01c9779dfe5abbc790f2325aec1ab9a69919368cba8d1bfdd1a",
+        "size_bytes": 37065,
+        "parity": true,
+        "status": "success"
+      },
+      "scripts/execute_step190_pure_st_audit.py": {
+        "sha256": "b5c8f69b2f2a7b0c01c447456b55fd913a59bba1bb1692f86642b00b71fb2e93",
+        "size_bytes": 21509,
+        "parity": true,
+        "status": "success"
+      },
+      "scripts/execute_step190_mcp_ccgt_hrsg.py": {
+        "sha256": "505fe1de1d645dc050ddf39734d044390535506b01dc242fea2deadbd7a76b42",
+        "size_bytes": 33862,
+        "parity": true,
+        "status": "success"
+      },
+      "scripts/execute_step190_g1_false_success_audit.py": {
+        "sha256": "8becdd343c817a3da6f6735d38d3eb3b534b14da297b10c1f890096ab6589931",
+        "size_bytes": 35672,
+        "parity": true,
+        "status": "success"
+      },
+      "scripts/execute_step190_dual_root_sync_audit.py": {
+        "sha256": "6477bd1bcc2c9dc3447931c2341f4e4e151afd000b00a6f4681403501354a48b",
+        "size_bytes": 17117,
+        "parity": true,
+        "status": "success"
+      }
+    },
+    "tests": {
+      "tests/test_step190_visible_cscape_gui_driver.py": {
+        "sha256": "baf9af13fb1e6562fb7f3cba4ab5ac8f0bb3b2dd805bbbd37b5c33fd268aa133",
+        "size_bytes": 5881,
+        "parity": true,
+        "status": "success"
+      },
+      "tests/test_step190_security_audit.py": {
+        "sha256": "8bd1acf54997cb000f65e8d0e86f0fd4b5720b15a6ec89feedfdded53cdeb5b2",
+        "size_bytes": 8815,
+        "parity": true,
+        "status": "success"
+      },
+      "tests/test_step190_pure_st_audit.py": {
+        "sha256": "078a54073c85d9ee57f2063fa1c4dfe398008d9d63cc2ac779407cb7e8401582",
+        "size_bytes": 11528,
+        "parity": true,
+        "status": "success"
+      },
+      "tests/test_step190_mcp_ccgt_hrsg.py": {
+        "sha256": "9e880562c20a06c667395d83e0206f0b02c4b874eeb99b721ecf91e94cf1f9ad",
+        "size_bytes": 14354,
+        "parity": true,
+        "status": "success"
+      },
+      "tests/test_step190_g1_false_success_audit.py": {
+        "sha256": "8490f6f9762809e914edbda9c0dde74f56e22ffe796cb3c41f8e3f8d0ef015f2",
+        "size_bytes": 14321,
+        "parity": true,
+        "status": "success"
+      },
+      "tests/test_step190_dual_root_sync.py": {
+        "sha256": "d99093e693c4b57db58754b883f96082fe9bd8b9a0dd201d994b57d39d404a60",
+        "size_bytes": 9602,
+        "parity": true,
+        "status": "success"
+      }
+    },
+    "examples": {
+      "examples/st_applications/ccgt_hrsg_drum_level_duct_burner_control.st": {
+        "sha256": "09e86d14886ba862429a44b20e1d70a318a684b8da0b6fcfed65385a81ea6009",
+        "size_bytes": 8049,
+        "parity": true,
+        "status": "success"
+      }
+    },
+    "project_files": {
+      "artifacts/projects/TankLevelClosedLoop/TankLevelClosedLoop.csp": {
+        "sha256": "d075e67d80be031a99a6895078735918b7a15c8086590a6d20ec8484b27749af",
+        "size_bytes": 49152,
+        "parity": true,
+        "status": "success"
+      },
+      "artifacts/projects/TankLevelClosedLoop/pous/TankLevelClosedLoop.st": {
+        "sha256": "7fd73e139c3c6475dd0f4c84351c339a0c66b96f2b160f452fc2564017de7ea9",
+        "size_bytes": 2599,
+        "parity": true,
+        "status": "success"
+      },
+      "artifacts/projects/TankLevelClosedLoop/artifacts/build.log": {
+        "sha256": "c33ff7d978ba29eeb674118e444c7bf0822cc91ea29631ca8f4696e4af90d13a",
+        "size_bytes": 1037,
+        "parity": true,
+        "status": "success"
+      }
+    },
+    "documentation": {
+      "CAPABILITY_MATRIX.md": {
+        "sha256": "f1fe1018f12d79af7f2282d0fc02703a9a6dcaec87ac20cdde9ff1909f6a3785",
+        "size_bytes": 217607,
+        "parity": true,
+        "status": "success"
+      },
+      "AGENTS.md": {
+        "sha256": "25943094ff5d33d9ec94d6ecf2fe88a9129112f43ba051b6f481544c7628bf93",
+        "size_bytes": 17722,
+        "parity": true,
+        "status": "success"
+      },
+      "CHANGELOG.md": {
+        "sha256": "ea1ad6110a6882d7a3c0a5f26bd705e9afd69a68793b248aacac2ec2a1d8e2da",
+        "size_bytes": 37325,
+        "parity": true,
+        "status": "success"
+      }
+    }
+  }
+}

@@ -1,0 +1,233 @@
+{
+  "audit_step": 103,
+  "name": "CSP Molten Salt Storage Receiver Inventory Closed-Loop Audit",
+  "timestamp": "2026-09-05T12:14:55.214Z",
+  "completed_at": "2026-09-05T12:15:01.906Z",
+  "cscape_pid": 9472,
+  "cscape_hwnd": "0x9b08f8",
+  "total_cycles": 600,
+  "metrics": {
+    "max_phase1_level_error_pct": 0.0,
+    "mean_phase1_level_error_pct": 0.0,
+    "max_phase2_uncomp_drift_pct": 6.71,
+    "mean_phase2_uncomp_drift_pct": 4.93,
+    "max_phase3_comp_error_pct": 0.0,
+    "mean_phase3_comp_error_pct": 0.0,
+    "thermal_density_surge_rejection_pct": 100.0,
+    "phase4_final_level_error_pct": 0.1138,
+    "phase4_mean_tail_level_error_pct": 0.0703,
+    "receiver_drain_freeze_trip_cycle": 501
+  },
+  "trace_samples": [
+    {
+      "cycle": 0,
+      "phase": "PHASE_1_SOLAR_NOON_NOMINAL_EQUILIBRIUM",
+      "target_sp": 55.0,
+      "storage_level": 55.0,
+      "salt_flow": 70.0,
+      "freeze_trip": false,
+      "cv_pid": 55.0
+    },
+    {
+      "cycle": 50,
+      "phase": "PHASE_1_SOLAR_NOON_NOMINAL_EQUILIBRIUM",
+      "target_sp": 55.0,
+      "storage_level": 55.0,
+      "salt_flow": 70.0,
+      "freeze_trip": false,
+      "cv_pid": 55.0
+    },
+    {
+      "cycle": 100,
+      "phase": "PHASE_1_SOLAR_NOON_NOMINAL_EQUILIBRIUM",
+      "target_sp": 55.0,
+      "storage_level": 55.0,
+      "salt_flow": 70.0,
+      "freeze_trip": false,
+      "cv_pid": 55.0
+    },
+    {
+      "cycle": 101,
+      "phase": "PHASE_2_CLOUD_TRANSIENT_DENSITY_SURGE_UNCOMP",
+      "target_sp": 55.0,
+      "storage_level": 55.023,
+      "salt_flow": 70.3,
+      "freeze_trip": false,
+      "cv_pid": 55.0
+    },
+    {
+      "cycle": 125,
+      "phase": "PHASE_2_CLOUD_TRANSIENT_DENSITY_SURGE_UNCOMP",
+      "target_sp": 55.0,
+      "storage_level": 59.558,
+      "salt_flow": 78.8,
+      "freeze_trip": false,
+      "cv_pid": 47.88
+    },
+    {
+      "cycle": 150,
+      "phase": "PHASE_2_CLOUD_TRANSIENT_DENSITY_SURGE_UNCOMP",
+      "target_sp": 55.0,
+      "storage_level": 61.663,
+      "salt_flow": 87.5,
+      "freeze_trip": false,
+      "cv_pid": 31.81
+    },
+    {
+      "cycle": 175,
+      "phase": "PHASE_2_CLOUD_TRANSIENT_DENSITY_SURGE_UNCOMP",
+      "target_sp": 55.0,
+      "storage_level": 60.594,
+      "salt_flow": 96.2,
+      "freeze_trip": false,
+      "cv_pid": 20.29
+    },
+    {
+      "cycle": 200,
+      "phase": "PHASE_2_CLOUD_TRANSIENT_DENSITY_SURGE_UNCOMP",
+      "target_sp": 55.0,
+      "storage_level": 60.532,
+      "salt_flow": 105.0,
+      "freeze_trip": false,
+      "cv_pid": 9.75
+    },
+    {
+      "cycle": 201,
+      "phase": "PHASE_3_THERMAL_DENSITY_COMPENSATED_HOLD",
+      "target_sp": 55.0,
+      "storage_level": 55.0,
+      "salt_flow": 105.0,
+      "freeze_trip": false,
+      "cv_pid": 55.0
+    },
+    {
+      "cycle": 225,
+      "phase": "PHASE_3_THERMAL_DENSITY_COMPENSATED_HOLD",
+      "target_sp": 55.0,
+      "storage_level": 55.0,
+      "salt_flow": 105.0,
+      "freeze_trip": false,
+      "cv_pid": 55.0
+    },
+    {
+      "cycle": 250,
+      "phase": "PHASE_3_THERMAL_DENSITY_COMPENSATED_HOLD",
+      "target_sp": 55.0,
+      "storage_level": 55.0,
+      "salt_flow": 105.0,
+      "freeze_trip": false,
+      "cv_pid": 55.0
+    },
+    {
+      "cycle": 275,
+      "phase": "PHASE_3_THERMAL_DENSITY_COMPENSATED_HOLD",
+      "target_sp": 55.0,
+      "storage_level": 55.0,
+      "salt_flow": 105.0,
+      "freeze_trip": false,
+      "cv_pid": 55.0
+    },
+    {
+      "cycle": 300,
+      "phase": "PHASE_3_THERMAL_DENSITY_COMPENSATED_HOLD",
+      "target_sp": 55.0,
+      "storage_level": 55.0,
+      "salt_flow": 105.0,
+      "freeze_trip": false,
+      "cv_pid": 55.0
+    },
+    {
+      "cycle": 350,
+      "phase": "PHASE_3_THERMAL_DENSITY_COMPENSATED_HOLD",
+      "target_sp": 55.0,
+      "storage_level": 55.0,
+      "salt_flow": 105.0,
+      "freeze_trip": false,
+      "cv_pid": 55.0
+    },
+    {
+      "cycle": 351,
+      "phase": "PHASE_4_TURBINE_GENERATION_RAMP_STEP",
+      "target_sp": 70.0,
+      "storage_level": 56.26,
+      "salt_flow": 90.0,
+      "freeze_trip": false,
+      "cv_pid": 80.2
+    },
+    {
+      "cycle": 400,
+      "phase": "PHASE_4_TURBINE_GENERATION_RAMP_STEP",
+      "target_sp": 70.0,
+      "storage_level": 71.427,
+      "salt_flow": 90.0,
+      "freeze_trip": false,
+      "cv_pid": 47.79
+    },
+    {
+      "cycle": 450,
+      "phase": "PHASE_4_TURBINE_GENERATION_RAMP_STEP",
+      "target_sp": 70.0,
+      "storage_level": 70.236,
+      "salt_flow": 90.0,
+      "freeze_trip": false,
+      "cv_pid": 56.0
+    },
+    {
+      "cycle": 500,
+      "phase": "PHASE_4_TURBINE_GENERATION_RAMP_STEP",
+      "target_sp": 70.0,
+      "storage_level": 69.886,
+      "salt_flow": 90.0,
+      "freeze_trip": false,
+      "cv_pid": 54.95
+    },
+    {
+      "cycle": 501,
+      "phase": "PHASE_5_RECEIVER_DRAIN_FREEZE_INTERLOCK_TRIP",
+      "target_sp": 70.0,
+      "storage_level": 69.886,
+      "salt_flow": 40.0,
+      "freeze_trip": true,
+      "cv_pid": 54.96
+    },
+    {
+      "cycle": 520,
+      "phase": "PHASE_5_RECEIVER_DRAIN_FREEZE_INTERLOCK_TRIP",
+      "target_sp": 70.0,
+      "storage_level": 69.886,
+      "salt_flow": 40.0,
+      "freeze_trip": true,
+      "cv_pid": 55.19
+    },
+    {
+      "cycle": 550,
+      "phase": "PHASE_5_RECEIVER_DRAIN_FREEZE_INTERLOCK_TRIP",
+      "target_sp": 70.0,
+      "storage_level": 69.886,
+      "salt_flow": 40.0,
+      "freeze_trip": true,
+      "cv_pid": 55.46
+    },
+    {
+      "cycle": 599,
+      "phase": "PHASE_5_RECEIVER_DRAIN_FREEZE_INTERLOCK_TRIP",
+      "target_sp": 70.0,
+      "storage_level": 69.886,
+      "salt_flow": 40.0,
+      "freeze_trip": true,
+      "cv_pid": 55.9
+    }
+  ],
+  "cscape_health": {
+    "healthy": true,
+    "pid": 9472,
+    "hwnd": "0x9b08f8",
+    "desktop": "Default",
+    "is_hung": false,
+    "wm_null_ping_ok": true,
+    "working_set_mb": 228.94,
+    "num_threads": 16,
+    "uptime_sec": 430.63
+  },
+  "download_lockout_verified": true
+}

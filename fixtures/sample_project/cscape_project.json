@@ -1,0 +1,17 @@
+{
+  "name": "SampleFixtureProject",
+  "controller": "XL4",
+  "iec_engine": "Straton K5 Structured Text",
+  "updated_at": "2026-09-03T19:55:05.363667",
+  "pous": [
+    {
+      "name": "MainControl",
+      "pou_type": "PROGRAM",
+      "file_path": "C:\\HornerAI\\horner-cscape-mcp\\fixtures\\sample_project\\pous\\MainControl.st",
+      "created_at": "2026-09-03T19:55:05.361668",
+      "st_code": "\nPROGRAM MainControl\nVAR_INPUT\n    bStart : BOOL := FALSE;\n    bStop  : BOOL := FALSE;\nEND_VAR\nVAR_OUTPUT\n    bRunning : BOOL := FALSE;\nEND_VAR\n\nIF bStart AND NOT bStop THEN\n    bRunning := TRUE;\nELSIF bStop THEN\n    bRunning := FALSE;\nEND_IF;\nEND_PROGRAM\n",
+      "variable_count": 3,
+      "statement_count": 1
+    }
+  ]
+}

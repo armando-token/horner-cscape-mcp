@@ -1,0 +1,38 @@
+{
+  "phase": "C4",
+  "mission_id": "C4_WINDOWS_MATRIX",
+  "run_id": "run_20260906_120831",
+  "description": "Historical / baseline behavior prior to Phase C4 Windows matrix execution, supervisor audit, and modal safety enforcement",
+  "findings": {
+    "supervisor_taskkill_race_conditions": {
+      "scenario": "Multiple background supervisors (scripts/cscape_supervisor.py, cscape_watchdog.py, watchdog_cscape_10min.py, src/cscape/lifecycle.py) executing concurrent taskkill /IM Cscape.exe",
+      "baseline_behavior": "Blindly terminated running Cscape instances upon minor window state change or timeout, corrupting MFC docking state and killing active GUI",
+      "vulnerability": "Destabilized live Cscape process, generated orphaned processes, and prevented reliable visible desktop sessions"
+    },
+    "naked_launch_com_mta_crash": {
+      "scenario": "Launching Cscape.exe with uiautomation / COM MTA accessibility hooks installed",
+      "baseline_behavior": "Cscape crashed immediately during docking pane initialization with access violation 0xC0000005 in MFC CWnd::GetDC (PUSH [EAX + 20h])",
+      "vulnerability": "Live GUI automation failed closed or repeatedly crashed without pure Win32 message dispatch"
+    },
+    "baseline_container_mutation_risk": {
+      "scenario": "Automation tests directly modifying and saving artifacts/projects/TankLevelClosedLoop/TankLevelClosedLoop.csp",
+      "baseline_behavior": "Saved test modifications directly into the baseline project container",
+      "vulnerability": "Corrupted original baseline project hash and risked invalidating Golden Sample verification benchmarks"
+    },
+    "compilation_modal_auto_yes": {
+      "scenario": "Error Check (32826) triggers Non-Fatal Compilation Errors modal dialog (#32770)",
+      "baseline_behavior": "Automated scripts sent BM_CLICK / WM_COMMAND IDYES (6) to force dismissal and claim compilation success",
+      "vulnerability": "Masked compilation warnings, syntax issues, and partial builds under false-positive success classifications"
+    },
+    "visibility_taxonomy_misclassification": {
+      "scenario": "Cscape main window visible on desktop",
+      "baseline_behavior": "Scripts claimed VERIFIED_LIVE solely based on HWND presence without verifying deep execution readiness or supervisor independence",
+      "vulnerability": "Conflated mere window visibility with fully verified hardware/live execution"
+    },
+    "download_command_unverified_gui_lockout": {
+      "scenario": "Live Win32 WM_COMMAND dispatch of ID_PROGRAM_DOWNLOAD (32827) or ID_CONTROLLER_DOWNLOAD (33149)",
+      "baseline_behavior": "Lacked explicit pre-dispatch security interceptor in GUI automation pipelines",
+      "vulnerability": "Risked accidental PLC download or unauthorized hardware transmission if connected"
+    }
+  }
+}

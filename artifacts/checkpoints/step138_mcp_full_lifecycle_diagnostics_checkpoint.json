@@ -1,0 +1,73 @@
+{
+  "step": 138,
+  "name": "step138_mcp_full_lifecycle_diagnostics_checkpoint",
+  "status": "PASSED",
+  "timestamp_utc": "2026-09-05T17:43:04.799716+00:00",
+  "target_project": "TankLevelClosedLoop",
+  "pous_evaluated": [
+    "TankLevelClosedLoop.st",
+    "AlarmMonitor.st",
+    "BrokenPOU.st",
+    "AuxPumpControl.st",
+    "SafetyInterlockST.st"
+  ],
+  "pous_count": 5,
+  "validation_summary": {
+    "all_valid_pous_passed": true,
+    "valid_pous_count": 5,
+    "syntax_faults_detected": true,
+    "syntax_faults_count": 3,
+    "ladder_rejection_enforced": true,
+    "ladder_cases_count": 2
+  },
+  "simulation_summary": {
+    "pous_simulated": [
+      "AlarmMonitor",
+      "AuxPumpControl",
+      "BrokenPOU",
+      "SafetyInterlockST",
+      "TankLevelClosedLoop"
+    ],
+    "total_simulated_steps": 50,
+    "all_simulations_successful": true,
+    "isolation_enforced": true,
+    "hardware_lockout_enforced": true
+  },
+  "diagnostics_summary": {
+    "compile_successful": true,
+    "status": "success",
+    "error_count": 0,
+    "warning_count": 0,
+    "code_size_bytes": 1024,
+    "data_size_bytes": 512,
+    "retain_size_bytes": 64
+  },
+  "export_summary": {
+    "formats_tested": [
+      "csp",
+      "cpj",
+      "json",
+      "xml",
+      "k5p"
+    ],
+    "all_exports_created": true,
+    "k5p_quarantined": true,
+    "quarantine_warning_present": true
+  },
+  "safety_audit": {
+    "download_cmd_32827_blocked": true,
+    "download_cmd_33149_blocked": true,
+    "cli_download_blocked": true,
+    "physical_ports_blocked": true,
+    "active_straton_processes": 0,
+    "hardware_lockout_enforced": true,
+    "zero_straton_dependencies": true
+  },
+  "cscape_health": {
+    "pid": 14580,
+    "running": true,
+    "is_hung": false,
+    "ping_responsive": true
+  },
+  "evidence_log": "artifacts/logs/mcp_full_lifecycle_diagnostics.json"
+}

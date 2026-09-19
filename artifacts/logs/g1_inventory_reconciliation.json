@@ -1,0 +1,798 @@
+{
+  "status": "success",
+  "total_suites": 157,
+  "total_items": 2448,
+  "offline_suites_count": 92,
+  "offline_items_count": 2094,
+  "gate_dependent_suites_count": 65,
+  "gate_dependent_items_count": 354,
+  "offline_suites": [
+    {
+      "path": "tests/test_automation.py",
+      "items": 32,
+      "domain": "Process manager, CLI runner, COM bridge, binary discovery"
+    },
+    {
+      "path": "tests/test_closed_loop_master.py",
+      "items": 100,
+      "domain": "TankLevelClosedLoop master proof across 10 engineering domains"
+    },
+    {
+      "path": "tests/test_compilation.py",
+      "items": 10,
+      "domain": "Project compilation engine, compiler command construction, build output parser, clean build vs syntax error"
+    },
+    {
+      "path": "tests/test_compiler_diagnostics_audit.py",
+      "items": 6,
+      "domain": "Cscape output regexes, clean build proof vs Line 8 Col 21 syntax error"
+    },
+    {
+      "path": "tests/test_cscape_bidirectional_roundtrip.py",
+      "items": 8,
+      "domain": "Memory <-> CSV <-> XML cross-format fidelity and idempotency"
+    },
+    {
+      "path": "tests/test_cscape_compiler.py",
+      "items": 17,
+      "domain": "Cscape compiler pipeline, mock elimination, CLI options, error line/column extraction"
+    },
+    {
+      "path": "tests/test_cscape_e2e.py",
+      "items": 17,
+      "domain": "End-to-end lifecycle, ST insertion, compilation, simulation"
+    },
+    {
+      "path": "tests/test_cscape_native_samples.py",
+      "items": 16,
+      "domain": "Binary inspection of 34 authentic Cscape CFBF .csp samples"
+    },
+    {
+      "path": "tests/test_cscape_simulation.py",
+      "items": 38,
+      "domain": "Horner OCS %R/%M/%T/%AI/%AQ/%I/%Q register simulation & %S clocks"
+    },
+    {
+      "path": "tests/test_cscape_variables.py",
+      "items": 128,
+      "domain": "OCS register addressing, bit-of-word, word span collision"
+    },
+    {
+      "path": "tests/test_diagnostics.py",
+      "items": 8,
+      "domain": "Compiler diagnostic localization, error reporting, message formatting, failure coordinates"
+    },
+    {
+      "path": "tests/test_dialog_audit.py",
+      "items": 16,
+      "domain": "Win32 MFC modal dialog sweeping, focus handling, and prompt auto-dismissal"
+    },
+    {
+      "path": "tests/test_e2e_pipeline.py",
+      "items": 5,
+      "domain": "Industrial automation pipeline: conveyor, chemical reactor, traffic"
+    },
+    {
+      "path": "tests/test_iec_spec_adherence.py",
+      "items": 9,
+      "domain": "IEC 61131-3 keywords, operators, direct addressing, case insensitivity"
+    },
+    {
+      "path": "tests/test_iec_st.py",
+      "items": 71,
+      "domain": "Core IEC ST AST, data types, control structures, error detection"
+    },
+    {
+      "path": "tests/test_iec_validator.py",
+      "items": 12,
+      "domain": "IEC 61131-3 syntax validation, type checking, keyword enforcement, ladder construct rejection"
+    },
+    {
+      "path": "tests/test_industrial_apps.py",
+      "items": 70,
+      "domain": "Industrial applications test suite across 10 domain applications"
+    },
+    {
+      "path": "tests/test_intentional_diagnostics.py",
+      "items": 30,
+      "domain": "Intentional syntax errors, missing END_IF, type mismatches, ladder rejection"
+    },
+    {
+      "path": "tests/test_lifecycle_single_instance.py",
+      "items": 10,
+      "domain": "Single-instance process enforcement, mutex locking, duplicate launch prevention, clean shutdown"
+    },
+    {
+      "path": "tests/test_live_mcp_e2e_exerciser.py",
+      "items": 11,
+      "domain": "Live MCP tool exerciser (open, compile, variables, simulation)"
+    },
+    {
+      "path": "tests/test_live_mcp_fail_closed_on_gui_death.py",
+      "items": 5,
+      "domain": "Live gate readiness, fail-closed on GUI death, hardware lockout"
+    },
+    {
+      "path": "tests/test_live_mcp_stdio_fail_closed_e2e.py",
+      "items": 5,
+      "domain": "Live JSON-RPC stdio transport, tool handshake, fail-closed safety"
+    },
+    {
+      "path": "tests/test_mcp_closed_loop_1000cycle_extended.py",
+      "items": 3,
+      "domain": "Extended 1,000-cycle closed-loop simulation & trajectory validation"
+    },
+    {
+      "path": "tests/test_mcp_compile_project_audit.py",
+      "items": 13,
+      "domain": "MCP compile tool, Error Check trigger, ListBox scrape, fail-closed"
+    },
+    {
+      "path": "tests/test_mcp_e2e_closed_loop_verification.py",
+      "items": 7,
+      "domain": "End-to-end closed-loop plant simulation & toolchain verification"
+    },
+    {
+      "path": "tests/test_mcp_failure_location_call_path.py",
+      "items": 1,
+      "domain": "MCP failure location call path, structured diagnostics, and stack trace audit"
+    },
+    {
+      "path": "tests/test_mcp_schemas.py",
+      "items": 109,
+      "domain": "Pydantic v2 schemas (extra='forbid'), path traversal defenses, hardware allowlists"
+    },
+    {
+      "path": "tests/test_mcp_server.py",
+      "items": 39,
+      "domain": "FastMCP stdio server, tool registration, async pipelines, safety"
+    },
+    {
+      "path": "tests/test_mcp_simulation_audit.py",
+      "items": 20,
+      "domain": "MCP simulation tools, software-only memory, port isolation"
+    },
+    {
+      "path": "tests/test_mcp_status_contract.py",
+      "items": 60,
+      "domain": "4-state status contract (success/failed/blocked/inconclusive), schema compliance, payload validation"
+    },
+    {
+      "path": "tests/test_mcp_tools.py",
+      "items": 24,
+      "domain": "FastMCP tool dispatch, cscape_compile_project, cscape_open_project, argument validation"
+    },
+    {
+      "path": "tests/test_mcp_variable_tools.py",
+      "items": 45,
+      "domain": "MCP variable tools, CSV/XML read/write, register boundary checks"
+    },
+    {
+      "path": "tests/test_multirate_scan_verifier.py",
+      "items": 2,
+      "domain": "Multi-rate cyclic scan execution and timing jitter verification"
+    },
+    {
+      "path": "tests/test_parser.py",
+      "items": 15,
+      "domain": "AST parsing, tokenization, serialization, roundtrip ST"
+    },
+    {
+      "path": "tests/test_project_export.py",
+      "items": 49,
+      "domain": "Cscape export subsystem integrity, CFBF/XML/CSV serialization, tag export roundtrip"
+    },
+    {
+      "path": "tests/test_project_manager.py",
+      "items": 20,
+      "domain": "Project manager legacy adapters, native CFBF integration"
+    },
+    {
+      "path": "tests/test_project_open.py",
+      "items": 11,
+      "domain": "Project manager open_project & cscape_open_project, CFBF envelope verification, path validation"
+    },
+    {
+      "path": "tests/test_real_compilation.py",
+      "items": 11,
+      "domain": "Compiler command constants, log parser, clean/syntax error builds"
+    },
+    {
+      "path": "tests/test_real_cscape_safety.py",
+      "items": 190,
+      "domain": "Live UI command lockout (32827, 33149), interface/port lockouts"
+    },
+    {
+      "path": "tests/test_real_lifecycle.py",
+      "items": 32,
+      "domain": "Live Cscape launch, splash dismissal, IEC radio 1461, shutdown, Allow modals"
+    },
+    {
+      "path": "tests/test_real_project_creation.py",
+      "items": 8,
+      "domain": "Live File -> New, Save As, CFBF inspection on disk, IEC mode"
+    },
+    {
+      "path": "tests/test_real_st_insertion.py",
+      "items": 46,
+      "domain": "Programmatic ST POU injection, clipboard paste, SHA-256 AST"
+    },
+    {
+      "path": "tests/test_security.py",
+      "items": 227,
+      "domain": "Safety guard, security policy, path sandbox, port blocking"
+    },
+    {
+      "path": "tests/test_simulation.py",
+      "items": 14,
+      "domain": "Discrete simulation engine, timers, counters, cyclic execution"
+    },
+    {
+      "path": "tests/test_st_applications_library.py",
+      "items": 70,
+      "domain": "14 industrial ST applications & fixtures, pure ST validation"
+    },
+    {
+      "path": "tests/test_st_inserter.py",
+      "items": 11,
+      "domain": "Structured Text POU programmatic injection, section insertion, rollback on syntax error"
+    },
+    {
+      "path": "tests/test_st_ld_interop.py",
+      "items": 58,
+      "domain": "Rejection of contacts, coils, rungs, networks, ladder conversion"
+    },
+    {
+      "path": "tests/test_step133_mcp_multi_client_concurrency.py",
+      "items": 6,
+      "domain": "Step 133: Multi-client concurrency & dialog sweeper verification"
+    },
+    {
+      "path": "tests/test_step134_pou_ast_integrity.py",
+      "items": 42,
+      "domain": "Step 134: Multi-POU AST integrity and syntax fault audit"
+    },
+    {
+      "path": "tests/test_step136_cross_pou_symbol_resolution.py",
+      "items": 15,
+      "domain": "Step 136: Cross-POU symbol resolution & collision audit"
+    },
+    {
+      "path": "tests/test_step138_mcp_full_lifecycle_diagnostics.py",
+      "items": 9,
+      "domain": "Step 138: Full lifecycle diagnostics & error localization"
+    },
+    {
+      "path": "tests/test_step139_cfbf_pou_insertion.py",
+      "items": 17,
+      "domain": "Step 139: Multi-POU CFBF project envelope inspection & insertion"
+    },
+    {
+      "path": "tests/test_step141_mcp_closed_loop_simulation.py",
+      "items": 28,
+      "domain": "Step 141: FastMCP discrete closed-loop simulation suite"
+    },
+    {
+      "path": "tests/test_step145_mcp_hotreload_simulation.py",
+      "items": 11,
+      "domain": "Step 145: Dynamic variable hot-reload & simulation audit"
+    },
+    {
+      "path": "tests/test_step146_mcp_symbol_collision_telemetry.py",
+      "items": 12,
+      "domain": "Step 146: Cross-POU symbol collision & memory telemetry"
+    },
+    {
+      "path": "tests/test_step147_mcp_fault_injection_recovery.py",
+      "items": 11,
+      "domain": "Step 147: FastMCP live toolchain and stability verification milestone"
+    },
+    {
+      "path": "tests/test_step148_mcp_pou_transaction_rollback.py",
+      "items": 12,
+      "domain": "Step 148: POU transaction rollback & ladder rejection audit"
+    },
+    {
+      "path": "tests/test_step149_mcp_variable_schema_evolution.py",
+      "items": 12,
+      "domain": "Step 149: Variable schema evolution & collision audit"
+    },
+    {
+      "path": "tests/test_step150_mcp_burst_stress.py",
+      "items": 10,
+      "domain": "Step 150: Pipelined RPC burst stress audit"
+    },
+    {
+      "path": "tests/test_step151_mcp_disturbance_surge_clamping.py",
+      "items": 11,
+      "domain": "Step 151: Disturbance surge & anti-windup clamping audit"
+    },
+    {
+      "path": "tests/test_step152_mcp_concurrent_ast_deadlock_resolution.py",
+      "items": 10,
+      "domain": "Step 152: Cross-POU symbol resolution & collision audit"
+    },
+    {
+      "path": "tests/test_step153_mcp_telemetry_streaming_frame_verification.py",
+      "items": 10,
+      "domain": "Step 153: Telemetry streaming frame verification audit"
+    },
+    {
+      "path": "tests/test_step154_mcp_fault_injection_interlock_cascade.py",
+      "items": 10,
+      "domain": "Step 154: Fault injection & interlock cascade audit"
+    },
+    {
+      "path": "tests/test_step157_security_audit.py",
+      "items": 4,
+      "domain": "Step 157: Fail-closed security lockout audit, Straton quarantine isolation, zero download enforcement"
+    },
+    {
+      "path": "tests/test_step176_security_audit.py",
+      "items": 5,
+      "domain": "Step 176: Fail-closed security lockout audit, Straton quarantine isolation, zero download enforcement"
+    },
+    {
+      "path": "tests/test_step178_security_audit.py",
+      "items": 5,
+      "domain": "Step 178: Fail-closed security lockout audit, Straton quarantine isolation, zero download enforcement"
+    },
+    {
+      "path": "tests/test_step19_telemetry_streaming.py",
+      "items": 4,
+      "domain": "Step 19: Closed-loop telemetry streaming verification"
+    },
+    {
+      "path": "tests/test_step20_gui_stability_80min.py",
+      "items": 6,
+      "domain": "Step 20: Continuous stay-open and GUI stability benchmark"
+    },
+    {
+      "path": "tests/test_step22_gui_stability_90min.py",
+      "items": 6,
+      "domain": "Step 22: Continuous stay-open and GUI stability benchmark"
+    },
+    {
+      "path": "tests/test_step23_noise_immunity.py",
+      "items": 4,
+      "domain": "Step 23: Dynamic noise immunity & wave rejection audit"
+    },
+    {
+      "path": "tests/test_step24_gui_stability_100min.py",
+      "items": 6,
+      "domain": "Step 24: Continuous stay-open and GUI stability benchmark"
+    },
+    {
+      "path": "tests/test_step25_valve_stiction.py",
+      "items": 4,
+      "domain": "Step 25: Actuator saturation & valve stiction audit"
+    },
+    {
+      "path": "tests/test_step26_concurrency_stress.py",
+      "items": 4,
+      "domain": "Step 26: Multi-worker concurrent simulation stress audit"
+    },
+    {
+      "path": "tests/test_step27_safety_interlock.py",
+      "items": 4,
+      "domain": "Step 27: Safety interlocks & alarm hysteresis audit"
+    },
+    {
+      "path": "tests/test_step28_bumpless_transfer.py",
+      "items": 4,
+      "domain": "Step 28: Bumpless manual/auto transfer dynamic audit"
+    },
+    {
+      "path": "tests/test_step29_trajectory_rate_limit.py",
+      "items": 4,
+      "domain": "Step 29: Dynamic setpoint trajectory & rate limiting audit"
+    },
+    {
+      "path": "tests/test_step30_gui_stability_3hour.py",
+      "items": 6,
+      "domain": "Step 30: Continuous stay-open and GUI stability benchmark"
+    },
+    {
+      "path": "tests/test_step31_disturbance_rejection.py",
+      "items": 4,
+      "domain": "Step 31: Dual-timeconstant disturbance rejection audit"
+    },
+    {
+      "path": "tests/test_step32_sensor_fault_injection.py",
+      "items": 4,
+      "domain": "Step 32: Sensor fault injection & cutoff audit"
+    },
+    {
+      "path": "tests/test_step33_anti_chatter.py",
+      "items": 4,
+      "domain": "Step 33: Multi-boundary anti-chatter & flapping audit"
+    },
+    {
+      "path": "tests/test_step35_multistep_settling.py",
+      "items": 4,
+      "domain": "Step 35: Multi-step dynamic settling audit"
+    },
+    {
+      "path": "tests/test_step37_variable_sync.py",
+      "items": 6,
+      "domain": "Step 37: Variable tag synchronization audit"
+    },
+    {
+      "path": "tests/test_step38_gain_scheduling.py",
+      "items": 4,
+      "domain": "Step 38: Dynamic gain scheduling audit"
+    },
+    {
+      "path": "tests/test_step41_anti_windup_clamping.py",
+      "items": 4,
+      "domain": "Step 41: Anti-windup reset clamping audit"
+    },
+    {
+      "path": "tests/test_step42_discretization_invariance.py",
+      "items": 4,
+      "domain": "Step 42: Discretization invariance audit"
+    },
+    {
+      "path": "tests/test_step43_multi_client_lockout.py",
+      "items": 4,
+      "domain": "Step 43: Multi-client lockout & state partitioning audit"
+    },
+    {
+      "path": "tests/test_step45_scan_overrun_watchdog.py",
+      "items": 4,
+      "domain": "Step 45: Scan cycle overrun watchdog audit"
+    },
+    {
+      "path": "tests/test_step46_dual_transmitter_voting.py",
+      "items": 4,
+      "domain": "Step 46: Dual-transmitter redundancy voting audit"
+    },
+    {
+      "path": "tests/test_tank_level_incident_failure.py",
+      "items": 30,
+      "domain": "13 documented industrial incident failure modes (ISA-18.2, IEC 62682, IEC 61511)"
+    },
+    {
+      "path": "tests/test_tank_level_pid_scenarios.py",
+      "items": 5,
+      "domain": "Industrial closed-loop buffer tank level PID scenarios (1-5)"
+    },
+    {
+      "path": "tests/test_test_runner.py",
+      "items": 8,
+      "domain": "Simulation test runner, test bench execution, failure detection"
+    },
+    {
+      "path": "tests/test_validation.py",
+      "items": 4,
+      "domain": "ST validation, syntax errors, hardware violation checks"
+    }
+  ],
+  "gate_suites": [
+    {
+      "path": "tests/test_step127_mcp_live_tools.py",
+      "items": 4,
+      "domain": "Step 127: Live FastMCP multi-tool evidence & audit verification"
+    },
+    {
+      "path": "tests/test_step128_gui_stability_pid14252.py",
+      "items": 6,
+      "domain": "Step 128: Continuous stay-open milestone benchmark (historical milestone PID)"
+    },
+    {
+      "path": "tests/test_step129_gui_stability_pid14252.py",
+      "items": 6,
+      "domain": "Step 129: Continuous stay-open milestone benchmark (historical milestone PID)"
+    },
+    {
+      "path": "tests/test_step130_mcp_stdio_stress_pid14252.py",
+      "items": 4,
+      "domain": "Step 130: MCP stdio pipelined stress benchmark"
+    },
+    {
+      "path": "tests/test_step131_live_gui_compile_fault_recovery.py",
+      "items": 4,
+      "domain": "Step 131: Live GUI compile fault injection and recovery"
+    },
+    {
+      "path": "tests/test_step132_gui_stability_pid14580.py",
+      "items": 6,
+      "domain": "Step 132: Continuous stay-open milestone benchmark (historical milestone PID)"
+    },
+    {
+      "path": "tests/test_step135_gui_stability_pid14580.py",
+      "items": 14,
+      "domain": "Step 135: Continuous stay-open milestone benchmark (historical milestone PID)"
+    },
+    {
+      "path": "tests/test_step137_gui_stability_pid14580.py",
+      "items": 14,
+      "domain": "Step 137: Continuous stay-open milestone benchmark (historical milestone PID)"
+    },
+    {
+      "path": "tests/test_step140_gui_stability_pid14580.py",
+      "items": 16,
+      "domain": "Step 140: Continuous stay-open milestone benchmark (historical milestone PID)"
+    },
+    {
+      "path": "tests/test_step142_mcp_live_compile_diagnostics.py",
+      "items": 26,
+      "domain": "Step 142: Full lifecycle diagnostics & error localization"
+    },
+    {
+      "path": "tests/test_step143_mcp_live_stdio_pipeline.py",
+      "items": 18,
+      "domain": "Step 143: Live stdio JSON-RPC pipeline & tool suite"
+    },
+    {
+      "path": "tests/test_step144_mcp_multi_client_stress_pid7968.py",
+      "items": 11,
+      "domain": "Step 144: FastMCP live toolchain and stability verification milestone"
+    },
+    {
+      "path": "tests/test_step155_mcp_dual_transmitter_failover.py",
+      "items": 10,
+      "domain": "Step 155: Dual-transmitter voting, drift discrepancy detection, failover telemetry & hardware lockout"
+    },
+    {
+      "path": "tests/test_step156_mcp_dual_pump_alternation.py",
+      "items": 13,
+      "domain": "Step 156: Dual-pump alternation, lead/lag staging, cavitation interlock & telemetry"
+    },
+    {
+      "path": "tests/test_step156_visible_cscape_gui_driver.py",
+      "items": 3,
+      "domain": "Step 156: Visible Cscape GUI driver, interactive desktop winsta0\\Default, Error Check 32826 & screenshot"
+    },
+    {
+      "path": "tests/test_step157_mcp_three_element_drum_balance.py",
+      "items": 13,
+      "domain": "Step 157: Three-element boiler drum level/steam flow feedforward & shrink/swell compensation"
+    },
+    {
+      "path": "tests/test_step157_visible_cscape_gui_driver.py",
+      "items": 3,
+      "domain": "Step 157: Visible Cscape GUI driver, interactive desktop verification, Error Check 32826 & screenshot"
+    },
+    {
+      "path": "tests/test_step158_mcp_decoupled_mimo_level_pressure.py",
+      "items": 3,
+      "domain": "Step 158: Decoupled MIMO boiler drum level and steam header pressure interaction control"
+    },
+    {
+      "path": "tests/test_step158_visible_cscape_gui_driver.py",
+      "items": 4,
+      "domain": "Step 158: Visible Cscape GUI driver, interactive desktop winsta0\\Default, Error Check 32826 & screenshot"
+    },
+    {
+      "path": "tests/test_step159_mcp_coordinated_blowdown_dosing.py",
+      "items": 3,
+      "domain": "Step 159: Coordinated continuous blowdown & chemical dosing conductivity control"
+    },
+    {
+      "path": "tests/test_step159_visible_cscape_gui_driver.py",
+      "items": 4,
+      "domain": "Step 159: Visible Cscape GUI driver, interactive desktop winsta0\\Default, Error Check 32826 & screenshot"
+    },
+    {
+      "path": "tests/test_step160_mcp_plant_wide_integration_benchmark.py",
+      "items": 3,
+      "domain": "Step 160: Plant-wide multi-loop integration benchmark across drum, feed, and blowdown"
+    },
+    {
+      "path": "tests/test_step160_visible_cscape_gui_driver.py",
+      "items": 4,
+      "domain": "Step 160: Visible Cscape GUI driver, interactive desktop winsta0\\Default, Error Check 32826 & screenshot"
+    },
+    {
+      "path": "tests/test_step161_mcp_tmr_sensor_voting.py",
+      "items": 3,
+      "domain": "Step 161: Triple modular redundant (TMR) 2oo3 sensor voting & hardware fault degradation"
+    },
+    {
+      "path": "tests/test_step161_visible_cscape_gui_driver.py",
+      "items": 4,
+      "domain": "Step 161: Visible Cscape GUI driver, interactive desktop winsta0\\Default, Error Check 32826 & screenshot"
+    },
+    {
+      "path": "tests/test_step162_mcp_pump_sequencing_runtime_balance.py",
+      "items": 3,
+      "domain": "Step 162: Multi-pump sequencing, runtime equalization, and wear leveling telemetry"
+    },
+    {
+      "path": "tests/test_step162_visible_cscape_gui_driver.py",
+      "items": 4,
+      "domain": "Step 162: Visible Cscape GUI driver, interactive desktop winsta0\\Default, Error Check 32826 & screenshot"
+    },
+    {
+      "path": "tests/test_step163_mcp_spillback_recirculation_surge.py",
+      "items": 3,
+      "domain": "Step 163: Minimum-flow spillback recirculation valve protection & surge suppression"
+    },
+    {
+      "path": "tests/test_step163_visible_cscape_gui_driver.py",
+      "items": 4,
+      "domain": "Step 163: Visible Cscape GUI driver, interactive desktop winsta0\\Default, Error Check 32826 & screenshot"
+    },
+    {
+      "path": "tests/test_step164_mcp_vfd_resonance_skipband_protection.py",
+      "items": 3,
+      "domain": "Step 164: Variable frequency drive (VFD) mechanical resonance skip band avoidance"
+    },
+    {
+      "path": "tests/test_step164_visible_cscape_gui_driver.py",
+      "items": 4,
+      "domain": "Step 164: Visible Cscape GUI driver, interactive desktop winsta0\\Default, Error Check 32826 & screenshot"
+    },
+    {
+      "path": "tests/test_step165_mcp_deaerator_pressure_dissolved_oxygen.py",
+      "items": 3,
+      "domain": "Step 165: Deaerator pegging steam pressure & dissolved oxygen stripping control"
+    },
+    {
+      "path": "tests/test_step165_visible_cscape_gui_driver.py",
+      "items": 4,
+      "domain": "Step 165: Visible Cscape GUI driver, interactive desktop winsta0\\Default, Error Check 32826 & screenshot"
+    },
+    {
+      "path": "tests/test_step166_mcp_economizer_steaming_acid_dewpoint.py",
+      "items": 3,
+      "domain": "Step 166: Economizer recirculation against steaming & cold-end acid dewpoint corrosion"
+    },
+    {
+      "path": "tests/test_step166_visible_cscape_gui_driver.py",
+      "items": 4,
+      "domain": "Step 166: Visible Cscape GUI driver, interactive desktop winsta0\\Default, Error Check 32826 & screenshot"
+    },
+    {
+      "path": "tests/test_step167_mcp_superheater_attemperator_spray.py",
+      "items": 3,
+      "domain": "Step 167: Two-stage superheater attemperator spray water temperature control"
+    },
+    {
+      "path": "tests/test_step167_visible_cscape_gui_driver.py",
+      "items": 4,
+      "domain": "Step 167: Visible Cscape GUI driver, interactive desktop winsta0\\Default, Error Check 32826 & screenshot"
+    },
+    {
+      "path": "tests/test_step168_mcp_msv_warming_water_hammer.py",
+      "items": 3,
+      "domain": "Step 168: Main steam stop valve (MSV) pre-warming, condensation drain & thermal stress mitigation"
+    },
+    {
+      "path": "tests/test_step168_visible_cscape_gui_driver.py",
+      "items": 4,
+      "domain": "Step 168: Visible Cscape GUI driver, interactive desktop winsta0\\Default, Error Check 32826 & screenshot"
+    },
+    {
+      "path": "tests/test_step169_mcp_combustion_control_cross_limiting.py",
+      "items": 3,
+      "domain": "Step 169: Cross-limiting fuel/air combustion control & stoichiometric excess O2 trim"
+    },
+    {
+      "path": "tests/test_step169_visible_cscape_gui_driver.py",
+      "items": 4,
+      "domain": "Step 169: Visible Cscape GUI driver, interactive desktop winsta0\\Default, Error Check 32826 & screenshot"
+    },
+    {
+      "path": "tests/test_step170_mcp_master_header_pressure_grid_balance.py",
+      "items": 3,
+      "domain": "Step 170: Plant master steam header pressure control & multi-boiler load allocation"
+    },
+    {
+      "path": "tests/test_step170_visible_cscape_gui_driver.py",
+      "items": 4,
+      "domain": "Step 170: Visible Cscape GUI driver, interactive desktop winsta0\\Default, Error Check 32826 & screenshot"
+    },
+    {
+      "path": "tests/test_step171_mcp_condenser_hotwell_vacuum_control.py",
+      "items": 3,
+      "domain": "Step 171: Surface condenser hotwell level, cooling water circulation & vacuum priming"
+    },
+    {
+      "path": "tests/test_step171_visible_cscape_gui_driver.py",
+      "items": 4,
+      "domain": "Step 171: Visible Cscape GUI driver, interactive desktop winsta0\\Default, Error Check 32826 & screenshot"
+    },
+    {
+      "path": "tests/test_step172_mcp_turbine_ehc_grid_sync.py",
+      "items": 3,
+      "domain": "Step 172: Steam turbine electro-hydraulic governor (EHC), speed run-up & grid synchronization"
+    },
+    {
+      "path": "tests/test_step172_visible_cscape_gui_driver.py",
+      "items": 4,
+      "domain": "Step 172: Visible Cscape GUI driver, interactive desktop winsta0\\Default, Error Check 32826 & screenshot"
+    },
+    {
+      "path": "tests/test_step173_mcp_generator_avr_excitation.py",
+      "items": 3,
+      "domain": "Step 173: Synchronous generator automatic voltage regulator (AVR), VAR/PF control & loss of excitation"
+    },
+    {
+      "path": "tests/test_step173_visible_cscape_gui_driver.py",
+      "items": 4,
+      "domain": "Step 173: Visible Cscape GUI driver, interactive desktop winsta0\\Default, Error Check 32826 & screenshot"
+    },
+    {
+      "path": "tests/test_step174_mcp_substation_synchrocheck.py",
+      "items": 2,
+      "domain": "Step 174: FastMCP substation synchrocheck and auto-reclose audit"
+    },
+    {
+      "path": "tests/test_step174_visible_cscape_gui_driver.py",
+      "items": 4,
+      "domain": "Step 174: Visible Cscape GUI driver, interactive desktop winsta0\\Default, Error Check 32826 & screenshot"
+    },
+    {
+      "path": "tests/test_step175_mcp_compressor_anti_surge.py",
+      "items": 2,
+      "domain": "Step 175: FastMCP compressor anti-surge and recycle valve audit"
+    },
+    {
+      "path": "tests/test_step175_visible_cscape_gui_driver.py",
+      "items": 4,
+      "domain": "Step 175: Visible Cscape GUI driver, interactive desktop winsta0\\Default, Error Check 32826 & screenshot"
+    },
+    {
+      "path": "tests/test_step176_mcp_boiler_master.py",
+      "items": 11,
+      "domain": "Step 176: FastMCP boiler master and fuel cross-limiting audit"
+    },
+    {
+      "path": "tests/test_step176_visible_cscape_gui_driver.py",
+      "items": 4,
+      "domain": "Step 176: Visible Cscape GUI driver, interactive desktop winsta0\\Default, Error Check 32826 & screenshot"
+    },
+    {
+      "path": "tests/test_step177_mcp_hydro_governor.py",
+      "items": 2,
+      "domain": "Step 177: FastMCP hydro governor and wicket gate positioner audit"
+    },
+    {
+      "path": "tests/test_step177_visible_cscape_gui_driver.py",
+      "items": 4,
+      "domain": "Step 177: Visible Cscape GUI driver, interactive desktop winsta0\\Default, Error Check 32826 & screenshot"
+    },
+    {
+      "path": "tests/test_step178_mcp_ccgt_hrsg.py",
+      "items": 2,
+      "domain": "Step 178: FastMCP CCGT HRSG drum level and duct burner audit"
+    },
+    {
+      "path": "tests/test_step178_visible_cscape_gui_driver.py",
+      "items": 4,
+      "domain": "Step 178: Visible Cscape GUI driver, interactive desktop winsta0\\Default, Error Check 32826 & screenshot"
+    },
+    {
+      "path": "tests/test_step21_live_gui_compile_chain.py",
+      "items": 4,
+      "domain": "Step 21: Compile-to-simulation toolchain chain audit"
+    },
+    {
+      "path": "tests/test_step34_gui_stability_pid15240_90min.py",
+      "items": 6,
+      "domain": "Step 34: Continuous stay-open and GUI stability benchmark"
+    },
+    {
+      "path": "tests/test_step36_gui_stability_pid15240_100min.py",
+      "items": 6,
+      "domain": "Step 36: Continuous stay-open and GUI stability benchmark"
+    },
+    {
+      "path": "tests/test_step39_mcp_stdio_stress_pid15240.py",
+      "items": 4,
+      "domain": "Step 39: JSON-RPC stdio pipeline stress audit"
+    },
+    {
+      "path": "tests/test_step40_gui_stability_pid15240_120min.py",
+      "items": 6,
+      "domain": "Step 40: Continuous stay-open and GUI stability benchmark"
+    },
+    {
+      "path": "tests/test_step44_gui_stability_pid15240_130min.py",
+      "items": 6,
+      "domain": "Step 44: Continuous stay-open and GUI stability benchmark"
+    }
+  ]
+}

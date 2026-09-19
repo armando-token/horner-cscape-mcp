@@ -1,0 +1,234 @@
+{
+  "audit_step": 67,
+  "name": "Deaerator Storage Tank Level & Pegging Steam Dynamic Pressure Closed-Loop Audit",
+  "timestamp": "2026-09-05T10:49:11.362Z",
+  "completed_at": "2026-09-05T10:49:17.731Z",
+  "cscape_pid": 8660,
+  "cscape_hwnd": "0x147068c",
+  "total_cycles": 600,
+  "metrics": {
+    "max_phase1_level_error_pct": 0.0,
+    "mean_phase1_level_error_pct": 0.0,
+    "max_phase2_uncomp_drift_pct": 5.67,
+    "mean_phase2_uncomp_drift_pct": 4.16,
+    "max_phase3_comp_error_pct": 0.0,
+    "mean_phase3_comp_error_pct": 0.0,
+    "pegging_steam_collapse_rejection_pct": 100.0,
+    "phase4_final_level_error_pct": 0.1138,
+    "phase4_mean_tail_level_error_pct": 0.0703,
+    "high_high_induction_interlock_trip_cycle": 501,
+    "high_high_trip_level_pct": 85.0
+  },
+  "trace_samples": [
+    {
+      "cycle": 0,
+      "phase": "PHASE_1_EQUILIBRIUM_DEAERATION",
+      "target_sp": 50.0,
+      "storage_level": 50.0,
+      "pegging_steam_bar": 2.5,
+      "induction_trip": false,
+      "cv_pid": 50.0
+    },
+    {
+      "cycle": 50,
+      "phase": "PHASE_1_EQUILIBRIUM_DEAERATION",
+      "target_sp": 50.0,
+      "storage_level": 50.0,
+      "pegging_steam_bar": 2.5,
+      "induction_trip": false,
+      "cv_pid": 50.0
+    },
+    {
+      "cycle": 100,
+      "phase": "PHASE_1_EQUILIBRIUM_DEAERATION",
+      "target_sp": 50.0,
+      "storage_level": 50.0,
+      "pegging_steam_bar": 2.5,
+      "induction_trip": false,
+      "cv_pid": 50.0
+    },
+    {
+      "cycle": 101,
+      "phase": "PHASE_2_STEAM_COLLAPSE_SURGE_UNCOMP",
+      "target_sp": 50.0,
+      "storage_level": 50.019,
+      "pegging_steam_bar": 2.49,
+      "induction_trip": false,
+      "cv_pid": 50.0
+    },
+    {
+      "cycle": 125,
+      "phase": "PHASE_2_STEAM_COLLAPSE_SURGE_UNCOMP",
+      "target_sp": 50.0,
+      "storage_level": 53.847,
+      "pegging_steam_bar": 2.2,
+      "induction_trip": false,
+      "cv_pid": 44.0
+    },
+    {
+      "cycle": 150,
+      "phase": "PHASE_2_STEAM_COLLAPSE_SURGE_UNCOMP",
+      "target_sp": 50.0,
+      "storage_level": 55.625,
+      "pegging_steam_bar": 1.9,
+      "induction_trip": false,
+      "cv_pid": 30.43
+    },
+    {
+      "cycle": 175,
+      "phase": "PHASE_2_STEAM_COLLAPSE_SURGE_UNCOMP",
+      "target_sp": 50.0,
+      "storage_level": 54.721,
+      "pegging_steam_bar": 1.6,
+      "induction_trip": false,
+      "cv_pid": 20.7
+    },
+    {
+      "cycle": 200,
+      "phase": "PHASE_2_STEAM_COLLAPSE_SURGE_UNCOMP",
+      "target_sp": 50.0,
+      "storage_level": 54.669,
+      "pegging_steam_bar": 1.3,
+      "induction_trip": false,
+      "cv_pid": 11.8
+    },
+    {
+      "cycle": 201,
+      "phase": "PHASE_3_ENTHALPY_DECOUPLING",
+      "target_sp": 50.0,
+      "storage_level": 50.0,
+      "pegging_steam_bar": 1.3,
+      "induction_trip": false,
+      "cv_pid": 50.0
+    },
+    {
+      "cycle": 225,
+      "phase": "PHASE_3_ENTHALPY_DECOUPLING",
+      "target_sp": 50.0,
+      "storage_level": 50.0,
+      "pegging_steam_bar": 1.3,
+      "induction_trip": false,
+      "cv_pid": 50.0
+    },
+    {
+      "cycle": 250,
+      "phase": "PHASE_3_ENTHALPY_DECOUPLING",
+      "target_sp": 50.0,
+      "storage_level": 50.0,
+      "pegging_steam_bar": 1.3,
+      "induction_trip": false,
+      "cv_pid": 50.0
+    },
+    {
+      "cycle": 275,
+      "phase": "PHASE_3_ENTHALPY_DECOUPLING",
+      "target_sp": 50.0,
+      "storage_level": 50.0,
+      "pegging_steam_bar": 1.3,
+      "induction_trip": false,
+      "cv_pid": 50.0
+    },
+    {
+      "cycle": 300,
+      "phase": "PHASE_3_ENTHALPY_DECOUPLING",
+      "target_sp": 50.0,
+      "storage_level": 50.0,
+      "pegging_steam_bar": 1.3,
+      "induction_trip": false,
+      "cv_pid": 50.0
+    },
+    {
+      "cycle": 350,
+      "phase": "PHASE_3_ENTHALPY_DECOUPLING",
+      "target_sp": 50.0,
+      "storage_level": 50.0,
+      "pegging_steam_bar": 1.3,
+      "induction_trip": false,
+      "cv_pid": 50.0
+    },
+    {
+      "cycle": 351,
+      "phase": "PHASE_4_DYNAMIC_STORAGE_STEP",
+      "target_sp": 65.0,
+      "storage_level": 51.26,
+      "pegging_steam_bar": 2.0,
+      "induction_trip": false,
+      "cv_pid": 75.2
+    },
+    {
+      "cycle": 400,
+      "phase": "PHASE_4_DYNAMIC_STORAGE_STEP",
+      "target_sp": 65.0,
+      "storage_level": 66.427,
+      "pegging_steam_bar": 2.0,
+      "induction_trip": false,
+      "cv_pid": 42.79
+    },
+    {
+      "cycle": 450,
+      "phase": "PHASE_4_DYNAMIC_STORAGE_STEP",
+      "target_sp": 65.0,
+      "storage_level": 65.236,
+      "pegging_steam_bar": 2.0,
+      "induction_trip": false,
+      "cv_pid": 51.0
+    },
+    {
+      "cycle": 500,
+      "phase": "PHASE_4_DYNAMIC_STORAGE_STEP",
+      "target_sp": 65.0,
+      "storage_level": 64.886,
+      "pegging_steam_bar": 2.0,
+      "induction_trip": false,
+      "cv_pid": 49.95
+    },
+    {
+      "cycle": 501,
+      "phase": "PHASE_5_HIGH_HIGH_INDUCTION_TRIP",
+      "target_sp": 65.0,
+      "storage_level": 64.886,
+      "pegging_steam_bar": 2.5,
+      "induction_trip": true,
+      "cv_pid": 49.96
+    },
+    {
+      "cycle": 520,
+      "phase": "PHASE_5_HIGH_HIGH_INDUCTION_TRIP",
+      "target_sp": 65.0,
+      "storage_level": 64.886,
+      "pegging_steam_bar": 2.5,
+      "induction_trip": true,
+      "cv_pid": 50.19
+    },
+    {
+      "cycle": 550,
+      "phase": "PHASE_5_HIGH_HIGH_INDUCTION_TRIP",
+      "target_sp": 65.0,
+      "storage_level": 64.886,
+      "pegging_steam_bar": 2.5,
+      "induction_trip": true,
+      "cv_pid": 50.46
+    },
+    {
+      "cycle": 599,
+      "phase": "PHASE_5_HIGH_HIGH_INDUCTION_TRIP",
+      "target_sp": 65.0,
+      "storage_level": 64.886,
+      "pegging_steam_bar": 2.5,
+      "induction_trip": true,
+      "cv_pid": 50.9
+    }
+  ],
+  "cscape_health": {
+    "healthy": true,
+    "pid": 8660,
+    "hwnd": "0x147068c",
+    "desktop": "Default",
+    "is_hung": false,
+    "wm_null_ping_ok": true,
+    "working_set_mb": 51.16,
+    "num_threads": 11,
+    "uptime_sec": 774.34
+  },
+  "download_lockout_verified": true
+}

@@ -1,0 +1,52 @@
+{
+  "status": "success",
+  "dialog_captured": true,
+  "hwnd": "0x000707C2",
+  "class": "#32770",
+  "title": "Cscape",
+  "rect": [
+    522,
+    277,
+    759,
+    436
+  ],
+  "children": [
+    {
+      "hwnd": "0x000807A8",
+      "id": 2,
+      "class": "Button",
+      "text": "OK",
+      "rect": [
+        661,
+        396,
+        736,
+        419
+      ]
+    },
+    {
+      "hwnd": "0x000C07DC",
+      "id": 20,
+      "class": "Static",
+      "text": "",
+      "rect": [
+        551,
+        331,
+        583,
+        363
+      ]
+    },
+    {
+      "hwnd": "0x00080778",
+      "id": 65535,
+      "class": "Static",
+      "text": "Failed to save document.",
+      "rect": [
+        592,
+        341,
+        721,
+        356
+      ]
+    }
+  ],
+  "screenshot": "C:\\Users\\ArmandoSilva\\Downloads\\cscape_save_failed_reproduction.png"
+}

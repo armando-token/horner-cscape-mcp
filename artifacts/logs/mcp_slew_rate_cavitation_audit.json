@@ -1,0 +1,233 @@
+{
+  "step": 47,
+  "audit_title": "Asymmetric Slew-Rate Limiting & Impeller Cavitation Protection Closed-Loop Audit",
+  "timestamp_start": "2026-09-05T09:56:39.121Z",
+  "timestamp_end": "2026-09-05T09:56:45.359Z",
+  "status": "VERIFIED_LIVE",
+  "cscape_active_process": {
+    "healthy": true,
+    "pid": 3784,
+    "hwnd": "0xbb06c2",
+    "desktop": "Default",
+    "is_hung": false,
+    "wm_null_ping_ok": true,
+    "working_set_mb": 203.26,
+    "uptime_seconds": 76.5,
+    "thread_count": 22,
+    "gate_status": "READY_FOR_TESTS",
+    "window_title": "Cscape - Logged In : \"armando@controlnautas.com\" - [TankLevelClosedLoop.csp]"
+  },
+  "cscape_gate": {
+    "ready_for_tests": true,
+    "status": "READY_FOR_TESTS",
+    "pid": 3784,
+    "hwnd": "0x00BB06C2",
+    "window_title": "Cscape - Logged In : \"armando@controlnautas.com\" - [TankLevelClosedLoop.csp]",
+    "project_file": "C:\\Users\\ArmandoSilva\\artifacts\\projects\\TankLevelClosedLoop\\TankLevelClosedLoop.csp",
+    "exit_code": null,
+    "reason": "TankLevelClosedLoop verified active and responsive",
+    "cycle": 1,
+    "timestamp_utc": "2026-09-05T09:56:38.459Z"
+  },
+  "gui_compilation": {
+    "command_id": 32826,
+    "status": "success",
+    "errors": 0,
+    "warnings": 0
+  },
+  "hydraulic_protection_metrics": {
+    "total_cycles": 420,
+    "max_positive_slew_pct_per_cycle": 1.5,
+    "max_negative_slew_pct_per_cycle": 5.0,
+    "npsh_critical_level_pct": 18.0,
+    "phase1_rate_violations": 0,
+    "phase2_cavitation_protection_verified": true,
+    "phase3_asymmetric_cutoff_verified": true,
+    "phase4_final_error_percent": 0.0005,
+    "phase4_mean_last15_error_percent": 0.0004
+  },
+  "safety_audit": {
+    "physical_plc_download_blocked": true,
+    "blocked_command_id": 32827,
+    "zero_physical_hardware_touched": true,
+    "zero_straton_dependencies": true
+  },
+  "sample_trace": [
+    {
+      "cycle": 0,
+      "phase": "PHASE_1_SLEW_RATE_RAMP",
+      "target_sp": 85.0,
+      "pv_plant": 50.075,
+      "raw_cv": 100.0,
+      "actuator_output": 51.5,
+      "rate_of_change": 1.5,
+      "cavitation_tripped": false,
+      "error": 34.925
+    },
+    {
+      "cycle": 10,
+      "phase": "PHASE_1_SLEW_RATE_RAMP",
+      "target_sp": 85.0,
+      "pv_plant": 54.2108,
+      "raw_cv": 100.0,
+      "actuator_output": 66.5,
+      "rate_of_change": 1.5,
+      "cavitation_tripped": false,
+      "error": 30.7892
+    },
+    {
+      "cycle": 30,
+      "phase": "PHASE_1_SLEW_RATE_RAMP",
+      "target_sp": 85.0,
+      "pv_plant": 73.8113,
+      "raw_cv": 100.0,
+      "actuator_output": 96.5,
+      "rate_of_change": 1.5,
+      "cavitation_tripped": false,
+      "error": 11.1887
+    },
+    {
+      "cycle": 60,
+      "phase": "PHASE_1_SLEW_RATE_RAMP",
+      "target_sp": 85.0,
+      "pv_plant": 88.7176,
+      "raw_cv": 87.2731,
+      "actuator_output": 87.2731,
+      "rate_of_change": -0.324,
+      "cavitation_tripped": false,
+      "error": 3.7176
+    },
+    {
+      "cycle": 100,
+      "phase": "PHASE_1_SLEW_RATE_RAMP",
+      "target_sp": 85.0,
+      "pv_plant": 85.2405,
+      "raw_cv": 84.6525,
+      "actuator_output": 84.6525,
+      "rate_of_change": 0.0224,
+      "cavitation_tripped": false,
+      "error": 0.2405
+    },
+    {
+      "cycle": 105,
+      "phase": "PHASE_2_NPSH_CAVITATION",
+      "target_sp": 85.0,
+      "pv_plant": 81.5983,
+      "raw_cv": 100.0,
+      "actuator_output": 59.6525,
+      "rate_of_change": -5.0,
+      "cavitation_tripped": true,
+      "error": 3.4017
+    },
+    {
+      "cycle": 120,
+      "phase": "PHASE_2_NPSH_CAVITATION",
+      "target_sp": 85.0,
+      "pv_plant": 47.3222,
+      "raw_cv": 100.0,
+      "actuator_output": 0.0,
+      "rate_of_change": 0.0,
+      "cavitation_tripped": true,
+      "error": 37.6778
+    },
+    {
+      "cycle": 160,
+      "phase": "PHASE_2_NPSH_CAVITATION",
+      "target_sp": 85.0,
+      "pv_plant": 6.0815,
+      "raw_cv": 100.0,
+      "actuator_output": 0.0,
+      "rate_of_change": 0.0,
+      "cavitation_tripped": true,
+      "error": 78.9185
+    },
+    {
+      "cycle": 165,
+      "phase": "PHASE_3_ASYMMETRIC_CUTOFF",
+      "target_sp": 40.0,
+      "pv_plant": 5.7585,
+      "raw_cv": 100.0,
+      "actuator_output": 7.5,
+      "rate_of_change": 1.5,
+      "cavitation_tripped": true,
+      "error": 34.2415
+    },
+    {
+      "cycle": 190,
+      "phase": "PHASE_3_ASYMMETRIC_CUTOFF",
+      "target_sp": 40.0,
+      "pv_plant": 23.9225,
+      "raw_cv": 100.0,
+      "actuator_output": 45.0,
+      "rate_of_change": 1.5,
+      "cavitation_tripped": true,
+      "error": 16.0775
+    },
+    {
+      "cycle": 220,
+      "phase": "PHASE_3_ASYMMETRIC_CUTOFF",
+      "target_sp": 40.0,
+      "pv_plant": 55.454,
+      "raw_cv": 55.9689,
+      "actuator_output": 55.9689,
+      "rate_of_change": -1.8264,
+      "cavitation_tripped": true,
+      "error": 15.454
+    },
+    {
+      "cycle": 225,
+      "phase": "PHASE_4_CALIBRATED_SETTLING",
+      "target_sp": 65.0,
+      "pv_plant": 56.6232,
+      "raw_cv": 83.9049,
+      "actuator_output": 63.4689,
+      "rate_of_change": 1.5,
+      "cavitation_tripped": false,
+      "error": 8.3768
+    },
+    {
+      "cycle": 260,
+      "phase": "PHASE_4_CALIBRATED_SETTLING",
+      "target_sp": 65.0,
+      "pv_plant": 67.9657,
+      "raw_cv": 66.2243,
+      "actuator_output": 66.2243,
+      "rate_of_change": -0.208,
+      "cavitation_tripped": false,
+      "error": 2.9657
+    },
+    {
+      "cycle": 320,
+      "phase": "PHASE_4_CALIBRATED_SETTLING",
+      "target_sp": 65.0,
+      "pv_plant": 64.9676,
+      "raw_cv": 64.9404,
+      "actuator_output": 64.9404,
+      "rate_of_change": 0.015,
+      "cavitation_tripped": false,
+      "error": 0.0324
+    },
+    {
+      "cycle": 380,
+      "phase": "PHASE_4_CALIBRATED_SETTLING",
+      "target_sp": 65.0,
+      "pv_plant": 64.9992,
+      "raw_cv": 65.0008,
+      "actuator_output": 65.0008,
+      "rate_of_change": 0.0,
+      "cavitation_tripped": false,
+      "error": 0.0008
+    },
+    {
+      "cycle": 419,
+      "phase": "PHASE_4_CALIBRATED_SETTLING",
+      "target_sp": 65.0,
+      "pv_plant": 65.0005,
+      "raw_cv": 65.0008,
+      "actuator_output": 65.0008,
+      "rate_of_change": 0.0,
+      "cavitation_tripped": false,
+      "error": 0.0005
+    }
+  ]
+}

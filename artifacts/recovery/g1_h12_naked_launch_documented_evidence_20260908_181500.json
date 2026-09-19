@@ -1,0 +1,13 @@
+{
+  "item_id": "H12",
+  "name": "Unsupervised Naked Cscape Launch Risks Documented",
+  "mission_id": "G1_REMAINING_NEGATIVES_OFFLINE_v3",
+  "timestamp_utc": "2026-09-09T01:19:34.566673+00:00",
+  "status": "success",
+  "invariant": "Cscape naked launch crash diagnosis documented; single GUI ownership model enforced",
+  "verification": {
+    "cscape_crash_diagnosis_exists": true,
+    "cscape_crash_fix_notes_exists": true,
+    "pass": true
+  }
+}

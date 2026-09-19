@@ -1,0 +1,274 @@
+{
+  "C1-N01_empty_dict": {
+    "input": {},
+    "success": false,
+    "status": "inconclusive",
+    "error_code": "INVALID_RESULT_CONTRACT",
+    "errors": [
+      "Empty result dictionary violates MCP status contract (INVALID_RESULT_CONTRACT)"
+    ],
+    "verification": "Properly rejected as status=inconclusive, success=False, error_code=INVALID_RESULT_CONTRACT"
+  },
+  "C1-N02_verified": {
+    "input": {
+      "status": "VERIFIED"
+    },
+    "success": false,
+    "status": "inconclusive",
+    "error_code": "INVALID_RESULT_CONTRACT",
+    "errors": [
+      "Prohibited status 'VERIFIED' ('VERIFIED' or '100%') violates MCP status contract (INVALID_RESULT_CONTRACT)"
+    ],
+    "verification": "Properly rejected as status=inconclusive, success=False, error_code=INVALID_RESULT_CONTRACT"
+  },
+  "C1-N03_100_percent": {
+    "input": {
+      "status": "100%"
+    },
+    "success": false,
+    "status": "inconclusive",
+    "error_code": "INVALID_RESULT_CONTRACT",
+    "errors": [
+      "Prohibited status '100%' ('VERIFIED' or '100%') violates MCP status contract (INVALID_RESULT_CONTRACT)"
+    ],
+    "verification": "Properly rejected as status=inconclusive, success=False, error_code=INVALID_RESULT_CONTRACT"
+  },
+  "C1-N04_unknown_status": {
+    "input": {
+      "status": "BOGUS_STATUS"
+    },
+    "success": false,
+    "status": "inconclusive",
+    "error_code": "INVALID_RESULT_CONTRACT",
+    "errors": [
+      "Unknown status candidate 'BOGUS_STATUS' violates canonical 4-state ontology (INVALID_RESULT_CONTRACT)"
+    ],
+    "verification": "Properly rejected as status=inconclusive, success=False, error_code=INVALID_RESULT_CONTRACT"
+  },
+  "C1-N05_decorated_none": {
+    "input": "decorated function returning None",
+    "success": false,
+    "status": "inconclusive",
+    "error_code": "INVALID_RESULT_CONTRACT",
+    "errors": [
+      "Function 'dummy' returned invalid result None (expected non-empty dict)"
+    ],
+    "verification": "Properly rejected as status=inconclusive, success=False, error_code=INVALID_RESULT_CONTRACT"
+  },
+  "C1-N06_contradiction_error_diag": {
+    "input": {
+      "success": true,
+      "diagnostics": [
+        {
+          "severity": "ERROR"
+        }
+      ]
+    },
+    "success": false,
+    "status": "failed",
+    "error_code": "INVALID_RESULT_CONTRACT",
+    "errors": [
+      "Contradiction detected: result claims success=True but diagnostics contain ERROR severity (INVALID_RESULT_CONTRACT)"
+    ],
+    "verification": "Contradiction detected: forced status=failed, success=False, error_code=INVALID_RESULT_CONTRACT"
+  },
+  "C1_invented_line_col_1": {
+    "input": {
+      "success": false,
+      "errors": [
+        "Unlocated generic runtime error"
+      ]
+    },
+    "failure_locations": [
+      {
+        "file_path": "Unknown",
+        "full_path": "Unknown",
+        "line": null,
+        "column": null,
+        "error_code": "GENERIC_ERROR",
+        "severity": "ERROR",
+        "message": "Unlocated generic runtime error"
+      }
+    ],
+    "verification": "Line and column preserved as None; no invented line: 1, col: 1"
+  },
+  "C1-P01_positive_success": {
+    "input": {
+      "success": true,
+      "status": "success",
+      "data": {
+        "key": "val"
+      }
+    },
+    "success": true,
+    "status": "success",
+    "errors": [],
+    "verification": "Valid success payload preserved cleanly"
+  },
+  "C1-P01_positive_blocked": {
+    "input": {
+      "status": "blocked",
+      "errors": [
+        "Hardware port COM1 locked"
+      ]
+    },
+    "success": false,
+    "status": "blocked",
+    "error_code": "SECURITY_BLOCKED",
+    "errors": [
+      "Hardware port COM1 locked"
+    ],
+    "verification": "Valid blocked payload preserved with status=blocked, success=False"
+  },
+  "C1-N07_error_count_contradiction": {
+    "input": {
+      "success": true,
+      "error_count": 1,
+      "status": "success"
+    },
+    "success": false,
+    "status": "failed",
+    "error_code": "INVALID_RESULT_CONTRACT",
+    "errors": [
+      "Contradiction detected: result claims success=True but error_count=1 > 0 (INVALID_RESULT_CONTRACT)"
+    ],
+    "verification": "Contradiction between success=True and error_count > 0 forced to failed"
+  },
+  "C1-N08_error_count_without_status": {
+    "input": {
+      "error_count": 3
+    },
+    "success": false,
+    "status": "failed",
+    "error_code": "GENERIC_ERROR",
+    "errors": [
+      "Operation completed with error_count=3 > 0."
+    ],
+    "verification": "Dictionary with error_count > 0 and no status fails closed"
+  },
+  "C1-N09_errors_list_contradiction": {
+    "input": {
+      "status": "success",
+      "errors": [
+        "Syntax verification failed at rung 3"
+      ]
+    },
+    "success": false,
+    "status": "failed",
+    "error_code": "GENERIC_ERROR",
+    "errors": [
+      "Syntax verification failed at rung 3"
+    ],
+    "verification": "Claims status=success with non-empty errors list fails closed"
+  },
+  "C1-N10_is_clean_false": {
+    "input": {
+      "status": "success",
+      "is_clean": false
+    },
+    "success": false,
+    "status": "failed",
+    "error_code": "INVALID_RESULT_CONTRACT",
+    "errors": [
+      "Contradiction detected: result claims success=True but clean status is False (INVALID_RESULT_CONTRACT)"
+    ],
+    "verification": "Result with is_clean=False fails closed"
+  },
+  "C1-N11_compile_build_successful_false": {
+    "input": {
+      "status": "success",
+      "compile_successful": false
+    },
+    "success": false,
+    "status": "failed",
+    "error_code": "INVALID_RESULT_CONTRACT",
+    "errors": [
+      "Contradiction detected: result claims success=True but compile/build/validation state is False (INVALID_RESULT_CONTRACT)"
+    ],
+    "verification": "Contradiction between status=success and compile_successful=False fails closed"
+  },
+  "C1-N12_valid_false": {
+    "input": {
+      "status": "success",
+      "valid": false
+    },
+    "success": false,
+    "status": "failed",
+    "error_code": "INVALID_RESULT_CONTRACT",
+    "errors": [
+      "Contradiction detected: result claims success=True but compile/build/validation state is False (INVALID_RESULT_CONTRACT)"
+    ],
+    "verification": "Contradiction between status=success and valid=False fails closed"
+  },
+  "C1-N13_ready_for_tests_false": {
+    "input": {
+      "status": "success",
+      "ready_for_tests": false
+    },
+    "success": false,
+    "status": "inconclusive",
+    "error_code": "INVALID_RESULT_CONTRACT",
+    "errors": [
+      "Contradiction detected: result claims success=True but gate ready_for_tests is False (INVALID_RESULT_CONTRACT)"
+    ],
+    "verification": "Gate result with ready_for_tests=False forced to inconclusive"
+  },
+  "C1-N14_failed_flag_true": {
+    "input": {
+      "status": "success",
+      "failed": true
+    },
+    "success": false,
+    "status": "failed",
+    "error_code": "INVALID_RESULT_CONTRACT",
+    "errors": [
+      "Contradiction detected: result claims success=True but failed flag is True (INVALID_RESULT_CONTRACT)"
+    ],
+    "verification": "Contradiction between status=success and failed=True fails closed"
+  },
+  "C1-N15_exit_code_non_zero": {
+    "input": {
+      "status": "success",
+      "exit_code": 1
+    },
+    "success": false,
+    "status": "failed",
+    "error_code": "INVALID_RESULT_CONTRACT",
+    "errors": [
+      "Contradiction detected: result claims success=True but process exit code is non-zero (INVALID_RESULT_CONTRACT)"
+    ],
+    "verification": "Contradiction between status=success and exit_code != 0 fails closed"
+  },
+  "C1-N16_timeout_true": {
+    "input": {
+      "status": "success",
+      "timed_out": true
+    },
+    "success": false,
+    "status": "failed",
+    "error_code": "INVALID_RESULT_CONTRACT",
+    "errors": [
+      "Contradiction detected: result claims success=True but operation timed out (INVALID_RESULT_CONTRACT)"
+    ],
+    "verification": "Contradiction between status=success and timed_out=True fails closed"
+  },
+  "C1-N17_failure_locations_error": {
+    "input": {
+      "success": true,
+      "status": "success",
+      "failure_locations": [
+        {
+          "severity": "ERROR",
+          "message": "Undeclared identifier"
+        }
+      ]
+    },
+    "success": false,
+    "status": "failed",
+    "error_code": "INVALID_RESULT_CONTRACT",
+    "errors": [
+      "Contradiction detected: result claims success=True but failure_locations contains ERROR severity (INVALID_RESULT_CONTRACT)"
+    ],
+    "verification": "Contradiction between success=True and failure_locations with ERROR severity fails closed"
+  }
+}

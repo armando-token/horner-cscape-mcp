@@ -1,0 +1,13 @@
+=== Horner Cscape 10.2 Compile Pass: DiagnosticTest ===
+Clean Build: True
+Mode: IEC 61131-3 Structured Text (Advanced Ladder Excluded)
+Timestamp: 2026-09-04T23:32:38.071079
+----------------------------------------------------------------
+Compiling POU: DiagnosticTest (242 bytes)...
+  POU 'DiagnosticTest' parsed and validated cleanly.
+----------------------------------------------------------------
+Build Result: SUCCESS
+Errors: 0, Warnings: 0
+Estimated Code Size: 1024 bytes, Data Size: 512 bytes
+Duration: 0.005s
+Hardware Lockout: ENFORCED (Zero PLC communication / No download)

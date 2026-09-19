@@ -1,0 +1,146 @@
+[
+  {
+    "timestamp": "2026-09-07T01:45:16.157Z",
+    "message": "================================================================================"
+  },
+  {
+    "timestamp": "2026-09-07T01:45:16.157Z",
+    "message": "STARTING LIVE W01 MINIMAL PROJECT LIFECYCLE EXECUTION (START -> EDIT -> SAVE -> REOPEN)"
+  },
+  {
+    "timestamp": "2026-09-07T01:45:16.157Z",
+    "message": "================================================================================"
+  },
+  {
+    "timestamp": "2026-09-07T01:45:16.157Z",
+    "message": "Baseline container TankLevelClosedLoop.csp untouched: d075e67d80be031a99a6895078735918b7a15c8086590a6d20ec8484b27749af"
+  },
+  {
+    "timestamp": "2026-09-07T01:45:17.490Z",
+    "message": "Connected to live Cscape: PID=6748, HWND=0xb30494, Title=Cscape - Logged In : \"armando@controlnautas.com\" - [LabProject_W01.csp]"
+  },
+  {
+    "timestamp": "2026-09-07T01:45:18.694Z",
+    "message": "--- STAGE 1: START (Initial Load Verification) ---"
+  },
+  {
+    "timestamp": "2026-09-07T01:45:18.961Z",
+    "message": "Saved screenshot: w01_stage1_start.png (1300x636, 89817 bytes)"
+  },
+  {
+    "timestamp": "2026-09-07T01:45:19.051Z",
+    "message": "Saved screenshot: cscape_lab_w01_visible.png (1300x636, 89817 bytes)"
+  },
+  {
+    "timestamp": "2026-09-07T01:45:19.173Z",
+    "message": "Saved screenshot: w01_stage1_start.png (1300x636, 89817 bytes)"
+  },
+  {
+    "timestamp": "2026-09-07T01:45:19.263Z",
+    "message": "Saved screenshot: cscape_lab_w01_visible.png (1300x636, 89817 bytes)"
+  },
+  {
+    "timestamp": "2026-09-07T01:45:19.325Z",
+    "message": "Saved screenshot: w01_stage1_start.png (1300x636, 89817 bytes)"
+  },
+  {
+    "timestamp": "2026-09-07T01:45:19.441Z",
+    "message": "Saved screenshot: cscape_lab_w01_visible.png (1300x636, 89817 bytes)"
+  },
+  {
+    "timestamp": "2026-09-07T01:45:19.591Z",
+    "message": "Saved screenshot: w01_stage1_start.png (1300x636, 89817 bytes)"
+  },
+  {
+    "timestamp": "2026-09-07T01:45:19.737Z",
+    "message": "Saved screenshot: cscape_lab_w01_visible.png (1300x636, 89817 bytes)"
+  },
+  {
+    "timestamp": "2026-09-07T01:45:19.737Z",
+    "message": "Stage 1 verified: File=LabProject_W01.csp, Size=99840 bytes, SHA256=09feab867a97cad04ac3c5faa9c127620cc9ce21b0708aa514b818a815c5a897"
+  },
+  {
+    "timestamp": "2026-09-07T01:45:19.737Z",
+    "message": "--- STAGE 2: EDIT (Project Component Modification) ---"
+  },
+  {
+    "timestamp": "2026-09-07T01:45:21.393Z",
+    "message": "Saved screenshot: w01_stage2_edit.png (1300x636, 83497 bytes)"
+  },
+  {
+    "timestamp": "2026-09-07T01:45:21.510Z",
+    "message": "Saved screenshot: w01_stage2_edit.png (1300x636, 83497 bytes)"
+  },
+  {
+    "timestamp": "2026-09-07T01:45:21.617Z",
+    "message": "Saved screenshot: w01_stage2_edit.png (1300x636, 83497 bytes)"
+  },
+  {
+    "timestamp": "2026-09-07T01:45:21.754Z",
+    "message": "Saved screenshot: w01_stage2_edit.png (1300x636, 83497 bytes)"
+  },
+  {
+    "timestamp": "2026-09-07T01:45:21.754Z",
+    "message": "Stage 2 verified: In-GUI editing component interaction dispatched"
+  },
+  {
+    "timestamp": "2026-09-07T01:45:21.754Z",
+    "message": "--- STAGE 3: SAVE (Dispatch ID_FILE_SAVE 57603) ---"
+  },
+  {
+    "timestamp": "2026-09-07T01:45:24.556Z",
+    "message": "Saved screenshot: w01_stage3_save.png (1300x636, 83199 bytes)"
+  },
+  {
+    "timestamp": "2026-09-07T01:45:24.673Z",
+    "message": "Saved screenshot: w01_stage3_save.png (1300x636, 83199 bytes)"
+  },
+  {
+    "timestamp": "2026-09-07T01:45:24.807Z",
+    "message": "Saved screenshot: w01_stage3_save.png (1300x636, 83199 bytes)"
+  },
+  {
+    "timestamp": "2026-09-07T01:45:24.943Z",
+    "message": "Saved screenshot: w01_stage3_save.png (1300x636, 83199 bytes)"
+  },
+  {
+    "timestamp": "2026-09-07T01:45:25.014Z",
+    "message": "Stage 3 verified: Document saved to disk. New SHA256=48b5105c67494f4401a6eb2480db1ef114f523cb2470eea44bb0f12339faf1d5, Size=99840 bytes"
+  },
+  {
+    "timestamp": "2026-09-07T01:45:25.014Z",
+    "message": "--- STAGE 4: REOPEN (Reload via ID_FILE_MRU_FILE1 57616) ---"
+  },
+  {
+    "timestamp": "2026-09-07T01:45:25.014Z",
+    "message": "Dispatching ID_FILE_MRU_FILE1 (57616) to reload LabProject_W01.csp cleanly..."
+  },
+  {
+    "timestamp": "2026-09-07T01:45:28.048Z",
+    "message": "Window title after ID_FILE_MRU_FILE1: Cscape - Logged In : \"armando@controlnautas.com\" - [LabProject_W01.csp]"
+  },
+  {
+    "timestamp": "2026-09-07T01:45:28.150Z",
+    "message": "Saved screenshot: w01_stage4_reopened.png (1300x636, 82852 bytes)"
+  },
+  {
+    "timestamp": "2026-09-07T01:45:28.231Z",
+    "message": "Saved screenshot: w01_stage4_reopened.png (1300x636, 82852 bytes)"
+  },
+  {
+    "timestamp": "2026-09-07T01:45:28.307Z",
+    "message": "Saved screenshot: w01_stage4_reopened.png (1300x636, 82852 bytes)"
+  },
+  {
+    "timestamp": "2026-09-07T01:45:28.513Z",
+    "message": "Saved screenshot: w01_stage4_reopened.png (1300x636, 82852 bytes)"
+  },
+  {
+    "timestamp": "2026-09-07T01:45:28.515Z",
+    "message": "Stage 4 verified: Document successfully reloaded and verified in live GUI"
+  },
+  {
+    "timestamp": "2026-09-07T01:45:28.515Z",
+    "message": "TankLevelClosedLoop.csp confirmed 100% UNTOUCHED after W01 lifecycle pass"
+  }
+]

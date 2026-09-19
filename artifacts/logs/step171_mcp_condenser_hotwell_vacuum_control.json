@@ -1,0 +1,22 @@
+{
+  "step": 171,
+  "role": "FastMCP Condenser Hotwell & Vacuum Simulation Runner",
+  "status": "PASSED",
+  "start_time_utc": "2026-09-06T12:24:50.910Z",
+  "completion_time_utc": "2026-09-06T12:24:55.225Z",
+  "duration_sec": 4.314,
+  "live_cscape_gate": {
+    "pid": 10892,
+    "hwnd": "0x01B005DC",
+    "status": "READY_FOR_TESTS",
+    "ready_for_tests": true
+  },
+  "scenarios": {
+    "scenario_A_equilibrium": "PASSED",
+    "scenario_B_high_level_dump": "PASSED",
+    "scenario_C_low_low_cavitation_trip": "PASSED",
+    "scenario_D_vacuum_loss_turbine_trip": "PASSED",
+    "scenario_E_tube_leak_water_ingress": "PASSED",
+    "hardware_download_lockout": "PASSED"
+  }
+}

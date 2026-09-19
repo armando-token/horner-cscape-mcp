@@ -1,0 +1,18 @@
+{
+  "step": 44,
+  "name": "step44_gui_stability_pid15240_130min_checkpoint",
+  "description": "Continuous single-process Cscape stay-open execution verified at 7828.0s (130.47m / 2.17h) on PID 15240 and 13817.0s (230.28m / 3.84h) cumulative uptime with zero UI freezes.",
+  "timestamp_utc": "2026-09-05T08:13:19.863Z",
+  "cscape_pid": 15240,
+  "cscape_hwnd": "0x710582",
+  "cscape_healthy": true,
+  "single_process_uptime_seconds": 7828.05,
+  "single_process_uptime_minutes": 130.47,
+  "cumulative_uptime_seconds": 13817.05,
+  "cumulative_uptime_minutes": 230.28,
+  "screenshot_file": "live_cscape_tank_level_stay_open_pid15240_130min.png",
+  "screenshot_sha256": "7ccf9536e473eeace83146d465561b9462b783e2147904793ed069c764a7f6e2",
+  "hardware_lockout_enforced": true,
+  "audit_log": "C:\\Users\\ArmandoSilva\\artifacts\\logs\\cscape_gui_stability_pid15240_130min.json",
+  "status": "VERIFIED_LIVE"
+}

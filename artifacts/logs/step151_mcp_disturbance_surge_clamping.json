@@ -1,0 +1,66 @@
+{
+  "step": 151,
+  "title": "Live FastMCP Closed-Loop Disturbance Surge & Safe Setpoint Clamping Audit",
+  "timestamp_start_utc": "2026-09-05T20:07:17.580Z",
+  "timestamp_end_utc": "2026-09-05T20:07:34.555Z",
+  "duration_seconds": 16.974,
+  "status": "PASSED",
+  "target_pid": 3572,
+  "target_hwnd": "0x00BA0848",
+  "closed_loop_cycles_executed": 100,
+  "surge_high_alarm_trip_verified": true,
+  "anti_windup_clamping_verified": true,
+  "underflow_dryrun_trip_verified": true,
+  "generic_register_clamping_verified": true,
+  "trajectory_phases": [
+    {
+      "phase": 1,
+      "pv": 50.0,
+      "cv": 0.0,
+      "alarm_hh": false,
+      "alarm_h": false
+    },
+    {
+      "phase": 2,
+      "pv": 95.0,
+      "cv": 0.0,
+      "alarm_hh": true,
+      "alarm_h": true,
+      "inflow_valve": false
+    },
+    {
+      "phase": 3,
+      "pv": 50.0,
+      "cv": 0.0,
+      "alarm_hh": false,
+      "alarm_h": false
+    },
+    {
+      "phase": 4,
+      "pv": 8.0,
+      "cv": 100.0,
+      "alarm_ll": true,
+      "pump_cmd": false
+    }
+  ],
+  "gui_error_check_dispatched": 32826,
+  "gui_error_count": 0,
+  "gui_warning_count": 0,
+  "hardware_lockout_enforced": true,
+  "zero_straton_dependencies": true,
+  "cscape_process_health": {
+    "pid": 3572,
+    "hwnd": "0x00BA0848",
+    "uptime_seconds": 3880.5,
+    "working_set_mb": 215.3,
+    "is_hung": false,
+    "is_enabled": true,
+    "ping_ok": true
+  },
+  "screenshot_evidence": {
+    "path": "C:\\Users\\ArmandoSilva\\artifacts\\screenshots\\live_cscape_tank_level_step151.png",
+    "size_bytes": 656,
+    "sha256": "d7023c7218a445d4f74f6f68627afa99108901ca8363f7120ff01d184ec67e50"
+  },
+  "log_sha256": "bed201aa95e32d836bcc2aa7996371d72c96af37c9d1d69d0f4e245a3698fb9f"
+}

@@ -1,0 +1,19 @@
+{
+  "step": 66,
+  "status": "COMPLETED",
+  "name": "Multi-Effect Falling Film Evaporator Calandria Level & MVR Vapor Recompression Closed-Loop Audit",
+  "timestamp": "2026-09-05T10:48:51.084Z",
+  "cscape_pid": 8660,
+  "cscape_hwnd": "0x147068c",
+  "project": "TankLevelClosedLoop.csp",
+  "assertions_passed": [
+    "Phase 1 nominal equilibrium error 0.0000% < 0.10%",
+    "Phase 2 uncompensated calandria surge drift 5.98% > 5.0%",
+    "Phase 3 MVR decoupled error 0.0000% < 0.35%",
+    "MVR boiling foam surge rejection ratio 100.0% > 95.0%",
+    "Phase 4 dynamic calandria step settling error 0.1138% < 0.35%",
+    "Phase 5 high-high ingestion trip at cycle 501 == 501",
+    "Fail-closed download lockout ID_CONTROLLER_DOWNLOAD=32827 strictly enforced",
+    "Live Cscape GUI healthy and responsive throughout test"
+  ]
+}

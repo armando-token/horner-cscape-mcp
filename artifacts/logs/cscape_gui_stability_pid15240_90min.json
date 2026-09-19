@@ -1,0 +1,54 @@
+{
+  "step": 34,
+  "title": "90-Minute Single-Process Continuous Stay-Open Benchmark (PID 15240)",
+  "timestamp_start_utc": "2026-09-05T07:34:29.538Z",
+  "timestamp_end_utc": "2026-09-05T07:34:29.841Z",
+  "status": "VERIFIED_LIVE",
+  "cscape_active_process": {
+    "pid": 15240,
+    "status": "running",
+    "active_uptime_seconds": 5497.98,
+    "active_uptime_minutes": 91.63,
+    "active_uptime_hours": 1.53,
+    "single_process_90min_exceeded": true,
+    "working_set_mb": 121.05,
+    "thread_count": 10
+  },
+  "prior_certified_runs": [
+    {
+      "pid": 7616,
+      "uptime_seconds": 5989.0,
+      "uptime_minutes": 99.82,
+      "status": "cleanly_transitioned_to_successor"
+    }
+  ],
+  "cumulative_metrics": {
+    "cumulative_stay_open_seconds": 11486.98,
+    "cumulative_stay_open_minutes": 191.45,
+    "cumulative_stay_open_hours": 3.191,
+    "continuous_gui_stay_open_verified": true,
+    "zero_crashes_verified": true,
+    "zero_ui_hangs_verified": true
+  },
+  "live_window": {
+    "hwnd_hex": "0x00710582",
+    "is_window": true,
+    "is_hung": false,
+    "wm_null_ping_ok": true,
+    "desktop_station": "Default",
+    "window_title": "Cscape - Logged In : \"armando@controlnautas.com\" - [TankLevelClosedLoop.csp]",
+    "width": 1296,
+    "height": 728
+  },
+  "screenshot": {
+    "path": "C:\\Users\\ArmandoSilva\\artifacts\\screenshots\\live_cscape_tank_level_stay_open_pid15240_90min.png",
+    "resolution": "1296x728",
+    "file_size_bytes": 80970,
+    "sha256": "646628be10a87df870d744cd7839768e3132713e392f913d27c138e3dc020121"
+  },
+  "safety_audit": {
+    "physical_plc_download_blocked": true,
+    "zero_physical_hardware_touched": true,
+    "hardware_lockout_enforced": true
+  }
+}

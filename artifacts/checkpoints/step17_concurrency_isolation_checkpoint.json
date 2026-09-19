@@ -1,0 +1,22 @@
+{
+  "step": 17,
+  "name": "mcp_concurrent_client_state_isolation_and_reentrancy",
+  "status": "PASSED",
+  "timestamp_utc": "2026-09-05T06:31:41.923947+00:00",
+  "gate_status": "READY_FOR_TESTS",
+  "gate_pid": 7616,
+  "gate_hwnd": "0x007B06D6",
+  "metrics": {
+    "total_calls": 200,
+    "success_rate_percent": 100.0,
+    "zero_state_contamination": true,
+    "throughput_calls_per_sec": 207.85,
+    "min_ms": 0.087,
+    "median_ms": 0.362,
+    "p95_ms": 185.359,
+    "max_ms": 517.067
+  },
+  "audit_file": "artifacts/logs/mcp_concurrency_state_isolation_audit.json",
+  "hardware_lockout_active": true,
+  "zero_straton_tools_enforced": true
+}

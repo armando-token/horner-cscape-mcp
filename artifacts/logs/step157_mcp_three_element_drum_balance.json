@@ -1,0 +1,109 @@
+{
+  "step": 157,
+  "name": "step157_mcp_three_element_drum_balance",
+  "status": "PASSED",
+  "mission": "Live FastMCP Three-Element Level Control & Feedforward Disturbance Balancing",
+  "timestamp_start": "2026-09-06T03:02:55.462Z",
+  "timestamp_complete": "2026-09-06T03:03:00.019Z",
+  "duration_seconds": 4.558,
+  "pure_software_simulation": true,
+  "cscape_pid": 16128,
+  "cscape_hwnd": "0x024903DC",
+  "scenarios_passed": 5,
+  "scenarios_total": 5,
+  "scenario_results": {
+    "scenario_a_quiescent_balancing": {
+      "verified": true,
+      "pv_percent": 50.0,
+      "sp_percent": 50.0,
+      "error_percent": 0.0,
+      "inflow_counts": 16000,
+      "outflow_counts": 16000,
+      "control_output_percent": 50.0,
+      "inflow_valve_q2": true,
+      "alarm_low_m9": false,
+      "alarm_highhigh_m7": false
+    },
+    "scenario_b_steam_surge_feedforward": {
+      "verified": true,
+      "outflow_counts": 25600,
+      "outflow_percent": 80.0,
+      "control_output_percent": 80.0,
+      "pv_percent": 50.0,
+      "alarm_low_m9": false
+    },
+    "scenario_c_feedwater_loss": {
+      "verified": true,
+      "inflow_counts": 6400,
+      "inflow_percent": 20.0,
+      "pv_percent": 20.0,
+      "alarm_low_m9": true
+    },
+    "scenario_d_dynamic_recovery": {
+      "verified": true,
+      "pv_percent": 50.0,
+      "sp_percent": 50.0,
+      "error_percent": 0.0,
+      "alarm_low_m9": false,
+      "inflow_valve_q2": true
+    },
+    "scenario_e_isolation_interlock": {
+      "verified": true,
+      "pv_percent": 92.0,
+      "alarm_highhigh_m7": true,
+      "inflow_valve_q2": false
+    }
+  },
+  "telemetry_frames": [
+    {
+      "scenario": "A_QUIESCENT_BALANCING",
+      "cycle": 1,
+      "pv": 50.0,
+      "sp": 50.0,
+      "error": 0.0,
+      "inflow": 16000,
+      "outflow": 16000,
+      "co": 50.0,
+      "q2": true,
+      "m9": false,
+      "m7": false
+    },
+    {
+      "scenario": "B_STEAM_SURGE_FEEDFORWARD",
+      "cycle": 2,
+      "pv": 50.0,
+      "outflow": 25600,
+      "co": 80.0,
+      "m9": false
+    },
+    {
+      "scenario": "C_FEEDWATER_LOSS",
+      "cycle": 3,
+      "pv": 20.0,
+      "inflow": 6400,
+      "m9": true
+    },
+    {
+      "scenario": "D_DYNAMIC_RECOVERY",
+      "cycle": 14,
+      "pv": 50.0,
+      "sp": 50.0,
+      "error": 0.0,
+      "m9": false,
+      "q2": true
+    },
+    {
+      "scenario": "E_ISOLATION_INTERLOCK",
+      "cycle": 15,
+      "pv": 92.0,
+      "m7": true,
+      "q2": false
+    }
+  ],
+  "security": {
+    "hardware_download_lockout": "FAIL_CLOSED_BLOCKED",
+    "zero_straton_dependencies": true,
+    "zero_plc_hardware_interaction": true,
+    "no_gui_hwnd_command_dispatched": true
+  }
+}

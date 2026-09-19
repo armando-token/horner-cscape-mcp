@@ -1,0 +1,15 @@
+=== Horner Cscape 10.2 Compile Pass: Fail_Ladder_Location_Proj ===
+Clean Build: True
+Mode: IEC 61131-3 Structured Text (Advanced Ladder Excluded)
+Timestamp: 2026-09-04T14:57:42.576229
+----------------------------------------------------------------
+Compiling POU: POU_LadderInjection (123 bytes)...
+  POU_LadderInjection.st(7,1): error ERR_LADDER_FORBIDDEN: : Ladder logic artifact detected at line 7, col 1 matching pattern '---\[\s*\]---'. Only pure IEC 61131-3 Structured Text is permitted.
+  POU_LadderInjection.st(7,1): error ST_SYNTAX_ERROR: Syntax error at line 7, col 1: Unexpected token in statement: MINUS ('-')
+  POU_LadderInjection.st(7,1): error ERR_LADDER_FORBIDDEN: Forbidden ladder logic construct 'Normally open contact' detected: '---[ ]--- InSensor'. Strict constraint violated: ONLY pure IEC 61131-3 Structured Text is permitted.
+----------------------------------------------------------------
+Build Result: FAILED
+Errors: 3, Warnings: 0
+Estimated Code Size: 1024 bytes, Data Size: 512 bytes
+Duration: 0.032s
+Hardware Lockout: ENFORCED (Zero PLC communication / No download)

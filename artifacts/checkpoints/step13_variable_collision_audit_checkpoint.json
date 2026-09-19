@@ -1,0 +1,64 @@
+{
+  "checkpoint": "step13_variable_collision_audit_checkpoint",
+  "step": 13,
+  "status": "PASSED",
+  "timestamp_utc": "2026-09-05T06:12:27.058830+00:00",
+  "cscape_gate": {
+    "ready_for_tests": true,
+    "status": "READY_FOR_TESTS",
+    "pid": 7616,
+    "hwnd": "0x007B06D6",
+    "window_title": "Cscape - Logged In : \"armando@controlnautas.com\" - [TankLevelClosedLoop.csp]",
+    "project_file": "C:\\Users\\ArmandoSilva\\artifacts\\projects\\TankLevelClosedLoop\\TankLevelClosedLoop.csp"
+  },
+  "tanklevel_variables_audit": {
+    "csv_path": "artifacts/projects/TankLevelClosedLoop/variables.csv",
+    "sha256": "d78f07a0036d0f498b79192e6708a83e2a722751dc9701a0601be85709311a16",
+    "active_tags_count": 21,
+    "validation_status": "VALID",
+    "conflicts_detected": 0
+  },
+  "horner_ocs_boundary_limits": {
+    "memory_types_tested": [
+      "%R",
+      "%M",
+      "%AI",
+      "%AQ",
+      "%I",
+      "%Q",
+      "%S",
+      "%SR"
+    ],
+    "tested_count": 8,
+    "all_min_max_bounds_verified": true,
+    "all_out_of_bounds_rejected_fail_closed": true
+  },
+  "bit_of_word_indexing": {
+    "r100_bits_1_to_16_verified": true,
+    "sr43_1_verified": true,
+    "out_of_range_bit_offset_r100_17_rejected": true,
+    "discrete_bit_offset_m1_1_rejected_fail_closed": true,
+    "all_discrete_bit_offsets_rejected_fail_closed": true
+  },
+  "memory_collision_injection": {
+    "real_word_span_at_r50": [
+      "%R50",
+      "%R51"
+    ],
+    "int_collision_at_r51_detected": true,
+    "int_collision_at_r51_rejected_fail_closed": true,
+    "lreal_overlap_at_r50_detected": true,
+    "lreal_overlap_at_r50_rejected_fail_closed": true,
+    "mcp_tool_validation_status": "INVALID"
+  },
+  "multiformat_roundtrip_fidelity": {
+    "pipeline": "In-Memory -> CSV -> XML -> CSV",
+    "exact_sha256_match": true,
+    "sha256": "4f8baa40fe0f5a5b9891b7b80e76f7468ee4e6863c394bdd7bf64445ee155a61"
+  },
+  "safety": {
+    "zero_physical_plc_download_enforced": true,
+    "zero_straton_k5_tools_enforced": true
+  },
+  "audit_log_file": "artifacts/logs/mcp_variable_memory_collision_audit.json"
+}

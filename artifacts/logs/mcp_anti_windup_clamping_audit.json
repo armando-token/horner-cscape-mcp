@@ -1,0 +1,67 @@
+{
+  "step": 41,
+  "title": "Closed-Loop Anti-Windup Reset Clamping & Saturation Recovery Audit",
+  "timestamp_start_utc": "2026-09-05T09:46:39.949Z",
+  "timestamp_end_utc": "2026-09-05T09:46:40.228Z",
+  "status": "VERIFIED_LIVE",
+  "cscape_active_process": {
+    "pid": 11808,
+    "hwnd": "0x01F00670",
+    "uptime_seconds": 988.29,
+    "working_set_mb": 215.86,
+    "thread_count": 11,
+    "is_hung": false,
+    "wm_null_ping_ok": true,
+    "desktop": "Default"
+  },
+  "anti_windup_metrics": {
+    "total_cycles": 500,
+    "duration_seconds": 0.2196,
+    "cycles_per_sec": 2277.4,
+    "max_clamped_output_percent": 100.0,
+    "min_clamped_output_percent": 0.0,
+    "upper_saturation_clamped": true,
+    "lower_saturation_clamped": true,
+    "zero_unwinding_lag_verified": true,
+    "phase_metrics": {
+      "PHASE_1_POS_SATURATION": {
+        "sp": 85.0,
+        "cycles": 120,
+        "settled_scan_cycles": 33,
+        "final_pv": 84.97,
+        "final_error_percent": 0.0328,
+        "clamping_verified": true
+      },
+      "PHASE_2_REVERSAL_TO_30": {
+        "sp": 30.0,
+        "cycles": 130,
+        "settled_scan_cycles": 21,
+        "final_pv": 30.0,
+        "final_error_percent": 0.004,
+        "clamping_verified": true
+      },
+      "PHASE_3_NEG_SATURATION": {
+        "sp": 15.0,
+        "cycles": 120,
+        "settled_scan_cycles": 21,
+        "final_pv": 15.0,
+        "final_error_percent": 0.0049,
+        "clamping_verified": true
+      },
+      "PHASE_4_REVERSAL_TO_60": {
+        "sp": 60.0,
+        "cycles": 130,
+        "settled_scan_cycles": 21,
+        "final_pv": 60.0,
+        "final_error_percent": 0.003,
+        "clamping_verified": true
+      }
+    }
+  },
+  "safety_audit": {
+    "physical_plc_download_blocked": true,
+    "zero_physical_hardware_touched": true,
+    "hardware_lockout_enforced": true,
+    "zero_straton_dependencies": true
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "name": "AddStagingAuditProject",
+  "controller": "XL4",
+  "description": "",
+  "author": "Horner AI Agent",
+  "iec_engine": "Cscape 10.2 IEC 61131-3 Structured Text",
+  "storage_mode": "staging",
+  "is_staged": true,
+  "is_native_persisted": false,
+  "has_native_binary": false,
+  "native_mutation_pending": true,
+  "p2_native_adapter_ready": true,
+  "created_at": "2026-09-17T11:02:28.156684+00:00",
+  "hardware_lockout": true,
+  "pous": []
+}

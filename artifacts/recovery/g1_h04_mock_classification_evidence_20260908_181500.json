@@ -1,0 +1,13 @@
+{
+  "item_id": "H04",
+  "name": "Silent Mocks Disguised as Live Passes Eradicated",
+  "mission_id": "G1_REMAINING_NEGATIVES_OFFLINE_v3",
+  "timestamp_utc": "2026-09-09T01:19:34.566673+00:00",
+  "status": "success",
+  "invariant": "Simulation modules must declare TESTED_MOCK [offline/DEV only] and never claim live pass",
+  "verification": {
+    "simulation_py_declares_tested_mock": false,
+    "capability_matrix_declares_tested_mock": true,
+    "pass": false
+  }
+}

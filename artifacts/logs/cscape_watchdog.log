@@ -1,0 +1,44 @@
+2026-09-04T23:03:02Z [INFO] [WATCHDOG] ================================================================================
+2026-09-04T23:03:02Z [INFO] [WATCHDOG] HORNER CSCAPE 10.2 PROCESS WATCHDOG
+2026-09-04T23:03:02Z [INFO] [WATCHDOG] ================================================================================
+2026-09-04T23:03:02Z [INFO] [WATCHDOG] Watchdog Start Time UTC : 2026-09-04T23:03:02.567797+00:00
+2026-09-04T23:03:02Z [INFO] [WATCHDOG] Target Executable       : C:\Program Files (x86)\Cscape 10.2\Cscape.exe
+2026-09-04T23:03:02Z [INFO] [WATCHDOG] Log Destination         : C:\Users\ArmandoSilva\artifacts\logs\cscape_watchdog.log
+2026-09-04T23:03:02Z [INFO] [WATCHDOG] Dry Run Mode            : True
+2026-09-04T23:03:02Z [INFO] [WATCHDOG] Max Restart Attempts    : 1
+2026-09-04T23:03:02Z [INFO] [WATCHDOG] Restart Cooldown        : 3.0s
+2026-09-04T23:03:02Z [INFO] [WATCHDOG] Polling Frequency       : 1.0s
+2026-09-04T23:03:02Z [INFO] [WATCHDOG] Auto Dismiss Splash     : True
+2026-09-04T23:03:02Z [INFO] [WATCHDOG] Auto Select IEC 61131   : True
+2026-09-04T23:03:02Z [INFO] [WATCHDOG] Max Cycles Bound        : 1
+2026-09-04T23:03:02Z [INFO] [WATCHDOG] Cycle Duration Limit    : 2.0s
+2026-09-04T23:03:02Z [INFO] [WATCHDOG] Simulate Crash Mode     : False
+2026-09-04T23:03:02Z [INFO] [WATCHDOG] ================================================================================
+2026-09-04T23:03:02Z [INFO] [WATCHDOG] [CYCLE_START] --- Commencing Supervision Cycle 1 ---
+2026-09-04T23:03:02Z [INFO] [WATCHDOG] [DRY_RUN] Operating in DRY-RUN mode: simulating Cscape process lifecycle.
+2026-09-04T23:03:02Z [INFO] [WATCHDOG] [CLEANUP] Enforcing single-instance policy: purging dangling Cscape instances (simulated)...
+2026-09-04T23:03:02Z [INFO] [WATCHDOG] [LAUNCH] [DRY-RUN] Launching Cscape (Cycle 1) | Exe: 'C:\Program Files (x86)\Cscape 10.2\Cscape.exe' | Cwd: 'C:\Users\ArmandoSilva'
+2026-09-04T23:03:02Z [INFO] [WATCHDOG] [LAUNCHED] [DRY-RUN] Cscape process spawned successfully. PID=516, StartedUtc=2026-09-04T23:03:02.605030+00:00
+2026-09-04T23:03:02Z [INFO] [WATCHDOG] [MONITOR_START] Active monitoring loop engaged for PID=516 (poll=1.0s)
+2026-09-04T23:03:02Z [INFO] [WATCHDOG] [SPLASH_DETECTED] [DRY-RUN] Found splash dialog HWND=0x1001, Title='About Cscape'
+2026-09-04T23:03:02Z [INFO] [WATCHDOG] [SPLASH_DISMISSED] [DRY-RUN] Sent IDOK to splash HWND=0x1001. Dismissed=True
+2026-09-04T23:03:02Z [INFO] [WATCHDOG] [IEC_DIALOG_DETECTED] [DRY-RUN] Found editor dialog HWND=0x1002, Title='Select Editor Type'
+2026-09-04T23:03:02Z [INFO] [WATCHDOG] [IEC_SELECTED] [DRY-RUN] Selected IEC 61131 (Radio 1461) and clicked OK on HWND=0x1002
+2026-09-04T23:03:02Z [INFO] [WATCHDOG] [READY] [DRY-RUN] Main IDE window verified active: HWND=8193, Title='Cscape - [Simulated_Project.csp]'
+2026-09-04T23:03:02Z [INFO] [WATCHDOG] [MONITOR] PID=516 | Uptime: 0.0s | Windows: 1 | ActiveTitle: 'Cscape - [Simulated_Project.csp]'
+2026-09-04T23:03:03Z [INFO] [WATCHDOG] [MONITOR] PID=516 | Uptime: 1.0s | Windows: 1 | ActiveTitle: 'Cscape - [Simulated_Project.csp]'
+2026-09-04T23:03:04Z [INFO] [WATCHDOG] [MONITOR] PID=516 | Uptime: 2.1s | Windows: 1 | ActiveTitle: 'Cscape - [Simulated_Project.csp]'
+2026-09-04T23:03:04Z [INFO] [WATCHDOG] [CYCLE_LIMIT] Cycle duration target 2.0s reached. Closing gracefully...
+2026-09-04T23:03:04Z [INFO] [WATCHDOG] [SHUTDOWN] Attempting graceful shutdown of Cscape PID=516...
+2026-09-04T23:03:04Z [INFO] [WATCHDOG] [SHUTDOWN_CLEAN] [DRY-RUN] Cscape PID=516 exited cleanly after simulated shutdown.
+2026-09-04T23:03:04Z [INFO] [WATCHDOG] [PROCESS_EXIT] Process PID=516 terminated. ExitCode=0 (0x00000000 - STATUS_SUCCESS / CLEAN_EXIT) | Uptime=2.19s | ExitUtc=2026-09-04T23:03:04.807431+00:00 | Classification=CLEAN_EXIT
+2026-09-04T23:03:04Z [INFO] [WATCHDOG] [WATCHDOG_COMPLETED] Reached max cycle count (1). Watchdog halting.
+2026-09-04T23:03:04Z [INFO] [WATCHDOG] ================================================================================
+2026-09-04T23:03:04Z [INFO] [WATCHDOG] CSCAPE WATCHDOG EXECUTION SUMMARY
+2026-09-04T23:03:04Z [INFO] [WATCHDOG] ================================================================================
+2026-09-04T23:03:04Z [INFO] [WATCHDOG] Watchdog Completion UTC : 2026-09-04T23:03:04.807431+00:00
+2026-09-04T23:03:04Z [INFO] [WATCHDOG] Total Cycles Monitored  : 1
+2026-09-04T23:03:04Z [INFO] [WATCHDOG] Cumulative Uptime       : 2.19s
+2026-09-04T23:03:04Z [INFO] [WATCHDOG] Cycle Breakdown:
+2026-09-04T23:03:04Z [INFO] [WATCHDOG]   - Cycle 1: PID=516 | Uptime=2.19s | ExitCode=0 | Classification=CLEAN_EXIT | SplashDismissed=True | IECSelected=True | ErrorsLogged=0
+2026-09-04T23:03:04Z [INFO] [WATCHDOG] ================================================================================

@@ -1,0 +1,246 @@
+{
+  "status": "success",
+  "task_id": "OFFLINE_MJ1_DEVICES_AND_SCAN_LIST_STATE_DOCUMENTATION",
+  "mission_id": "MJ1_DEVICES_AND_SCAN_LIST_STATE_DOCUMENTATION",
+  "timestamp_utc": "2026-09-17T21:00:00Z",
+  "governing_rules": "RULE[C:\\Users\\ArmandoSilva\\AGENTS.md]",
+  "operational_mode": "offline/DEV [PRODUCT_EVIDENCE]",
+  "system_state": "RUNTIME_PENDING_P7",
+  "verified_live": false,
+  "zero_plc_download": true,
+  "no_error_check_loop": true,
+  "single_gui_boundary": "Cscape 10.2 on winsta0\\Default (single GUI owner; zero keep-alive loops)",
+  "target_project": {
+    "project_path": "artifacts/projects/TankLevel_P5_Dedicated/TankLevel_P5_Dedicated.csp",
+    "project_name": "TankLevel_P5_Dedicated.csp",
+    "cfbf_valid": true,
+    "size_bytes": 140800,
+    "storage_format": "Compound File Binary Format (CFBF / OLE2)"
+  },
+  "channel_configuration": {
+    "channel_id": "CH_MJ1_RTU",
+    "channel_name": "Serial MJ1 RS-485 Modbus RTU Master",
+    "port": "MJ1",
+    "interface": "RS-485",
+    "transport": "MODBUS_RTU",
+    "protocol": "CT RTU Modbus CMP v5.05",
+    "driver_label": "CT RTU Modbus CMP v 5.05 / Modbus Master v 5.07",
+    "role": "CLIENT_MASTER_READ_ONLY",
+    "baud_rate": 19200,
+    "data_bits": 8,
+    "parity": "NONE",
+    "stop_bits": 1,
+    "framing": "8-N-1",
+    "mode": "RS-485 Half-Duplex",
+    "inter_frame_delay_ms": 3.5,
+    "max_concurrent_sockets": 4
+  },
+  "native_scan_list_state": {
+    "port": "MJ1",
+    "protocol": "CT RTU Modbus CMP v5.05",
+    "count": 0,
+    "scan_list": [],
+    "scan_list_status": "empty",
+    "native_fill_status": "blocked_offline",
+    "blocker": "Native add requires a configured target node/device and/or live PLC context; no PLC connection or download was permitted.",
+    "pending_gate": "P7_PHYSICAL_PLC_DOWNLOAD_AND_COMMISSIONING",
+    "offline_safety_enforced": true,
+    "zero_download_enforced": true,
+    "verified_live": false,
+    "plc_download": false
+  },
+  "root_cause_analysis": {
+    "ide_version": "Horner APG Cscape 10.2 (Build 10.2.751.4)",
+    "blocker_category": "OFFLINE_DRIVER_NODE_VALIDATION",
+    "detailed_rationale": "In Horner Cscape 10.2, populating the native Modbus RTU device scan list via native dialogs requires an active target slave node responding on the serial bus or an online PLC session to validate node addressing and timing parameters. In offline development mode without hardware, attempting raw OLE stream mutations without relational descriptor pointers causes container corruption. In compliance with fail-closed safety directives, native scan list population is maintained honestly as blocked_offline pending Phase P7 commissioning."
+  },
+  "planned_devices_inventory": [
+    {
+      "device_id": "DEV_LT01",
+      "device_name": "Buffer Tank Level Transmitter",
+      "unit_id": 1,
+      "description": "Hydrostatic level sensor measuring 0..100 %",
+      "transport": "MODBUS_RTU",
+      "poll_interval_ms": 100,
+      "timeout_ms": 1000,
+      "retry_count": 3,
+      "fail_safe_policy": "CLAMP_TO_FAIL_SAFE"
+    },
+    {
+      "device_id": "DEV_FT01",
+      "device_name": "Inflow Coriolis Flowmeter",
+      "unit_id": 2,
+      "description": "Electromagnetic flowmeter measuring 0..500 L/min",
+      "transport": "MODBUS_RTU",
+      "poll_interval_ms": 200,
+      "timeout_ms": 1000,
+      "retry_count": 3,
+      "fail_safe_policy": "CLAMP_TO_FAIL_SAFE"
+    },
+    {
+      "device_id": "DEV_PT01",
+      "device_name": "Discharge Pressure Transmitter",
+      "unit_id": 3,
+      "description": "Piezoresistive pressure transmitter measuring 0..10 bar",
+      "transport": "MODBUS_RTU",
+      "poll_interval_ms": 200,
+      "timeout_ms": 1000,
+      "retry_count": 3,
+      "fail_safe_policy": "CLAMP_TO_FAIL_SAFE"
+    }
+  ],
+  "planned_scan_list_transactions": [
+    {
+      "transaction_id": "TX01_LEVEL_PV",
+      "device_id": "DEV_LT01",
+      "unit_id": 1,
+      "function_code": 3,
+      "function_name": "Read Holding Registers (0x03)",
+      "modicon_address": 40001,
+      "wire_offset": 0,
+      "register_count": 1,
+      "target_ocs_register": "%AI1",
+      "variable_name": "TankLevelPV",
+      "raw_data_type": "UINT16",
+      "engineering_unit": "%",
+      "scaling": {
+        "raw_min": 0.0,
+        "raw_max": 32000.0,
+        "eu_min": 0.0,
+        "eu_max": 100.0
+      },
+      "comm_alarm_register": "%M10",
+      "stale_quality_register": "%M11",
+      "poll_interval_ms": 100
+    },
+    {
+      "transaction_id": "TX02_INFLOW_RATE",
+      "device_id": "DEV_FT01",
+      "unit_id": 2,
+      "function_code": 3,
+      "function_name": "Read Holding Registers (0x03)",
+      "modicon_address": 40002,
+      "wire_offset": 1,
+      "register_count": 1,
+      "target_ocs_register": "%AI2",
+      "variable_name": "InflowRatePV",
+      "raw_data_type": "UINT16",
+      "engineering_unit": "L/min",
+      "scaling": {
+        "raw_min": 0.0,
+        "raw_max": 32000.0,
+        "eu_min": 0.0,
+        "eu_max": 500.0
+      },
+      "comm_alarm_register": "%M12",
+      "stale_quality_register": "%M13",
+      "poll_interval_ms": 200
+    },
+    {
+      "transaction_id": "TX03_DISCHARGE_PRESS",
+      "device_id": "DEV_PT01",
+      "unit_id": 3,
+      "function_code": 3,
+      "function_name": "Read Holding Registers (0x03)",
+      "modicon_address": 40003,
+      "wire_offset": 2,
+      "register_count": 1,
+      "target_ocs_register": "%AI3",
+      "variable_name": "DischargePressPV",
+      "raw_data_type": "UINT16",
+      "engineering_unit": "bar",
+      "scaling": {
+        "raw_min": 0.0,
+        "raw_max": 32000.0,
+        "eu_min": 0.0,
+        "eu_max": 10.0
+      },
+      "comm_alarm_register": "%M14",
+      "stale_quality_register": "%M15",
+      "poll_interval_ms": 200
+    }
+  ],
+  "reconciliation_summary": {
+    "native_count": 0,
+    "planned_count": 3,
+    "discrepancy_count": 3,
+    "reconciled": false,
+    "reconciliation_status": "discrepancy_detected",
+    "pending_gate": "P7_PHYSICAL_PLC_DOWNLOAD_AND_COMMISSIONING",
+    "discrepancies": [
+      {
+        "transaction_id": "TX01_LEVEL_PV",
+        "device_id": "DEV_LT01",
+        "unit_id": 1,
+        "function_code": 3,
+        "modicon_address": 40001,
+        "wire_offset": 0,
+        "target_ocs_register": "%AI1",
+        "variable_name": "TankLevelPV",
+        "engineering_unit": "%",
+        "discrepancy_type": "MISSING_IN_NATIVE_SCAN_LIST",
+        "remediation": "DEFERRED_MANUAL_ENGINEER_LOAD (Phase P7 Commissioning)"
+      },
+      {
+        "transaction_id": "TX02_INFLOW_RATE",
+        "device_id": "DEV_FT01",
+        "unit_id": 2,
+        "function_code": 3,
+        "modicon_address": 40002,
+        "wire_offset": 1,
+        "target_ocs_register": "%AI2",
+        "variable_name": "InflowRatePV",
+        "engineering_unit": "L/min",
+        "discrepancy_type": "MISSING_IN_NATIVE_SCAN_LIST",
+        "remediation": "DEFERRED_MANUAL_ENGINEER_LOAD (Phase P7 Commissioning)"
+      },
+      {
+        "transaction_id": "TX03_DISCHARGE_PRESS",
+        "device_id": "DEV_PT01",
+        "unit_id": 3,
+        "function_code": 3,
+        "modicon_address": 40003,
+        "wire_offset": 2,
+        "target_ocs_register": "%AI3",
+        "variable_name": "DischargePressPV",
+        "engineering_unit": "bar",
+        "discrepancy_type": "MISSING_IN_NATIVE_SCAN_LIST",
+        "remediation": "DEFERRED_MANUAL_ENGINEER_LOAD (Phase P7 Commissioning)"
+      }
+    ]
+  },
+  "iec_61131_scaling_bridge_integration": {
+    "pure_st_pous": [
+      {
+        "pou_name": "FB_ModbusScaleQuality",
+        "pou_type": "FUNCTION_BLOCK",
+        "file_path": "artifacts/projects/TankLevel_P5_Dedicated/pous/FB_ModbusScaleQuality.st",
+        "scaling_algorithm": "Linear EU interpolation with bounds clamping and stale quality gating"
+      },
+      {
+        "pou_name": "TankLevelModbusBridge",
+        "pou_type": "PROGRAM",
+        "file_path": "artifacts/projects/TankLevel_P5_Dedicated/pous/TankLevelModbusBridge.st",
+        "governed_channels": ["TX01_LEVEL_PV", "TX02_INFLOW_RATE", "TX03_DISCHARGE_PRESS"]
+      }
+    ],
+    "ocs_register_pipeline": {
+      "level_pv": {"input_raw": "%AI1", "output_eu": "%R101", "range": "0.0 .. 100.0 %"},
+      "inflow_pv": {"input_raw": "%AI2", "output_eu": "%R103", "range": "0.0 .. 500.0 L/min"},
+      "press_pv": {"input_raw": "%AI3", "output_eu": "%R105", "range": "0.0 .. 10.0 bar"}
+    }
+  },
+  "safety_lockout_matrix": {
+    "physical_com_ports": "BLOCKED_FAIL_CLOSED (COM1-COM256)",
+    "win32_download_32827": "BLOCKED_FAIL_CLOSED (ID_PROGRAM_DOWNLOAD)",
+    "win32_download_33149": "BLOCKED_FAIL_CLOSED (ID_CONTROLLER_DOWNLOAD)",
+    "companion_flash_tools": "BLOCKED_FAIL_CLOSED (PGMUpdateUtility, DfuSeCommand, STMFlashLoader)",
+    "verified_live_claims": "PROHIBITED (verified_live: false)",
+    "plc_download": "PROHIBITED (plc_download: false)",
+    "background_polling_loops": "PROHIBITED (Single-pass deterministic execution only)"
+  },
+  "phase_p7_deferral_declaration": {
+    "status": "DEFERRED_MANUAL_ENGINEER_LOAD",
+    "rationale": "Hardware scan list download and live serial commissioning are reserved for manual field execution by a qualified controls engineer on site. No automated script, subagent, or CLI tool is authorized to perform physical PLC download or serial bus activation."
+  }
+}

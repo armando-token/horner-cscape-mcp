@@ -1,0 +1,508 @@
+{
+  "step": 182,
+  "name": "step182_pure_st_audit",
+  "status": "success",
+  "timestamp_utc": "2026-09-06T22:32:34.006226+00:00",
+  "mandate": "PLC / IEC 61131-3 Pure ST Audit for FB_ValveActuator",
+  "execution_duration_sec": 0.4836,
+  "dual_root_parity": true,
+  "cscape_gui_mode": "headless_static_analysis_only",
+  "target_pou": {
+    "name": "FB_ValveActuator",
+    "type": "FUNCTION_BLOCK",
+    "relative_path": "examples/st_applications/valve_actuator_controller.st",
+    "sha256": "d42e07a1a149d696839e6b2d470c0939a2cf16bd442379b0161331402a1a3dc2",
+    "expected_sha256": "d42e07a1a149d696839e6b2d470c0939a2cf16bd442379b0161331402a1a3dc2",
+    "byte_size": 5730,
+    "lines": 145
+  },
+  "tasks": {
+    "task1_file_existence_and_parity": {
+      "status": "success",
+      "horner_file": "C:\\HornerAI\\horner-cscape-mcp\\examples\\st_applications\\valve_actuator_controller.st",
+      "user_file": "C:\\Users\\ArmandoSilva\\examples\\st_applications\\valve_actuator_controller.st",
+      "horner_sha256": "d42e07a1a149d696839e6b2d470c0939a2cf16bd442379b0161331402a1a3dc2",
+      "user_sha256": "d42e07a1a149d696839e6b2d470c0939a2cf16bd442379b0161331402a1a3dc2",
+      "expected_sha256": "d42e07a1a149d696839e6b2d470c0939a2cf16bd442379b0161331402a1a3dc2",
+      "sha_match": true,
+      "dual_root_parity": true,
+      "diff_line_count": 0,
+      "diff": "",
+      "file_size_bytes": 5730,
+      "duration_sec": 0.0007547999848611653
+    },
+    "task2_ladder_construct_scan_and_fail_closed": {
+      "status": "success",
+      "clean_scan_artifacts_count": 0,
+      "clean_scan_artifacts": [],
+      "clean_validator_errors": [],
+      "clean_st_parser_ladder_errors": [],
+      "mutation_tests_total": 12,
+      "mutation_tests_fail_closed": 12,
+      "mutation_results": [
+        {
+          "construct_name": "Normally Open Contact",
+          "construct_syntax": "---[ ]---",
+          "guard_rejected": true,
+          "validator_rejected": true,
+          "parser_rejected": true,
+          "mcp_rejected": true,
+          "fail_closed": true
+        },
+        {
+          "construct_name": "Normally Closed Contact",
+          "construct_syntax": "---[/]---",
+          "guard_rejected": true,
+          "validator_rejected": true,
+          "parser_rejected": true,
+          "mcp_rejected": true,
+          "fail_closed": true
+        },
+        {
+          "construct_name": "Spaced Inverted Contact",
+          "construct_syntax": "---[ / ]---",
+          "guard_rejected": true,
+          "validator_rejected": true,
+          "parser_rejected": true,
+          "mcp_rejected": true,
+          "fail_closed": true
+        },
+        {
+          "construct_name": "Normal Output Coil",
+          "construct_syntax": "---( )---",
+          "guard_rejected": true,
+          "validator_rejected": true,
+          "parser_rejected": true,
+          "mcp_rejected": true,
+          "fail_closed": true
+        },
+        {
+          "construct_name": "Set Latch Coil",
+          "construct_syntax": "---(S)---",
+          "guard_rejected": true,
+          "validator_rejected": true,
+          "parser_rejected": true,
+          "mcp_rejected": true,
+          "fail_closed": true
+        },
+        {
+          "construct_name": "Reset Unlatch Coil",
+          "construct_syntax": "---(R)---",
+          "guard_rejected": true,
+          "validator_rejected": true,
+          "parser_rejected": true,
+          "mcp_rejected": true,
+          "fail_closed": true
+        },
+        {
+          "construct_name": "Rung Header Marker",
+          "construct_syntax": "RUNG 1: Valve Travel Watchdog",
+          "guard_rejected": true,
+          "validator_rejected": true,
+          "parser_rejected": true,
+          "mcp_rejected": true,
+          "fail_closed": true
+        },
+        {
+          "construct_name": "Rung Terminator Marker",
+          "construct_syntax": "END_RUNG",
+          "guard_rejected": true,
+          "validator_rejected": true,
+          "parser_rejected": true,
+          "mcp_rejected": true,
+          "fail_closed": true
+        },
+        {
+          "construct_name": "Ladder Network Section",
+          "construct_syntax": "NETWORK 10",
+          "guard_rejected": true,
+          "validator_rejected": true,
+          "parser_rejected": true,
+          "mcp_rejected": true,
+          "fail_closed": true
+        },
+        {
+          "construct_name": "Instruction Mnemonic XIC",
+          "construct_syntax": "XIC(LimitOpen)",
+          "guard_rejected": true,
+          "validator_rejected": true,
+          "parser_rejected": true,
+          "mcp_rejected": true,
+          "fail_closed": true
+        },
+        {
+          "construct_name": "Instruction Mnemonic XIO",
+          "construct_syntax": "XIO(LimitClosed)",
+          "guard_rejected": true,
+          "validator_rejected": true,
+          "parser_rejected": true,
+          "mcp_rejected": true,
+          "fail_closed": true
+        },
+        {
+          "construct_name": "Instruction Mnemonic OTE",
+          "construct_syntax": "OTE(SolOpen)",
+          "guard_rejected": true,
+          "validator_rejected": true,
+          "parser_rejected": true,
+          "mcp_rejected": true,
+          "fail_closed": true
+        }
+      ],
+      "duration_sec": 0.4258465999737382
+    },
+    "task3_iec61131_syntax_and_datatypes": {
+      "status": "success",
+      "pou_name": "FB_ValveActuator",
+      "pou_type": "FUNCTION_BLOCK",
+      "total_variables": 24,
+      "input_count": 11,
+      "output_count": 9,
+      "local_count": 4,
+      "type_violations": [],
+      "iec_validator_valid": true,
+      "st_parser_valid": true,
+      "mcp_validator_valid": true,
+      "variables": [
+        {
+          "name": "OpenCmd",
+          "data_type": "BOOL",
+          "scope": "VAR_INPUT",
+          "initial_value": "FALSE"
+        },
+        {
+          "name": "CloseCmd",
+          "data_type": "BOOL",
+          "scope": "VAR_INPUT",
+          "initial_value": "FALSE"
+        },
+        {
+          "name": "LimitOpen",
+          "data_type": "BOOL",
+          "scope": "VAR_INPUT",
+          "initial_value": "FALSE"
+        },
+        {
+          "name": "LimitClosed",
+          "data_type": "BOOL",
+          "scope": "VAR_INPUT",
+          "initial_value": "TRUE"
+        },
+        {
+          "name": "InterlockOpen",
+          "data_type": "BOOL",
+          "scope": "VAR_INPUT",
+          "initial_value": "TRUE"
+        },
+        {
+          "name": "InterlockClose",
+          "data_type": "BOOL",
+          "scope": "VAR_INPUT",
+          "initial_value": "TRUE"
+        },
+        {
+          "name": "PulseMode",
+          "data_type": "BOOL",
+          "scope": "VAR_INPUT",
+          "initial_value": "FALSE"
+        },
+        {
+          "name": "PulseDurationSec",
+          "data_type": "REAL",
+          "scope": "VAR_INPUT",
+          "initial_value": "2.0"
+        },
+        {
+          "name": "TransitTimeoutSec",
+          "data_type": "REAL",
+          "scope": "VAR_INPUT",
+          "initial_value": "12.0"
+        },
+        {
+          "name": "ResetFault",
+          "data_type": "BOOL",
+          "scope": "VAR_INPUT",
+          "initial_value": "FALSE"
+        },
+        {
+          "name": "CycleTimeSec",
+          "data_type": "REAL",
+          "scope": "VAR_INPUT",
+          "initial_value": "0.1"
+        },
+        {
+          "name": "SolOpen",
+          "data_type": "BOOL",
+          "scope": "VAR_OUTPUT",
+          "initial_value": "FALSE"
+        },
+        {
+          "name": "SolClose",
+          "data_type": "BOOL",
+          "scope": "VAR_OUTPUT",
+          "initial_value": "FALSE"
+        },
+        {
+          "name": "IsOpen",
+          "data_type": "BOOL",
+          "scope": "VAR_OUTPUT",
+          "initial_value": "FALSE"
+        },
+        {
+          "name": "IsClosed",
+          "data_type": "BOOL",
+          "scope": "VAR_OUTPUT",
+          "initial_value": "TRUE"
+        },
+        {
+          "name": "IsTraveling",
+          "data_type": "BOOL",
+          "scope": "VAR_OUTPUT",
+          "initial_value": "FALSE"
+        },
+        {
+          "name": "TravelFault",
+          "data_type": "BOOL",
+          "scope": "VAR_OUTPUT",
+          "initial_value": "FALSE"
+        },
+        {
+          "name": "SwitchFault",
+          "data_type": "BOOL",
+          "scope": "VAR_OUTPUT",
+          "initial_value": "FALSE"
+        },
+        {
+          "name": "TotalCycles",
+          "data_type": "DINT",
+          "scope": "VAR_OUTPUT",
+          "initial_value": "0"
+        },
+        {
+          "name": "TransitTimeSec",
+          "data_type": "REAL",
+          "scope": "VAR_OUTPUT",
+          "initial_value": "0.0"
+        },
+        {
+          "name": "TargetOpen",
+          "data_type": "BOOL",
+          "scope": "VAR",
+          "initial_value": "FALSE"
+        },
+        {
+          "name": "TravelTimer",
+          "data_type": "REAL",
+          "scope": "VAR",
+          "initial_value": "0.0"
+        },
+        {
+          "name": "PulseTimer",
+          "data_type": "REAL",
+          "scope": "VAR",
+          "initial_value": "0.0"
+        },
+        {
+          "name": "PrevIsOpen",
+          "data_type": "BOOL",
+          "scope": "VAR",
+          "initial_value": "FALSE"
+        }
+      ],
+      "duration_sec": 0.05195929994806647
+    },
+    "task4_ast_decomposition": {
+      "status": "success",
+      "pou_name": "FB_ValveActuator",
+      "pou_type": "FUNCTION_BLOCK",
+      "sha256": "d42e07a1a149d696839e6b2d470c0939a2cf16bd442379b0161331402a1a3dc2",
+      "total_lines": 145,
+      "total_tokens": 464,
+      "var_blocks_count": 3,
+      "var_blocks": [
+        {
+          "block_type": "VAR_INPUT",
+          "declarations_count": 11,
+          "declarations": [
+            {
+              "name": "OpenCmd",
+              "data_type": "BOOL",
+              "initial_value": "LiteralNode(False, 'BOOL')"
+            },
+            {
+              "name": "CloseCmd",
+              "data_type": "BOOL",
+              "initial_value": "LiteralNode(False, 'BOOL')"
+            },
+            {
+              "name": "LimitOpen",
+              "data_type": "BOOL",
+              "initial_value": "LiteralNode(False, 'BOOL')"
+            },
+            {
+              "name": "LimitClosed",
+              "data_type": "BOOL",
+              "initial_value": "LiteralNode(True, 'BOOL')"
+            },
+            {
+              "name": "InterlockOpen",
+              "data_type": "BOOL",
+              "initial_value": "LiteralNode(True, 'BOOL')"
+            },
+            {
+              "name": "InterlockClose",
+              "data_type": "BOOL",
+              "initial_value": "LiteralNode(True, 'BOOL')"
+            },
+            {
+              "name": "PulseMode",
+              "data_type": "BOOL",
+              "initial_value": "LiteralNode(False, 'BOOL')"
+            },
+            {
+              "name": "PulseDurationSec",
+              "data_type": "REAL",
+              "initial_value": "LiteralNode(2.0, 'REAL')"
+            },
+            {
+              "name": "TransitTimeoutSec",
+              "data_type": "REAL",
+              "initial_value": "LiteralNode(12.0, 'REAL')"
+            },
+            {
+              "name": "ResetFault",
+              "data_type": "BOOL",
+              "initial_value": "LiteralNode(False, 'BOOL')"
+            },
+            {
+              "name": "CycleTimeSec",
+              "data_type": "REAL",
+              "initial_value": "LiteralNode(0.1, 'REAL')"
+            }
+          ]
+        },
+        {
+          "block_type": "VAR_OUTPUT",
+          "declarations_count": 9,
+          "declarations": [
+            {
+              "name": "SolOpen",
+              "data_type": "BOOL",
+              "initial_value": "LiteralNode(False, 'BOOL')"
+            },
+            {
+              "name": "SolClose",
+              "data_type": "BOOL",
+              "initial_value": "LiteralNode(False, 'BOOL')"
+            },
+            {
+              "name": "IsOpen",
+              "data_type": "BOOL",
+              "initial_value": "LiteralNode(False, 'BOOL')"
+            },
+            {
+              "name": "IsClosed",
+              "data_type": "BOOL",
+              "initial_value": "LiteralNode(True, 'BOOL')"
+            },
+            {
+              "name": "IsTraveling",
+              "data_type": "BOOL",
+              "initial_value": "LiteralNode(False, 'BOOL')"
+            },
+            {
+              "name": "TravelFault",
+              "data_type": "BOOL",
+              "initial_value": "LiteralNode(False, 'BOOL')"
+            },
+            {
+              "name": "SwitchFault",
+              "data_type": "BOOL",
+              "initial_value": "LiteralNode(False, 'BOOL')"
+            },
+            {
+              "name": "TotalCycles",
+              "data_type": "DINT",
+              "initial_value": "LiteralNode(0, 'INT')"
+            },
+            {
+              "name": "TransitTimeSec",
+              "data_type": "REAL",
+              "initial_value": "LiteralNode(0.0, 'REAL')"
+            }
+          ]
+        },
+        {
+          "block_type": "VAR",
+          "declarations_count": 4,
+          "declarations": [
+            {
+              "name": "TargetOpen",
+              "data_type": "BOOL",
+              "initial_value": "LiteralNode(False, 'BOOL')"
+            },
+            {
+              "name": "TravelTimer",
+              "data_type": "REAL",
+              "initial_value": "LiteralNode(0.0, 'REAL')"
+            },
+            {
+              "name": "PulseTimer",
+              "data_type": "REAL",
+              "initial_value": "LiteralNode(0.0, 'REAL')"
+            },
+            {
+              "name": "PrevIsOpen",
+              "data_type": "BOOL",
+              "initial_value": "LiteralNode(False, 'BOOL')"
+            }
+          ]
+        }
+      ],
+      "statements_count": 8,
+      "statements": [
+        {
+          "index": 1,
+          "statement_type": "IfNode",
+          "line": 49
+        },
+        {
+          "index": 2,
+          "statement_type": "IfNode",
+          "line": 55
+        },
+        {
+          "index": 3,
+          "statement_type": "IfNode",
+          "line": 60
+        },
+        {
+          "index": 4,
+          "statement_type": "IfNode",
+          "line": 71
+        },
+        {
+          "index": 5,
+          "statement_type": "AssignmentNode",
+          "line": 136
+        },
+        {
+          "index": 6,
+          "statement_type": "AssignmentNode",
+          "line": 137
+        },
+        {
+          "index": 7,
+          "statement_type": "IfNode",
+          "line": 140
+        },
+        {
+          "index": 8,
+          "statement_type": "AssignmentNode",
+          "line": 143
+        }
+      ],
+      "duration_sec": 0.004947600013110787
+    }
+  }
+}

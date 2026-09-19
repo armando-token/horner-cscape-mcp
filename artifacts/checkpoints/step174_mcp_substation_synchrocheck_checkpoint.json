@@ -1,0 +1,11 @@
+{
+  "gate": "G1",
+  "step": 174,
+  "role": "MCP Simulation Agent",
+  "status": "success",
+  "mandate": "MEGAPLAN Gate G1: Transmission Substation Synchrocheck Multi-Phase Software Simulation",
+  "timestamp_utc": "2026-09-06T12:25:05.043Z",
+  "duration_seconds": 3.002,
+  "scenarios_passed": 5,
+  "dual_root_parity": true
+}

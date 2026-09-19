@@ -1,0 +1,44 @@
+"name";"type";"len";"dim";"attr";"RO";"init";"tag";"desc";"scope"
+
+"RawLevelInput";"INT";"";"";"";"NO";"";"%AI1";"Tank Level Sensor 4-20mA Raw ADC Counts (0-32000)";"globals"
+
+"RawPumpOutput";"INT";"";"";"";"NO";"";"%AQ1";"Inflow Modulating Valve Positioner 4-20mA (0-32000)";"globals"
+
+"RawValveOutput";"INT";"";"";"";"NO";"";"%AQ2";"Inflow Solenoid Valve Positioner (0-32000)";"globals"
+
+"DI_System_Start_PB";"BOOL";"";"";"";"NO";"";"%I1";"Panel System Start Pushbutton NO Contact";"globals"
+
+"DI_System_Stop_PB";"BOOL";"";"";"";"NO";"";"%I2";"Panel System Stop Pushbutton NC Fail-Safe Contact";"globals"
+
+"DI_EStop_Healthy";"BOOL";"";"";"";"NO";"";"%I3";"Emergency Stop Dual-Channel NC Healthy Contact";"globals"
+
+"DI_LSHH_Level_Float";"BOOL";"";"";"";"NO";"";"%I4";"High-High Level Hardwired Float Switch NC Contact";"globals"
+
+"PumpRunCmd";"BOOL";"";"";"";"NO";"";"%Q1";"Inlet Feed Pump Contactor Coil Command Output";"globals"
+
+"InflowValveCmd";"BOOL";"";"";"";"NO";"";"%Q2";"Inlet Emergency Isolation Solenoid Valve";"globals"
+
+"AlarmHighHigh";"BOOL";"";"";"";"NO";"";"%M7";"High-High Level Critical Trip Alarm";"globals"
+
+"AlarmHigh";"BOOL";"";"";"";"NO";"";"%M8";"High Level Warning Alarm";"globals"
+
+"AlarmLow";"BOOL";"";"";"";"NO";"";"%M9";"Low Level Warning Alarm";"globals"
+
+"AlarmLowLow";"BOOL";"";"";"";"NO";"";"%M10";"Low-Low Level Critical Dry-Run Trip Alarm";"globals"
+
+"TankLevelPV";"REAL";"";"";"";"NO";"";"%R1";"Scaled Tank Level Process Variable (0.0 - 100.0%)";"globals"
+
+"Setpoint";"REAL";"";"";"";"NO";"";"%R3";"Active Tank Level Setpoint (0.0 - 100.0%)";"globals"
+
+"ControlOutput";"REAL";"";"";"";"NO";"";"%R7";"Calculated PID Manipulated Variable Output (0.0 - 100.0%)";"globals"
+
+"ManualOutput";"REAL";"";"";"";"NO";"";"%R9";"Manual Operator Output Setting (0.0 - 100.0%)";"globals"
+
+"Kp";"REAL";"";"";"";"NO";"";"%R29";"PID Proportional Gain Constant";"globals"
+
+"Ki";"REAL";"";"";"";"NO";"";"%R31";"PID Integral Reset Time Constant";"globals"
+
+"Kd";"REAL";"";"";"";"NO";"";"%R33";"PID Derivative Rate Time Constant";"globals"
+
+"CycleCounter";"DINT";"";"";"";"NO";"";"%R21";"Total Tank Cycles Completed";"globals"
+

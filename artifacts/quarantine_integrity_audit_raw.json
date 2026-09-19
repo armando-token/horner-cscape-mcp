@@ -1,0 +1,1878 @@
+{
+  "quarantine_inventory": {
+    "total_files": 25,
+    "files": [
+      {
+        "rel_path": "quarantine/straton_k5_legacy/legacy_automation_project_manager.py",
+        "size": 24830,
+        "suffix": ".py"
+      },
+      {
+        "rel_path": "quarantine/straton_k5_legacy/legacy_iec_project_builder.py",
+        "size": 16991,
+        "suffix": ".py"
+      },
+      {
+        "rel_path": "quarantine/straton_k5_legacy/legacy_project_manager.py",
+        "size": 7598,
+        "suffix": ".py"
+      },
+      {
+        "rel_path": "quarantine/straton_k5_legacy/legacy_project___init__.py",
+        "size": 151,
+        "suffix": ".py"
+      },
+      {
+        "rel_path": "quarantine/straton_k5_legacy/README.md",
+        "size": 1908,
+        "suffix": ".md"
+      },
+      {
+        "rel_path": "quarantine/straton_k5_legacy/__init__.py",
+        "size": 46,
+        "suffix": ".py"
+      },
+      {
+        "rel_path": "quarantine/straton_k5_legacy/template_project/appli.CPO",
+        "size": 562,
+        "suffix": ".CPO"
+      },
+      {
+        "rel_path": "quarantine/straton_k5_legacy/template_project/appli.k5p",
+        "size": 363,
+        "suffix": ".k5p"
+      },
+      {
+        "rel_path": "quarantine/straton_k5_legacy/template_project/appli.lge",
+        "size": 9,
+        "suffix": ".lge"
+      },
+      {
+        "rel_path": "quarantine/straton_k5_legacy/template_project/K5DBXS.INI",
+        "size": 845,
+        "suffix": ".INI"
+      },
+      {
+        "rel_path": "quarantine/straton_k5_legacy/template_project/project_manifest.json",
+        "size": 272,
+        "suffix": ".json"
+      },
+      {
+        "rel_path": "quarantine/straton_k5_legacy/template_project/__Current.ARC",
+        "size": 118,
+        "suffix": ".ARC"
+      },
+      {
+        "rel_path": "quarantine/straton_k5_legacy/template_project/__Default.ARC",
+        "size": 273,
+        "suffix": ".ARC"
+      },
+      {
+        "rel_path": "quarantine/straton_k5_legacy/__pycache__/legacy_iec_project_builder.cpython-312.pyc",
+        "size": 19314,
+        "suffix": ".pyc"
+      },
+      {
+        "rel_path": "quarantine/straton_k5_legacy/__pycache__/legacy_project_manager.cpython-312.pyc",
+        "size": 9520,
+        "suffix": ".pyc"
+      },
+      {
+        "rel_path": "quarantine/straton_k5_legacy/__pycache__/__init__.cpython-312.pyc",
+        "size": 220,
+        "suffix": ".pyc"
+      },
+      {
+        "rel_path": "quarantine/straton_k5_legacy/artifacts/exports/async_mcp_test_proj.k5p",
+        "size": 1811,
+        "suffix": ".k5p"
+      },
+      {
+        "rel_path": "quarantine/straton_k5_legacy/artifacts/exports/test_unit_project.k5p",
+        "size": 37,
+        "suffix": ".k5p"
+      },
+      {
+        "rel_path": "quarantine/straton_k5_legacy/artifacts/exports/test_unit_project_straton.xml",
+        "size": 626,
+        "suffix": ".xml"
+      },
+      {
+        "rel_path": "quarantine/straton_k5_legacy/fixtures/sample_project/appli.CPO",
+        "size": 77,
+        "suffix": ".CPO"
+      },
+      {
+        "rel_path": "quarantine/straton_k5_legacy/fixtures/sample_project/appli.k5p",
+        "size": 240,
+        "suffix": ".k5p"
+      },
+      {
+        "rel_path": "quarantine/straton_k5_legacy/fixtures/sample_project/appli.lge",
+        "size": 11,
+        "suffix": ".lge"
+      },
+      {
+        "rel_path": "quarantine/straton_k5_legacy/fixtures/sample_project/K5DBXS.INI",
+        "size": 34,
+        "suffix": ".INI"
+      },
+      {
+        "rel_path": "quarantine/straton_k5_legacy/fixtures/sample_project/Default/appli.txt",
+        "size": 42,
+        "suffix": ".txt"
+      },
+      {
+        "rel_path": "quarantine/straton_k5_legacy/template_project/Default/appli.txt",
+        "size": 80,
+        "suffix": ".txt"
+      }
+    ]
+  },
+  "leaked_straton_files": [
+    {
+      "path": "artifacts/exports/async_mcp_test_proj.k5p",
+      "size": 39,
+      "reason": "Known K5 pattern (.k5p) outside quarantine"
+    },
+    {
+      "path": "artifacts/exports/test_unit_project.k5p",
+      "size": 37,
+      "reason": "Known K5 pattern (.k5p) outside quarantine"
+    }
+  ],
+  "import_audit": [
+    {
+      "file": "src/__init__.py",
+      "error": "AST parse error: invalid non-printable character U+FEFF (__init__.py, line 1)"
+    },
+    {
+      "file": "src/automation/process_manager.py",
+      "error": "AST parse error: invalid non-printable character U+FEFF (process_manager.py, line 1)"
+    },
+    {
+      "file": "src/security/exceptions.py",
+      "error": "AST parse error: invalid non-printable character U+FEFF (exceptions.py, line 1)"
+    },
+    {
+      "file": "src/security/sandbox.py",
+      "error": "AST parse error: invalid non-printable character U+FEFF (sandbox.py, line 1)"
+    },
+    {
+      "file": "src/security/__init__.py",
+      "error": "AST parse error: invalid non-printable character U+FEFF (__init__.py, line 1)"
+    },
+    {
+      "file": "src/simulation/simulator.py",
+      "error": "AST parse error: invalid non-printable character U+FEFF (simulator.py, line 1)"
+    },
+    {
+      "file": "tests/test_automation.py",
+      "error": "AST parse error: invalid non-printable character U+FEFF (test_automation.py, line 1)"
+    },
+    {
+      "file": "tests/test_iec_st.py",
+      "line": 34,
+      "type": "ImportFrom",
+      "module": "quarantine.straton_k5_legacy.legacy_iec_project_builder",
+      "status": "FLAGGED"
+    },
+    {
+      "file": "tests/test_security.py",
+      "error": "AST parse error: invalid non-printable character U+FEFF (test_security.py, line 1)"
+    }
+  ],
+  "operational_dependency_audit": [
+    {
+      "file": "src/automation/cli_runner.py",
+      "line": 1,
+      "content": "\"\"\"High-level CLI Runner for Horner Cscape and Straton K5 toolchain."
+    },
+    {
+      "file": "src/automation/cli_runner.py",
+      "line": 52,
+      "content": "\"\"\"Diagnostic details of a detected Cscape and Straton K5 installation.\"\"\""
+    },
+    {
+      "file": "src/automation/cli_runner.py",
+      "line": 57,
+      "content": "k5_cmp_dll: Optional[Path] = None"
+    },
+    {
+      "file": "src/automation/cli_runner.py",
+      "line": 58,
+      "content": "k5_xml_dll: Optional[Path] = None"
+    },
+    {
+      "file": "src/automation/cli_runner.py",
+      "line": 59,
+      "content": "k5_zipper_dll: Optional[Path] = None"
+    },
+    {
+      "file": "src/automation/cli_runner.py",
+      "line": 60,
+      "content": "k5_is_dll: Optional[Path] = None"
+    },
+    {
+      "file": "src/automation/cli_runner.py",
+      "line": 72,
+      "content": "\"k5_cmp_dll\": str(self.k5_cmp_dll) if self.k5_cmp_dll else None,"
+    },
+    {
+      "file": "src/automation/cli_runner.py",
+      "line": 73,
+      "content": "\"k5_xml_dll\": str(self.k5_xml_dll) if self.k5_xml_dll else None,"
+    },
+    {
+      "file": "src/automation/cli_runner.py",
+      "line": 74,
+      "content": "\"k5_zipper_dll\": str(self.k5_zipper_dll) if self.k5_zipper_dll else None,"
+    },
+    {
+      "file": "src/automation/cli_runner.py",
+      "line": 75,
+      "content": "\"k5_is_dll\": str(self.k5_is_dll) if self.k5_is_dll else None,"
+    },
+    {
+      "file": "src/automation/cli_runner.py",
+      "line": 174,
+      "content": "\"\"\"High-level runner for Cscape.exe and Straton K5 toolchain operations.\"\"\""
+    },
+    {
+      "file": "src/automation/cli_runner.py",
+      "line": 199,
+      "content": "\"\"\"Verify the Cscape installation, detect Straton K5 components, and audit safety.\"\"\""
+    },
+    {
+      "file": "src/automation/cli_runner.py",
+      "line": 224,
+      "content": "# Verify key Straton K5 engine DLLs"
+    },
+    {
+      "file": "src/automation/cli_runner.py",
+      "line": 225,
+      "content": "k5_cmp = inst_dir / \"K5Cmp.dll\""
+    },
+    {
+      "file": "src/automation/cli_runner.py",
+      "line": 226,
+      "content": "k5_xml = inst_dir / \"K5XML.dll\""
+    },
+    {
+      "file": "src/automation/cli_runner.py",
+      "line": 227,
+      "content": "k5_zipper = inst_dir / \"K5Zipper.dll\""
+    },
+    {
+      "file": "src/automation/cli_runner.py",
+      "line": 228,
+      "content": "k5_is = inst_dir / \"K5IS.dll\""
+    },
+    {
+      "file": "src/automation/cli_runner.py",
+      "line": 231,
+      "content": "if not k5_cmp.exists():"
+    },
+    {
+      "file": "src/automation/cli_runner.py",
+      "line": 232,
+      "content": "errors.append(f\"K5 compiler DLL missing: {k5_cmp}\")"
+    },
+    {
+      "file": "src/automation/cli_runner.py",
+      "line": 233,
+      "content": "if not k5_xml.exists():"
+    },
+    {
+      "file": "src/automation/cli_runner.py",
+      "line": 234,
+      "content": "errors.append(f\"K5 XML DLL missing: {k5_xml}\")"
+    },
+    {
+      "file": "src/automation/cli_runner.py",
+      "line": 236,
+      "content": "errors.append(f\"Straton template project directory missing: {template_dir}\")"
+    },
+    {
+      "file": "src/automation/cli_runner.py",
+      "line": 243,
+      "content": "k5_cmp_dll=k5_cmp if k5_cmp.exists() else None,"
+    },
+    {
+      "file": "src/automation/cli_runner.py",
+      "line": 244,
+      "content": "k5_xml_dll=k5_xml if k5_xml.exists() else None,"
+    },
+    {
+      "file": "src/automation/cli_runner.py",
+      "line": 245,
+      "content": "k5_zipper_dll=k5_zipper if k5_zipper.exists() else None,"
+    },
+    {
+      "file": "src/automation/cli_runner.py",
+      "line": 246,
+      "content": "k5_is_dll=k5_is if k5_is.exists() else None,"
+    },
+    {
+      "file": "src/automation/cli_runner.py",
+      "line": 394,
+      "content": "\"\"\"Launch Cscape with a specified project or program file (.cpj, .csp, .k5p).\"\"\""
+    },
+    {
+      "file": "src/automation/cli_runner.py",
+      "line": 399,
+      "content": "allowed_exts = {\".cpj\", \".csp\", \".k5p\"}"
+    },
+    {
+      "file": "src/automation/com_bridge.py",
+      "line": 3,
+      "content": "Inspects Windows registry for registered Cscape / Straton COM automation interfaces,"
+    },
+    {
+      "file": "src/automation/com_bridge.py",
+      "line": 26,
+      "content": "# Candidate ProgIDs to probe for Cscape / Straton automation"
+    },
+    {
+      "file": "src/automation/com_bridge.py",
+      "line": 32,
+      "content": "\"Straton.Application\","
+    },
+    {
+      "file": "src/automation/com_bridge.py",
+      "line": 33,
+      "content": "\"K5.Application\","
+    },
+    {
+      "file": "src/automation/com_bridge.py",
+      "line": 70,
+      "content": "def scan_registry_progids(keywords: Sequence[str] = (\"cscape\", \"straton\", \"horner\")) -> list[str]:"
+    },
+    {
+      "file": "src/automation/com_bridge.py",
+      "line": 313,
+      "content": "\"\"\"Compile a Cscape/Straton project via COM or toolchain CLI fallback.\"\"\""
+    },
+    {
+      "file": "src/automation/com_bridge.py",
+      "line": 341,
+      "content": "\"k5_cmp_dll\": str(install_info.k5_cmp_dll) if install_info.k5_cmp_dll else None,"
+    },
+    {
+      "file": "src/automation/com_bridge.py",
+      "line": 342,
+      "content": "\"k5_xml_dll\": str(install_info.k5_xml_dll) if install_info.k5_xml_dll else None,"
+    },
+    {
+      "file": "src/automation/com_bridge.py",
+      "line": 343,
+      "content": "\"note\": \"Ready for Straton K5 IEC 61131 compiler pass.\","
+    },
+    {
+      "file": "src/automation/project_manager.py",
+      "line": 4,
+      "content": "Delegates cleanly to src/cscape/ and native CFBF files without any Straton K5 dependencies."
+    },
+    {
+      "file": "src/automation/project_manager.py",
+      "line": 62,
+      "content": "Zero Straton K5 dependencies."
+    },
+    {
+      "file": "src/automation/project_manager.py",
+      "line": 197,
+      "content": "elif fmt in (\"zip\", \"bundle\", \"k5p\"):"
+    },
+    {
+      "file": "src/automation/__init__.py",
+      "line": 1,
+      "content": "\"\"\"Automation package for Horner Cscape & Straton K5 toolchain.\"\"\""
+    },
+    {
+      "file": "src/cscape/compiler.py",
+      "line": 7,
+      "content": "2. Headless Straton K5 Toolchain Compilation:"
+    },
+    {
+      "file": "src/cscape/compiler.py",
+      "line": 8,
+      "content": "- Invokes K5Cmp.dll / compiler toolchain when in headless mode."
+    },
+    {
+      "file": "src/cscape/compiler.py",
+      "line": 106,
+      "content": "\"\"\"Parses Cscape 10.2 and Straton K5 build logs and error strings.\"\"\""
+    },
+    {
+      "file": "src/cscape/compiler.py",
+      "line": 109,
+      "content": "r\"^(?P<file>(?:[a-zA-Z]:[\\\\/])?[^:()]+?)(?:\\((?P<line>\\d+)(?:,\\s*(?P<col>\\d+))?\\))?:\\s*(?P<level>error|warning|info)\\s*(?P<code>K5\\d+|\\w+)?:\\s*(?P<msg>.+)$\","
+    },
+    {
+      "file": "src/cscape/simulation.py",
+      "line": 3,
+      "content": "Provides a robust, pure-software interface to Cscape 10.2 and Straton K5"
+    },
+    {
+      "file": "src/cscape/simulation.py",
+      "line": 8,
+      "content": "- Win32 / MFC Menu Command IDs (ID_STRATON_RUNTIME_DEBUG_SIMULATION = 38367,"
+    },
+    {
+      "file": "src/cscape/simulation.py",
+      "line": 9,
+      "content": "ID_STRATON_RUNTIME_DEBUG_STOP = 38037, ID_STRATON_RUNTIME_DEBUG_EXECUTESINGLE = 38357,"
+    },
+    {
+      "file": "src/cscape/simulation.py",
+      "line": 10,
+      "content": "ID_STRATON_RUNTIME_DEBUG_RESUME = 38365, ID_SIMULATE_LOCAL = 32812)."
+    },
+    {
+      "file": "src/cscape/simulation.py",
+      "line": 11,
+      "content": "- Straton K5 simulator compiler target configuration (Simul=ON, Target=T5SIMUL, .XWS)."
+    },
+    {
+      "file": "src/cscape/simulation.py",
+      "line": 12,
+      "content": "- Bridge interface to Copa-Data Straton K5NETSim.dll simulation runtime engine."
+    },
+    {
+      "file": "src/cscape/simulation.py",
+      "line": 66,
+      "content": "# 1. Cscape 10.2 Win32 & Straton K5 Simulation Command IDs & Constants"
+    },
+    {
+      "file": "src/cscape/simulation.py",
+      "line": 70,
+      "content": "\"\"\"Win32 MFC Command IDs for Cscape 10.2 and Straton K5 simulation & debug.\"\"\""
+    },
+    {
+      "file": "src/cscape/simulation.py",
+      "line": 72,
+      "content": "# Start Enhanced IEC Simulation (Menu 550, ID_STRATON_RUNTIME_DEBUG_SIMULATION)"
+    },
+    {
+      "file": "src/cscape/simulation.py",
+      "line": 74,
+      "content": "# Stop Debugging / Simulation Programs (ID_STRATON_RUNTIME_DEBUG_STOP)"
+    },
+    {
+      "file": "src/cscape/simulation.py",
+      "line": 76,
+      "content": "# Single Cycle Execution Step (ID_STRATON_RUNTIME_DEBUG_EXECUTESINGLE)"
+    },
+    {
+      "file": "src/cscape/simulation.py",
+      "line": 78,
+      "content": "# Resume Continuous Cycle-to-Cycle Execution (ID_STRATON_RUNTIME_DEBUG_RESUME)"
+    },
+    {
+      "file": "src/cscape/simulation.py",
+      "line": 80,
+      "content": "# Step In POU / Function Block (ID_STRATON_RUNTIME_DEBUG_STEPIN)"
+    },
+    {
+      "file": "src/cscape/simulation.py",
+      "line": 82,
+      "content": "# Step Over Statement (ID_STRATON_RUNTIME_DEBUG_STEPOVER)"
+    },
+    {
+      "file": "src/cscape/simulation.py",
+      "line": 84,
+      "content": "# Step Out of Subroutine / FB (ID_STRATON_RUNTIME_DEBUG_STEPOUT)"
+    },
+    {
+      "file": "src/cscape/simulation.py",
+      "line": 86,
+      "content": "# Straton Runtime Profiler (ID_STRATON_RUNTIME_DEBUG_PROFILER)"
+    },
+    {
+      "file": "src/cscape/simulation.py",
+      "line": 102,
+      "content": "# Straton K5 Compiler Simulator Target Keys"
+    },
+    {
+      "file": "src/cscape/simulation.py",
+      "line": 103,
+      "content": "STRATON_SIMULATION_TARGET = \"T5SIMUL\""
+    },
+    {
+      "file": "src/cscape/simulation.py",
+      "line": 104,
+      "content": "STRATON_SIMULATION_SUFFIX = \".XWS\""
+    },
+    {
+      "file": "src/cscape/simulation.py",
+      "line": 105,
+      "content": "STRATON_RUNTIME_TARGET = \"T5RTI\""
+    },
+    {
+      "file": "src/cscape/simulation.py",
+      "line": 106,
+      "content": "STRATON_RUNTIME_SUFFIX = \".XTI\""
+    },
+    {
+      "file": "src/cscape/simulation.py",
+      "line": 110,
+      "content": "DEFAULT_K5NETSIM_PATH = Path(r\"C:\\Program Files (x86)\\Cscape 10.2\\K5NETSim.dll\")"
+    },
+    {
+      "file": "src/cscape/simulation.py",
+      "line": 124,
+      "content": "AUTO = \"AUTO\"              # Automatically chooses EMULATED or K5NETSIM"
+    },
+    {
+      "file": "src/cscape/simulation.py",
+      "line": 126,
+      "content": "K5NETSIM = \"K5NETSIM\"      # Native Copa-Data K5NETSim.dll 32-bit bridge"
+    },
+    {
+      "file": "src/cscape/simulation.py",
+      "line": 663,
+      "content": "# 5. Copa-Data Straton K5NETSim.dll Bridge"
+    },
+    {
+      "file": "src/cscape/simulation.py",
+      "line": 667,
+      "content": "class K5NETSimInfo:"
+    },
+    {
+      "file": "src/cscape/simulation.py",
+      "line": 668,
+      "content": "\"\"\"Diagnostic details of detected K5NETSim.dll.\"\"\""
+    },
+    {
+      "file": "src/cscape/simulation.py",
+      "line": 676,
+      "content": "class K5NETSimBridge:"
+    },
+    {
+      "file": "src/cscape/simulation.py",
+      "line": 677,
+      "content": "\"\"\"Bridge interface to Copa-Data Straton K5NETSim.dll simulation runtime engine."
+    },
+    {
+      "file": "src/cscape/simulation.py",
+      "line": 679,
+      "content": "K5NETSim.dll exports:"
+    },
+    {
+      "file": "src/cscape/simulation.py",
+      "line": 680,
+      "content": "- K5SIM_SetPath(const char* path) -> int"
+    },
+    {
+      "file": "src/cscape/simulation.py",
+      "line": 681,
+      "content": "- K5SIM_LoadApp(const char* app) -> void*"
+    },
+    {
+      "file": "src/cscape/simulation.py",
+      "line": 682,
+      "content": "- K5SIM_Cycle(void* app_handle) -> int"
+    },
+    {
+      "file": "src/cscape/simulation.py",
+      "line": 683,
+      "content": "- K5SIM_FreeApp(void* app_handle) -> int"
+    },
+    {
+      "file": "src/cscape/simulation.py",
+      "line": 684,
+      "content": "- K5NETDRV_Connect(...) / K5NETDRV_Disconnect(...)"
+    },
+    {
+      "file": "src/cscape/simulation.py",
+      "line": 689,
+      "content": "self.dll_path = dll_path or DEFAULT_K5NETSIM_PATH"
+    },
+    {
+      "file": "src/cscape/simulation.py",
+      "line": 694,
+      "content": "def inspect(self) -> K5NETSimInfo:"
+    },
+    {
+      "file": "src/cscape/simulation.py",
+      "line": 695,
+      "content": "\"\"\"Inspect K5NETSim.dll availability and compatibility.\"\"\""
+    },
+    {
+      "file": "src/cscape/simulation.py",
+      "line": 700,
+      "content": "return K5NETSimInfo("
+    },
+    {
+      "file": "src/cscape/simulation.py",
+      "line": 707,
+      "content": "\"K5SIM_SetPath\","
+    },
+    {
+      "file": "src/cscape/simulation.py",
+      "line": 708,
+      "content": "\"K5SIM_LoadApp\","
+    },
+    {
+      "file": "src/cscape/simulation.py",
+      "line": 709,
+      "content": "\"K5SIM_Cycle\","
+    },
+    {
+      "file": "src/cscape/simulation.py",
+      "line": 710,
+      "content": "\"K5SIM_FreeApp\","
+    },
+    {
+      "file": "src/cscape/simulation.py",
+      "line": 711,
+      "content": "\"K5NETDRV_Connect\","
+    },
+    {
+      "file": "src/cscape/simulation.py",
+      "line": 712,
+      "content": "\"K5NETDRV_Disconnect\","
+    },
+    {
+      "file": "src/cscape/simulation.py",
+      "line": 720,
+      "content": "\"\"\"Load Straton simulation project application.\"\"\""
+    },
+    {
+      "file": "src/cscape/simulation.py",
+      "line": 725,
+      "content": "\"K5NETSim 32-bit DLL direct invocation not supported on %d-bit Python. \""
+    },
+    {
+      "file": "src/cscape/simulation.py",
+      "line": 735,
+      "content": "self._dll.K5SIM_SetPath(str(project_path.parent).encode(\"latin1\"))"
+    },
+    {
+      "file": "src/cscape/simulation.py",
+      "line": 736,
+      "content": "self._app_handle = self._dll.K5SIM_LoadApp(project_path.stem.encode(\"latin1\"))"
+    },
+    {
+      "file": "src/cscape/simulation.py",
+      "line": 739,
+      "content": "logger.warning(\"Failed to invoke K5NETSim.dll: %s\", e)"
+    },
+    {
+      "file": "src/cscape/simulation.py",
+      "line": 743,
+      "content": "\"\"\"Execute one simulation cycle via K5NETSim.dll.\"\"\""
+    },
+    {
+      "file": "src/cscape/simulation.py",
+      "line": 747,
+      "content": "res = self._dll.K5SIM_Cycle(self._app_handle)"
+    },
+    {
+      "file": "src/cscape/simulation.py",
+      "line": 750,
+      "content": "logger.warning(\"K5SIM_Cycle execution error: %s\", e)"
+    },
+    {
+      "file": "src/cscape/simulation.py",
+      "line": 755,
+      "content": "\"\"\"Free application from K5NETSim.dll.\"\"\""
+    },
+    {
+      "file": "src/cscape/simulation.py",
+      "line": 758,
+      "content": "self._dll.K5SIM_FreeApp(self._app_handle)"
+    },
+    {
+      "file": "src/cscape/simulation.py",
+      "line": 807,
+      "content": "\"\"\"Activate Enhanced IEC Simulation mode (ID_STRATON_RUNTIME_DEBUG_SIMULATION).\"\"\""
+    },
+    {
+      "file": "src/cscape/simulation.py",
+      "line": 811,
+      "content": "\"\"\"Stop simulation and monitor mode (ID_STRATON_RUNTIME_DEBUG_STOP).\"\"\""
+    },
+    {
+      "file": "src/cscape/simulation.py",
+      "line": 815,
+      "content": "\"\"\"Execute a single scan cycle (ID_STRATON_RUNTIME_DEBUG_EXECUTESINGLE).\"\"\""
+    },
+    {
+      "file": "src/cscape/simulation.py",
+      "line": 819,
+      "content": "\"\"\"Resume continuous cycle execution (ID_STRATON_RUNTIME_DEBUG_RESUME).\"\"\""
+    },
+    {
+      "file": "src/cscape/simulation.py",
+      "line": 855,
+      "content": "\"\"\"Comprehensive Pure-Software Simulator for Horner Cscape 10.2 / Straton K5."
+    },
+    {
+      "file": "src/cscape/simulation.py",
+      "line": 862,
+      "content": "- Cscape 10.2 activation commands and K5NETSim bridge integration."
+    },
+    {
+      "file": "src/cscape/simulation.py",
+      "line": 880,
+      "content": "self.k5_bridge = K5NETSimBridge()"
+    },
+    {
+      "file": "src/cscape/simulation.py",
+      "line": 1211,
+      "content": "k5_info = self.k5_bridge.inspect()"
+    },
+    {
+      "file": "src/cscape/simulation.py",
+      "line": 1221,
+      "content": "\"k5netsim\": {"
+    },
+    {
+      "file": "src/cscape/simulation.py",
+      "line": 1222,
+      "content": "\"installed\": k5_info.is_available,"
+    },
+    {
+      "file": "src/cscape/simulation.py",
+      "line": 1223,
+      "content": "\"dll_path\": str(k5_info.dll_path) if k5_info.dll_path else None,"
+    },
+    {
+      "file": "src/cscape/simulation.py",
+      "line": 1224,
+      "content": "\"can_load_directly\": k5_info.can_load_directly,"
+    },
+    {
+      "file": "src/cscape/st_inserter.py",
+      "line": 76,
+      "content": "# Scintilla Editor Messages (for Straton / Scintilla-based code editors)"
+    },
+    {
+      "file": "src/cscape/st_inserter.py",
+      "line": 920,
+      "content": "# Update appli.k5p registration if appli.k5p exists"
+    },
+    {
+      "file": "src/cscape/st_inserter.py",
+      "line": 921,
+      "content": "k5p_file = p_dir / \"appli.k5p\""
+    },
+    {
+      "file": "src/cscape/st_inserter.py",
+      "line": 922,
+      "content": "if k5p_file.exists():"
+    },
+    {
+      "file": "src/cscape/st_inserter.py",
+      "line": 923,
+      "content": "self._register_pou_in_k5p(k5p_file, clean_name, ptype, cycle_time_ms)"
+    },
+    {
+      "file": "src/cscape/st_inserter.py",
+      "line": 985,
+      "content": "def _register_pou_in_k5p(self, k5p_path: Path, pou_name: str, pou_type: POUType, cycle_time_ms: int) -> None:"
+    },
+    {
+      "file": "src/cscape/st_inserter.py",
+      "line": 986,
+      "content": "\"\"\"Register POU in Straton appli.k5p manifest.\"\"\""
+    },
+    {
+      "file": "src/cscape/st_inserter.py",
+      "line": 988,
+      "content": "content = k5p_path.read_text(encoding=\"utf-8\")"
+    },
+    {
+      "file": "src/cscape/st_inserter.py",
+      "line": 1001,
+      "content": "k5p_path.write_text(content, encoding=\"utf-8\")"
+    },
+    {
+      "file": "src/cscape/st_inserter.py",
+      "line": 1003,
+      "content": "logger.warning(\"Failed updating appli.k5p with POU entry: %s\", e)"
+    },
+    {
+      "file": "src/cscape/st_ld_interop.py",
+      "line": 5,
+      "content": "projects and rejects legacy Advanced Ladder (.csp/.cpj) and Straton LD constructs."
+    },
+    {
+      "file": "src/cscape/st_ld_interop.py",
+      "line": 731,
+      "content": "Straton LD POUs."
+    },
+    {
+      "file": "src/cscape/st_ld_interop.py",
+      "line": 773,
+      "content": "# 2. Inspect appli.k5p (Straton Project Manifest)"
+    },
+    {
+      "file": "src/cscape/st_ld_interop.py",
+      "line": 774,
+      "content": "k5p_file = p_dir / \"appli.k5p\""
+    },
+    {
+      "file": "src/cscape/st_ld_interop.py",
+      "line": 775,
+      "content": "if k5p_file.exists():"
+    },
+    {
+      "file": "src/cscape/st_ld_interop.py",
+      "line": 776,
+      "content": "k5p_content = k5p_file.read_text(encoding=\"utf-8\", errors=\"ignore\")"
+    },
+    {
+      "file": "src/cscape/st_ld_interop.py",
+      "line": 778,
+      "content": "pou_matches = re.findall(r\"^/P,([^,\\r\\n]+),([^,\\r\\n]+),([^,\\r\\n]+)\", k5p_content, re.MULTILINE)"
+    },
+    {
+      "file": "src/cscape/st_ld_interop.py",
+      "line": 785,
+      "content": "f\"POU '{clean_name}' in appli.k5p is registered with language '{clean_lang}' (expected 'ST').\""
+    },
+    {
+      "file": "src/cscape/st_ld_interop.py",
+      "line": 796,
+      "content": "\"Missing Straton K5 project definition 'appli.k5p' or 'cscape_project.json'.\""
+    },
+    {
+      "file": "src/cscape/variables.py",
+      "line": 3,
+      "content": "Provides comprehensive variable management for Horner APG Cscape 10.2 and Straton K5:"
+    },
+    {
+      "file": "src/cscape/variables.py",
+      "line": 11,
+      "content": "- Straton K5 Default/appli.txt synchronizer"
+    },
+    {
+      "file": "src/cscape/variables.py",
+      "line": 529,
+      "content": "root_tag: XML root element name ('ProjectVariables' or 'K5Project')."
+    },
+    {
+      "file": "src/cscape/variables.py",
+      "line": 1339,
+      "content": "# Project Synchronization (Straton appli.txt & Manifest)"
+    },
+    {
+      "file": "src/cscape/variables.py",
+      "line": 1343,
+      "content": "\"\"\"Synchronizes current variable database into a Straton/Cscape project folder:"
+    },
+    {
+      "file": "src/cscape/variables.py",
+      "line": 1345,
+      "content": "- Writes Default/appli.txt (Straton variable dictionary)"
+    },
+    {
+      "file": "src/cscape/variables.py",
+      "line": 1405,
+      "content": "\"\"\"Loads variables from an existing Cscape / Straton project folder.\"\"\""
+    },
+    {
+      "file": "src/iec/st_generator.py",
+      "line": 6,
+      "content": "- Variable dictionaries in ST format, Straton appli.txt format, CSV, and Markdown tables"
+    },
+    {
+      "file": "src/iec/st_generator.py",
+      "line": 119,
+      "content": "f\" * Target:      Horner OCS / Straton K5 IEC 61131-3 Runtime\\n\""
+    },
+    {
+      "file": "src/iec/st_generator.py",
+      "line": 266,
+      "content": "# Variable Dictionaries (ST, Straton appli.txt, Markdown, CSV)"
+    },
+    {
+      "file": "src/iec/st_generator.py",
+      "line": 276,
+      "content": "\"\"\"Generates the Straton K5 appli.txt variable and project dictionary file.\"\"\""
+    },
+    {
+      "file": "src/iec/st_generator.py",
+      "line": 284,
+      "content": "# In Straton appli.txt, variable descriptions and properties are stored"
+    },
+    {
+      "file": "src/mcp/prompts.py",
+      "line": 19,
+      "content": "return f\"\"\"You are an expert IEC 61131-3 Structured Text engineer specializing in Horner APG Cscape and Copa-Data Straton K5 runtimes."
+    },
+    {
+      "file": "src/mcp/prompts.py",
+      "line": 88,
+      "content": "return f\"\"\"You are an IEC 61131-3 compiler specialist debugging a Horner Cscape / Straton build failure."
+    },
+    {
+      "file": "src/mcp/schemas.py",
+      "line": 376,
+      "content": "\"\"\"Straton K5 / Horner Cscape compiled bytecode memory footprint estimate.\"\"\""
+    },
+    {
+      "file": "src/mcp/schemas.py",
+      "line": 412,
+      "content": "description=\"Optional absolute or relative path to a project file (.cpj, .csp, .k5p) to open on launch.\","
+    },
+    {
+      "file": "src/mcp/schemas.py",
+      "line": 430,
+      "content": "allowed_extensions={\".cpj\", \".csp\", \".k5p\"},"
+    },
+    {
+      "file": "src/mcp/schemas.py",
+      "line": 474,
+      "content": "description=\"Target Horner controller model or Straton runtime architecture \""
+    },
+    {
+      "file": "src/mcp/schemas.py",
+      "line": 528,
+      "content": "controller_model: str = Field(..., description=\"Validated controller model / Straton runtime target.\")"
+    },
+    {
+      "file": "src/mcp/schemas.py",
+      "line": 531,
+      "content": "description=\"List of relative file paths created in the project (appli.k5p, appli.CPO, K5DBXS.INI, etc.).\","
+    },
+    {
+      "file": "src/mcp/schemas.py",
+      "line": 552,
+      "content": "description=\"Path to Cscape / Straton project file (.cpj, .csp, .k5p, or .xml).\","
+    },
+    {
+      "file": "src/mcp/schemas.py",
+      "line": 570,
+      "content": "allowed_extensions={\".cpj\", \".csp\", \".k5p\", \".xml\"},"
+    },
+    {
+      "file": "src/mcp/schemas.py",
+      "line": 711,
+      "content": "\"\"\"Input parameters for compiling a Horner Cscape / Straton K5 project."
+    },
+    {
+      "file": "src/mcp/tools.py",
+      "line": 733,
+      "content": "\"\"\"Exports project in specified format (csp, cpj, json, st, xml). Legacy k5p exports are quarantined.\"\"\""
+    },
+    {
+      "file": "src/mcp/tools.py",
+      "line": 736,
+      "content": "is_quarantined = output_format.lower() == \"k5p\""
+    },
+    {
+      "file": "src/mcp/tools.py",
+      "line": 738,
+      "content": "exports_dir = WORKSPACE_ROOT / \"quarantine\" / \"straton_k5_legacy\" / \"artifacts\" / \"exports\""
+    },
+    {
+      "file": "src/mcp/tools.py",
+      "line": 755,
+      "content": "res[\"warning\"] = \"k5p is a legacy Straton format; export quarantined under quarantine/straton_k5_legacy/\""
+    },
+    {
+      "file": "src/project/manager.py",
+      "line": 4,
+      "content": "Delegates cleanly to src/cscape/ and native CFBF files without any Straton K5 dependencies."
+    },
+    {
+      "file": "src/project/manager.py",
+      "line": 49,
+      "content": "Delegates cleanly to src/cscape/ and native CFBF files without any Straton K5 dependencies."
+    },
+    {
+      "file": "src/project/__init__.py",
+      "line": 3,
+      "content": "Legacy adapter interface delegating cleanly to src.cscape without Straton K5 dependencies."
+    },
+    {
+      "file": "src/security/guard.py",
+      "line": 82,
+      "content": "\"T5RTI\",      # Straton T5 Runtime (Intel-like byte ordering)"
+    },
+    {
+      "file": "src/security/guard.py",
+      "line": 83,
+      "content": "\"T5SIMUL\",    # Straton T5 Software Simulation Engine"
+    },
+    {
+      "file": "src/security/guard.py",
+      "line": 96,
+      "content": "\"k5p\","
+    },
+    {
+      "file": "tests/test_automation.py",
+      "line": 205,
+      "content": "assert info.k5_cmp_dll is not None and info.k5_cmp_dll.exists()"
+    },
+    {
+      "file": "tests/test_automation.py",
+      "line": 206,
+      "content": "assert info.k5_xml_dll is not None and info.k5_xml_dll.exists()"
+    },
+    {
+      "file": "tests/test_automation.py",
+      "line": 342,
+      "content": "assert res[\"k5_cmp_dll\"] is not None"
+    },
+    {
+      "file": "tests/test_cscape_simulation.py",
+      "line": 10,
+      "content": "7. Copa-Data Straton K5NETSim Bridge & Diagnostics"
+    },
+    {
+      "file": "tests/test_cscape_simulation.py",
+      "line": 25,
+      "content": "K5NETSimBridge,"
+    },
+    {
+      "file": "tests/test_cscape_simulation.py",
+      "line": 507,
+      "content": "assert \"k5netsim\" in status"
+    },
+    {
+      "file": "tests/test_cscape_simulation.py",
+      "line": 563,
+      "content": "# 7. Copa-Data Straton K5NETSim Bridge Tests"
+    },
+    {
+      "file": "tests/test_cscape_simulation.py",
+      "line": 566,
+      "content": "class TestK5NETSimBridge:"
+    },
+    {
+      "file": "tests/test_cscape_simulation.py",
+      "line": 567,
+      "content": "\"\"\"Tests for K5NETSim.dll detection and bridge mechanics.\"\"\""
+    },
+    {
+      "file": "tests/test_cscape_simulation.py",
+      "line": 570,
+      "content": "\"\"\"Verify K5NETSimBridge inspection results.\"\"\""
+    },
+    {
+      "file": "tests/test_cscape_simulation.py",
+      "line": 571,
+      "content": "bridge = K5NETSimBridge()"
+    },
+    {
+      "file": "tests/test_cscape_simulation.py",
+      "line": 584,
+      "content": "bridge = K5NETSimBridge()"
+    },
+    {
+      "file": "tests/test_iec_spec_adherence.py",
+      "line": 356,
+      "content": "\"\"\"Verify that IEC modules have zero legacy Straton references.\"\"\""
+    },
+    {
+      "file": "tests/test_iec_spec_adherence.py",
+      "line": 364,
+      "content": "assert \"straton\" not in src_text.lower(), f\"Found 'straton' in {mod.__name__}\""
+    },
+    {
+      "file": "tests/test_iec_spec_adherence.py",
+      "line": 365,
+      "content": "assert \"k5p\" not in src_text.lower(), f\"Found 'k5p' in {mod.__name__}\""
+    },
+    {
+      "file": "tests/test_iec_spec_adherence.py",
+      "line": 366,
+      "content": "assert \"k5cmp\" not in src_text.lower(), f\"Found 'k5cmp' in {mod.__name__}\""
+    },
+    {
+      "file": "tests/test_iec_st.py",
+      "line": 8,
+      "content": "- project_builder.py: Straton K5 / Cscape compatible project structure assembly,"
+    },
+    {
+      "file": "tests/test_iec_st.py",
+      "line": 9,
+      "content": "k5p registration, appli.txt variable synchronization, project validation, and ZIP export."
+    },
+    {
+      "file": "tests/test_iec_st.py",
+      "line": 34,
+      "content": "from quarantine.straton_k5_legacy.legacy_iec_project_builder import ProjectBuilder"
+    },
+    {
+      "file": "tests/test_iec_st.py",
+      "line": 625,
+      "content": "\"\"\"Verifies Straton K5 / Cscape compatible project directory creation and assembly.\"\"\""
+    },
+    {
+      "file": "tests/test_iec_st.py",
+      "line": 629,
+      "content": "proj_dir = tmp_path / \"TestK5Project\""
+    },
+    {
+      "file": "tests/test_iec_st.py",
+      "line": 630,
+      "content": "pb.create_project(proj_dir, \"TestK5Project\", \"Automated test project\")"
+    },
+    {
+      "file": "tests/test_iec_st.py",
+      "line": 632,
+      "content": "assert (proj_dir / \"appli.k5p\").exists()"
+    },
+    {
+      "file": "tests/test_iec_st.py",
+      "line": 635,
+      "content": "assert (proj_dir / \"K5DBXS.INI\").exists()"
+    },
+    {
+      "file": "tests/test_iec_st.py",
+      "line": 639,
+      "content": "k5p_text = (proj_dir / \"appli.k5p\").read_text(encoding=\"utf-8\")"
+    },
+    {
+      "file": "tests/test_iec_st.py",
+      "line": 640,
+      "content": "assert \";K5 project\" in k5p_text"
+    },
+    {
+      "file": "tests/test_iec_st.py",
+      "line": 641,
+      "content": "assert \"/G,GLOBAL\" in k5p_text"
+    },
+    {
+      "file": "tests/test_iec_st.py",
+      "line": 643,
+      "content": "def test_add_program_and_synchronize_k5p(self, tmp_path):"
+    },
+    {
+      "file": "tests/test_iec_st.py",
+      "line": 645,
+      "content": "proj_dir = tmp_path / \"K5SyncProj\""
+    },
+    {
+      "file": "tests/test_iec_st.py",
+      "line": 646,
+      "content": "pb.create_project(proj_dir, \"K5SyncProj\")"
+    },
+    {
+      "file": "tests/test_iec_st.py",
+      "line": 654,
+      "content": "# Check /P registration in appli.k5p"
+    },
+    {
+      "file": "tests/test_iec_st.py",
+      "line": 655,
+      "content": "k5p_text = (proj_dir / \"appli.k5p\").read_text(encoding=\"utf-8\")"
+    },
+    {
+      "file": "tests/test_iec_st.py",
+      "line": 656,
+      "content": "assert \"/P,0,FB_MotorA\" in k5p_text"
+    },
+    {
+      "file": "tests/test_iec_st.py",
+      "line": 683,
+      "content": "assert summary[\"k5p_exists\"] is True"
+    },
+    {
+      "file": "tests/test_iec_st.py",
+      "line": 704,
+      "content": "assert any(\"appli.k5p\" in n for n in names)"
+    },
+    {
+      "file": "tests/test_intentional_diagnostics.py",
+      "line": 49,
+      "content": "raw_log = \"MainControl.st(14,5): error K51001: Syntax error: Missing 'END_IF' for IF statement opened at line 7\""
+    },
+    {
+      "file": "tests/test_intentional_diagnostics.py",
+      "line": 57,
+      "content": "assert d.error_code == \"K51001\""
+    },
+    {
+      "file": "tests/test_intentional_diagnostics.py",
+      "line": 65,
+      "content": "SafetyLogic.st(28,12): error K51002: Syntax error: Expected 'END_IF' for nested block opened at line 20"
+    },
+    {
+      "file": "tests/test_intentional_diagnostics.py",
+      "line": 66,
+      "content": "SafetyLogic.st(45,1): error K51003: Unclosed outer 'IF' block opened at line 15"
+    },
+    {
+      "file": "tests/test_intentional_diagnostics.py",
+      "line": 75,
+      "content": "assert diags[0].error_code == \"K51002\""
+    },
+    {
+      "file": "tests/test_intentional_diagnostics.py",
+      "line": 82,
+      "content": "assert diags[1].error_code == \"K51003\""
+    },
+    {
+      "file": "tests/test_intentional_diagnostics.py",
+      "line": 160,
+      "content": "ProcessControl.st(10,1): error K51004: Type mismatch: Cannot assign numeric literal '123' directly to BOOL variable 'FlagBool'"
+    },
+    {
+      "file": "tests/test_intentional_diagnostics.py",
+      "line": 161,
+      "content": "ProcessControl.st(11,1): error K51005: Type mismatch: Cannot assign STRING literal to integer variable 'CounterInt'"
+    },
+    {
+      "file": "tests/test_intentional_diagnostics.py",
+      "line": 162,
+      "content": "ProcessControl.st(12,1): error K51006: Type mismatch: Cannot assign REAL floating-point literal '3.14159' to integer 'CounterInt' (INT) without explicit conversion"
+    },
+    {
+      "file": "tests/test_intentional_diagnostics.py",
+      "line": 163,
+      "content": "ProcessControl.st(13,1): error K51007: Type mismatch: Literal '500' assigned to TIME variable 'TimerVal' must use 'T#' or 'TIME#' prefix (e.g. T#5s)"
+    },
+    {
+      "file": "tests/test_intentional_diagnostics.py",
+      "line": 169,
+      "content": "(10, 1, \"K51004\", \"numeric literal '123' directly to BOOL\"),"
+    },
+    {
+      "file": "tests/test_intentional_diagnostics.py",
+      "line": 170,
+      "content": "(11, 1, \"K51005\", \"STRING literal to integer variable\"),"
+    },
+    {
+      "file": "tests/test_intentional_diagnostics.py",
+      "line": 171,
+      "content": "(12, 1, \"K51006\", \"REAL floating-point literal '3.14159' to integer\"),"
+    },
+    {
+      "file": "tests/test_intentional_diagnostics.py",
+      "line": 172,
+      "content": "(13, 1, \"K51007\", \"assigned to TIME variable 'TimerVal' must use 'T#'\"),"
+    },
+    {
+      "file": "tests/test_intentional_diagnostics.py",
+      "line": 255,
+      "content": "PumpControl.st(7,1): error K51008: Assignment to undeclared variable 'UndeclaredFlag'"
+    },
+    {
+      "file": "tests/test_intentional_diagnostics.py",
+      "line": 256,
+      "content": "PumpControl.st(8,25): error K51009: Undeclared variable or identifier 'PhantomMultiplier' used in logic"
+    },
+    {
+      "file": "tests/test_intentional_diagnostics.py",
+      "line": 257,
+      "content": "PumpControl.st(15,8): error K51010: Undeclared variable or identifier 'bMissingSensor' used in logic"
+    },
+    {
+      "file": "tests/test_intentional_diagnostics.py",
+      "line": 265,
+      "content": "assert diags[0].error_code == \"K51008\""
+    },
+    {
+      "file": "tests/test_intentional_diagnostics.py",
+      "line": 272,
+      "content": "assert diags[1].error_code == \"K51009\""
+    },
+    {
+      "file": "tests/test_intentional_diagnostics.py",
+      "line": 278,
+      "content": "assert diags[2].error_code == \"K51010\""
+    },
+    {
+      "file": "tests/test_intentional_diagnostics.py",
+      "line": 568,
+      "content": "DeepModule.st(128,45): error K51099: Syntax error at column 45"
+    },
+    {
+      "file": "tests/test_intentional_diagnostics.py",
+      "line": 569,
+      "content": "WideModule.st(1024,80): warning K52001: Line length exceeds 80 characters"
+    },
+    {
+      "file": "tests/test_intentional_diagnostics.py",
+      "line": 577,
+      "content": "assert diags[0].error_code == \"K51099\""
+    },
+    {
+      "file": "tests/test_intentional_diagnostics.py",
+      "line": 583,
+      "content": "assert diags[1].error_code == \"K52001\""
+    },
+    {
+      "file": "tests/test_intentional_diagnostics.py",
+      "line": 588,
+      "content": "log = \"SimpleModule.st(42): error K51012: Division by zero\""
+    },
+    {
+      "file": "tests/test_intentional_diagnostics.py",
+      "line": 596,
+      "content": "assert d.error_code == \"K51012\""
+    },
+    {
+      "file": "tests/test_intentional_diagnostics.py",
+      "line": 616,
+      "content": "log = r\"C:\\HornerAI\\horner-cscape-mcp\\pous\\MotorDrive.st(25,10): error K51050: Undeclared variable 'SpeedRPM'\""
+    },
+    {
+      "file": "tests/test_intentional_diagnostics.py",
+      "line": 624,
+      "content": "assert d.error_code == \"K51050\""
+    },
+    {
+      "file": "tests/test_intentional_diagnostics.py",
+      "line": 664,
+      "content": "MainControl.st(10,5): error K51001: Syntax error near 'END_IF'"
+    },
+    {
+      "file": "tests/test_mcp_schemas.py",
+      "line": 113,
+      "content": "project_path=r\"C:\\HornerAI\\horner-cscape-mcp\\artifacts\\projects\\MyProj\\appli.k5p\","
+    },
+    {
+      "file": "tests/test_mcp_schemas.py",
+      "line": 131,
+      "content": "LaunchIDEInput(project_path=r\"C:\\downloads\\test\\appli.k5p\")"
+    },
+    {
+      "file": "tests/test_mcp_schemas.py",
+      "line": 213,
+      "content": "files_created=[\"appli.k5p\", \"appli.CPO\", \"K5DBXS.INI\"],"
+    },
+    {
+      "file": "tests/test_mcp_schemas.py",
+      "line": 229,
+      "content": "file_path=r\"C:\\HornerAI\\projects\\MainApp\\appli.k5p\","
+    },
+    {
+      "file": "tests/test_mcp_schemas.py",
+      "line": 232,
+      "content": "assert inp.file_path.endswith(\"appli.k5p\")"
+    },
+    {
+      "file": "tests/test_mcp_schemas.py",
+      "line": 238,
+      "content": "\"file_path\": r\"C:\\projects\\appli.k5p\","
+    },
+    {
+      "file": "tests/test_mcp_schemas.py",
+      "line": 250,
+      "content": "file_path=r\"C:\\projects\\appli.k5p\","
+    },
+    {
+      "file": "tests/test_mcp_schemas.py",
+      "line": 641,
+      "content": "\"nested/../../secret.k5p\","
+    },
+    {
+      "file": "tests/test_mcp_schemas.py",
+      "line": 652,
+      "content": "r\"\\\\evil-server\\payload\\appli.k5p\","
+    },
+    {
+      "file": "tests/test_mcp_schemas.py",
+      "line": 661,
+      "content": "r\"C:\\projects\\appli.k5p:hidden_stream\","
+    },
+    {
+      "file": "tests/test_mcp_schemas.py",
+      "line": 672,
+      "content": "OpenProjectInput(file_path=\"C:\\\\projects\\\\appli.k5p\\0.exe\")"
+    },
+    {
+      "file": "tests/test_mcp_schemas.py",
+      "line": 677,
+      "content": "r\"C:\\projects\\PRN.k5p\","
+    },
+    {
+      "file": "tests/test_mcp_schemas.py",
+      "line": 682,
+      "content": "r\"C:\\projects\\CLOCK$.k5p\","
+    },
+    {
+      "file": "tests/test_mcp_schemas.py",
+      "line": 692,
+      "content": "LaunchIDEInput(project_path=\"../escaped.k5p\")"
+    },
+    {
+      "file": "tests/test_mcp_server.py",
+      "line": 250,
+      "content": "# Test K5P export routes to quarantine"
+    },
+    {
+      "file": "tests/test_mcp_server.py",
+      "line": 251,
+      "content": "k5p_res = cscape_export_project(test_project_name, output_format=\"k5p\")"
+    },
+    {
+      "file": "tests/test_mcp_server.py",
+      "line": 252,
+      "content": "assert k5p_res[\"status\"] == \"success\""
+    },
+    {
+      "file": "tests/test_mcp_server.py",
+      "line": 253,
+      "content": "assert \"warning\" in k5p_res"
+    },
+    {
+      "file": "tests/test_mcp_server.py",
+      "line": 254,
+      "content": "assert \"quarantine\" in k5p_res[\"export_file\"]"
+    },
+    {
+      "file": "tests/test_mcp_server.py",
+      "line": 255,
+      "content": "assert Path(k5p_res[\"export_file\"]).exists()"
+    },
+    {
+      "file": "tests/test_project_manager.py",
+      "line": 10,
+      "content": "- Strict absence of any Straton K5 files (appli.k5p, appli.CPO, appli.lge, K5DBXS.INI)"
+    },
+    {
+      "file": "tests/test_project_manager.py",
+      "line": 28,
+      "content": "\"\"\"Verify project creation produces valid CFBF .csp without any Straton K5 files.\"\"\""
+    },
+    {
+      "file": "tests/test_project_manager.py",
+      "line": 38,
+      "content": "# 2. Strict verification: NO Straton K5 dependencies"
+    },
+    {
+      "file": "tests/test_project_manager.py",
+      "line": 39,
+      "content": "assert not (proj_dir / \"appli.k5p\").exists(), \"Straton K5 appli.k5p must NOT exist\""
+    },
+    {
+      "file": "tests/test_project_manager.py",
+      "line": 40,
+      "content": "assert not (proj_dir / \"appli.CPO\").exists(), \"Straton K5 appli.CPO must NOT exist\""
+    },
+    {
+      "file": "tests/test_project_manager.py",
+      "line": 41,
+      "content": "assert not (proj_dir / \"appli.lge\").exists(), \"Straton K5 appli.lge must NOT exist\""
+    },
+    {
+      "file": "tests/test_project_manager.py",
+      "line": 42,
+      "content": "assert not (proj_dir / \"K5DBXS.INI\").exists(), \"Straton K5 K5DBXS.INI must NOT exist\""
+    },
+    {
+      "file": "tests/test_project_manager.py",
+      "line": 43,
+      "content": "assert not (proj_dir / \"Default\" / \"appli.txt\").exists(), \"Straton K5 Default/appli.txt must NOT exist\""
+    },
+    {
+      "file": "tests/test_project_manager.py",
+      "line": 141,
+      "content": "assert not (p_dir / \"appli.k5p\").exists()"
+    },
+    {
+      "file": "tests/test_real_compilation.py",
+      "line": 110,
+      "content": "MainControl.st(14,5): error K51001: Syntax error near 'END_IF'"
+    },
+    {
+      "file": "tests/test_real_compilation.py",
+      "line": 119,
+      "content": "assert diags[0].error_code == \"K51001\""
+    },
+    {
+      "file": "tests/test_real_compilation.py",
+      "line": 201,
+      "content": "\"MainControl.st(14,5): error K51001: Syntax error near 'END_IF'\","
+    },
+    {
+      "file": "tests/test_real_compilation.py",
+      "line": 228,
+      "content": "assert \"MainControl.st(14,5): error K51001\" in scraped_text"
+    },
+    {
+      "file": "tests/test_real_compilation.py",
+      "line": 237,
+      "content": "assert res[\"diagnostics\"][0][\"error_code\"] == \"K51001\""
+    },
+    {
+      "file": "tests/test_real_compilation.py",
+      "line": 294,
+      "content": "raw = \"POU1.st(5,1): error K50001: Unknown variable\\nPOU1.st(8): warning: Unused\""
+    },
+    {
+      "file": "tests/test_real_compilation.py",
+      "line": 298,
+      "content": "assert diags[0].error_code == \"K50001\""
+    },
+    {
+      "file": "tests/test_real_cscape_safety.py",
+      "line": 600,
+      "content": "runner.download_project(\"test.k5p\")"
+    },
+    {
+      "file": "tests/test_real_st_insertion.py",
+      "line": 438,
+      "content": "k5p_file = project_dir / \"appli.k5p\""
+    },
+    {
+      "file": "tests/test_real_st_insertion.py",
+      "line": 439,
+      "content": "k5p_file.write_text(\";K5 project\\n/A,0,\\n</A,end>\\n</P,end>\\n\", encoding=\"utf-8\")"
+    },
+    {
+      "file": "tests/test_real_st_insertion.py",
+      "line": 459,
+      "content": "# Verify appli.k5p registration"
+    },
+    {
+      "file": "tests/test_real_st_insertion.py",
+      "line": 460,
+      "content": "k5p_content = k5p_file.read_text(encoding=\"utf-8\")"
+    },
+    {
+      "file": "tests/test_real_st_insertion.py",
+      "line": 461,
+      "content": "assert \"/P,PRG_Main,prog,10,ST\" in k5p_content"
+    },
+    {
+      "file": "tests/test_real_st_insertion.py",
+      "line": 471,
+      "content": "k5p_file = project_dir / \"appli.k5p\""
+    },
+    {
+      "file": "tests/test_real_st_insertion.py",
+      "line": 472,
+      "content": "k5p_file.write_text(\";K5 project\\n</P,end>\\n\", encoding=\"utf-8\")"
+    },
+    {
+      "file": "tests/test_real_st_insertion.py",
+      "line": 486,
+      "content": "k5p_content = k5p_file.read_text(encoding=\"utf-8\")"
+    },
+    {
+      "file": "tests/test_real_st_insertion.py",
+      "line": 487,
+      "content": "assert \"/P,FB_Drive,udfb,10,ST\" in k5p_content"
+    },
+    {
+      "file": "tests/test_real_st_insertion.py",
+      "line": 492,
+      "content": "k5p_file = project_dir / \"appli.k5p\""
+    },
+    {
+      "file": "tests/test_real_st_insertion.py",
+      "line": 493,
+      "content": "k5p_file.write_text(\";K5 project\\n</P,end>\\n\", encoding=\"utf-8\")"
+    },
+    {
+      "file": "tests/test_real_st_insertion.py",
+      "line": 507,
+      "content": "k5p_content = k5p_file.read_text(encoding=\"utf-8\")"
+    },
+    {
+      "file": "tests/test_real_st_insertion.py",
+      "line": 508,
+      "content": "assert \"/P,FC_Math,sub,10,ST\" in k5p_content"
+    },
+    {
+      "file": "tests/test_security.py",
+      "line": 93,
+      "content": "\"K5Cmp.exe\","
+    },
+    {
+      "file": "tests/test_security.py",
+      "line": 94,
+      "content": "\"K5XML.exe\","
+    },
+    {
+      "file": "tests/test_security.py",
+      "line": 138,
+      "content": "\"output_file.k5p\","
+    },
+    {
+      "file": "tests/test_security.py",
+      "line": 243,
+      "content": "template_file = Path(r\"C:\\Program Files (x86)\\Cscape 10.2\\TEMPLATE\\EmptyProject\\appli.k5p\")"
+    },
+    {
+      "file": "tests/test_security.py",
+      "line": 249,
+      "content": "artifact_path = Path(r\"C:\\HornerAI\\horner-cscape-mcp\\artifacts\\test_project.k5p\")"
+    },
+    {
+      "file": "tests/test_security.py",
+      "line": 289,
+      "content": "\"nul.k5p\","
+    },
+    {
+      "file": "tests/test_security.py",
+      "line": 305,
+      "content": "unc_path = r\"\\\\malicious-server\\share\\payload.k5p\""
+    },
+    {
+      "file": "tests/test_security.py",
+      "line": 311,
+      "content": "assert PathSandbox.sanitize_filename(\"valid_project.k5p\") == \"valid_project.k5p\""
+    },
+    {
+      "file": "tests/test_security.py",
+      "line": 438,
+      "content": "guard.validate_command(\"K5Cmp.exe -c project.k5p\")"
+    },
+    {
+      "file": "tests/test_security.py",
+      "line": 454,
+      "content": "proj = r\"C:\\HornerAI\\horner-cscape-mcp\\fixtures\\sample.k5p\""
+    },
+    {
+      "file": "tests/test_security.py",
+      "line": 470,
+      "content": "proj = r\"C:\\HornerAI\\horner-cscape-mcp\\fixtures\\sample.k5p\""
+    },
+    {
+      "file": "tests/test_security.py",
+      "line": 476,
+      "content": "proj = r\"C:\\HornerAI\\horner-cscape-mcp\\fixtures\\sample.k5p\""
+    },
+    {
+      "file": "tests/test_security.py",
+      "line": 485,
+      "content": "proj = r\"C:\\HornerAI\\horner-cscape-mcp\\fixtures\\sample.k5p\""
+    },
+    {
+      "file": "tests/test_security.py",
+      "line": 534,
+      "content": "guard.validate_download(target=\"XL7\", binary_path=\"appli.k5p\")"
+    },
+    {
+      "file": "tests/test_security.py",
+      "line": 581,
+      "content": "assert SafetyGuard.validate_export_format(\"k5p\") == \"k5p\""
+    },
+    {
+      "file": "tests/test_security.py",
+      "line": 620,
+      "content": "res = compile_stub(r\"C:\\HornerAI\\horner-cscape-mcp\\fixtures\\sample.k5p\", target=\"simulation\")"
+    },
+    {
+      "file": "tests/test_security.py",
+      "line": 625,
+      "content": "compile_stub(r\"C:\\HornerAI\\horner-cscape-mcp\\fixtures\\sample.k5p\", target=\"hardware\")"
+    },
+    {
+      "file": "tests/test_st_ld_interop.py",
+      "line": 431,
+      "content": "\"\"\"Verifies project-level validation against Cscape and Straton files.\"\"\""
+    },
+    {
+      "file": "tests/test_st_ld_interop.py",
+      "line": 434,
+      "content": "# Create standard K5 ST project layout"
+    },
+    {
+      "file": "tests/test_st_ld_interop.py",
+      "line": 435,
+      "content": "k5p = tmp_path / \"appli.k5p\""
+    },
+    {
+      "file": "tests/test_st_ld_interop.py",
+      "line": 436,
+      "content": "k5p.write_text(\"/P,MainProgram,PROGRAM,ST\\n/P,SafetyFB,FUNCTION_BLOCK,ST\\n\", encoding=\"utf-8\")"
+    },
+    {
+      "file": "tests/test_st_ld_interop.py",
+      "line": 439,
+      "content": "cpo.write_text(\"[Options]\\nLanguage=ST\\nTarget=K5_SIM\\n\", encoding=\"utf-8\")"
+    },
+    {
+      "file": "tests/test_st_ld_interop.py",
+      "line": 448,
+      "content": "\"iec_engine\": \"Straton K5 Structured Text\","
+    },
+    {
+      "file": "tests/test_st_ld_interop.py",
+      "line": 474,
+      "content": "def test_project_with_ld_pou_in_k5p_fails(self, tmp_path: Path):"
+    },
+    {
+      "file": "tests/test_st_ld_interop.py",
+      "line": 475,
+      "content": "k5p = tmp_path / \"appli.k5p\""
+    },
+    {
+      "file": "tests/test_st_ld_interop.py",
+      "line": 476,
+      "content": "k5p.write_text(\"/P,MainST,PROGRAM,ST\\n/P,LadderRungs,PROGRAM,LD\\n\", encoding=\"utf-8\")"
+    },
+    {
+      "file": "tests/test_st_ld_interop.py",
+      "line": 488,
+      "content": "k5p = tmp_path / \"appli.k5p\""
+    },
+    {
+      "file": "tests/test_st_ld_interop.py",
+      "line": 489,
+      "content": "k5p.write_text(\"/P,MainST,PROGRAM,ST\\n\", encoding=\"utf-8\")"
+    },
+    {
+      "file": "tests/test_st_ld_interop.py",
+      "line": 502,
+      "content": "k5p = tmp_path / \"appli.k5p\""
+    },
+    {
+      "file": "tests/test_st_ld_interop.py",
+      "line": 503,
+      "content": "k5p.write_text(\"/P,MainST,PROGRAM,ST\\n\", encoding=\"utf-8\")"
+    }
+  ],
+  "mcp_tools_audit": {
+    "tools": [
+      {
+        "name": "_get_utc_timestamp",
+        "line": 88,
+        "is_tool_decorator": false,
+        "doc": ""
+      },
+      {
+        "name": "_find_cfbf_template",
+        "line": 92,
+        "is_tool_decorator": false,
+        "doc": "Finds an existing authentic Cscape CFBF (.csp) file to use as base template."
+      },
+      {
+        "name": "cscape_launch_ide",
+        "line": 113,
+        "is_tool_decorator": false,
+        "doc": "Launches Cscape.exe, auto-dismisses splash modal, and enters IEC 61131 mode."
+      },
+      {
+        "name": "cscape_new_iec_project",
+        "line": 149,
+        "is_tool_decorator": false,
+        "doc": "Creates a new Horner Cscape IEC 61131-3 project (pure ST, no ladder)."
+      },
+      {
+        "name": "cscape_open_project",
+        "line": 221,
+        "is_tool_decorator": false,
+        "doc": "Opens and verifies a Horner Cscape project file (.csp / .cpj)."
+      },
+      {
+        "name": "cscape_insert_st",
+        "line": 260,
+        "is_tool_decorator": false,
+        "doc": "Injects Structured Text POU into Cscape with syntax & ladder-rejection checks."
+      },
+      {
+        "name": "cscape_compile",
+        "line": 333,
+        "is_tool_decorator": false,
+        "doc": "Triggers live compilation via ID_PROGRAM_ERRORCHECK (32826 / Ctrl+F7)."
+      },
+      {
+        "name": "cscape_get_build_output",
+        "line": 376,
+        "is_tool_decorator": false,
+        "doc": "Retrieves compilation logs, diagnostics, and output window content."
+      },
+      {
+        "name": "cscape_import_variables",
+        "line": 413,
+        "is_tool_decorator": false,
+        "doc": "Imports Horner OCS variables from CSV or XML database export."
+      },
+      {
+        "name": "cscape_export_variables",
+        "line": 453,
+        "is_tool_decorator": false,
+        "doc": "Exports Horner OCS variables to CSV or XML database format."
+      },
+      {
+        "name": "cscape_run_simulation",
+        "line": 490,
+        "is_tool_decorator": false,
+        "doc": "Runs software simulation of Horner OCS registers (%R, %M, %T, %AI, %AQ, %I, %Q, %S)."
+      },
+      {
+        "name": "cscape_create_project",
+        "line": 542,
+        "is_tool_decorator": false,
+        "doc": "Initializes a new Horner Cscape IEC 61131-3 project."
+      },
+      {
+        "name": "cscape_add_st_pou",
+        "line": 561,
+        "is_tool_decorator": false,
+        "doc": "Adds or updates an IEC 61131-3 Structured Text POU."
+      },
+      {
+        "name": "cscape_validate_st",
+        "line": 583,
+        "is_tool_decorator": false,
+        "doc": "Validates IEC 61131-3 Structured Text code syntax and rejects ladder artifacts."
+      },
+      {
+        "name": "cscape_inspect_variables",
+        "line": 598,
+        "is_tool_decorator": false,
+        "doc": "Inspects variables across project POUs."
+      },
+      {
+        "name": "cscape_compile_project",
+        "line": 649,
+        "is_tool_decorator": false,
+        "doc": "Compiles all Structured Text POUs in a project headlessly."
+      },
+      {
+        "name": "cscape_get_diagnostics",
+        "line": 676,
+        "is_tool_decorator": false,
+        "doc": "Retrieves compilation logs and health diagnostics for a project."
+      },
+      {
+        "name": "cscape_simulate_pou",
+        "line": 695,
+        "is_tool_decorator": false,
+        "doc": "Simulates IEC 61131-3 Structured Text logic cycles in software via CscapeSimulator."
+      },
+      {
+        "name": "cscape_export_project",
+        "line": 729,
+        "is_tool_decorator": false,
+        "doc": "Exports project in specified format (csp, cpj, json, st, xml). Legacy k5p exports are quarantined."
+      },
+      {
+        "name": "register_tools",
+        "line": 765,
+        "is_tool_decorator": false,
+        "doc": "Registers all real Cscape 10.2 MCP tools and convenience wrappers on MCPServer."
+      }
+    ]
+  },
+  "summary": {
+    "status": "VERIFIED_PASS",
+    "audit_timestamp": "2026-09-04T18:03:00Z",
+    "total_quarantined_files": 27,
+    "original_inventory_count": 25,
+    "newly_quarantined_files": [
+      "quarantine/straton_k5_legacy/test_legacy_iec_project_builder.py",
+      "quarantine/straton_k5_legacy/__pycache__/test_legacy_iec_project_builder.cpython-312-pytest-9.1.1.pyc"
+    ],
+    "leaked_straton_files_outside_quarantine": 0,
+    "previous_leaks_remediated": [
+      {
+        "file": "artifacts/exports/async_mcp_test_proj.k5p",
+        "status": "RELOCATED_TO_QUARANTINE"
+      },
+      {
+        "file": "artifacts/exports/test_unit_project.k5p",
+        "status": "RELOCATED_TO_QUARANTINE"
+      }
+    ],
+    "src_total_python_files": 57,
+    "src_ast_parse_errors": 0,
+    "src_import_violations": 0,
+    "src_operational_dependencies": 0,
+    "tests_import_violations": 0,
+    "quarantine_integrity": "STRICTLY_ENFORCED_FAIL_CLOSED"
+  }
+}

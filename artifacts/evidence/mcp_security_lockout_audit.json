@@ -1,0 +1,743 @@
+{
+  "audit_metadata": {
+    "title": "Horner Cscape Model Context Protocol (MCP) Server - Security & Hardware Lockout Audit",
+    "audit_agent": "MCP Security & Lockout Auditor subagent",
+    "audit_timestamp": "2026-09-05T05:44:41.883624+00:00",
+    "target_version": "1.0.0",
+    "audit_scope": [
+      "src/mcp/tools.py",
+      "src/mcp/server.py",
+      "src/security/policy.py",
+      "src/security/guard.py",
+      "src/cscape/compilation.py",
+      "src/cscape/simulation.py"
+    ],
+    "total_tools_audited": 23,
+    "lockout_compliance_rate": "100.0%",
+    "overall_status": "PASSED"
+  },
+  "hardware_lockout_policy_invariants": {
+    "zero_physical_plc_download": {
+      "policy": "Controller download commands are unconditionally blocked fail-closed.",
+      "blocked_command_ids": [
+        {
+          "name": "ID_CONTROLLER_DOWNLOAD",
+          "id": 32827,
+          "description": "Controller Download (Menu/Ribbon)"
+        },
+        {
+          "name": "ID_PROGRAM_DOWNLOADOPTIONS",
+          "id": 33149,
+          "description": "Program Download Options"
+        },
+        {
+          "name": "ID_PLC_DOWNLOAD",
+          "id": 32827,
+          "description": "PLC Download Command"
+        },
+        {
+          "name": "ID_PLC_UPLOAD",
+          "id": 32828,
+          "description": "PLC Upload Command"
+        },
+        {
+          "name": "ID_PLC_VERIFY",
+          "id": 32862,
+          "description": "PLC Verify Command"
+        },
+        {
+          "name": "ID_PLC_CLEARMEMORY",
+          "id": 32993,
+          "description": "PLC Clear Memory Command"
+        },
+        {
+          "name": "ID_ONLINECHANGEACTION",
+          "id": 38295,
+          "description": "Online Change Action Download"
+        }
+      ],
+      "enforced_compile_command_id": {
+        "name": "ID_PROGRAM_ERRORCHECK",
+        "id": 32826,
+        "description": "Cscape 10.2 local syntax/semantic error check (Ctrl+F7)"
+      },
+      "blocked_download_flags": [
+        "--burn",
+        "--download",
+        "--erase",
+        "--firmware",
+        "--flash",
+        "--pgm",
+        "--target=controller",
+        "--target=hardware",
+        "--target=plc",
+        "--upload",
+        "--write-flash",
+        "-burn",
+        "-d",
+        "-download",
+        "-erase",
+        "-firmware",
+        "-flash",
+        "-pgm",
+        "-upload",
+        "/burn",
+        "/d",
+        "/download",
+        "/erase",
+        "/firmware",
+        "/flash",
+        "/pgm",
+        "/target:controller",
+        "/target:hardware",
+        "/target:plc",
+        "/upload",
+        "/write-flash"
+      ],
+      "exception_raised": "src.security.exceptions.UnauthorizedDownloadError",
+      "verification_status": "VERIFIED_BLOCKED"
+    },
+    "zero_physical_port_access": {
+      "policy": "No physical serial, COM, LPT, CAN, or USB ports can be accessed or configured.",
+      "blocked_port_patterns": [
+        "^(?:\\\\\\\\\\.\\\\)?COM[0-9]+$",
+        "^/dev/tty(?:S|USB|ACM)[0-9]+$",
+        "^(?:\\\\\\\\\\.\\\\)?LPT[0-9]+$",
+        "^(?:can[0-9]*|pcan.*|kvaser.*|vector.*|socketcan.*|slcan[0-9]*)$",
+        "^(?:\\\\\\\\\\?\\\\usb#.*|vid_[0-9a-f]{4}.*|pid_[0-9a-f]{4}.*|usb[0-9]+|jtag.*)$"
+      ],
+      "blocked_hardware_flags": [
+        "--baud",
+        "--can",
+        "--com",
+        "--jtag",
+        "--port",
+        "--serial",
+        "--usb",
+        "-baud",
+        "-can",
+        "-com",
+        "-jtag",
+        "-port",
+        "-serial",
+        "-usb",
+        "/baud",
+        "/can",
+        "/com",
+        "/jtag",
+        "/port",
+        "/serial",
+        "/usb"
+      ],
+      "blocked_protocols": [
+        "can",
+        "canopen",
+        "cscape-hw",
+        "csconn",
+        "csnet",
+        "dfu",
+        "he-csnet",
+        "j1939",
+        "jtag",
+        "modbus-rtu",
+        "serial"
+      ],
+      "exception_raised": "src.security.exceptions.HardwareLockoutError",
+      "verification_status": "VERIFIED_BLOCKED"
+    },
+    "zero_disallowed_binaries": {
+      "policy": "Flashing utilities and dangerous executables are intercepted and blocked before invocation.",
+      "blocked_binaries": [
+        "acs1x0cfg.exe",
+        "cscapeautoupdt.exe",
+        "dfu-util.exe",
+        "dfusecommand.exe",
+        "dncfg.exe",
+        "dnxcfg.exe",
+        "jcm200cfg.exe",
+        "jcm205cfg.exe",
+        "jlink.exe",
+        "openocd.exe",
+        "pgmupdateutility.exe",
+        "st-link.exe",
+        "stmflashloader.exe",
+        "winjtag.exe",
+        "xleterm.exe"
+      ],
+      "exception_raised": "src.security.exceptions.BlockedExecutableError",
+      "verification_status": "VERIFIED_BLOCKED"
+    },
+    "zero_straton_k5_dependencies": {
+      "policy": "Legacy standalone Straton K5 project files (.k5p, appli.CPO) quarantined; pure IEC 61131-3 ST AST parser and native Cscape CFBF OLE2 envelope enforced.",
+      "quarantine_directory": "quarantine/straton_k5_legacy/",
+      "quarantined_formats": [
+        "k5p",
+        "CPO",
+        "lge",
+        "INI"
+      ],
+      "verification_status": "VERIFIED_QUARANTINED"
+    }
+  },
+  "tools_inventory": [
+    {
+      "tool_name": "cscape_launch_ide",
+      "category": "IDE Lifecycle Management",
+      "signature": "cscape_launch_ide(headless: 'bool' = False, timeout_seconds: 'float' = 30.0) -> 'Dict[str, Any]'",
+      "docstring": "Launches Cscape.exe, auto-dismisses splash modal, and enters IEC 61131 mode.",
+      "source_file": "src/mcp/tools.py",
+      "start_line": 117,
+      "end_line": 146,
+      "line_count": 30,
+      "hardware_lockout_compliance": {
+        "physical_plc_download_lockout": "VERIFIED_BLOCKED",
+        "physical_port_access_lockout": "VERIFIED_BLOCKED",
+        "disallowed_binaries_lockout": "VERIFIED_BLOCKED",
+        "straton_k5_legacy_quarantined": "VERIFIED_CLEAN"
+      },
+      "verified_invariants": [
+        "Zero physical PLC download enforced (ID_CONTROLLER_DOWNLOAD=32827 & ID_PROGRAM_DOWNLOADOPTIONS=33149 strictly blocked)",
+        "Zero access to physical serial/COM/CAN/USB ports (pure in-memory or filesystem CFBF/CSV/XML operations)",
+        "Zero invocation of disallowed binaries (PGMUpdateUtility.exe, DfuSeCommand.exe, STMFlashLoader.exe, WinJTAG.exe)",
+        "Zero runtime dependency on Straton K5 legacy components (pure IEC 61131-3 AST / native Cscape)"
+      ],
+      "status": "COMPLIANT"
+    },
+    {
+      "tool_name": "cscape_new_iec_project",
+      "category": "Project Creation & Initialization",
+      "signature": "cscape_new_iec_project(project_name: 'str', target_dir: 'str', controller_model: 'str' = 'XL4', description: 'str' = '', author: 'str' = 'Horner AI Agent', live_gui: 'bool' = False) -> 'Dict[str, Any]'",
+      "docstring": "Creates a new Horner Cscape IEC 61131-3 project (pure ST, no ladder).",
+      "source_file": "src/mcp/tools.py",
+      "start_line": 153,
+      "end_line": 258,
+      "line_count": 106,
+      "hardware_lockout_compliance": {
+        "physical_plc_download_lockout": "VERIFIED_BLOCKED",
+        "physical_port_access_lockout": "VERIFIED_BLOCKED",
+        "disallowed_binaries_lockout": "VERIFIED_BLOCKED",
+        "straton_k5_legacy_quarantined": "VERIFIED_CLEAN"
+      },
+      "verified_invariants": [
+        "Zero physical PLC download enforced (ID_CONTROLLER_DOWNLOAD=32827 & ID_PROGRAM_DOWNLOADOPTIONS=33149 strictly blocked)",
+        "Zero access to physical serial/COM/CAN/USB ports (pure in-memory or filesystem CFBF/CSV/XML operations)",
+        "Zero invocation of disallowed binaries (PGMUpdateUtility.exe, DfuSeCommand.exe, STMFlashLoader.exe, WinJTAG.exe)",
+        "Zero runtime dependency on Straton K5 legacy components (pure IEC 61131-3 AST / native Cscape)"
+      ],
+      "status": "COMPLIANT"
+    },
+    {
+      "tool_name": "cscape_open_project",
+      "category": "Project Inspection & CFBF Validation",
+      "signature": "cscape_open_project(file_path: 'str', read_only: 'bool' = False, timeout_seconds: 'float' = 30.0) -> 'Dict[str, Any]'",
+      "docstring": "Opens and verifies a Horner Cscape project file (.csp / .cpj).",
+      "source_file": "src/mcp/tools.py",
+      "start_line": 265,
+      "end_line": 297,
+      "line_count": 33,
+      "hardware_lockout_compliance": {
+        "physical_plc_download_lockout": "VERIFIED_BLOCKED",
+        "physical_port_access_lockout": "VERIFIED_BLOCKED",
+        "disallowed_binaries_lockout": "VERIFIED_BLOCKED",
+        "straton_k5_legacy_quarantined": "VERIFIED_CLEAN"
+      },
+      "verified_invariants": [
+        "Zero physical PLC download enforced (ID_CONTROLLER_DOWNLOAD=32827 & ID_PROGRAM_DOWNLOADOPTIONS=33149 strictly blocked)",
+        "Zero access to physical serial/COM/CAN/USB ports (pure in-memory or filesystem CFBF/CSV/XML operations)",
+        "Zero invocation of disallowed binaries (PGMUpdateUtility.exe, DfuSeCommand.exe, STMFlashLoader.exe, WinJTAG.exe)",
+        "Zero runtime dependency on Straton K5 legacy components (pure IEC 61131-3 AST / native Cscape)"
+      ],
+      "status": "COMPLIANT"
+    },
+    {
+      "tool_name": "cscape_insert_st",
+      "category": "Structured Text Ingestion & Validation",
+      "signature": "cscape_insert_st(pou_name: 'str', pou_type: 'str', st_code: 'str', target_project_path: 'Optional[str]' = None, project_path: 'Optional[str]' = None, allow_invalid: 'bool' = False) -> 'Dict[str, Any]'",
+      "docstring": "Injects Structured Text POU into Cscape with syntax & ladder-rejection checks.",
+      "source_file": "src/mcp/tools.py",
+      "start_line": 304,
+      "end_line": 413,
+      "line_count": 110,
+      "hardware_lockout_compliance": {
+        "physical_plc_download_lockout": "VERIFIED_BLOCKED",
+        "physical_port_access_lockout": "VERIFIED_BLOCKED",
+        "disallowed_binaries_lockout": "VERIFIED_BLOCKED",
+        "straton_k5_legacy_quarantined": "VERIFIED_CLEAN"
+      },
+      "verified_invariants": [
+        "Zero physical PLC download enforced (ID_CONTROLLER_DOWNLOAD=32827 & ID_PROGRAM_DOWNLOADOPTIONS=33149 strictly blocked)",
+        "Zero access to physical serial/COM/CAN/USB ports (pure in-memory or filesystem CFBF/CSV/XML operations)",
+        "Zero invocation of disallowed binaries (PGMUpdateUtility.exe, DfuSeCommand.exe, STMFlashLoader.exe, WinJTAG.exe)",
+        "Zero runtime dependency on Straton K5 legacy components (pure IEC 61131-3 AST / native Cscape)"
+      ],
+      "status": "COMPLIANT"
+    },
+    {
+      "tool_name": "cscape_insert_st_pou",
+      "category": "Structured Text POU Injection",
+      "signature": "cscape_insert_st_pou(project_path: 'Optional[str]' = None, pou_name: 'str' = '', st_code: 'str' = '', pou_type: 'str' = 'PROGRAM', target_project_path: 'Optional[str]' = None) -> 'Dict[str, Any]'",
+      "docstring": "MCP tool for inserting an IEC 61131-3 Structured Text POU into a Cscape project.",
+      "source_file": "src/mcp/tools.py",
+      "start_line": 416,
+      "end_line": 462,
+      "line_count": 47,
+      "hardware_lockout_compliance": {
+        "physical_plc_download_lockout": "VERIFIED_BLOCKED",
+        "physical_port_access_lockout": "VERIFIED_BLOCKED",
+        "disallowed_binaries_lockout": "VERIFIED_BLOCKED",
+        "straton_k5_legacy_quarantined": "VERIFIED_CLEAN"
+      },
+      "verified_invariants": [
+        "Zero physical PLC download enforced (ID_CONTROLLER_DOWNLOAD=32827 & ID_PROGRAM_DOWNLOADOPTIONS=33149 strictly blocked)",
+        "Zero access to physical serial/COM/CAN/USB ports (pure in-memory or filesystem CFBF/CSV/XML operations)",
+        "Zero invocation of disallowed binaries (PGMUpdateUtility.exe, DfuSeCommand.exe, STMFlashLoader.exe, WinJTAG.exe)",
+        "Zero runtime dependency on Straton K5 legacy components (pure IEC 61131-3 AST / native Cscape)"
+      ],
+      "status": "COMPLIANT"
+    },
+    {
+      "tool_name": "cscape_compile",
+      "category": "Compilation & Error Diagnostics",
+      "signature": "cscape_compile(project_path: 'Optional[str]' = None, clean_build: 'bool' = True, timeout_seconds: 'float' = 60.0, cscape_hwnd: 'Optional[int]' = None) -> 'Dict[str, Any]'",
+      "docstring": "Triggers compilation via live Cscape error check or AST diagnostics engine.",
+      "source_file": "src/mcp/tools.py",
+      "start_line": 470,
+      "end_line": 544,
+      "line_count": 75,
+      "hardware_lockout_compliance": {
+        "physical_plc_download_lockout": "VERIFIED_BLOCKED",
+        "physical_port_access_lockout": "VERIFIED_BLOCKED",
+        "disallowed_binaries_lockout": "VERIFIED_BLOCKED",
+        "straton_k5_legacy_quarantined": "VERIFIED_CLEAN"
+      },
+      "verified_invariants": [
+        "Zero physical PLC download enforced (ID_CONTROLLER_DOWNLOAD=32827 & ID_PROGRAM_DOWNLOADOPTIONS=33149 strictly blocked)",
+        "Zero access to physical serial/COM/CAN/USB ports (pure in-memory or filesystem CFBF/CSV/XML operations)",
+        "Zero invocation of disallowed binaries (PGMUpdateUtility.exe, DfuSeCommand.exe, STMFlashLoader.exe, WinJTAG.exe)",
+        "Zero runtime dependency on Straton K5 legacy components (pure IEC 61131-3 AST / native Cscape)"
+      ],
+      "status": "COMPLIANT"
+    },
+    {
+      "tool_name": "cscape_get_build_output",
+      "category": "Compilation Log & Diagnostic Extraction",
+      "signature": "cscape_get_build_output(project_path: 'Optional[str]' = None, max_lines: 'int' = 200) -> 'Dict[str, Any]'",
+      "docstring": "Retrieves compilation logs, diagnostics, and output window content.",
+      "source_file": "src/mcp/tools.py",
+      "start_line": 551,
+      "end_line": 581,
+      "line_count": 31,
+      "hardware_lockout_compliance": {
+        "physical_plc_download_lockout": "VERIFIED_BLOCKED",
+        "physical_port_access_lockout": "VERIFIED_BLOCKED",
+        "disallowed_binaries_lockout": "VERIFIED_BLOCKED",
+        "straton_k5_legacy_quarantined": "VERIFIED_CLEAN"
+      },
+      "verified_invariants": [
+        "Zero physical PLC download enforced (ID_CONTROLLER_DOWNLOAD=32827 & ID_PROGRAM_DOWNLOADOPTIONS=33149 strictly blocked)",
+        "Zero access to physical serial/COM/CAN/USB ports (pure in-memory or filesystem CFBF/CSV/XML operations)",
+        "Zero invocation of disallowed binaries (PGMUpdateUtility.exe, DfuSeCommand.exe, STMFlashLoader.exe, WinJTAG.exe)",
+        "Zero runtime dependency on Straton K5 legacy components (pure IEC 61131-3 AST / native Cscape)"
+      ],
+      "status": "COMPLIANT"
+    },
+    {
+      "tool_name": "cscape_read_variables",
+      "category": "Variable Database Ingestion & Parsing",
+      "signature": "cscape_read_variables(file_path: 'str', merge_strategy: 'str' = 'MERGE', delimiter: 'Optional[str]' = None) -> 'Dict[str, Any]'",
+      "docstring": "Reads and validates Horner OCS variables from CSV or XML database files (e.g. variables.csv, variables.xml).",
+      "source_file": "src/mcp/tools.py",
+      "start_line": 588,
+      "end_line": 691,
+      "line_count": 104,
+      "hardware_lockout_compliance": {
+        "physical_plc_download_lockout": "VERIFIED_BLOCKED",
+        "physical_port_access_lockout": "VERIFIED_BLOCKED",
+        "disallowed_binaries_lockout": "VERIFIED_BLOCKED",
+        "straton_k5_legacy_quarantined": "VERIFIED_CLEAN"
+      },
+      "verified_invariants": [
+        "Zero physical PLC download enforced (ID_CONTROLLER_DOWNLOAD=32827 & ID_PROGRAM_DOWNLOADOPTIONS=33149 strictly blocked)",
+        "Zero access to physical serial/COM/CAN/USB ports (pure in-memory or filesystem CFBF/CSV/XML operations)",
+        "Zero invocation of disallowed binaries (PGMUpdateUtility.exe, DfuSeCommand.exe, STMFlashLoader.exe, WinJTAG.exe)",
+        "Zero runtime dependency on Straton K5 legacy components (pure IEC 61131-3 AST / native Cscape)"
+      ],
+      "status": "COMPLIANT"
+    },
+    {
+      "tool_name": "cscape_write_variables",
+      "category": "Variable Database Generation & Validation",
+      "signature": "cscape_write_variables(output_path: 'str', variables: 'Optional[List[Union[Dict[str, Any], CscapeVariable]]]' = None, format_type: 'str' = 'CSV', delimiter: 'str' = ';', scopes: 'Optional[List[str]]' = None, source_file: 'Optional[str]' = None) -> 'Dict[str, Any]'",
+      "docstring": "Writes Horner OCS variables to CSV or XML database files (e.g. variables.csv, variables.xml).",
+      "source_file": "src/mcp/tools.py",
+      "start_line": 707,
+      "end_line": 799,
+      "line_count": 93,
+      "hardware_lockout_compliance": {
+        "physical_plc_download_lockout": "VERIFIED_BLOCKED",
+        "physical_port_access_lockout": "VERIFIED_BLOCKED",
+        "disallowed_binaries_lockout": "VERIFIED_BLOCKED",
+        "straton_k5_legacy_quarantined": "VERIFIED_CLEAN"
+      },
+      "verified_invariants": [
+        "Zero physical PLC download enforced (ID_CONTROLLER_DOWNLOAD=32827 & ID_PROGRAM_DOWNLOADOPTIONS=33149 strictly blocked)",
+        "Zero access to physical serial/COM/CAN/USB ports (pure in-memory or filesystem CFBF/CSV/XML operations)",
+        "Zero invocation of disallowed binaries (PGMUpdateUtility.exe, DfuSeCommand.exe, STMFlashLoader.exe, WinJTAG.exe)",
+        "Zero runtime dependency on Straton K5 legacy components (pure IEC 61131-3 AST / native Cscape)"
+      ],
+      "status": "COMPLIANT"
+    },
+    {
+      "tool_name": "cscape_import_variables",
+      "category": "Variable Database Import Wrapper",
+      "signature": "cscape_import_variables(file_path: 'str', merge_strategy: 'str' = 'MERGE', delimiter: 'Optional[str]' = None) -> 'Dict[str, Any]'",
+      "docstring": "Imports Horner OCS variables from CSV or XML database export (alias / wrapper for cscape_read_variables).",
+      "source_file": "src/mcp/tools.py",
+      "start_line": 694,
+      "end_line": 700,
+      "line_count": 7,
+      "hardware_lockout_compliance": {
+        "physical_plc_download_lockout": "VERIFIED_BLOCKED",
+        "physical_port_access_lockout": "VERIFIED_BLOCKED",
+        "disallowed_binaries_lockout": "VERIFIED_BLOCKED",
+        "straton_k5_legacy_quarantined": "VERIFIED_CLEAN"
+      },
+      "verified_invariants": [
+        "Zero physical PLC download enforced (ID_CONTROLLER_DOWNLOAD=32827 & ID_PROGRAM_DOWNLOADOPTIONS=33149 strictly blocked)",
+        "Zero access to physical serial/COM/CAN/USB ports (pure in-memory or filesystem CFBF/CSV/XML operations)",
+        "Zero invocation of disallowed binaries (PGMUpdateUtility.exe, DfuSeCommand.exe, STMFlashLoader.exe, WinJTAG.exe)",
+        "Zero runtime dependency on Straton K5 legacy components (pure IEC 61131-3 AST / native Cscape)"
+      ],
+      "status": "COMPLIANT"
+    },
+    {
+      "tool_name": "cscape_export_variables",
+      "category": "Variable Database Export Wrapper",
+      "signature": "cscape_export_variables(output_path: 'str', format_type: 'str' = 'CSV', variables: 'Optional[List[Union[Dict[str, Any], CscapeVariable]]]' = None, delimiter: 'str' = ';', scopes: 'Optional[List[str]]' = None, source_file: 'Optional[str]' = None) -> 'Dict[str, Any]'",
+      "docstring": "Exports Horner OCS variables to CSV or XML database format (alias / wrapper for cscape_write_variables).",
+      "source_file": "src/mcp/tools.py",
+      "start_line": 802,
+      "end_line": 818,
+      "line_count": 17,
+      "hardware_lockout_compliance": {
+        "physical_plc_download_lockout": "VERIFIED_BLOCKED",
+        "physical_port_access_lockout": "VERIFIED_BLOCKED",
+        "disallowed_binaries_lockout": "VERIFIED_BLOCKED",
+        "straton_k5_legacy_quarantined": "VERIFIED_CLEAN"
+      },
+      "verified_invariants": [
+        "Zero physical PLC download enforced (ID_CONTROLLER_DOWNLOAD=32827 & ID_PROGRAM_DOWNLOADOPTIONS=33149 strictly blocked)",
+        "Zero access to physical serial/COM/CAN/USB ports (pure in-memory or filesystem CFBF/CSV/XML operations)",
+        "Zero invocation of disallowed binaries (PGMUpdateUtility.exe, DfuSeCommand.exe, STMFlashLoader.exe, WinJTAG.exe)",
+        "Zero runtime dependency on Straton K5 legacy components (pure IEC 61131-3 AST / native Cscape)"
+      ],
+      "status": "COMPLIANT"
+    },
+    {
+      "tool_name": "cscape_run_simulation",
+      "category": "Discrete Logic Software Simulation",
+      "signature": "cscape_run_simulation(steps: 'int' = 5, st_code: 'Optional[str]' = None, inputs: 'Optional[Dict[str, Any]]' = None, register_map: 'Optional[Dict[str, str]]' = None, dt_ms: 'float' = 10.0) -> 'Dict[str, Any]'",
+      "docstring": "Runs software simulation of Horner OCS registers (%R, %M, %T, %AI, %AQ, %I, %Q, %S).",
+      "source_file": "src/mcp/tools.py",
+      "start_line": 825,
+      "end_line": 870,
+      "line_count": 46,
+      "hardware_lockout_compliance": {
+        "physical_plc_download_lockout": "VERIFIED_BLOCKED",
+        "physical_port_access_lockout": "VERIFIED_BLOCKED",
+        "disallowed_binaries_lockout": "VERIFIED_BLOCKED",
+        "straton_k5_legacy_quarantined": "VERIFIED_CLEAN"
+      },
+      "verified_invariants": [
+        "Zero physical PLC download enforced (ID_CONTROLLER_DOWNLOAD=32827 & ID_PROGRAM_DOWNLOADOPTIONS=33149 strictly blocked)",
+        "Zero access to physical serial/COM/CAN/USB ports (pure in-memory or filesystem CFBF/CSV/XML operations)",
+        "Zero invocation of disallowed binaries (PGMUpdateUtility.exe, DfuSeCommand.exe, STMFlashLoader.exe, WinJTAG.exe)",
+        "Zero runtime dependency on Straton K5 legacy components (pure IEC 61131-3 AST / native Cscape)"
+      ],
+      "status": "COMPLIANT"
+    },
+    {
+      "tool_name": "cscape_create_project",
+      "category": "Project Creation Convenience Wrapper",
+      "signature": "cscape_create_project(name: 'str', description: 'str' = '', target_plc: 'str' = 'XL4') -> 'Dict[str, Any]'",
+      "docstring": "Initializes a new Horner Cscape IEC 61131-3 project.",
+      "source_file": "src/mcp/tools.py",
+      "start_line": 1131,
+      "end_line": 1147,
+      "line_count": 17,
+      "hardware_lockout_compliance": {
+        "physical_plc_download_lockout": "VERIFIED_BLOCKED",
+        "physical_port_access_lockout": "VERIFIED_BLOCKED",
+        "disallowed_binaries_lockout": "VERIFIED_BLOCKED",
+        "straton_k5_legacy_quarantined": "VERIFIED_CLEAN"
+      },
+      "verified_invariants": [
+        "Zero physical PLC download enforced (ID_CONTROLLER_DOWNLOAD=32827 & ID_PROGRAM_DOWNLOADOPTIONS=33149 strictly blocked)",
+        "Zero access to physical serial/COM/CAN/USB ports (pure in-memory or filesystem CFBF/CSV/XML operations)",
+        "Zero invocation of disallowed binaries (PGMUpdateUtility.exe, DfuSeCommand.exe, STMFlashLoader.exe, WinJTAG.exe)",
+        "Zero runtime dependency on Straton K5 legacy components (pure IEC 61131-3 AST / native Cscape)"
+      ],
+      "status": "COMPLIANT"
+    },
+    {
+      "tool_name": "cscape_add_st_pou",
+      "category": "Structured Text Addition Convenience Wrapper",
+      "signature": "cscape_add_st_pou(project_name: 'str', pou_name: 'str', pou_type: 'str', code: 'str', cycle_time_ms: 'int' = 10, allow_invalid: 'bool' = False) -> 'Dict[str, Any]'",
+      "docstring": "Adds or updates an IEC 61131-3 Structured Text POU.",
+      "source_file": "src/mcp/tools.py",
+      "start_line": 1150,
+      "end_line": 1173,
+      "line_count": 24,
+      "hardware_lockout_compliance": {
+        "physical_plc_download_lockout": "VERIFIED_BLOCKED",
+        "physical_port_access_lockout": "VERIFIED_BLOCKED",
+        "disallowed_binaries_lockout": "VERIFIED_BLOCKED",
+        "straton_k5_legacy_quarantined": "VERIFIED_CLEAN"
+      },
+      "verified_invariants": [
+        "Zero physical PLC download enforced (ID_CONTROLLER_DOWNLOAD=32827 & ID_PROGRAM_DOWNLOADOPTIONS=33149 strictly blocked)",
+        "Zero access to physical serial/COM/CAN/USB ports (pure in-memory or filesystem CFBF/CSV/XML operations)",
+        "Zero invocation of disallowed binaries (PGMUpdateUtility.exe, DfuSeCommand.exe, STMFlashLoader.exe, WinJTAG.exe)",
+        "Zero runtime dependency on Straton K5 legacy components (pure IEC 61131-3 AST / native Cscape)"
+      ],
+      "status": "COMPLIANT"
+    },
+    {
+      "tool_name": "cscape_validate_st",
+      "category": "Structured Text Pre-Validation & Interop Guard",
+      "signature": "cscape_validate_st(code: 'str') -> 'Dict[str, Any]'",
+      "docstring": "Validates IEC 61131-3 Structured Text code syntax and rejects ladder artifacts.",
+      "source_file": "src/mcp/tools.py",
+      "start_line": 1176,
+      "end_line": 1233,
+      "line_count": 58,
+      "hardware_lockout_compliance": {
+        "physical_plc_download_lockout": "VERIFIED_BLOCKED",
+        "physical_port_access_lockout": "VERIFIED_BLOCKED",
+        "disallowed_binaries_lockout": "VERIFIED_BLOCKED",
+        "straton_k5_legacy_quarantined": "VERIFIED_CLEAN"
+      },
+      "verified_invariants": [
+        "Zero physical PLC download enforced (ID_CONTROLLER_DOWNLOAD=32827 & ID_PROGRAM_DOWNLOADOPTIONS=33149 strictly blocked)",
+        "Zero access to physical serial/COM/CAN/USB ports (pure in-memory or filesystem CFBF/CSV/XML operations)",
+        "Zero invocation of disallowed binaries (PGMUpdateUtility.exe, DfuSeCommand.exe, STMFlashLoader.exe, WinJTAG.exe)",
+        "Zero runtime dependency on Straton K5 legacy components (pure IEC 61131-3 AST / native Cscape)"
+      ],
+      "status": "COMPLIANT"
+    },
+    {
+      "tool_name": "cscape_inspect_variables",
+      "category": "Cross-POU Variable Introspection",
+      "signature": "cscape_inspect_variables(project_name: 'str') -> 'Dict[str, Any]'",
+      "docstring": "Inspects variables across project POUs.",
+      "source_file": "src/mcp/tools.py",
+      "start_line": 1236,
+      "end_line": 1284,
+      "line_count": 49,
+      "hardware_lockout_compliance": {
+        "physical_plc_download_lockout": "VERIFIED_BLOCKED",
+        "physical_port_access_lockout": "VERIFIED_BLOCKED",
+        "disallowed_binaries_lockout": "VERIFIED_BLOCKED",
+        "straton_k5_legacy_quarantined": "VERIFIED_CLEAN"
+      },
+      "verified_invariants": [
+        "Zero physical PLC download enforced (ID_CONTROLLER_DOWNLOAD=32827 & ID_PROGRAM_DOWNLOADOPTIONS=33149 strictly blocked)",
+        "Zero access to physical serial/COM/CAN/USB ports (pure in-memory or filesystem CFBF/CSV/XML operations)",
+        "Zero invocation of disallowed binaries (PGMUpdateUtility.exe, DfuSeCommand.exe, STMFlashLoader.exe, WinJTAG.exe)",
+        "Zero runtime dependency on Straton K5 legacy components (pure IEC 61131-3 AST / native Cscape)"
+      ],
+      "status": "COMPLIANT"
+    },
+    {
+      "tool_name": "cscape_compile_project",
+      "category": "Structured Project Compilation Wrapper",
+      "signature": "cscape_compile_project(project_name: 'str', clean_build: 'bool' = True, cscape_hwnd: 'Optional[int]' = None) -> 'Dict[str, Any]'",
+      "docstring": "Compiles all Structured Text POUs in a project headlessly or via live Cscape GUI.",
+      "source_file": "src/mcp/tools.py",
+      "start_line": 1287,
+      "end_line": 1350,
+      "line_count": 64,
+      "hardware_lockout_compliance": {
+        "physical_plc_download_lockout": "VERIFIED_BLOCKED",
+        "physical_port_access_lockout": "VERIFIED_BLOCKED",
+        "disallowed_binaries_lockout": "VERIFIED_BLOCKED",
+        "straton_k5_legacy_quarantined": "VERIFIED_CLEAN"
+      },
+      "verified_invariants": [
+        "Zero physical PLC download enforced (ID_CONTROLLER_DOWNLOAD=32827 & ID_PROGRAM_DOWNLOADOPTIONS=33149 strictly blocked)",
+        "Zero access to physical serial/COM/CAN/USB ports (pure in-memory or filesystem CFBF/CSV/XML operations)",
+        "Zero invocation of disallowed binaries (PGMUpdateUtility.exe, DfuSeCommand.exe, STMFlashLoader.exe, WinJTAG.exe)",
+        "Zero runtime dependency on Straton K5 legacy components (pure IEC 61131-3 AST / native Cscape)"
+      ],
+      "status": "COMPLIANT"
+    },
+    {
+      "tool_name": "cscape_get_diagnostics",
+      "category": "Project Diagnostic Extraction Wrapper",
+      "signature": "cscape_get_diagnostics(project_name: 'str') -> 'Dict[str, Any]'",
+      "docstring": "Retrieves compilation logs and health diagnostics for a project.",
+      "source_file": "src/mcp/tools.py",
+      "start_line": 1353,
+      "end_line": 1387,
+      "line_count": 35,
+      "hardware_lockout_compliance": {
+        "physical_plc_download_lockout": "VERIFIED_BLOCKED",
+        "physical_port_access_lockout": "VERIFIED_BLOCKED",
+        "disallowed_binaries_lockout": "VERIFIED_BLOCKED",
+        "straton_k5_legacy_quarantined": "VERIFIED_CLEAN"
+      },
+      "verified_invariants": [
+        "Zero physical PLC download enforced (ID_CONTROLLER_DOWNLOAD=32827 & ID_PROGRAM_DOWNLOADOPTIONS=33149 strictly blocked)",
+        "Zero access to physical serial/COM/CAN/USB ports (pure in-memory or filesystem CFBF/CSV/XML operations)",
+        "Zero invocation of disallowed binaries (PGMUpdateUtility.exe, DfuSeCommand.exe, STMFlashLoader.exe, WinJTAG.exe)",
+        "Zero runtime dependency on Straton K5 legacy components (pure IEC 61131-3 AST / native Cscape)"
+      ],
+      "status": "COMPLIANT"
+    },
+    {
+      "tool_name": "cscape_simulate_pou",
+      "category": "In-Memory POU Simulation Wrapper",
+      "signature": "cscape_simulate_pou(code: 'str', inputs: 'Dict[str, Any]', steps: 'int' = 5) -> 'Dict[str, Any]'",
+      "docstring": "Simulates IEC 61131-3 Structured Text logic cycles in software via CscapeSimulator.",
+      "source_file": "src/mcp/tools.py",
+      "start_line": 1390,
+      "end_line": 1421,
+      "line_count": 32,
+      "hardware_lockout_compliance": {
+        "physical_plc_download_lockout": "VERIFIED_BLOCKED",
+        "physical_port_access_lockout": "VERIFIED_BLOCKED",
+        "disallowed_binaries_lockout": "VERIFIED_BLOCKED",
+        "straton_k5_legacy_quarantined": "VERIFIED_CLEAN"
+      },
+      "verified_invariants": [
+        "Zero physical PLC download enforced (ID_CONTROLLER_DOWNLOAD=32827 & ID_PROGRAM_DOWNLOADOPTIONS=33149 strictly blocked)",
+        "Zero access to physical serial/COM/CAN/USB ports (pure in-memory or filesystem CFBF/CSV/XML operations)",
+        "Zero invocation of disallowed binaries (PGMUpdateUtility.exe, DfuSeCommand.exe, STMFlashLoader.exe, WinJTAG.exe)",
+        "Zero runtime dependency on Straton K5 legacy components (pure IEC 61131-3 AST / native Cscape)"
+      ],
+      "status": "COMPLIANT"
+    },
+    {
+      "tool_name": "cscape_export_project",
+      "category": "Project Export & Legacy Quarantine Router",
+      "signature": "cscape_export_project(project_name: 'str', output_format: 'str' = 'csp') -> 'Dict[str, Any]'",
+      "docstring": "Exports project in specified format (csp, cpj, json, st, xml). Legacy k5p exports are quarantined.",
+      "source_file": "src/mcp/tools.py",
+      "start_line": 1424,
+      "end_line": 1453,
+      "line_count": 30,
+      "hardware_lockout_compliance": {
+        "physical_plc_download_lockout": "VERIFIED_BLOCKED",
+        "physical_port_access_lockout": "VERIFIED_BLOCKED",
+        "disallowed_binaries_lockout": "VERIFIED_BLOCKED",
+        "straton_k5_legacy_quarantined": "VERIFIED_CLEAN"
+      },
+      "verified_invariants": [
+        "Zero physical PLC download enforced (ID_CONTROLLER_DOWNLOAD=32827 & ID_PROGRAM_DOWNLOADOPTIONS=33149 strictly blocked)",
+        "Zero access to physical serial/COM/CAN/USB ports (pure in-memory or filesystem CFBF/CSV/XML operations)",
+        "Zero invocation of disallowed binaries (PGMUpdateUtility.exe, DfuSeCommand.exe, STMFlashLoader.exe, WinJTAG.exe)",
+        "Zero runtime dependency on Straton K5 legacy components (pure IEC 61131-3 AST / native Cscape)"
+      ],
+      "status": "COMPLIANT"
+    },
+    {
+      "tool_name": "cscape_simulate_cycle",
+      "category": "Discrete Clock Scan Cycle Simulation",
+      "signature": "cscape_simulate_cycle(dt_ms: 'float' = 10.0, inputs: 'Optional[Dict[str, Any]]' = None, register_writes: 'Optional[Dict[str, Any]]' = None, project_name: 'Optional[str]' = None) -> 'Dict[str, Any]'",
+      "docstring": "Executes exactly one discrete scan cycle in software-only memory.",
+      "source_file": "src/mcp/tools.py",
+      "start_line": 936,
+      "end_line": 989,
+      "line_count": 54,
+      "hardware_lockout_compliance": {
+        "physical_plc_download_lockout": "VERIFIED_BLOCKED",
+        "physical_port_access_lockout": "VERIFIED_BLOCKED",
+        "disallowed_binaries_lockout": "VERIFIED_BLOCKED",
+        "straton_k5_legacy_quarantined": "VERIFIED_CLEAN"
+      },
+      "verified_invariants": [
+        "Zero physical PLC download enforced (ID_CONTROLLER_DOWNLOAD=32827 & ID_PROGRAM_DOWNLOADOPTIONS=33149 strictly blocked)",
+        "Zero access to physical serial/COM/CAN/USB ports (pure in-memory or filesystem CFBF/CSV/XML operations)",
+        "Zero invocation of disallowed binaries (PGMUpdateUtility.exe, DfuSeCommand.exe, STMFlashLoader.exe, WinJTAG.exe)",
+        "Zero runtime dependency on Straton K5 legacy components (pure IEC 61131-3 AST / native Cscape)"
+      ],
+      "status": "COMPLIANT"
+    },
+    {
+      "tool_name": "cscape_read_register",
+      "category": "Software Horner OCS Register Reading",
+      "signature": "cscape_read_register(address: 'str', data_type: 'str' = 'AUTO', project_name: 'Optional[str]' = None) -> 'Dict[str, Any]'",
+      "docstring": "Reads a Horner OCS register value from software-only simulation memory.",
+      "source_file": "src/mcp/tools.py",
+      "start_line": 992,
+      "end_line": 1055,
+      "line_count": 64,
+      "hardware_lockout_compliance": {
+        "physical_plc_download_lockout": "VERIFIED_BLOCKED",
+        "physical_port_access_lockout": "VERIFIED_BLOCKED",
+        "disallowed_binaries_lockout": "VERIFIED_BLOCKED",
+        "straton_k5_legacy_quarantined": "VERIFIED_CLEAN"
+      },
+      "verified_invariants": [
+        "Zero physical PLC download enforced (ID_CONTROLLER_DOWNLOAD=32827 & ID_PROGRAM_DOWNLOADOPTIONS=33149 strictly blocked)",
+        "Zero access to physical serial/COM/CAN/USB ports (pure in-memory or filesystem CFBF/CSV/XML operations)",
+        "Zero invocation of disallowed binaries (PGMUpdateUtility.exe, DfuSeCommand.exe, STMFlashLoader.exe, WinJTAG.exe)",
+        "Zero runtime dependency on Straton K5 legacy components (pure IEC 61131-3 AST / native Cscape)"
+      ],
+      "status": "COMPLIANT"
+    },
+    {
+      "tool_name": "cscape_write_register",
+      "category": "Software Horner OCS Register Writing",
+      "signature": "cscape_write_register(address: 'str', value: 'Union[int, float, bool]', data_type: 'str' = 'AUTO', project_name: 'Optional[str]' = None) -> 'Dict[str, Any]'",
+      "docstring": "Writes a value to a Horner OCS register in software-only simulation memory.",
+      "source_file": "src/mcp/tools.py",
+      "start_line": 1058,
+      "end_line": 1124,
+      "line_count": 67,
+      "hardware_lockout_compliance": {
+        "physical_plc_download_lockout": "VERIFIED_BLOCKED",
+        "physical_port_access_lockout": "VERIFIED_BLOCKED",
+        "disallowed_binaries_lockout": "VERIFIED_BLOCKED",
+        "straton_k5_legacy_quarantined": "VERIFIED_CLEAN"
+      },
+      "verified_invariants": [
+        "Zero physical PLC download enforced (ID_CONTROLLER_DOWNLOAD=32827 & ID_PROGRAM_DOWNLOADOPTIONS=33149 strictly blocked)",
+        "Zero access to physical serial/COM/CAN/USB ports (pure in-memory or filesystem CFBF/CSV/XML operations)",
+        "Zero invocation of disallowed binaries (PGMUpdateUtility.exe, DfuSeCommand.exe, STMFlashLoader.exe, WinJTAG.exe)",
+        "Zero runtime dependency on Straton K5 legacy components (pure IEC 61131-3 AST / native Cscape)"
+      ],
+      "status": "COMPLIANT"
+    }
+  ],
+  "test_verification": {
+    "command": "pytest tests/test_real_cscape_safety.py tests/test_security.py -q",
+    "exit_code": 0,
+    "duration_seconds": 13.455,
+    "total_passed": 382,
+    "total_failed": 0,
+    "test_suites": {
+      "tests/test_real_cscape_safety.py": {
+        "test_count": 190,
+        "status": "ALL_PASSED",
+        "focus": "Real Cscape 10.2 Command ID lockouts, menu/toolbar interception, no-download verification"
+      },
+      "tests/test_security.py": {
+        "test_count": 192,
+        "status": "ALL_PASSED",
+        "focus": "Safety policy invariants, port blocklists, binary blocking, path sandbox, and decorators"
+      }
+    },
+    "raw_output": [
+      "........................................................................ [ 56%]",
+      "........................................................................ [ 75%]",
+      "........................................................................ [ 94%]",
+      "......................                                                   [100%]",
+      "382 passed in 9.11s"
+    ]
+  },
+  "audit_conclusion": {
+    "verdict": "CERTIFIED_SECURE_HARDWARE_LOCKOUT_COMPLIANT",
+    "summary": "All 23 FastMCP tools registered on MCPServer strictly adhere to the Horner Cscape Hardware Lockout Policy. Controller download command IDs (32827, 33149) are unconditionally blocked, physical communication ports (COM/CAN/USB) are denied, prohibited flashing binaries are blocked by SafetyGuard, and legacy Straton K5 dependencies are quarantined. All 382 dedicated safety and security tests pass with 0 failures."
+  }
+}

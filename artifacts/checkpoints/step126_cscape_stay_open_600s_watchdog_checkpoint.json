@@ -1,0 +1,14 @@
+{
+  "step": "step126_cscape_stay_open_600s_watchdog_checkpoint",
+  "status": "PASSED",
+  "target_duration_seconds": 600.0,
+  "achieved_continuous_uptime_seconds": 1061.68,
+  "timestamp_utc": "2026-09-05T16:20:39.637202+00:00",
+  "cscape_pid": 14580,
+  "hwnd": "0x024B054A",
+  "cscape_title": "Cscape - Logged In : \"armando@controlnautas.com\" - [TankLevelClosedLoop.csp]",
+  "project_file": "C:\\Users\\ArmandoSilva\\artifacts\\projects\\TankLevelClosedLoop\\TankLevelClosedLoop.csp",
+  "is_hung": false,
+  "watchdog_supervisor_active": true,
+  "fail_closed_gate_synced": true
+}

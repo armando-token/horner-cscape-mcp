@@ -1,0 +1,37 @@
+{
+  "step": 150,
+  "title": "Live FastMCP Stdio Full-Stack Regression Stress, Pipelined RPC Burst & Multi-Tool Soak Audit",
+  "timestamp_start_utc": "2026-09-05T19:52:40.142Z",
+  "timestamp_end_utc": "2026-09-05T19:53:15.634Z",
+  "duration_seconds": 35.492,
+  "status": "PASSED",
+  "target_pid": 3120,
+  "target_hwnd": "0x00830976",
+  "pipelined_calls_executed": 150,
+  "pipelined_calls_success_rate": 100.0,
+  "throughput_req_per_sec": 32.65,
+  "mean_latency_ms": 30.56,
+  "min_latency_ms": 1.74,
+  "max_latency_ms": 835.1,
+  "simulation_cycles_executed": 50,
+  "gui_error_check_dispatched": 32826,
+  "gui_error_count": 0,
+  "gui_warning_count": 0,
+  "hardware_lockout_enforced": true,
+  "zero_straton_dependencies": true,
+  "cscape_process_health": {
+    "pid": 3120,
+    "hwnd": "0x00830976",
+    "uptime_seconds": 112.5,
+    "working_set_mb": 192.19,
+    "is_hung": false,
+    "is_enabled": true,
+    "ping_ok": true
+  },
+  "screenshot_evidence": {
+    "path": "C:\\Users\\ArmandoSilva\\artifacts\\screenshots\\live_cscape_tank_level_step150.png",
+    "size_bytes": 656,
+    "sha256": "d7023c7218a445d4f74f6f68627afa99108901ca8363f7120ff01d184ec67e50"
+  },
+  "log_sha256": "9194d3b514609630842bcbc1fcce48e7b1d0ca7a367e7a7db565fd8bab77ad90"
+}

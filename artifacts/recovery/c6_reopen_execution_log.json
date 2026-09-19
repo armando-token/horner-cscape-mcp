@@ -1,0 +1,232 @@
+{
+  "mission_id": "C6_REOPEN_VERIFY_NATIVE_RUN",
+  "plan": "PLAN_CORRECTIVO MCP Horner/Cscape v2.0 (correctivo)",
+  "run_id": "run_20260906_120831",
+  "timestamp_utc": "2026-09-07T05:46:59.433814+00:00",
+  "entries": [
+    {
+      "timestamp": "2026-09-07T05:46:21.967Z",
+      "message": "================================================================================"
+    },
+    {
+      "timestamp": "2026-09-07T05:46:21.967Z",
+      "message": "STARTING MISSION C6 AFTER SAVE AS: REOPEN + VERIFY C6_NATIVE_RUN.CSP"
+    },
+    {
+      "timestamp": "2026-09-07T05:46:21.967Z",
+      "message": "================================================================================"
+    },
+    {
+      "timestamp": "2026-09-07T05:46:21.967Z",
+      "message": "Step 1: Baseline TankLevelClosedLoop.csp Integrity Verification (Before)..."
+    },
+    {
+      "timestamp": "2026-09-07T05:46:21.967Z",
+      "message": "Baseline TankLevelClosedLoop.csp SHA-256 before: d075e67d80be031a99a6895078735918b7a15c8086590a6d20ec8484b27749af"
+    },
+    {
+      "timestamp": "2026-09-07T05:46:21.967Z",
+      "message": "Baseline container confirmed 100% UNTOUCHED."
+    },
+    {
+      "timestamp": "2026-09-07T05:46:21.967Z",
+      "message": "Step 2: Inspect C6_Native_Run.csp Container on Disk..."
+    },
+    {
+      "timestamp": "2026-09-07T05:46:23.277Z",
+      "message": "C6_Native_Run.csp container verified: Size=99328, SHA256=23a02f07eaa92bc94f282cf73a41bc468af310dd503a7aa4f5d6c553ea95d2e0"
+    },
+    {
+      "timestamp": "2026-09-07T05:46:23.277Z",
+      "message": "Step 3: Resolving active Cscape process on winsta0\\Default..."
+    },
+    {
+      "timestamp": "2026-09-07T05:46:23.375Z",
+      "message": "Currently active Cscape: PID=5900, HWND=0x00530CBC, Title='Cscape - Logged In : \"armando@controlnautas.com\" - [TankLevelClosedLoop.csp]'"
+    },
+    {
+      "timestamp": "2026-09-07T05:46:23.375Z",
+      "message": "Step 4: Ensuring C6_Native_Run.csp is loaded in Cscape GUI..."
+    },
+    {
+      "timestamp": "2026-09-07T05:46:23.375Z",
+      "message": "Current window title is 'Cscape - Logged In : \"armando@controlnautas.com\" - [TankLevelClosedLoop.csp]'. Switching to C6_Native_Run.csp..."
+    },
+    {
+      "timestamp": "2026-09-07T05:46:23.375Z",
+      "message": "Configured Cscape registry MRU for C6_Native_Run: C:\\HornerAI\\horner-cscape-mcp\\artifacts\\projects\\C6_Native_Run\\C6_Native_Run.csp"
+    },
+    {
+      "timestamp": "2026-09-07T05:46:23.375Z",
+      "message": "Attempting native MRU reload (ID_FILE_MRU_FILE1)..."
+    },
+    {
+      "timestamp": "2026-09-07T05:46:25.550Z",
+      "message": "Relaunching Cscape visibly with C6_Native_Run.csp on winsta0\\Default..."
+    },
+    {
+      "timestamp": "2026-09-07T05:46:26.560Z",
+      "message": "Configured Cscape registry MRU for C6_Native_Run: C:\\HornerAI\\horner-cscape-mcp\\artifacts\\projects\\C6_Native_Run\\C6_Native_Run.csp"
+    },
+    {
+      "timestamp": "2026-09-07T05:46:26.560Z",
+      "message": "Spawning Cscape visibly with C6_Native_Run via WMI: \"C:\\Program Files (x86)\\Cscape 10.2\\Cscape.exe\" \"C:\\HornerAI\\horner-cscape-mcp\\artifacts\\projects\\C6_Native_Run\\C6_Native_Run.csp\""
+    },
+    {
+      "timestamp": "2026-09-07T05:46:27.822Z",
+      "message": "WMI spawn result: ProcessId ReturnValue PSComputerName\n--------- ----------- --------------\n     3952           0"
+    },
+    {
+      "timestamp": "2026-09-07T05:46:29.852Z",
+      "message": "Spawned Cscape PID=3952"
+    },
+    {
+      "timestamp": "2026-09-07T05:46:44.425Z",
+      "message": "Cscape verified loaded with C6_Native_Run.csp: PID=3952, HWND=0x00BE0554, Title='Cscape - [C6_Native_Run.csp]'"
+    },
+    {
+      "timestamp": "2026-09-07T05:46:50.534Z",
+      "message": "Dismissing splash dialog HWND=0x02FD03E0 ('About Cscape')..."
+    },
+    {
+      "timestamp": "2026-09-07T05:46:50.800Z",
+      "message": "Saved screenshot: c6_reopen_c6_native_run_visible.png (1300x636, 73010 bytes)"
+    },
+    {
+      "timestamp": "2026-09-07T05:46:50.908Z",
+      "message": "Saved screenshot: c6_reopen_c6_native_run_visible.png (1300x636, 73010 bytes)"
+    },
+    {
+      "timestamp": "2026-09-07T05:46:51.053Z",
+      "message": "Saved screenshot: c6_reopen_c6_native_run_visible.png (1300x636, 73010 bytes)"
+    },
+    {
+      "timestamp": "2026-09-07T05:46:51.154Z",
+      "message": "Saved screenshot: c6_reopen_c6_native_run_visible.png (1300x636, 73010 bytes)"
+    },
+    {
+      "timestamp": "2026-09-07T05:46:51.154Z",
+      "message": "Step 5: Verifying Project Navigator docking pane..."
+    },
+    {
+      "timestamp": "2026-09-07T05:46:51.195Z",
+      "message": "Saved screenshot: c6_reopen_navigator_visible.png (183x162, 5636 bytes)"
+    },
+    {
+      "timestamp": "2026-09-07T05:46:51.199Z",
+      "message": "Saved screenshot: c6_reopen_navigator_visible.png (183x162, 5636 bytes)"
+    },
+    {
+      "timestamp": "2026-09-07T05:46:51.201Z",
+      "message": "Saved screenshot: c6_reopen_navigator_visible.png (183x162, 5636 bytes)"
+    },
+    {
+      "timestamp": "2026-09-07T05:46:51.203Z",
+      "message": "Saved screenshot: c6_reopen_navigator_visible.png (183x162, 5636 bytes)"
+    },
+    {
+      "timestamp": "2026-09-07T05:46:51.203Z",
+      "message": "Project Navigator verified: HWND=0xd7067e, Class=SysTreeView32"
+    },
+    {
+      "timestamp": "2026-09-07T05:46:51.203Z",
+      "message": "Step 6: Verifying Status Bar & Operational Mode..."
+    },
+    {
+      "timestamp": "2026-09-07T05:46:51.257Z",
+      "message": "Saved screenshot: c6_reopen_statusbar.png (1284x19, 151 bytes)"
+    },
+    {
+      "timestamp": "2026-09-07T05:46:51.257Z",
+      "message": "Saved screenshot: c6_reopen_statusbar.png (1284x19, 151 bytes)"
+    },
+    {
+      "timestamp": "2026-09-07T05:46:51.259Z",
+      "message": "Saved screenshot: c6_reopen_statusbar.png (1284x19, 151 bytes)"
+    },
+    {
+      "timestamp": "2026-09-07T05:46:51.259Z",
+      "message": "Saved screenshot: c6_reopen_statusbar.png (1284x19, 151 bytes)"
+    },
+    {
+      "timestamp": "2026-09-07T05:46:51.259Z",
+      "message": "Status bar verified: connection_state='Disconnected', mode='offline/DEV if Disconnected'."
+    },
+    {
+      "timestamp": "2026-09-07T05:46:51.259Z",
+      "message": "Step 7: In-GUI Error Check (ID_PROGRAM_ERRORCHECK = 32826) & Modal Defense..."
+    },
+    {
+      "timestamp": "2026-09-07T05:46:52.346Z",
+      "message": "Saved screenshot: c6_reopen_modal_errorcheck.png (1300x636, 73010 bytes)"
+    },
+    {
+      "timestamp": "2026-09-07T05:46:52.419Z",
+      "message": "Saved screenshot: c6_reopen_modal_errorcheck.png (1300x636, 73010 bytes)"
+    },
+    {
+      "timestamp": "2026-09-07T05:46:52.484Z",
+      "message": "Saved screenshot: c6_reopen_modal_errorcheck.png (1300x636, 73010 bytes)"
+    },
+    {
+      "timestamp": "2026-09-07T05:46:52.594Z",
+      "message": "Saved screenshot: c6_reopen_modal_errorcheck.png (1300x636, 73010 bytes)"
+    },
+    {
+      "timestamp": "2026-09-07T05:46:52.610Z",
+      "message": "Confirmed zero looping 'Confirm Save As' dialogs."
+    },
+    {
+      "timestamp": "2026-09-07T05:46:52.611Z",
+      "message": "Step 8: Pure ST Validation & Ladder Lockout..."
+    },
+    {
+      "timestamp": "2026-09-07T05:46:59.348Z",
+      "message": "ScaleAnalogFilter.st validated: pure ST syntax confirmed."
+    },
+    {
+      "timestamp": "2026-09-07T05:46:59.367Z",
+      "message": "MainProcessControl.st validated: pure ST syntax confirmed."
+    },
+    {
+      "timestamp": "2026-09-07T05:46:59.375Z",
+      "message": "Verified fail-closed rejection of 6 ladder constructs with ERR_LADDER_FORBIDDEN."
+    },
+    {
+      "timestamp": "2026-09-07T05:46:59.375Z",
+      "message": "Step 9: Fail-Closed Hardware & Download Lockout Verification..."
+    },
+    {
+      "timestamp": "2026-09-07T05:46:59.380Z",
+      "message": "Win32 download commands (32827, 33149) verified locked out fail-closed."
+    },
+    {
+      "timestamp": "2026-09-07T05:46:59.380Z",
+      "message": "Physical communication ports verified locked out fail-closed."
+    },
+    {
+      "timestamp": "2026-09-07T05:46:59.407Z",
+      "message": "Verified zero companion flashers and zero Straton processes running."
+    },
+    {
+      "timestamp": "2026-09-07T05:46:59.407Z",
+      "message": "Step 10: Baseline TankLevelClosedLoop.csp Integrity Verification (After)..."
+    },
+    {
+      "timestamp": "2026-09-07T05:46:59.407Z",
+      "message": "Baseline TankLevelClosedLoop.csp SHA-256 after: d075e67d80be031a99a6895078735918b7a15c8086590a6d20ec8484b27749af"
+    },
+    {
+      "timestamp": "2026-09-07T05:46:59.407Z",
+      "message": "TankLevelClosedLoop.csp integrity verified 100% UNTOUCHED."
+    },
+    {
+      "timestamp": "2026-09-07T05:46:59.422Z",
+      "message": "Step 11: Serializing Master Recovery Evidence..."
+    },
+    {
+      "timestamp": "2026-09-07T05:46:59.433Z",
+      "message": "Saved c6_reopen_verify_evidence.json (3101 bytes) to all recovery vaults with dual-root parity."
+    }
+  ]
+}

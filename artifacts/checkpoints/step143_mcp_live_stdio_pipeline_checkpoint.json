@@ -1,0 +1,24 @@
+{
+  "step": 143,
+  "name": "step143_mcp_live_stdio_pipeline_checkpoint",
+  "status": "PASSED",
+  "timestamp_utc": "2026-09-05T18:49:52.281723+00:00",
+  "cscape_pid": 7968,
+  "hwnd": "0x00B302DE",
+  "project_file": "C:\\Users\\ArmandoSilva\\artifacts\\projects\\TankLevelClosedLoop\\TankLevelClosedLoop.csp",
+  "tools_verified_stdio": [
+    "cscape_read_variables",
+    "cscape_register_rw",
+    "cscape_simulate_cycle",
+    "cscape_compile",
+    "cscape_export_variables",
+    "cscape_get_diagnostics"
+  ],
+  "hardware_download_lockout_enforced": true,
+  "fail_closed_gate_resilience_verified": true,
+  "live_screenshot_sha256": "ba028ddc59b5690ad99f67b577b41eeaf7e5b78ce1e648c31332c407d12f1817",
+  "pure_software_isolation_enforced": true,
+  "zero_straton_dependencies": true,
+  "zero_physical_plc_touched": true,
+  "checkpoint_sha256": "dd61198311929c65c9de4c0cf526652c34937c5ebe9ceef40f096a3b3273d4ec"
+}

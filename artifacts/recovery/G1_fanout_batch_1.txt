@@ -1,0 +1,211 @@
+================================================================================
+HORNER CSCAPE MCP - GATE G1 FANOUT BATCH 1 AUDIT & TASK CATALOG
+Mission ID: G1_WRITE_FANOUT_ARTIFACT_FIRST
+Generated (UTC): 2026-09-09T03:35:00Z
+Classification: STRICT OFFLINE FORENSIC CODE AUDIT & FANOUT SPECIFICATION
+Status Contract Invariant: success | failed | blocked | inconclusive
+================================================================================
+
+1. EXECUTIVE SUMMARY & OPERATIONAL BOUNDARIES
+--------------------------------------------------------------------------------
+In accordance with Mission G1_WRITE_FANOUT_ARTIFACT_FIRST directives:
+- This document catalogs the distinct remaining Gate G1 fail-closed cases identified
+  from codebase evidence across src/automation/, src/mcp/, src/iec/, and src/cscape/.
+- Prior hardened negative cases from Round 1 (G1_negatives_applied.txt: Cases 19,
+  07, 24/25, 21, 11) and Round 2 (G1_negatives_round2.txt: Cases 09, 02, 16, 22, 15)
+  and Screen 1 HMI layout from W04_screen1_fix are preserved and NOT redone.
+- Operational Mode: STRICT OFFLINE / DEV ONLY.
+  * Zero physical PLC hardware, zero COM/CAN/USB communication (Fail-closed lockout).
+  * Zero pytest-as-done claims.
+  * Zero premature G5 / 100% / VERIFIED_LIVE victory claims.
+  * Zero FINAL_REPORT.md spam.
+  * Single GUI Owner boundary strictly maintained: live Cscape window handles
+    (winsta0\\Default) remain protected; all fanout tracks execute headlessly offline.
+
+2. DISTINCT REMAINING G1 FAIL-CLOSED CASES (BATCH 1)
+--------------------------------------------------------------------------------
+
+[CASE 01 / BATCH1-01] com_bridge.py CLI Fallback compile_project Claims Success on Toolchain Presence Without Compiling
+- Component: Automation & CLI Bridge
+- Target File: src/automation/com_bridge.py (Lines 333-344)
+- Trigger Condition:
+  Invoking CscapeComBridge.compile_project(project_path) when COM server is absent
+  (self.mode != 'com') or COM compilation raises an exception, dropping into CLI fallback.
+- Vulnerability Mechanism:
+  Under CLI fallback, compile_project executes:
+      install_info = self.cli_runner.verify_installation()
+      return {
+          'status': 'success' if install_info.is_installed else 'failed',
+          'mode': 'cli_fallback', ...
+      }
+  If Cscape or Straton toolchain files exist on disk, install_info.is_installed is True,
+  and the bridge returns status: 'success' without ever executing a compiler binary,
+  checking syntax, or generating build outputs!
+- Fail-Closed Directive:
+  CLI fallback must execute genuine compiler passes or fail closed immediately returning
+  status: 'failed', error_code: 'CLI_COMPILATION_UNAVAILABLE', and non-empty errors list
+  specifying that uncompiled toolchain presence cannot be treated as compilation success.
+
+[CASE 02 / BATCH1-02] cscape_add_st_pou / cscape_insert_st - Adding POU to Non-Existent Project Creates Spurious Folders and Claims Success
+- Component: FastMCP Project Management & POU Staging
+- Target File: src/mcp/tools.py (Lines 2354-2405, 1048-1074)
+- Trigger Condition:
+  Invoking cscape_add_st_pou(project_name='GhostProject', pou_name='Logic', pou_type='program', code='...')
+  or cscape_insert_st with a target_project_path pointing to a non-existent directory.
+- Vulnerability Mechanism:
+  1. cscape_add_st_pou validates clean_pou_name, but NEVER validates project_name
+     using SafetyGuard.validate_project_name(project_name).
+  2. target_dir = WORKSPACE_ROOT / 'artifacts' / 'projects' / project_name is passed
+     to cscape_insert_st.
+  3. cscape_insert_st executes pous_dir.mkdir(parents=True, exist_ok=True) and writes
+     pou_file = pous_dir / f'{clean_pou_name}.st'.
+  4. If the code has valid syntax, it returns status: 'success', success: True, creating
+     an unmanaged ghost project directory containing only pous/ on disk.
+- Fail-Closed Directive:
+  cscape_add_st_pou must validate project_name and verify that the project directory
+  and its native project container (.csp or cscape_project.json) actually exist on disk.
+  If missing, fail closed immediately: status: 'failed', error_code: 'PROJECT_NOT_FOUND'.
+  cscape_insert_st must refuse to mkdir or mutate disk if target_project_path does not exist.
+
+[CASE 03 / BATCH1-03] STParser.validate - Empty POU or Arbitrary Snippet Without Declarations Emits WARN_EMPTY_POU and Returns is_valid=True
+- Component: IEC 61131-3 Structured Text Parser & AST Engine
+- Target File: src/iec/st_parser.py (Lines 1025-1032, 1064)
+- Trigger Condition:
+  Passing source code lacking POU blocks (PROGRAM, FUNCTION_BLOCK, FUNCTION) and lacking
+  assignments or VAR declarations (e.g. arbitrary invalid identifiers, comments only, or ';;;').
+- Vulnerability Mechanism:
+  When found_pous is empty and no VAR or assignment matches are found:
+      self.issues.append(
+          STIssue(
+              severity=IssueSeverity.WARNING,
+              code='WARN_EMPTY_POU',
+              message='No PROGRAM, FUNCTION_BLOCK, or FUNCTION definitions found in Structured Text.',
+              line=1,
+          )
+      )
+  At line 1064:
+      is_valid = len([i for i in self.issues if i.severity == IssueSeverity.ERROR]) == 0
+  Because WARN_EMPTY_POU is recorded with IssueSeverity.WARNING, error count is 0,
+  and is_valid evaluates to True! Arbitrary non-ST text is thus validated as clean ST.
+- Fail-Closed Directive:
+  STParser.parse must treat the absence of valid POU blocks or statement bodies as a
+  fatal error: severity=IssueSeverity.ERROR, code='ERR_NO_POU_FOUND', and return is_valid=False.
+
+[CASE 04 / BATCH1-04] cscape_export_project - Empty Variable Database Export Claims Success
+- Component: FastMCP Project Interchange & Export Tools
+- Target File: src/mcp/tools.py (Lines 3294-3316, 3338-3360, 3415-3425)
+- Trigger Condition:
+  Invoking cscape_export_project(project_name='ZeroVarProj', output_format='csv') or 'xml'
+  where the project contains 0 variable declarations and no pre-existing variables.csv/xml.
+- Vulnerability Mechanism:
+  When var_csv and var_xml do not exist, the tool parses all .st files in pous/ to extract
+  variables into a temporary VariableManager. If 0 variables are declared across all POUs,
+  vm.total_count is 0. vm.export_csv(out_file) writes an empty/header-only file to disk.
+  The tool then computes the SHA-256 of the empty file and returns status: 'success',
+  success: True, error_count: 0, claiming a successful variable database export.
+- Fail-Closed Directive:
+  If vm.total_count == 0 (no variables found in database or POUs), cscape_export_project
+  must fail closed: status: 'failed', error_code: 'NO_DATA_TO_EXPORT', message: 'No variable
+  declarations found to export.', and ensure no empty export files remain on disk.
+
+[CASE 05 / BATCH1-05] get_active_simulator - Project With Zero POUs Transitions to RUNNING and Simulates Blank Logic
+- Component: Pure-Software Scan Cycle Simulator & Register Mapping
+- Target File: src/mcp/tools.py (Lines 2016-2072)
+- Trigger Condition:
+  Invoking cscape_simulate_cycle(project_name='EmptyProj') where EmptyProj directory exists
+  but contains no .st files in pous/ (or pous/ does not exist).
+- Vulnerability Mechanism:
+  When proj_dir.exists() is True, if pous_dir is missing or contains 0 .st files,
+  the POU loading loop is completely bypassed. get_active_simulator unconditionally calls:
+      sim.start_simulation()
+      _active_simulators[proj_key] = sim
+      return sim
+  The simulator enters SimulationState.RUNNING with 0 loaded POUs. Subsequent calls to
+  cscape_simulate_cycle execute scan steps on a blank model and report status: 'success'.
+- Fail-Closed Directive:
+  If proj_dir exists but contains 0 valid .st POUs, get_active_simulator must raise
+  RuntimeError('Fail-closed: Project contains no Structured Text POUs to simulate.')
+  causing cscape_simulate_cycle to fail closed with status: 'failed', error_code: 'NO_POUS_FOUND'.
+
+[CASE 06 / BATCH1-06] cscape_insert_st - allow_invalid=True Writes Invalid / Broken ST to Native Project Storage
+- Component: Structured Text Insertion & Mutation Safety
+- Target File: src/mcp/tools.py (Lines 1054-1074)
+- Trigger Condition:
+  Invoking cscape_insert_st(..., allow_invalid=True) with syntax-invalid code.
+- Vulnerability Mechanism:
+  Line 1054 evaluates:
+      if effective_path and (syntax_valid or allow_invalid):
+          pou_file.write_text(st_code, encoding='utf-8')
+  Even when syntax_valid is False, allow_invalid=True forces disk mutation, writing broken,
+  uncompilable ST code to the project's pous/ directory.
+- Fail-Closed Directive:
+  allow_invalid must NEVER write unverified or invalid code to disk in non-ephemeral storage.
+  Disk writes must require syntax_valid=True and pure ST verification. If invalid,
+  must fail closed with status: 'failed', error_code: 'INVALID_ST_CODE_MUTATION_BLOCKED'.
+
+[CASE 07 / BATCH1-07] cscape_export_project - fmt='json' Synthesizes Dummy Manifest on Missing Container Metadata
+- Component: Project Manifest & Container Serialization
+- Target File: src/mcp/tools.py (Lines 3362-3389)
+- Trigger Condition:
+  Invoking cscape_export_project(project_name=..., output_format='json') on a project
+  missing an authentic cscape_project.json file.
+- Vulnerability Mechanism:
+  If manifest_p does not exist, but has_proj_file evaluates to True, lines 3381-3388 synthesize
+  a dummy JSON manifest dictionary on the fly:
+      meta = {
+          'project_name': clean_name,
+          'exported_at': _get_utc_timestamp(),
+          'status': 'success',
+          'target_engine': 'Cscape 10.2 IEC 61131-3 Structured Text',
+          'hardware_lockout': True,
+      }
+      out_file.write_text(json.dumps(meta, indent=2), encoding='utf-8')
+  It then returns status: 'success', disguising missing authentic manifest metadata.
+- Fail-Closed Directive:
+  If authentic cscape_project.json does not exist in the project, cscape_export_project
+  must fail closed: status: 'failed', error_code: 'MANIFEST_NOT_FOUND'. Prohibit generating
+  synthetic container manifests.
+
+[CASE 08 / BATCH1-08] normalize_tool_result - Unchecked 'success': True in Malformed / Warning Dicts
+- Component: FastMCP Status Contract Normalization Engine
+- Target File: src/mcp/tools.py (Lines 531-538)
+- Trigger Condition:
+  A tool or internal helper returns a dictionary containing a non-canonical status string
+  (e.g. {'status': 'partial', 'success': True} or {'status': 'ok'}).
+- Vulnerability Mechanism:
+  Lines 531-538 fall through to:
+      else:
+          canonical_status = 'success'
+          success = True
+  Non-canonical status strings that are not explicitly 'failed', 'blocked', or 'inconclusive'
+  can bypass strict status gates and be coerced to canonical 'success'.
+- Fail-Closed Directive:
+  Any non-canonical status value outside the canonical 4-state contract (success | failed |
+  blocked | inconclusive) must strictly normalize to status: 'inconclusive' or 'failed',
+  forcing success: False and recording an explicit contract violation diagnostic.
+
+3. OFFLINE AGENT FANOUT MATRIX & ALLOCATION
+--------------------------------------------------------------------------------
+The 8 distinct cases are allocated across specialized offline subagent tracks:
+
+| Track | Target Cases | Component Focus | Operational Scope |
+| :--- | :--- | :--- | :--- |
+| Track 1 (Automation / Bridge) | Case 01 | src/automation/com_bridge.py | CLI fallback compilation fail-closed hardening |
+| Track 2 (Project Management)  | Cases 02, 06 | src/mcp/tools.py | POU addition & insertion project existence verification |
+| Track 3 (IEC AST & Parser)   | Case 03 | src/iec/st_parser.py | Non-empty / non-POU validation fail-closed enforcement |
+| Track 4 (Export & Containers) | Cases 04, 07 | src/mcp/tools.py | Empty variable & missing manifest export fail-closed |
+| Track 5 (Simulation Engine)   | Case 05 | src/mcp/tools.py | 0-POU project simulation rejection fail-closed |
+| Track 6 (Status Contract)    | Case 08 | src/mcp/tools.py | Strict canonical status normalization hardening |
+
+GUI Requirement: ZERO live GUI interactions required. All 8 cases are strictly offline
+pure-software negative refactors. The Single GUI Owner boundary on winsta0\Default is
+preserved without disruption.
+
+4. DELIVERABLE STATUS
+--------------------------------------------------------------------------------
+- Artifact Location: artifacts/recovery/G1_fanout_batch_1.txt
+- Distinct Cases Cataloged: 8 distinct fail-closed cases (BATCH1-01 to BATCH1-08)
+- Status: READY FOR OFFLINE FANOUT
+================================================================================
+END OF G1 FANOUT BATCH 1 AUDIT & TASK CATALOG
+================================================================================

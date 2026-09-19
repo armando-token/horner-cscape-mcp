@@ -1,0 +1,89 @@
+================================================================================
+NATIVE CLOSED-LOOP POU VISIBILITY VERIFICATION REPORT
+MISSION_ID: MCP_CLOSED_LOOP_KEEP
+Status: SUCCESS
+Timestamp: 2026-09-09T06:26:00Z
+================================================================================
+
+1. EXECUTIVE SUMMARY
+--------------------------------------------------------------------------------
+Confirmed: TankLevelClosedLoop.csp is active and continuously VISIBLE on the 
+interactive desktop (winsta0\Default). The native Logic Module STBlock1 is open 
+and actively displayed on screen inside Cscape's native editor (W5EditST), 
+rendering the closed-loop Structured Text logic with all requested variables:
+- Setpoint
+- TankLevelPV
+- Error
+- ControlOutput
+
+No module recreation was performed. No Gate G1, pytest, or subagent fanout was started.
+Save state is clean. No physical PLC connection or download was attempted.
+
+2. HOST & TELEMETRY VERIFICATION
+--------------------------------------------------------------------------------
+- Cscape Host Binary    : C:\Program Files (x86)\Cscape 10.2\Cscape.exe (Build 10.2.751.4)
+- Process ID (PID)      : 19224
+- Main Window HWND      : 0x02B90182
+- Desktop Session       : Session 2 on winsta0\Default (Interactive Windows Desktop)
+- Window Title          : Cscape - Logged In : "armando@controlnautas.com" - [TankLevelClosedLoop.csp]
+- Active Container Path : C:\HornerAI\horner-cscape-mcp\artifacts\projects\TankLevelClosedLoop\TankLevelClosedLoop.csp
+- Container Status      : Cleanly saved to disk (114,688 bytes, OLE2 CFBF)
+- Dirty Indicator (*)   : Cleared / Saved
+
+3. PROJECT NAVIGATOR HIERARCHY
+--------------------------------------------------------------------------------
+Tree View Control (SysTreeView32, HWND 0x022F04C0):
+- Project Navigator
+  - TankLevelClosedLoop [253] [Unknown Mode]
+    - Hardware Configuration
+    - Control
+      - Logic Modules
+        - Main Loop Modules
+          - STBlock1 (Native IEC 61131-3 Structured Text Block)
+        - Subroutine Modules
+        - UDFB Modules
+      - Data Logging
+    - User Interface
+    - Networking
+
+4. ACTIVE ON-SCREEN EDITOR CONTENT (W5EditST HWND 0x023307F4)
+--------------------------------------------------------------------------------
+Tab Title: [ST] STBlock1
+Visible Lines (1 to 20):
+
+ 1: PROGRAM TankLevelClosedLoop
+ 2: VAR
+ 3:     Setpoint : REAL := 60.0;
+ 4:     TankLevelPV : REAL := 50.0;
+ 5:     Error : REAL := 0.0;
+ 6:     ControlOutput : REAL := 0.0;
+ 7:     Kp : REAL := 2.5;
+ 8: END_VAR
+ 9: 
+10: (* Simple Tank-Level Closed Loop: Setpoint, Measured Level, Error, Output *)
+11: Error := Setpoint - TankLevelPV;
+12: ControlOutput := Kp * Error;
+13: 
+14: IF ControlOutput > 100.0 THEN
+15:     ControlOutput := 100.0;
+16: ELSIF ControlOutput < 0.0 THEN
+17:     ControlOutput := 0.0;
+18: END_IF;
+19: END_PROGRAM
+20: 
+
+5. VERIFIABLE PROOF ARTIFACTS
+--------------------------------------------------------------------------------
+- Visual Screenshot Proof : artifacts/recovery/mcp_closed_loop_show.png
+- Audit Report            : artifacts/recovery/mcp_closed_loop_show.txt
+- Dual-Root Mirrored Path : C:\Users\ArmandoSilva\artifacts\recovery\mcp_closed_loop_show.txt
+                            C:\Users\ArmandoSilva\artifacts\recovery\mcp_closed_loop_show.png
+
+6. SAFETY & GOVERNANCE COMPLIANCE
+--------------------------------------------------------------------------------
+- No Recreate             : Existing native POU retained intact without re-creation.
+- No G1 / Pytest / Fanout : Zero test suites, G1 iterations, or subagents spawned.
+- Download Lockout        : Hardware ports and Win32 download command IDs locked out.
+- Zero PLC Access         : Pure software automation in native Cscape GUI on winsta0\Default.
+- Continuous Visibility   : Cscape remains open, restored, and visible on interactive desktop.
+================================================================================

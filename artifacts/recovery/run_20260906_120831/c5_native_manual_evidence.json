@@ -1,0 +1,358 @@
+{
+  "mission_id": "C5_NATIVE_MANUAL",
+  "plan": "PLAN_CORRECTIVO MCP Horner/Cscape v2.0 (correctivo)",
+  "run_id": "run_20260906_120831",
+  "completed_at_utc": "2026-09-07T04:22:17.897536+00:00",
+  "status": "success",
+  "evidence_category": "real_c5_native_manual_evidence",
+  "c4_prerequisite_audit": {
+    "w01_to_w03_status": "accepted_done",
+    "w05_download_lockout_status": "accepted_blocked",
+    "w04_compilation_status": "blocked_non_fatal_modal"
+  },
+  "baseline_isolation": {
+    "baseline_path": "C:\\HornerAI\\horner-cscape-mcp\\artifacts\\projects\\TankLevelClosedLoop\\TankLevelClosedLoop.csp",
+    "baseline_sha256": "d075e67d80be031a99a6895078735918b7a15c8086590a6d20ec8484b27749af",
+    "expected_sha256": "d075e67d80be031a99a6895078735918b7a15c8086590a6d20ec8484b27749af",
+    "verified_untouched": true
+  },
+  "cfbf_container_evidence": {
+    "lab_project": {
+      "path": "C:\\HornerAI\\horner-cscape-mcp\\artifacts\\projects\\LabProject_W01\\LabProject_W01.csp",
+      "size_bytes": 114688,
+      "sha256": "5371fab7021dcc074bc6945a740b6381f00e8f6eb7184eb4a34fdf03d3ad8efd",
+      "is_valid_cfbf": true,
+      "has_contents_stream": true,
+      "stream_entries": [
+        {
+          "name": "Root Entry",
+          "type": "Root",
+          "size": 0,
+          "is_stream": false
+        },
+        {
+          "name": "Contents",
+          "type": "Stream",
+          "size": 47910,
+          "is_stream": true
+        }
+      ],
+      "sector_size": 512,
+      "storage_mode": "native_cfbf"
+    },
+    "baseline_project": {
+      "path": "C:\\HornerAI\\horner-cscape-mcp\\artifacts\\projects\\TankLevelClosedLoop\\TankLevelClosedLoop.csp",
+      "size_bytes": 49152,
+      "sha256": "d075e67d80be031a99a6895078735918b7a15c8086590a6d20ec8484b27749af",
+      "is_valid_cfbf": true,
+      "has_contents_stream": true,
+      "stream_entries": [
+        {
+          "name": "Root Entry",
+          "type": "Root",
+          "size": 0,
+          "is_stream": false
+        },
+        {
+          "name": "Contents",
+          "type": "Stream",
+          "size": 44144,
+          "is_stream": true
+        }
+      ],
+      "sector_size": 512,
+      "storage_mode": "native_cfbf",
+      "isolation_verified": true
+    },
+    "staging_vs_native_boundary": {
+      "rule": "External POU insertion operates in validated staging mode (storage_mode='staging', is_staged=True, is_native_persisted=False); native persistence is produced exclusively by Cscape ID_FILE_SAVE.",
+      "enforced": true
+    }
+  },
+  "live_gui_evidence": {
+    "pid": 13544,
+    "hwnd": "0xde08b8",
+    "title": "Cscape - Logged In : \"armando@controlnautas.com\" - [LabProject_W01.csp]",
+    "visible": true,
+    "rect": [
+      40,
+      40,
+      1340,
+      676
+    ],
+    "desktop": "winsta0\\Default",
+    "session_id": 2,
+    "status_bar": {
+      "hwnd": "0xdc0966",
+      "class": "Afx:StatusBar:7a0000:8:10003:10",
+      "ctrl_id": 59393,
+      "visible": true,
+      "rect": [
+        48,
+        649,
+        1332,
+        668
+      ],
+      "connection_state": "Disconnected",
+      "operational_mode": "offline/DEV if Disconnected"
+    },
+    "project_navigator": {
+      "navigator_bar": {
+        "hwnd": 7342498,
+        "hwnd_hex": "0x7009a2",
+        "ctrl_id": 45012,
+        "class": "Afx:ControlBar:7a0000:8:10003:10",
+        "title": "Project Navigator",
+        "visible": true,
+        "rect": [
+          48,
+          184,
+          164,
+          649
+        ]
+      },
+      "tree_control": {
+        "hwnd": 723600,
+        "hwnd_hex": "0xb0a90",
+        "ctrl_id": 1001,
+        "class": "SysTreeView32",
+        "title": "CW5EditTLWnd_Dico - Tree",
+        "visible": true,
+        "rect": [
+          190,
+          222,
+          373,
+          649
+        ]
+      },
+      "present": true
+    },
+    "child_control_count": 55,
+    "connection_status": "Disconnected",
+    "operational_mode": "offline/DEV if Disconnected",
+    "visibility_classification": "PARTIAL / SUPERVISOR-DEPENDENT (offline/DEV if Disconnected) - visibility is NOT claimed as VERIFIED_LIVE"
+  },
+  "native_st_ld_architecture": {
+    "architecture_separation": "Horner Cscape 10.2 maintains an architectural separation between Advanced Ladder and IEC 61131-3 Structured Text engines.",
+    "gui_menus": "Zero menu items, submenus, accelerator commands, or dialogs exist for converting ST POUs to LD rungs.",
+    "pe_exports": {
+      "W5EditST.dll": "Exports standard editor hooks (W5EditST_Create, W5EditST_Destroy, etc.); ZERO export for ST->LD conversion.",
+      "W5EditLD.dll": "Exports ladder editor canvas routines; ZERO export for ST intake.",
+      "K5Cmp.dll": "Compiler backend exports Straton IEC compiler entry points; ZERO native conversion routine."
+    },
+    "classification": "BLOCKED_NATIVE: DOCUMENT_ONLY",
+    "offline_synthesis_guard": "Offline AST parsing and ASCII diagram synthesis available via STLadderInteropGuard, but in-GUI conversion is permanently blocked."
+  },
+  "st_logic_validation": {
+    "pure_st_ast_parsed": true,
+    "valid_st_result": {
+      "valid": true,
+      "pou_name": "TankLevelSafetyControl",
+      "pou_type": "PROGRAM",
+      "return_type": null,
+      "variables": [
+        {
+          "name": "TankLevel",
+          "type": "REAL",
+          "scope": "VAR",
+          "modifier": null,
+          "address": null,
+          "initial_value": "50.0"
+        },
+        {
+          "name": "HighAlarmSP",
+          "type": "REAL",
+          "scope": "VAR",
+          "modifier": null,
+          "address": null,
+          "initial_value": "80.0"
+        },
+        {
+          "name": "InletValveCmd",
+          "type": "BOOL",
+          "scope": "VAR",
+          "modifier": null,
+          "address": null,
+          "initial_value": "FALSE"
+        },
+        {
+          "name": "ManualOverride",
+          "type": "BOOL",
+          "scope": "VAR",
+          "modifier": null,
+          "address": null,
+          "initial_value": "FALSE"
+        },
+        {
+          "name": "ManualOutputVal",
+          "type": "REAL",
+          "scope": "VAR",
+          "modifier": null,
+          "address": null,
+          "initial_value": "0.0"
+        },
+        {
+          "name": "ControlEffort",
+          "type": "REAL",
+          "scope": "VAR",
+          "modifier": null,
+          "address": null,
+          "initial_value": "0.0"
+        }
+      ],
+      "errors": [],
+      "warnings": [],
+      "metrics": {
+        "total_lines": 20,
+        "code_lines": 20,
+        "comment_lines": 0,
+        "variable_count": 6,
+        "ast_statement_count": 6,
+        "ast_variable_count": 6,
+        "ast_expression_count": 17,
+        "source_bytes_total": 494,
+        "estimated_ast_footprint": {
+          "ast_statement_count": 6,
+          "ast_variable_count": 6,
+          "ast_expression_count": 17,
+          "source_bytes_total": 494
+        }
+      },
+      "failure_locations": [],
+      "failure_location": null,
+      "success": true,
+      "status": "success",
+      "diagnostics": []
+    },
+    "ladder_constructs_rejected": [
+      {
+        "construct": "---[ ]---",
+        "description": "Normally open contact",
+        "rejected_fail_closed": true,
+        "error_code": "ERR_LADDER_FORBIDDEN"
+      },
+      {
+        "construct": "---[/]---",
+        "description": "Normally closed contact",
+        "rejected_fail_closed": true,
+        "error_code": "ERR_LADDER_FORBIDDEN"
+      },
+      {
+        "construct": "---( )---",
+        "description": "Standard coil",
+        "rejected_fail_closed": true,
+        "error_code": "ERR_LADDER_FORBIDDEN"
+      },
+      {
+        "construct": "---(S)---",
+        "description": "Set latch coil",
+        "rejected_fail_closed": true,
+        "error_code": "ERR_LADDER_FORBIDDEN"
+      },
+      {
+        "construct": "---(R)---",
+        "description": "Reset unlatch coil",
+        "rejected_fail_closed": true,
+        "error_code": "ERR_LADDER_FORBIDDEN"
+      },
+      {
+        "construct": "RUNG 1: XIC %I1 OTE %Q1",
+        "description": "Instruction mnemonics",
+        "rejected_fail_closed": true,
+        "error_code": "ERR_LADDER_FORBIDDEN"
+      }
+    ],
+    "manual_bumpless_logic_verified": true
+  },
+  "fail_closed_safety_evidence": {
+    "physical_port_lockout": [
+      {
+        "entity": "COM1",
+        "blocked": true,
+        "error": "HardwareLockoutError"
+      },
+      {
+        "entity": "COM3",
+        "blocked": true,
+        "error": "HardwareLockoutError"
+      },
+      {
+        "entity": "COM256",
+        "blocked": true,
+        "error": "HardwareLockoutError"
+      },
+      {
+        "entity": "CAN0",
+        "blocked": true,
+        "error": "HardwareLockoutError"
+      },
+      {
+        "entity": "USB0",
+        "blocked": true,
+        "error": "HardwareLockoutError"
+      }
+    ],
+    "win32_download_lockout": [
+      {
+        "command_id": 32827,
+        "name": "ID_PROGRAM_DOWNLOAD",
+        "blocked": true,
+        "error": "CscapeSafetyViolationError"
+      },
+      {
+        "command_id": 33149,
+        "name": "ID_CONTROLLER_DOWNLOAD",
+        "blocked": true,
+        "error": "CscapeSafetyViolationError"
+      }
+    ],
+    "companion_flashers_active": [],
+    "straton_processes_active": [],
+    "hardware_lockout_status": "blocked"
+  },
+  "gate_status_governance": {
+    "G0": {
+      "status": "success",
+      "detail": "Cscape 10.2 x86 PE binary (Build 10.2.751.4), DLL exports, and registry verified."
+    },
+    "G1": {
+      "status": "success",
+      "detail": "False successes H01-H13 dismantled; honest contract status enforced."
+    },
+    "G2": {
+      "status": "inconclusive",
+      "detail": "Live visible Cscape on winsta0\\Default (PID 13544); window visibility alone is NOT claimed as VERIFIED_LIVE."
+    },
+    "G3": {
+      "status": "blocked",
+      "detail": "GUI error check modal dismissed fail-closed (IDNO); Win32 download commands locked out fail-closed."
+    },
+    "G4": {
+      "status": "success",
+      "detail": "Pure-software simulation verified offline (TESTED_MOCK [offline/DEV only])."
+    },
+    "G5": {
+      "status": "blocked",
+      "detail": "Gate G5 is explicitly NOT RUN per user mandate and remains closed."
+    }
+  },
+  "proof_artifacts": [
+    "c5_native_manual_evidence.json",
+    "c5_execution_log.json",
+    "c5_cscape_native_gui.png",
+    "w01_stage1_start.png",
+    "w01_stage2_edit.png",
+    "w01_stage3_save.png",
+    "w01_stage4_reopened.png",
+    "w02_project_navigator.png",
+    "w02_status_bar.png",
+    "modal_non_fatal_dialog.png"
+  ],
+  "invariants_confirmed": {
+    "no_c1_c2_c3_restart": true,
+    "do_not_run_g5": true,
+    "no_plc_or_straton": true,
+    "offline_dev_mode_enforced": true,
+    "cscape_visibility_not_verified_live": true
+  }
+}

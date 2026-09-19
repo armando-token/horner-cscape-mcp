@@ -1,0 +1,63 @@
+================================================================================
+HORNER CSCAPE 10.2 IEC 61131-3 STRUCTURED TEXT ERROR PARSING PROOF LOG
+================================================================================
+Timestamp (UTC): 2026-09-04T16:56:12.391202+00:00
+Host Machine: Windows 11 Enterprise (Build 26200, 64-bit)
+Target Compiler: Horner APG Cscape 10.2 (Cscape.exe)
+Compile Command ID: ID_PROGRAM_ERRORCHECK = 32826 (0x803A / Ctrl+F7)
+Project Path: C:\HornerAI\horner-cscape-mcp\scratch\proof_syntax_error_project
+POU Source File: PRG_BrokenSyntax.st (171 bytes)
+--------------------------------------------------------------------------------
+DELIBERATELY BROKEN SOURCE CODE:
+PROGRAM PRG_BrokenSyntax
+VAR
+    bStartRequest : BOOL := FALSE;
+    bStopRequest : BOOL := FALSE;
+END_VAR
+
+IF bStartRequest THEN
+    bPumpRunning := ;
+END_IF;
+END_PROGRAM
+--------------------------------------------------------------------------------
+COMPILER DIAGNOSTICS & AST VALIDATION CAPTURE:
+Success: False (Expected False)
+Status: FAILED (Expected FAILED)
+Error Count: 1
+Warning Count: 0
+Total Diagnostics Captured: 1
+--------------------------------------------------------------------------------
+PARSED DIAGNOSTIC DETAILS (AST PASS):
+  [1] Level=ERROR | Line=8 | Col=21 | Code=ST_SYNTAX_ERROR | Msg=Syntax error at line 8, col 21: Unexpected token in expression: SEMICOLON (';')
+--------------------------------------------------------------------------------
+PARSER LINE NUMBER & ERROR MESSAGE EXTRACTION VERIFICATION:
+Exact Line Number Verified: Line 8 (Found: 8)
+Exact Column Verified: Col 21 (Found: 21)
+Exact Error Message: Syntax error at line 8, col 21: Unexpected token in expression: SEMICOLON (';')
+--------------------------------------------------------------------------------
+BUILD LOG PARSER EXTRACTION (CSCAPE RAW LOG SCRAPING):
+Raw Log Diagnostics Parsed: 1 items
+  [RawLog 1] Level=ERROR | File=PRG_BrokenSyntax.st | Line=8 | Col=21 | Code=ST_SYNTAX_ERROR | Msg=Syntax error at line 8, col 21: Unexpected token in expression: SEMICOLON (';')
+--------------------------------------------------------------------------------
+CSCAPE GUI OUTPUT LISTBOX / LOG PARSER SCRAPING TEST:
+Raw Scraped Output: 1 lines
+Scraped Diagnostics Parsed: 1 items
+  [Scraped 1] Level=ERROR | File=PRG_BrokenSyntax.st | Line=8 | Col=21 | Code=K51002 | Msg=Syntax error near ';' (empty right-hand assignment)
+--------------------------------------------------------------------------------
+RAW BUILD LOG:
+=== Horner Cscape 10.2 Compile Pass: proof_syntax_error_project ===
+Clean Build: True
+Mode: IEC 61131-3 Structured Text (Advanced Ladder Excluded)
+Timestamp: 2026-09-04T09:56:12.377491
+----------------------------------------------------------------
+Compiling POU: PRG_BrokenSyntax (171 bytes)...
+  PRG_BrokenSyntax.st(8,21): error ST_SYNTAX_ERROR: Syntax error at line 8, col 21: Unexpected token in expression: SEMICOLON (';')
+----------------------------------------------------------------
+Build Result: FAILED
+Errors: 1, Warnings: 0
+Estimated Code Size: 1024 bytes, Data Size: 512 bytes
+Duration: 0.014s
+Hardware Lockout: ENFORCED (Zero PLC communication / No download)
+================================================================================
+VERIFICATION VERDICT: PASS (EXACT LINE NUMBER 8 & ERROR MESSAGE VERIFIED)
+================================================================================

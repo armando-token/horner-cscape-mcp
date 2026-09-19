@@ -1,0 +1,161 @@
+{
+  "step": 179,
+  "name": "step179_mcp_closed_loop_simulation",
+  "gate": "G4",
+  "status": "success",
+  "timestamp_utc": "2026-09-06T12:42:00.000Z",
+  "role": "Simulation & Verification Agent",
+  "classification": "offline/DEV (TESTED_MOCK)",
+  "live_cscape_gate": {
+    "pid": 10892,
+    "hwnd": "0x01B005DC",
+    "project": "TankLevelClosedLoop.csp",
+    "window_title": "Cscape - Logged In : \"armando@controlnautas.com\" - [TankLevelClosedLoop.csp]",
+    "desktop": "Default",
+    "responsive": true
+  },
+  "pure_software_execution": {
+    "backend": "SimulationBackend.EMULATED (Pure Software In-Memory Cyclic Engine)",
+    "physical_hardware_accessed": false,
+    "straton_runtime_processes": false,
+    "straton_binaries_present": 0
+  },
+  "register_model_verification": {
+    "status": "success",
+    "supported_ranges": {
+      "%R": "1..9999 (INT16, UINT16, DINT32, REAL32)",
+      "%AI": "1..512 (INT16, scaled counts)",
+      "%AQ": "1..512 (INT16, scaled counts)",
+      "%I": "1..2048 (Discrete bit)",
+      "%Q": "1..2048 (Discrete bit)",
+      "%M": "1..2048 (Discrete bit)",
+      "%T": "1..2048 (Discrete bit)",
+      "%S": "1..16 (Discrete system bits, read-only clocks %S1, %S7, %S8, %S9)",
+      "%SR": "1..256 (System registers, scan rate %SR1, status %SR2)"
+    },
+    "boundary_overflow_rejections": [
+      "%R10000",
+      "%AI513",
+      "%AQ513",
+      "%M2049",
+      "%Q2049",
+      "%I2049",
+      "%S17",
+      "%SR257",
+      "%R9999_REAL"
+    ],
+    "invalid_format_rejections": [
+      "INVALID",
+      "%XYZ1",
+      "%I1.0",
+      "%R100.16"
+    ]
+  },
+  "closed_loop_pid_scenarios": {
+    "scenario_1_quiescent_steady_state": {
+      "status": "success",
+      "cycles": 50,
+      "pv": 60.0,
+      "sp": 60.0,
+      "error": 0.0,
+      "output_counts": 8000,
+      "alarms_active": 0
+    },
+    "scenario_2_step_setpoint_changes": {
+      "status": "success",
+      "cycles": 750,
+      "step_up": {
+        "initial_sp": 50.0,
+        "final_sp": 60.0,
+        "settled_pv": 59.67,
+        "error_within_spec": true
+      },
+      "step_down": {
+        "initial_sp": 60.0,
+        "final_sp": 40.0,
+        "settled_pv": 40.46,
+        "error_within_spec": true
+      }
+    },
+    "scenario_3_anti_windup_clamping": {
+      "status": "success",
+      "high_saturation_cycles": 100,
+      "integral_max_clamped": 100.0,
+      "output_max_counts_clamped": 32000,
+      "low_saturation_cycles": 100,
+      "integral_min_clamped": 0.0,
+      "output_min_counts_clamped": 0,
+      "desaturation_instant": true
+    },
+    "scenario_4_bumpless_transfer": {
+      "status": "success",
+      "transfer_delta_cv": 0.0,
+      "derivative_kick": 0.0,
+      "rapid_toggles_passed": 20
+    },
+    "scenario_5_disturbance_rejection": {
+      "status": "success",
+      "outflow_surge_settling_cycles": 9,
+      "supply_pressure_loss_residual_error": 0.292,
+      "supply_loss_boosted_integral": 61.4,
+      "noise_damping_std_dev": 4.97
+    }
+  },
+  "alarm_hysteresis_matrix": {
+    "high_high": {
+      "setpoint": 85.0,
+      "deadband": 2.0,
+      "trip_action": "Inflow valve forced closed (%Q2 = FALSE)",
+      "status": "success"
+    },
+    "high": {
+      "setpoint": 75.0,
+      "deadband": 2.0,
+      "trip_action": "High alarm flag (%M8 = TRUE)",
+      "status": "success"
+    },
+    "low": {
+      "setpoint": 25.0,
+      "deadband": 2.0,
+      "trip_action": "Low alarm flag (%M9 = TRUE)",
+      "status": "success"
+    },
+    "low_low": {
+      "setpoint": 15.0,
+      "deadband": 2.0,
+      "trip_action": "Pump emergency dry-run trip (%Q1 = FALSE)",
+      "status": "success"
+    }
+  },
+  "multi_client_concurrency": {
+    "status": "success",
+    "clients_tested": 2,
+    "partitioned_writes": {
+      "client_1": "%R200 = 200.5",
+      "client_2": "%R201 = 201.5"
+    },
+    "cross_contamination": false,
+    "lockout_enforced_all_clients": true
+  },
+  "safety_lockout": {
+    "status": "success",
+    "com_can_usb_ports_blocked": true,
+    "download_command_ids_blocked": [
+      32827,
+      33149,
+      38293,
+      38295,
+      38297,
+      38372,
+      38373
+    ],
+    "straton_k5_tools_in_mcp": 0
+  },
+  "dual_root_parity": {
+    "roots": [
+      "C:\\HornerAI\\horner-cscape-mcp",
+      "C:\\Users\\ArmandoSilva"
+    ],
+    "identical": true
+  }
+}

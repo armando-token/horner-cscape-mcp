@@ -1,0 +1,12 @@
+{
+  "step": 187,
+  "gate": "G4",
+  "name": "step187_mcp_flow_totalizer_integrator_checkpoint",
+  "classification": "offline/DEV [TESTED_MOCK]",
+  "status": "success",
+  "timestamp_utc": "2026-09-06T22:32:45.499Z",
+  "duration_sec": 0.0017,
+  "target_pou": "FB_FlowTotalizer",
+  "all_invariants_passed": true,
+  "invariants_count": 13
+}

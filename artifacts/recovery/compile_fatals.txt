@@ -1,0 +1,26 @@
+Compiler V12.0.200.82
+Loading application symbols...
+EnhancedDisplayAttributes
+No error detected
+Loading application symbols...
+STBlock1
+STBlock1: (1): PROGRAM: New statement expected
+STBlock1: (4): :: ":=" expected after assigned variable
+STBlock1: (4): REAL: Label name expected
+STBlock1: (5): :: ":=" expected after assigned variable
+STBlock1: (5): REAL: Label name expected
+STBlock1: (6): :: ":=" expected after assigned variable
+STBlock1: (6): REAL: Label name expected
+STBlock1: (7): Kp: Unknown identifier
+STBlock1: (7): REAL: Label name expected
+STBlock1: (8): END_VAR: New statement expected
+STBlock1: (12): Kp: Unknown identifier
+STBlock1: (19): END_PROGRAM: New statement expected
+Error(s) detected
+Fatal: Data Source - Invalid I/O assignment.Screen 1 at ( 24 , 12 )
+Fatal: Data Source - Invalid I/O assignment.Screen 1 at ( 24 , 66 )
+Fatal: Data Source - Invalid I/O assignment.Screen 1 at ( 24 , 114 )
+Fatal: Data Source - Invalid I/O assignment.Screen 1 at ( 24 , 162 )
+Fatal: Data Source - Invalid I/O assignment.Screen 1 at ( 144 , 162 )
+Fatal: Data Source - Invalid I/O assignment.Screen 1 at ( 232 , 18 )
+Fatal: Data Source - Invalid I/O assignment.Screen 1 at ( 237 , 66 )

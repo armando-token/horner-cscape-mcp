@@ -1,0 +1,100 @@
+{
+  "step": 156,
+  "name": "step156_mcp_dual_pump_alternation",
+  "status": "PASSED",
+  "mission": "Dual-Pump Alternation, Lead/Lag Staging & Cavitation Interlock Telemetry",
+  "timestamp_start": "2026-09-06T02:48:41.822Z",
+  "timestamp_complete": "2026-09-06T02:48:43.758Z",
+  "duration_seconds": 1.935,
+  "pure_software_simulation": true,
+  "cscape_pid": 16128,
+  "cscape_hwnd": "0x024903DC",
+  "scenarios_passed": 5,
+  "scenarios_total": 5,
+  "scenario_results": {
+    "scenario_a_lead_pump1": {
+      "verified": true,
+      "pv_percent": 50.0,
+      "pump1_q1": true,
+      "pump2_q3": false,
+      "cavitation_m10": false
+    },
+    "scenario_b_alternation": {
+      "verified": true,
+      "duty_cycles_run": 25,
+      "pv_percent": 50.0,
+      "pump1_q1": false,
+      "pump2_q3": true,
+      "cavitation_m10": false
+    },
+    "scenario_c_lead_lag_staging": {
+      "verified": true,
+      "pv_percent": 25.0,
+      "pump1_q1": true,
+      "pump2_q3": true,
+      "cavitation_m10": false
+    },
+    "scenario_d_cavitation_trip": {
+      "verified": true,
+      "pv_percent": 10.0,
+      "pump1_q1": false,
+      "pump2_q3": false,
+      "cavitation_m10": true
+    },
+    "scenario_e_cavitation_reset": {
+      "verified": true,
+      "pv_percent": 50.0,
+      "pump1_q1": true,
+      "pump2_q3": false,
+      "cavitation_m10": false
+    }
+  },
+  "telemetry_frames": [
+    {
+      "scenario": "A_LEAD_PUMP1",
+      "cycle": 1,
+      "pv": 50.0,
+      "q1": true,
+      "q3": false,
+      "m10": false
+    },
+    {
+      "scenario": "B_ALTERNATION",
+      "cycle": 26,
+      "pv": 50.0,
+      "q1": false,
+      "q3": true,
+      "m10": false
+    },
+    {
+      "scenario": "C_LEAD_LAG_STAGING",
+      "cycle": 27,
+      "pv": 25.0,
+      "q1": true,
+      "q3": true,
+      "m10": false
+    },
+    {
+      "scenario": "D_CAVITATION_TRIP",
+      "cycle": 28,
+      "pv": 10.0,
+      "q1": false,
+      "q3": false,
+      "m10": true
+    },
+    {
+      "scenario": "E_CAVITATION_RESET",
+      "cycle": 39,
+      "pv": 50.0,
+      "q1": true,
+      "q3": false,
+      "m10": false
+    }
+  ],
+  "security": {
+    "hardware_download_lockout": "FAIL_CLOSED_BLOCKED",
+    "zero_straton_dependencies": true,
+    "zero_plc_hardware_interaction": true,
+    "no_gui_hwnd_command_dispatched": true
+  }
+}

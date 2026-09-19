@@ -1,0 +1,33 @@
+{
+  "step": 142,
+  "name": "step142_mcp_live_compile_diagnostics_checkpoint",
+  "status": "PASSED",
+  "timestamp_utc": "2026-09-05T18:20:16.048388+00:00",
+  "cscape_pid": 7968,
+  "hwnd": "0x00B302DE",
+  "project_file": "C:\\Users\\ArmandoSilva\\artifacts\\projects\\TankLevelClosedLoop\\TankLevelClosedLoop.csp",
+  "tools_verified": [
+    "cscape_compile",
+    "cscape_get_build_output",
+    "cscape_get_diagnostics",
+    "cscape_compile_project"
+  ],
+  "compile_trigger_command_id": 32826,
+  "compile_trigger_name": "ID_PROGRAM_ERRORCHECK",
+  "clean_compile_verified": true,
+  "clean_compile_errors": 0,
+  "clean_compile_warnings": 0,
+  "fault_injection_verified": true,
+  "fault_syntax_detected_fail_closed": true,
+  "fault_line_column_reported": true,
+  "ladder_injection_rejected": true,
+  "err_ladder_forbidden_detected": true,
+  "hardware_download_lockout_32827_enforced": true,
+  "hardware_download_lockout_33149_enforced": true,
+  "pure_software_isolation_enforced": true,
+  "zero_straton_dependencies": true,
+  "cscape_healthy": true,
+  "execution_duration_seconds": 18.336,
+  "log_sha256": "a3915eb15b9428363f0d508818b5f2ececdcfc7114ab97ceb5ea3c76ed9d8264",
+  "checkpoint_sha256": "0f9453d9fe9f7891573fd3badc6b87f0ebdb205f6d2431f796cc1fbee40cf6d9"
+}

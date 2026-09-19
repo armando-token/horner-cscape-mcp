@@ -1,0 +1,135 @@
+{
+  "timestamp_utc": "2026-09-05T05:59:30Z",
+  "live_gate": {
+    "verified": true,
+    "gate_file": "C:\\Users\\ArmandoSilva\\artifacts\\.cscape_live_gate.json",
+    "pid": 7616,
+    "hwnd": "0x7b06d6",
+    "window_title": "Cscape - Logged In : \"armando@controlnautas.com\" - [TankLevelClosedLoop.csp]"
+  },
+  "original_sha256": "7fd73e139c3c6475dd0f4c84351c339a0c66b96f2b160f452fc2564017de7ea9",
+  "mutations": {
+    "mutation_1_syntax_error": {
+      "description": "Missing parenthesis in IF expression: IF (TankLevel > 80.0 AND InflowValve THEN",
+      "injected_snippet": "IF (TankLevel > 80.0 AND InflowValve THEN",
+      "success": false,
+      "error_count": 1,
+      "warning_count": 0,
+      "errors": [
+        "Syntax error at line 183, col 38: Expected ')' after expression"
+      ],
+      "failure_location": {
+        "file_path": "TankLevelClosedLoop.st",
+        "full_path": "C:\\HornerAI\\horner-cscape-mcp\\artifacts\\projects\\TankLevelClosedLoop\\pous\\TankLevelClosedLoop.st",
+        "line": 183,
+        "column": 38,
+        "error_code": "ST_SYNTAX_ERROR",
+        "severity": "ERROR",
+        "message": "Syntax error at line 183, col 38: Expected ')' after expression"
+      },
+      "diagnostics": [
+        {
+          "level": "ERROR",
+          "message": "Syntax error at line 183, col 38: Expected ')' after expression",
+          "line": 183,
+          "column": 38,
+          "file_path": "C:\\HornerAI\\horner-cscape-mcp\\artifacts\\projects\\TankLevelClosedLoop\\pous\\TankLevelClosedLoop.st",
+          "pou_name": "TankLevelClosedLoop",
+          "error_code": "ST_SYNTAX_ERROR",
+          "failure_location": {
+            "file_path": "TankLevelClosedLoop.st",
+            "full_path": "C:\\HornerAI\\horner-cscape-mcp\\artifacts\\projects\\TankLevelClosedLoop\\pous\\TankLevelClosedLoop.st",
+            "line": 183,
+            "column": 38,
+            "error_code": "ST_SYNTAX_ERROR",
+            "severity": "ERROR",
+            "message": "Syntax error at line 183, col 38: Expected ')' after expression"
+          }
+        }
+      ],
+      "verdict": "PASSED_FAIL_CLOSED"
+    },
+    "mutation_2_semantic_type_mismatch": {
+      "description": "Invalid type assignment: TankLevel := TRUE; where TankLevel is REAL",
+      "injected_snippet": "TankLevel := TRUE;",
+      "success": false,
+      "error_count": 1,
+      "warning_count": 0,
+      "errors": [
+        "Type mismatch: Cannot assign BOOL literal 'TRUE' to floating-point 'TankLevel' (REAL)."
+      ],
+      "failure_location": {
+        "file_path": "TankLevelClosedLoop.st",
+        "full_path": "C:\\HornerAI\\horner-cscape-mcp\\artifacts\\projects\\TankLevelClosedLoop\\pous\\TankLevelClosedLoop.st",
+        "line": 59,
+        "column": 1,
+        "error_code": "ERR_TYPE_MISMATCH",
+        "severity": "ERROR",
+        "message": "Type mismatch: Cannot assign BOOL literal 'TRUE' to floating-point 'TankLevel' (REAL)."
+      },
+      "diagnostics": [
+        {
+          "level": "ERROR",
+          "message": "Type mismatch: Cannot assign BOOL literal 'TRUE' to floating-point 'TankLevel' (REAL).",
+          "line": 59,
+          "column": 1,
+          "file_path": "C:\\HornerAI\\horner-cscape-mcp\\artifacts\\projects\\TankLevelClosedLoop\\pous\\TankLevelClosedLoop.st",
+          "pou_name": "TankLevelClosedLoop",
+          "error_code": "ERR_TYPE_MISMATCH",
+          "failure_location": {
+            "file_path": "TankLevelClosedLoop.st",
+            "full_path": "C:\\HornerAI\\horner-cscape-mcp\\artifacts\\projects\\TankLevelClosedLoop\\pous\\TankLevelClosedLoop.st",
+            "line": 59,
+            "column": 1,
+            "error_code": "ERR_TYPE_MISMATCH",
+            "severity": "ERROR",
+            "message": "Type mismatch: Cannot assign BOOL literal 'TRUE' to floating-point 'TankLevel' (REAL)."
+          }
+        }
+      ],
+      "verdict": "PASSED_FAIL_CLOSED"
+    },
+    "mutation_3_valid_feature_addition": {
+      "description": "Valid feature addition: EmergencyDumpActive : BOOL := FALSE; with emergency dump logic",
+      "injected_variable": "EmergencyDumpActive : BOOL := FALSE;",
+      "injected_logic": "IF EmergencyDumpActive THEN RawValveOutput := 32000; PumpRunCmd := FALSE; END_IF;",
+      "compile_project_result": {
+        "success": true,
+        "error_count": 0,
+        "warning_count": 0,
+        "pous_compiled": [
+          "AlarmMonitor",
+          "BrokenPOU",
+          "TankLevelClosedLoop"
+        ]
+      },
+      "live_cscape_gui_result": {
+        "success": true,
+        "command_dispatched": 32826,
+        "controls_enumerated": 55,
+        "error_count": 0,
+        "warning_count": 0,
+        "listbox_372_output": "Compiler V12.0.200.82\nLoading application symbols...\nEnhancedDisplayAttributes\nNo error detected\n\nLoading application symbols...\nBuilding application data...\nRelocating code...\nNo error detected\nOnline Change is disabled\nGenerate OCS code...\nNo error detected\nWarn : Screen set as first screen is empty.Screen 1"
+      },
+      "verdict": "PASSED_CLEAN"
+    }
+  },
+  "restoration": {
+    "restored": true,
+    "original_sha256": "7fd73e139c3c6475dd0f4c84351c339a0c66b96f2b160f452fc2564017de7ea9",
+    "restored_sha256_armando": "7fd73e139c3c6475dd0f4c84351c339a0c66b96f2b160f452fc2564017de7ea9",
+    "restored_sha256_horner": "7fd73e139c3c6475dd0f4c84351c339a0c66b96f2b160f452fc2564017de7ea9",
+    "sha256_verified_exact_match": true,
+    "clean_compile_successful": true,
+    "clean_error_count": 0,
+    "clean_warning_count": 0,
+    "live_gui_clean_verified": true,
+    "live_gui_listbox_372": "Compiler V12.0.200.82\nLoading application symbols...\nEnhancedDisplayAttributes\nNo error detected\n\nLoading application symbols...\nBuilding application data...\nRelocating code...\nNo error detected\nOnline Change is disabled\nGenerate OCS code...\nNo error detected\nWarn : Screen set as first screen is empty.Screen 1"
+  },
+  "safety_enforcement": {
+    "zero_physical_plc_download_enforced": true,
+    "id_controller_download_32827_blocked_fail_closed": true,
+    "unauthorized_download_exception_caught": true,
+    "zero_straton_k5_tools": true
+  }
+}

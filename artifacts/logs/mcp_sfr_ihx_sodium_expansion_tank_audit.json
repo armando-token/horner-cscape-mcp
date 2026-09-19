@@ -1,0 +1,233 @@
+{
+  "audit_step": 122,
+  "name": "Sodium-Cooled Fast Reactor (SFR) Intermediate Heat Exchanger (IHX) Liquid Sodium Expansion Tank Audit",
+  "timestamp": "2026-09-05T12:45:28.684Z",
+  "completed_at": "2026-09-05T12:45:34.984Z",
+  "cscape_pid": 4272,
+  "cscape_hwnd": "0x7033e",
+  "total_cycles": 600,
+  "metrics": {
+    "max_phase1_level_error_pct": 0.0,
+    "mean_phase1_level_error_pct": 0.0,
+    "max_phase2_uncomp_drift_pct": 6.57,
+    "mean_phase2_uncomp_drift_pct": 4.82,
+    "max_phase3_comp_error_pct": 0.0,
+    "mean_phase3_comp_error_pct": 0.0,
+    "surge_rejection_pct": 100.0,
+    "phase4_final_level_error_pct": 0.0379,
+    "phase4_mean_tail_level_error_pct": 0.0234,
+    "cover_gas_seal_breach_trip_cycle": 501
+  },
+  "trace_samples": [
+    {
+      "cycle": 0,
+      "phase": "PHASE_1_PRIMARY_SECONDARY_THERMAL_BALANCE",
+      "target_sp": 50.0,
+      "sodium_level": 50.0,
+      "sodium_flow_kgs": 65.0,
+      "interlock_trip": false,
+      "cv_pid": 50.0
+    },
+    {
+      "cycle": 50,
+      "phase": "PHASE_1_PRIMARY_SECONDARY_THERMAL_BALANCE",
+      "target_sp": 50.0,
+      "sodium_level": 50.0,
+      "sodium_flow_kgs": 65.0,
+      "interlock_trip": false,
+      "cv_pid": 50.0
+    },
+    {
+      "cycle": 100,
+      "phase": "PHASE_1_PRIMARY_SECONDARY_THERMAL_BALANCE",
+      "target_sp": 50.0,
+      "sodium_level": 50.0,
+      "sodium_flow_kgs": 65.0,
+      "interlock_trip": false,
+      "cv_pid": 50.0
+    },
+    {
+      "cycle": 101,
+      "phase": "PHASE_2_TURBINE_LOAD_REJECTION_EXPANSION_SURGE",
+      "target_sp": 50.0,
+      "sodium_level": 50.022,
+      "sodium_flow_kgs": 65.3,
+      "interlock_trip": false,
+      "cv_pid": 50.0
+    },
+    {
+      "cycle": 125,
+      "phase": "PHASE_2_TURBINE_LOAD_REJECTION_EXPANSION_SURGE",
+      "target_sp": 50.0,
+      "sodium_level": 54.463,
+      "sodium_flow_kgs": 73.2,
+      "interlock_trip": false,
+      "cv_pid": 43.03
+    },
+    {
+      "cycle": 150,
+      "phase": "PHASE_2_TURBINE_LOAD_REJECTION_EXPANSION_SURGE",
+      "target_sp": 50.0,
+      "sodium_level": 56.525,
+      "sodium_flow_kgs": 81.5,
+      "interlock_trip": false,
+      "cv_pid": 27.3
+    },
+    {
+      "cycle": 175,
+      "phase": "PHASE_2_TURBINE_LOAD_REJECTION_EXPANSION_SURGE",
+      "target_sp": 50.0,
+      "sodium_level": 55.478,
+      "sodium_flow_kgs": 89.8,
+      "interlock_trip": false,
+      "cv_pid": 16.01
+    },
+    {
+      "cycle": 200,
+      "phase": "PHASE_2_TURBINE_LOAD_REJECTION_EXPANSION_SURGE",
+      "target_sp": 50.0,
+      "sodium_level": 55.417,
+      "sodium_flow_kgs": 98.0,
+      "interlock_trip": false,
+      "cv_pid": 5.69
+    },
+    {
+      "cycle": 201,
+      "phase": "PHASE_3_ARGON_COVER_GAS_PRESSURE_DECOUPLED",
+      "target_sp": 50.0,
+      "sodium_level": 50.0,
+      "sodium_flow_kgs": 98.0,
+      "interlock_trip": false,
+      "cv_pid": 50.0
+    },
+    {
+      "cycle": 225,
+      "phase": "PHASE_3_ARGON_COVER_GAS_PRESSURE_DECOUPLED",
+      "target_sp": 50.0,
+      "sodium_level": 50.0,
+      "sodium_flow_kgs": 98.0,
+      "interlock_trip": false,
+      "cv_pid": 50.0
+    },
+    {
+      "cycle": 250,
+      "phase": "PHASE_3_ARGON_COVER_GAS_PRESSURE_DECOUPLED",
+      "target_sp": 50.0,
+      "sodium_level": 50.0,
+      "sodium_flow_kgs": 98.0,
+      "interlock_trip": false,
+      "cv_pid": 50.0
+    },
+    {
+      "cycle": 275,
+      "phase": "PHASE_3_ARGON_COVER_GAS_PRESSURE_DECOUPLED",
+      "target_sp": 50.0,
+      "sodium_level": 50.0,
+      "sodium_flow_kgs": 98.0,
+      "interlock_trip": false,
+      "cv_pid": 50.0
+    },
+    {
+      "cycle": 300,
+      "phase": "PHASE_3_ARGON_COVER_GAS_PRESSURE_DECOUPLED",
+      "target_sp": 50.0,
+      "sodium_level": 50.0,
+      "sodium_flow_kgs": 98.0,
+      "interlock_trip": false,
+      "cv_pid": 50.0
+    },
+    {
+      "cycle": 350,
+      "phase": "PHASE_3_ARGON_COVER_GAS_PRESSURE_DECOUPLED",
+      "target_sp": 50.0,
+      "sodium_level": 50.0,
+      "sodium_flow_kgs": 98.0,
+      "interlock_trip": false,
+      "cv_pid": 50.0
+    },
+    {
+      "cycle": 351,
+      "phase": "PHASE_4_DHRS_TRANSITION_STEP",
+      "target_sp": 45.0,
+      "sodium_level": 49.58,
+      "sodium_flow_kgs": 80.0,
+      "interlock_trip": false,
+      "cv_pid": 41.6
+    },
+    {
+      "cycle": 400,
+      "phase": "PHASE_4_DHRS_TRANSITION_STEP",
+      "target_sp": 45.0,
+      "sodium_level": 44.524,
+      "sodium_flow_kgs": 80.0,
+      "interlock_trip": false,
+      "cv_pid": 52.4
+    },
+    {
+      "cycle": 450,
+      "phase": "PHASE_4_DHRS_TRANSITION_STEP",
+      "target_sp": 45.0,
+      "sodium_level": 44.922,
+      "sodium_flow_kgs": 80.0,
+      "interlock_trip": false,
+      "cv_pid": 49.67
+    },
+    {
+      "cycle": 500,
+      "phase": "PHASE_4_DHRS_TRANSITION_STEP",
+      "target_sp": 45.0,
+      "sodium_level": 45.038,
+      "sodium_flow_kgs": 80.0,
+      "interlock_trip": false,
+      "cv_pid": 50.02
+    },
+    {
+      "cycle": 501,
+      "phase": "PHASE_5_HIGH_HIGH_COVER_GAS_SEAL_BREACH_TRIP",
+      "target_sp": 45.0,
+      "sodium_level": 45.038,
+      "sodium_flow_kgs": 40.0,
+      "interlock_trip": true,
+      "cv_pid": 50.01
+    },
+    {
+      "cycle": 520,
+      "phase": "PHASE_5_HIGH_HIGH_COVER_GAS_SEAL_BREACH_TRIP",
+      "target_sp": 45.0,
+      "sodium_level": 45.038,
+      "sodium_flow_kgs": 40.0,
+      "interlock_trip": true,
+      "cv_pid": 49.94
+    },
+    {
+      "cycle": 550,
+      "phase": "PHASE_5_HIGH_HIGH_COVER_GAS_SEAL_BREACH_TRIP",
+      "target_sp": 45.0,
+      "sodium_level": 45.038,
+      "sodium_flow_kgs": 40.0,
+      "interlock_trip": true,
+      "cv_pid": 49.85
+    },
+    {
+      "cycle": 599,
+      "phase": "PHASE_5_HIGH_HIGH_COVER_GAS_SEAL_BREACH_TRIP",
+      "target_sp": 45.0,
+      "sodium_level": 45.038,
+      "sodium_flow_kgs": 40.0,
+      "interlock_trip": true,
+      "cv_pid": 49.7
+    }
+  ],
+  "cscape_health": {
+    "healthy": true,
+    "pid": 4272,
+    "hwnd": "0x7033e",
+    "desktop": "Default",
+    "is_hung": false,
+    "wm_null_ping_ok": true,
+    "working_set_mb": 157.47,
+    "num_threads": 11,
+    "uptime_sec": 2036.48
+  },
+  "download_lockout_verified": true
+}

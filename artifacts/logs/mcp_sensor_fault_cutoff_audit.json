@@ -1,0 +1,168 @@
+{
+  "step": 32,
+  "title": "Closed-Loop Sensor Fault Injection & Hardware Limit Cutoff Audit",
+  "timestamp_utc_start": "2026-09-05T07:30:22.125Z",
+  "timestamp_utc_end": "2026-09-05T07:30:28.725Z",
+  "status": "VERIFIED_LIVE",
+  "cscape_process": {
+    "healthy": true,
+    "pid": 15240,
+    "is_hung": false,
+    "working_set_mb": 123.34,
+    "threads": 11,
+    "gate_status": "READY_FOR_TESTS",
+    "window_title": "Cscape - Logged In : \"armando@controlnautas.com\" - [TankLevelClosedLoop.csp]"
+  },
+  "simulation_summary": {
+    "total_cycles": 500,
+    "duration_seconds": 0.313,
+    "throughput_cycles_per_sec": 1597.98
+  },
+  "fault_metrics": {
+    "open_circuit_cycles": 100,
+    "open_circuit_pump_trips_verified": 100,
+    "open_circuit_pump_cutoff_pct": 100.0,
+    "saturation_cycles": 100,
+    "saturation_inflow_cutoffs_verified": 100,
+    "saturation_inflow_cutoff_pct": 100.0,
+    "hysteresis_unlatch_verified": true,
+    "final_recovery_error_pct": 0.0
+  },
+  "safety_audit": {
+    "physical_plc_download_blocked": true,
+    "zero_physical_hardware_touched": true,
+    "hardware_lockout_enforced": true
+  },
+  "sample_trace": [
+    {
+      "cycle": 0,
+      "phase": "PHASE_1_NOMINAL_HOLD",
+      "raw_adc": 16000,
+      "pv_plant": 47.5,
+      "pv_sensed": 50.0,
+      "cv": 0.0,
+      "hh": false,
+      "ll": false,
+      "pump_cmd": true,
+      "inflow_cmd": false,
+      "error": 2.5
+    },
+    {
+      "cycle": 50,
+      "phase": "PHASE_1_NOMINAL_HOLD",
+      "raw_adc": 15904,
+      "pv_plant": 49.8283,
+      "pv_sensed": 49.7,
+      "cv": 52.2642,
+      "hh": false,
+      "ll": false,
+      "pump_cmd": true,
+      "inflow_cmd": true,
+      "error": 0.1717
+    },
+    {
+      "cycle": 100,
+      "phase": "PHASE_2_OPEN_CIRCUIT_DISCONNECT",
+      "raw_adc": 0,
+      "pv_plant": 50.0304,
+      "pv_sensed": 0.0,
+      "cv": 100.0,
+      "hh": false,
+      "ll": true,
+      "pump_cmd": false,
+      "inflow_cmd": true,
+      "error": 0.0304
+    },
+    {
+      "cycle": 150,
+      "phase": "PHASE_2_OPEN_CIRCUIT_DISCONNECT",
+      "raw_adc": 0,
+      "pv_plant": 50.0304,
+      "pv_sensed": 0.0,
+      "cv": 100.0,
+      "hh": false,
+      "ll": true,
+      "pump_cmd": false,
+      "inflow_cmd": true,
+      "error": 0.0304
+    },
+    {
+      "cycle": 200,
+      "phase": "PHASE_3_SENSOR_SATURATION_SHORT",
+      "raw_adc": 32000,
+      "pv_plant": 50.0304,
+      "pv_sensed": 100.0,
+      "cv": 0.0,
+      "hh": true,
+      "ll": false,
+      "pump_cmd": true,
+      "inflow_cmd": false,
+      "error": 0.0304
+    },
+    {
+      "cycle": 250,
+      "phase": "PHASE_3_SENSOR_SATURATION_SHORT",
+      "raw_adc": 32000,
+      "pv_plant": 50.0304,
+      "pv_sensed": 100.0,
+      "cv": 0.0,
+      "hh": true,
+      "ll": false,
+      "pump_cmd": true,
+      "inflow_cmd": false,
+      "error": 0.0304
+    },
+    {
+      "cycle": 300,
+      "phase": "PHASE_4_SENSOR_RESTORE_DEBOUNCE",
+      "raw_adc": 16000,
+      "pv_plant": 50.0,
+      "pv_sensed": 50.0,
+      "cv": 100.0,
+      "hh": false,
+      "ll": false,
+      "pump_cmd": true,
+      "inflow_cmd": true,
+      "error": 0.0
+    },
+    {
+      "cycle": 350,
+      "phase": "PHASE_5_NOMINAL_CLOSED_LOOP_RECOVERY",
+      "raw_adc": 16000,
+      "pv_plant": 50.0,
+      "pv_sensed": 50.0,
+      "cv": 50.0,
+      "hh": false,
+      "ll": false,
+      "pump_cmd": true,
+      "inflow_cmd": true,
+      "error": 0.0
+    },
+    {
+      "cycle": 400,
+      "phase": "PHASE_5_NOMINAL_CLOSED_LOOP_RECOVERY",
+      "raw_adc": 16000,
+      "pv_plant": 50.0,
+      "pv_sensed": 50.0,
+      "cv": 50.0,
+      "hh": false,
+      "ll": false,
+      "pump_cmd": true,
+      "inflow_cmd": true,
+      "error": 0.0
+    },
+    {
+      "cycle": 450,
+      "phase": "PHASE_5_NOMINAL_CLOSED_LOOP_RECOVERY",
+      "raw_adc": 16000,
+      "pv_plant": 50.0,
+      "pv_sensed": 50.0,
+      "cv": 50.0,
+      "hh": false,
+      "ll": false,
+      "pump_cmd": true,
+      "inflow_cmd": true,
+      "error": 0.0
+    }
+  ]
+}

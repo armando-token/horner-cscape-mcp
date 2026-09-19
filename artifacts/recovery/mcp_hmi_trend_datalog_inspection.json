@@ -1,0 +1,90 @@
+{
+  "mission_id": "MCP_HMI_TREND_DATALOG_INSPECT",
+  "status": "success",
+  "timestamp_utc": "2026-09-10T08:58:09.586Z",
+  "environment": {
+    "os": "Windows",
+    "winsta_desktop": "winsta0\\Default",
+    "cscape_version": "Horner APG Cscape 10.2 (Build 10.2.751.4)",
+    "pid": 19488,
+    "hwnd": "0x01AC0B88",
+    "target_csp": "C:\\HornerAI\\horner-cscape-mcp\\artifacts\\projects\\TankLevelClosedLoop\\TankLevelClosedLoop.csp",
+    "csp_sha256": "DAB6BB33FDB376BFC015F11CC960770DD7FCD547CA4704BDA5A8200F86EBD4EE",
+    "csp_size_bytes": 131072,
+    "active_screen": "Screen 2 (2)",
+    "single_gui_owner": "PID 19488 on winsta0\\Default"
+  },
+  "inspection_summary": {
+    "datalog_capability": {
+      "status": "AVAILABLE",
+      "implementation": "ALREADY_IMPLEMENTED_AND_CONFIGURED",
+      "details": {
+        "feature_present": true,
+        "stream_offset": 41490,
+        "group_name": "TankLogs",
+        "logged_variables": [
+          {
+            "name": "TankLevelPV",
+            "data_type": "REAL (32-bit floating point)",
+            "register_mapping": "%R1"
+          }
+        ],
+        "trigger_variable": {
+          "name": "DatalogEnable",
+          "data_type": "BOOL",
+          "register_mapping": "%T1",
+          "allocation_status": "Allocated in Project Symbol Table"
+        },
+        "status_variable": {
+          "name": "DatalogStatus[0]",
+          "data_type": "INT[2]",
+          "register_mapping": "%R14",
+          "allocation_status": "Allocated in Project Symbol Table"
+        },
+        "schema_name": "New Schema",
+        "interval_unit": "Seconds",
+        "date_format": "MM/DD/YYYY",
+        "time_format": "HH:mm:ss",
+        "target_destination": "Removable Media (MicroSD Storage)",
+        "implementation_status": "ALREADY_IMPLEMENTED_IN_PROJECT_CONTAINER"
+      }
+    },
+    "trend_capability": {
+      "status": "UNAVAILABLE",
+      "implementation": "STOPPED_AFTER_REPORTING",
+      "details": {
+        "feature_present": false,
+        "existing_trend_objects_count": 0,
+        "existing_graph_objects_count": 0,
+        "hmi_screen_assigned": "None",
+        "mcp_trend_tool_available": false,
+        "reason_unavailable": "No Trend or Graph object definitions exist within TankLevelClosedLoop.csp; Screen 2 layout is complete with 5 designated operator objects (TankLevelPV, Setpoint, TankLevelPV_I16 bar, HI lamp, LO lamp); Cscape MCP protocol lacks native Trend object synthesis tools.",
+        "directive_enforcement": "STOP_AFTER_REPORTING (per user specification: 'if unavailable stop after reporting')"
+      }
+    }
+  },
+  "screen2_operator_status": {
+    "objects_count": 5,
+    "layout_integrity": "PRESERVED",
+    "objects": [
+      "TankLevelPV (Numeric Display, REAL, largest value)",
+      "Setpoint (Numeric Display, REAL)",
+      "TankLevelPV_I16 (Horizontal Bar Graph in tank silhouette, INT)",
+      "HI (Bit Lamp Indicator, %T3)",
+      "LO (Bit Lamp Indicator, %T4)"
+    ]
+  },
+  "safety_directives": {
+    "hardware_plc_lockout": "ENFORCED (COM1..COM256, CAN*, USB*, JTAG blocked fail-closed)",
+    "plc_download_blocked": "ENFORCED (Win32 commands 32827 & 33149 locked out)",
+    "single_gui_owner": "ENFORCED (PID 19488 exclusive on winsta0\\Default)",
+    "screen1_polish": "NONE (legacy Screen 1 errors preserved for diagnostic capture)",
+    "processes_preserved": "Cscape, PowerShell, Terminal, and agy running continuously"
+  },
+  "verification_artifacts": {
+    "evidence_json": "artifacts/recovery/mcp_hmi_trend_datalog_inspection.json",
+    "audit_report_txt": "artifacts/recovery/mcp_hmi_trend_datalog_inspection.txt",
+    "proof_screenshot": "artifacts/screenshots/mcp_hmi_trend_datalog_proof.png",
+    "gate_status_file": "artifacts/.cscape_live_gate.json"
+  }
+}

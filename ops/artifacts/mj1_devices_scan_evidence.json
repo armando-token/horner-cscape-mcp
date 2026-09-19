@@ -1,0 +1,12 @@
+{
+  "project": "TankLevel_P5_Dedicated.csp",
+  "port": "MJ1",
+  "protocol": "CT RTU Modbus CMP v5.05",
+  "scan_list_status": "empty",
+  "native_fill_status": "blocked_offline",
+  "blocker": "Native add requires a configured target node/device and/or live PLC context; no PLC connection or download was permitted.",
+  "plc_download": false,
+  "verified_live": false,
+  "scope": "offline_product_documentation",
+  "timestamp": "2026-09-17T21:00:00Z"
+}

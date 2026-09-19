@@ -1,0 +1,19 @@
+{
+  "gate": "G1",
+  "step": 176,
+  "role": "FastMCP Boiler Master Simulation Agent",
+  "status": "success",
+  "mandate": "Pure Software Simulation of Boiler Master Pressure & Combustion Control",
+  "timestamp_utc": "2026-09-06T12:25:22.113Z",
+  "execution_duration_sec": 1.824,
+  "scenarios_passed": 5,
+  "total_scenarios": 5,
+  "st_source_sha256": "0d886a83cd0039aa1b2678b515d5d01c025534358e181200736caa9986ec649d",
+  "contract": {
+    "state": "success",
+    "fail_closed_guaranteed": true,
+    "no_plc_downloads": true,
+    "no_straton_imports": true,
+    "zero_gui_mutation": true
+  }
+}

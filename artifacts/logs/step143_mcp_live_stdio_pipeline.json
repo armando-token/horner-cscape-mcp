@@ -1,0 +1,60 @@
+{
+  "step": 143,
+  "title": "FastMCP Live Stdio JSON-RPC End-to-End Pipeline & Live Tool Suite",
+  "timestamp_start_utc": "2026-09-05T18:49:43.467032+00:00",
+  "timestamp_end_utc": "2026-09-05T18:49:52.281723+00:00",
+  "duration_seconds": 8.815,
+  "status": "PASSED",
+  "cscape_active_process": {
+    "healthy": true,
+    "pid": 7968,
+    "hwnd": "0x00B302DE",
+    "is_hung": false,
+    "is_enabled": true,
+    "ping_ok": true,
+    "uptime_seconds": 2377.37,
+    "working_set_mb": 169.65,
+    "threads": 11,
+    "window_title": "Cscape - Logged In : \"armando@controlnautas.com\" - [TankLevelClosedLoop.csp]"
+  },
+  "tools_verified_stdio": {
+    "cscape_read_variables": {
+      "count": 21,
+      "success": true
+    },
+    "cscape_register_rw": {
+      "address": "%R101",
+      "value": 6200.0,
+      "success": true
+    },
+    "cscape_simulate_cycle": {
+      "cycle": 0,
+      "success": true
+    },
+    "cscape_compile": {
+      "success": true,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    "cscape_export_variables": {
+      "path": "C:\\HornerAI\\horner-cscape-mcp\\artifacts\\projects\\TankLevelClosedLoop\\variables_export_step143.xml",
+      "success": true
+    },
+    "cscape_get_diagnostics": {
+      "success": true
+    }
+  },
+  "safety_audit": {
+    "download_command_32827_blocked": true,
+    "pure_software_isolation_enforced": true,
+    "zero_straton_dependencies": true,
+    "zero_physical_hardware_touched": true,
+    "fail_closed_gate_offline_caught": true
+  },
+  "screenshot_evidence": {
+    "path": "C:\\HornerAI\\horner-cscape-mcp\\artifacts\\screenshots\\live_cscape_tank_level_step143_pid7968.png",
+    "size_bytes": 662,
+    "sha256": "ba028ddc59b5690ad99f67b577b41eeaf7e5b78ce1e648c31332c407d12f1817"
+  },
+  "log_sha256": "6d71cf468b501b2eb8bbb5292c2397318d0b1df4d61df51ff2f6ee93b89d34e2"
+}

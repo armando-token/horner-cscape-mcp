@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<ProjectVariables version="1.0">
+   <vargroup name="program">
+      <var name="nCount" type="INT" />
+      <var name="bFlag" type="BOOL" />
+   </vargroup>
+</ProjectVariables>

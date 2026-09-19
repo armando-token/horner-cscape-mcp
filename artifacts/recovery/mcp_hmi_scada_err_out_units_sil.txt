@@ -1,0 +1,74 @@
+================================================================================
+MISSION EXECUTION AUDIT REPORT: MCP_HMI_SCADA_ERR_OUT_UNITS_SIL
+================================================================================
+Timestamp UTC     : 2026-09-09T15:15:24.712702+00:00
+Mission ID        : MCP_HMI_SCADA_ERR_OUT_UNITS_SIL
+Status            : success
+Target POU/Screen : Screen 1 (1) in TankLevelClosedLoop.csp
+Cscape Version    : Horner APG Cscape 10.2 (Build 10.2.751.4)
+Interactive Desktop: winsta0\Default
+Process ID (PID)  : 19368
+Window HWND       : 0x039D018E
+Window Title      : Cscape - Logged In : "armando@controlnautas.com" - [TankLevelClosedLoop.csp]
+
+--------------------------------------------------------------------------------
+1. MISSION OBJECTIVES & RESULTS
+--------------------------------------------------------------------------------
+Objective (a): Add clear units text for Error and ControlOutput
+  - Variable 'Error'         : Suffix unit "cm" applied -> Format: "-###########cm"
+  - Variable 'ControlOutput' : Suffix unit "%" applied  -> Format: "-###########%"
+  - Bound Real-Time Numerics : Setpoint ("cm"), TankLevelPV ("cm"), Error ("cm"), ControlOutput ("%")
+  - Result                   : SUCCESS (verifiable in live Cscape GUI and raster proof)
+
+Objective (b): Ensure distinct rectangular tank silhouette framing the level bar
+  - Tank Silhouette Vessel   : Native rectangle outline (Vessel Outline, 72x210 px) enclosing red level fill bar
+  - Result                   : SUCCESS (confirmed present and visually distinct)
+
+Objective (c): Visible Title Text
+  - Title Text               : "Tank Level" clearly displayed at canvas top-left
+  - Result                   : SUCCESS
+
+Objective (d): Native Project Persistence
+  - Native Save Command      : Dispatched Ctrl+S keyboard event & WM_COMMAND ID_FILE_SAVE (57603)
+  - Result                   : SUCCESS (Disk file modified and timestamp verified at 2026-09-09T08:14:30.616000)
+
+--------------------------------------------------------------------------------
+2. PROJECT ARTIFACT FORENSICS & DUAL-ROOT PARITY
+--------------------------------------------------------------------------------
+Primary Path  : C:\HornerAI\horner-cscape-mcp\artifacts\projects\TankLevelClosedLoop\TankLevelClosedLoop.csp
+Mirror Path   : C:\Users\ArmandoSilva\artifacts\projects\TankLevelClosedLoop\TankLevelClosedLoop.csp
+File Size     : 98304 bytes
+SHA-256 Hash  : b7b89b9e717b4ddf4dc13d560cb9a26e11e49e8a4bfbe7fa370398883084d789
+Dual-Root Parity: 100% MATCH (Identical byte size and SHA-256 digest)
+
+--------------------------------------------------------------------------------
+3. SCREEN 1 OBJECT INVENTORY (Total 10 Objects)
+--------------------------------------------------------------------------------
+[1] Static Text         : "Tank Level"
+[2] Numeric Data Field  : Setpoint (-###########cm)
+[3] Numeric Data Field  : TankLevelPV (-###########cm)
+[4] Numeric Data Field  : Error (-###########cm)
+[5] Numeric Data Field  : ControlOutput (-###########%)
+[6] Analog Dial Gauge   : Circular dial indicator with needle
+[7] Fill Bar Graph      : Red liquid level fill bar
+[8] Vessel Silhouette   : Rectangular outline surrounding fill bar
+[9] Bar Scale & Ticks   : Vertical tick marks and numeric scale
+[10] Canvas Border/Grid : HMI screen background frame
+
+--------------------------------------------------------------------------------
+4. SAFETY & BOUNDARY INVARIANTS COMPLIANCE
+--------------------------------------------------------------------------------
+- Hardware COM/CAN/USB ports: Strictly blocked (Fail-closed)
+- Physical Download commands: 32827 / 33149 permanently blocked
+- Companion Flashing binary : Zero execution
+- Live Cscape Desktop       : Exclusive Single GUI Agent Boundary on winsta0\Default preserved
+- G1 & Pytest Isolation     : Untouched and unexecuted as directed
+
+--------------------------------------------------------------------------------
+5. VERIFICATION ARTIFACTS
+--------------------------------------------------------------------------------
+Raster Evidence 1: artifacts/screenshots/mcp_hmi_scada_err_out_units_sil_proof.png
+Raster Evidence 2: artifacts/screenshots/live_cscape_tanklevel_visible.png
+Evidence JSON    : artifacts/recovery/mcp_hmi_scada_err_out_units_sil_evidence.json
+Audit Report     : artifacts/recovery/mcp_hmi_scada_err_out_units_sil.txt
+================================================================================

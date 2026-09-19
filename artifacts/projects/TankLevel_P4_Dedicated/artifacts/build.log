@@ -1,0 +1,13 @@
+=== Horner Cscape 10.2 Compile Pass: TankLevel_P4_Dedicated ===
+Clean Build: True
+Mode: IEC 61131-3 Structured Text (Advanced Ladder Excluded)
+Timestamp: 2026-09-17T11:56:47.165366
+----------------------------------------------------------------
+Compiling POU: TankLevelControl (1098 bytes)...
+  POU 'TankLevelControl' parsed and validated cleanly.
+----------------------------------------------------------------
+Build Result: SUCCESS
+Errors: 0, Warnings: 0
+Estimated AST Footprint: Statements: 14, Variables: 11, Expressions: 33, Source: 1098 bytes
+Duration: 0.029s
+Hardware Lockout: ENFORCED (Zero PLC communication / No download)

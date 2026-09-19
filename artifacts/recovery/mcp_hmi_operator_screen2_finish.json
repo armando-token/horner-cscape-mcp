@@ -1,0 +1,93 @@
+{
+  "mission_id": "MCP_HMI_OPERATOR_SCREEN2_FINISH",
+  "status": "success",
+  "timestamp_utc": "2026-09-10T07:00:00Z",
+  "environment": {
+    "os": "Windows",
+    "winsta_desktop": "winsta0\\Default",
+    "cscape_version": "10.2 (Build 10.2.751.4)",
+    "pid": 19488,
+    "hwnd": "0x01AC0B88",
+    "target_csp": "C:\\HornerAI\\horner-cscape-mcp\\artifacts\\projects\\TankLevelClosedLoop\\TankLevelClosedLoop.csp",
+    "csp_sha256": "48fb4f510cb62763196448c9e51cf9c04bf6bb427ee9bedd1e7eb47f18fd6db7",
+    "csp_size_bytes": 131072
+  },
+  "screen2_specifications": {
+    "active_tab": "Screen 2 (2)",
+    "tab_status": "IN_FRONT",
+    "total_objects": 5,
+    "objects": [
+      {
+        "name": "TankLevelPV",
+        "type": "Numeric Data Display",
+        "bound_variable": "TankLevelPV",
+        "data_type": "REAL (32-bit)",
+        "role": "Largest value on screen (Primary Process Variable)",
+        "location": "Upper Left quadrant",
+        "legend": "Data",
+        "style": "High-contrast beveled display container"
+      },
+      {
+        "name": "Setpoint",
+        "type": "Numeric Data Display",
+        "bound_variable": "Setpoint",
+        "data_type": "REAL (32-bit)",
+        "role": "Target Setpoint reference value",
+        "location": "Upper Right quadrant",
+        "legend": "Data",
+        "style": "High-contrast beveled display container"
+      },
+      {
+        "name": "TankSilhouette_and_Bar",
+        "type": "Bar Graph + Tank Boundary",
+        "bound_variable": "TankLevelPV_I16",
+        "data_type": "INT (16-bit, ANY_TO_INT(TankLevelPV))",
+        "role": "Tank silhouette & level bar graph indicator",
+        "location": "Lower Left quadrant",
+        "legend": "Bar",
+        "color": "Red fill",
+        "style": "Graduated 0..100 bar graph inside tank boundary"
+      },
+      {
+        "name": "HighAlarmLamp",
+        "type": "Bit Lamp Indicator",
+        "bound_variable": "HI",
+        "data_type": "BOOL (%T3, TankLevelPV >= 65.0)",
+        "role": "High Level Alarm Status Indicator",
+        "location": "Lower Right quadrant (left lamp)",
+        "legend": "HI"
+      },
+      {
+        "name": "LowAlarmLamp",
+        "type": "Bit Lamp Indicator",
+        "bound_variable": "LO",
+        "data_type": "BOOL (%T4, TankLevelPV <= 35.0)",
+        "role": "Low Level Alarm Status Indicator",
+        "location": "Lower Right quadrant (right lamp)",
+        "legend": "LO"
+      }
+    ]
+  },
+  "compilation_and_fatal_evidence": {
+    "compiler_version": "Compiler V12.0.200.82",
+    "error_check_command_id": 32826,
+    "fatal_error_count": 7,
+    "fatal_error_log_path": "artifacts/recovery/compile_fatals.txt",
+    "non_fatal_prompt_action": "REJECTED / DISMISSED FAIL-CLOSED (Do not click Yes on Non-Fatal)",
+    "screen1_polish_policy": "NO_SCREEN1_POLISH (Screen 1 legacy fatal I/O assignment errors intentionally retained for diagnostic capture)",
+    "fatal_errors": [
+      "Fatal: Data Source - Invalid I/O assignment.Screen 1 at ( 24 , 12 )",
+      "Fatal: Data Source - Invalid I/O assignment.Screen 1 at ( 24 , 66 )",
+      "Fatal: Data Source - Invalid I/O assignment.Screen 1 at ( 24 , 114 )",
+      "Fatal: Data Source - Invalid I/O assignment.Screen 1 at ( 24 , 162 )",
+      "Fatal: Data Source - Invalid I/O assignment.Screen 1 at ( 144 , 162 )",
+      "Fatal: Data Source - Invalid I/O assignment.Screen 1 at ( 232 , 18 )",
+      "Fatal: Data Source - Invalid I/O assignment.Screen 1 at ( 237 , 66 )"
+    ]
+  },
+  "safety_directives": {
+    "hardware_plc_lockout": "ENFORCED (No physical COM/USB/CAN, commands 32827/33149 blocked)",
+    "single_gui_owner": "ENFORCED (PID 19488 exclusive on winsta0\\Default)",
+    "screen2_in_front_at_finish": true
+  }
+}

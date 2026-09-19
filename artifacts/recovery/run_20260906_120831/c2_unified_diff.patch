@@ -1,0 +1,923 @@
+--- a/src/cscape/cfbf.py
++++ b/src/cscape/cfbf.py
+@@ -113,7 +113,11 @@
+ 
+     # Follow chained DIFAT sectors if FAT is larger than 109 sectors
+     cur_difat = first_difat
++    difat_visited: set[int] = set()
+     while cur_difat < 0xFFFFFFFD and len(fat_sec_ids) < num_fat_sec:
++        if cur_difat in difat_visited:
++            break
++        difat_visited.add(cur_difat)
+         d_off = (cur_difat + 1) * sec_size
+         if d_off + sec_size > len(data):
+             break
+@@ -309,6 +313,54 @@
+     return streams
+ 
+ 
++def is_valid_cfbf(target: Union[str, Path, bytes, bytearray]) -> bool:
++    """Validate whether target is an authentic, non-corrupt CFBF container.
++
++    Rejects:
++    - Non-existent files or 0-byte files
++    - Truncated files (<= 512 bytes)
++    - Files with invalid magic header (must be 0xD0CF11E0A1B11AE1)
++    - 512-byte magic+zeros dummy files
++    - Header with corrupted byte order (must be 0xFFFE at offset 28)
++    - Invalid sector shift (must be 9 or 12 at offset 30)
++    """
++    try:
++        if isinstance(target, (str, Path)):
++            p = Path(target)
++            if not p.exists() or not p.is_file():
++                return False
++            data = p.read_bytes()
++        elif isinstance(target, (bytes, bytearray)):
++            data = bytes(target)
++        else:
++            return False
++
++        if len(data) <= 512:
++            return False
++        if data[:8] != CFBF_MAGIC:
++            return False
++        if data[8:512] == b"\x00" * 504:
++            return False
++        byte_order = struct.unpack_from("<H", data, 28)[0]
++        if byte_order != 0xFFFE:
++            return False
++        sector_shift = struct.unpack_from("<H", data, 30)[0]
++        if sector_shift not in (9, 12):
++            return False
++        mini_sec_shift = struct.unpack_from("<H", data, 32)[0]
++        if mini_sec_shift != 6:
++            return False
++        sec_size = 1 << sector_shift
++        # A valid CFBF container must contain at least Header + 1 FAT sector + 1 Directory sector = 3 sectors
++        if len(data) < sec_size * 3:
++            return False
++        if len(data) % sec_size != 0:
++            return False
++        return True
++    except Exception:
++        return False
++
++
+ def inspect_project_file(file_path: Union[str, Path]) -> ProjectFileInfo:
+     """Inspect and parse an authentic Cscape project file (.csp / .cpj).
+ 
+@@ -316,6 +368,8 @@
+     - File existence and non-zero size
+     - Microsoft Compound File Binary Format (CFBF) 8-byte magic header (0xD0CF11E0A1B11AE1)
+     - Sector size (512 or 4096 bytes)
++    - Mini sector size (64 bytes, shift 6)
++    - Sector alignment and minimum container size (>= 3 sectors)
+     - OLE directory streams (Root Entry, Contents)
+     - Embedded Cscape version strings (e.g. 10.2.751.4)
+     - Horner APG controller markers and tags (%AI1, %AQ1, HornerOCS, Allocated, etc.)
+@@ -330,16 +384,56 @@
+ 
+     data = path.read_bytes()
+     magic = data[:8]
+-    is_valid_cfbf = (magic == CFBF_MAGIC)
+-
+-    if not is_valid_cfbf:
++    if magic != CFBF_MAGIC:
+         raise ValueError(
+             f"File '{path.name}' is not a valid Cscape Compound File (CFBF). "
+             f"Expected magic {CFBF_MAGIC.hex()}, got {magic.hex()}"
+         )
+ 
++    # Fail-closed check: reject 512-byte magic+zeros or dummy/corrupt CFBF headers
++    if len(data) <= 512 or data[8:512] == b"\x00" * 504:
++        raise ValueError(
++            f"File '{path.name}' is not a valid Cscape Compound File (CFBF): "
++            f"dummy or corrupt container with 512-byte magic+zeros rejected."
++        )
++
++    # Check little-endian byte order at offset 28
++    byte_order = struct.unpack_from("<H", data, 28)[0]
++    if byte_order != 0xFFFE:
++        raise ValueError(
++            f"File '{path.name}' is not a valid Cscape Compound File (CFBF): "
++            f"unsupported byte order 0x{byte_order:04X} (expected 0xFFFE)."
++        )
++
+     sector_shift = struct.unpack_from("<H", data, 30)[0]
++    if sector_shift not in (9, 12):
++        raise ValueError(
++            f"File '{path.name}' is not a valid Cscape Compound File (CFBF): "
++            f"invalid sector shift {sector_shift} (expected 9 or 12)."
++        )
++
++    mini_sec_shift = struct.unpack_from("<H", data, 32)[0]
++    if mini_sec_shift != 6:
++        raise ValueError(
++            f"File '{path.name}' is not a valid Cscape Compound File (CFBF): "
++            f"invalid mini sector shift {mini_sec_shift} (expected 6)."
++        )
++
+     sector_size = 1 << sector_shift
++    if file_size < sector_size * 3:
++        raise ValueError(
++            f"File '{path.name}' is not a valid Cscape Compound File (CFBF): "
++            f"file size {file_size} bytes is smaller than minimum CFBF container ({sector_size * 3} bytes)."
++        )
++
++    if file_size % sector_size != 0:
++        raise ValueError(
++            f"File '{path.name}' is not a valid Cscape Compound File (CFBF): "
++            f"file size {file_size} bytes is not sector-aligned (sector size {sector_size} bytes)."
++        )
++
++    is_valid_cfbf_flag = True
++
+     dir_sector = struct.unpack_from("<I", data, 48)[0]
+ 
+     stream_entries: list[dict[str, Any]] = []
+@@ -385,13 +479,17 @@
+     # Parse /Contents header and extract version and markers
+     cscape_version = None
+     contents_data = streams.get("Contents") or streams.get("contents")
++    contents_hdr_failed = False
+     if contents_data:
+         hdr_info = parse_csp_contents_header(contents_data)
+         if hdr_info.get("valid"):
+             cscape_version = hdr_info.get("cscape_version")
++        else:
++            contents_hdr_failed = True
+ 
+     # If version not found in /Contents header, scan Unicode & ASCII strings in raw file
+-    if not cscape_version:
++    # Only perform heuristic string scan if /Contents stream was absent, NOT when /Contents header failed validation
++    if not cscape_version and not contents_hdr_failed:
+         for m in re.finditer(rb"(?:[\x20-\x7E]\x00){3,}", data):
+             try:
+                 u_str = m.group(0).decode("utf-16le", errors="ignore")
+@@ -420,7 +518,7 @@
+     return ProjectFileInfo(
+         file_path=path,
+         file_size_bytes=file_size,
+-        is_valid_cfbf=is_valid_cfbf,
++        is_valid_cfbf=is_valid_cfbf_flag,
+         magic_hex=magic.hex(),
+         sector_size=sector_size,
+         dir_sector=dir_sector,
+@@ -508,3 +606,17 @@
+ 
+     return bytes(header + fat + directory + contents_data)
+ 
++
++__all__ = [
++    "CFBF_MAGIC",
++    "CSCAPE_CONTENTS_MAGIC",
++    "HORNER_MARKERS",
++    "ProjectFileInfo",
++    "is_valid_cfbf",
++    "inspect_project_file",
++    "parse_cfbf_pure",
++    "parse_csp_contents_header",
++    "extract_cfbf_streams",
++    "generate_minimal_cfbf_bytes",
++]
++
+--- a/src/cscape/st_inserter.py
++++ b/src/cscape/st_inserter.py
+@@ -23,6 +23,7 @@
+ import os
+ import re
+ import sys
++import struct
+ import time
+ from dataclasses import dataclass, field
+ from pathlib import Path
+@@ -254,6 +255,9 @@
+     error_message: Optional[str] = None
+     timestamp: str = field(default_factory=lambda: time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()))
+     ast_hash: Optional[str] = None
++    storage_mode: str = "staging"
++    is_staging: bool = True
++    is_native_persisted: bool = False
+ 
+     def to_dict(self) -> dict[str, Any]:
+         return {
+@@ -265,6 +269,9 @@
+             "code_length": self.code_length,
+             "code_hash": self.code_hash,
+             "ast_hash": self.ast_hash,
++            "storage_mode": self.storage_mode,
++            "is_staged": self.is_staging,
++            "is_native_persisted": self.is_native_persisted,
+             "verified": self.verified,
+             "verification": self.verification.to_dict() if self.verification else None,
+             "file_path": self.file_path,
+@@ -844,15 +851,9 @@
+ 
+     @staticmethod
+     def validate_cfbf_container(csp_path: Path) -> bool:
+-        """Validate that a .csp file contains the authentic CFBF magic header."""
+-        if not csp_path.exists():
+-            return False
+-        try:
+-            data = csp_path.read_bytes()
+-            return len(data) >= 8 and data[:8] == CFBF_MAGIC
+-        except Exception as e:
+-            logger.warning("Error inspecting CFBF container %s: %s", csp_path, e)
+-            return False
++        """Validate that a .csp file contains authentic CFBF structure and not corrupt magic+zeros."""
++        from .cfbf import is_valid_cfbf
++        return is_valid_cfbf(csp_path)
+ 
+     @staticmethod
+     def register_pou_in_manifest(
+@@ -1020,12 +1021,10 @@
+ 
+         extracted = self.read_editor_code(editor_hwnd)
+ 
+-        # If extracted is empty and file_path provided, check file
+-        if not extracted and file_path:
+-            p = Path(file_path)
+-            if p.exists():
+-                extracted = p.read_text(encoding="utf-8")
+-                diagnostics.append(f"Extracted content verified via project/standalone file: {p}")
++        # Fail-closed: remove editor-empty -> aux-file verify fallback.
++        # If the editor window buffer is empty, do NOT fall back to reading from disk.
++        if not extracted:
++            diagnostics.append("Editor window buffer is empty (0 characters read). Aux-file fallback is strictly prohibited.")
+ 
+         extracted_norm = normalize_st_code(extracted)
+         extracted_hash = calculate_code_hash(extracted_norm)
+@@ -1259,15 +1258,51 @@
+         ver_result = None
+         verified = False
+         if success and verify:
+-            ver_result = self.verify_editor_content(
+-                editor_hwnd=editor_hwnd,
+-                expected_code=code,
+-                pou_name=clean_name,
+-                file_path=file_path_str,
+-            )
+-            verified = ver_result.verified
++            if editor_hwnd:
++                ver_result = self.verify_editor_content(
++                    editor_hwnd=editor_hwnd,
++                    expected_code=code,
++                    pou_name=clean_name,
++                    file_path=file_path_str,
++                )
++                verified = ver_result.verified
++            elif file_path_str and Path(file_path_str).exists():
++                # Staged file verification (offline file sync; no live editor window)
++                extracted = Path(file_path_str).read_text(encoding="utf-8")
++                extracted_norm = normalize_st_code(extracted)
++                expected_norm = normalize_st_code(code)
++                exact_match = (calculate_code_hash(expected_norm) == calculate_code_hash(extracted_norm))
++                val_res = IECValidator.validate(extracted_norm)
++                exp_ast_h = None
++                ext_ast_h = None
++                ast_match = False
++                try:
++                    exp_ast_h = calculate_ast_hash(expected_norm)
++                    ext_ast_h = calculate_ast_hash(extracted_norm)
++                    ast_match = (exp_ast_h == ext_ast_h)
++                except Exception:
++                    pass
++                verified = exact_match and val_res.get("valid", False) and (ast_match if (exp_ast_h and ext_ast_h) else True)
++                ver_result = STVerificationResult(
++                    verified=verified,
++                    editor_hwnd=None,
++                    extracted_code=extracted_norm,
++                    extracted_length=len(extracted_norm),
++                    expected_length=len(expected_norm),
++                    expected_hash=calculate_code_hash(expected_norm),
++                    extracted_hash=calculate_code_hash(extracted_norm),
++                    exact_match=exact_match,
++                    ast_valid=val_res.get("valid", False),
++                    ast_errors=val_res.get("errors", []),
++                    expected_ast_hash=exp_ast_h,
++                    extracted_ast_hash=ext_ast_h,
++                    ast_match=ast_match,
++                    diagnostics=["Staged file verified on disk (offline staging; no live editor window)."],
++                )
++            else:
++                verified = False
+             if not verified and not err:
+-                err = f"Verification failed: exact_match={ver_result.exact_match}, ast_valid={ver_result.ast_valid}"
++                err = f"Verification failed: exact_match={ver_result.exact_match if ver_result else False}, ast_valid={ver_result.ast_valid if ver_result else False}"
+ 
+         duration = time.time() - start_time
+         return STInsertionResult(
+--- /dev/null
++++ b/tests/test_c2_cfbf_staging_rigor.py
+@@ -0,0 +1,319 @@
++"""Test Suite for Phase C2: CFBF Validation Hardening, Staging Separation, and Fallback Dismantling.
++
++Mandate: PLAN_CORRECTIVO v2.0 - Phase C2 Rigor
++Invariants:
++1. Reject CFBF 512-byte magic+zeros as valid Horner export (is_valid_cfbf / export_project / inspect_project_file).
++2. Separate staging vs native insert (storage_mode='staging', is_staged=True, is_native_persisted=False).
++3. Remove editor-empty -> aux-file verify fallback in verify_editor_content (empty editor must fail verification).
++4. Negative tests for corrupt CFBF + staging confusion.
++5. Strictly prohibit claiming native persistence / Gate G2 / Gate G5 closed.
++"""
++
++from __future__ import annotations
++
++import struct
++import tempfile
++from pathlib import Path
++from unittest.mock import patch
++import pytest
++
++from src.cscape.cfbf import (
++    CFBF_MAGIC,
++    CSCAPE_CONTENTS_MAGIC,
++    HORNER_MARKERS,
++    ProjectFileInfo,
++    generate_minimal_cfbf_bytes,
++    inspect_project_file,
++    is_valid_cfbf,
++    parse_cfbf_pure,
++    parse_csp_contents_header,
++)
++from src.cscape.st_inserter import (
++    InsertionMethod,
++    POUType,
++    STInsertionResult,
++    StructuredTextInserter,
++)
++from src.cscape.project_manager import export_project
++from src.mcp.tools import (
++    cscape_add_st_pou,
++    cscape_export_project,
++    cscape_insert_st,
++)
++
++
++# ==============================================================================
++# 1. CFBF 512-Byte Magic+Zeros & Corrupt Container Negative Tests
++# ==============================================================================
++
++class TestC2CorruptCFBFRejection:
++    """Rigorous negative tests rejecting dummy 512-byte magic+zeros and corrupt CFBF headers."""
++
++    def test_c2_n01_cfbf_512_magic_zeros_rejected_by_is_valid_cfbf(self, tmp_path: Path):
++        """is_valid_cfbf must reject a 512-byte file with 8-byte magic followed by 504 zero bytes."""
++        corrupt_data = CFBF_MAGIC + (b"\x00" * 504)
++        assert len(corrupt_data) == 512
++        assert is_valid_cfbf(corrupt_data) is False
++
++        p = tmp_path / "DummyMagicZeros.csp"
++        p.write_bytes(corrupt_data)
++        assert is_valid_cfbf(p) is False
++
++    def test_c2_n01b_exact_user_expression_false_cfbf_export_rejected(self, tmp_path: Path):
++        """bytes.fromhex('d0cf11e0a1b11ae1') + bytes(504) must NOT yield success or is_valid_cfbf acceptance."""
++        false_export = bytes.fromhex("d0cf11e0a1b11ae1") + bytes(504)
++        assert len(false_export) == 512
++        assert is_valid_cfbf(false_export) is False
++        p = tmp_path / "FalseExportExact.csp"
++        p.write_bytes(false_export)
++        assert is_valid_cfbf(p) is False
++        with pytest.raises(ValueError, match="512-byte magic\\+zeros"):
++            inspect_project_file(p)
++
++    def test_c2_n02_cfbf_512_magic_zeros_rejected_by_inspect_project_file(self, tmp_path: Path):
++        """inspect_project_file must raise ValueError when encountering 512-byte magic+zeros dummy container."""
++        p = tmp_path / "Dummy512.csp"
++        p.write_bytes(CFBF_MAGIC + (b"\x00" * 504))
++
++        with pytest.raises(ValueError, match="512-byte magic\\+zeros"):
++            inspect_project_file(p)
++
++    def test_c2_n03_cfbf_bad_byte_order_rejected(self, tmp_path: Path):
++        """CFBF with invalid byte order (e.g. 0x0000 or 0xFEFF) must fail closed."""
++        raw = bytearray(generate_minimal_cfbf_bytes("BadByteOrderProj"))
++        # Corrupt byte order at offset 28
++        struct.pack_into("<H", raw, 28, 0x0000)
++        p = tmp_path / "BadByteOrder.csp"
++        p.write_bytes(raw)
++
++        assert is_valid_cfbf(raw) is False
++        assert is_valid_cfbf(p) is False
++        with pytest.raises(ValueError, match="unsupported byte order"):
++            inspect_project_file(p)
++
++    def test_c2_n04_cfbf_truncated_header_rejected(self, tmp_path: Path):
++        """CFBF files smaller than or equal to 512 bytes must be rejected."""
++        truncated = CFBF_MAGIC + (b"\x00" * 200)
++        assert is_valid_cfbf(truncated) is False
++
++        p = tmp_path / "Truncated.csp"
++        p.write_bytes(truncated)
++        assert is_valid_cfbf(p) is False
++        with pytest.raises(ValueError):
++            inspect_project_file(p)
++
++    def test_c2_n05_st_inserter_validate_cfbf_container_rejects_magic_zeros(self, tmp_path: Path):
++        """StructuredTextInserter.validate_cfbf_container must reject 512-byte magic+zeros."""
++        p = tmp_path / "CorruptContainer.csp"
++        p.write_bytes(CFBF_MAGIC + (b"\x00" * 504))
++        assert StructuredTextInserter.validate_cfbf_container(p) is False
++
++    def test_c2_n06_cscape_export_project_rejects_512_magic_zeros(self):
++        """cscape_export_project must reject exporting a project whose container is 512-byte magic+zeros."""
++        import shutil
++        proj_dir = Path("artifacts/projects/CorruptExportProj")
++        proj_dir.mkdir(parents=True, exist_ok=True)
++        csp_file = proj_dir / "CorruptExportProj.csp"
++        csp_file.write_bytes(CFBF_MAGIC + (b"\x00" * 504))
++
++        try:
++            res = cscape_export_project("CorruptExportProj", output_format="csp")
++            assert res["success"] is False
++            assert res["status"] == "failed"
++            assert any("512-byte magic+zeros" in str(e) or "failed CFBF" in str(e) for e in res.get("errors", []))
++        finally:
++            shutil.rmtree(proj_dir, ignore_errors=True)
++
++    def test_c2_n07_cscape_pm_export_project_rejects_512_magic_zeros(self, tmp_path: Path):
++        """cscape.project_manager.export_project must reject source container with 512-byte magic+zeros."""
++        proj_dir = tmp_path / "PMCorruptExportProj"
++        proj_dir.mkdir(parents=True, exist_ok=True)
++        csp_file = proj_dir / "PMCorruptExportProj.csp"
++        csp_file.write_bytes(CFBF_MAGIC + (b"\x00" * 504))
++
++        res = export_project(str(proj_dir), destination_path=str(tmp_path / "out.csp"), output_format="csp")
++        assert res["success"] is False
++        assert res["status"] == "failed"
++        assert any("512-byte magic+zeros" in str(e) or "failed CFBF" in str(e) for e in res.get("errors", []))
++
++
++# ==============================================================================
++# 2. Staging vs Native Insert Separation & Fallback Elimination
++# ==============================================================================
++
++class TestC2StagingSeparationAndFallbackElimination:
++    """Rigorous tests confirming staging classification and removal of empty-editor fallback."""
++
++    def test_c2_n08_verify_editor_content_empty_editor_fails_closed_no_disk_fallback(self, tmp_path: Path):
++        """When editor window buffer is empty, verify_editor_content MUST fail closed even if file exists on disk."""
++        sample_code = "PROGRAM Main\nVAR\n    x : INT;\nEND_VAR\nx := 1;\nEND_PROGRAM"
++        pou_file = tmp_path / "Main.st"
++        pou_file.write_text(sample_code, encoding="utf-8")
++
++        inserter = StructuredTextInserter()
++        # Mock editor returning empty string (editor is empty / uninitialized)
++        with patch.object(inserter, "read_editor_code", return_value=""):
++            res = inserter.verify_editor_content(
++                editor_hwnd=0x1234,
++                expected_code=sample_code,
++                pou_name="Main",
++                file_path=pou_file,
++            )
++            # Must NOT pass using disk fallback
++            assert res.verified is False
++            assert res.exact_match is False
++            assert res.extracted_code == ""
++            assert any("Aux-file fallback is strictly prohibited" in d for d in res.diagnostics)
++
++    def test_c2_p01_cscape_insert_st_explicit_staging_classification(self, tmp_path: Path):
++        """cscape_insert_st must explicitly return storage_mode='staging', is_staged=True, is_native_persisted=False."""
++        code = "PROGRAM StagedTest\nVAR\n    bFlag : BOOL;\nEND_VAR\nbFlag := TRUE;\nEND_PROGRAM"
++        res = cscape_insert_st(
++            pou_name="StagedTest",
++            pou_type="PROGRAM",
++            st_code=code,
++            target_project_path=str(tmp_path),
++        )
++        assert res["success"] is True
++        assert res["status"] == "success"
++        assert res["storage_mode"] == "staging"
++        assert res["is_staged"] is True
++        assert res["is_native_persisted"] is False
++        assert (tmp_path / "pous" / "StagedTest.st").exists()
++
++    def test_c2_p02_cscape_add_st_pou_explicit_staging_classification(self):
++        """cscape_add_st_pou must return storage_mode='staging', is_staged=True, is_native_persisted=False."""
++        code = "PROGRAM AddStagingTest\nVAR\n    nVal : INT;\nEND_VAR\nnVal := 42;\nEND_PROGRAM"
++        res = cscape_add_st_pou(
++            project_name="AddStagingAuditProject",
++            pou_name="AddStagingTest",
++            pou_type="PROGRAM",
++            code=code,
++        )
++        assert res["success"] is True
++        assert res["status"] == "success"
++        assert res["storage_mode"] == "staging"
++        assert res["is_staged"] is True
++        assert res["is_native_persisted"] is False
++
++    def test_c2_p03_st_insertion_result_structure(self):
++        """STInsertionResult must contain explicit storage_mode and native persistence flags."""
++        result = STInsertionResult(
++            success=True,
++            pou_name="CheckPOU",
++            pou_type=POUType.PROGRAM,
++            method_used=InsertionMethod.FILE_SYNC,
++            editor_hwnd=None,
++            code_length=100,
++            code_hash="abcd1234",
++            verified=True,
++        )
++        d = result.to_dict()
++        assert d["storage_mode"] == "staging"
++        assert d["is_staged"] is True
++        assert d["is_native_persisted"] is False
++
++    def test_c2_n09_hash_alone_does_not_claim_native_persistence(self):
++        """Mandate: SHA-256 or AST hash presence must NOT be claimed as native container persistence."""
++        code = "PROGRAM HashTest\nVAR\n    y : INT;\nEND_VAR\ny := 99;\nEND_PROGRAM"
++        res = cscape_add_st_pou("HashTestProj", "HashPOU", "PROGRAM", code)
++        assert res["code_hash"] != ""
++        # Hash is present, but native persistence is explicitly FALSE
++        assert res["is_native_persisted"] is False
++        assert res["storage_mode"] == "staging"
++        assert res["is_staged"] is True
++
++
++# ==============================================================================
++# 3. Deep Structural CFBF Container Anomalies & Hardening (Phase C2 Continuation)
++# ==============================================================================
++
++class TestC2StructuralContainerAnomalies:
++    """Rigorous negative tests for structural anomalies, sector shift violations, size deficits, and cycle defense."""
++
++    def test_c2_n10_cfbf_invalid_mini_sector_shift_rejected(self, tmp_path: Path):
++        """CFBF with invalid mini sector shift (!= 6) must fail closed."""
++        raw = bytearray(generate_minimal_cfbf_bytes("BadMiniShift"))
++        # Corrupt mini sector shift at offset 32 to 0
++        struct.pack_into("<H", raw, 32, 0)
++        p = tmp_path / "BadMiniShift.csp"
++        p.write_bytes(raw)
++
++        assert is_valid_cfbf(raw) is False
++        assert is_valid_cfbf(p) is False
++        with pytest.raises(ValueError, match="invalid mini sector shift"):
++            inspect_project_file(p)
++
++    def test_c2_n11_cfbf_truncated_file_sector_deficit_rejected(self, tmp_path: Path):
++        """CFBF files with fewer than 3 sectors (< 1536 bytes) cannot hold required FAT + Directory sectors."""
++        # 1024 bytes = Header + only 1 sector
++        raw = bytearray(1024)
++        raw[0:8] = CFBF_MAGIC
++        struct.pack_into("<H", raw, 28, 0xFFFE)
++        struct.pack_into("<H", raw, 30, 9)
++        struct.pack_into("<H", raw, 32, 6)
++        p = tmp_path / "DeficitSectors.csp"
++        p.write_bytes(raw)
++
++        assert is_valid_cfbf(raw) is False
++        assert is_valid_cfbf(p) is False
++        with pytest.raises(ValueError, match="smaller than minimum CFBF container"):
++            inspect_project_file(p)
++
++    def test_c2_n12_cfbf_unaligned_file_size_rejected(self, tmp_path: Path):
++        """CFBF files whose size is not an integer multiple of the sector size must be rejected."""
++        raw = bytearray(generate_minimal_cfbf_bytes("UnalignedProj"))
++        raw.append(0x55)  # 5633 bytes (unaligned)
++        p = tmp_path / "Unaligned.csp"
++        p.write_bytes(raw)
++
++        assert is_valid_cfbf(raw) is False
++        assert is_valid_cfbf(p) is False
++        with pytest.raises(ValueError, match="not sector-aligned"):
++            inspect_project_file(p)
++
++    def test_c2_n13_cfbf_circular_difat_chain_defense(self):
++        """parse_cfbf_pure must terminate safely and break out if a circular DIFAT loop is present."""
++        raw = bytearray(generate_minimal_cfbf_bytes("CircularDifat"))
++        # Set num_fat_sec = 200 (trigger DIFAT chain traversal)
++        struct.pack_into("<I", raw, 44, 200)
++        # Set first_difat to sector 0
++        struct.pack_into("<I", raw, 68, 0)
++        # In sector 0 (offset 512), set the last pointer (DIFAT next pointer) to point back to sector 0
++        cnt = (512 // 4) - 1
++        struct.pack_into("<I", raw, 512 + cnt * 4, 0)
++
++        # Must parse or fail without hanging / infinite loop
++        entries, streams = parse_cfbf_pure(bytes(raw))
++        # Safely executed without hanging
++        assert isinstance(entries, list)
++        assert isinstance(streams, dict)
++
++    def test_c2_n14_cfbf_corrupt_contents_stream_magic(self, tmp_path: Path):
++        """When /Contents stream header does not match 0x78563412, parser reports invalid header honestly."""
++        raw = bytearray(generate_minimal_cfbf_bytes("CorruptContentsHdr"))
++        # Contents stream starts at sector 2 (offset (2+1)*512 = 1536)
++        struct.pack_into("<I", raw, 1536, 0x00000000)
++        p = tmp_path / "CorruptContents.csp"
++        p.write_bytes(raw)
++
++        # Container itself is structurally valid CFBF
++        assert is_valid_cfbf(raw) is True
++        info = inspect_project_file(p)
++        assert info.is_valid_cfbf is True
++        # But contents stream magic is corrupt, so cscape_version is None
++        assert info.cscape_version is None
++
++    def test_c2_n15_st_inserter_validate_cfbf_rejects_unaligned_and_mini_shift_anomalies(self, tmp_path: Path):
++        """StructuredTextInserter.validate_cfbf_container must reject unaligned and corrupt mini shift containers."""
++        raw = bytearray(generate_minimal_cfbf_bytes("InserterAnomaly"))
++        struct.pack_into("<H", raw, 32, 0)  # Bad mini shift
++        p = tmp_path / "BadMiniInserter.csp"
++        p.write_bytes(raw)
++        assert StructuredTextInserter.validate_cfbf_container(p) is False
++
++        raw2 = bytearray(generate_minimal_cfbf_bytes("InserterUnaligned"))
++        raw2.append(0xAA)  # Unaligned
++        p2 = tmp_path / "UnalignedInserter.csp"
++        p2.write_bytes(raw2)
++        assert StructuredTextInserter.validate_cfbf_container(p2) is False
+--- /dev/null
++++ b/tests/test_c2_pou_ast_rollback.py
+@@ -0,0 +1,288 @@
++"""Phase C2 Test Suite: POU AST Engine & Transactional Rollback Rigor.
++
++Mandates Verified:
++1. Pure IEC 61131-3 ST syntax pre-insertion validation via IECValidator.
++2. Zero disk pollution / mutation when inserting invalid ST or ladder logic.
++3. Transactional rollback when updating an existing POU fails (original file preserved byte-for-byte).
++4. Accurate line number localization for ladder constructs (ERR_LADDER_FORBIDDEN) without inventing line 1, col 1.
++5. Unlocated errors preserve line: None, column: None.
++6. Offline / DEV execution only (zero live GUI mutation; Cscape untouched).
++"""
++
++import pytest
++import shutil
++import tempfile
++from pathlib import Path
++from typing import Any, Dict
++
++from src.mcp.tools import (
++    cscape_insert_st,
++    cscape_add_st_pou,
++    cscape_validate_st,
++    normalize_tool_result,
++    ToolStatus,
++)
++from src.cscape.st_ld_interop import STLadderInteropGuard, LadderConstructRejectedError
++from src.security.exceptions import UnauthorizedDownloadError
++
++
++@pytest.fixture
++def temp_project_dir():
++    """Creates a temporary project directory layout with pous/ subfolder."""
++    tmp = tempfile.mkdtemp(prefix="c2_test_proj_")
++    p_dir = Path(tmp)
++    (p_dir / "pous").mkdir(parents=True, exist_ok=True)
++    yield p_dir
++    shutil.rmtree(tmp, ignore_errors=True)
++
++
++class TestC2POUASTValidationAndInsertion:
++    """Verifies AST parsing, validation, and zero disk mutation on failure."""
++
++    def test_valid_st_pou_inserted_successfully(self, temp_project_dir):
++        code = "PROGRAM ValidProg\nVAR\n  count : INT;\nEND_VAR\n  count := count + 1;\nEND_PROGRAM"
++        res = cscape_insert_st(
++            pou_name="ValidProg",
++            pou_type="PROGRAM",
++            st_code=code,
++            target_project_path=str(temp_project_dir),
++        )
++        assert res["success"] is True
++        assert res["status"] == "success"
++        pou_file = temp_project_dir / "pous" / "ValidProg.st"
++        assert pou_file.exists()
++        assert pou_file.read_text(encoding="utf-8") == code
++
++    def test_invalid_syntax_zero_disk_pollution(self, temp_project_dir):
++        bad_code = "PROGRAM BadProg\nVAR\n  x : INT\nEND_VAR\n  x := ;\nEND_PROGRAM"
++        res = cscape_insert_st(
++            pou_name="BadProg",
++            pou_type="PROGRAM",
++            st_code=bad_code,
++            target_project_path=str(temp_project_dir),
++        )
++        assert res["success"] is False
++        assert res["status"] == "failed"
++        pou_file = temp_project_dir / "pous" / "BadProg.st"
++        assert not pou_file.exists(), "Invalid POU must NOT be written to disk (zero disk pollution)"
++
++    def test_ladder_logic_zero_disk_pollution(self, temp_project_dir):
++        ladder_code = "PROGRAM LadderProg\nVAR\n  b : BOOL;\nEND_VAR\n  ---[ ]---\nEND_PROGRAM"
++        res = cscape_insert_st(
++            pou_name="LadderProg",
++            pou_type="PROGRAM",
++            st_code=ladder_code,
++            target_project_path=str(temp_project_dir),
++        )
++        assert res["success"] is False
++        assert res["status"] == "failed"
++        assert any("ladder" in e.lower() for e in res["errors"])
++        pou_file = temp_project_dir / "pous" / "LadderProg.st"
++        assert not pou_file.exists(), "Ladder construct POU must NOT be written to disk"
++
++
++class TestC2TransactionalRollback:
++    """Verifies transactional rollback on update failure."""
++
++    def test_update_failure_restores_original_code_byte_for_byte(self, temp_project_dir):
++        good_code = "PROGRAM MasterProg\nVAR\n  setpoint : REAL;\nEND_VAR\n  setpoint := 100.0;\nEND_PROGRAM"
++        pou_file = temp_project_dir / "pous" / "MasterProg.st"
++        pou_file.write_text(good_code, encoding="utf-8")
++        original_mtime = pou_file.stat().st_mtime_ns
++
++        broken_update = "PROGRAM MasterProg\nVAR\n  setpoint : REAL;\nEND_VAR\n  setpoint := ---[ ]---;\nEND_PROGRAM"
++        res = cscape_insert_st(
++            pou_name="MasterProg",
++            pou_type="PROGRAM",
++            st_code=broken_update,
++            target_project_path=str(temp_project_dir),
++        )
++        assert res["success"] is False
++        assert res["status"] == "failed"
++
++        # Verify original file was preserved intact
++        current_content = pou_file.read_text(encoding="utf-8")
++        assert current_content == good_code, "Original POU content must be preserved upon failed update"
++
++
++class TestC2AccurateLocationMetrics:
++    """Verifies accurate line/column extraction and eliminates fabricated line 1, col 1."""
++
++    def test_ladder_construct_line_number_precision(self):
++        code = "PROGRAM TestLadderLine\nVAR\n  a : BOOL;\nEND_VAR\n  ---( )---\nEND_PROGRAM"
++        res = cscape_validate_st(code=code)
++        assert res["valid"] is False
++        assert len(res["failure_locations"]) > 0
++        loc = res["failure_locations"][0]
++        # Line 5 contains the ladder coil ---( )---
++        assert loc["line"] == 5, f"Expected line 5 for ladder coil, got {loc['line']}"
++        assert loc["error_code"] == "ERR_LADDER_FORBIDDEN"
++
++    def test_unlocated_error_preserves_none(self):
++        norm = normalize_tool_result({
++            "success": False,
++            "errors": ["General unlocated AST engine anomaly"]
++        })
++        assert len(norm["failure_locations"]) > 0
++        loc = norm["failure_locations"][0]
++        assert loc["line"] is None, "Unlocated error must not invent line 1"
++        assert loc["column"] is None, "Unlocated error must not invent col 1"
++
++
++class TestC2LadderVariantsRejection:
++    """Tests rejecting diverse ladder artifacts (coils, contacts, mnemonics) while preserving pure ST."""
++
++    def test_c2_n16_ladder_coil_set_reset_rejection(self, temp_project_dir):
++        """Reject set/reset coils --- (S) --- and [SET bVar] with ERR_LADDER_FORBIDDEN and zero disk mutation."""
++        code = "PROGRAM SetCoilProg\nVAR\n  bAlarm : BOOL;\nEND_VAR\n  ---(S)---\nEND_PROGRAM"
++        res = cscape_insert_st("SetCoilProg", "PROGRAM", code, target_project_path=str(temp_project_dir))
++        assert res["success"] is False
++        assert res["status"] == "failed"
++        assert not (temp_project_dir / "pous" / "SetCoilProg.st").exists()
++        assert any("ladder" in e.lower() for e in res["errors"])
++
++    def test_c2_n17_ladder_contacts_nc_rejection(self, temp_project_dir):
++        """Reject normally closed contacts ---[/]--- with zero disk mutation."""
++        code = "PROGRAM NCProg\nVAR\n  bStop : BOOL;\nEND_VAR\n  ---[/]---\nEND_PROGRAM"
++        res = cscape_insert_st("NCProg", "PROGRAM", code, target_project_path=str(temp_project_dir))
++        assert res["success"] is False
++        assert res["status"] == "failed"
++        assert not (temp_project_dir / "pous" / "NCProg.st").exists()
++
++    def test_c2_n18_ladder_mnemonic_instructions_rejection(self, temp_project_dir):
++        """Reject ladder instruction mnemonics (XIC, XIO, OTE, OTL, OTU)."""
++        code = "PROGRAM MnemonicProg\nVAR\n  bStart : BOOL;\nEND_VAR\n  XIC(bStart)\nEND_PROGRAM"
++        res = cscape_insert_st("MnemonicProg", "PROGRAM", code, target_project_path=str(temp_project_dir))
++        assert res["success"] is False
++        assert res["status"] == "failed"
++        assert not (temp_project_dir / "pous" / "MnemonicProg.st").exists()
++
++    def test_c2_p04_ladder_in_comments_allowed(self):
++        """Comments mentioning ladder constructs must NOT be falsely rejected."""
++        code = (
++            "PROGRAM CommentDocProg\n"
++            "VAR\n"
++            "  bStatus : BOOL;\n"
++            "END_VAR\n"
++            "(* Legacy contact was ---[ ]--- and coil was ---( )--- *)\n"
++            "// RUNG 1: legacy XIC(bStart) replaced by ST IF\n"
++            "bStatus := TRUE;\n"
++            "END_PROGRAM"
++        )
++        res = cscape_validate_st(code=code)
++        assert res["valid"] is True
++        assert res["status"] == "success"
++
++    def test_c2_p05_identifier_substring_collision_immunity(self):
++        """Variable names with ladder substrings (e.g. network_id, rung_counter, xic_status) must be valid."""
++        code = (
++            "PROGRAM IdentifierProg\n"
++            "VAR\n"
++            "  network_id : INT;\n"
++            "  rung_counter : INT;\n"
++            "  xic_status : BOOL;\n"
++            "END_VAR\n"
++            "network_id := 1;\n"
++            "rung_counter := rung_counter + 1;\n"
++            "xic_status := FALSE;\n"
++            "END_PROGRAM"
++        )
++        res = cscape_validate_st(code=code)
++        assert res["valid"] is True
++        assert res["status"] == "success"
++
++
++class TestC2SyntaxAndGrammarRejection:
++    """Verifies fail-closed behavior for malformed ST grammar, unclosed blocks, and empty code."""
++
++    def test_c2_n19_unmatched_if_block_syntax_rejection(self, temp_project_dir):
++        """Unclosed IF statement missing END_IF must fail closed with zero disk mutation."""
++        code = "PROGRAM BrokenIf\nVAR\n  x : INT;\nEND_VAR\nIF x > 0 THEN\n  x := 0;\nEND_PROGRAM"
++        res = cscape_insert_st("BrokenIf", "PROGRAM", code, target_project_path=str(temp_project_dir))
++        assert res["success"] is False
++        assert res["status"] == "failed"
++        assert not (temp_project_dir / "pous" / "BrokenIf.st").exists()
++
++    def test_c2_n20_unmatched_case_block_syntax_rejection(self, temp_project_dir):
++        """Unclosed CASE statement missing END_CASE must fail closed."""
++        code = "PROGRAM BrokenCase\nVAR\n  st : INT;\nEND_VAR\nCASE st OF\n1: st := 2;\nEND_PROGRAM"
++        res = cscape_insert_st("BrokenCase", "PROGRAM", code, target_project_path=str(temp_project_dir))
++        assert res["success"] is False
++        assert res["status"] == "failed"
++        assert not (temp_project_dir / "pous" / "BrokenCase.st").exists()
++
++    def test_c2_n21_unclosed_comment_rejection(self, temp_project_dir):
++        """Unclosed block comment (* ... without *) must fail closed."""
++        code = "PROGRAM UnclosedComment\nVAR\n  x : INT;\nEND_VAR\n(* Unclosed comment\nx := 1;\nEND_PROGRAM"
++        res = cscape_insert_st("UnclosedComment", "PROGRAM", code, target_project_path=str(temp_project_dir))
++        assert res["success"] is False
++        assert res["status"] == "failed"
++        assert not (temp_project_dir / "pous" / "UnclosedComment.st").exists()
++
++    def test_c2_n22_empty_and_whitespace_code_rejected(self):
++        """Empty string or whitespace-only code must fail closed."""
++        res1 = cscape_validate_st(code="")
++        assert res1["valid"] is False
++        assert res1["status"] == "failed"
++
++        res2 = cscape_validate_st(code="   \n\t  \n  ")
++        assert res2["valid"] is False
++        assert res2["status"] == "failed"
++
++
++class TestC2TransactionalRollbackRigorous:
++    """Verifies that failed updates preserve existing disk assets byte-for-byte with zero residue."""
++
++    def test_c2_n23_rollback_preserves_bytes_on_syntax_error(self, temp_project_dir):
++        """When an update introduces a syntax error, original file content is preserved 100% byte-for-byte."""
++        good_code = "PROGRAM ExistingTask\nVAR\n  nSpeed : INT;\nEND_VAR\nnSpeed := 1500;\nEND_PROGRAM"
++        pou_file = temp_project_dir / "pous" / "ExistingTask.st"
++        pou_file.write_text(good_code, encoding="utf-8")
++        expected_bytes = pou_file.read_bytes()
++
++        # Attempt to overwrite with broken code
++        broken_code = "PROGRAM ExistingTask\nVAR\n  nSpeed : INT\nEND_VAR\nnSpeed := ;\nEND_PROGRAM"
++        res = cscape_insert_st("ExistingTask", "PROGRAM", broken_code, target_project_path=str(temp_project_dir))
++        assert res["success"] is False
++        assert res["status"] == "failed"
++
++        # Byte-for-byte equality assertion
++        assert pou_file.read_bytes() == expected_bytes
++
++    def test_c2_n24_rollback_on_add_st_pou_ladder_injection(self, tmp_path: Path):
++        """cscape_add_st_pou rolls back cleanly if ladder logic is injected into an existing project POU."""
++        proj_name = "RollbackLadderAuditProj"
++        proj_dir = Path("artifacts/projects") / proj_name
++        pous_dir = proj_dir / "pous"
++        pous_dir.mkdir(parents=True, exist_ok=True)
++        pou_file = pous_dir / "ExistingControl.st"
++
++        good_code = "PROGRAM ExistingControl\nVAR\n  bRun : BOOL;\nEND_VAR\nbRun := TRUE;\nEND_PROGRAM"
++        pou_file.write_text(good_code, encoding="utf-8")
++        orig_bytes = pou_file.read_bytes()
++
++        try:
++            bad_code = "PROGRAM ExistingControl\nVAR\n  bRun : BOOL;\nEND_VAR\n  ---( )---\nEND_PROGRAM"
++            res = cscape_add_st_pou(proj_name, "ExistingControl", "PROGRAM", bad_code)
++            assert res["success"] is False
++            assert res["status"] == "failed"
++            assert pou_file.read_bytes() == orig_bytes
++        finally:
++            shutil.rmtree(proj_dir, ignore_errors=True)
++
++    def test_c2_n25_add_st_pou_new_pou_failure_leaves_no_orphan_file(self):
++        """cscape_add_st_pou for a new POU that fails validation leaves no orphan file on disk."""
++        proj_name = "NoOrphanTestProj"
++        proj_dir = Path("artifacts/projects") / proj_name
++        pous_dir = proj_dir / "pous"
++        pous_dir.mkdir(parents=True, exist_ok=True)
++        new_pou_file = pous_dir / "BrandNewFailedPOU.st"
++
++        try:
++            broken_code = "PROGRAM BrandNewFailedPOU\nVAR\n  val : INT\nEND_VAR\nval := ;\nEND_PROGRAM"
++            res = cscape_add_st_pou(proj_name, "BrandNewFailedPOU", "PROGRAM", broken_code)
++            assert res["success"] is False
++            assert res["status"] == "failed"
++            assert not new_pou_file.exists()
++        finally:
++            shutil.rmtree(proj_dir, ignore_errors=True)

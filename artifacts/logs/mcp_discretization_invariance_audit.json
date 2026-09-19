@@ -1,0 +1,104 @@
+{
+  "step": 42,
+  "title": "Cyclic Scan Jitter & Discretization Time Invariance Audit",
+  "timestamp_start_utc": "2026-09-05T09:47:03.578Z",
+  "timestamp_end_utc": "2026-09-05T09:47:04.888Z",
+  "status": "VERIFIED_LIVE",
+  "cscape_active_process": {
+    "pid": 11808,
+    "hwnd": "0x01F00670",
+    "uptime_seconds": 1011.91,
+    "working_set_mb": 215.83,
+    "thread_count": 10,
+    "is_hung": false,
+    "wm_null_ping_ok": true,
+    "desktop": "Default"
+  },
+  "discretization_metrics": {
+    "total_cycles": 2725,
+    "scan_rates_tested": 6,
+    "duration_seconds": 1.293,
+    "cycles_per_sec": 2107.8,
+    "all_rates_converged_sub_0_05": true,
+    "rate_results": {
+      "1ms_ULTRA_FAST": {
+        "dt_ms": 1.0,
+        "cycles": 1000,
+        "total_sim_time_ms": 1000.0,
+        "duration_seconds": 0.4616,
+        "cycles_per_sec": 2166.5,
+        "settled_cycle": 115,
+        "max_error_percent": 24.744,
+        "final_error_percent": 0.0263,
+        "final_pv": 64.9737,
+        "converged_sub_0_05": true
+      },
+      "2ms_FAST": {
+        "dt_ms": 2.0,
+        "cycles": 750,
+        "total_sim_time_ms": 1500.0,
+        "duration_seconds": 0.2755,
+        "cycles_per_sec": 2722.2,
+        "settled_cycle": 62,
+        "max_error_percent": 24.487,
+        "final_error_percent": 0.0001,
+        "final_pv": 64.9999,
+        "converged_sub_0_05": true
+      },
+      "5ms_HIGH_SPEED": {
+        "dt_ms": 5.0,
+        "cycles": 500,
+        "total_sim_time_ms": 2500.0,
+        "duration_seconds": 0.1827,
+        "cycles_per_sec": 2736.7,
+        "settled_cycle": 40,
+        "max_error_percent": 23.743,
+        "final_error_percent": 0.0016,
+        "final_pv": 65.0016,
+        "converged_sub_0_05": true
+      },
+      "10ms_NOMINAL_CSCAPE": {
+        "dt_ms": 10.0,
+        "cycles": 250,
+        "total_sim_time_ms": 2500.0,
+        "duration_seconds": 0.0888,
+        "cycles_per_sec": 2814.2,
+        "settled_cycle": 40,
+        "max_error_percent": 22.783,
+        "final_error_percent": 0.0016,
+        "final_pv": 65.0016,
+        "converged_sub_0_05": true
+      },
+      "20ms_MEDIUM": {
+        "dt_ms": 20.0,
+        "cycles": 125,
+        "total_sim_time_ms": 2500.0,
+        "duration_seconds": 0.0537,
+        "cycles_per_sec": 2326.9,
+        "settled_cycle": 63,
+        "max_error_percent": 21.758,
+        "final_error_percent": 0.0008,
+        "final_pv": 64.9992,
+        "converged_sub_0_05": true
+      },
+      "50ms_SLOW": {
+        "dt_ms": 50.0,
+        "cycles": 100,
+        "total_sim_time_ms": 5000.0,
+        "duration_seconds": 0.0327,
+        "cycles_per_sec": 3056.2,
+        "settled_cycle": 83,
+        "max_error_percent": 25.391,
+        "final_error_percent": 0.0331,
+        "final_pv": 64.9669,
+        "converged_sub_0_05": true
+      }
+    }
+  },
+  "safety_audit": {
+    "physical_plc_download_blocked": true,
+    "zero_physical_hardware_touched": true,
+    "hardware_lockout_enforced": true,
+    "zero_straton_dependencies": true
+  }
+}

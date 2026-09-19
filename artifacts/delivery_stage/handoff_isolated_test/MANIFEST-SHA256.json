@@ -1,0 +1,43 @@
+{
+  "manifest_version": "1.0.0",
+  "timestamp_utc": "2026-09-16T03:10:00Z",
+  "total_files": 9,
+  "files": {
+    "docs/ACCEPTANCE_AND_LIMITATIONS.md": {
+      "size_bytes": 1746,
+      "sha256": "1feabcd6a3716955483c46384bc4356dad5e4530136a51ea751d474a7b000335"
+    },
+    "docs/MODBUS_PV_CONVERSION_SPEC.md": {
+      "size_bytes": 1889,
+      "sha256": "3ec23cda7c4948e95c275dbc4f0e70dec9aba3ebcba743dc07895f5a6262b273"
+    },
+    "docs/SUPPORTED_HARDWARE_PROFILE.md": {
+      "size_bytes": 974,
+      "sha256": "c3987039ecbe34e8cf24faf2f5705001a2fe766b1e26aad893521f1f861ca42a"
+    },
+    "docs/TRANSFER_AND_OPEN_GUIDE.md": {
+      "size_bytes": 1800,
+      "sha256": "95893570b11ed0d33623df6a156e2a4d7b0480ec77af34dd30d7ced4efc3da7f"
+    },
+    "projects/TankLevel_P5_Dedicated/modbus_protocol_inventory.json": {
+      "size_bytes": 5074,
+      "sha256": "06e3c1ccfea1ad135fd92a0a7be7817cf7b28fef35182823703574ff88c629ce"
+    },
+    "projects/TankLevel_P5_Dedicated/modbus_pv_config.json": {
+      "size_bytes": 1675,
+      "sha256": "fb06d8740cccaf3f90312715723b1960971ad4da15b34f21c0d305380b91314d"
+    },
+    "projects/TankLevel_P5_Dedicated/pous/TankLevelControl.st": {
+      "size_bytes": 2251,
+      "sha256": "36612185e94bfa6b1a79a4bf1d68e0b1533558ad99b96de5a3937640f3aec714"
+    },
+    "projects/TankLevel_P5_Dedicated/TankLevel_P5_Dedicated.csp": {
+      "size_bytes": 140800,
+      "sha256": "9f69f6a2ee12dab54087ab27bb839f40e01d6d65544a546139788519acd80ab1"
+    },
+    "test_tools/test_modbus_server.py": {
+      "size_bytes": 11994,
+      "sha256": "a848de781bf4da443a4c67b84416fb5fab4c91992a39dbabc942e42418ee8a0e"
+    }
+  }
+}

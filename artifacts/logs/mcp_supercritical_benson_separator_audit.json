@@ -1,0 +1,233 @@
+{
+  "audit_step": 102,
+  "name": "Supercritical Benson Boiler Separator Low-Load Transition Audit",
+  "timestamp": "2026-09-05T12:14:31.596Z",
+  "completed_at": "2026-09-05T12:14:38.283Z",
+  "cscape_pid": 9472,
+  "cscape_hwnd": "0x9b08f8",
+  "total_cycles": 600,
+  "metrics": {
+    "max_phase1_level_error_pct": 0.0,
+    "mean_phase1_level_error_pct": 0.0,
+    "max_phase2_uncomp_drift_pct": 6.71,
+    "mean_phase2_uncomp_drift_pct": 4.93,
+    "max_phase3_comp_error_pct": 0.0,
+    "mean_phase3_comp_error_pct": 0.0,
+    "dryout_surge_rejection_pct": 100.0,
+    "phase4_final_level_error_pct": 0.1138,
+    "phase4_mean_tail_level_error_pct": 0.0703,
+    "moisture_entrainment_trip_cycle": 501
+  },
+  "trace_samples": [
+    {
+      "cycle": 0,
+      "phase": "PHASE_1_SUBCRITICAL_LOW_LOAD_EQUILIBRIUM",
+      "target_sp": 45.0,
+      "separator_level": 45.0,
+      "evaporator_flow": 60.0,
+      "moisture_trip": false,
+      "cv_pid": 50.0
+    },
+    {
+      "cycle": 50,
+      "phase": "PHASE_1_SUBCRITICAL_LOW_LOAD_EQUILIBRIUM",
+      "target_sp": 45.0,
+      "separator_level": 45.0,
+      "evaporator_flow": 60.0,
+      "moisture_trip": false,
+      "cv_pid": 50.0
+    },
+    {
+      "cycle": 100,
+      "phase": "PHASE_1_SUBCRITICAL_LOW_LOAD_EQUILIBRIUM",
+      "target_sp": 45.0,
+      "separator_level": 45.0,
+      "evaporator_flow": 60.0,
+      "moisture_trip": false,
+      "cv_pid": 50.0
+    },
+    {
+      "cycle": 101,
+      "phase": "PHASE_2_ONCE_THROUGH_DRYOUT_TRANSITION_SWELL",
+      "target_sp": 45.0,
+      "separator_level": 45.023,
+      "evaporator_flow": 60.4,
+      "moisture_trip": false,
+      "cv_pid": 50.0
+    },
+    {
+      "cycle": 125,
+      "phase": "PHASE_2_ONCE_THROUGH_DRYOUT_TRANSITION_SWELL",
+      "target_sp": 45.0,
+      "separator_level": 49.558,
+      "evaporator_flow": 68.8,
+      "moisture_trip": false,
+      "cv_pid": 42.88
+    },
+    {
+      "cycle": 150,
+      "phase": "PHASE_2_ONCE_THROUGH_DRYOUT_TRANSITION_SWELL",
+      "target_sp": 45.0,
+      "separator_level": 51.663,
+      "evaporator_flow": 77.5,
+      "moisture_trip": false,
+      "cv_pid": 26.81
+    },
+    {
+      "cycle": 175,
+      "phase": "PHASE_2_ONCE_THROUGH_DRYOUT_TRANSITION_SWELL",
+      "target_sp": 45.0,
+      "separator_level": 50.594,
+      "evaporator_flow": 86.2,
+      "moisture_trip": false,
+      "cv_pid": 15.29
+    },
+    {
+      "cycle": 200,
+      "phase": "PHASE_2_ONCE_THROUGH_DRYOUT_TRANSITION_SWELL",
+      "target_sp": 45.0,
+      "separator_level": 50.532,
+      "evaporator_flow": 95.0,
+      "moisture_trip": false,
+      "cv_pid": 4.75
+    },
+    {
+      "cycle": 201,
+      "phase": "PHASE_3_RECIRCULATION_DECOUPLING_DRYOUT_SURGE_REJECTION",
+      "target_sp": 45.0,
+      "separator_level": 45.0,
+      "evaporator_flow": 95.0,
+      "moisture_trip": false,
+      "cv_pid": 50.0
+    },
+    {
+      "cycle": 225,
+      "phase": "PHASE_3_RECIRCULATION_DECOUPLING_DRYOUT_SURGE_REJECTION",
+      "target_sp": 45.0,
+      "separator_level": 45.0,
+      "evaporator_flow": 95.0,
+      "moisture_trip": false,
+      "cv_pid": 50.0
+    },
+    {
+      "cycle": 250,
+      "phase": "PHASE_3_RECIRCULATION_DECOUPLING_DRYOUT_SURGE_REJECTION",
+      "target_sp": 45.0,
+      "separator_level": 45.0,
+      "evaporator_flow": 95.0,
+      "moisture_trip": false,
+      "cv_pid": 50.0
+    },
+    {
+      "cycle": 275,
+      "phase": "PHASE_3_RECIRCULATION_DECOUPLING_DRYOUT_SURGE_REJECTION",
+      "target_sp": 45.0,
+      "separator_level": 45.0,
+      "evaporator_flow": 95.0,
+      "moisture_trip": false,
+      "cv_pid": 50.0
+    },
+    {
+      "cycle": 300,
+      "phase": "PHASE_3_RECIRCULATION_DECOUPLING_DRYOUT_SURGE_REJECTION",
+      "target_sp": 45.0,
+      "separator_level": 45.0,
+      "evaporator_flow": 95.0,
+      "moisture_trip": false,
+      "cv_pid": 50.0
+    },
+    {
+      "cycle": 350,
+      "phase": "PHASE_3_RECIRCULATION_DECOUPLING_DRYOUT_SURGE_REJECTION",
+      "target_sp": 45.0,
+      "separator_level": 45.0,
+      "evaporator_flow": 95.0,
+      "moisture_trip": false,
+      "cv_pid": 50.0
+    },
+    {
+      "cycle": 351,
+      "phase": "PHASE_4_SUPERCRITICAL_LEVEL_REDUCTION_STEP",
+      "target_sp": 30.0,
+      "separator_level": 43.74,
+      "evaporator_flow": 80.0,
+      "moisture_trip": false,
+      "cv_pid": 24.8
+    },
+    {
+      "cycle": 400,
+      "phase": "PHASE_4_SUPERCRITICAL_LEVEL_REDUCTION_STEP",
+      "target_sp": 30.0,
+      "separator_level": 28.573,
+      "evaporator_flow": 80.0,
+      "moisture_trip": false,
+      "cv_pid": 57.21
+    },
+    {
+      "cycle": 450,
+      "phase": "PHASE_4_SUPERCRITICAL_LEVEL_REDUCTION_STEP",
+      "target_sp": 30.0,
+      "separator_level": 29.764,
+      "evaporator_flow": 80.0,
+      "moisture_trip": false,
+      "cv_pid": 49.0
+    },
+    {
+      "cycle": 500,
+      "phase": "PHASE_4_SUPERCRITICAL_LEVEL_REDUCTION_STEP",
+      "target_sp": 30.0,
+      "separator_level": 30.114,
+      "evaporator_flow": 80.0,
+      "moisture_trip": false,
+      "cv_pid": 50.05
+    },
+    {
+      "cycle": 501,
+      "phase": "PHASE_5_SUPERHEATER_MOISTURE_ENTRAINMENT_TRIP",
+      "target_sp": 30.0,
+      "separator_level": 30.114,
+      "evaporator_flow": 30.0,
+      "moisture_trip": true,
+      "cv_pid": 50.04
+    },
+    {
+      "cycle": 520,
+      "phase": "PHASE_5_SUPERHEATER_MOISTURE_ENTRAINMENT_TRIP",
+      "target_sp": 30.0,
+      "separator_level": 30.114,
+      "evaporator_flow": 30.0,
+      "moisture_trip": true,
+      "cv_pid": 49.81
+    },
+    {
+      "cycle": 550,
+      "phase": "PHASE_5_SUPERHEATER_MOISTURE_ENTRAINMENT_TRIP",
+      "target_sp": 30.0,
+      "separator_level": 30.114,
+      "evaporator_flow": 30.0,
+      "moisture_trip": true,
+      "cv_pid": 49.54
+    },
+    {
+      "cycle": 599,
+      "phase": "PHASE_5_SUPERHEATER_MOISTURE_ENTRAINMENT_TRIP",
+      "target_sp": 30.0,
+      "separator_level": 30.114,
+      "evaporator_flow": 30.0,
+      "moisture_trip": true,
+      "cv_pid": 49.1
+    }
+  ],
+  "cscape_health": {
+    "healthy": true,
+    "pid": 9472,
+    "hwnd": "0x9b08f8",
+    "desktop": "Default",
+    "is_hung": false,
+    "wm_null_ping_ok": true,
+    "working_set_mb": 228.68,
+    "num_threads": 16,
+    "uptime_sec": 407.01
+  },
+  "download_lockout_verified": true
+}

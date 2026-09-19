@@ -1,0 +1,19 @@
+{
+  "step": 74,
+  "status": "COMPLETED",
+  "name": "LNG Cryogenic Run-Down Drum Level & Heavy Hydrocarbon Extraction Closed-Loop Audit",
+  "timestamp": "2026-09-05T10:53:16.818Z",
+  "cscape_pid": 8660,
+  "cscape_hwnd": "0x147068c",
+  "project": "TankLevelClosedLoop.csp",
+  "assertions_passed": [
+    "Phase 1 nominal equilibrium error 0.0000% < 0.10%",
+    "Phase 2 uncompensated cryogenic drum surge drift 6.66% > 5.0%",
+    "Phase 3 refrigeration decoupled error 0.0000% < 0.35%",
+    "Cryogenic surge rejection ratio 100.0% > 95.0%",
+    "Phase 4 dynamic drum step settling error 0.1138% < 0.35%",
+    "Phase 5 high-high BOG trip at cycle 501 == 501",
+    "Fail-closed download lockout ID_CONTROLLER_DOWNLOAD=32827 strictly enforced",
+    "Live Cscape GUI healthy and responsive throughout test"
+  ]
+}

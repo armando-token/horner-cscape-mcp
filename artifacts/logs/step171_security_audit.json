@@ -1,0 +1,44 @@
+{
+  "step": 171,
+  "role": "Security & Safety Guard",
+  "mandate": "Fail-Closed Hardware Lockout & Straton Quarantine Verification",
+  "status": "PASSED",
+  "timestamp_utc": "2026-09-06T08:07:33.942Z",
+  "duration_seconds": 3.872,
+  "results": {
+    "task1_hardware_download_lockout": {
+      "cmd_32827_blocked": true,
+      "cmd_32827_reason": "Physical controller download command '32827' (ID_CONTROLLER_DOWNLOAD=32827, ID_CONTROLLER_DOWNLOAD_ALT=33149) is strictly locked out. Zero physical PLC flashing permitted.",
+      "cmd_33149_blocked": true,
+      "cmd_33149_reason": "Physical controller download command '33149' (ID_CONTROLLER_DOWNLOAD=32827, ID_CONTROLLER_DOWNLOAD_ALT=33149) is strictly locked out. Zero physical PLC flashing permitted.",
+      "safety_guard_validate_download_blocked": true,
+      "all_hardware_ports_blocked": true,
+      "compiler_cmd_32827_blocked": true,
+      "compiler_cmd_33149_blocked": true
+    },
+    "task2_mcp_download_rejection": {
+      "cscape_download_logic_rejected": true,
+      "tool_response": {
+        "jsonrpc": "2.0",
+        "id": 3,
+        "result": {
+          "content": [
+            {
+              "text": "Unknown tool: cscape_download_logic",
+              "type": "text"
+            }
+          ],
+          "isError": true
+        }
+      }
+    },
+    "task3_straton_quarantine": {
+      "quarantined_items_count": 11,
+      "active_src_violations": 0
+    },
+    "task4_offline_gate_simulation": {
+      "offline_gate_raises_gate_error": true,
+      "dead_pid_raises_gate_error": true
+    }
+  }
+}

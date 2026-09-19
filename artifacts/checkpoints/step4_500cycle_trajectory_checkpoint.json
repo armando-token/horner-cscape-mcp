@@ -1,0 +1,63 @@
+{
+  "step": "step4_500cycle_trajectory",
+  "status": "PASSED",
+  "timestamp_utc": "2026-09-05T05:45:25.983Z",
+  "gate_verified": true,
+  "cscape_pid": 7616,
+  "cscape_hwnd": "0x007B06D6",
+  "total_cycles_executed": 500,
+  "nominal_scan_rate_ms": 10.0,
+  "elapsed_seconds": 1.0905,
+  "phases": {
+    "phase_1_setpoint_tracking_0_to_50": {
+      "cycles": "1-100",
+      "target_sp": 50.0,
+      "settled_pv": 50.016,
+      "error": -0.016,
+      "status": "PASSED"
+    },
+    "phase_2_step_response_to_75": {
+      "cycles": "101-200",
+      "target_sp": 75.0,
+      "settled_pv": 75.009,
+      "error": -0.009,
+      "overshoot_percent": 0.028,
+      "status": "PASSED"
+    },
+    "phase_3_outflow_disturbance_rejection": {
+      "cycles": "201-300",
+      "target_sp": 75.0,
+      "minimum_pv_dip": 72.688,
+      "recovered_pv": 74.881,
+      "compensated_cv": 86.98,
+      "status": "PASSED"
+    },
+    "phase_4_high_high_overfill_trip": {
+      "cycles": "301-400",
+      "overfill_pv": 92.0,
+      "alarm_high_high_tripped": true,
+      "inflow_valve_isolated": true,
+      "evacuation_pump_active": true,
+      "hysteresis_deadband_verified_at_89": true,
+      "hysteresis_reset_verified_at_87_5": true,
+      "status": "PASSED"
+    },
+    "phase_5_sensor_disconnect_wire_break": {
+      "cycles": "401-500",
+      "sensor_pv": 0.0,
+      "alarm_low_low_tripped": true,
+      "dry_run_pump_cutoff": true,
+      "fail_safe_shutdown": true,
+      "status": "PASSED"
+    }
+  },
+  "mcp_tools_used": [
+    "cscape_simulate_cycle",
+    "cscape_read_register",
+    "cscape_write_register"
+  ],
+  "zero_plc_download_enforced": true,
+  "air_gapped_software_isolation": true,
+  "trajectory_json": "C:\\Users\\ArmandoSilva\\artifacts\\logs\\mcp_closed_loop_500cycle_trajectory.json",
+  "trajectory_log": "C:\\Users\\ArmandoSilva\\artifacts\\logs\\mcp_closed_loop_500cycle_trajectory.log"
+}

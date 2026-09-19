@@ -1,0 +1,12 @@
+=== Horner Cscape 10.2 Compile Pass: horner-cscape-mcp ===
+Clean Build: True
+Mode: IEC 61131-3 Structured Text (Advanced Ladder Excluded)
+Timestamp: 2026-09-15T14:56:47.161103
+----------------------------------------------------------------
+Error: No Structured Text (*.st) source files found in project.
+----------------------------------------------------------------
+Build Result: FAILED
+Errors: 1, Warnings: 0
+Estimated AST Footprint: Statements: 0, Variables: 0, Expressions: 0, Source: 0 bytes
+Duration: 0.002s
+Hardware Lockout: ENFORCED (Zero PLC communication / No download)

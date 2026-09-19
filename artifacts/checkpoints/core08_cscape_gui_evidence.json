@@ -1,0 +1,90 @@
+{
+  "status": "success",
+  "task": "CORE-08 Cscape GUI Liveness & Protocols Inspection",
+  "timestamp_utc": "2026-09-17T15:41:05.187396+00:00",
+  "cscape_process": {
+    "pid": 928,
+    "name": "Cscape.exe",
+    "exe": "C:\\Program Files (x86)\\Cscape 10.2\\Cscape.exe",
+    "memory_mb": 127.1,
+    "status": "running",
+    "is_hung": false
+  },
+  "cscape_window": {
+    "hwnd_hex": "0x0003040C",
+    "hwnd_int": 197644,
+    "title": "Cscape - Logged In : \"armando@controlnautas.com\" - [TankLevel_P5_Dedicated.csp]",
+    "visible": true,
+    "enabled": true,
+    "rect": [
+      1,
+      1,
+      1279,
+      567
+    ],
+    "title_verification": {
+      "expected_substring": "TankLevel_P5_Dedicated.csp",
+      "matched": true
+    }
+  },
+  "project_navigator_tree": {
+    "navigator_bar_hwnd": "0x00030446",
+    "tree_hwnd": "0x0003047E",
+    "project_node": {
+      "name": "TankLevel_P5_Dedicated [253] [Unknown Mode]",
+      "hitem": "0x12C9C868",
+      "children_count": 4,
+      "is_expanded": true
+    },
+    "networking_node": {
+      "name": "Networking",
+      "hitem": "0x12C9CEF8",
+      "children_count": 9,
+      "is_expanded": false
+    },
+    "protocols_node": {
+      "name": "Protocols",
+      "hitem": "0x12C9D0A8",
+      "children_count": 0,
+      "c_children_flag": 0,
+      "is_expanded": false,
+      "state_hex": "0x0000",
+      "is_empty_in_gui": true
+    }
+  },
+  "architectural_finding": {
+    "statement": "The native Cscape GUI tree item Protocols is unexpanded/empty (Children count: 0) in the UI tree, whereas the complete devices and scan list are defined and maintained in modbus_protocol_inventory.json and modbus_pv_config.json.",
+    "gui_state": "EMPTY_UNEXPANDED_TREE_ITEM (Children count: 0)",
+    "config_source_of_truth": {
+      "modbus_protocol_inventory": {
+        "path": "C:\\HornerAI\\horner-cscape-mcp\\artifacts\\projects\\TankLevel_P5_Dedicated\\modbus_protocol_inventory.json",
+        "sha256": "d1d0809eb48d4ad9b274276f817adcfdcdae1b6476ca6c8d5613eaf1f2fa14ac",
+        "devices_count": 3,
+        "scan_list_count": 3,
+        "channels_count": 3
+      },
+      "modbus_pv_config": {
+        "path": "C:\\HornerAI\\horner-cscape-mcp\\artifacts\\projects\\TankLevel_P5_Dedicated\\modbus_pv_config.json",
+        "sha256": "fb06d8740cccaf3f90312715723b1960971ad4da15b34f21c0d305380b91314d",
+        "target_register": "%AI1",
+        "modicon_address": 40001
+      }
+    }
+  },
+  "screenshot": {
+    "file_name": "core08_cscape_protocols_navigator.png",
+    "primary_path": "C:\\HornerAI\\horner-cscape-mcp\\artifacts\\screenshots\\core08_cscape_protocols_navigator.png",
+    "user_path": "C:\\Users\\ArmandoSilva\\artifacts\\screenshots\\core08_cscape_protocols_navigator.png",
+    "dimensions_px": [
+      1278,
+      566
+    ],
+    "sha256": "1c7a10d3dbe3c457590aa42cd28c0551a6b3d3006559d93335ddb8fadae2ecc9"
+  },
+  "safety_declarations": {
+    "fail_closed_policy": "STRICTLY_ENFORCED",
+    "physical_ports": "BLOCKED_FAIL_CLOSED (COM1-COM256)",
+    "download_lockout": "BLOCKED_FAIL_CLOSED (32827/33149)",
+    "physical_runtime_verification": "PENDING_P7 (Strictly deferred to Phase P7)"
+  }
+}

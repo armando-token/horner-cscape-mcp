@@ -1,0 +1,70 @@
+{
+  "mission_id": "C5_NATIVE_MANUAL",
+  "sequence": "save_close_reopen_reread",
+  "target_project": "C:\\HornerAI\\horner-cscape-mcp\\artifacts\\projects\\LabProject_W01\\LabProject_W01.csp",
+  "target_cscape_pid": 14888,
+  "target_cscape_hwnd": "0x2d003ba",
+  "completed_at_utc": "2026-09-07T03:49:45.463375+00:00",
+  "status": "success",
+  "stages": {
+    "1_save": {
+      "stage": "save",
+      "command": "ID_FILE_SAVE (57603)",
+      "timestamp_utc": "2026-09-07T03:49:15.823350+00:00",
+      "pre_save_sha256": "8e5387d7eb2e94f32d1110fff4cd0fab86b5b62098572ceab5f43ca9bad03c55",
+      "post_save_sha256": "68d61555ab6c1f25eccad965d051559f167e04d8ad8e8d9880447e982b4273cb",
+      "post_save_size_bytes": 99840,
+      "screenshot": "c5_stage_save.png"
+    },
+    "2_close": {
+      "stage": "close",
+      "command": "ID_FILE_CLOSE (57602)",
+      "timestamp_utc": "2026-09-07T03:49:18.337676+00:00",
+      "window_title_after_close": "Cscape",
+      "project_closed_in_gui": true,
+      "is_window_alive": true,
+      "screenshot": "c5_stage_closed.png"
+    },
+    "3_reopen": {
+      "stage": "reopen",
+      "command": "ID_FILE_MRU_FILE1 / Process Reload",
+      "timestamp_utc": "2026-09-07T03:49:45.128505+00:00",
+      "window_title_after_reopen": "Cscape - [LabProject_W01.csp]",
+      "reopened_successfully": true,
+      "screenshot": "c5_stage_reopened.png"
+    },
+    "4_reread": {
+      "stage": "reread",
+      "timestamp_utc": "2026-09-07T03:49:45.463375+00:00",
+      "cfbf_container": {
+        "path": "C:\\HornerAI\\horner-cscape-mcp\\artifacts\\projects\\LabProject_W01\\LabProject_W01.csp",
+        "is_valid_cfbf": true,
+        "has_contents_stream": true,
+        "stream_entries": [
+          "Contents"
+        ],
+        "size_bytes": 95744,
+        "sha256": "6de7d97ef5a1f1ad2d4c0270b949d54f00cd1e2f26cd43999c4ec7b8bda3e78d"
+      },
+      "pous_reread": {
+        "ScaleAnalogFilter.st": {
+          "size_bytes": 769,
+          "sha256": "cab0024622ba4373c3164672071fabbc9f26a3999550c0e5195800c8a64f7d51",
+          "valid": true
+        },
+        "MainProcessControl.st": {
+          "size_bytes": 831,
+          "sha256": "ed176989f95c472d655f87a52eff5303332278d2934ab089a45f83f56a6a672c",
+          "valid": true
+        }
+      },
+      "screenshot": "c5_stage_reread.png"
+    }
+  },
+  "screenshots": [
+    "c5_stage_save.png",
+    "c5_stage_closed.png",
+    "c5_stage_reopened.png",
+    "c5_stage_reread.png"
+  ]
+}

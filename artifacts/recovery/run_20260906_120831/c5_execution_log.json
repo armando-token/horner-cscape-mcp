@@ -1,0 +1,108 @@
+{
+  "mission_id": "C5_NATIVE_MANUAL",
+  "plan": "PLAN_CORRECTIVO MCP Horner/Cscape v2.0 (correctivo)",
+  "run_id": "run_20260906_120831",
+  "timestamp_utc": "2026-09-07T04:22:17.901557+00:00",
+  "entries": [
+    {
+      "timestamp": "2026-09-07T04:22:07.840Z",
+      "message": "================================================================================"
+    },
+    {
+      "timestamp": "2026-09-07T04:22:07.840Z",
+      "message": "STARTING MISSION C5_NATIVE_MANUAL EVIDENCE PRODUCTION PASS"
+    },
+    {
+      "timestamp": "2026-09-07T04:22:07.840Z",
+      "message": "================================================================================"
+    },
+    {
+      "timestamp": "2026-09-07T04:22:07.840Z",
+      "message": "Baseline TankLevelClosedLoop.csp SHA-256: d075e67d80be031a99a6895078735918b7a15c8086590a6d20ec8484b27749af"
+    },
+    {
+      "timestamp": "2026-09-07T04:22:07.840Z",
+      "message": "Baseline isolation verified: TankLevelClosedLoop.csp is 100% UNTOUCHED."
+    },
+    {
+      "timestamp": "2026-09-07T04:22:08.626Z",
+      "message": "Auditing native CFBF containers..."
+    },
+    {
+      "timestamp": "2026-09-07T04:22:08.646Z",
+      "message": "CFBF Container deep inspection complete."
+    },
+    {
+      "timestamp": "2026-09-07T04:22:08.646Z",
+      "message": "Auditing live Cscape GUI on winsta0\\Default..."
+    },
+    {
+      "timestamp": "2026-09-07T04:22:08.656Z",
+      "message": "Enumerated 55 child controls in Cscape HWND 0xde08b8"
+    },
+    {
+      "timestamp": "2026-09-07T04:22:08.656Z",
+      "message": "Status bar verified: connection_state='Disconnected', mode='offline/DEV if Disconnected'"
+    },
+    {
+      "timestamp": "2026-09-07T04:22:08.826Z",
+      "message": "Saved screenshot: c5_cscape_native_gui.png (1300x636, 90054 bytes)"
+    },
+    {
+      "timestamp": "2026-09-07T04:22:08.954Z",
+      "message": "Saved screenshot: c5_cscape_native_gui.png (1300x636, 90054 bytes)"
+    },
+    {
+      "timestamp": "2026-09-07T04:22:09.058Z",
+      "message": "Saved screenshot: c5_cscape_native_gui.png (1300x636, 90054 bytes)"
+    },
+    {
+      "timestamp": "2026-09-07T04:22:09.143Z",
+      "message": "Saved screenshot: c5_cscape_native_gui.png (1300x636, 90054 bytes)"
+    },
+    {
+      "timestamp": "2026-09-07T04:22:09.143Z",
+      "message": "Live Native GUI audit complete."
+    },
+    {
+      "timestamp": "2026-09-07T04:22:09.145Z",
+      "message": "Auditing ST->LD conversion architecture..."
+    },
+    {
+      "timestamp": "2026-09-07T04:22:09.145Z",
+      "message": "ST->LD Architectural audit complete: BLOCKED_NATIVE."
+    },
+    {
+      "timestamp": "2026-09-07T04:22:09.145Z",
+      "message": "Auditing pure Structured Text POU validation & AST semantics..."
+    },
+    {
+      "timestamp": "2026-09-07T04:22:17.814Z",
+      "message": "Valid pure ST POU validated successfully with AST verification."
+    },
+    {
+      "timestamp": "2026-09-07T04:22:17.835Z",
+      "message": "Verified fail-closed rejection of 6 ladder constructs in ST POUs."
+    },
+    {
+      "timestamp": "2026-09-07T04:22:17.835Z",
+      "message": "Auditing fail-closed hardware and download lockout..."
+    },
+    {
+      "timestamp": "2026-09-07T04:22:17.837Z",
+      "message": "Physical hardware ports (5) locked out fail-closed."
+    },
+    {
+      "timestamp": "2026-09-07T04:22:17.837Z",
+      "message": "Win32 download commands (32827, 33149) locked out fail-closed."
+    },
+    {
+      "timestamp": "2026-09-07T04:22:17.897Z",
+      "message": "Verified zero companion flashers and zero Straton runtime processes running."
+    },
+    {
+      "timestamp": "2026-09-07T04:22:17.901Z",
+      "message": "Saved c5_native_manual_evidence.json (10798 bytes) to all recovery vaults with dual-root parity."
+    }
+  ]
+}

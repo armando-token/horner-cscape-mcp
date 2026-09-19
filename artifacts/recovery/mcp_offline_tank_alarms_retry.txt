@@ -1,0 +1,53 @@
+================================================================================
+MISSION EXECUTION REPORT: MCP_OFFLINE_TANK_ALARMS_RETRY
+================================================================================
+MISSION ID             : MCP_OFFLINE_TANK_ALARMS_RETRY
+STATUS                 : success
+TIMESTAMP (UTC)        : 2026-09-09T20:38:20Z
+OPERATIONAL MODE       : OFFLINE/DEV (STRICT HARDWARE LOCKOUT ENFORCED, NO PLC)
+SINGLE GUI OWNER       : VERIFIED (Exclusive desktop: winsta0\Default)
+CSCAPE VERSION         : Horner APG Cscape 10.2 (Build 10.2.751.4)
+ACTIVE PROCESS PID     : 21908
+MAIN WINDOW HWND       : 0x0362010C
+
+--------------------------------------------------------------------------------
+1. MISSION DIRECTIVES & VERIFICATION MATRIX
+--------------------------------------------------------------------------------
+[PASS] Offline Tank Alarms   : Successfully configured 2 TankLevelPV alarms in Cscape:
+                               - Number of Alarms: 2
+                               - Address: TankLevelAlarms (Global INT variable)
+                               - Point 1 (High): 'TankLevelPV High Alarm' (Group 1)
+                               - Point 2 (Low) : 'TankLevelPV Low Alarm' (Group 1)
+[PASS] Project Persistence   : Dispatched ID_FILE_SAVE (57603). Confirmed on-disk
+                               persistence in CFBF OLE project container stream.
+[PASS] Screen 1 in Front     : Verified Screen 1 (HornerAPGTabbedGraphicsEditor)
+                               remains top-level, active, and visible.
+[PASS] Dialog Closed         : Confirmed Alarm Configuration dialog is closed (zero
+                               open modal dialogs remaining on desktop).
+[PASS] No PLC / No Download  : Strict offline mode enforced. Zero physical PLC
+                               connections. Download lockout preserved.
+[PASS] Dual-Root Parity      : Bit-for-bit SHA256 parity verified across primary
+                               workspace and user environment.
+
+--------------------------------------------------------------------------------
+2. ARTIFACT & PROJECT CHECKSUMS (DUAL-ROOT)
+--------------------------------------------------------------------------------
+Target Project File : TankLevelClosedLoop.csp
+File Size           : 47836 bytes
+SHA256 Checksum     : 0bc78cd230d01506f08a19c65c5579d4adf344cbef5220672268e54a07e3d0e2
+Primary Location    : C:\HornerAI\horner-cscape-mcp\artifacts\projects\TankLevelClosedLoop\TankLevelClosedLoop.csp
+Mirror Location     : C:\Users\ArmandoSilva\artifacts\projects\TankLevelClosedLoop\TankLevelClosedLoop.csp
+
+Visual Proof Artifacts:
+  - C:\HornerAI\horner-cscape-mcp\artifacts\screenshots\mcp_offline_tank_alarms_proof.png
+  - C:\Users\ArmandoSilva\artifacts\screenshots\mcp_offline_tank_alarms_proof.png
+  - C:\HornerAI\horner-cscape-mcp\artifacts\screenshots\live_cscape_tanklevel_visible.png
+  - C:\Users\ArmandoSilva\artifacts\screenshots\live_cscape_tanklevel_visible.png
+
+Mission Execution Log:
+  - C:\HornerAI\horner-cscape-mcp\artifacts\recovery\mcp_offline_tank_alarms_retry.txt
+  - C:\Users\ArmandoSilva\artifacts\recovery\mcp_offline_tank_alarms_retry.txt
+
+================================================================================
+END OF REPORT - ALARMS CONFIGURED, SCREEN 1 IN FRONT, PROJECT SAVED
+================================================================================

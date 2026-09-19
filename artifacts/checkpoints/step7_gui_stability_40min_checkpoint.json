@@ -1,0 +1,22 @@
+{
+  "step": "step7_gui_stability_40min_checkpoint",
+  "status": "PASSED",
+  "timestamp_utc": "2026-09-05T05:58:54.278Z",
+  "cscape_pid": 7616,
+  "cscape_hwnd": "0x007B06D6",
+  "cscape_title": "Cscape - Logged In : \"armando@controlnautas.com\" - [TankLevelClosedLoop.csp]",
+  "uptime_seconds": 2432.51,
+  "uptime_minutes": 40.54,
+  "working_set_mb": 195.2,
+  "thread_count": 15,
+  "zero_ui_freezes_verified": true,
+  "is_hung_app_window": false,
+  "frame_45011_present": true,
+  "listbox_372_present": true,
+  "screenshot_captured": true,
+  "screenshot_path": "C:\\Users\\ArmandoSilva\\artifacts\\screenshots\\live_cscape_tank_level_stay_open_40min.png",
+  "screenshot_resolution": "820x513",
+  "zero_physical_plc_downloads": true,
+  "zero_straton_k5_tools": true,
+  "evidence_log": "C:\\Users\\ArmandoSilva\\artifacts\\logs\\cscape_gui_stability_40min.json"
+}

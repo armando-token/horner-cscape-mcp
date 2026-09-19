@@ -1,0 +1,4 @@
+PROGRAM AlarmMonitor
+VAR trip : BOOL; END_VAR
+trip := FALSE;
+END_PROGRAM

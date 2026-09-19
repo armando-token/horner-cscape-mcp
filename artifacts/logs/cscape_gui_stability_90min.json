@@ -1,0 +1,65 @@
+{
+  "benchmark": "CSCAPE_GUI_STABILITY_90MIN",
+  "step": 22,
+  "title": "Cscape 90-Minute Continuous Stay-Open Live Benchmark",
+  "timestamp_utc_start": "2026-09-05T06:48:38.037Z",
+  "timestamp_utc_end": "2026-09-05T06:48:38.744Z",
+  "status": "VERIFIED_LIVE",
+  "metrics": {
+    "pid": 7616,
+    "hwnd": "0x007B06D6",
+    "process_name": "Cscape.exe",
+    "uptime_seconds": 5417.4,
+    "uptime_minutes": 90.29,
+    "uptime_hours": 1.5,
+    "stay_open_90min_exceeded": true,
+    "is_hung_app_window": false,
+    "send_message_timeout_wm_null_responsive": true,
+    "attached_desktop": "exebox-SFKDH7PVZHHA5N3KL2KU2F6TB4",
+    "memory_working_set_bytes": 133812224,
+    "memory_working_set_mb": 127.61,
+    "memory_vms_bytes": 235044864,
+    "thread_count": 15,
+    "cpu_percent": 0.0,
+    "window_title": "Cscape - Logged In : \"armando@controlnautas.com\" - [TankLevelClosedLoop.csp]",
+    "project_file": "C:\\Users\\ArmandoSilva\\artifacts\\projects\\TankLevelClosedLoop\\TankLevelClosedLoop.csp",
+    "project_sha256": "d075e67d80be031a99a6895078735918b7a15c8086590a6d20ec8484b27749af",
+    "child_controls_count": 55,
+    "frame_45011_present": true,
+    "listbox_372_present": true,
+    "output_scraped_lines_count": 12,
+    "output_scraped_lines": [
+      "Compiler V12.0.200.82",
+      "Loading application symbols...",
+      "EnhancedDisplayAttributes",
+      "No error detected",
+      "Loading application symbols...",
+      "Building application data...",
+      "Relocating code...",
+      "No error detected",
+      "Online Change is disabled",
+      "Generate OCS code...",
+      "No error detected",
+      "Warn : Screen set as first screen is empty.Screen 1"
+    ]
+  },
+  "screenshots": [
+    {
+      "path": "C:\\Users\\ArmandoSilva\\artifacts\\screenshots\\live_cscape_tank_level_stay_open_90min.png",
+      "size_bytes": 66298,
+      "resolution": "820x513"
+    },
+    {
+      "path": "C:\\HornerAI\\horner-cscape-mcp\\artifacts\\screenshots\\live_cscape_tank_level_stay_open_90min.png",
+      "size_bytes": 66298,
+      "resolution": "820x513"
+    }
+  ],
+  "safety_audit": {
+    "physical_plc_download_blocked": true,
+    "straton_k5_tools_quarantined": true,
+    "straton_processes_running": 0,
+    "hardware_serial_com_blocked": true,
+    "hardware_can_bus_blocked": true
+  }
+}

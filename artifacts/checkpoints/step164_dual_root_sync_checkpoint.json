@@ -1,0 +1,137 @@
+{
+  "step": 164,
+  "name": "step164_dual_root_sync_checkpoint",
+  "status": "PASSED",
+  "timestamp_utc": "2026-09-06T04:24:04.110Z",
+  "auditor": "Dual-Root Step 164 Parity Auditor",
+  "mandate": "MEGAPLAN Dual-Root Checkpoint & Telemetry Verification",
+  "dual_root_parity": true,
+  "roots_verified": {
+    "horner_root": "C:\\HornerAI\\horner-cscape-mcp",
+    "user_root": "C:\\Users\\ArmandoSilva"
+  },
+  "live_cscape": {
+    "pid": 16128,
+    "hwnd": "0x024903DC",
+    "status": "READY_FOR_TESTS",
+    "ready_for_tests": true
+  },
+  "artifacts_audited": {
+    "checkpoints_count": 3,
+    "logs_count": 3,
+    "screenshots_count": 1,
+    "code_files_count": 5,
+    "all_roots_identical": true
+  },
+  "audit_details": {
+    "checkpoints": {
+      "step164_visible_gui_proof_checkpoint": {
+        "file": "artifacts/checkpoints/step164_visible_gui_proof_checkpoint.json",
+        "exists_in_both": true,
+        "valid_json": true,
+        "status": "PASSED",
+        "step": 164,
+        "file_sha256": "76e3912bdf39f40cf10767c465c656736bab80cbdef09a90c51fc82851a47740",
+        "roots_identical": true,
+        "size_bytes": 670
+      },
+      "step164_security_audit_checkpoint": {
+        "file": "artifacts/checkpoints/step164_security_audit_checkpoint.json",
+        "exists_in_both": true,
+        "valid_json": true,
+        "status": "PASSED",
+        "step": 164,
+        "file_sha256": "b71256ef0bb46b552f5e575763091191d92764e5859d7cf1e8e3c264ea5c3579",
+        "roots_identical": true,
+        "size_bytes": 556
+      },
+      "step164_mcp_vfd_resonance_skipband_protection_checkpoint": {
+        "file": "artifacts/checkpoints/step164_mcp_vfd_resonance_skipband_protection_checkpoint.json",
+        "exists_in_both": true,
+        "valid_json": true,
+        "status": "PASSED",
+        "step": 164,
+        "file_sha256": "c089ad8a717c48941b260897d4992f35cc85c8aadb127db352c74ac9f1ea8ffa",
+        "roots_identical": true,
+        "size_bytes": 792
+      }
+    },
+    "logs": {
+      "step164_visible_gui_proof": {
+        "file": "artifacts/logs/step164_visible_gui_proof.json",
+        "exists_in_both": true,
+        "valid_json": true,
+        "status": "PASSED",
+        "file_sha256": "2da1b2c52b775fee805eb1bdacacdb718458d2b86c770de2f6130ae230b7b27e",
+        "roots_identical": true,
+        "size_bytes": 1891
+      },
+      "step164_security_audit": {
+        "file": "artifacts/logs/step164_security_audit.json",
+        "exists_in_both": true,
+        "valid_json": true,
+        "status": "PASSED",
+        "file_sha256": "f7bd6ab7e2711f407ab181e17c26eeb76fad54ea2c8031373790e905cc0a05c3",
+        "roots_identical": true,
+        "size_bytes": 2763
+      },
+      "step164_mcp_vfd_resonance_skipband_protection": {
+        "file": "artifacts/logs/step164_mcp_vfd_resonance_skipband_protection.json",
+        "exists_in_both": true,
+        "valid_json": true,
+        "status": "PASSED",
+        "file_sha256": "6bbe20174080b42a09dd0e09f625d24884faf68f5869640bbd6d49abcc627904",
+        "roots_identical": true,
+        "size_bytes": 3119
+      }
+    },
+    "screenshots": {
+      "live_cscape_tank_level_step164": {
+        "file": "artifacts/screenshots/live_cscape_tank_level_step164.png",
+        "exists_in_both": true,
+        "size_bytes": 72686,
+        "gt_10kb": true,
+        "file_sha256": "4730540e881c216fe988f2ab82b86a21b3bf9b10e662d57effe44a71b6cb657f",
+        "roots_identical": true
+      }
+    },
+    "code_files": {
+      "execute_step164_visible_cscape_gui_driver.py": {
+        "file": "scripts/execute_step164_visible_cscape_gui_driver.py",
+        "exists_in_both": true,
+        "file_sha256": "43474d3c2ccfa3cbbbd33bf3abbfcc7b30cf210d55b6ba9cea21c93a4da83fc6",
+        "roots_identical": true,
+        "size_bytes": 16149
+      },
+      "execute_step164_security_audit.py": {
+        "file": "scripts/execute_step164_security_audit.py",
+        "exists_in_both": true,
+        "file_sha256": "721f0f5c8b3f84a6f222929820305202ad81304194dbb73ee07ab9bbea43464d",
+        "roots_identical": true,
+        "size_bytes": 15141
+      },
+      "execute_step164_mcp_vfd_resonance_skipband_protection.py": {
+        "file": "scripts/execute_step164_mcp_vfd_resonance_skipband_protection.py",
+        "exists_in_both": true,
+        "file_sha256": "88399f36387987c5020bf8f720b433568868ff8edf03cd6f731772860e9eeae0",
+        "roots_identical": true,
+        "size_bytes": 27904
+      },
+      "test_step164_visible_cscape_gui_driver.py": {
+        "file": "tests/test_step164_visible_cscape_gui_driver.py",
+        "exists_in_both": true,
+        "file_sha256": "e680ce439d3f54657e780c19c246340a8ca642cd5f4d52131695b4f87ef4a849",
+        "roots_identical": true,
+        "size_bytes": 3655
+      },
+      "test_step164_mcp_vfd_resonance_skipband_protection.py": {
+        "file": "tests/test_step164_mcp_vfd_resonance_skipband_protection.py",
+        "exists_in_both": true,
+        "file_sha256": "13bcc7178648a38e86eb4ca6bdabb70942ba8bbbe3ca67ebc1b83414533a6dd6",
+        "roots_identical": true,
+        "size_bytes": 3165
+      }
+    }
+  },
+  "checkpoint_sha256": "8d7f162e757d35fdff64590eceff8728e84c297cd0fffb6dabf669406c6db389"
+}

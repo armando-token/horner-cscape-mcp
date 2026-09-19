@@ -1,0 +1,17 @@
+{
+  "step": 22,
+  "name": "step22_gui_stability_90min_checkpoint",
+  "description": "90-minute (1.5 hours) continuous stay-open milestone verified with high-res screenshot and zero UI hangs",
+  "timestamp_utc": "2026-09-05T06:48:38.744Z",
+  "pid": 7616,
+  "hwnd": "0x007B06D6",
+  "uptime_seconds": 5417.4,
+  "uptime_minutes": 90.29,
+  "uptime_hours": 1.5,
+  "memory_mb": 127.61,
+  "thread_count": 15,
+  "is_hung": false,
+  "screenshot_path": "C:\\Users\\ArmandoSilva\\artifacts\\screenshots\\live_cscape_tank_level_stay_open_90min.png",
+  "evidence_log": "C:\\Users\\ArmandoSilva\\artifacts\\logs\\cscape_gui_stability_90min.json",
+  "status": "VERIFIED_LIVE"
+}

@@ -1,0 +1,22 @@
+{
+  "step": 189,
+  "gate": "G4",
+  "name": "step189_pure_st_audit_checkpoint",
+  "status": "success",
+  "timestamp_utc": "2026-09-06T22:32:53.037659+00:00",
+  "mandate": "PLC / IEC 61131-3 Pure ST Audit: pipeline_compressor_anti_surge.st",
+  "execution_duration_sec": 0.524,
+  "dual_root_parity": true,
+  "sha256": "2c996aa40d93f1f363c62b71d7255152fedd1e91576761e5509e50e5c9519b51",
+  "expected_sha256": "2c996aa40d93f1f363c62b71d7255152fedd1e91576761e5509e50e5c9519b51",
+  "byte_size": 5246,
+  "expected_byte_size": 5246,
+  "pure_iec61131_3_verified": true,
+  "ladder_artifacts_detected": 0,
+  "ladder_mutations_rejected_fail_closed": 16,
+  "pou": "PipelineCompressorAntiSurge",
+  "pou_type": "PROGRAM",
+  "total_variables": 29,
+  "total_ast_statements": 5,
+  "st_to_ld_status": "BLOCKED_NATIVE: DOCUMENT_ONLY"
+}

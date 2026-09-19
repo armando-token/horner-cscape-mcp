@@ -1,0 +1,39 @@
+{
+  "project_name": "TankLevel_P4_Dedicated",
+  "revision": "1.1.0",
+  "lo_limit": 35.0,
+  "hi_limit": 75.0,
+  "level_label": "Buffer Tank Level PV",
+  "csp_sha256": "e268419e9fd5f1ba02e1de1614f8916b5778799ee6cad20fea29956037ca7bce",
+  "spec_hash": "c4d9d8c4ea41fdff951c69fc1a6f22473a0a2af4d3854b87c9361704fd31e99f",
+  "created_utc": "2026-09-17T18:56:47.141753+00:00",
+  "last_updated_utc": "2026-09-17T18:56:47.252249+00:00",
+  "history": [
+    {
+      "revision": "1.0.0",
+      "action": "CREATE_LOGIC_VARS_HMI",
+      "limits": {
+        "lo_limit": 30.0,
+        "hi_limit": 70.0
+      },
+      "level_label": "Tank Level PV",
+      "timestamp_utc": "2026-09-17T18:56:47.141753+00:00"
+    },
+    {
+      "revision": "1.1.0",
+      "action": "SELECTIVE_EDIT_LIMITS_AND_LABEL",
+      "prior_limits": {
+        "lo": 30.0,
+        "hi": 70.0
+      },
+      "new_limits": {
+        "lo": 35.0,
+        "hi": 75.0
+      },
+      "prior_label": "Tank Level PV",
+      "new_label": "Buffer Tank Level PV",
+      "timestamp_utc": "2026-09-17T18:56:47.252249+00:00"
+    }
+  ],
+  "safety_lockout": "BLOCKED_FAIL_CLOSED"
+}

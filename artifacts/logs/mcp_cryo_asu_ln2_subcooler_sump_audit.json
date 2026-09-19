@@ -1,0 +1,234 @@
+{
+  "audit_step": 119,
+  "name": "Cryogenic Air Separation Unit (ASU) Low-Pressure Liquid Nitrogen (LN2) Subcooler Sump Audit",
+  "timestamp": "2026-09-05T12:45:04.843Z",
+  "completed_at": "2026-09-05T12:45:11.177Z",
+  "cscape_pid": 4272,
+  "cscape_hwnd": "0x7033e",
+  "total_cycles": 600,
+  "metrics": {
+    "max_phase1_level_error_pct": 0.0,
+    "mean_phase1_level_error_pct": 0.0,
+    "max_phase2_uncomp_drift_pct": 7.1,
+    "mean_phase2_uncomp_drift_pct": 5.21,
+    "max_phase3_comp_error_pct": 0.0,
+    "mean_phase3_comp_error_pct": 0.0,
+    "surge_rejection_pct": 100.0,
+    "phase4_final_level_error_pct": 0.0379,
+    "phase4_mean_tail_level_error_pct": 0.0234,
+    "subcooler_flood_trip_cycle": 501,
+    "high_high_trip_level_pct": 85.0
+  },
+  "trace_samples": [
+    {
+      "cycle": 0,
+      "phase": "PHASE_1_DISTILLATION_EQUILIBRIUM",
+      "target_sp": 50.0,
+      "sump_level": 50.0,
+      "boiloff_flow_kgs": 55.0,
+      "interlock_trip": false,
+      "cv_pid": 50.0
+    },
+    {
+      "cycle": 50,
+      "phase": "PHASE_1_DISTILLATION_EQUILIBRIUM",
+      "target_sp": 50.0,
+      "sump_level": 50.0,
+      "boiloff_flow_kgs": 55.0,
+      "interlock_trip": false,
+      "cv_pid": 50.0
+    },
+    {
+      "cycle": 100,
+      "phase": "PHASE_1_DISTILLATION_EQUILIBRIUM",
+      "target_sp": 50.0,
+      "sump_level": 50.0,
+      "boiloff_flow_kgs": 55.0,
+      "interlock_trip": false,
+      "cv_pid": 50.0
+    },
+    {
+      "cycle": 101,
+      "phase": "PHASE_2_EXPANSION_TURBINE_FLASH_UPSET_UNCOMP",
+      "target_sp": 50.0,
+      "sump_level": 50.024,
+      "boiloff_flow_kgs": 55.4,
+      "interlock_trip": false,
+      "cv_pid": 50.0
+    },
+    {
+      "cycle": 125,
+      "phase": "PHASE_2_EXPANSION_TURBINE_FLASH_UPSET_UNCOMP",
+      "target_sp": 50.0,
+      "sump_level": 54.819,
+      "boiloff_flow_kgs": 64.2,
+      "interlock_trip": false,
+      "cv_pid": 42.48
+    },
+    {
+      "cycle": 150,
+      "phase": "PHASE_2_EXPANSION_TURBINE_FLASH_UPSET_UNCOMP",
+      "target_sp": 50.0,
+      "sump_level": 57.045,
+      "boiloff_flow_kgs": 73.5,
+      "interlock_trip": false,
+      "cv_pid": 25.49
+    },
+    {
+      "cycle": 175,
+      "phase": "PHASE_2_EXPANSION_TURBINE_FLASH_UPSET_UNCOMP",
+      "target_sp": 50.0,
+      "sump_level": 55.914,
+      "boiloff_flow_kgs": 82.8,
+      "interlock_trip": false,
+      "cv_pid": 13.3
+    },
+    {
+      "cycle": 200,
+      "phase": "PHASE_2_EXPANSION_TURBINE_FLASH_UPSET_UNCOMP",
+      "target_sp": 50.0,
+      "sump_level": 55.848,
+      "boiloff_flow_kgs": 92.0,
+      "interlock_trip": false,
+      "cv_pid": 2.16
+    },
+    {
+      "cycle": 201,
+      "phase": "PHASE_3_SUBCOOLED_REFLUX_DECOUPLED_REGULATION",
+      "target_sp": 50.0,
+      "sump_level": 50.0,
+      "boiloff_flow_kgs": 92.0,
+      "interlock_trip": false,
+      "cv_pid": 50.0
+    },
+    {
+      "cycle": 225,
+      "phase": "PHASE_3_SUBCOOLED_REFLUX_DECOUPLED_REGULATION",
+      "target_sp": 50.0,
+      "sump_level": 50.0,
+      "boiloff_flow_kgs": 92.0,
+      "interlock_trip": false,
+      "cv_pid": 50.0
+    },
+    {
+      "cycle": 250,
+      "phase": "PHASE_3_SUBCOOLED_REFLUX_DECOUPLED_REGULATION",
+      "target_sp": 50.0,
+      "sump_level": 50.0,
+      "boiloff_flow_kgs": 92.0,
+      "interlock_trip": false,
+      "cv_pid": 50.0
+    },
+    {
+      "cycle": 275,
+      "phase": "PHASE_3_SUBCOOLED_REFLUX_DECOUPLED_REGULATION",
+      "target_sp": 50.0,
+      "sump_level": 50.0,
+      "boiloff_flow_kgs": 92.0,
+      "interlock_trip": false,
+      "cv_pid": 50.0
+    },
+    {
+      "cycle": 300,
+      "phase": "PHASE_3_SUBCOOLED_REFLUX_DECOUPLED_REGULATION",
+      "target_sp": 50.0,
+      "sump_level": 50.0,
+      "boiloff_flow_kgs": 92.0,
+      "interlock_trip": false,
+      "cv_pid": 50.0
+    },
+    {
+      "cycle": 350,
+      "phase": "PHASE_3_SUBCOOLED_REFLUX_DECOUPLED_REGULATION",
+      "target_sp": 50.0,
+      "sump_level": 50.0,
+      "boiloff_flow_kgs": 92.0,
+      "interlock_trip": false,
+      "cv_pid": 50.0
+    },
+    {
+      "cycle": 351,
+      "phase": "PHASE_4_CRYO_CHILLER_CAPACITY_RAMP_STEP",
+      "target_sp": 45.0,
+      "sump_level": 49.58,
+      "boiloff_flow_kgs": 75.0,
+      "interlock_trip": false,
+      "cv_pid": 41.6
+    },
+    {
+      "cycle": 400,
+      "phase": "PHASE_4_CRYO_CHILLER_CAPACITY_RAMP_STEP",
+      "target_sp": 45.0,
+      "sump_level": 44.524,
+      "boiloff_flow_kgs": 75.0,
+      "interlock_trip": false,
+      "cv_pid": 52.4
+    },
+    {
+      "cycle": 450,
+      "phase": "PHASE_4_CRYO_CHILLER_CAPACITY_RAMP_STEP",
+      "target_sp": 45.0,
+      "sump_level": 44.922,
+      "boiloff_flow_kgs": 75.0,
+      "interlock_trip": false,
+      "cv_pid": 49.67
+    },
+    {
+      "cycle": 500,
+      "phase": "PHASE_4_CRYO_CHILLER_CAPACITY_RAMP_STEP",
+      "target_sp": 45.0,
+      "sump_level": 45.038,
+      "boiloff_flow_kgs": 75.0,
+      "interlock_trip": false,
+      "cv_pid": 50.02
+    },
+    {
+      "cycle": 501,
+      "phase": "PHASE_5_HIGH_HIGH_SUBCOOLER_FLOOD_SAFETY_TRIP",
+      "target_sp": 45.0,
+      "sump_level": 45.038,
+      "boiloff_flow_kgs": 35.0,
+      "interlock_trip": true,
+      "cv_pid": 50.01
+    },
+    {
+      "cycle": 520,
+      "phase": "PHASE_5_HIGH_HIGH_SUBCOOLER_FLOOD_SAFETY_TRIP",
+      "target_sp": 45.0,
+      "sump_level": 45.038,
+      "boiloff_flow_kgs": 35.0,
+      "interlock_trip": true,
+      "cv_pid": 49.94
+    },
+    {
+      "cycle": 550,
+      "phase": "PHASE_5_HIGH_HIGH_SUBCOOLER_FLOOD_SAFETY_TRIP",
+      "target_sp": 45.0,
+      "sump_level": 45.038,
+      "boiloff_flow_kgs": 35.0,
+      "interlock_trip": true,
+      "cv_pid": 49.85
+    },
+    {
+      "cycle": 599,
+      "phase": "PHASE_5_HIGH_HIGH_SUBCOOLER_FLOOD_SAFETY_TRIP",
+      "target_sp": 45.0,
+      "sump_level": 45.038,
+      "boiloff_flow_kgs": 35.0,
+      "interlock_trip": true,
+      "cv_pid": 49.7
+    }
+  ],
+  "cscape_health": {
+    "healthy": true,
+    "pid": 4272,
+    "hwnd": "0x7033e",
+    "desktop": "Default",
+    "is_hung": false,
+    "wm_null_ping_ok": true,
+    "working_set_mb": 157.12,
+    "num_threads": 11,
+    "uptime_sec": 2012.67
+  },
+  "download_lockout_verified": true
+}

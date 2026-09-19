@@ -1,0 +1,22 @@
+{
+  "step": 190,
+  "gate": "G4",
+  "name": "step190_pure_st_audit_checkpoint",
+  "status": "success",
+  "timestamp_utc": "2026-09-08T05:18:02.320868+00:00",
+  "mandate": "PLC / IEC 61131-3 Pure ST Audit: ccgt_hrsg_drum_level_duct_burner_control.st",
+  "execution_duration_sec": 1.6342,
+  "dual_root_parity": true,
+  "sha256": "09e86d14886ba862429a44b20e1d70a318a684b8da0b6fcfed65385a81ea6009",
+  "expected_sha256": "09e86d14886ba862429a44b20e1d70a318a684b8da0b6fcfed65385a81ea6009",
+  "byte_size": 8049,
+  "expected_byte_size": 8049,
+  "pure_iec61131_3_verified": true,
+  "ladder_artifacts_detected": 0,
+  "ladder_mutations_rejected_fail_closed": 16,
+  "pou": "CCGTHRSGDrumLevelDuctBurnerControl",
+  "pou_type": "PROGRAM",
+  "total_variables": 33,
+  "total_ast_statements": 8,
+  "st_to_ld_status": "BLOCKED_NATIVE: DOCUMENT_ONLY"
+}

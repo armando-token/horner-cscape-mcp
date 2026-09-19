@@ -1,0 +1,470 @@
+{
+  "mission_id": "MCP_HMI_SCADA_ENRICH_ERR_OUT",
+  "timestamp_utc": "2026-09-09T14:31:45Z",
+  "environment": {
+    "os": "Windows",
+    "winsta_desktop": "winsta0\\Default",
+    "cscape_version": "10.2 (Build 10.2.751.4)",
+    "pid": 19932,
+    "hwnd": "0x17708f8",
+    "target_csp": "C:\\HornerAI\\horner-cscape-mcp\\artifacts\\projects\\TankLevelClosedLoop\\TankLevelClosedLoop.csp",
+    "csp_sha256": "10a0e2ad8c91c281437dc11de5ace3946da9a6932f9795bd48d30aaea6bfd055",
+    "csp_size_bytes": 114688
+  },
+  "compilation_result": {
+    "status": "failed",
+    "error_code": "ST_COMPILE_FAILED",
+    "command_dispatched": 32826,
+    "fatal_modal_detected": false,
+    "controls_enumerated": 63,
+    "error_count": 20,
+    "warning_count": 0,
+    "total_scraped_lines": 26,
+    "st_logic_error_count": 12,
+    "hmi_fatal_error_count": 7
+  },
+  "scraped_output_lines": [
+    "Compiler V12.0.200.82",
+    "Loading application symbols...",
+    "EnhancedDisplayAttributes",
+    "No error detected",
+    "Loading application symbols...",
+    "STBlock1",
+    "STBlock1: (1): PROGRAM: New statement expected",
+    "STBlock1: (4): :: \":=\" expected after assigned variable",
+    "STBlock1: (4): REAL: Label name expected",
+    "STBlock1: (5): :: \":=\" expected after assigned variable",
+    "STBlock1: (5): REAL: Label name expected",
+    "STBlock1: (6): :: \":=\" expected after assigned variable",
+    "STBlock1: (6): REAL: Label name expected",
+    "STBlock1: (7): Kp: Unknown identifier",
+    "STBlock1: (7): REAL: Label name expected",
+    "STBlock1: (8): END_VAR: New statement expected",
+    "STBlock1: (12): Kp: Unknown identifier",
+    "STBlock1: (19): END_PROGRAM: New statement expected",
+    "Error(s) detected",
+    "Fatal: Data Source - Invalid I/O assignment.Screen 1 at ( 24 , 12 )",
+    "Fatal: Data Source - Invalid I/O assignment.Screen 1 at ( 24 , 66 )",
+    "Fatal: Data Source - Invalid I/O assignment.Screen 1 at ( 24 , 114 )",
+    "Fatal: Data Source - Invalid I/O assignment.Screen 1 at ( 24 , 162 )",
+    "Fatal: Data Source - Invalid I/O assignment.Screen 1 at ( 144 , 162 )",
+    "Fatal: Data Source - Invalid I/O assignment.Screen 1 at ( 232 , 18 )",
+    "Fatal: Data Source - Invalid I/O assignment.Screen 1 at ( 237 , 66 )"
+  ],
+  "diagnostics": [
+    {
+      "level": "ERROR",
+      "message": "STBlock1: (1): PROGRAM: New statement expected",
+      "line": 1,
+      "column": null,
+      "file_path": "STBlock1.st",
+      "pou_name": "STBlock1",
+      "error_code": "ST_SYNTAX_ERROR",
+      "subsystem": "IEC_ST",
+      "failure_location": {
+        "file_path": "STBlock1.st",
+        "full_path": "STBlock1.st",
+        "line": 1,
+        "column": 1,
+        "error_code": "ST_SYNTAX_ERROR",
+        "severity": "ERROR",
+        "message": "STBlock1: (1): PROGRAM: New statement expected"
+      }
+    },
+    {
+      "level": "ERROR",
+      "message": "STBlock1: (4): :: \":=\" expected after assigned variable",
+      "line": 4,
+      "column": null,
+      "file_path": "STBlock1.st",
+      "pou_name": "STBlock1",
+      "error_code": "ST_SYNTAX_ERROR",
+      "subsystem": "IEC_ST",
+      "failure_location": {
+        "file_path": "STBlock1.st",
+        "full_path": "STBlock1.st",
+        "line": 4,
+        "column": 1,
+        "error_code": "ST_SYNTAX_ERROR",
+        "severity": "ERROR",
+        "message": "STBlock1: (4): :: \":=\" expected after assigned variable"
+      }
+    },
+    {
+      "level": "ERROR",
+      "message": "STBlock1: (4): REAL: Label name expected",
+      "line": 4,
+      "column": null,
+      "file_path": "STBlock1.st",
+      "pou_name": "STBlock1",
+      "error_code": "ST_SYNTAX_ERROR",
+      "subsystem": "IEC_ST",
+      "failure_location": {
+        "file_path": "STBlock1.st",
+        "full_path": "STBlock1.st",
+        "line": 4,
+        "column": 1,
+        "error_code": "ST_SYNTAX_ERROR",
+        "severity": "ERROR",
+        "message": "STBlock1: (4): REAL: Label name expected"
+      }
+    },
+    {
+      "level": "ERROR",
+      "message": "STBlock1: (5): :: \":=\" expected after assigned variable",
+      "line": 5,
+      "column": null,
+      "file_path": "STBlock1.st",
+      "pou_name": "STBlock1",
+      "error_code": "ST_SYNTAX_ERROR",
+      "subsystem": "IEC_ST",
+      "failure_location": {
+        "file_path": "STBlock1.st",
+        "full_path": "STBlock1.st",
+        "line": 5,
+        "column": 1,
+        "error_code": "ST_SYNTAX_ERROR",
+        "severity": "ERROR",
+        "message": "STBlock1: (5): :: \":=\" expected after assigned variable"
+      }
+    },
+    {
+      "level": "ERROR",
+      "message": "STBlock1: (5): REAL: Label name expected",
+      "line": 5,
+      "column": null,
+      "file_path": "STBlock1.st",
+      "pou_name": "STBlock1",
+      "error_code": "ST_SYNTAX_ERROR",
+      "subsystem": "IEC_ST",
+      "failure_location": {
+        "file_path": "STBlock1.st",
+        "full_path": "STBlock1.st",
+        "line": 5,
+        "column": 1,
+        "error_code": "ST_SYNTAX_ERROR",
+        "severity": "ERROR",
+        "message": "STBlock1: (5): REAL: Label name expected"
+      }
+    },
+    {
+      "level": "ERROR",
+      "message": "STBlock1: (6): :: \":=\" expected after assigned variable",
+      "line": 6,
+      "column": null,
+      "file_path": "STBlock1.st",
+      "pou_name": "STBlock1",
+      "error_code": "ST_SYNTAX_ERROR",
+      "subsystem": "IEC_ST",
+      "failure_location": {
+        "file_path": "STBlock1.st",
+        "full_path": "STBlock1.st",
+        "line": 6,
+        "column": 1,
+        "error_code": "ST_SYNTAX_ERROR",
+        "severity": "ERROR",
+        "message": "STBlock1: (6): :: \":=\" expected after assigned variable"
+      }
+    },
+    {
+      "level": "ERROR",
+      "message": "STBlock1: (6): REAL: Label name expected",
+      "line": 6,
+      "column": null,
+      "file_path": "STBlock1.st",
+      "pou_name": "STBlock1",
+      "error_code": "ST_SYNTAX_ERROR",
+      "subsystem": "IEC_ST",
+      "failure_location": {
+        "file_path": "STBlock1.st",
+        "full_path": "STBlock1.st",
+        "line": 6,
+        "column": 1,
+        "error_code": "ST_SYNTAX_ERROR",
+        "severity": "ERROR",
+        "message": "STBlock1: (6): REAL: Label name expected"
+      }
+    },
+    {
+      "level": "ERROR",
+      "message": "STBlock1: (7): Kp: Unknown identifier",
+      "line": 7,
+      "column": null,
+      "file_path": "STBlock1.st",
+      "pou_name": "STBlock1",
+      "error_code": "ST_SYNTAX_ERROR",
+      "subsystem": "IEC_ST",
+      "failure_location": {
+        "file_path": "STBlock1.st",
+        "full_path": "STBlock1.st",
+        "line": 7,
+        "column": 1,
+        "error_code": "ST_SYNTAX_ERROR",
+        "severity": "ERROR",
+        "message": "STBlock1: (7): Kp: Unknown identifier"
+      }
+    },
+    {
+      "level": "ERROR",
+      "message": "STBlock1: (7): REAL: Label name expected",
+      "line": 7,
+      "column": null,
+      "file_path": "STBlock1.st",
+      "pou_name": "STBlock1",
+      "error_code": "ST_SYNTAX_ERROR",
+      "subsystem": "IEC_ST",
+      "failure_location": {
+        "file_path": "STBlock1.st",
+        "full_path": "STBlock1.st",
+        "line": 7,
+        "column": 1,
+        "error_code": "ST_SYNTAX_ERROR",
+        "severity": "ERROR",
+        "message": "STBlock1: (7): REAL: Label name expected"
+      }
+    },
+    {
+      "level": "ERROR",
+      "message": "STBlock1: (8): END_VAR: New statement expected",
+      "line": 8,
+      "column": null,
+      "file_path": "STBlock1.st",
+      "pou_name": "STBlock1",
+      "error_code": "ST_SYNTAX_ERROR",
+      "subsystem": "IEC_ST",
+      "failure_location": {
+        "file_path": "STBlock1.st",
+        "full_path": "STBlock1.st",
+        "line": 8,
+        "column": 1,
+        "error_code": "ST_SYNTAX_ERROR",
+        "severity": "ERROR",
+        "message": "STBlock1: (8): END_VAR: New statement expected"
+      }
+    },
+    {
+      "level": "ERROR",
+      "message": "STBlock1: (12): Kp: Unknown identifier",
+      "line": 12,
+      "column": null,
+      "file_path": "STBlock1.st",
+      "pou_name": "STBlock1",
+      "error_code": "ST_SYNTAX_ERROR",
+      "subsystem": "IEC_ST",
+      "failure_location": {
+        "file_path": "STBlock1.st",
+        "full_path": "STBlock1.st",
+        "line": 12,
+        "column": 1,
+        "error_code": "ST_SYNTAX_ERROR",
+        "severity": "ERROR",
+        "message": "STBlock1: (12): Kp: Unknown identifier"
+      }
+    },
+    {
+      "level": "ERROR",
+      "message": "STBlock1: (19): END_PROGRAM: New statement expected",
+      "line": 19,
+      "column": null,
+      "file_path": "STBlock1.st",
+      "pou_name": "STBlock1",
+      "error_code": "ST_SYNTAX_ERROR",
+      "subsystem": "IEC_ST",
+      "failure_location": {
+        "file_path": "STBlock1.st",
+        "full_path": "STBlock1.st",
+        "line": 19,
+        "column": 1,
+        "error_code": "ST_SYNTAX_ERROR",
+        "severity": "ERROR",
+        "message": "STBlock1: (19): END_PROGRAM: New statement expected"
+      }
+    },
+    {
+      "level": "ERROR",
+      "message": "Error(s) detected",
+      "line": null,
+      "column": null,
+      "file_path": null,
+      "pou_name": null,
+      "error_code": "BUILD_FAILED",
+      "failure_location": {
+        "file_path": "Unknown.st",
+        "full_path": null,
+        "line": 1,
+        "column": 1,
+        "error_code": "BUILD_FAILED",
+        "severity": "ERROR",
+        "message": "Error(s) detected"
+      }
+    },
+    {
+      "level": "ERROR",
+      "message": "Fatal: Data Source - Invalid I/O assignment.Screen 1 at ( 24 , 12 )",
+      "line": null,
+      "column": null,
+      "file_path": "Screen 1.screen",
+      "pou_name": "Screen 1",
+      "error_code": "ERR_HMI_IO_ASSIGNMENT",
+      "subsystem": "HMI_GRAPHICS",
+      "screen_name": "Screen 1",
+      "coordinates": {
+        "x": 24,
+        "y": 12
+      },
+      "failure_location": {
+        "file_path": "Screen 1.screen",
+        "full_path": "Screen 1.screen",
+        "line": 1,
+        "column": 1,
+        "error_code": "ERR_HMI_IO_ASSIGNMENT",
+        "severity": "ERROR",
+        "message": "Fatal: Data Source - Invalid I/O assignment.Screen 1 at ( 24 , 12 )"
+      }
+    },
+    {
+      "level": "ERROR",
+      "message": "Fatal: Data Source - Invalid I/O assignment.Screen 1 at ( 24 , 66 )",
+      "line": null,
+      "column": null,
+      "file_path": "Screen 1.screen",
+      "pou_name": "Screen 1",
+      "error_code": "ERR_HMI_IO_ASSIGNMENT",
+      "subsystem": "HMI_GRAPHICS",
+      "screen_name": "Screen 1",
+      "coordinates": {
+        "x": 24,
+        "y": 66
+      },
+      "failure_location": {
+        "file_path": "Screen 1.screen",
+        "full_path": "Screen 1.screen",
+        "line": 1,
+        "column": 1,
+        "error_code": "ERR_HMI_IO_ASSIGNMENT",
+        "severity": "ERROR",
+        "message": "Fatal: Data Source - Invalid I/O assignment.Screen 1 at ( 24 , 66 )"
+      }
+    },
+    {
+      "level": "ERROR",
+      "message": "Fatal: Data Source - Invalid I/O assignment.Screen 1 at ( 24 , 114 )",
+      "line": null,
+      "column": null,
+      "file_path": "Screen 1.screen",
+      "pou_name": "Screen 1",
+      "error_code": "ERR_HMI_IO_ASSIGNMENT",
+      "subsystem": "HMI_GRAPHICS",
+      "screen_name": "Screen 1",
+      "coordinates": {
+        "x": 24,
+        "y": 114
+      },
+      "failure_location": {
+        "file_path": "Screen 1.screen",
+        "full_path": "Screen 1.screen",
+        "line": 1,
+        "column": 1,
+        "error_code": "ERR_HMI_IO_ASSIGNMENT",
+        "severity": "ERROR",
+        "message": "Fatal: Data Source - Invalid I/O assignment.Screen 1 at ( 24 , 114 )"
+      }
+    },
+    {
+      "level": "ERROR",
+      "message": "Fatal: Data Source - Invalid I/O assignment.Screen 1 at ( 24 , 162 )",
+      "line": null,
+      "column": null,
+      "file_path": "Screen 1.screen",
+      "pou_name": "Screen 1",
+      "error_code": "ERR_HMI_IO_ASSIGNMENT",
+      "subsystem": "HMI_GRAPHICS",
+      "screen_name": "Screen 1",
+      "coordinates": {
+        "x": 24,
+        "y": 162
+      },
+      "failure_location": {
+        "file_path": "Screen 1.screen",
+        "full_path": "Screen 1.screen",
+        "line": 1,
+        "column": 1,
+        "error_code": "ERR_HMI_IO_ASSIGNMENT",
+        "severity": "ERROR",
+        "message": "Fatal: Data Source - Invalid I/O assignment.Screen 1 at ( 24 , 162 )"
+      }
+    },
+    {
+      "level": "ERROR",
+      "message": "Fatal: Data Source - Invalid I/O assignment.Screen 1 at ( 144 , 162 )",
+      "line": null,
+      "column": null,
+      "file_path": "Screen 1.screen",
+      "pou_name": "Screen 1",
+      "error_code": "ERR_HMI_IO_ASSIGNMENT",
+      "subsystem": "HMI_GRAPHICS",
+      "screen_name": "Screen 1",
+      "coordinates": {
+        "x": 144,
+        "y": 162
+      },
+      "failure_location": {
+        "file_path": "Screen 1.screen",
+        "full_path": "Screen 1.screen",
+        "line": 1,
+        "column": 1,
+        "error_code": "ERR_HMI_IO_ASSIGNMENT",
+        "severity": "ERROR",
+        "message": "Fatal: Data Source - Invalid I/O assignment.Screen 1 at ( 144 , 162 )"
+      }
+    },
+    {
+      "level": "ERROR",
+      "message": "Fatal: Data Source - Invalid I/O assignment.Screen 1 at ( 232 , 18 )",
+      "line": null,
+      "column": null,
+      "file_path": "Screen 1.screen",
+      "pou_name": "Screen 1",
+      "error_code": "ERR_HMI_IO_ASSIGNMENT",
+      "subsystem": "HMI_GRAPHICS",
+      "screen_name": "Screen 1",
+      "coordinates": {
+        "x": 232,
+        "y": 18
+      },
+      "failure_location": {
+        "file_path": "Screen 1.screen",
+        "full_path": "Screen 1.screen",
+        "line": 1,
+        "column": 1,
+        "error_code": "ERR_HMI_IO_ASSIGNMENT",
+        "severity": "ERROR",
+        "message": "Fatal: Data Source - Invalid I/O assignment.Screen 1 at ( 232 , 18 )"
+      }
+    },
+    {
+      "level": "ERROR",
+      "message": "Fatal: Data Source - Invalid I/O assignment.Screen 1 at ( 237 , 66 )",
+      "line": null,
+      "column": null,
+      "file_path": "Screen 1.screen",
+      "pou_name": "Screen 1",
+      "error_code": "ERR_HMI_IO_ASSIGNMENT",
+      "subsystem": "HMI_GRAPHICS",
+      "screen_name": "Screen 1",
+      "coordinates": {
+        "x": 237,
+        "y": 66
+      },
+      "failure_location": {
+        "file_path": "Screen 1.screen",
+        "full_path": "Screen 1.screen",
+        "line": 1,
+        "column": 1,
+        "error_code": "ERR_HMI_IO_ASSIGNMENT",
+        "severity": "ERROR",
+        "message": "Fatal: Data Source - Invalid I/O assignment.Screen 1 at ( 237 , 66 )"
+      }
+    }
+  ]
+}

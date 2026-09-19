@@ -1,0 +1,131 @@
+{
+  "step": 174,
+  "mandate": "MEGAPLAN Dual-Root Checkpoint & Telemetry Verification",
+  "gate": "G1",
+  "status": "success",
+  "start_time_utc": "2026-09-06T09:37:22.513Z",
+  "completion_time_utc": "2026-09-06T09:37:22.546Z",
+  "execution_duration_sec": 0.035,
+  "roots": {
+    "horner_root": "C:\\HornerAI\\horner-cscape-mcp",
+    "user_root": "C:\\Users\\ArmandoSilva"
+  },
+  "live_cscape_gate": {
+    "pid": 10892,
+    "hwnd": "0x01B005DC",
+    "status": "READY_FOR_TESTS",
+    "project": "C:\\HornerAI\\horner-cscape-mcp\\artifacts\\projects\\TankLevelClosedLoop\\TankLevelClosedLoop.csp",
+    "window_title": "Cscape - Logged In : \"armando@controlnautas.com\" - [TankLevelClosedLoop.csp]"
+  },
+  "f0_baseline": {
+    "offline_suites_label": "offline/DEV",
+    "live_evidence": "G1 active with visible Cscape"
+  },
+  "parity_verified": true,
+  "details": {
+    "checkpoints": {
+      "artifacts/checkpoints/step174_visible_gui_proof_checkpoint.json": {
+        "rel_path": "artifacts/checkpoints/step174_visible_gui_proof_checkpoint.json",
+        "size_bytes": 1095,
+        "sha256": "928cbb79073295c1e7eae75599062bdc506f80fda3fecfae3b7f8056a8512122",
+        "identical": true,
+        "json_valid": true,
+        "status": "success"
+      },
+      "artifacts/checkpoints/step174_security_audit_checkpoint.json": {
+        "rel_path": "artifacts/checkpoints/step174_security_audit_checkpoint.json",
+        "size_bytes": 438,
+        "sha256": "a1823e6b47b72c2b6d7755a0ef80f40f6577530a27c7df7c8c22bb26cd11603b",
+        "identical": true,
+        "json_valid": true,
+        "status": "success"
+      },
+      "artifacts/checkpoints/step174_mcp_substation_synchrocheck_checkpoint.json": {
+        "rel_path": "artifacts/checkpoints/step174_mcp_substation_synchrocheck_checkpoint.json",
+        "size_bytes": 332,
+        "sha256": "cecc7858ebce0d00b928211cf30428a3553bd54974aaa57d05a935d097e260ba",
+        "identical": true,
+        "json_valid": true,
+        "status": "success"
+      }
+    },
+    "logs": {
+      "artifacts/logs/step174_visible_gui_proof.json": {
+        "rel_path": "artifacts/logs/step174_visible_gui_proof.json",
+        "size_bytes": 1733,
+        "sha256": "8be0e8c4d8ecee61c45db65ea41e249b86ec6df5b4e05d4c1c9c2ebd59741a80",
+        "identical": true,
+        "json_valid": true,
+        "status": "success"
+      },
+      "artifacts/logs/step174_security_audit.json": {
+        "rel_path": "artifacts/logs/step174_security_audit.json",
+        "size_bytes": 1699,
+        "sha256": "65f53606e395292b60e8bfe1c9040d4581845d78787f26cf120beb4d76454239",
+        "identical": true,
+        "json_valid": true,
+        "status": "success"
+      },
+      "artifacts/logs/step174_mcp_substation_synchrocheck.json": {
+        "rel_path": "artifacts/logs/step174_mcp_substation_synchrocheck.json",
+        "size_bytes": 857,
+        "sha256": "41c9c5a171fc63754e4444c4391575167189860a7509a28c2da19db4108f289f",
+        "identical": true,
+        "json_valid": true,
+        "status": "success"
+      }
+    },
+    "screenshots": {
+      "artifacts/screenshots/live_cscape_tank_level_step174.png": {
+        "rel_path": "artifacts/screenshots/live_cscape_tank_level_step174.png",
+        "size_bytes": 72896,
+        "sha256": "957bf3dac55742cc33659dd919f3a150e18f4e0abd1e8b1dbe56f500033034b8",
+        "identical": true
+      }
+    },
+    "code_files": {
+      "scripts/execute_step174_visible_cscape_gui_driver.py": {
+        "rel_path": "scripts/execute_step174_visible_cscape_gui_driver.py",
+        "size_bytes": 15738,
+        "sha256": "d341a88b56235384bc0c154c6691207569c1a11f54f123eb1dabbf713ecceb78",
+        "identical": true
+      },
+      "scripts/execute_step174_security_audit.py": {
+        "rel_path": "scripts/execute_step174_security_audit.py",
+        "size_bytes": 14382,
+        "sha256": "4c03fa116b3417c974efe59fea9b2ff2471365ce42907a35a8936bac202d149d",
+        "identical": true
+      },
+      "scripts/execute_step174_mcp_substation_synchrocheck.py": {
+        "rel_path": "scripts/execute_step174_mcp_substation_synchrocheck.py",
+        "size_bytes": 20354,
+        "sha256": "297d4f702f1dc1488ef6aa4ceb96ee17ebeee1cbcab2c4d4358922466af2fa16",
+        "identical": true
+      },
+      "scripts/execute_step174_dual_root_sync_audit.py": {
+        "rel_path": "scripts/execute_step174_dual_root_sync_audit.py",
+        "size_bytes": 8097,
+        "sha256": "fe7f26d143eae4a53a0c39f4387aeb7335a0d63cf5f69b781564b1ba8122142c",
+        "identical": true
+      },
+      "tests/test_step174_visible_cscape_gui_driver.py": {
+        "rel_path": "tests/test_step174_visible_cscape_gui_driver.py",
+        "size_bytes": 5037,
+        "sha256": "75e25f500e18cec4b7dc2fe7839b029c059e792b79768736d3c6d489a890c0ca",
+        "identical": true
+      },
+      "tests/test_step174_mcp_substation_synchrocheck.py": {
+        "rel_path": "tests/test_step174_mcp_substation_synchrocheck.py",
+        "size_bytes": 1736,
+        "sha256": "bcd3e76fa93bffbc698292dd7ea1ff3b2ec89219f599244e34f7f12d952263d8",
+        "identical": true
+      },
+      "examples/st_applications/substation_synchrocheck_autoreclose.st": {
+        "rel_path": "examples/st_applications/substation_synchrocheck_autoreclose.st",
+        "size_bytes": 6105,
+        "sha256": "b2210feda5d73e82e308b867abe8b337ab309379bb4cbb5e885e1ea570c46769",
+        "identical": true
+      }
+    }
+  }
+}

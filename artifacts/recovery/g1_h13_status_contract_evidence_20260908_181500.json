@@ -1,0 +1,67 @@
+{
+  "item_id": "H13",
+  "name": "Strict 4-State Status Contract Enforced",
+  "mission_id": "G1_REMAINING_NEGATIVES_OFFLINE_v3",
+  "timestamp_utc": "2026-09-09T01:19:34.566673+00:00",
+  "status": "success",
+  "invariant": "Every tool result must return strictly status: success | failed | blocked | inconclusive",
+  "verification": {
+    "tools_tested_count": 13,
+    "tool_evaluations": [
+      [
+        "cscape_create_project",
+        "failed"
+      ],
+      [
+        "cscape_add_st_pou",
+        "blocked"
+      ],
+      [
+        "cscape_validate_st",
+        "failed"
+      ],
+      [
+        "cscape_inspect_variables",
+        "failed"
+      ],
+      [
+        "cscape_compile_project",
+        "failed"
+      ],
+      [
+        "cscape_get_diagnostics",
+        "failed"
+      ],
+      [
+        "cscape_simulate_pou",
+        "failed"
+      ],
+      [
+        "cscape_export_project",
+        "failed"
+      ],
+      [
+        "cscape_simulate_cycle",
+        "failed"
+      ],
+      [
+        "cscape_read_register",
+        "failed"
+      ],
+      [
+        "cscape_write_register",
+        "failed"
+      ],
+      [
+        "normalize_tool_result_unverified",
+        "inconclusive"
+      ],
+      [
+        "normalize_tool_result_warnings",
+        "inconclusive"
+      ]
+    ],
+    "all_canonical": true,
+    "pass": true
+  }
+}

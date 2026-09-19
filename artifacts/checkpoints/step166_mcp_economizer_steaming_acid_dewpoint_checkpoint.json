@@ -1,0 +1,18 @@
+{
+  "step": 166,
+  "name": "step166_mcp_economizer_steaming_acid_dewpoint_checkpoint",
+  "status": "PASSED",
+  "timestamp_utc": "2026-09-06T12:24:12.878Z",
+  "cscape_pid": 10892,
+  "hwnd": "0x01B005DC",
+  "steaming_prevention_verified": true,
+  "acid_dewpoint_protection_verified": true,
+  "tube_rupture_isolation_verified": true,
+  "heat_recovery_balance_verified": true,
+  "zero_straton_dependencies": true,
+  "hardware_lockout_enforced": true,
+  "live_screenshot_sha256": "bc43766c83319fd52574940020f6a1b1316dc6ba62fa60593dec82592cdfd0e1",
+  "log_sha256": "749e3b360432d1e4bacc437d83b967c5aa156ce35623d2fe32846645e5e7d89b",
+  "dual_root_mirrored": true,
+  "checkpoint_sha256": "f890c9ccf7b89de2e820771e5097a47c82f176beeb2578ba34da3b7fd918438d"
+}

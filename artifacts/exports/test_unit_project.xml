@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='utf-8'?>
+<ProjectVariables version="1.0">
+   <vargroup name="program">
+      <var name="RunCmd" type="BOOL" />
+      <var name="PE_Sensor" type="BOOL" />
+      <var name="MotorOut" type="BOOL" />
+      <var name="BoxCount" type="INT" />
+   </vargroup>
+</ProjectVariables>

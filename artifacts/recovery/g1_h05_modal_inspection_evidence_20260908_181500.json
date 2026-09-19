@@ -1,0 +1,18 @@
+{
+  "item_id": "H05",
+  "name": "Global Allow Dialog Bypass Eradicated",
+  "mission_id": "G1_REMAINING_NEGATIVES_OFFLINE_v3",
+  "timestamp_utc": "2026-09-09T01:19:34.566673+00:00",
+  "status": "success",
+  "invariant": "Dialog handling requires rigorous Win32 modal inspection against allowed keywords",
+  "verification": {
+    "checks": {
+      "ALLOW_TEXT_KEYWORDS": true,
+      "ALLOW_BUTTON_KEYWORDS": true,
+      "DIALOG_CLASS_32770": true,
+      "find_allow_dialogs": true,
+      "handle_allow_dialogs": true
+    },
+    "pass": true
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "name": "TemplateProject",
+  "description": "Horner Cscape Reference Project Fixture",
+  "created_at": "2026-09-04T02:56:45.186312Z",
+  "target": "T5RTI",
+  "language": "IEC 61131-3 Structured Text",
+  "programs": [],
+  "variables": [],
+  "version": "1.0.0"
+}

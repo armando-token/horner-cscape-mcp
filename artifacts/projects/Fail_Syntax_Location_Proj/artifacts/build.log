@@ -1,0 +1,16 @@
+=== Horner Cscape 10.2 Compile Pass: Fail_Syntax_Location_Proj ===
+Clean Build: True
+Mode: IEC 61131-3 Structured Text (Advanced Ladder Excluded)
+Timestamp: 2026-09-04T14:57:42.375168
+----------------------------------------------------------------
+Compiling POU: POU_SyntaxError (169 bytes)...
+  POU_SyntaxError.st(10,1): error ST_SYNTAX_ERROR: Mismatched closing block at line 10, col 1: got 'END_PROGRAM', expected closing for 'IF' (opened at line 6, col 1).
+  POU_SyntaxError.st(1,1): error ERR_UNCLOSED_PROGRAM: : Unclosed 'PROGRAM' block (opened at line 1, col 0) missing terminating keyword.
+  POU_SyntaxError.st(10,1): error ST_SYNTAX_ERROR: Syntax error at line 10, col 1: Unexpected token in statement: END_PROGRAM ('END_PROGRAM')
+  POU_SyntaxError.st(6,1): error ERR_UNCLOSED_IF: Unclosed IF block: 1 'IF' opened, but only 0 'END_IF' closed.
+----------------------------------------------------------------
+Build Result: FAILED
+Errors: 4, Warnings: 0
+Estimated Code Size: 1024 bytes, Data Size: 512 bytes
+Duration: 0.018s
+Hardware Lockout: ENFORCED (Zero PLC communication / No download)

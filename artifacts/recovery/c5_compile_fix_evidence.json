@@ -1,0 +1,43 @@
+{
+  "success": true,
+  "status": "success",
+  "error_code": "COMPILE_ERROR",
+  "project_name": "LabProject_W01",
+  "build_time_seconds": 0.09348,
+  "error_count": 0,
+  "warning_count": 0,
+  "errors": [],
+  "warnings": [],
+  "build_log": "=== Horner Cscape 10.2 Compile Pass: LabProject_W01 ===\nClean Build: True\nMode: IEC 61131-3 Structured Text (Advanced Ladder Excluded)\nTimestamp: 2026-09-06T20:48:59.348934\n----------------------------------------------------------------\nCompiling POU: MainProcessControl (831 bytes)...\n  POU 'MainProcessControl' parsed and validated cleanly.\nCompiling POU: ScaleAnalogFilter (769 bytes)...\n  POU 'ScaleAnalogFilter' parsed and validated cleanly.\n----------------------------------------------------------------\nBuild Result: SUCCESS\nErrors: 0, Warnings: 0\nEstimated AST Footprint: Statements: 14, Variables: 18, Expressions: 53, Source: 1600 bytes\nDuration: 0.093s\nHardware Lockout: ENFORCED (Zero PLC communication / No download)",
+  "diagnostics": [],
+  "memory_footprint": {
+    "estimated_ast_footprint": {
+      "ast_statement_count": 14,
+      "ast_variable_count": 18,
+      "ast_expression_count": 53,
+      "source_bytes_total": 1600,
+      "pou_count": 2,
+      "target_architecture": "Horner OCS (XL4 Native CFBF)"
+    },
+    "ast_statement_count": 14,
+    "ast_variable_count": 18,
+    "ast_expression_count": 53,
+    "source_bytes_total": 1600,
+    "code_size_bytes": 1600,
+    "data_size_bytes": 72,
+    "retain_size_bytes": 0,
+    "total_size_bytes": 1672,
+    "target_architecture": "Horner OCS (XL4 Native CFBF)"
+  },
+  "hardware_lockout_enforced": true,
+  "message": "Compilation completed: SUCCESS (0 errors, 0 warnings)",
+  "compiled_at": "2026-09-07T03:48:59.442414+00:00",
+  "failure_locations": [],
+  "failure_location": null,
+  "compile_successful": true,
+  "clean_build": true,
+  "pous_compiled": [
+    "MainProcessControl",
+    "ScaleAnalogFilter"
+  ]
+}

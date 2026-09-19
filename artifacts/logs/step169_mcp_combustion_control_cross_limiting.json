@@ -1,0 +1,107 @@
+{
+  "step": 169,
+  "name": "step169_mcp_combustion_control_cross_limiting",
+  "status": "PASSED",
+  "mission": "Live FastMCP Combustion Control Cross-Limited Fuel/Air Ratio & Safety Audit",
+  "timestamp_start": "2026-09-06T12:24:31.828Z",
+  "timestamp_complete": "2026-09-06T12:24:42.950Z",
+  "duration_seconds": 11.121,
+  "gate": {
+    "ready_for_tests": true,
+    "status": "READY_FOR_TESTS",
+    "pid": 10892,
+    "hwnd": "0x01B005DC",
+    "window_title": "Cscape - Logged In : \"armando@controlnautas.com\" - [TankLevelClosedLoop.csp]",
+    "project_file": "C:\\HornerAI\\horner-cscape-mcp\\artifacts\\projects\\TankLevelClosedLoop\\TankLevelClosedLoop.csp",
+    "exit_code": null,
+    "reason": "Gate G3 Error Check and Output Scrape Verified Clean (0 errors, 0 warnings)",
+    "cycle": 17,
+    "timestamp_utc": "2026-09-06T11:43:46.709Z",
+    "heartbeat_utc": "2026-09-06T11:43:46.709Z"
+  },
+  "cscape_pid": 10892,
+  "hwnd": "0x01B005DC",
+  "scenarios_passed": 5,
+  "scenarios_total": 5,
+  "scenario_results": {
+    "scenario_a_steady_state_cross_limited_firing": {
+      "verified": true,
+      "fuel_flow_mcfh": 60.0,
+      "air_flow_kscfh": 72.0,
+      "excess_oxygen_pct": 3.0,
+      "furnace_draft_in_wc": -0.25,
+      "flame_proven": true,
+      "mft_inactive": true
+    },
+    "scenario_b_air_leading_fuel_cross_limitation": {
+      "verified": true,
+      "air_flow_leading_kscfh": 96.0,
+      "fuel_flow_lagging_mcfh": 72.0,
+      "air_lead_flag_active": true
+    },
+    "scenario_c_fuel_leading_air_cross_limitation": {
+      "verified": true,
+      "fuel_flow_leading_mcfh": 40.0,
+      "air_flow_lagging_kscfh": 68.0,
+      "fuel_lead_flag_active": true
+    },
+    "scenario_d_positive_pressure_mft_trip": {
+      "verified": true,
+      "positive_draft_in_wc": 1.7999999523162842,
+      "mft_trip_activated": true,
+      "draft_rollout_alarm": true,
+      "fuel_safety_valves_isolated": true
+    },
+    "scenario_e_post_trip_purge_recovery": {
+      "verified": true,
+      "restored_fuel_flow_mcfh": 30.0,
+      "restored_air_flow_kscfh": 36.0,
+      "negative_draft_in_wc": -0.25,
+      "all_alarms_cleared": true
+    }
+  },
+  "telemetry_records": [
+    {
+      "scenario": "A_STEADY_STATE_FIRING",
+      "cycle": 1,
+      "fuel": 60.0,
+      "air": 72.0,
+      "o2": 3.0,
+      "draft": -0.25
+    },
+    {
+      "scenario": "B_AIR_LEADING_CROSS_LIMIT",
+      "cycle": 2,
+      "air": 96.0,
+      "fuel": 72.0,
+      "m44": true
+    },
+    {
+      "scenario": "C_FUEL_LEADING_CROSS_LIMIT",
+      "cycle": 3,
+      "fuel": 40.0,
+      "air": 68.0,
+      "m45": true
+    },
+    {
+      "scenario": "D_MFT_POSITIVE_DRAFT_TRIP",
+      "cycle": 4,
+      "draft": 1.7999999523162842,
+      "m43": true,
+      "ssv1": false
+    },
+    {
+      "scenario": "E_PURGE_RECOVERY",
+      "cycle": 5,
+      "fuel": 30.0,
+      "air": 36.0,
+      "draft": -0.25
+    }
+  ],
+  "security": {
+    "hardware_download_lockout": "FAIL_CLOSED_BLOCKED",
+    "zero_straton_dependencies": true,
+    "zero_plc_hardware_interaction": true,
+    "no_gui_hwnd_command_dispatched": true
+  }
+}

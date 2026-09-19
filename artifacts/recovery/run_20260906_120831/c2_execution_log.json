@@ -1,0 +1,98 @@
+{
+  "mission_id": "C2_CONTINUED",
+  "phase": "C2",
+  "plan": "PLAN_CORRECTIVO MCP Horner/Cscape v2.0 (correctivo)",
+  "run_id": "run_20260906_120831",
+  "timestamp_utc": "2026-09-06T20:16:18Z",
+  "execution_mode": "Headless / Offline DEV (Zero Live GUI mutation; Leave Cscape untouched)",
+  "cscape_process_safety": {
+    "observed_pid": 16564,
+    "observed_status": "running",
+    "gui_mutated": false,
+    "gui_automation_triggered": false,
+    "process_state": "UNTOUCHED"
+  },
+  "implementation_summary": {
+    "critical_path_task": "POU AST Engine, CFBF Validation & Transactional Rollback Rigor (Phase C2 Continuation)",
+    "files_modified": [
+      "src/cscape/cfbf.py",
+      "src/cscape/st_inserter.py",
+      "tests/test_c2_cfbf_staging_rigor.py",
+      "tests/test_c2_pou_ast_rollback.py"
+    ],
+    "mandates_enforced": [
+      "Reject CFBF 512-byte magic+zeros in is_valid_cfbf, inspect_project_file, and export_project",
+      "Reject CFBF with invalid mini sector shift (!= 6)",
+      "Reject CFBF with container size smaller than 3 sectors (< 1536 bytes)",
+      "Reject CFBF with non-sector-aligned file sizes",
+      "DIFAT circular chain cycle defense to prevent infinite loop or memory exhaustion",
+      "Reject false version detection when /Contents stream header magic is corrupted",
+      "Synchronize StructuredTextInserter.validate_cfbf_container with is_valid_cfbf",
+      "Eliminate editor-empty -> aux-file verify fallback in verify_editor_content",
+      "Explicit staging classification: storage_mode='staging', is_staged=True, is_native_persisted=False",
+      "Reject ladder coil variants: set/reset coils ---(S)---, ---(R)---, [SET], [RESET]",
+      "Reject ladder contact variants: normally closed ---[/]---, |/|",
+      "Reject ladder mnemonic instructions: XIC, XIO, OTE, OTL, OTU",
+      "Allow ladder mentions in comments (* ... *) and // ... without false rejection",
+      "Immunize variable names with ladder substrings (network_id, rung_counter, xic_status)",
+      "Reject malformed ST grammar (unmatched IF, unmatched CASE, unclosed comments, empty code)",
+      "Transactional rollback: failed updates restore original POU byte-for-byte with zero residue",
+      "Transactional rollback: failed new POU creation leaves zero orphan files on disk",
+      "Accurate line number metrics; unlocated errors preserve line: None, column: None without inventing line 1, col 1"
+    ],
+    "scope_boundary_notice": "Phase C2 is strictly confined to offline CFBF validation and POU AST/rollback hardening. PID 16564 untouched. Gate G5 and native in-container persistence NOT claimed closed. Zero FINAL_REPORT spam."
+  },
+  "verification_evidence": {
+    "test_c2_cfbf_staging_rigor": {
+      "test_file": "tests/test_c2_cfbf_staging_rigor.py",
+      "tests_collected": 19,
+      "tests_passed": 19,
+      "tests_failed": 0,
+      "status": "success"
+    },
+    "test_c2_pou_ast_rollback": {
+      "test_file": "tests/test_c2_pou_ast_rollback.py",
+      "tests_collected": 18,
+      "tests_passed": 18,
+      "tests_failed": 0,
+      "status": "success"
+    },
+    "total_c2_tests": {
+      "tests_collected": 37,
+      "tests_passed": 37,
+      "tests_failed": 0,
+      "status": "success"
+    }
+  },
+  "deliverable_hashes": {
+    "src/cscape/cfbf.py": {
+      "sha256": "61968e2944c850c119042c5ac38ed7ee8198a774b9baed66d8bc76d970cf49c7",
+      "size_bytes": 25033
+    },
+    "src/cscape/st_inserter.py": {
+      "sha256": "c5bed87af33e41f961897bc645ef9db7979eaf1bb75521dca20c6a7e3c97157d",
+      "size_bytes": 54087
+    },
+    "tests/test_c2_cfbf_staging_rigor.py": {
+      "sha256": "bdf318f8f55162f7f07aa10bcc7a29227fc330508a2e1aab5b078bd2c2bd8748",
+      "size_bytes": 14866
+    },
+    "tests/test_c2_pou_ast_rollback.py": {
+      "sha256": "4d16de90bfa955444e1c0deb8ffe48acf4e76572205f7d4abf4e7d494bc13f83",
+      "size_bytes": 13565
+    },
+    "artifacts/recovery/run_20260906_120831/c2_before_proof.json": {
+      "sha256": "c600c6e6d534c4e67a65822562b12335a3463c2c2ce4185505b3f3323613e40a",
+      "size_bytes": 1654
+    },
+    "artifacts/recovery/run_20260906_120831/c2_after_proof.json": {
+      "sha256": "ece64805db678333297da48fd86b597868efc9ba45d8f2f2ac3cdc3c304acb05",
+      "size_bytes": 1569
+    },
+    "artifacts/recovery/run_20260906_120831/c2_unified_diff.patch": {
+      "sha256": "bf18304a38eae57a0d70b8c087dfe46d3a3b101795e2dae4ba714fcfecba4a83",
+      "size_bytes": 42609
+    }
+  },
+  "status": "success"
+}

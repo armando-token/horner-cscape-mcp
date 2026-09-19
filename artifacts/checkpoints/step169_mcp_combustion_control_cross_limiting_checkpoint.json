@@ -1,0 +1,19 @@
+{
+  "step": 169,
+  "name": "step169_mcp_combustion_control_cross_limiting_checkpoint",
+  "status": "PASSED",
+  "timestamp_utc": "2026-09-06T12:24:42.950Z",
+  "cscape_pid": 10892,
+  "hwnd": "0x01B005DC",
+  "steady_state_firing_verified": true,
+  "air_leading_cross_limit_verified": true,
+  "fuel_leading_cross_limit_verified": true,
+  "positive_draft_mft_trip_verified": true,
+  "post_trip_purge_recovery_verified": true,
+  "zero_straton_dependencies": true,
+  "hardware_lockout_enforced": true,
+  "live_screenshot_sha256": "bc43766c83319fd52574940020f6a1b1316dc6ba62fa60593dec82592cdfd0e1",
+  "log_sha256": "aa8d5d9465ef6af06b022ae2b57683351d7b8956716afadbd9c6e29fb333487e",
+  "dual_root_mirrored": true,
+  "checkpoint_sha256": "859e672b35eea774bb3f6251c3bc11114556446092116778defce04e4744d7f9"
+}

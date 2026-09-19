@@ -1,0 +1,63 @@
+{
+  "status": "success",
+  "step": 178,
+  "title": "FastMCP CCGT HRSG Drum Level & Duct Burner Simulation Audit",
+  "start_time_utc": "2026-09-06T18:57:55.697Z",
+  "completion_time_utc": "2026-09-06T18:58:29.162Z",
+  "duration_seconds": 33.465,
+  "st_source": {
+    "path": "C:\\HornerAI\\horner-cscape-mcp\\examples\\st_applications\\ccgt_hrsg_drum_level_duct_burner_control.st",
+    "sha256": "09e86d14886ba862429a44b20e1d70a318a684b8da0b6fcfed65385a81ea6009",
+    "bytes": 8049
+  },
+  "scenarios": {
+    "scenario_A_baseload_steady_state": "PASSED",
+    "scenario_B_duct_burner_ramp": "PASSED",
+    "scenario_C_high_level_warning": "PASSED",
+    "scenario_D_low_level_warning": "PASSED",
+    "scenario_E_boil_dry_emergency_trip": "PASSED"
+  },
+  "safety_checks": {
+    "hardware_download_blocked": true,
+    "blocked_command_ids": [
+      "ID_ONLINECHANGEREVERT",
+      33149,
+      38293,
+      38294,
+      38295,
+      "ID_DEBUGOPTIONSELECTIONMENU_DOONLINECHANGE",
+      38297,
+      38296,
+      "ID_DOWNLOAD_PROGRAM",
+      "ID_CONTROLLER_DOWNLOAD",
+      "ID_DEBUGOPTIONSELECTIONMENU_DOWNLOADONLINECHANGE",
+      "ID_ONLINECHANGEACTION",
+      32827,
+      32828,
+      "ID_CONTROLLER_FLASH",
+      "ID_FIRMWARE_DOWNLOAD",
+      32862,
+      "ID_CONTROLLER_DOWNLOAD_ALT",
+      "ID_PLC_UPLOAD",
+      32993,
+      38372,
+      38373,
+      "ID_PLC_DOWNLOAD",
+      "ID_ONLINECHANGECONNECT",
+      "ID_FIRMWARE_UPDATE",
+      "ID_DOWNLOAD",
+      "ID_PROGRAM_DOWNLOADOPTIONS",
+      "ID_PLC_CLEARMEMORY",
+      "ID_PLC_VERIFY"
+    ],
+    "straton_k5_tools_found": 0,
+    "zero_gui_mutation": true
+  },
+  "parity": {
+    "dual_roots": [
+      "C:\\HornerAI\\horner-cscape-mcp",
+      "C:\\Users\\ArmandoSilva"
+    ],
+    "identical": true
+  }
+}

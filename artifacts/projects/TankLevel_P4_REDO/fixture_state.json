@@ -1,0 +1,39 @@
+{
+  "project_name": "TankLevel_P4_REDO",
+  "revision": "1.1.0",
+  "lo_limit": 35.0,
+  "hi_limit": 75.0,
+  "level_label": "Buffer Tank Level PV",
+  "csp_sha256": "e5f84603fabb8a683aaa499409c59658dbb64bfcef42b5df84d361bc18c04ea4",
+  "spec_hash": "575c090918e9d89870d79f02f7f7f03f4713c1ddc5179d50c269afb16e1da160",
+  "created_utc": "2026-09-16T02:17:52.984313+00:00",
+  "last_updated_utc": "2026-09-16T02:17:53.115656+00:00",
+  "history": [
+    {
+      "revision": "1.0.0",
+      "action": "CREATE_LOGIC_VARS_HMI",
+      "limits": {
+        "lo_limit": 30.0,
+        "hi_limit": 70.0
+      },
+      "level_label": "Tank Level PV",
+      "timestamp_utc": "2026-09-16T02:17:52.984313+00:00"
+    },
+    {
+      "revision": "1.1.0",
+      "action": "SELECTIVE_EDIT_LIMITS_AND_LABEL",
+      "prior_limits": {
+        "lo": 30.0,
+        "hi": 70.0
+      },
+      "new_limits": {
+        "lo": 35.0,
+        "hi": 75.0
+      },
+      "prior_label": "Tank Level PV",
+      "new_label": "Buffer Tank Level PV",
+      "timestamp_utc": "2026-09-16T02:17:53.115656+00:00"
+    }
+  ],
+  "safety_lockout": "BLOCKED_FAIL_CLOSED"
+}

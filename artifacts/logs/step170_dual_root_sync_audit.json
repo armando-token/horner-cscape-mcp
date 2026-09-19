@@ -1,0 +1,120 @@
+{
+  "step": 170,
+  "name": "step170_dual_root_sync_audit",
+  "status": "PASSED",
+  "timestamp_start": "2026-09-06T04:35:25.305Z",
+  "timestamp_complete": "2026-09-06T04:35:25.375Z",
+  "duration_seconds": 0.07,
+  "checkpoint_sha256": "a77467708ad21480d751b8bcd6a497af387bff876b72f9c369ba82dfb5e0c9e3",
+  "parity_verified": true,
+  "details": {
+    "checkpoints": {
+      "step170_visible_gui_proof_checkpoint": {
+        "file": "artifacts/checkpoints/step170_visible_gui_proof_checkpoint.json",
+        "exists_in_both": true,
+        "valid_json": true,
+        "status": "PASSED",
+        "step": 170,
+        "file_sha256": "7798799b3566bf0c797d9edf9c56b6005ee31d987e088104cf43459f8e733239",
+        "roots_identical": true,
+        "size_bytes": 670
+      },
+      "step170_security_audit_checkpoint": {
+        "file": "artifacts/checkpoints/step170_security_audit_checkpoint.json",
+        "exists_in_both": true,
+        "valid_json": true,
+        "status": "PASSED",
+        "step": 170,
+        "file_sha256": "049111db9969e2531e09ae8a2052ca896a6780586092e1c2d5c5108e3d1739c2",
+        "roots_identical": true,
+        "size_bytes": 556
+      },
+      "step170_mcp_master_header_pressure_grid_balance_checkpoint": {
+        "file": "artifacts/checkpoints/step170_mcp_master_header_pressure_grid_balance_checkpoint.json",
+        "exists_in_both": true,
+        "valid_json": true,
+        "status": "PASSED",
+        "step": 170,
+        "file_sha256": "8f2cb93a2a053c837f997bbf174dd643b20484ef1e9a70d5ff6df81414d2d43c",
+        "roots_identical": true,
+        "size_bytes": 784
+      }
+    },
+    "logs": {
+      "step170_visible_gui_proof": {
+        "file": "artifacts/logs/step170_visible_gui_proof.json",
+        "exists_in_both": true,
+        "valid_json": true,
+        "status": "PASSED",
+        "file_sha256": "8176769fa71684f92a280cb00e55e198e776ea9b42cc9989f156e4c33b972db4",
+        "roots_identical": true,
+        "size_bytes": 1892
+      },
+      "step170_security_audit": {
+        "file": "artifacts/logs/step170_security_audit.json",
+        "exists_in_both": true,
+        "valid_json": true,
+        "status": "PASSED",
+        "file_sha256": "27dac3b48c2b7c3c96fac9657af3f73018c72e46b52dc988b0d720e83c4ea60f",
+        "roots_identical": true,
+        "size_bytes": 2763
+      },
+      "step170_mcp_master_header_pressure_grid_balance": {
+        "file": "artifacts/logs/step170_mcp_master_header_pressure_grid_balance.json",
+        "exists_in_both": true,
+        "valid_json": true,
+        "status": "PASSED",
+        "file_sha256": "d603e55a320145a7c556ecda26ce8f70a4a6c65b6cbf769a3d87e28681d26684",
+        "roots_identical": true,
+        "size_bytes": 3168
+      }
+    },
+    "screenshots": {
+      "live_cscape_tank_level_step170": {
+        "file": "artifacts/screenshots/live_cscape_tank_level_step170.png",
+        "exists_in_both": true,
+        "size_bytes": 72686,
+        "gt_10kb": true,
+        "file_sha256": "4730540e881c216fe988f2ab82b86a21b3bf9b10e662d57effe44a71b6cb657f",
+        "roots_identical": true
+      }
+    },
+    "code_files": {
+      "execute_step170_visible_cscape_gui_driver.py": {
+        "file": "scripts/execute_step170_visible_cscape_gui_driver.py",
+        "exists_in_both": true,
+        "file_sha256": "3411c9f7a3d92c9d544aee4c57f80fb8b903517dd3afd16711d34c8dc75f6262",
+        "roots_identical": true,
+        "size_bytes": 16149
+      },
+      "execute_step170_security_audit.py": {
+        "file": "scripts/execute_step170_security_audit.py",
+        "exists_in_both": true,
+        "file_sha256": "367dbd6e0c09e38aca1b43c7235263edb3ecf53529d462331b6110dbcf46d958",
+        "roots_identical": true,
+        "size_bytes": 15141
+      },
+      "execute_step170_mcp_master_header_pressure_grid_balance.py": {
+        "file": "scripts/execute_step170_mcp_master_header_pressure_grid_balance.py",
+        "exists_in_both": true,
+        "file_sha256": "6610ea4d98e2ba965cc6c5bdc701f85835925158e684073294b38c7c6b615107",
+        "roots_identical": true,
+        "size_bytes": 29979
+      },
+      "test_step170_visible_cscape_gui_driver.py": {
+        "file": "tests/test_step170_visible_cscape_gui_driver.py",
+        "exists_in_both": true,
+        "file_sha256": "6fe1f642bcd6cb8509450d3eb53bd9f7b3a79e04304af6762dc1f40dfc804e03",
+        "roots_identical": true,
+        "size_bytes": 3655
+      },
+      "test_step170_mcp_master_header_pressure_grid_balance.py": {
+        "file": "tests/test_step170_mcp_master_header_pressure_grid_balance.py",
+        "exists_in_both": true,
+        "file_sha256": "d033ebe8cf17ac1c2ec42d3cc99e49ec594a760537e7543eca6bdd7c6015b813",
+        "roots_identical": true,
+        "size_bytes": 3204
+      }
+    }
+  }
+}

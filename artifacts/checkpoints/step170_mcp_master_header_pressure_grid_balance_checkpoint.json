@@ -1,0 +1,19 @@
+{
+  "step": 170,
+  "name": "step170_mcp_master_header_pressure_grid_balance_checkpoint",
+  "status": "PASSED",
+  "timestamp_utc": "2026-09-06T12:24:50.774Z",
+  "cscape_pid": 10892,
+  "hwnd": "0x01B005DC",
+  "header_equilibrium_verified": true,
+  "turbine_bypass_dump_verified": true,
+  "two_tier_load_shedding_verified": true,
+  "water_ingress_protection_verified": true,
+  "grid_restoration_verified": true,
+  "zero_straton_dependencies": true,
+  "hardware_lockout_enforced": true,
+  "live_screenshot_sha256": "bc43766c83319fd52574940020f6a1b1316dc6ba62fa60593dec82592cdfd0e1",
+  "log_sha256": "efd253759c32ce9c976f03ecafc11fdb199441fe989146084b879376e83d3dfb",
+  "dual_root_mirrored": true,
+  "checkpoint_sha256": "9f0e68e35a44f7f86b5c1f7f3fa8d2cce0976ef57cb49766643e5ba5b0dcff47"
+}

@@ -1,0 +1,68 @@
+{
+  "mission_id": "MCP_HMI_SCADA_NATIVE_SHAPES",
+  "status": "success",
+  "timestamp_utc": "2026-09-09T09:50:56Z",
+  "pid": 19932,
+  "hwnd": "0x01C80338",
+  "project_file": "C:\\HornerAI\\horner-cscape-mcp\\artifacts\\projects\\TankLevelClosedLoop\\TankLevelClosedLoop.csp",
+  "file_size": 114688,
+  "sha256": "ef577f30ab5f62e81f0c9c80d737fac48f9717fd97cb2f37c68f007d4dfdaa3d",
+  "command_id": 32826,
+  "command_name": "ID_PROGRAM_ERRORCHECK",
+  "clean_compile_modal": false,
+  "modals_detected": [
+    {
+      "hwnd": "0xf40a8c",
+      "title": "Cscape",
+      "controls": [
+        "[ID 2] OK",
+        "[ID 65535] Fatal Compilation Errors were found."
+      ]
+    },
+    {
+      "hwnd": "0xf40a8c",
+      "title": "Cscape",
+      "controls": [
+        "[ID 2] OK",
+        "[ID 65535] Fatal Compilation Errors were found."
+      ]
+    },
+    {
+      "hwnd": "0xf40a8c",
+      "title": "Cscape",
+      "controls": [
+        "[ID 2] OK",
+        "[ID 65535] Fatal Compilation Errors were found."
+      ]
+    },
+    {
+      "hwnd": "0xf40a8c",
+      "title": "Cscape",
+      "controls": [
+        "[ID 2] OK",
+        "[ID 65535] Fatal Compilation Errors were found."
+      ]
+    },
+    {
+      "hwnd": "0xf40a8c",
+      "title": "Cscape",
+      "controls": [
+        "[ID 2] OK",
+        "[ID 65535] Fatal Compilation Errors were found."
+      ]
+    }
+  ],
+  "scraped_output_lines": [
+    "<No bookmarks added>"
+  ],
+  "total_screen1_objects": 7,
+  "objects_on_screen1": [
+    "Screen 1 Baseline Boundary Rectangle",
+    "Setpoint (123 Numeric Data Entry, REAL, %R1/%R2)",
+    "TankLevelPV (123 Numeric Display, REAL, %R3/%R4)",
+    "Error (123 Numeric Display, REAL, %R5/%R6)",
+    "ControlOutput (123 Numeric Display, REAL, %R7/%R8)",
+    "Native Tank Rectangle (Outline, Snap-to-grid)",
+    "TankLevelPV Fill Bar (Bar Graph, REAL, 32-Bit, 0..100)"
+  ]
+}

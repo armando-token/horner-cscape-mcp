@@ -1,0 +1,19 @@
+{
+  "step": 114,
+  "status": "COMPLETED",
+  "name": "Ethylene Plant Acetylene Hydrogenation Depropanizer Reflux Drum Level Closed-Loop Audit",
+  "timestamp": "2026-09-05T12:35:44.926Z",
+  "cscape_pid": 4272,
+  "cscape_hwnd": "0x7033e",
+  "project": "TankLevelClosedLoop.csp",
+  "assertions_passed": [
+    "Phase 1 overhead condensation equilibrium error 0.0000% < 0.10%",
+    "Phase 2 reboiler steam upset vapor surge drift 6.71% > 5.0%",
+    "Phase 3 reflux-to-distillate split decoupled error 0.0000% < 0.35%",
+    "Vapor surge attenuation rejection ratio 100.0% > 95.0%",
+    "Phase 4 polymer-grade propylene draw rate step settling error 0.0458% < 0.35%",
+    "Phase 5 overhead compressor wet suction high-high trip at cycle 501 == 501",
+    "Fail-closed download lockout ID_CONTROLLER_DOWNLOAD=32827 strictly enforced",
+    "Live Cscape GUI healthy and responsive throughout test"
+  ]
+}

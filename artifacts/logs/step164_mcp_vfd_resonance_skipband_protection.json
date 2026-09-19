@@ -1,0 +1,109 @@
+{
+  "step": 164,
+  "name": "step164_mcp_vfd_resonance_skipband_protection",
+  "status": "PASSED",
+  "mission": "Live FastMCP Dynamic VFD Frequency Regulation, Mechanical Resonance Skip-Band & Soft-Ramp Protection Audit",
+  "timestamp_start": "2026-09-06T12:23:41.052Z",
+  "timestamp_complete": "2026-09-06T12:23:51.379Z",
+  "duration_seconds": 10.328,
+  "gate": {
+    "ready_for_tests": true,
+    "status": "READY_FOR_TESTS",
+    "pid": 10892,
+    "hwnd": "0x01B005DC",
+    "window_title": "Cscape - Logged In : \"armando@controlnautas.com\" - [TankLevelClosedLoop.csp]",
+    "project_file": "C:\\HornerAI\\horner-cscape-mcp\\artifacts\\projects\\TankLevelClosedLoop\\TankLevelClosedLoop.csp",
+    "exit_code": null,
+    "reason": "Gate G3 Error Check and Output Scrape Verified Clean (0 errors, 0 warnings)",
+    "cycle": 17,
+    "timestamp_utc": "2026-09-06T11:43:46.709Z",
+    "heartbeat_utc": "2026-09-06T11:43:46.709Z"
+  },
+  "cscape_pid": 10892,
+  "hwnd": "0x01B005DC",
+  "scenarios_passed": 5,
+  "scenarios_total": 5,
+  "scenario_results": {
+    "scenario_a_normal_vfd_operation": {
+      "verified": true,
+      "vfd_run_enabled": true,
+      "cmd_frequency_hz": 50.0,
+      "actual_frequency_hz": 50.0,
+      "skip_band_active": false,
+      "level_pv": 50.0
+    },
+    "scenario_b_resonance_skipband_jump": {
+      "verified": true,
+      "resonance_skip_active": true,
+      "raw_demanded_freq_hz": 34.0,
+      "clamped_safe_freq_hz": 38.5,
+      "vibration_rms_in_per_s": 0.11999999731779099
+    },
+    "scenario_c_dc_bus_braking_chopper": {
+      "verified": true,
+      "braking_chopper_energized": true,
+      "overvoltage_alarm": true,
+      "peak_dc_bus_voltage": 780.0,
+      "restored_dc_bus_voltage": 680.0
+    },
+    "scenario_d_scurve_anticavitation_npsh": {
+      "verified": true,
+      "rate_limiter_active": true,
+      "suction_pressure_npsh_psi": 18.5,
+      "npsh_margin_safe": true
+    },
+    "scenario_e_vfd_trip_dol_bypass_transfer": {
+      "verified": true,
+      "vfd_fault_alarm": true,
+      "vfd_run_disabled": true,
+      "dol_bypass_engaged": true,
+      "header_pressure_maintained": 120.0,
+      "level_pv": 50.0
+    }
+  },
+  "telemetry_records": [
+    {
+      "scenario": "A_NORMAL_VFD_OPERATION",
+      "cycle": 1,
+      "q9": true,
+      "r45": 50.0,
+      "r47": 50.0,
+      "m26": false
+    },
+    {
+      "scenario": "B_RESONANCE_SKIPBAND_JUMP",
+      "cycle": 2,
+      "m26": true,
+      "r45": 34.0,
+      "r47": 38.5,
+      "vib": 0.11999999731779099
+    },
+    {
+      "scenario": "C_DC_BUS_BRAKING_CHOPPER",
+      "cycle": 3,
+      "q10": true,
+      "m27": true,
+      "vdc": 780.0
+    },
+    {
+      "scenario": "D_SCURVE_ANTICAVITATION_NPSH",
+      "cycle": 4,
+      "m28": true,
+      "npsh": 18.5
+    },
+    {
+      "scenario": "E_VFD_TRIP_DOL_BYPASS_TRANSFER",
+      "cycle": 5,
+      "m29": true,
+      "q9": false,
+      "q11": true,
+      "p": 120.0
+    }
+  ],
+  "security": {
+    "hardware_download_lockout": "FAIL_CLOSED_BLOCKED",
+    "zero_straton_dependencies": true,
+    "zero_plc_hardware_interaction": true,
+    "no_gui_hwnd_command_dispatched": true
+  }
+}

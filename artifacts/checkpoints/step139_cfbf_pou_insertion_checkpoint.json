@@ -1,0 +1,88 @@
+{
+  "step": 139,
+  "name": "step139_cfbf_pou_insertion_checkpoint",
+  "status": "PASSED",
+  "timestamp_utc": "2026-09-05T17:55:47.240781+00:00",
+  "target_project": "TankLevelClosedLoop",
+  "cfbf_inspection_summary": {
+    "tank_level_valid_cfbf": true,
+    "tank_level_magic": "d0cf11e0a1b11ae1",
+    "tank_level_version": "10.2.751.4",
+    "tank_level_sector_size": 512,
+    "tank_level_streams": [
+      "Root Entry",
+      "Contents"
+    ],
+    "reg_min_valid_cfbf": true,
+    "reg_min_version": "3.02 (build 1)",
+    "reg_min_sector_size": 512
+  },
+  "stream_extraction_summary": {
+    "contents_stream_found": true,
+    "contents_size_bytes": 44144,
+    "contents_header_valid": true,
+    "contents_magic": "0x78563412",
+    "header_type": "modern_unicode",
+    "cscape_version": "10.2.751.4"
+  },
+  "synthetic_generation_summary": {
+    "generated_length_bytes": 2048,
+    "valid_cfbf": true,
+    "cscape_version": "10.2.751.4",
+    "sectors": 4
+  },
+  "pou_insertion_summary": {
+    "types_verified": [
+      "PROGRAM",
+      "FUNCTION_BLOCK",
+      "FUNCTION"
+    ],
+    "pous_count": 3,
+    "sha256_hashes": {
+      "MainProgram": "3b554a88cdd4c28668448073c5b243923c20fdbe72a2a7e6623d15cdd1632bba",
+      "FB_PumpController": "43c0102f94d0dcb8be11fa39a1ecf3bbbfc81d16cac1dbc3bf252a6f36a8c9a3",
+      "F_ScaleAnalog": "64d4bc8d7d8bd7bedb1bb7cfcf38a9c154428c403c0a5d00204276350597c175"
+    },
+    "file_persistence_verified": true,
+    "multi_pou_coexistence_verified": true
+  },
+  "ladder_rejection_summary": {
+    "enforced": true,
+    "error_code": "ERR_LADDER_FORBIDDEN",
+    "contacts_coils_rejected": true,
+    "rungs_rejected": true,
+    "zero_disk_persistence": true
+  },
+  "syntax_precision_summary": {
+    "structured_failure_locations": true,
+    "line_precision": true,
+    "column_precision": true,
+    "error_code": "ST_SYNTAX_ERROR",
+    "zero_disk_persistence": true
+  },
+  "test_suite_execution": {
+    "test_file": "tests/test_step139_cfbf_pou_insertion.py",
+    "tests_collected": 17,
+    "tests_passed": 17,
+    "tests_failed": 0,
+    "duration_seconds": 3.06,
+    "exit_code": 0
+  },
+  "safety_audit": {
+    "download_cmd_32827_blocked": true,
+    "download_cmd_33149_blocked": true,
+    "active_straton_processes": 0,
+    "hardware_lockout_enforced": true,
+    "zero_straton_dependencies": true
+  },
+  "cscape_health": {
+    "pid": 14580,
+    "hwnd": "0x024B054A",
+    "running": true,
+    "is_hung": false,
+    "window_title": "Cscape - Logged In : \"armando@controlnautas.com\" - [TankLevelClosedLoop.csp]",
+    "ready_for_tests": true
+  },
+  "evidence_log": "artifacts\\logs\\step139_cfbf_pou_insertion_evidence.json",
+  "checkpoint_sha256": "ddb733f8676955abddd3e745903a08e98c06423a70e2fc162d01acb6fdf307f4"
+}

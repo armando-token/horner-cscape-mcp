@@ -1,0 +1,27 @@
+{
+  "step": "step127_mcp_live_tools_evidence_checkpoint",
+  "status": "PASSED",
+  "timestamp_utc": "2026-09-05T16:53:04.060540+00:00",
+  "cscape_pid": 14252,
+  "hwnd": "0x00BD070C",
+  "cscape_title": "Cscape - Logged In : \"armando@controlnautas.com\" - [TankLevelClosedLoop.csp]",
+  "cscape_uptime_seconds": 717.08,
+  "is_hung": false,
+  "is_visible": true,
+  "tools_verified_count": 10,
+  "tools_proven": [
+    "cscape_compile_project",
+    "cscape_read_variables",
+    "cscape_export_variables",
+    "cscape_register_tools",
+    "cscape_simulate_cycle",
+    "cscape_run_simulation",
+    "cscape_validate_st",
+    "st_ladder_interop_guard",
+    "cscape_diagnostics_tools",
+    "hardware_safety_lockout"
+  ],
+  "fail_closed_enforced": true,
+  "zero_plc_download_enforced": true,
+  "zero_straton_dependencies": true
+}

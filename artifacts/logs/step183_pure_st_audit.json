@@ -1,0 +1,637 @@
+{
+  "step": 183,
+  "name": "step183_pure_st_audit",
+  "status": "success",
+  "timestamp_utc": "2026-09-06T22:32:36.747959+00:00",
+  "mandate": "PLC / IEC 61131-3 Pure ST Audit for FB_ConveyorSortingStateMachine",
+  "execution_duration_sec": 0.7956,
+  "dual_root_parity": true,
+  "cscape_gui_mode": "headless_static_analysis_only",
+  "target_pou": {
+    "name": "FB_ConveyorSortingStateMachine",
+    "type": "FUNCTION_BLOCK",
+    "relative_path": "examples/st_applications/conveyor_sorting_state_machine.st",
+    "sha256": "8a4891bbc3b409feb2b85b71ed196c588b5ed47c5b074e43e2cc4fc6fe8b439b",
+    "expected_sha256": "8a4891bbc3b409feb2b85b71ed196c588b5ed47c5b074e43e2cc4fc6fe8b439b",
+    "byte_size": 9689,
+    "lines": 244
+  },
+  "tasks": {
+    "task1_file_existence_and_parity": {
+      "status": "success",
+      "horner_file": "C:\\HornerAI\\horner-cscape-mcp\\examples\\st_applications\\conveyor_sorting_state_machine.st",
+      "user_file": "C:\\Users\\ArmandoSilva\\examples\\st_applications\\conveyor_sorting_state_machine.st",
+      "horner_sha256": "8a4891bbc3b409feb2b85b71ed196c588b5ed47c5b074e43e2cc4fc6fe8b439b",
+      "user_sha256": "8a4891bbc3b409feb2b85b71ed196c588b5ed47c5b074e43e2cc4fc6fe8b439b",
+      "expected_sha256": "8a4891bbc3b409feb2b85b71ed196c588b5ed47c5b074e43e2cc4fc6fe8b439b",
+      "sha_match": true,
+      "dual_root_parity": true,
+      "diff_line_count": 0,
+      "diff": "",
+      "file_size_bytes": 9689,
+      "duration_sec": 0.000929199974052608
+    },
+    "task2_ladder_construct_scan_and_fail_closed": {
+      "status": "success",
+      "clean_scan_artifacts_count": 0,
+      "clean_scan_artifacts": [],
+      "clean_validator_errors": [],
+      "clean_st_parser_ladder_errors": [],
+      "mutation_tests_total": 12,
+      "mutation_tests_fail_closed": 12,
+      "mutation_results": [
+        {
+          "construct_name": "Normally Open Contact",
+          "construct_syntax": "---[ ]---",
+          "guard_rejected": true,
+          "validator_rejected": true,
+          "parser_rejected": true,
+          "mcp_rejected": true,
+          "fail_closed": true
+        },
+        {
+          "construct_name": "Normally Closed Contact",
+          "construct_syntax": "---[/]---",
+          "guard_rejected": true,
+          "validator_rejected": true,
+          "parser_rejected": true,
+          "mcp_rejected": true,
+          "fail_closed": true
+        },
+        {
+          "construct_name": "Spaced Inverted Contact",
+          "construct_syntax": "---[ / ]---",
+          "guard_rejected": true,
+          "validator_rejected": true,
+          "parser_rejected": true,
+          "mcp_rejected": true,
+          "fail_closed": true
+        },
+        {
+          "construct_name": "Normal Output Coil",
+          "construct_syntax": "---( )---",
+          "guard_rejected": true,
+          "validator_rejected": true,
+          "parser_rejected": true,
+          "mcp_rejected": true,
+          "fail_closed": true
+        },
+        {
+          "construct_name": "Set Latch Coil",
+          "construct_syntax": "---(S)---",
+          "guard_rejected": true,
+          "validator_rejected": true,
+          "parser_rejected": true,
+          "mcp_rejected": true,
+          "fail_closed": true
+        },
+        {
+          "construct_name": "Reset Unlatch Coil",
+          "construct_syntax": "---(R)---",
+          "guard_rejected": true,
+          "validator_rejected": true,
+          "parser_rejected": true,
+          "mcp_rejected": true,
+          "fail_closed": true
+        },
+        {
+          "construct_name": "Rung Header Marker",
+          "construct_syntax": "RUNG 1: Conveyor Sortation Sequence",
+          "guard_rejected": true,
+          "validator_rejected": true,
+          "parser_rejected": true,
+          "mcp_rejected": true,
+          "fail_closed": true
+        },
+        {
+          "construct_name": "Rung Terminator Marker",
+          "construct_syntax": "END_RUNG",
+          "guard_rejected": true,
+          "validator_rejected": true,
+          "parser_rejected": true,
+          "mcp_rejected": true,
+          "fail_closed": true
+        },
+        {
+          "construct_name": "Ladder Network Section",
+          "construct_syntax": "NETWORK 10",
+          "guard_rejected": true,
+          "validator_rejected": true,
+          "parser_rejected": true,
+          "mcp_rejected": true,
+          "fail_closed": true
+        },
+        {
+          "construct_name": "Instruction Mnemonic XIC",
+          "construct_syntax": "XIC(PackageDetectPE)",
+          "guard_rejected": true,
+          "validator_rejected": true,
+          "parser_rejected": true,
+          "mcp_rejected": true,
+          "fail_closed": true
+        },
+        {
+          "construct_name": "Instruction Mnemonic XIO",
+          "construct_syntax": "XIO(EStop)",
+          "guard_rejected": true,
+          "validator_rejected": true,
+          "parser_rejected": true,
+          "mcp_rejected": true,
+          "fail_closed": true
+        },
+        {
+          "construct_name": "Instruction Mnemonic OTE",
+          "construct_syntax": "OTE(ConveyorRun)",
+          "guard_rejected": true,
+          "validator_rejected": true,
+          "parser_rejected": true,
+          "mcp_rejected": true,
+          "fail_closed": true
+        }
+      ],
+      "duration_sec": 0.6969871000037529
+    },
+    "task3_iec61131_syntax_and_datatypes": {
+      "status": "success",
+      "pou_name": "FB_ConveyorSortingStateMachine",
+      "pou_type": "FUNCTION_BLOCK",
+      "total_variables": 35,
+      "input_count": 17,
+      "output_count": 12,
+      "local_count": 6,
+      "case_states": [
+        0,
+        10,
+        20,
+        30,
+        40,
+        50,
+        60,
+        90,
+        99
+      ],
+      "expected_case_states": [
+        0,
+        10,
+        20,
+        30,
+        40,
+        50,
+        60,
+        90,
+        99
+      ],
+      "case_states_valid": true,
+      "type_violations": [],
+      "iec_validator_valid": true,
+      "st_parser_valid": true,
+      "mcp_validator_valid": true,
+      "variables": [
+        {
+          "name": "Enable",
+          "data_type": "BOOL",
+          "scope": "VAR_INPUT",
+          "initial_value": "TRUE"
+        },
+        {
+          "name": "StartPB",
+          "data_type": "BOOL",
+          "scope": "VAR_INPUT",
+          "initial_value": "FALSE"
+        },
+        {
+          "name": "StopPB",
+          "data_type": "BOOL",
+          "scope": "VAR_INPUT",
+          "initial_value": "FALSE"
+        },
+        {
+          "name": "EStop",
+          "data_type": "BOOL",
+          "scope": "VAR_INPUT",
+          "initial_value": "TRUE"
+        },
+        {
+          "name": "PackageDetectPE",
+          "data_type": "BOOL",
+          "scope": "VAR_INPUT",
+          "initial_value": "FALSE"
+        },
+        {
+          "name": "BarcodeScanValid",
+          "data_type": "BOOL",
+          "scope": "VAR_INPUT",
+          "initial_value": "FALSE"
+        },
+        {
+          "name": "BarcodeDestLane",
+          "data_type": "INT",
+          "scope": "VAR_INPUT",
+          "initial_value": "1"
+        },
+        {
+          "name": "Diverter1_Extended",
+          "data_type": "BOOL",
+          "scope": "VAR_INPUT",
+          "initial_value": "FALSE"
+        },
+        {
+          "name": "Diverter2_Extended",
+          "data_type": "BOOL",
+          "scope": "VAR_INPUT",
+          "initial_value": "FALSE"
+        },
+        {
+          "name": "DivertersRetracted",
+          "data_type": "BOOL",
+          "scope": "VAR_INPUT",
+          "initial_value": "TRUE"
+        },
+        {
+          "name": "ExitPE_Lane1",
+          "data_type": "BOOL",
+          "scope": "VAR_INPUT",
+          "initial_value": "FALSE"
+        },
+        {
+          "name": "ExitPE_Lane2",
+          "data_type": "BOOL",
+          "scope": "VAR_INPUT",
+          "initial_value": "FALSE"
+        },
+        {
+          "name": "ExitPE_Reject",
+          "data_type": "BOOL",
+          "scope": "VAR_INPUT",
+          "initial_value": "FALSE"
+        },
+        {
+          "name": "ResetFault",
+          "data_type": "BOOL",
+          "scope": "VAR_INPUT",
+          "initial_value": "FALSE"
+        },
+        {
+          "name": "JamTimeoutSec",
+          "data_type": "REAL",
+          "scope": "VAR_INPUT",
+          "initial_value": "4.0"
+        },
+        {
+          "name": "DivertStrokeSec",
+          "data_type": "REAL",
+          "scope": "VAR_INPUT",
+          "initial_value": "1.2"
+        },
+        {
+          "name": "CycleTimeSec",
+          "data_type": "REAL",
+          "scope": "VAR_INPUT",
+          "initial_value": "0.1"
+        },
+        {
+          "name": "ConveyorRun",
+          "data_type": "BOOL",
+          "scope": "VAR_OUTPUT",
+          "initial_value": "FALSE"
+        },
+        {
+          "name": "ConveyorRev",
+          "data_type": "BOOL",
+          "scope": "VAR_OUTPUT",
+          "initial_value": "FALSE"
+        },
+        {
+          "name": "Diverter1_Extend",
+          "data_type": "BOOL",
+          "scope": "VAR_OUTPUT",
+          "initial_value": "FALSE"
+        },
+        {
+          "name": "Diverter2_Extend",
+          "data_type": "BOOL",
+          "scope": "VAR_OUTPUT",
+          "initial_value": "FALSE"
+        },
+        {
+          "name": "RejectGate_Extend",
+          "data_type": "BOOL",
+          "scope": "VAR_OUTPUT",
+          "initial_value": "FALSE"
+        },
+        {
+          "name": "CurrentState",
+          "data_type": "INT",
+          "scope": "VAR_OUTPUT",
+          "initial_value": "0"
+        },
+        {
+          "name": "JamAlarm",
+          "data_type": "BOOL",
+          "scope": "VAR_OUTPUT",
+          "initial_value": "FALSE"
+        },
+        {
+          "name": "DiverterFault",
+          "data_type": "BOOL",
+          "scope": "VAR_OUTPUT",
+          "initial_value": "FALSE"
+        },
+        {
+          "name": "CountTotal",
+          "data_type": "DINT",
+          "scope": "VAR_OUTPUT",
+          "initial_value": "0"
+        },
+        {
+          "name": "CountLane1",
+          "data_type": "DINT",
+          "scope": "VAR_OUTPUT",
+          "initial_value": "0"
+        },
+        {
+          "name": "CountLane2",
+          "data_type": "DINT",
+          "scope": "VAR_OUTPUT",
+          "initial_value": "0"
+        },
+        {
+          "name": "CountReject",
+          "data_type": "DINT",
+          "scope": "VAR_OUTPUT",
+          "initial_value": "0"
+        },
+        {
+          "name": "StateTimer",
+          "data_type": "REAL",
+          "scope": "VAR",
+          "initial_value": "0.0"
+        },
+        {
+          "name": "JamTimer",
+          "data_type": "REAL",
+          "scope": "VAR",
+          "initial_value": "0.0"
+        },
+        {
+          "name": "InfeedDebounce",
+          "data_type": "REAL",
+          "scope": "VAR",
+          "initial_value": "0.0"
+        },
+        {
+          "name": "InfeedConfirmed",
+          "data_type": "BOOL",
+          "scope": "VAR",
+          "initial_value": "FALSE"
+        },
+        {
+          "name": "LatchedLane",
+          "data_type": "INT",
+          "scope": "VAR",
+          "initial_value": "1"
+        },
+        {
+          "name": "RunPermissive",
+          "data_type": "BOOL",
+          "scope": "VAR",
+          "initial_value": "FALSE"
+        }
+      ],
+      "duration_sec": 0.08906069997465238
+    },
+    "task4_ast_decomposition": {
+      "status": "success",
+      "pou_name": "FB_ConveyorSortingStateMachine",
+      "pou_type": "FUNCTION_BLOCK",
+      "sha256": "8a4891bbc3b409feb2b85b71ed196c588b5ed47c5b074e43e2cc4fc6fe8b439b",
+      "total_lines": 244,
+      "total_tokens": 856,
+      "var_blocks_count": 3,
+      "var_blocks": [
+        {
+          "block_type": "VAR_INPUT",
+          "declarations_count": 17,
+          "declarations": [
+            {
+              "name": "Enable",
+              "data_type": "BOOL",
+              "initial_value": "LiteralNode(True, 'BOOL')"
+            },
+            {
+              "name": "StartPB",
+              "data_type": "BOOL",
+              "initial_value": "LiteralNode(False, 'BOOL')"
+            },
+            {
+              "name": "StopPB",
+              "data_type": "BOOL",
+              "initial_value": "LiteralNode(False, 'BOOL')"
+            },
+            {
+              "name": "EStop",
+              "data_type": "BOOL",
+              "initial_value": "LiteralNode(True, 'BOOL')"
+            },
+            {
+              "name": "PackageDetectPE",
+              "data_type": "BOOL",
+              "initial_value": "LiteralNode(False, 'BOOL')"
+            },
+            {
+              "name": "BarcodeScanValid",
+              "data_type": "BOOL",
+              "initial_value": "LiteralNode(False, 'BOOL')"
+            },
+            {
+              "name": "BarcodeDestLane",
+              "data_type": "INT",
+              "initial_value": "LiteralNode(1, 'INT')"
+            },
+            {
+              "name": "Diverter1_Extended",
+              "data_type": "BOOL",
+              "initial_value": "LiteralNode(False, 'BOOL')"
+            },
+            {
+              "name": "Diverter2_Extended",
+              "data_type": "BOOL",
+              "initial_value": "LiteralNode(False, 'BOOL')"
+            },
+            {
+              "name": "DivertersRetracted",
+              "data_type": "BOOL",
+              "initial_value": "LiteralNode(True, 'BOOL')"
+            },
+            {
+              "name": "ExitPE_Lane1",
+              "data_type": "BOOL",
+              "initial_value": "LiteralNode(False, 'BOOL')"
+            },
+            {
+              "name": "ExitPE_Lane2",
+              "data_type": "BOOL",
+              "initial_value": "LiteralNode(False, 'BOOL')"
+            },
+            {
+              "name": "ExitPE_Reject",
+              "data_type": "BOOL",
+              "initial_value": "LiteralNode(False, 'BOOL')"
+            },
+            {
+              "name": "ResetFault",
+              "data_type": "BOOL",
+              "initial_value": "LiteralNode(False, 'BOOL')"
+            },
+            {
+              "name": "JamTimeoutSec",
+              "data_type": "REAL",
+              "initial_value": "LiteralNode(4.0, 'REAL')"
+            },
+            {
+              "name": "DivertStrokeSec",
+              "data_type": "REAL",
+              "initial_value": "LiteralNode(1.2, 'REAL')"
+            },
+            {
+              "name": "CycleTimeSec",
+              "data_type": "REAL",
+              "initial_value": "LiteralNode(0.1, 'REAL')"
+            }
+          ]
+        },
+        {
+          "block_type": "VAR_OUTPUT",
+          "declarations_count": 12,
+          "declarations": [
+            {
+              "name": "ConveyorRun",
+              "data_type": "BOOL",
+              "initial_value": "LiteralNode(False, 'BOOL')"
+            },
+            {
+              "name": "ConveyorRev",
+              "data_type": "BOOL",
+              "initial_value": "LiteralNode(False, 'BOOL')"
+            },
+            {
+              "name": "Diverter1_Extend",
+              "data_type": "BOOL",
+              "initial_value": "LiteralNode(False, 'BOOL')"
+            },
+            {
+              "name": "Diverter2_Extend",
+              "data_type": "BOOL",
+              "initial_value": "LiteralNode(False, 'BOOL')"
+            },
+            {
+              "name": "RejectGate_Extend",
+              "data_type": "BOOL",
+              "initial_value": "LiteralNode(False, 'BOOL')"
+            },
+            {
+              "name": "CurrentState",
+              "data_type": "INT",
+              "initial_value": "LiteralNode(0, 'INT')"
+            },
+            {
+              "name": "JamAlarm",
+              "data_type": "BOOL",
+              "initial_value": "LiteralNode(False, 'BOOL')"
+            },
+            {
+              "name": "DiverterFault",
+              "data_type": "BOOL",
+              "initial_value": "LiteralNode(False, 'BOOL')"
+            },
+            {
+              "name": "CountTotal",
+              "data_type": "DINT",
+              "initial_value": "LiteralNode(0, 'INT')"
+            },
+            {
+              "name": "CountLane1",
+              "data_type": "DINT",
+              "initial_value": "LiteralNode(0, 'INT')"
+            },
+            {
+              "name": "CountLane2",
+              "data_type": "DINT",
+              "initial_value": "LiteralNode(0, 'INT')"
+            },
+            {
+              "name": "CountReject",
+              "data_type": "DINT",
+              "initial_value": "LiteralNode(0, 'INT')"
+            }
+          ]
+        },
+        {
+          "block_type": "VAR",
+          "declarations_count": 6,
+          "declarations": [
+            {
+              "name": "StateTimer",
+              "data_type": "REAL",
+              "initial_value": "LiteralNode(0.0, 'REAL')"
+            },
+            {
+              "name": "JamTimer",
+              "data_type": "REAL",
+              "initial_value": "LiteralNode(0.0, 'REAL')"
+            },
+            {
+              "name": "InfeedDebounce",
+              "data_type": "REAL",
+              "initial_value": "LiteralNode(0.0, 'REAL')"
+            },
+            {
+              "name": "InfeedConfirmed",
+              "data_type": "BOOL",
+              "initial_value": "LiteralNode(False, 'BOOL')"
+            },
+            {
+              "name": "LatchedLane",
+              "data_type": "INT",
+              "initial_value": "LiteralNode(1, 'INT')"
+            },
+            {
+              "name": "RunPermissive",
+              "data_type": "BOOL",
+              "initial_value": "LiteralNode(False, 'BOOL')"
+            }
+          ]
+        }
+      ],
+      "statements_count": 5,
+      "statements": [
+        {
+          "index": 1,
+          "statement_type": "IfNode",
+          "line": 61
+        },
+        {
+          "index": 2,
+          "statement_type": "IfNode",
+          "line": 66
+        },
+        {
+          "index": 3,
+          "statement_type": "IfNode",
+          "line": 75
+        },
+        {
+          "index": 4,
+          "statement_type": "IfNode",
+          "line": 80
+        },
+        {
+          "index": 5,
+          "statement_type": "CaseNode",
+          "line": 91
+        }
+      ],
+      "duration_sec": 0.008356700011063367
+    }
+  }
+}

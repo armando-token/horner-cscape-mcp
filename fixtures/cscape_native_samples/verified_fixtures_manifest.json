@@ -1,0 +1,518 @@
+[
+  {
+    "file": "alarm test.csp",
+    "size_bytes": 12288,
+    "valid_cfbf": true,
+    "magic_hex": "d0cf11e0a1b11ae1",
+    "sector_size": 512,
+    "stream_entries": [
+      "Root Entry",
+      "Contents"
+    ],
+    "cscape_version": "3.40 (build 1)"
+  },
+  {
+    "file": "all.csp",
+    "size_bytes": 13824,
+    "valid_cfbf": true,
+    "magic_hex": "d0cf11e0a1b11ae1",
+    "sector_size": 512,
+    "stream_entries": [
+      "Root Entry",
+      "Contents"
+    ],
+    "cscape_version": "5.80 (build 1)"
+  },
+  {
+    "file": "alpha keyboard.csp",
+    "size_bytes": 124416,
+    "valid_cfbf": true,
+    "magic_hex": "d0cf11e0a1b11ae1",
+    "sector_size": 512,
+    "stream_entries": [
+      "Root Entry",
+      "Contents"
+    ],
+    "cscape_version": "3.40 (build 1)"
+  },
+  {
+    "file": "barcode length.csp",
+    "size_bytes": 10752,
+    "valid_cfbf": true,
+    "magic_hex": "d0cf11e0a1b11ae1",
+    "sector_size": 512,
+    "stream_entries": [
+      "Root Entry",
+      "Contents"
+    ],
+    "cscape_version": "2.30 (build 1)"
+  },
+  {
+    "file": "barcode time.csp",
+    "size_bytes": 15872,
+    "valid_cfbf": true,
+    "magic_hex": "d0cf11e0a1b11ae1",
+    "sector_size": 512,
+    "stream_entries": [
+      "Root Entry",
+      "Contents"
+    ],
+    "cscape_version": "2.30 (build 1)"
+  },
+  {
+    "file": "char replace.csp",
+    "size_bytes": 6144,
+    "valid_cfbf": true,
+    "magic_hex": "d0cf11e0a1b11ae1",
+    "sector_size": 512,
+    "stream_entries": [
+      "Root Entry",
+      "Contents"
+    ],
+    "cscape_version": "3.40 (build 253)"
+  },
+  {
+    "file": "data_log.csp",
+    "size_bytes": 11264,
+    "valid_cfbf": true,
+    "magic_hex": "d0cf11e0a1b11ae1",
+    "sector_size": 512,
+    "stream_entries": [
+      "Root Entry",
+      "Contents"
+    ],
+    "cscape_version": "3.40 (build 253)"
+  },
+  {
+    "file": "graph_example.csp",
+    "size_bytes": 169984,
+    "valid_cfbf": true,
+    "magic_hex": "d0cf11e0a1b11ae1",
+    "sector_size": 512,
+    "stream_entries": [
+      "Root Entry",
+      "Contents"
+    ],
+    "cscape_version": "3.40 (build 253)"
+  },
+  {
+    "file": "ip_display.csp",
+    "size_bytes": 7680,
+    "valid_cfbf": true,
+    "magic_hex": "d0cf11e0a1b11ae1",
+    "sector_size": 512,
+    "stream_entries": [
+      "Root Entry",
+      "Contents"
+    ],
+    "cscape_version": "3.40 (build 1)"
+  },
+  {
+    "file": "live_iec_test_1788493128.csp",
+    "size_bytes": 49152,
+    "valid_cfbf": true,
+    "magic_hex": "d0cf11e0a1b11ae1",
+    "sector_size": 512,
+    "stream_entries": [
+      "Root Entry",
+      "Contents"
+    ],
+    "cscape_version": "10.2.751.4"
+  },
+  {
+    "file": "live_iec_test_1788493199.csp",
+    "size_bytes": 49152,
+    "valid_cfbf": true,
+    "magic_hex": "d0cf11e0a1b11ae1",
+    "sector_size": 512,
+    "stream_entries": [
+      "Root Entry",
+      "Contents"
+    ],
+    "cscape_version": "10.2.751.4"
+  },
+  {
+    "file": "live_iec_test_1788493255.csp",
+    "size_bytes": 49152,
+    "valid_cfbf": true,
+    "magic_hex": "d0cf11e0a1b11ae1",
+    "sector_size": 512,
+    "stream_entries": [
+      "Root Entry",
+      "Contents"
+    ],
+    "cscape_version": "10.2.751.4"
+  },
+  {
+    "file": "live_iec_test_1788493297.csp",
+    "size_bytes": 49152,
+    "valid_cfbf": true,
+    "magic_hex": "d0cf11e0a1b11ae1",
+    "sector_size": 512,
+    "stream_entries": [
+      "Root Entry",
+      "Contents"
+    ],
+    "cscape_version": "10.2.751.4"
+  },
+  {
+    "file": "live_iec_test_1788493338.csp",
+    "size_bytes": 49152,
+    "valid_cfbf": true,
+    "magic_hex": "d0cf11e0a1b11ae1",
+    "sector_size": 512,
+    "stream_entries": [
+      "Root Entry",
+      "Contents"
+    ],
+    "cscape_version": "10.2.751.4"
+  },
+  {
+    "file": "live_iec_test_1788493820.csp",
+    "size_bytes": 49152,
+    "valid_cfbf": true,
+    "magic_hex": "d0cf11e0a1b11ae1",
+    "sector_size": 512,
+    "stream_entries": [
+      "Root Entry",
+      "Contents"
+    ],
+    "cscape_version": "10.2.751.4"
+  },
+  {
+    "file": "live_iec_test_1788499624.csp",
+    "size_bytes": 49152,
+    "valid_cfbf": true,
+    "magic_hex": "d0cf11e0a1b11ae1",
+    "sector_size": 512,
+    "stream_entries": [
+      "Root Entry",
+      "Contents"
+    ],
+    "cscape_version": "10.2.751.4"
+  },
+  {
+    "file": "Net_Get_Example.csp",
+    "size_bytes": 8192,
+    "valid_cfbf": true,
+    "magic_hex": "d0cf11e0a1b11ae1",
+    "sector_size": 512,
+    "stream_entries": [
+      "Root Entry",
+      "Contents"
+    ],
+    "cscape_version": "3.40 (build 250)"
+  },
+  {
+    "file": "new_iec_st_project.csp",
+    "size_bytes": 49152,
+    "valid_cfbf": true,
+    "magic_hex": "d0cf11e0a1b11ae1",
+    "sector_size": 512,
+    "stream_entries": [
+      "Root Entry",
+      "Contents"
+    ],
+    "cscape_version": "10.2.751.4"
+  },
+  {
+    "file": "ocs250 up-down.csp",
+    "size_bytes": 207360,
+    "valid_cfbf": true,
+    "magic_hex": "d0cf11e0a1b11ae1",
+    "sector_size": 512,
+    "stream_entries": [
+      "Root Entry",
+      "Contents"
+    ],
+    "cscape_version": "3.40 (build 253)"
+  },
+  {
+    "file": "ocs250demo_old.csp",
+    "size_bytes": 803328,
+    "valid_cfbf": true,
+    "magic_hex": "d0cf11e0a1b11ae1",
+    "sector_size": 512,
+    "stream_entries": [
+      "Root Entry",
+      "Contents"
+    ],
+    "cscape_version": "3.40 (build 253)"
+  },
+  {
+    "file": "prevent_sys.csp",
+    "size_bytes": 4608,
+    "valid_cfbf": true,
+    "magic_hex": "d0cf11e0a1b11ae1",
+    "sector_size": 512,
+    "stream_entries": [
+      "Root Entry",
+      "Contents"
+    ],
+    "cscape_version": "3.02 (build 1)"
+  },
+  {
+    "file": "random.csp",
+    "size_bytes": 7680,
+    "valid_cfbf": true,
+    "magic_hex": "d0cf11e0a1b11ae1",
+    "sector_size": 512,
+    "stream_entries": [
+      "Root Entry",
+      "Contents"
+    ],
+    "cscape_version": "3.40 (build 1)"
+  },
+  {
+    "file": "RCS116_IO.csp",
+    "size_bytes": 7168,
+    "valid_cfbf": true,
+    "magic_hex": "d0cf11e0a1b11ae1",
+    "sector_size": 512,
+    "stream_entries": [
+      "Root Entry",
+      "Contents"
+    ],
+    "cscape_version": "5.80 (build 20)"
+  },
+  {
+    "file": "RCS116_IO_50mS_Analog.csp",
+    "size_bytes": 11776,
+    "valid_cfbf": true,
+    "magic_hex": "d0cf11e0a1b11ae1",
+    "sector_size": 512,
+    "stream_entries": [
+      "Root Entry",
+      "Contents"
+    ],
+    "cscape_version": "5.80 (build 20)"
+  },
+  {
+    "file": "RCS116_LX.csp",
+    "size_bytes": 9728,
+    "valid_cfbf": true,
+    "magic_hex": "d0cf11e0a1b11ae1",
+    "sector_size": 512,
+    "stream_entries": [
+      "Root Entry",
+      "Contents"
+    ],
+    "cscape_version": "5.80 (build 1)"
+  },
+  {
+    "file": "recipe.csp",
+    "size_bytes": 51712,
+    "valid_cfbf": true,
+    "magic_hex": "d0cf11e0a1b11ae1",
+    "sector_size": 512,
+    "stream_entries": [
+      "Root Entry",
+      "Contents"
+    ],
+    "cscape_version": "5.80 (build 1)"
+  },
+  {
+    "file": "reg_min.csp",
+    "size_bytes": 5120,
+    "valid_cfbf": true,
+    "magic_hex": "d0cf11e0a1b11ae1",
+    "sector_size": 512,
+    "stream_entries": [
+      "Root Entry",
+      "Contents"
+    ],
+    "cscape_version": "3.02 (build 1)"
+  },
+  {
+    "file": "scrolling_text.csp",
+    "size_bytes": 7680,
+    "valid_cfbf": true,
+    "magic_hex": "d0cf11e0a1b11ae1",
+    "sector_size": 512,
+    "stream_entries": [
+      "Root Entry",
+      "Contents"
+    ],
+    "cscape_version": "3.40 (build 1)"
+  },
+  {
+    "file": "Serial Test OCS200.csp",
+    "size_bytes": 8704,
+    "valid_cfbf": true,
+    "magic_hex": "d0cf11e0a1b11ae1",
+    "sector_size": 512,
+    "stream_entries": [
+      "Root Entry",
+      "Contents"
+    ],
+    "cscape_version": "3.40 (build 1)"
+  },
+  {
+    "file": "Serial Test OCS250.csp",
+    "size_bytes": 13312,
+    "valid_cfbf": true,
+    "magic_hex": "d0cf11e0a1b11ae1",
+    "sector_size": 512,
+    "stream_entries": [
+      "Root Entry",
+      "Contents"
+    ],
+    "cscape_version": "3.40 (build 252)"
+  },
+  {
+    "file": "series coils.csp",
+    "size_bytes": 4608,
+    "valid_cfbf": true,
+    "magic_hex": "d0cf11e0a1b11ae1",
+    "sector_size": 512,
+    "stream_entries": [
+      "Root Entry",
+      "Contents"
+    ],
+    "cscape_version": "2.30 (build 1)"
+  },
+  {
+    "file": "submenu.csp",
+    "size_bytes": 7168,
+    "valid_cfbf": true,
+    "magic_hex": "d0cf11e0a1b11ae1",
+    "sector_size": 512,
+    "stream_entries": [
+      "Root Entry",
+      "Contents"
+    ],
+    "cscape_version": "2.30 (build 1)"
+  },
+  {
+    "file": "sys password.csp",
+    "size_bytes": 9216,
+    "valid_cfbf": true,
+    "magic_hex": "d0cf11e0a1b11ae1",
+    "sector_size": 512,
+    "stream_entries": [
+      "Root Entry",
+      "Contents"
+    ],
+    "cscape_version": "3.02 (build 1)"
+  },
+  {
+    "file": "test_save_iec.csp",
+    "size_bytes": 49152,
+    "valid_cfbf": true,
+    "magic_hex": "d0cf11e0a1b11ae1",
+    "sector_size": 512,
+    "stream_entries": [
+      "Root Entry",
+      "Contents"
+    ],
+    "cscape_version": "10.2.751.4"
+  },
+  {
+    "file": "artifacts/projects/live_iec_test_1788493128.csp",
+    "size_bytes": 49152,
+    "valid_cfbf": true,
+    "magic_hex": "d0cf11e0a1b11ae1",
+    "sector_size": 512,
+    "stream_entries": [
+      "Root Entry",
+      "Contents"
+    ],
+    "cscape_version": "10.2.751.4"
+  },
+  {
+    "file": "artifacts/projects/live_iec_test_1788493199.csp",
+    "size_bytes": 49152,
+    "valid_cfbf": true,
+    "magic_hex": "d0cf11e0a1b11ae1",
+    "sector_size": 512,
+    "stream_entries": [
+      "Root Entry",
+      "Contents"
+    ],
+    "cscape_version": "10.2.751.4"
+  },
+  {
+    "file": "artifacts/projects/live_iec_test_1788493255.csp",
+    "size_bytes": 49152,
+    "valid_cfbf": true,
+    "magic_hex": "d0cf11e0a1b11ae1",
+    "sector_size": 512,
+    "stream_entries": [
+      "Root Entry",
+      "Contents"
+    ],
+    "cscape_version": "10.2.751.4"
+  },
+  {
+    "file": "artifacts/projects/live_iec_test_1788493297.csp",
+    "size_bytes": 49152,
+    "valid_cfbf": true,
+    "magic_hex": "d0cf11e0a1b11ae1",
+    "sector_size": 512,
+    "stream_entries": [
+      "Root Entry",
+      "Contents"
+    ],
+    "cscape_version": "10.2.751.4"
+  },
+  {
+    "file": "artifacts/projects/live_iec_test_1788493338.csp",
+    "size_bytes": 49152,
+    "valid_cfbf": true,
+    "magic_hex": "d0cf11e0a1b11ae1",
+    "sector_size": 512,
+    "stream_entries": [
+      "Root Entry",
+      "Contents"
+    ],
+    "cscape_version": "10.2.751.4"
+  },
+  {
+    "file": "artifacts/projects/live_iec_test_1788493820.csp",
+    "size_bytes": 49152,
+    "valid_cfbf": true,
+    "magic_hex": "d0cf11e0a1b11ae1",
+    "sector_size": 512,
+    "stream_entries": [
+      "Root Entry",
+      "Contents"
+    ],
+    "cscape_version": "10.2.751.4"
+  },
+  {
+    "file": "artifacts/projects/live_iec_test_1788499624.csp",
+    "size_bytes": 49152,
+    "valid_cfbf": true,
+    "magic_hex": "d0cf11e0a1b11ae1",
+    "sector_size": 512,
+    "stream_entries": [
+      "Root Entry",
+      "Contents"
+    ],
+    "cscape_version": "10.2.751.4"
+  },
+  {
+    "file": "artifacts/projects/new_iec_st_project.csp",
+    "size_bytes": 49152,
+    "valid_cfbf": true,
+    "magic_hex": "d0cf11e0a1b11ae1",
+    "sector_size": 512,
+    "stream_entries": [
+      "Root Entry",
+      "Contents"
+    ],
+    "cscape_version": "10.2.751.4"
+  },
+  {
+    "file": "artifacts/projects/test_save_iec.csp",
+    "size_bytes": 49152,
+    "valid_cfbf": true,
+    "magic_hex": "d0cf11e0a1b11ae1",
+    "sector_size": 512,
+    "stream_entries": [
+      "Root Entry",
+      "Contents"
+    ],
+    "cscape_version": "10.2.751.4"
+  }
+]

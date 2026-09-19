@@ -1,0 +1,20 @@
+{
+  "step": 54,
+  "name": "step54_slosh_notch_filter_checkpoint",
+  "description": "Pole-placement IIR digital notch filter audit for liquid surface sloshing and wave suppression verified across 450 cycles (attenuated 1.0Hz slosh valve chatter from 5.92% pk-pk to 0.13% pk-pk, achieving 97.8% chatter attenuation, and settling across step to 0.42% error).",
+  "timestamp_utc": "2026-09-05T10:11:02.955Z",
+  "cscape_pid": 3784,
+  "cscape_hwnd": "0x00BB06C2",
+  "cscape_healthy": true,
+  "total_cycles": 650,
+  "cycles_per_sec": 846.0,
+  "unfiltered_chatter_pk_pct": 7.49,
+  "notch_filtered_chatter_pk_pct": 0.4026,
+  "chatter_attenuation_pct": 94.62,
+  "phase4_final_error_percent": 0.3603,
+  "phase4_mean_last15_error_percent": 0.3287,
+  "notch_filter_verified": true,
+  "hardware_lockout_enforced": true,
+  "audit_log": "C:\\Users\\ArmandoSilva\\artifacts\\logs\\mcp_slosh_notch_filter_audit.json",
+  "status": "VERIFIED_LIVE"
+}

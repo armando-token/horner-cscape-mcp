@@ -1,0 +1,96 @@
+================================================================================
+C6 MCP ROUND-TRIP PROOF OF PERSISTENCE
+Mission ID: W04_NONFATAL_THEN_MCP_ROUNDTRIP
+Timestamp (UTC): 2026-09-08T22:21:13.769482+00:00
+Timestamp (Local): 2026-09-08 15:21:13
+================================================================================
+
+1. TARGET ENVIRONMENT & CSCAPE TELEMETRY
+--------------------------------------------------------------------------------
+- Cscape Host Binary   : C:\Program Files (x86)\Cscape 10.2\Cscape.exe (10.2.751.4)
+- Process ID (PID)     : 7780
+- Main Window Handle   : 0x016F0306
+- Desktop Boundary     : winsta0\Default (Interactive Desktop)
+- Operational Mode     : offline/DEV if Disconnected (Status Bar: Disconnected)
+- Visibility Invariant : PARTIAL / SUPERVISOR-DEPENDENT - NOT CLAIMED AS VERIFIED_LIVE
+
+2. PROJECT PATHS & CONTAINERS
+--------------------------------------------------------------------------------
+- Primary Workspace    : C:\HornerAI\horner-cscape-mcp\artifacts\projects\C6_Native_Run\C6_Native_Run.csp
+- User Vault Mirror    : C:\Users\ArmandoSilva\artifacts\projects\C6_Native_Run\C6_Native_Run.csp
+- Target POU File      : C:\HornerAI\horner-cscape-mcp\artifacts\projects\C6_Native_Run\pous\MainProcessControl.st
+- CFBF Format Verified : OLE2 Compound File (Sector Size: 512, Streams: ['Contents'])
+
+3. BEFORE STATE (PRE-ROUNDTRIP)
+--------------------------------------------------------------------------------
+- Timestamp UTC        : 2026-09-08T22:21:23.788563+00:00
+- Container Size       : 99328 bytes
+- Container SHA-256    : 44e4fe7f577d67f5ed6f1ac85054a43728ac86fb7a99cb132a13d877f85f99af
+- Container Mtime      : 2026-09-08 13:48:04.318000
+- POU SHA-256          : 4eedb71516538c41155141561ac29d0328cfa8a86a0777a31074ba8b340ec69a
+- Window Title         : 'Cscape - [C6_Native_Run.csp]'
+- Original Rung Comment:
+  (* G3_WINDOWS_ADAPTER_ONE_EDIT: Native Rung 1 Primary Sensor Filter Active - Verified at 2026-09-08 13:47:36 via MCP Adapter *)
+
+4. MCP EDIT EXECUTION (cscape_add_st_pou)
+--------------------------------------------------------------------------------
+- FastMCP Tool Invoked : cscape_add_st_pou
+- Tool Response Status : success
+- Storage Mode         : staging
+- Variables Count      : 11
+- Changed Comment Line :
+  (* C6_MCP_ROUNDTRIP: Native Rung 1 Primary Sensor Filter Active - Verified at 2026-09-08 15:21:23 via FastMCP *)
+- POU SHA-256 (Post-Edit): f9887a074acf55868197fce2abc4cfd39f53a76bc00fc01cfda0ab45d3ee6ce4
+- Tool Error Handling  : PASSED (Zero tool exceptions, status=success, success=True)
+
+5. MCP COMPILE EXECUTION (cscape_compile_project & Live Error Check 32826)
+--------------------------------------------------------------------------------
+- FastMCP Tool Invoked : cscape_compile_project
+- Compile Status       : success
+- Compile Success      : True
+- Live GUI Error Check : ID_PROGRAM_ERRORCHECK (32826) dispatched to HWND 0x016F0306
+- Modal Defense Policy : Intercepted any Non-Fatal dialog; dismissed with IDNO (7) fail-closed
+- Hardware Lockout     : Active (COM/CAN/USB locked out; zero physical PLC interaction)
+
+6. NATIVE SAVE OPERATION & PERSISTENCE
+--------------------------------------------------------------------------------
+- Action Dispatched    : WM_COMMAND ID_FILE_SAVE (57603) to HWND 0x016F0306
+- Negative Case Check  : Zero blocking modal prompts during Save window
+- Post-Save Size       : 114688 bytes
+- Post-Save SHA-256    : c5723d043e5f41740756a877b184079c0b3053afb90bddc75d7808263531a28f
+- Post-Save Mtime      : 2026-09-08 15:21:45.216677 (Updated >= Pre-Save)
+- Container CFBF Check : Valid OLE2 container with intact Root Entry & Contents stream
+
+7. NATIVE CLOSE OPERATION
+--------------------------------------------------------------------------------
+- Action Dispatched    : WM_COMMAND ID_FILE_CLOSE (57602) to HWND 0x016F0306
+- Close Modal Scanner  : PASSED (Zero unsaved change prompts; Save was persistent)
+- Window Title After Close: 'Cscape'
+
+8. NATIVE REOPEN OPERATION
+--------------------------------------------------------------------------------
+- Action Dispatched    : WM_COMMAND ID_FILE_MRU_FILE1 (57616) to HWND 0x016F0306
+- Reopen Modal Scanner : PASSED (Zero reload errors)
+- Window Title After Reopen: 'Cscape - [C6_Native_Run.csp]'
+- Target Project In Title: YES (C6_Native_Run.csp verified)
+
+9. PERSISTENCE VERIFICATION & PROOF
+--------------------------------------------------------------------------------
+- Timestamp UTC        : 2026-09-08T22:22:16.511783+00:00
+- Re-Read Target POU   : C:\HornerAI\horner-cscape-mcp\artifacts\projects\C6_Native_Run\pous\MainProcessControl.st
+- Persistent Comment   : FOUND AND VERIFIED IDENTICAL
+- Verifiable Line      :
+  (* C6_MCP_ROUNDTRIP: Native Rung 1 Primary Sensor Filter Active - Verified at 2026-09-08 15:21:23 via FastMCP *)
+- Proof Screenshot     : artifacts/recovery/c6_mcp_roundtrip_reopened.png
+- Persistence Parity   : Full round-trip persistence confirmed across FastMCP Edit -> Compile -> Save -> Close -> Reopen
+
+10. CONTRACT & GOVERNANCE CERTIFICATION
+--------------------------------------------------------------------------------
+- Status               : success
+- Single GUI Owner     : YES (Exclusive winsta0\Default driver)
+- About Dialog Closed  : YES (Suppressed & verified absent)
+- No PLC Download      : YES (Physical ports & download command IDs locked out)
+- No FINAL_REPORT      : YES (No speculative summary reports produced)
+- No Fake G5 / 100%    : YES (Gate G5 remains NOT RUN / CLOSED)
+- Proof Deliverable    : artifacts/recovery/C6_mcp_roundtrip.txt
+================================================================================

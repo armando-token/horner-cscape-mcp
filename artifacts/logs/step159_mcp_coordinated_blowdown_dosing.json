@@ -1,0 +1,122 @@
+{
+  "step": 159,
+  "name": "step159_mcp_coordinated_blowdown_dosing",
+  "status": "PASSED",
+  "mission": "Live FastMCP Coordinated Boiler Continuous Blowdown & Automatic Chemical Inhibitor Dosing Interlock Telemetry Audit",
+  "timestamp_start": "2026-09-06T12:22:50.713Z",
+  "timestamp_complete": "2026-09-06T12:22:59.606Z",
+  "duration_seconds": 8.893,
+  "gate": {
+    "ready_for_tests": true,
+    "status": "READY_FOR_TESTS",
+    "pid": 10892,
+    "hwnd": "0x01B005DC",
+    "window_title": "Cscape - Logged In : \"armando@controlnautas.com\" - [TankLevelClosedLoop.csp]",
+    "project_file": "C:\\HornerAI\\horner-cscape-mcp\\artifacts\\projects\\TankLevelClosedLoop\\TankLevelClosedLoop.csp",
+    "exit_code": null,
+    "reason": "Gate G3 Error Check and Output Scrape Verified Clean (0 errors, 0 warnings)",
+    "cycle": 17,
+    "timestamp_utc": "2026-09-06T11:43:46.709Z",
+    "heartbeat_utc": "2026-09-06T11:43:46.709Z"
+  },
+  "cscape_pid": 10892,
+  "hwnd": "0x01B005DC",
+  "scenarios_passed": 5,
+  "scenarios_total": 5,
+  "scenario_results": {
+    "scenario_a_equilibrium": {
+      "verified": true,
+      "level_pv": 50.0,
+      "level_sp": 50.0,
+      "tds_pv": 2200.0,
+      "blowdown_co": 15.0,
+      "dosing_co": 25.0
+    },
+    "scenario_b_impurity_escalation": {
+      "verified": true,
+      "high_tds_alarm": true,
+      "tds_pv": 3800.0,
+      "escalated_blowdown": 65.0,
+      "boosted_dosing": 50.0,
+      "level_pv": 50.0
+    },
+    "scenario_c_bottom_blowdown_pulse": {
+      "verified": true,
+      "bottom_dump_active": true,
+      "pulse_flag": true,
+      "compensating_feedwater": 65.0,
+      "purged_level_pv": 46.0
+    },
+    "scenario_d_chemical_depletion_trip": {
+      "verified": true,
+      "chem_storage_low_alarm": true,
+      "dosing_pump_isolated": true,
+      "clamped_dosing_rate": 0.0,
+      "high_tds_cleared": true
+    },
+    "scenario_e_coordinated_recovery": {
+      "verified": true,
+      "chem_low_cleared": true,
+      "bottom_dump_closed": true,
+      "dosing_pump_restored": true,
+      "nominal_blowdown": 15.0,
+      "nominal_dosing": 25.0,
+      "stable_tds": 2100.0,
+      "level_pv": 50.0,
+      "feedwater_co": 50.0
+    }
+  },
+  "telemetry_records": [
+    {
+      "scenario": "A_EQUILIBRIUM",
+      "cycle": 1,
+      "level_pv": 50.0,
+      "tds_pv": 2200.0,
+      "blowdown_co": 15.0,
+      "dosing_co": 25.0
+    },
+    {
+      "scenario": "B_IMPURITY_ESCALATION",
+      "cycle": 2,
+      "m11": true,
+      "tds_pv": 3800.0,
+      "blowdown_co": 65.0,
+      "dosing_co": 50.0,
+      "level_pv": 50.0
+    },
+    {
+      "scenario": "C_BOTTOM_BLOWDOWN_PULSE",
+      "cycle": 3,
+      "q6": true,
+      "m13": true,
+      "co_r7": 65.0,
+      "level_pv": 46.0
+    },
+    {
+      "scenario": "D_CHEMICAL_DEPLETION_TRIP",
+      "cycle": 4,
+      "m12": true,
+      "q5": false,
+      "dosing_co": 0.0,
+      "m11": false
+    },
+    {
+      "scenario": "E_COORDINATED_RECOVERY",
+      "cycle": 5,
+      "m12": false,
+      "q6": false,
+      "q5": true,
+      "blowdown_co": 15.0,
+      "dosing_co": 25.0,
+      "tds_pv": 2100.0,
+      "level_pv": 50.0,
+      "co_r7": 50.0
+    }
+  ],
+  "security": {
+    "hardware_download_lockout": "FAIL_CLOSED_BLOCKED",
+    "zero_straton_dependencies": true,
+    "zero_plc_hardware_interaction": true,
+    "no_gui_hwnd_command_dispatched": true
+  }
+}

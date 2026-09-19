@@ -1,0 +1,196 @@
+# LEEME HANDOFF / GUÍA DE ENTREGA Y COMISIONAMIENTO OFFLINE
+Fecha de actualización: 2026-09-17 (PT)
+Estado de Gobierno: CORE-08 CONFIG_AND_TEST_OK RUNTIME_PENDING_P7
+Invariantes Estrictos: NO VERIFIED_LIVE | P7 DEFERRED MANUAL | ZERO AUTOMATED PLC DOWNLOAD | NO ERROR CHECK LOOP
+
+================================================================================
+1. ESTADO DEL SISTEMA E INVARIANTES OPERATIVOS
+================================================================================
+- Modo Operativo: offline/DEV [PRODUCT_EVIDENCE]
+- Bloqueo de Hardware Fail-Closed: Todos los puertos seriales (COM1..COM256), buses de campo
+  (CAN, CsCAN), USB y comandos Win32 de descarga (32827, 33149) están bloqueados fail-closed.
+- Carga a PLC (Fase P7): ESTRICTAMENTE MANUAL. El ingeniero de comisionamiento descarga
+  manualmente desde la GUI de Cscape 10.2 usando cable de programación USB o serial MJ1.
+  Ningún script o servidor FastMCP intentará descargar o comunicarse con el PLC real.
+- Cero "VERIFIED_LIVE": Todo ha sido verificado en entorno de prueba offline determinista.
+- Propietario de GUI: Acceso exclusivo a winsta0\Default para Cscape.exe (PID 12788 activo e intacto).
+  Continuidad de procesos: 1 Dedicated Cscape (PID 12788) preservado en escritorio.
+- Watchdog de Compilación: Cero bucles periódicos de Error Check; ejecución 100% offline.
+- Tarea Activa: SUPERVISOR_OFFLINE_ACCEPTANCE (54 archivos de entrega, aceptación formal de supervisor confirmada, entregas offline cerradas y aprobadas).
+- Estado de Aceptación: supervisor_offline_accepted = true (Firma: 2026-09-17T14:20:00-07:00).
+- Próximo Hito de Campo: P7_MANUAL (Carga manual en campo por ingeniero comisionador; descarga física P7 estrictamente aplazada, sin bucles de Error Check).
+
+================================================================================
+2. ÍNDICE DE ARCHIVOS DE ENTREGA (DISPONIBLES EN DOWNLOADS Y REPOSITORIO)
+================================================================================
+
+A. Paquetes de Distribución (Zips P6):
+   1. TankLevel_P5_Dedicated_offline_bundle_v1.0.0.zip (71,356 B)
+      - Paquete air-gapped con manifest criptográfico SHA-256 (MANIFEST-SHA256.json).
+      - Incluye: proyecto CSP, POUs ST puras, configs Modbus y manual de carga.
+   2. horner-cscape-project-handoff-v1.0.0.zip (78,374 B)
+      - Paquete de entrega para ingeniería de control y automatización.
+   3. horner-cscape-mcp-v1.0.0-developer-bundle.zip (351,255 B)
+      - Plataforma FastMCP completa con 43 herramientas y schemas validados JSON-RPC 2.0 stdio.
+   50. TankLevel_P5_Dedicated_offline_bundle_v1.1.0.zip (72,977 B)
+       - Paquete de distribución air-gapped actualizado con 3 POUs ST puras (FB_ModbusScaleQuality, TankLevelControl, TankLevelModbusBridge), TankLevel_P5_Dedicated.csp y configuraciones Modbus.
+   53. offline_evidence_bundle_v1.1.0.zip (364,842 B)
+       - Paquete consolidado air-gapped con 42 activos archivados (40 evidencias forenses, validaciones, actas de supervisor y matrices) con manifest criptográfico interno.
+   54. offline_evidence_bundle_v1.1.0_manifest.json (11,775 B) / offline_evidence_bundle_v1.1.0_manifest.md (9,297 B)
+       - Manifiesto criptográfico SHA-256 y reporte de auditoría técnica que certifica los 42 activos y el bloqueo fail-closed de hardware.
+
+B. Procedimiento y Checklist de Comisionamiento Manual (Fase P7):
+   4. P7_MANUAL_COMMISSIONING_PROCEDURE.md (9,893 B)
+      - SOP paso a paso para el ingeniero en campo: LOTO, cableado Mini-B USB / RS-485 MJ1,
+        verificación de compilación (Ctrl+F8, 0 errores), conexión manual y descarga manual (Ctrl+F9).
+   5. P7_MANUAL_LOAD_CHECKLIST.md (18,411 B)
+      - Checklist completo bilingüe (EN/ES) de verificación pre-conexión y carga manual alineado con SOP-P7:
+        modelo HE-XPCE2, contenedor TankLevel_P5_Dedicated.csp, protocolo MJ1 CT RTU Modbus CMP v5.05,
+        lista de escaneo vacía hasta conexión en vivo, y punteros a SUPERVISOR_OFFLINE_ACCEPTANCE.md y offline_evidence_bundle_v1.0.0.zip.
+
+C. Limitaciones y Robustez (Fase P8):
+   6. P8_HARDENING_AND_KNOWN_LIMITATIONS.md (15,066 B)
+      - Documentación de límites técnicos, exclusión de Straton K5 en cuarentena,
+        imposibilidad nativa de conversión ST->LD (BLOCKED_NATIVE), y límites de GUI.
+
+D. Archivos de Configuración y Evidencia CORE-08 (Modbus):
+   7. modbus_protocol_inventory.json (5,943 B)
+      - Inventario profundo con 3 canales: CH_LAN1_TCP (127.0.0.1:15502), CH_MJ1_RTU
+        (MJ1_RS485, 19200 bps, driver "CT RTU Modbus CMP  v 5.05"), CH_MJ2_RTU.
+      - 3 dispositivos: DEV_LT01 (Nivel), DEV_FT01 (Flujo), DEV_PT01 (Presión).
+      - Scan List: 40001 (%AI1 / TankLevelPV), 40002 (%AI2), 40003 (%AI3).
+   8. modbus_pv_config.json (1,675 B)
+      - Sidecar enfocado en la adquisición de la variable de proceso TankLevelPV.
+   9. core08_labeled_test_server_verification.json (3,908 B)
+      - Registro de verificación con servidor de prueba [TEST_MODBUS_PV_PROVIDER] (FC03, 55%, 75%,
+        bloqueo de escritura FC06/FC16 con excepción 0x01).
+   10. core08_cscape_gui_evidence.json (3,246 B)
+       - Evidencia de inspección de árbol de Project Navigator en Cscape GUI (PID 928):
+         nodo Protocols identificado; lista de escaneo nativa documentada vacía en UI.
+   11. core08_security_lockout_evidence.json (11,007 B)
+      - Evidencia de 792 verificaciones de bloqueo fail-closed de puertos COM1-256 y comandos Win32.
+
+E. Contenedor de Proyecto y Especificaciones:
+   12. TankLevel_P5_Dedicated.csp (140,800 B)
+      - Contenedor nativo CFBF/OLE2 para Horner XL4 Prime (HE-XPCE2).
+      - Compilación limpia: 0 errores, 0 advertencias.
+   13. CORE_08_MODBUS_CONVERSION_EXAMPLE.md (24,939 B)
+      - Ecuaciones de escalamiento (ADC 15-bit), desglose de tramas hex y lógica Structured Text.
+   14. CORE_08_PROTOCOL_DRIVER_FORENSICS.md (25,447 B)
+      - Auditoría forense PE de CTRtu.dll ("CT RTU Modbus CMP") y Modbus.dll ("Modbus Master").
+
+F. Evidencias de Edición Selectiva FastMCP (Fase P4):
+   15. p4_selective_edit_evidence.json (14,406 B)
+      - Transcripción completa JSON-RPC de edición selectiva en proyecto Dedicated (límites 30/70 -> 35/75).
+   16. p4_selective_edit_evidence.md (20,408 B)
+      - Informe técnico de evolución selectiva, verificación AST, inmutabilidad de 9 variables no tocadas.
+   17. p4_selective_edit_continuation_evidence.json (4,175 B)
+      - Prueba de continuación Etapa 3 (Rev 1.1.0 -> 1.2.0, límites 32.0 / 78.0 %, etiqueta "Buffer Tank 01").
+   18. p4_selective_edit_continuation_evidence.md (4,497 B)
+      - Reporte técnico de idempotencia (NO_OP), rechazo de límites invertidos y bloqueo de inyección Ladder.
+
+G. Evidencias de Extracción y Validación en Contextos Secundarios (Fase P6):
+   19. p6_external_handoff_evidence.json (7,725 B)
+      - Verificación de extracción en contexto secundario (C:\Users\Public\HornerHandoffSecondary).
+   20. p6_external_handoff_evidence.md (6,725 B)
+      - Reporte de verificación de integridad CFBF, AST puro ST y sidecars Modbus en contexto externo.
+   21. p6_second_context_handoff_evidence.json (7,631 B)
+      - Verificación de paquete en segundo contexto independiente (C:\Users\Public\HornerHandoffContext2).
+   22. p6_second_context_handoff_evidence.md (4,531 B)
+      - Reporte de paridad criptográfica 100% de manifest e invariancia de reubicación.
+
+H. Nota de Advertencia de Guardado y Diagnóstico Forense Cscape (save_failed_caveat.txt):
+   25. save_failed_caveat.txt (19 B)
+      - Nota de advertencia operativa registrando la aparición del diálogo "Save-failed dialog.".
+   26. cscape_save_failed_diagnosis.md (16,560 B)
+      - Diagnóstico forense detallado del diálogo modal "#32770" ("Failed to save document."),
+        reproducción controlada, análisis de 5 hipótesis de causa raíz y workaround seguro de "Save As".
+   27. cscape_save_failed_evidence.json (885 B)
+      - Captura a nivel de control Win32 del diálogo modal reproducido (HWND 0x000707C2, controles, rect).
+   28. cscape_save_failed_reproduction.png (156,882 B)
+      - Prueba fotográfica de alta resolución del diálogo reproducido en la sesión live de Cscape 10.2.
+
+I. Evidencias de Scan List MJ1 y Validación FastMCP (Fase Offline):
+   29. mj1_devices_scan_evidence.json (333 B)
+      - Registro de inspección: scan list vacío en MJ1 (CT RTU Modbus CMP v5.05), adición bloqueada offline.
+   30. mj1_devices_scan_evidence.md (467 B)
+      - Resumen ejecutivo de lista de escaneo vacía, bloqueo de seguridad offline y cero descargas a PLC.
+   31. mj1_scan_list_validation_evidence.json (3,317 B)
+      - Evidencia de ejecución de herramienta FastMCP cscape_validate_scan_list_evidence y 16 pruebas superadas.
+   32. mj1_scan_list_validation_evidence.md (11,443 B)
+      - Reporte técnico completo de validación de esquema, bloqueo de hardware fail-closed y paridad de herramientas.
+   33. mj1_scan_list_inspection_evidence.json (4,899 B)
+      - Captura de ejecución de herramienta pública cscape_inspect_scan_list, línea base de lista vacía y rechazo fail-closed si require_populated=True.
+   34. mj1_scan_list_inspection_evidence.md (8,124 B)
+      - Reporte técnico y ejecutivo exhaustivo de inspección de lista de escaneo MJ1, contrato fail-closed y definición de brecha offline.
+   35. mj1_scan_list_reconciliation_evidence.json (8,894 B)
+      - Evidencia de conciliación offline comparando inventario planificado (3 transacciones: %AI1, %AI2, %AI3) vs contenedor CFBF nativo (0 entradas); explicación fail-closed de bloqueo offline.
+   36. mj1_scan_list_reconciliation_evidence.md (8,843 B)
+      - Informe técnico y ejecutivo de conciliación planificado vs nativo, análisis de causa raíz, certificación de cero descargas a PLC y aplazamiento manual a Fase P7.
+   37. offline_evidence_bundle_v1.0.0.zip (335,933 B)
+      - Paquete de distribución air-gapped que consolida las 28 evidencias offline recientes (continuaciones P4/P6, línea base MJ1, validación, inspección, conciliación, diagnóstico save-failed, sidecars y prueba Error Check).
+   38. offline_evidence_bundle_manifest.json (8,629 B) / offline_evidence_bundle_manifest.md (7,872 B)
+      - Manifiesto criptográfico SHA-256 y reporte de verificación ingenieril detallando los 30 elementos archivados, tamaños en bytes, sumas de verificación y certificación de cero descargas a PLC.
+
+J. Evidencias de Escalamiento Modbus e Integración IEC FB:
+   39. modbus_register_scaling_iec_bridge_evidence.json (6,685 B)
+      - Evidencia de escalamiento de registros Modbus y FB de calidad de telemetría IEC 61131-3 en puro ST.
+   40. modbus_register_scaling_iec_bridge_evidence.md (9,948 B)
+      - Reporte técnico completo de FB_ModbusScaleQuality y TankLevelModbusBridge (%AI1..%AI3 -> %R101, %R103, %R105).
+
+K. Evidencias de Estado de Dispositivos y Scan List MJ1:
+   41. mj1_devices_scan_list_state_evidence.json (9,301 B)
+      - Auditoría estructurada del puerto MJ1 (RS-485, CT RTU Modbus CMP v5.05), estado vacío de scan list y bloqueo offline.
+   42. mj1_devices_scan_list_state_evidence.md (11,273 B)
+      - Reporte de ingeniería sobre topología de esclavos DEV_LT01..DEV_PT01, discrepancia -3 y aplazamiento a P7.
+
+L. Evidencias de Prueba de Reapertura Nativa en Cscape 10.2:
+   43. tanklevel_p5_native_reopen_proof_evidence.json (5,403 B)
+      - Registro de ejecución de FastMCP cscape_open_project sobre Cscape PID 12788 en winsta0\Default, ya abierto, sin modales, CFBF válido.
+   44. tanklevel_p5_native_reopen_proof_evidence.md (7,664 B)
+      - Informe técnico de reapertura nativa, verificación de 3 POUs ST puras y comprobación de ventana activa.
+   45. tanklevel_p5_native_reopen_proof.png (84,067 B)
+      - Evidencia fotográfica de alta resolución de la sesión activa de Cscape 10.2 mostrando TankLevel_P5_Dedicated.csp.
+
+M. Aceptación Formal del Supervisor y Manifiesto de Comisionamiento:
+   46. SUPERVISOR_OFFLINE_ACCEPTANCE.md (11,130 B)
+      - Aceptación formal de todas las entregas offline del Plan v3 (signoff 2026-09-17T14:20:00-07:00, supervisor_offline_accepted = true).
+   47. P7_COMMISSIONING_PREP_MANIFEST.md (5,506 B)
+      - Manifiesto de preparación para comisionamiento P7, consorcio de 10 agentes especializados, gobierno de seguridad y configuración de MJ1.
+
+N. Auditoría y Reporte de Brechas Offline (Plan v3):
+   48. PLAN_V3_OFFLINE_GAPS_AND_RESOLUTION.md (20,427 B)
+      - Reporte exhaustivo de resolución de brechas offline: clasificación de 43 herramientas FastMCP en 4 niveles,
+        lista de escaneo MJ1 vacía hasta conexión live, clasificación honesta PARTIAL de GUI live, ST->LD bloqueado nativo y aplazamiento a P7.
+   49. CORE_08_09_10_RUNTIME_GAPS_AND_ROADMAP.md (11,745 B)
+      - Auditoría técnica y hoja de ruta para tiempo de ejecución CORE-08 (Modbus RS-485 MJ1),
+        verificación de pantallas físicas HMI/WebMI (CORE-09) y prueba de estabilidad de telemetría de 24h (CORE-10).
+
+O. Matrices de Verificación y Casos de Prueba en Campo (CORE-08/09/10):
+   51. CORE_08_09_10_FIELD_VERIFICATION_MATRIX.md (17,523 B)
+       - Matriz exhaustiva punto por punto de 23 pruebas de comisionamiento en campo para telemetría Modbus MJ1 en vivo, pantallas táctiles HMI 3.5", streaming WebMI y estabilidad de 24h.
+   52. core08_09_10_field_verification_matrix.json (12,178 B)
+       - Esquema estructurado JSON con 23 casos de prueba, registros OCS mapeados (%AI1..%AI3, %R101..%R105, %M1..%M15, %Q1..%Q2) y criterios fail-closed.
+
+================================================================================
+3. PROCEDIMIENTO SEGURO DE GUARDADO ("SAVE AS WORKAROUND")
+================================================================================
+IMPORTANTE: Para evitar el diálogo "Failed to save document." causado por bloqueos
+de archivo (ERROR_SHARING_VIOLATION = 32) o desincronización de streams CFBF:
+1. No use Ctrl+S directamente sobre proyectos que hayan sido modificados externamente por scripts.
+2. Utilice siempre "Save As" (ID_FILE_SAVEAS = 57604) indicando una ruta absoluta y versión limpia.
+3. Si aparece la confirmación de sobrescritura, confirme con "Yes".
+4. Verifique la validez del archivo resultante mediante is_valid_cfbf() post-guardado.
+
+================================================================================
+4. PROCEDIMIENTO PARA EL INGENIERO EN CAMPO (COMISIONAMIENTO MANUAL P7)
+================================================================================
+1. Abra Cscape 10.2 manualmente.
+2. Abra el proyecto: File -> Open -> TankLevel_P5_Dedicated.csp.
+3. Presione Program -> Error Check (Ctrl+F8). Confirme: "No error detected" (0 errores, 0 warnings).
+4. Conecte el cable USB Mini-B a la OCS XL4 Prime.
+5. Seleccione Controller -> Communication... y confirme la conexión (Node 253).
+6. Seleccione Controller -> Download (Ctrl+F9) y marque Logic, Hardware, Protocols.
+7. Al finalizar la descarga, pase la controladora a RUN y verifique en Data Watch que %AI1
+   reciba la telemetría y %R1 escale correctamente a 0.0..100.0%.
+8. Para detalles completos, consulte P7_MANUAL_COMMISSIONING_PROCEDURE.md.

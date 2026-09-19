@@ -1,0 +1,154 @@
+{
+  "step": 173,
+  "name": "step173_dual_root_sync_checkpoint",
+  "status": "PASSED",
+  "timestamp_utc": "2026-09-06T08:29:16.937Z",
+  "auditor": "Dual-Root Step 173 Parity Auditor",
+  "mandate": "MEGAPLAN Dual-Root Checkpoint & Telemetry Verification",
+  "dual_root_parity": true,
+  "roots_verified": {
+    "horner_root": "C:\\HornerAI\\horner-cscape-mcp",
+    "user_root": "C:\\Users\\ArmandoSilva"
+  },
+  "live_cscape": {
+    "pid": 14996,
+    "hwnd": "0x00130C78",
+    "status": "READY_FOR_TESTS",
+    "ready_for_tests": true
+  },
+  "artifacts_audited": {
+    "checkpoints_count": 3,
+    "logs_count": 3,
+    "screenshots_count": 1,
+    "code_files_count": 7,
+    "all_roots_identical": true
+  },
+  "audit_details": {
+    "checkpoints": {
+      "step173_visible_gui_proof_checkpoint": {
+        "file": "artifacts/checkpoints/step173_visible_gui_proof_checkpoint.json",
+        "exists_in_both": true,
+        "size_bytes": 1116,
+        "file_sha256": "07bbf6a2ab9d506ace04c0e1bafe54ed3b424b407d38b94c6d5d772b86903510",
+        "roots_identical": true,
+        "valid_json": true,
+        "status": "PASSED",
+        "step": 173
+      },
+      "step173_security_audit_checkpoint": {
+        "file": "artifacts/checkpoints/step173_security_audit_checkpoint.json",
+        "exists_in_both": true,
+        "size_bytes": 1089,
+        "file_sha256": "be1cbb05d21f5ddaf9a9b26da7021a5d7d5e216d4044dc79cb856f84b1874bd4",
+        "roots_identical": true,
+        "valid_json": true,
+        "status": "PASSED",
+        "step": 173
+      },
+      "step173_mcp_generator_avr_excitation_checkpoint": {
+        "file": "artifacts/checkpoints/step173_mcp_generator_avr_excitation_checkpoint.json",
+        "exists_in_both": true,
+        "size_bytes": 762,
+        "file_sha256": "801e1eb7f2778f063edc869b086bcfb6c38a1e148383106b4af983fa7812763f",
+        "roots_identical": true,
+        "valid_json": true,
+        "status": "PASSED",
+        "step": 173
+      }
+    },
+    "logs": {
+      "step173_visible_gui_proof": {
+        "file": "artifacts/logs/step173_visible_gui_proof.json",
+        "exists_in_both": true,
+        "size_bytes": 1264,
+        "file_sha256": "2fdabbc88fbe7b135a9945a201ec2e3f8d7b2ce51a366705e1126b8005b033d7",
+        "roots_identical": true,
+        "valid_json": true,
+        "status": "PASSED",
+        "step": 173
+      },
+      "step173_security_audit": {
+        "file": "artifacts/logs/step173_security_audit.json",
+        "exists_in_both": true,
+        "size_bytes": 1565,
+        "file_sha256": "6a48739a158193b39dcd72566c3f3961f018a7bfcf6283078124c4e2ccb42d3d",
+        "roots_identical": true,
+        "valid_json": true,
+        "status": "PASSED",
+        "step": 173
+      },
+      "step173_mcp_generator_avr_excitation": {
+        "file": "artifacts/logs/step173_mcp_generator_avr_excitation.json",
+        "exists_in_both": true,
+        "size_bytes": 672,
+        "file_sha256": "ca081b7aaa0491633f7eb465ce16d52ed6a800504b461731ad7a986cafe87a6c",
+        "roots_identical": true,
+        "valid_json": true,
+        "status": "PASSED",
+        "step": 173
+      }
+    },
+    "screenshots": {
+      "live_cscape_tank_level_step173": {
+        "file": "artifacts/screenshots/live_cscape_tank_level_step173.png",
+        "exists_in_both": true,
+        "size_bytes": 72686,
+        "file_sha256": "4730540e881c216fe988f2ab82b86a21b3bf9b10e662d57effe44a71b6cb657f",
+        "roots_identical": true,
+        "gt_10kb": true
+      }
+    },
+    "code_files": {
+      "execute_step173_visible_cscape_gui_driver.py": {
+        "file": "scripts/execute_step173_visible_cscape_gui_driver.py",
+        "exists_in_both": true,
+        "size_bytes": 15890,
+        "file_sha256": "250c454c53c991f30c18216a290df0438de8d17c5f9f74caf15775687b9ef6ed",
+        "roots_identical": true
+      },
+      "execute_step173_security_audit.py": {
+        "file": "scripts/execute_step173_security_audit.py",
+        "exists_in_both": true,
+        "size_bytes": 15142,
+        "file_sha256": "86ec64851a0eff148e0aec672ca310aa1598523b896b458136a7850b80cab2c0",
+        "roots_identical": true
+      },
+      "execute_step173_mcp_generator_avr_excitation.py": {
+        "file": "scripts/execute_step173_mcp_generator_avr_excitation.py",
+        "exists_in_both": true,
+        "size_bytes": 20757,
+        "file_sha256": "adb560d4c367d78f52b7d7bd8ab1a085497539a66faa099e3e0edc9dfdb65efd",
+        "roots_identical": true
+      },
+      "execute_step173_dual_root_sync_audit.py": {
+        "file": "scripts/execute_step173_dual_root_sync_audit.py",
+        "exists_in_both": true,
+        "size_bytes": 7909,
+        "file_sha256": "a32e1779d4495d39594bc0a7a4e77bbab7de61a019d477d088e181aa23b535dd",
+        "roots_identical": true
+      },
+      "test_step173_visible_cscape_gui_driver.py": {
+        "file": "tests/test_step173_visible_cscape_gui_driver.py",
+        "exists_in_both": true,
+        "size_bytes": 5306,
+        "file_sha256": "5153e858053d0fd01d1c0b9f7c6f888cf6752683021ece51d32dcc09bb3c48f8",
+        "roots_identical": true
+      },
+      "test_step173_mcp_generator_avr_excitation.py": {
+        "file": "tests/test_step173_mcp_generator_avr_excitation.py",
+        "exists_in_both": true,
+        "size_bytes": 4546,
+        "file_sha256": "7411d13b6e7d0aaee4085495d8ffa89db36f47f7fca833bb4b66e1d160dafb65",
+        "roots_identical": true
+      },
+      "generator_avr_excitation_control.st": {
+        "file": "examples/st_applications/generator_avr_excitation_control.st",
+        "exists_in_both": true,
+        "size_bytes": 5354,
+        "file_sha256": "68d329648bf6be54f96c9e7615b31c99e71351654abefc03adce566bf509141d",
+        "roots_identical": true
+      }
+    }
+  },
+  "checkpoint_sha256": "9c6f749791ace69a8cfbc6a4cf15538173297bb3a1f40c00591d3c0d986f98fe"
+}

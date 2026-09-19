@@ -1,0 +1,103 @@
+{
+  "status": "success",
+  "task_id": "FASTMCP_PUBLIC_SCAN_LIST_INSPECTION_EVIDENCE",
+  "mission_id": "MJ1_SCAN_LIST_INSPECTION_FAIL_CLOSED_EVIDENCE",
+  "timestamp_utc": "2026-09-17T19:25:00Z",
+  "governing_rules": "RULE[C:\\Users\\ArmandoSilva\\AGENTS.md]",
+  "operational_mode": "offline/DEV [PRODUCT_EVIDENCE]",
+  "system_state": "RUNTIME_PENDING_P7",
+  "verified_live": false,
+  "zero_plc_download": true,
+  "no_error_check_loop": true,
+  "single_gui_boundary": "Cscape 10.2 on winsta0\\Default (single GUI owner; zero keep-alive loops)",
+  "fastmcp_inspection_tool": {
+    "tool_name": "cscape_inspect_scan_list",
+    "alias": "cscape_get_scan_list",
+    "transport": "FastMCP JSON-RPC 2.0 stdio",
+    "status_contract": "success | failed | blocked | inconclusive",
+    "input_schema": "CscapeInspectScanListInput",
+    "output_schema": "CscapeInspectScanListOutput",
+    "registered_tools_count": 42,
+    "registered_schemas_count": 42,
+    "schemas_parity": "42/42 (100% matched)"
+  },
+  "target_project_audit": {
+    "project_path": "artifacts/projects/TankLevel_P5_Dedicated/TankLevel_P5_Dedicated.csp",
+    "project_name": "TankLevel_P5_Dedicated.csp",
+    "port": "MJ1",
+    "protocol": "CT RTU Modbus CMP v5.05",
+    "cfbf_valid": true,
+    "scan_list": [],
+    "count": 0,
+    "scan_list_status": "empty",
+    "native_fill_status": "blocked_offline",
+    "blocker": "Native add requires a configured target node/device and/or live PLC context; no PLC connection or download was permitted.",
+    "pending_gate": "P7_PHYSICAL_PLC_DOWNLOAD_AND_COMMISSIONING",
+    "offline_safety_enforced": true,
+    "zero_download_enforced": true,
+    "verified_live": false,
+    "plc_download": false
+  },
+  "inspection_execution_results": {
+    "default_inspection": {
+      "require_populated": false,
+      "status": "success",
+      "scan_list": [],
+      "count": 0,
+      "scan_list_status": "empty",
+      "native_fill_status": "blocked_offline",
+      "offline_safety_enforced": true,
+      "zero_download_enforced": true,
+      "verified_live": false,
+      "plc_download": false,
+      "message": "Native Cscape scan list for port 'MJ1' (CT RTU Modbus CMP v5.05) in 'TankLevel_P5_Dedicated.csp' is confirmed empty. Native fill is blocked offline pending Phase P7."
+    },
+    "fail_closed_assertion": {
+      "require_populated": true,
+      "status": "blocked",
+      "error_code": "SECURITY_BLOCKED",
+      "message": "Fail-closed empty-list enforcement: scan list on port 'MJ1' is empty offline. require_populated=True assertion failed.",
+      "errors": [
+        "Port 'MJ1' has an empty scan list in native Cscape project 'TankLevel_P5_Dedicated.csp'.",
+        "Native scan-list population requires live PLC communication deferred to Phase P7."
+      ],
+      "scan_list": [],
+      "count": 0,
+      "scan_list_status": "empty",
+      "native_fill_status": "blocked_offline",
+      "offline_safety_enforced": true,
+      "zero_download_enforced": true,
+      "verified_live": false,
+      "plc_download": false
+    }
+  },
+  "fail_closed_lockout_matrix": {
+    "require_populated_true_on_empty": "BLOCKED_FAIL_CLOSED (SECURITY_BLOCKED / SCAN_LIST_EMPTY_FAIL_CLOSED)",
+    "request_live_fill_true": "BLOCKED_FAIL_CLOSED (SECURITY_BLOCKED / NATIVE_FILL_BLOCKED_OFFLINE)",
+    "plc_download_true": "BLOCKED_FAIL_CLOSED (SECURITY_BLOCKED / PLC_DOWNLOAD_SAFETY_LOCKOUT)",
+    "verified_live_true": "BLOCKED_FAIL_CLOSED (SECURITY_BLOCKED / VERIFIED_LIVE_SAFETY_LOCKOUT)",
+    "physical_com_ports": "BLOCKED_FAIL_CLOSED (SECURITY_BLOCKED / PHYSICAL_PORT_LOCKOUT)",
+    "extra_parameter_injection": "FAILED_VALIDATION (SCHEMA_VALIDATION_ERROR extra='forbid')",
+    "missing_project_file": "FAILED (PROJECT_NOT_FOUND)",
+    "invalid_cfbf_container": "FAILED (INVALID_CFBF_CONTAINER)"
+  },
+  "test_execution_results": {
+    "test_suite": "tests/test_scan_list_tool.py",
+    "framework": "pytest 9.1.1 / Python 3.12.10",
+    "total_tests": 12,
+    "passed": 12,
+    "failed": 0,
+    "companion_suites": {
+      "tests/test_scan_list_evidence_schema.py": "16/16 passed",
+      "tests/test_p9_offline_gaps.py": "9/9 passed (42-tool parity verified)",
+      "tests/test_core08_modbus_inventory.py": "5/5 passed"
+    },
+    "total_targeted_tests_passed": 42
+  },
+  "next_remaining_offline_gap": {
+    "gap_id": "OFFLINE_SCAN_LIST_PLANNED_VS_NATIVE_RECONCILIATION",
+    "title": "Offline Scan-List Planned vs. Native Reconciliation Gap",
+    "description": "Native CFBF project container has 0 scan list entries (empty offline, blocked pending P7), while sidecar modbus_protocol_inventory.json specifies 3 planned Modbus RTU transactions (TX01_LEVEL_PV, TX02_INFLOW_RATE, TX03_DISCHARGE_PRESS). Implement automated offline reconciliation to diff and report discrepancy without live PLC connection.",
+    "p7_status": "DEFERRED_MANUAL_ENGINEER_LOAD (NOT P7; strictly offline product engineering)"
+  }
+}

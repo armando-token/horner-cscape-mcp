@@ -1,0 +1,14 @@
+{
+  "item_id": "H10",
+  "name": "Physical Hardware Port Access Lockout Enforced",
+  "mission_id": "G1_REMAINING_NEGATIVES_OFFLINE_v3",
+  "timestamp_utc": "2026-09-09T01:19:34.566673+00:00",
+  "status": "success",
+  "invariant": "COM1-COM256, CAN, USB, JTAG fail closed and raise HardwareLockoutError",
+  "verification": {
+    "blocked_ports_tested": 8,
+    "blocked_ports_confirmed": 8,
+    "guard_exception_raised": true,
+    "pass": true
+  }
+}

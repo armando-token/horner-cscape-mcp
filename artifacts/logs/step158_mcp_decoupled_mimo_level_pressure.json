@@ -1,0 +1,119 @@
+{
+  "step": 158,
+  "name": "step158_mcp_decoupled_mimo_level_pressure",
+  "status": "PASSED",
+  "mission": "Live FastMCP Decoupled Cross-Coupled Multi-Variable (MIMO) Dual-Loop Level & Pressure Coordinated Interlock Telemetry Audit",
+  "timestamp_start": "2026-09-06T12:22:41.827Z",
+  "timestamp_complete": "2026-09-06T12:22:50.521Z",
+  "duration_seconds": 8.694,
+  "gate": {
+    "ready_for_tests": true,
+    "status": "READY_FOR_TESTS",
+    "pid": 10892,
+    "hwnd": "0x01B005DC",
+    "window_title": "Cscape - Logged In : \"armando@controlnautas.com\" - [TankLevelClosedLoop.csp]",
+    "project_file": "C:\\HornerAI\\horner-cscape-mcp\\artifacts\\projects\\TankLevelClosedLoop\\TankLevelClosedLoop.csp",
+    "exit_code": null,
+    "reason": "Gate G3 Error Check and Output Scrape Verified Clean (0 errors, 0 warnings)",
+    "cycle": 17,
+    "timestamp_utc": "2026-09-06T11:43:46.709Z",
+    "heartbeat_utc": "2026-09-06T11:43:46.709Z"
+  },
+  "cscape_pid": 10892,
+  "hwnd": "0x01B005DC",
+  "scenarios_passed": 5,
+  "scenarios_total": 5,
+  "scenario_results": {
+    "scenario_a_equilibrium": {
+      "verified": true,
+      "level_pv": 50.0,
+      "level_sp": 50.0,
+      "pressure_pv": 100.0,
+      "pressure_sp": 100.0,
+      "inflow_co": 50.0,
+      "vent_co": 50.0
+    },
+    "scenario_b_boil_off_decoupling": {
+      "verified": true,
+      "inflow_co_r7": 80.0,
+      "vent_co_r9": 30.0,
+      "level_pv": 50.0,
+      "pressure_pv": 96.5
+    },
+    "scenario_c_overpressure_relief": {
+      "verified": true,
+      "m8_overpressure_alarm": true,
+      "emergency_vent_r9": 100.0,
+      "clamped_inflow_r7": 10.0,
+      "pressure_pv": 145.0
+    },
+    "scenario_d_recovery": {
+      "verified": true,
+      "m8_cleared": true,
+      "vent_co_r9": 50.0,
+      "inflow_co_r7": 50.0,
+      "pressure_pv": 100.0
+    },
+    "scenario_e_double_fault_trip": {
+      "verified": true,
+      "m10_cavitation_tripped": true,
+      "pump1_q1_isolated": true,
+      "inflow_valve_q2_isolated": true,
+      "control_output_r7": 0.0,
+      "vent_output_r9": 0.0,
+      "level_pv": 12.0,
+      "pressure_pv": 60.0
+    }
+  },
+  "telemetry_records": [
+    {
+      "scenario": "A_EQUILIBRIUM",
+      "cycle": 1,
+      "level_pv": 50.0,
+      "pressure_pv": 100.0,
+      "co_r7": 50.0,
+      "co_r9": 50.0
+    },
+    {
+      "scenario": "B_BOIL_OFF_DECOUPLING",
+      "cycle": 2,
+      "co_r7": 80.0,
+      "co_r9": 30.0,
+      "level_pv": 50.0,
+      "pressure_pv": 96.5
+    },
+    {
+      "scenario": "C_OVERPRESSURE_RELIEF",
+      "cycle": 3,
+      "m8": true,
+      "co_r9": 100.0,
+      "co_r7": 10.0,
+      "pressure_pv": 145.0
+    },
+    {
+      "scenario": "D_RECOVERY",
+      "cycle": 4,
+      "m8": false,
+      "co_r9": 50.0,
+      "co_r7": 50.0,
+      "pressure_pv": 100.0
+    },
+    {
+      "scenario": "E_DOUBLE_FAULT_TRIP",
+      "cycle": 5,
+      "m10": true,
+      "q1": false,
+      "q2": false,
+      "co_r7": 0.0,
+      "co_r9": 0.0,
+      "level_pv": 12.0,
+      "pressure_pv": 60.0
+    }
+  ],
+  "security": {
+    "hardware_download_lockout": "FAIL_CLOSED_BLOCKED",
+    "zero_straton_dependencies": true,
+    "zero_plc_hardware_interaction": true,
+    "no_gui_hwnd_command_dispatched": true
+  }
+}

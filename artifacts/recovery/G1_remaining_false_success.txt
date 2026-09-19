@@ -1,0 +1,427 @@
+================================================================================
+HORNER CSCAPE MCP - GATE G1 REMAINING FALSE-SUCCESS FORENSIC AUDIT REPORT
+Generated: 2026-09-08T16:03:00Z (Updated: 2026-09-08T16:07:30Z)
+Scope: src/mcp/tools.py, src/cscape/, src/security/, src/iec/, src/automation/, tests/
+Classification: STRICT OFFLINE FORENSIC CODE AUDIT
+Status Contract Invariant: success | failed | blocked | inconclusive
+================================================================================
+
+SUMMARY:
+This exhaustive multi-agent forensic audit identified 22 distinct false-success
+vulnerabilities across the Horner Cscape MCP codebase where tools, internal engine
+modules, or test harnesses can return status: 'success' or success: True on empty,
+None, unknown, unverified, or failing states.
+
+--------------------------------------------------------------------------------
+PART 1: MCP TOOLS & CROSS-CUTTING STATUS VULNERABILITIES (CASES 01-14)
+--------------------------------------------------------------------------------
+
+[CASE 01] cscape_run_simulation - Empty Simulation Loop Claims Success
+File: src/mcp/tools.py (Lines 1805-1840)
+Trigger: cscape_run_simulation(st_code=None) or cscape_run_simulation(st_code="")
+Snippet:
+    if st_code:
+        ...
+    else:
+        sim = CscapeSimulator(default_dt_ms=dt_ms)
+        trace = []
+        for _ in range(valid_steps):
+            snap = sim.step_cycle(dt_ms=dt_ms, inputs=inputs or {})
+            trace.append({...})
+        return {
+            "success": True,
+            "status": "success",
+            "message": f"Executed {valid_steps} simulation cycles (software-only).",
+        }
+Underlying Mechanism:
+    When st_code is falsy (None or ""), if st_code: evaluates to False, dropping directly
+    into the else: branch. It instantiates an empty CscapeSimulator with no POU loaded,
+    steps arbitrary cycles, and returns status: "success" and success: True.
+Fix: If st_code is None or empty/whitespace, immediately fail closed:
+     return {
+         "success": False,
+         "status": "failed",
+         "error_code": "INVALID_ST_CODE",
+         "message": "Structured Text source code must be provided and non-empty for simulation.",
+         "errors": ["Structured Text source code must be provided and non-empty for simulation."],
+         "total_cycles": 0,
+         "elapsed_time_ms": 0.0,
+     }
+
+[CASE 02] cscape_inspect_variables - Success on Non-Existent Project / Broken POUs
+File: src/mcp/tools.py (Lines 2349-2388)
+Trigger: cscape_inspect_variables(project_name="") or project_name="NonExistentProject"
+Snippet:
+    p_dir = WORKSPACE_ROOT / "artifacts" / "projects" / project_name
+    pous_dir = p_dir / "pous"
+    if pous_dir.exists():
+        for st_file in sorted(pous_dir.glob("*.st")):
+            ...
+            res = IECValidator.validate(code)
+            for v in res.get("variables", []):
+                all_vars.append(v)
+    return {
+        "status": "success",
+        "project_name": project_name,
+        "total_variables": len(all_vars),
+        "pous": pous,
+        "variables": all_vars,
+    }
+Underlying Mechanism:
+    1. project_name is never sanitized via SafetyGuard.validate_project_name().
+    2. If pous_dir does not exist, pous_dir.exists() is False, skipping the loop and
+       returning status: "success", total_variables: 0, variables: [].
+    3. If POUs contain fatal syntax or ladder errors, IECValidator.validate(code) populates
+       res["errors"], but cscape_inspect_variables completely ignores errors and extracts
+       partial variables, returning status: "success".
+Fix: Validate project_name with SafetyGuard.validate_project_name(). If project or pous_dir
+     does not exist, return status: "failed", error_code: "PROJECT_NOT_FOUND". Fail closed
+     if any POU fails IECValidator.validate().
+
+[CASE 03] cscape_insert_st / cscape_insert_st_pou / cscape_add_st_pou - Missing POU Name Validation
+File: src/mcp/tools.py (Lines 947-993, 1090-1137, 2228-2276)
+Trigger: pou_name="", pou_name="   ", or pou_name="../../escape"
+Snippet:
+    pou_file = pous_dir / f"{pou_name}.st"
+    pou_file.write_text(st_code, encoding="utf-8")
+Underlying Mechanism:
+    Unlike StructuredTextInserter.insert_pou in src/cscape/st_inserter.py (which calls
+    SafetyGuard.validate_pou_name), cscape_insert_st directly creates
+    pou_file = pous_dir / f"{pou_name}.st". With pou_name="", it creates .st. With traversal
+    sequences, it escapes pous_dir. When st_code has valid syntax, it returns success: True.
+Fix: Enforce clean_pou_name = SafetyGuard.validate_pou_name(pou_name) and
+     clean_pou_type = SafetyGuard.validate_pou_type(pou_type) at entry.
+
+[CASE 04] cscape_write_variables / cscape_export_variables - Success on Empty Variable List & Hardcoded True
+File: src/mcp/tools.py (Lines 1647-1728)
+Trigger: cscape_write_variables(variables=[]) or variables=None without source_file
+Snippet:
+    is_valid = (len(validation_errors) == 0)
+    return {
+        "success": True,  # Hardcoded True
+        "written_count": vm.total_count,  # 0
+        "validation_status": "VALID" if is_valid else "INVALID",
+        "validation_errors": validation_errors,
+        ...
+    }
+Underlying Mechanism:
+    1. If no variables are supplied, vm.total_count is 0. It exports a header-only file and
+       returns success: True, written_count: 0, validation_status: "VALID".
+    2. If is_valid is False, line 1716 still declares "success": True.
+Fix: If vm.total_count == 0, fail closed: status="failed", error_code="EMPTY_VARIABLE_LIST".
+     Change line 1716 to success = (is_valid and vm.total_count > 0).
+
+[CASE 05] cscape_read_variables / cscape_import_variables - Success on Empty Database & Hardcoded True
+File: src/mcp/tools.py (Lines 1580-1614)
+Trigger: Reading empty CSV/XML file with 0 records, or file_path="" resolving to current dir
+Snippet:
+    is_valid = (len(validation_errors) == 0)
+    return {
+        "success": True,  # Hardcoded True
+        "count": count,  # 0
+        "validation_status": "VALID" if is_valid else "INVALID",
+        ...
+    }
+Underlying Mechanism:
+    1. Path("").resolve() resolves to current directory. If variables.csv happens to exist
+       there, file_path="" succeeds without error.
+    2. When a file has 0 variables, count = 0, validation_errors = []. The tool returns
+       success: True, status: "success", count: 0.
+    3. If validation_errors is non-empty, line 1602 still hardcodes "success": True.
+Fix: Require file_path non-empty. If count == 0, fail closed: status="failed", error_code="EMPTY_VARIABLE_DATABASE".
+     Change line 1602 to success = (is_valid and count > 0).
+
+[CASE 06] cscape_get_build_output - Hardcoded success: True on Failed Build
+File: src/mcp/tools.py (Lines 1498-1508)
+Trigger: cscape_get_build_output called on project build log containing errors
+Snippet:
+    proof = CscapeLogParser.extract_clean_build_proof(raw_log)
+    build_successful = proof.is_clean
+    return {
+        "success": True,  # Hardcoded True
+        "status": "success" if build_successful else "failed",
+        "build_successful": build_successful,
+        ...
+    }
+Underlying Mechanism:
+    The inner tool dict explicitly sets "success": True while simultaneously setting
+    "status": "failed" when build_successful is False.
+Fix: Change line 1500 to "success": build_successful.
+
+[CASE 07] cscape_get_diagnostics - Defaults compile_successful=True & Hardcodes clean_build=True
+File: src/mcp/tools.py (Lines 2661-2665, 2720-2722)
+Trigger: cscape_get_diagnostics(project_name="") or build_successful key missing
+Snippet:
+    cand_p = Path(project_name)
+    if cand_p.is_dir():
+        proj_dir = cand_p.resolve()  # Path("") is dir!
+    res["compile_successful"] = res.get("build_successful", True)  # Defaults True!
+    res["clean_build"] = True  # Hardcoded True!
+    res["status"] = "success" if res.get("compile_successful") else "failed"
+Underlying Mechanism:
+    1. Path("").is_dir() evaluates to True for current working directory, bypassing the project check.
+    2. If build_successful is missing, .get("build_successful", True) defaults to True.
+    3. clean_build is unconditionally overwritten to True even if errors/warnings exist.
+Fix: Reject empty project_name. Change default in get() to False. Set clean_build = compile_successful and warning_count == 0.
+
+[CASE 08] get_active_simulator - Silent Simulation of Non-Existent Projects
+File: src/mcp/tools.py (Lines 1882-1945)
+Trigger: cscape_simulate_cycle(project_name="FakeProject"), cscape_read_register, cscape_write_register
+Snippet:
+    sim = CscapeSimulator(enforce_isolation=True)
+    if proj_dir.exists():
+        # load pous
+    sim.start_simulation()
+    return sim
+Underlying Mechanism:
+    If proj_dir.exists() is False, the simulator bypasses POU and variable loading completely,
+    transitions to SimulationState.RUNNING via sim.start_simulation(), and returns an empty
+    simulation instance. Subsequent cycle runs return status: "success" on 0 POUs.
+Fix: If project_name provided and proj_dir does not exist, raise FileNotFoundError immediately.
+
+[CASE 09] cscape_simulate_pou - Silent Fallback to Mock Evaluator on Execution Failure
+File: src/mcp/tools.py (Lines 2840-2863)
+Trigger: Any runtime exception in simulate_pou_with_registers
+Snippet:
+    except Exception as e:
+        logger.debug("CscapeSimulator AST parse fallback: %s", e)
+        err_msg = str(e)
+        if "ERR_LADDER_FORBIDDEN" in err_msg:
+            return {"success": False, "status": "failed", ...}
+        from ..iec.simulator import STSimulator
+        res = STSimulator.simulate(code=code, inputs=inputs, steps=valid_steps)
+        res["classification"] = CLASSIFICATION
+        res["verification_classification"] = VERIFICATION_CLASSIFICATION
+        return res
+Underlying Mechanism:
+    When primary simulation fails, it silently catches the exception and falls back to
+    STSimulator.simulate, which performs naive string eval and returns success: True
+    (without a status key). normalize_tool_result normalizes it to status: "success", masking failure.
+Fix: Eliminate mock fallback. Fail closed with status="failed", error_code="SIMULATION_EXECUTION_ERROR".
+
+[CASE 10] STParser.validate - Validates Empty Code as is_valid=True
+File: src/iec/st_parser.py (Lines 1001-1056)
+Trigger: STParser.validate("") or STParser.validate("   ")
+Snippet:
+    self.issues.append(
+        STIssue(
+            severity=IssueSeverity.WARNING,  # Warning severity only
+            code="WARN_EMPTY_POU",
+            message="No PROGRAM, FUNCTION_BLOCK, or FUNCTION definitions found in Structured Text.",
+            line=1,
+        )
+    )
+    is_valid = len([i for i in self.issues if i.severity == IssueSeverity.ERROR]) == 0
+Underlying Mechanism:
+    If the source code is empty or contains only whitespace, STParser records a WARNING,
+    but 0 ERRORs. Because is_valid checks for ERROR severity issues, it returns is_valid = True.
+Fix: At entry of parse(), check if not self.raw_code.strip(), add IssueSeverity.ERROR, return is_valid=False.
+
+[CASE 11] com_bridge.py open_project - Process Crashes/Errors Report status: "success"
+File: src/automation/com_bridge.py (Lines 296-305)
+Trigger: launch_project exits with returncode != 0 without timeout
+Snippet:
+    "status": "success" if proc_res.returncode == 0 or proc_res.timed_out is False else "failed"
+Underlying Mechanism:
+    Because of or proc_res.timed_out is False, any process exit that did not time out
+    evaluates to True, returning "status": "success" even on abnormal termination (returncode 1).
+Fix: Change condition to: "status": "success" if proc_res.returncode == 0 and not proc_res.timed_out else "failed"
+
+[CASE 12] cscape_export_project - Synthesis of Dummy Files on Missing Artifacts
+File: src/mcp/tools.py (Lines 3050-3174)
+Trigger: Exporting k5p without .k5p source file, or csv/xml with 0 variables declared
+Snippet:
+    out_file.write_text(f"; Legacy Straton K5 project file for {clean_name}\nStatus=QUARANTINED\n")
+    return {"success": True, "status": "success"}
+Underlying Mechanism:
+    Automatically generates synthetic dummy files on the fly and returns status: "success"
+    and success: True when source artifacts do not exist.
+Fix: Fail closed if genuine container or data is missing: error_code="NO_DATA_TO_EXPORT".
+
+[CASE 13] normalize_tool_result - Fallback Branch Defaults Unverified Dict to success: True
+File: src/mcp/tools.py (Lines 531-534)
+Trigger: Dict omitting explicit status and success keys (e.g. {"data": None})
+Snippet:
+    else:
+        canonical_status = "success"
+        success = True
+Underlying Mechanism:
+    If a tool returns an unverified result dictionary omitting status/success, all error
+    checks evaluate to False, falling through to else: canonical_status = "success"; success = True.
+Fix: Change fallback to canonical_status = "inconclusive", success = False, error_code = "UNVERIFIED_RESULT_STATUS".
+
+[CASE 14] Convenience Tools - Violation of Canonical 4-State Contract with "error" Status
+File: src/mcp/tools.py (Lines 2222, 2266, 2638), src/automation/com_bridge.py (Line 336)
+Trigger: Tool failure branch
+Snippet:
+    res["status"] = "success" if res.get("success") else "error"
+Underlying Mechanism:
+    Direct assignment of "error" violates the strict 4-state contract (success | failed | blocked | inconclusive).
+Fix: Change "error" to "failed" across all tool responses.
+
+--------------------------------------------------------------------------------
+PART 2: CSCAPE ENGINE & TESTING HARNESS VULNERABILITIES (CASES 15-22 / FS-01-FS-13)
+--------------------------------------------------------------------------------
+
+[CASE 15] CscapeLiveProjectManager.open_project & cscape_open_project - Fake Open Without Live Engine (H02)
+File: src/cscape/project_manager.py (Lines 1410-1478, 1641-1843, 1165-1191)
+Trigger: cscape_open_project("sample.csp", require_live_gui=False)
+Snippet:
+    if not self.is_project_open(p_path):
+        return ProjectOpenResult(
+            success=True,
+            already_open=False,
+            offline_validated=True,
+            live_gui_opened=False,
+            open_mode="offline_validated",
+        )
+Underlying Mechanism:
+    When require_live_gui is False (default), open_project returns success=True with
+    open_mode="offline_validated" without ever dispatching ID_FILE_OPEN (57601) or verifying
+    window handles. Furthermore, is_project_open checks stale .cscape_live_gate.json
+    without verifying active HWND/PID liveness.
+Fix: Require live_gui=True for open_project; separate file validation from project opening.
+     Never satisfy is_project_open from stale gate files without IsWindow check.
+
+[CASE 16] cscape_new_iec_project - Swallowing Live GUI Failures & Falling Back to Synthetic CFBF
+File: src/mcp/tools.py (Lines 817-847, 864-878)
+Trigger: cscape_new_iec_project(live_gui=True) when Cscape GUI hangs or dialog fails
+Snippet:
+    except Exception as e:
+        logger.warning("Live GUI project creation fallback: %s", e)
+    if not csp_path.exists():
+        from ..cscape.cfbf import generate_minimal_cfbf_bytes
+        csp_path.write_bytes(generate_minimal_cfbf_bytes(clean_name))
+    return {"success": True, ...}
+Underlying Mechanism:
+    If live GUI creation fails, exception is swallowed with a warning log, synthetic
+    dummy CFBF bytes are written to disk, and the tool claims success=True.
+Fix: Fail closed immediately if live GUI creation fails; prohibit generating dummy CFBF bytes.
+
+[CASE 17] StructuredTextInserter - Swallowing AST Hash Crash & Defaulting ast_match to True
+File: src/cscape/st_inserter.py (Lines 1016-1021, 1069, 1279-1286)
+Trigger: AST hash calculation exception in verify_editor_content or insert_pou
+Snippet:
+    try:
+        expected_ast_hash = calculate_ast_hash(expected_norm)
+    except Exception as e:
+        diagnostics.append(f"Warning: Failed calculating expected AST hash: {e}")
+    verified = exact_match and ast_valid and (ast_match if (expected_ast_hash and extracted_ast_hash) else True)
+Underlying Mechanism:
+    If calculate_ast_hash raises an exception, expected_ast_hash remains None, and the expression
+    (ast_match if (expected_ast_hash and extracted_ast_hash) else True) falls back to True,
+    bypassing AST verification entirely!
+Fix: If AST hashing fails, ast_match must be set to False and verified forced to False.
+
+[CASE 18] STSimulator._evaluate_expression - Swallowing Runtime Evaluation Exceptions (e.g. 10/0)
+File: src/iec/simulator.py (Lines 84-88, 286)
+Trigger: Arithmetic error (ZeroDivisionError, type error) in Structured Text expression
+Snippet:
+    try:
+        return eval(mangled_expr, {"__builtins__": None}, eval_scope)
+    except Exception:
+        if expr in context: return context[expr]
+        return expr
+Underlying Mechanism:
+    When expression evaluation crashes, eval() raises an exception. It is caught by except Exception:
+    and returns the unparsed raw string (e.g. "10 / 0"), assigning it to the target variable.
+    The simulation then returns success=True, masking runtime math errors.
+Fix: Record simulation execution errors and fail closed: success=False, status="failed",
+     error_code="SIMULATION_EXECUTION_ERROR".
+
+[CASE 19] cscape_compile & normalize_tool_result - BuildStatus.WARNINGS Coerced to success
+File: src/mcp/tools.py (Lines 1417, 316-317)
+Trigger: cscape_compile producing 0 errors and >0 warnings (BuildStatus.WARNINGS)
+Snippet:
+    elif s_norm in ("warning", "warn", "warnings"):
+        status_candidate = "failed" if errors_list else "success"
+Underlying Mechanism:
+    If errors_list is empty, status_candidate is set to "success" and canonical_status to "success",
+    coercing compilation warnings into clean success and violating the 4-state contract.
+Fix: Keep status as "inconclusive" or require explicit clean build proof before claiming success.
+
+[CASE 20] intercept_hardware_interface - Port Lockout Bypass on Empty interface_name
+File: src/cscape/safety.py (Lines 198-204)
+Trigger: intercept_hardware_interface("", port="COM1")
+Snippet:
+    if not interface_name or not isinstance(interface_name, str):
+        return  # Early return before checking port!
+    if policy.is_interface_blocked(name) or policy.is_port_blocked(name) or (port and policy.is_port_blocked(port)):
+        raise HardwareLockoutError(...)
+Underlying Mechanism:
+    Early return at line 199 completely bypasses evaluation of port and policy.is_port_blocked(port).
+Fix: Evaluate port independently of interface_name; fail closed immediately if port is blocked.
+
+[CASE 21] test_real_compilation.py & test_mcp_compile_project_audit.py - Synthetic Win32 Mocks
+File: tests/test_real_compilation.py (L43, L245-294), tests/test_mcp_compile_project_audit.py (L350-375)
+Trigger: Running test_real_compilation without Cscape.exe running
+Snippet:
+    compiler.trigger_cscape_gui_compile(cscape_hwnd=99999) # mocked win32gui SendMessage
+    assert res["success"] is True
+Underlying Mechanism:
+    Uses fake HWND 99999 and mocks SendMessage with canned "0 error(s)" string to assert
+    live GUI compilation success, creating false confidence of live compilation verification.
+Fix: Tag unit tests with [MOCK_DISPATCH_ONLY] and require live HWND/PID validation for real tests.
+
+[CASE 22] IECValidator.validate - Swallowing Semantic Parser Exceptions
+File: src/iec/validator.py (Lines 320-333)
+Trigger: STParser.validate(code) raising an exception on complex AST
+Snippet:
+    try:
+        st_result = STParser.validate(code)
+        ...
+    except Exception:
+        pass  # Swallowed!
+Underlying Mechanism:
+    If STParser.validate crashes, the exception is discarded, semantic issues (e.g. undeclared variables)
+    are lost, and valid = len(errors) == 0 evaluates to True.
+Fix: Log semantic parser exceptions and record a diagnostic warning/failure location.
+
+[CASE 23] cscape_validate_st - Empty Code & Ladder Logic Rejection Fail Closed
+File: src/mcp/tools.py (Lines 2160-2210)
+Trigger: cscape_validate_st("") or cscape_validate_st("---[ ]---")
+Underlying Mechanism:
+    Empty code or ladder constructs passed to validation wrapper could emit warnings but
+    omit explicit canonical 4-state contract or fail-closed error codes.
+Fix: Explicitly reject empty code (valid=False, status='failed', error_code='VALIDATE_ST_ERROR')
+     and reject ladder logic constructs with ERR_LADDER_FORBIDDEN (valid=False, status='failed').
+
+[CASE 24] cscape_compile - Missing Project & Ladder Syntax Fail Closed
+File: src/mcp/tools.py (Lines 1340-1380)
+Trigger: cscape_compile(project_path="NonExistent") or POU containing ladder contacts
+Underlying Mechanism:
+    Compiling non-existent project directory or POUs with ladder syntax could emit
+    inconclusive or ambiguous errors.
+Fix: Fail closed on missing project (status='failed', error_code='PROJECT_NOT_FOUND')
+     and reject ladder logic in POUs with status='failed', error_code='ST_SYNTAX_ERROR'.
+
+[CASE 25] cscape_compile_project - Empty Project Name Fails Closed
+File: src/mcp/tools.py (Lines 2400-2450)
+Trigger: cscape_compile_project("")
+Underlying Mechanism:
+    Empty project name could resolve to workspace root and attempt compilation on root directory.
+Fix: Validate project name non-empty at entry; fail closed immediately with status='failed'.
+
+[CASE 26] cscape_read_register - Invalid Register & Missing Project Fail Closed
+File: src/mcp/tools.py (Lines 3190-3240)
+Trigger: cscape_read_register(address="INVALID_REG", project_name="NonExistent")
+Underlying Mechanism:
+    Malformed Horner register addresses or non-existent project could return ambiguous defaults.
+Fix: Validate Horner register address; fail closed with status='failed', error_code='ERR_INVALID_REGISTER_ADDRESS'.
+
+[CASE 27] cscape_write_register - Invalid Address & Missing Project Fail Closed
+File: src/mcp/tools.py (Lines 3245-3295)
+Trigger: cscape_write_register(address="INVALID_REG", value=100, project_name="NonExistent")
+Underlying Mechanism:
+    Writing to invalid register addresses could report unverified success.
+Fix: Validate register address; fail closed with status='failed', error_code='ERR_INVALID_REGISTER_ADDRESS'.
+
+[CASE 28] cscape_simulate_cycle & Variable Import/Export Fail Closed
+File: src/mcp/tools.py (Lines 1640-1750, 1870-1920)
+Trigger: cscape_simulate_cycle(project_name="NonExistent"), cscape_import_variables(""), cscape_export_variables(path, variables=[])
+Underlying Mechanism:
+    Simulating missing projects or importing/exporting empty variable lists could return success.
+Fix: Fail closed on missing project or empty variable sets: status='failed'.
+================================================================================
+END OF AUDIT REPORT (28 CASES CATALOGED)
+================================================================================

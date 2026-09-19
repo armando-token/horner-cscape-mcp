@@ -1,0 +1,19 @@
+{
+  "step": 185,
+  "gate": "G4",
+  "name": "step185_pure_st_audit_checkpoint",
+  "status": "success",
+  "timestamp_utc": "2026-09-06T22:32:41.697323+00:00",
+  "mandate": "PLC / IEC 61131-3 Pure ST Audit: pid_temperature_controller.st",
+  "execution_duration_sec": 0.5468,
+  "dual_root_parity": true,
+  "sha256": "287ab36da0e02e4771ba5004b0fb32c7c1964b12081913f90bd71f9d841230bb",
+  "expected_sha256": "287ab36da0e02e4771ba5004b0fb32c7c1964b12081913f90bd71f9d841230bb",
+  "pure_iec61131_3_verified": true,
+  "ladder_artifacts_detected": 0,
+  "ladder_mutations_rejected_fail_closed": 12,
+  "pou": "FB_PIDTemperatureControl",
+  "pou_type": "FUNCTION_BLOCK",
+  "total_variables": 36,
+  "total_ast_statements": 12
+}

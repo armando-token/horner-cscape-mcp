@@ -1,0 +1,154 @@
+{
+  "status": "success",
+  "phase": "P8",
+  "mission_id": "P8_EXPAND_AND_HARDEN",
+  "timestamp_utc": "2026-09-16T04:15:00.000000+00:00",
+  "primary_workspace": "C:\\HornerAI\\horner-cscape-mcp",
+  "user_mirror": "C:\\Users\\ArmandoSilva",
+  "governing_rule": "RULE[C:\\Users\\ArmandoSilva\\AGENTS.md]",
+  "operational_mode": "offline/DEV [EXPAND_AND_HARDEN] (Fail-Closed, Zero PLC Download)",
+  "prior_phases": {
+    "P0_RECONCILIATION_CONTRACT_AUDIT": "ACCEPTED",
+    "P1_DIAGNOSTICS_AIR_GAPPED_EXPORT_AND_NEGATIVE_TESTS": "ACCEPTED",
+    "P2_NATIVE_MUTATION_AND_CORRELATED_INTEGRATION": "ACCEPTED",
+    "P3_NATIVE_CSCAPE_HMI_AND_OBJECT_GROUP_BINDINGS": "ACCEPTED",
+    "P4_REDO_FAIL_CLOSED_NATIVE_CSCAPE_EVIDENCE": "ACCEPTED_EVIDENCE_RECONCILED",
+    "P5_NATIVE_MODBUS_PV_PROVIDER_CONFIG": "ACCEPTED_BY_SUPERVISOR",
+    "P6_STANDALONE_DELIVERY_AND_DISTRIBUTION_VERIFICATION": "ACCEPTED"
+  },
+  "p7_physical_download": {
+    "status": "DEFERRED",
+    "directive": "Phase P7 physical PLC download is DEFERRED (engineer loads manually) — do not automate download/COM transfer.",
+    "automated_download": "BLOCKED_FAIL_CLOSED",
+    "com_transfer": "BLOCKED_FAIL_CLOSED",
+    "core_08_status": "INCOMPLETE_PENDING_MANUAL_COMMISSIONING"
+  },
+  "multi_agent_team": {
+    "agent_count": 12,
+    "roles": [
+      "1. Lead Orchestrator",
+      "2. Single GUI Automation Owner",
+      "3. PLC / IEC 61131-3 Standards Agent",
+      "4. FastMCP Architecture & Schema Agent",
+      "5. Security & Safety Lockout Guard",
+      "6. Simulation & Verification Agent",
+      "7. False-Success Audit & Cleanup Agent",
+      "8. Robustness & Edge-Case Hardening Agent",
+      "9. Modbus PV Provider & Industrial Protocol Agent",
+      "10. Limitations & Gaps Documentation Specialist",
+      "11. Standalone Package & Delivery Auditor",
+      "12. Dual-Root Mirror Synchronizer"
+    ],
+    "single_gui_owner": {
+      "process": "Cscape.exe",
+      "pid": 12184,
+      "desktop": "winsta0\\Default",
+      "supervisor_script": "scripts/cscape_supervisor.py",
+      "status": "LIVE_WINDOW_VISIBLE"
+    }
+  },
+  "tool_and_schema_parity": {
+    "fastmcp_announced_count": 39,
+    "tool_schemas_registered_count": 39,
+    "package_exports_count": 39,
+    "tools_match": true,
+    "tool_names": [
+      "cscape_add_st_pou",
+      "cscape_compile",
+      "cscape_compile_project",
+      "cscape_create_project",
+      "cscape_export_project",
+      "cscape_export_variables",
+      "cscape_fixture_create",
+      "cscape_fixture_detect_conflict",
+      "cscape_fixture_durability_check",
+      "cscape_fixture_request_to_spec",
+      "cscape_fixture_revision_impact",
+      "cscape_fixture_selective_edit",
+      "cscape_get_build_output",
+      "cscape_get_diagnostics",
+      "cscape_hmi_apply_group",
+      "cscape_hmi_inventory",
+      "cscape_hmi_read_properties",
+      "cscape_hmi_save_close_reopen",
+      "cscape_hmi_verify_bindings",
+      "cscape_import_variables",
+      "cscape_insert_st",
+      "cscape_insert_st_pou",
+      "cscape_inspect_variables",
+      "cscape_launch_ide",
+      "cscape_modbus_conversion_doc",
+      "cscape_modbus_create_config",
+      "cscape_modbus_persist_config",
+      "cscape_modbus_protocol_check",
+      "cscape_modbus_read_config",
+      "cscape_new_iec_project",
+      "cscape_open_project",
+      "cscape_read_register",
+      "cscape_read_variables",
+      "cscape_run_simulation",
+      "cscape_simulate_cycle",
+      "cscape_simulate_pou",
+      "cscape_validate_st",
+      "cscape_write_register",
+      "cscape_write_variables"
+    ]
+  },
+  "hardening_patches_applied": [
+    {
+      "module": "src/mcp/schemas.py",
+      "description": "Implemented 16 Pydantic input and output schema classes for Phase P3 HMI, Phase P4 Fixture Evolution, and Phase P5 Modbus PV Provider tools. Expanded TOOL_SCHEMAS from 23 to 39 tools (100% parity)."
+    },
+    {
+      "module": "src/mcp/__init__.py",
+      "description": "Exported all 39 tools and schema lookup helpers in __all__, ensuring complete package-level import surface."
+    },
+    {
+      "module": "src/mcp/tools.py",
+      "description": "Added __all__ export list; hardened cscape_validate_st return dictionary with explicit error_code: ERR_LADDER_FORBIDDEN; hardened cscape_new_iec_project template checks to fail closed on missing templates; hardened cscape_compile_project traversal validation."
+    },
+    {
+      "module": "src/cscape/project_manager.py",
+      "description": "Prepend FAIL-CLOSED: to CscapeAutomationError when Cscape main window handle is missing or dead in open_project."
+    }
+  ],
+  "verification_suite": {
+    "test_g1_false_success_negative_cases": {
+      "passed": 49,
+      "failed": 0,
+      "status": "success"
+    },
+    "test_p8_expand_and_harden": {
+      "passed": 15,
+      "failed": 0,
+      "status": "success"
+    },
+    "test_security": {
+      "passed": 227,
+      "failed": 0,
+      "status": "success"
+    },
+    "total_tests_passed": 291,
+    "total_tests_failed": 0
+  },
+  "documented_limitations_and_gaps": {
+    "document": "docs/P8_HARDENING_AND_KNOWN_LIMITATIONS.md",
+    "st_to_ld_native_conversion": "BLOCKED_NATIVE: DOCUMENT_ONLY (Cscape 10.2 has zero native conversion commands or DLL exports)",
+    "single_gui_desktop_boundary": "Exclusive winsta0\\Default desktop access for live Cscape GUI; unsupervised headless execution crashes at 0x0051a4cd",
+    "physical_plc_download": "DEFERRED to manual commissioning engineer; zero automated COM/CAN/USB transfer",
+    "cfbf_file_locking": "Active Cscape instances hold exclusive OS write locks on open .csp projects",
+    "core_08_status": "INCOMPLETE_PENDING_MANUAL_COMMISSIONING"
+  },
+  "p8_complete_claim": {
+    "claim": true,
+    "claim_status": "CLAIMED_COMPLETE_PENDING_SUPERVISOR_REVIEW",
+    "supported_by_pass_results": true,
+    "verification_evidence": "artifacts/checkpoints/p8_expand_and_harden_evidence.json",
+    "test_results_summary": "291/291 tests passed (49 G1 negative + 15 P8 hardening + 227 security)",
+    "auto_accept": false,
+    "verified_live": false,
+    "p7_status": "DEFERRED_MANUAL_ENGINEER_LOAD",
+    "hardware_download": "BLOCKED_FAIL_CLOSED",
+    "claimed_utc": "2026-09-16T04:20:00Z"
+  }
+}

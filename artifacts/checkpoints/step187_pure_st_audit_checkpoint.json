@@ -1,0 +1,19 @@
+{
+  "step": 187,
+  "gate": "G4",
+  "name": "step187_pure_st_audit_checkpoint",
+  "status": "success",
+  "timestamp_utc": "2026-09-06T22:32:46.267646+00:00",
+  "mandate": "PLC / IEC 61131-3 Pure ST Audit: flow_totalizer_integrator.st",
+  "execution_duration_sec": 0.3718,
+  "dual_root_parity": true,
+  "sha256": "b5ecf4e77fa978bd4499dc5258861850fba7bdede2488170dab2088e3147fef2",
+  "expected_sha256": "b5ecf4e77fa978bd4499dc5258861850fba7bdede2488170dab2088e3147fef2",
+  "pure_iec61131_3_verified": true,
+  "ladder_artifacts_detected": 0,
+  "ladder_mutations_rejected_fail_closed": 12,
+  "pou": "FB_FlowTotalizer",
+  "pou_type": "FUNCTION_BLOCK",
+  "total_variables": 19,
+  "total_ast_statements": 10
+}

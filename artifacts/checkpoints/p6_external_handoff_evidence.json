@@ -1,0 +1,117 @@
+{
+  "status": "success",
+  "phase": "P6",
+  "mission_id": "P6_EXTERNAL_HANDOFF_PROJECT_OPEN_AND_VERIFICATION",
+  "timestamp_utc": "2026-09-17T17:12:29.817995+00:00",
+  "delivery_archive": {
+    "path": "C:\\HornerAI\\horner-cscape-mcp\\artifacts\\delivery\\horner-cscape-project-handoff-v1.0.0.zip",
+    "size_bytes": 78374,
+    "sha256": "7a3a58243be55bf561bdd8a6c803a0c72fb6cd2b58dfc63556f0fef343df44c8"
+  },
+  "target_directories": {
+    "public_profile_dir": "C:\\Users\\Public\\HornerHandoffTest",
+    "isolated_stage_dir": "C:\\HornerAI\\horner-cscape-mcp\\artifacts\\delivery_stage\\handoff_isolated_test"
+  },
+  "steps": {
+    "step1_extraction": {
+      "status": "success",
+      "extracted_path": "C:\\Users\\Public\\HornerHandoffTest",
+      "file_count": 10,
+      "files": [
+        "MANIFEST-SHA256.json",
+        "docs/ACCEPTANCE_AND_LIMITATIONS.md",
+        "docs/MODBUS_PV_CONVERSION_SPEC.md",
+        "docs/SUPPORTED_HARDWARE_PROFILE.md",
+        "docs/TRANSFER_AND_OPEN_GUIDE.md",
+        "test_tools/test_modbus_server.py",
+        "projects/TankLevel_P5_Dedicated/modbus_protocol_inventory.json",
+        "projects/TankLevel_P5_Dedicated/modbus_pv_config.json",
+        "projects/TankLevel_P5_Dedicated/TankLevel_P5_Dedicated.csp",
+        "projects/TankLevel_P5_Dedicated/pous/TankLevelControl.st"
+      ]
+    },
+    "step2_manifest_verification": {
+      "status": "success",
+      "verified_files_count": 9,
+      "mismatches": [],
+      "manifest_version": "1.0.0"
+    },
+    "step3_cfbf_inspection": {
+      "status": "success",
+      "csp_path": "C:\\Users\\Public\\HornerHandoffTest\\projects\\TankLevel_P5_Dedicated\\TankLevel_P5_Dedicated.csp",
+      "size_bytes": 140800,
+      "sha256": "9f69f6a2ee12dab54087ab27bb839f40e01d6d65544a546139788519acd80ab1",
+      "is_cfbf_valid": true,
+      "streams_count": 1
+    },
+    "step4_st_ast_validation": {
+      "status": "success",
+      "pou_name": "TankLevelControl",
+      "pou_type": "PROGRAM",
+      "variables_count": 17,
+      "pure_st_verified": true,
+      "ladder_constructs_detected": false
+    },
+    "step5_modbus_sidecar_validation": {
+      "status": "success",
+      "transport": "MODBUS_TCP",
+      "unit_id": 1,
+      "modicon_address": 40001,
+      "target_register": "%AI1",
+      "scaling": {
+        "raw_min": 0.0,
+        "raw_max": 32000.0,
+        "eu_min": 0.0,
+        "eu_max": 100.0,
+        "engineering_unit": "%",
+        "clamp_to_limits": true,
+        "fail_safe_value": 0.0
+      },
+      "policy": {
+        "poll_interval_ms": 100,
+        "response_timeout_ms": 1000,
+        "retry_count": 3,
+        "stale_timeout_ms": 2000,
+        "comm_failure_alarm_reg": "%M10",
+        "stale_quality_bit_reg": "%M11",
+        "action_on_stale": "CLAMP_TO_FAIL_SAFE"
+      }
+    },
+    "step6_live_cscape_open": {
+      "status": "success",
+      "cscape_pid": 928,
+      "main_hwnd": 197644,
+      "open_success": true,
+      "open_mode": "live_gui",
+      "window_title": "Cscape - [TankLevel_P4_Dedicated.csp]",
+      "clean_compile": true,
+      "compiler_output_lines": [
+        "Compiler V12.0.200.82",
+        "Loading application symbols...",
+        "EnhancedDisplayAttributes",
+        "No error detected",
+        "Loading application symbols...",
+        "STBlock1",
+        "Building application data...",
+        "Relocating code...",
+        "No error detected",
+        "Online Change is disabled",
+        "Generate OCS code...",
+        "No error detected"
+      ]
+    },
+    "step8_secondary_relocation": {
+      "status": "success",
+      "secondary_path": "C:\\HornerAI\\horner-cscape-mcp\\artifacts\\delivery_stage\\handoff_isolated_test",
+      "sec_csp_valid": true,
+      "sec_csp_sha256": "9f69f6a2ee12dab54087ab27bb839f40e01d6d65544a546139788519acd80ab1"
+    }
+  },
+  "safety_lockout": {
+    "physical_ports": "BLOCKED_FAIL_CLOSED",
+    "download_commands": "BLOCKED_FAIL_CLOSED (32827/33149)",
+    "runtime_physical": "PENDING_P7 (Manual commissioning engineer physical loading)"
+  },
+  "completed_utc": "2026-09-17T17:12:32.796641+00:00",
+  "external_handoff_verified": true
+}

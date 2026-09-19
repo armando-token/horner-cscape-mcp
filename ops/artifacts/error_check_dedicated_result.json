@@ -1,0 +1,49 @@
+{
+  "status": "success",
+  "state": "RUNTIME_PENDING_P7",
+  "verified_live": false,
+  "hardware_lockout": "ENFORCED (No PLC)",
+  "project": "TankLevel_P5_Dedicated.csp",
+  "pid": 928,
+  "hwnd": "0x0003040C",
+  "window_title": "Cscape - Logged In : \"armando@controlnautas.com\" - [TankLevel_P5_Dedicated.csp]",
+  "compile": {
+    "command_id": 32826,
+    "command_name": "ID_PROGRAM_ERRORCHECK",
+    "duration_sec": 1.71,
+    "is_clean": true,
+    "error_count": 0,
+    "warning_count": 0,
+    "status_text": "SUCCESS",
+    "modal_detected": "There were no errors or warnings",
+    "clean_modal_dismissed": true,
+    "scraped_lines": [
+      "Compiler V12.0.200.82",
+      "Loading application symbols...",
+      "EnhancedDisplayAttributes",
+      "No error detected",
+      "Loading application symbols...",
+      "STBlock1",
+      "Building application data...",
+      "Relocating code...",
+      "No error detected",
+      "Online Change is disabled",
+      "Generate OCS code...",
+      "No error detected"
+    ]
+  },
+  "modbus_configuration": {
+    "channel_id": "CH_MJ1_RTU",
+    "serial_port": "MJ1_RS485",
+    "driver_label": "CT RTU Modbus CMP v 5.05 / Modbus Master v 5.07",
+    "baud_rate": 19200,
+    "mode": "RS-485",
+    "parity": "NONE"
+  },
+  "screenshot": {
+    "horner_path": "C:\\HornerAI\\horner-cscape-mcp\\artifacts\\screenshots\\error_check_dedicated_proof.png",
+    "user_path": "C:\\Users\\ArmandoSilva\\artifacts\\screenshots\\error_check_dedicated_proof.png",
+    "sha256": "c8eafcf30400a6fa4a65ec6b2b67a15162f82dcb80c59838b27b7725cd70ab8d",
+    "bytes": 119612
+  }
+}

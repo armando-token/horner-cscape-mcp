@@ -1,0 +1,96 @@
+﻿================================================================================
+HORNER CSCAPE MCP - GATE G1 ONE FAILCLOSED APPLIED AUDIT REPORT
+Mission ID: G1_APPLY_ONE_FAILCLOSED
+Generated (UTC): 2026-09-09T04:46:00Z
+Classification: STRICT OFFLINE FAIL-CLOSED HARDENING & VERIFICATION
+Status Contract Invariant: success | failed | blocked | inconclusive
+================================================================================
+
+1. CASE IDENTIFICATION
+--------------------------------------------------------------------------------
+- Case ID: CASE 46 (BATCH1-08 / G1 Forensic Audit Case 13 / Fanout Batch 1 Case 08)
+- Vulnerability Title: normalize_tool_result Unchecked 'success': True in Malformed, Null, Non-Canonical, and Contradictory Result Dictionaries
+- Component: FastMCP Status Contract Normalization Engine
+- Target Source File: src/mcp/tools.py (Lines 290-365, 530-545)
+- Test Function: tests/test_g1_false_success_negative_cases.py::test_case46_normalize_tool_result_noncanonical_status_and_contradictions_fail_closed
+
+2. VULNERABILITY MECHANISM & FAIL-CLOSED HAZARD
+--------------------------------------------------------------------------------
+- Trigger Conditions:
+  1. Non-canonical status string supplied with success=True (e.g. {'status': 'partial', 'success': True}, {'status': 'pending', 'success': True}, {'status': 'draft', 'success': True}).
+  2. Null or empty status key supplied with success=True (e.g. {'status': None, 'success': True}, {'status': '', 'success': True}).
+  3. Contradictory dict claiming success=True alongside non-success status candidates (e.g. {'status': 'warning', 'success': True}, {'status': 'blocked', 'success': True}, {'status': 'failed', 'success': True}, {'status': 'inconclusive', 'success': True}).
+- Flaw in Previous Behavior:
+  1. When raw_status was None (e.g. {'status': None, 'success': True}), status parsing was bypassed, leaving status_candidate=None. Because "success" was in result, the normalizer fell into the else branch: canonical_status = "success", success = True, falsely manufacturing clean success out of an invalid null status.
+  2. Contradiction checks lacked an explicit verification rule detecting result.get("success") is True paired with non-success status candidates ('failed', 'blocked', 'inconclusive', 'warning'). Such dictionaries escaped explicit contract violation tagging (error_code remained GENERIC_ERROR instead of INVALID_RESULT_CONTRACT).
+  3. Arbitrary non-canonical status strings could enter ambiguous states without clear diagnostic contract violation enforcement.
+
+3. CODE MODIFICATIONS APPLIED
+--------------------------------------------------------------------------------
+1. In src/mcp/tools.py (normalize_tool_result):
+   - Added explicit detection for null status:
+     elif "status" in result and result["status"] is None:
+         is_contract_violation = True
+         contract_violation_msg = "Result dictionary provided null 'status' (INVALID_RESULT_CONTRACT)"
+         status_candidate = "inconclusive"
+   - Added explicit contradiction assertion in contradiction checks:
+     if result.get("success") is True and status_candidate in ("failed", "blocked", "inconclusive"):
+         is_contract_violation = True
+         contradiction_msgs.append(f"Contradiction detected: result claims success=True but status candidate is '{status_candidate}'")
+   - Guarantees that any malformed, null, non-canonical, or contradictory dictionary claiming success=True fails closed with:
+     * success: False
+     * status: 'inconclusive' (or 'failed'/'blocked' when appropriate)
+     * error_code: 'INVALID_RESULT_CONTRACT'
+     * Non-empty errors and failure_locations.
+
+2. In tests/test_g1_false_success_negative_cases.py:
+   - Added test_case46_normalize_tool_result_noncanonical_status_and_contradictions_fail_closed verifying:
+     [A] Non-canonical statuses ('partial', 'in_progress', 'pending', 'custom', 'draft', 'indeterminate') claiming success=True fail closed with status: 'inconclusive', success: False, error_code: 'INVALID_RESULT_CONTRACT', and non-empty errors/locations.
+     [B] Null, empty, or whitespace status claiming success=True fails closed with status: 'inconclusive', success: False, error_code: 'INVALID_RESULT_CONTRACT'.
+     [C] Contradictory dicts claiming success=True with non-success status ('warning', 'warn', 'blocked', 'failed', 'inconclusive') fail closed with success: False, error_code: 'INVALID_RESULT_CONTRACT', and contradiction detection messages.
+     [D] Authentic clean success ({'status': 'success', 'success': True}) passes cleanly.
+
+4. VERIFICATION EVIDENCE & PROOF (PYTEST)
+--------------------------------------------------------------------------------
+Command 1:
+pytest tests/test_g1_false_success_negative_cases.py -k "test_case46" -v
+
+Output:
+============================= test session starts =============================
+platform win32 -- Python 3.12.10, pytest-9.1.1, pluggy-1.6.0 -- C:\Users\ArmandoSilva\AppData\Local\Programs\Python\Python312\python.exe
+cachedir: .pytest_cache
+rootdir: C:\HornerAI\horner-cscape-mcp
+configfile: pyproject.toml
+plugins: anyio-4.15.0, asyncio-1.4.0, cov-7.1.0
+asyncio: mode=Mode.STRICT, debug=False, asyncio_default_fixture_loop_scope=None, asyncio_default_test_loop_scope=function
+collecting ... collected 46 items / 45 deselected / 1 selected
+
+tests/test_g1_false_success_negative_cases.py::test_case46_normalize_tool_result_noncanonical_status_and_contradictions_fail_closed PASSED [100%]
+
+====================== 1 passed, 45 deselected in 2.88s =======================
+Exit Code: 0 (PASSED)
+
+Command 2 (Full Suite Regression):
+pytest tests/test_g1_false_success_negative_cases.py
+
+Output:
+============================= 46 passed in 3.25s ==============================
+Exit Code: 0 (100% PASS - 46/46 negative tests passing)
+
+Command 3 (Core Regression Suites):
+pytest tests/test_mcp_status_contract.py tests/test_step190_g1_false_success_audit.py tests/test_fail_closed_hardware_lockout.py tests/test_st_ld_interop.py tests/test_intentional_diagnostics.py
+
+Output:
+============================= 220 passed in 4.62s =============================
+Exit Code: 0 (100% PASS - 220/220 regression tests passing)
+
+5. OPERATIONAL DIRECTIVES COMPLIANCE
+--------------------------------------------------------------------------------
+- One Case Only: Exactly one case addressed (Case 46 / Batch 1 Case 08).
+- No Fanout: Executed linearly within the Lead Orchestrator turn.
+- No PLC / Physical Hardware: Pure offline in-memory execution; fail-closed hardware lockout intact.
+- No New Windows: Zero GUI automation spawned; zero processes launched outside background test runner.
+- No Cscape GUI Edits: Cscape 10.2 desktop state (winsta0\Default) untouched.
+================================================================================
+END OF G1 ONE FAILCLOSED APPLIED AUDIT REPORT
+================================================================================

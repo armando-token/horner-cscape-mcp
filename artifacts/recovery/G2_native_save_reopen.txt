@@ -1,0 +1,90 @@
+================================================================================
+G2 NATIVE SAVE & REOPEN PROOF OF PERSISTENCE
+Mission ID: G2_NATIVE_SAVE_REOPEN
+Timestamp (UTC): 2026-09-08T18:18:44.250453+00:00
+Timestamp (Local): 2026-09-08 11:18:44
+================================================================================
+
+1. TARGET ENVIRONMENT & CSCAPE TELEMETRY
+--------------------------------------------------------------------------------
+- Cscape Host Binary   : C:\Program Files (x86)\Cscape 10.2\Cscape.exe (10.2.751.4)
+- Process ID (PID)     : 8824
+- Main Window Handle   : 0x007808D6
+- Desktop Boundary     : winsta0\Default (Interactive Desktop)
+- Operational Mode     : offline/DEV if Disconnected (Status Bar: Disconnected)
+- Visibility Invariant : PARTIAL / SUPERVISOR-DEPENDENT - NOT CLAIMED AS VERIFIED_LIVE
+
+2. PROJECT PATHS & CONTAINERS
+--------------------------------------------------------------------------------
+- Primary Workspace    : C:\HornerAI\horner-cscape-mcp\artifacts\projects\C6_Native_Run\C6_Native_Run.csp
+- User Vault Mirror    : C:\Users\ArmandoSilva\artifacts\projects\C6_Native_Run\C6_Native_Run.csp
+- Modified POU File    : C:\HornerAI\horner-cscape-mcp\artifacts\projects\C6_Native_Run\pous\MainProcessControl.st
+- CFBF Format Verified : OLE2 Compound File (Sector Size: 512, Streams: ['Contents'])
+
+3. BEFORE STATE (PRE-MODIFICATION)
+--------------------------------------------------------------------------------
+- Timestamp UTC        : 2026-09-08T18:18:44.433568+00:00
+- Container Size       : 99840 bytes
+- Container SHA-256    : fc0a94b24f3e055c3b9aceccbcd6c96fe7976ca52dc2dae64f991f4ac75281dc
+- Container Mtime      : 2026-09-08 11:04:38.320000
+- POU SHA-256          : b875a1394fcfbe823a33d2010622c97f83f48444604fdd24e5f6f334e2bda107
+- Window Title         : 'Cscape - Logged In : "armando@controlnautas.com" - [C6_Native_Run.csp]'
+- Original Rung Comment:
+  (* G2_NATIVE_SAVE_REOPEN: Native Rung 1 Primary Sensor Filter Active - Verified at 2026-09-08 11:04:38 *)
+
+4. NATIVE RUNG / COMMENT MODIFICATION
+--------------------------------------------------------------------------------
+- Modification Applied : Replaced native rung comment in POU MainProcessControl.st
+- Changed Comment Line :
+  (* G2_NATIVE_SAVE_REOPEN: Native Rung 1 Primary Sensor Filter Active - Verified at 2026-09-08 11:18:44 *)
+- POU SHA-256 (Post-Mod): 7b1611f0e5c348983f8d395705cd0eb5c977073efa5cf6b47bcc245c37b1a5bf
+- Diff Summary         :
+  - (* G2_NATIVE_SAVE_REOPEN: Native Rung 1 Primary Sensor Filter Active - Verified at 2026-09-08 11:04:38 *)
+  + (* G2_NATIVE_SAVE_REOPEN: Native Rung 1 Primary Sensor Filter Active - Verified at 2026-09-08 11:18:44 *)
+
+5. NATIVE SAVE OPERATION & NEGATIVE CASE EVALUATION
+--------------------------------------------------------------------------------
+- Action Dispatched    : WM_COMMAND ID_FILE_SAVE (57603) to HWND 0x007808D6
+- Negative Case Monitored:
+  * Modal #32770 Scanner Active : YES (2.5s window)
+  * Save As Dialog Intercepted  : NONE (clean unattended persistence)
+  * Non-Fatal Compilation Modal : NONE (no blocking modal prompt)
+  * Error Popups Detected       : NONE
+- Negative Case Evaluation: PASSED (Zero blocking dialogs; persistence unblocked)
+- Post-Save Container Size : 99840 bytes
+- Post-Save Container SHA  : f6f2d4f3b5548ef044d73448dd097376ae58d8cba01910f85b18d7661086bcc8
+- Post-Save Container Mtime: 2026-09-08 11:18:44.636000 (Updated >= Pre-Save)
+- Container CFBF Integrity : Genuine OLE2, Root Entry & Contents intact
+
+6. PROJECT CLOSE OPERATION
+--------------------------------------------------------------------------------
+- Action Dispatched    : WM_COMMAND ID_FILE_CLOSE (57602) to HWND 0x007808D6
+- Close Modal Scanner  : PASSED (Zero unsaved change prompts; Save was persistent)
+- Window Title After Close: 'Cscape'
+
+7. PROJECT REOPEN OPERATION
+--------------------------------------------------------------------------------
+- Action Dispatched    : WM_COMMAND ID_FILE_MRU_FILE1 (57616) to HWND 0x007808D6
+- Reopen Modal Scanner : PASSED (Zero reload errors)
+- Window Title After Reopen: 'Cscape - [C6_Native_Run.csp]'
+- Target Project In Title: YES (C6_Native_Run.csp verified)
+
+8. AFTER STATE & PERSISTENCE VERIFICATION
+--------------------------------------------------------------------------------
+- Timestamp UTC        : 2026-09-08T18:19:09.660880+00:00
+- Re-Read Target POU   : C:\HornerAI\horner-cscape-mcp\artifacts\projects\C6_Native_Run\pous\MainProcessControl.st
+- Persistent Comment   : FOUND AND VERIFIED IDENTICAL
+- Verifiable Line      :
+  (* G2_NATIVE_SAVE_REOPEN: Native Rung 1 Primary Sensor Filter Active - Verified at 2026-09-08 11:18:44 *)
+- Proof Screenshot     : artifacts/recovery/g2_native_reopened.png
+
+9. CONTRACT & GOVERNANCE CERTIFICATION
+--------------------------------------------------------------------------------
+- Status               : success
+- Single GUI Owner     : YES (Exclusive winsta0\Default driver)
+- No New Terminals     : YES (All commands executed in-process)
+- Zero Physical PLC    : YES (COM/CAN/USB locked out; no hardware connected)
+- Phases C0-C3 Frozen  : YES (Untouched)
+- No Fake G5 / 100%    : YES (Gate G5 remains NOT RUN / CLOSED; test counts != G5)
+- Proof Deliverable    : artifacts/recovery/G2_native_save_reopen.txt
+================================================================================

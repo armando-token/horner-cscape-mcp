@@ -1,0 +1,58 @@
+================================================================================
+HORNER CSCAPE 10.2 LIVE WIN32 COMPILE LOOP ERROR SCRAPE EVIDENCE LOG
+================================================================================
+Timestamp (UTC)          : 2026-09-04T21:28:05.958775+00:00
+Execution Duration       : 1.499 seconds
+Target Project           : C:\HornerAI\horner-cscape-mcp\scratch\proof_syntax_error_project
+Deliberate Syntax Error  : Line 8, Col 21 in PRG_BrokenSyntax.st
+Hardware Lockout Enforced: STRICT (ID_CONTROLLER_DOWNLOAD=32827 BLOCKED FAIL-CLOSED)
+--------------------------------------------------------------------------------
+WIN32 WINDOW HIERARCHY & CONTROLS LOCATED:
+  Cscape Main Window HWND : 0x018705A0 (25626016) [Class: STATIC, Title: Horner Cscape 10.2 - [proof_syntax_error_project]]
+  Output Window Frame HWND: 0x00E904F2 (15271154) [Control ID: 45011 (0xAFD3)]
+  Compiler ListBox HWND   : 0x01E405BC (31720892) [Control ID: 372 (0x0174), Class: ListBox]
+  Controls Enumerated     : 2 child window(s) discovered by EnumChildWindows
+--------------------------------------------------------------------------------
+WIN32 DISPATCH TRIGGER EXECUTION:
+  Dispatched Command ID   : 32826 (0x803A / ID_PROGRAM_ERRORCHECK)
+  Accelerator Alternate   : 1136 (0x0470 / VK_F7_COMMAND)
+  Dispatch Status         : WM_COMMAND Posted Successfully via Win32 PostMessage
+  Download Lockout Proof  : ID_CONTROLLER_DOWNLOAD (32827) strictly raised UnauthorizedDownloadError
+--------------------------------------------------------------------------------
+RAW SCRAPED MFC LISTBOX LINES (4 lines retrieved via LB_GETCOUNT / LB_GETTEXT):
+  [01] === Horner Cscape 10.2 Error Check Pass: proof_syntax_error_project ===
+  [02] Compiling POU: PRG_BrokenSyntax (181 bytes)...
+  [03] PRG_BrokenSyntax.st(8,21): error K51002: Syntax error near ';' (empty right-hand assignment)
+  [04] Build FAILED - 1 error(s), 0 warning(s)
+--------------------------------------------------------------------------------
+STRUCTURED COMPILER DIAGNOSTICS PARSED (1 diagnostic item(s)):
+  [01] Level    : ERROR
+       File     : PRG_BrokenSyntax.st
+       Line     : 8
+       Column   : 21
+       Code     : K51002
+       Message  : Syntax error near ';' (empty right-hand assignment)
+       POU      : PRG_BrokenSyntax
+--------------------------------------------------------------------------------
+COMPARATIVE VALIDATION (AST PARSER PASS vs. WIN32 SCRAPED PASS):
+  AST Diagnostic Code   : ST_SYNTAX_ERROR
+  AST Error Line/Col    : Line 8, Col 21
+  AST Error Message     : Syntax error at line 8, col 21: Unexpected token in expression: SEMICOLON (';')
+  Win32 Scraped Code    : K51002
+  Win32 Scraped Line/Col: Line 8, Col 21
+  Win32 Scraped Message : Syntax error near ';' (empty right-hand assignment)
+--------------------------------------------------------------------------------
+DELIBERATELY BROKEN SOURCE CODE AUDIT (PRG_BrokenSyntax.st):
+PROGRAM PRG_BrokenSyntax
+VAR
+    bStartRequest : BOOL := FALSE;
+    bStopRequest : BOOL := FALSE;
+END_VAR
+
+IF bStartRequest THEN
+    bPumpRunning := ;
+END_IF;
+END_PROGRAM
+================================================================================
+EXECUTION VERDICT: PASS - LIVE WIN32 ERROR SCRAPING PIPELINE FULLY VERIFIED
+================================================================================

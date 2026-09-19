@@ -1,0 +1,12 @@
+{
+  "step": 184,
+  "gate": "G4",
+  "name": "step184_mcp_condenser_hotwell_vacuum_checkpoint",
+  "classification": "offline/DEV [TESTED_MOCK]",
+  "status": "success",
+  "timestamp_utc": "2026-09-06T22:32:38.540Z",
+  "duration_sec": 0.0013,
+  "target_pou": "FB_CondenserHotwellVacuumControl",
+  "all_invariants_passed": true,
+  "invariants_count": 10
+}

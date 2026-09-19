@@ -1,0 +1,20 @@
+{
+  "step": 102,
+  "status": "COMPLETED",
+  "name": "Supercritical Benson Boiler Separator Low-Load Transition Audit",
+  "timestamp": "2026-09-05T12:14:38.283Z",
+  "cscape_pid": 9472,
+  "cscape_hwnd": "0x9b08f8",
+  "project": "TankLevelClosedLoop.csp",
+  "assertions_passed": [
+    "Phase 1 subcritical low-load recirculation equilibrium error 0.0000% < 0.10%",
+    "Phase 2 once-through dryout transition swell drift 6.71% > 5.0%",
+    "Phase 3 recirculation decoupling error 0.0000% < 0.35%",
+    "Dryout swell surge rejection ratio 100.0% > 95.0%",
+    "Phase 4 supercritical transition level step settling error 0.1138% < 0.35%",
+    "Phase 5 superheater moisture entrainment trip at cycle 501 == 501",
+    "Cross-process mutex 'Local\\CscapeCompileLock' synchronization verified",
+    "Fail-closed download lockout ID_CONTROLLER_DOWNLOAD=32827 strictly enforced",
+    "Live Cscape GUI healthy and responsive throughout test"
+  ]
+}

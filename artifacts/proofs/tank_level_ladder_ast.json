@@ -1,0 +1,402 @@
+{
+  "format": "IEC_61131_3_LADDER_AST",
+  "version": "1.0",
+  "pou_name": "TankLevelClosedLoop",
+  "pou_type": "PROGRAM",
+  "total_rungs": 10,
+  "conversion_timestamp": "2026-09-06T01:52:22.512058+00:00",
+  "variables": [
+    {
+      "name": "RawLevelInput",
+      "type": "INT",
+      "section": "VAR"
+    },
+    {
+      "name": "TankLevelPV",
+      "type": "REAL",
+      "section": "VAR"
+    },
+    {
+      "name": "Setpoint",
+      "type": "REAL",
+      "section": "VAR"
+    },
+    {
+      "name": "ControlOutput",
+      "type": "REAL",
+      "section": "VAR"
+    },
+    {
+      "name": "RawPumpOutput",
+      "type": "INT",
+      "section": "VAR"
+    },
+    {
+      "name": "RawValveOutput",
+      "type": "INT",
+      "section": "VAR"
+    },
+    {
+      "name": "ManualMode",
+      "type": "BOOL",
+      "section": "VAR"
+    },
+    {
+      "name": "ManualOutput",
+      "type": "REAL",
+      "section": "VAR"
+    },
+    {
+      "name": "Kp",
+      "type": "REAL",
+      "section": "VAR"
+    },
+    {
+      "name": "Ki",
+      "type": "REAL",
+      "section": "VAR"
+    },
+    {
+      "name": "Kd",
+      "type": "REAL",
+      "section": "VAR"
+    },
+    {
+      "name": "OutMin",
+      "type": "REAL",
+      "section": "VAR"
+    },
+    {
+      "name": "OutMax",
+      "type": "REAL",
+      "section": "VAR"
+    },
+    {
+      "name": "Error",
+      "type": "REAL",
+      "section": "VAR"
+    },
+    {
+      "name": "LastError",
+      "type": "REAL",
+      "section": "VAR"
+    },
+    {
+      "name": "IntegralSum",
+      "type": "REAL",
+      "section": "VAR"
+    },
+    {
+      "name": "DerivTerm",
+      "type": "REAL",
+      "section": "VAR"
+    },
+    {
+      "name": "PumpRunCmd",
+      "type": "BOOL",
+      "section": "VAR"
+    },
+    {
+      "name": "InflowValveCmd",
+      "type": "BOOL",
+      "section": "VAR"
+    },
+    {
+      "name": "AlarmHighHigh",
+      "type": "BOOL",
+      "section": "VAR"
+    },
+    {
+      "name": "AlarmHigh",
+      "type": "BOOL",
+      "section": "VAR"
+    },
+    {
+      "name": "AlarmLow",
+      "type": "BOOL",
+      "section": "VAR"
+    },
+    {
+      "name": "AlarmLowLow",
+      "type": "BOOL",
+      "section": "VAR"
+    },
+    {
+      "name": "CycleCounter",
+      "type": "DINT",
+      "section": "VAR"
+    }
+  ],
+  "rungs": [
+    {
+      "rung_number": 1,
+      "title": "CycleCounter Math Calculation",
+      "comment": "Arithmetic calculation box evaluating expression and storing in destination variable",
+      "st_source": "CycleCounter := CycleCounter + 1",
+      "recipe_key": "MATH_BOX",
+      "category": "MATH",
+      "recipe_catalog_entry": {
+        "construct_name": "Math Operation Box (ADD, SUB, MUL, DIV)",
+        "category": "MATH",
+        "ladder_syntax": "[ADD In1, In2 -> Dest]  or  [SUB In1, In2 -> Dest]",
+        "st_equivalent": "Dest := In1 + In2;  or  Dest := In1 - In2;",
+        "explanation": "In Structured Text, arithmetic expressions use direct algebraic notation (+, -, *, /).",
+        "notes": "Direct assignment: Dest := In1 + In2;"
+      },
+      "elements": [
+        {
+          "element_type": "MATH_BOX",
+          "tag": "CycleCounter",
+          "parameters": {
+            "expression": "CycleCounter + 1",
+            "dest": "CycleCounter"
+          }
+        }
+      ],
+      "ascii_diagram": "|---+-------------------------------------------------------------------+---|\n    |                                 CALC                              |\n    |  Dest : CycleCounter                                            |\n    |  Expr : CycleCounter + 1                                        |\n    +-------------------------------------------------------------------+"
+    },
+    {
+      "rung_number": 2,
+      "title": "TankLevelPV Math Calculation",
+      "comment": "Arithmetic calculation box evaluating expression and storing in destination variable",
+      "st_source": "TankLevelPV := (INT_TO_REAL(RawLevelInput) / 32000.0) * 100.0",
+      "recipe_key": "MATH_BOX",
+      "category": "MATH",
+      "recipe_catalog_entry": {
+        "construct_name": "Math Operation Box (ADD, SUB, MUL, DIV)",
+        "category": "MATH",
+        "ladder_syntax": "[ADD In1, In2 -> Dest]  or  [SUB In1, In2 -> Dest]",
+        "st_equivalent": "Dest := In1 + In2;  or  Dest := In1 - In2;",
+        "explanation": "In Structured Text, arithmetic expressions use direct algebraic notation (+, -, *, /).",
+        "notes": "Direct assignment: Dest := In1 + In2;"
+      },
+      "elements": [
+        {
+          "element_type": "MATH_BOX",
+          "tag": "TankLevelPV",
+          "parameters": {
+            "expression": "(INT_TO_REAL(RawLevelInput) / 32000.0) * 100.0",
+            "dest": "TankLevelPV"
+          }
+        }
+      ],
+      "ascii_diagram": "|---+-------------------------------------------------------------------+---|\n    |                                 CALC                              |\n    |  Dest : TankLevelPV                                             |\n    |  Expr : (INT_TO_REAL(RawLevelInput) / 32000.0) * 100.0          |\n    +-------------------------------------------------------------------+"
+    },
+    {
+      "rung_number": 3,
+      "title": "Error Math Calculation",
+      "comment": "Arithmetic calculation box evaluating expression and storing in destination variable",
+      "st_source": "Error := Setpoint - TankLevelPV",
+      "recipe_key": "MATH_BOX",
+      "category": "MATH",
+      "recipe_catalog_entry": {
+        "construct_name": "Math Operation Box (ADD, SUB, MUL, DIV)",
+        "category": "MATH",
+        "ladder_syntax": "[ADD In1, In2 -> Dest]  or  [SUB In1, In2 -> Dest]",
+        "st_equivalent": "Dest := In1 + In2;  or  Dest := In1 - In2;",
+        "explanation": "In Structured Text, arithmetic expressions use direct algebraic notation (+, -, *, /).",
+        "notes": "Direct assignment: Dest := In1 + In2;"
+      },
+      "elements": [
+        {
+          "element_type": "MATH_BOX",
+          "tag": "Error",
+          "parameters": {
+            "expression": "Setpoint - TankLevelPV",
+            "dest": "Error"
+          }
+        }
+      ],
+      "ascii_diagram": "|---+-------------------------------------------------------------------+---|\n    |                                 CALC                              |\n    |  Dest : Error                                                   |\n    |  Expr : Setpoint - TankLevelPV                                  |\n    +-------------------------------------------------------------------+"
+    },
+    {
+      "rung_number": 4,
+      "title": "LastError Control Logic",
+      "comment": "Normal output coil energized when series/parallel rung conditions evaluate to TRUE",
+      "st_source": "LastError := Error",
+      "recipe_key": "COIL_NORMAL",
+      "category": "COIL",
+      "recipe_catalog_entry": {
+        "construct_name": "Normal Output Coil (OTE)",
+        "category": "COIL",
+        "ladder_syntax": "---( Tag )---  or  OTE(Tag)",
+        "st_equivalent": "Tag := <Rung_Condition>;",
+        "explanation": "A normal ladder coil assigns the evaluated rung state directly to the boolean variable.",
+        "notes": "Example: 'Pump := AutoMode AND TankLevelLow;'"
+      },
+      "elements": [
+        {
+          "element_type": "CONTACT_NO",
+          "tag": "Error"
+        },
+        {
+          "element_type": "COIL_NORMAL",
+          "tag": "LastError"
+        }
+      ],
+      "ascii_diagram": "|--[ Error ]---( LastError )---|"
+    },
+    {
+      "rung_number": 5,
+      "title": "RawPumpOutput Control Logic",
+      "comment": "Normal output coil energized when series/parallel rung conditions evaluate to TRUE",
+      "st_source": "RawPumpOutput := REAL_TO_INT((ControlOutput / 100.0) * 32000.0)",
+      "recipe_key": "COIL_NORMAL",
+      "category": "COIL",
+      "recipe_catalog_entry": {
+        "construct_name": "Normal Output Coil (OTE)",
+        "category": "COIL",
+        "ladder_syntax": "---( Tag )---  or  OTE(Tag)",
+        "st_equivalent": "Tag := <Rung_Condition>;",
+        "explanation": "A normal ladder coil assigns the evaluated rung state directly to the boolean variable.",
+        "notes": "Example: 'Pump := AutoMode AND TankLevelLow;'"
+      },
+      "elements": [
+        {
+          "element_type": "CONTACT_NO",
+          "tag": "REAL_TO_INT  ControlOutput / 100.0  * 32000.0"
+        },
+        {
+          "element_type": "COIL_NORMAL",
+          "tag": "RawPumpOutput"
+        }
+      ],
+      "ascii_diagram": "|--[ REAL_TO_INT  ControlOutput / 100.0  * 32000.0 ]---( RawPumpOutput )---|"
+    },
+    {
+      "rung_number": 6,
+      "title": "RawValveOutput Control Logic",
+      "comment": "Normal output coil energized when series/parallel rung conditions evaluate to TRUE",
+      "st_source": "RawValveOutput := RawPumpOutput",
+      "recipe_key": "COIL_NORMAL",
+      "category": "COIL",
+      "recipe_catalog_entry": {
+        "construct_name": "Normal Output Coil (OTE)",
+        "category": "COIL",
+        "ladder_syntax": "---( Tag )---  or  OTE(Tag)",
+        "st_equivalent": "Tag := <Rung_Condition>;",
+        "explanation": "A normal ladder coil assigns the evaluated rung state directly to the boolean variable.",
+        "notes": "Example: 'Pump := AutoMode AND TankLevelLow;'"
+      },
+      "elements": [
+        {
+          "element_type": "CONTACT_NO",
+          "tag": "RawPumpOutput"
+        },
+        {
+          "element_type": "COIL_NORMAL",
+          "tag": "RawValveOutput"
+        }
+      ],
+      "ascii_diagram": "|--[ RawPumpOutput ]---( RawValveOutput )---|"
+    },
+    {
+      "rung_number": 7,
+      "title": "AlarmHighHigh Latch (Set Coil)",
+      "comment": "Conditional latching coil activated when condition evaluates to TRUE",
+      "st_source": "IF TankLevelPV >= 90.0 THEN\n    AlarmHighHigh := TRUE;\nELSIF TankLevelPV < 88.0 THEN\n    AlarmHighHigh := FALSE;\nEND_IF;",
+      "recipe_key": "COIL_SET",
+      "category": "COIL",
+      "recipe_catalog_entry": {
+        "construct_name": "Set / Latch Coil (OTL / SET)",
+        "category": "COIL",
+        "ladder_syntax": "---(S Tag )---  or  ---(L Tag )---  or  OTL(Tag)  or  [SET Tag]",
+        "st_equivalent": "IF <Rung_Condition> THEN\n    Tag := TRUE;\nEND_IF;",
+        "explanation": "A latch or set coil turns the output TRUE when rung condition is met, retaining state when condition goes FALSE.",
+        "notes": "In ST, write a conditional assignment: IF StartTrigger THEN LatchActive := TRUE; END_IF;"
+      },
+      "elements": [
+        {
+          "element_type": "CONTACT_NO",
+          "tag": "TankLevelPV >= 90.0"
+        },
+        {
+          "element_type": "COIL_SET",
+          "tag": "AlarmHighHigh"
+        }
+      ],
+      "ascii_diagram": "|---[ TankLevelPV >= 90.0 ]-----------------------------(S AlarmHighHigh )---|"
+    },
+    {
+      "rung_number": 8,
+      "title": "AlarmHigh Latch (Set Coil)",
+      "comment": "Conditional latching coil activated when condition evaluates to TRUE",
+      "st_source": "IF TankLevelPV >= 80.0 THEN\n    AlarmHigh := TRUE;\nELSIF TankLevelPV < 78.0 THEN\n    AlarmHigh := FALSE;\nEND_IF;",
+      "recipe_key": "COIL_SET",
+      "category": "COIL",
+      "recipe_catalog_entry": {
+        "construct_name": "Set / Latch Coil (OTL / SET)",
+        "category": "COIL",
+        "ladder_syntax": "---(S Tag )---  or  ---(L Tag )---  or  OTL(Tag)  or  [SET Tag]",
+        "st_equivalent": "IF <Rung_Condition> THEN\n    Tag := TRUE;\nEND_IF;",
+        "explanation": "A latch or set coil turns the output TRUE when rung condition is met, retaining state when condition goes FALSE.",
+        "notes": "In ST, write a conditional assignment: IF StartTrigger THEN LatchActive := TRUE; END_IF;"
+      },
+      "elements": [
+        {
+          "element_type": "CONTACT_NO",
+          "tag": "TankLevelPV >= 80.0"
+        },
+        {
+          "element_type": "COIL_SET",
+          "tag": "AlarmHigh"
+        }
+      ],
+      "ascii_diagram": "|---[ TankLevelPV >= 80.0 ]-----------------------------(S AlarmHigh )---|"
+    },
+    {
+      "rung_number": 9,
+      "title": "AlarmLow Latch (Set Coil)",
+      "comment": "Conditional latching coil activated when condition evaluates to TRUE",
+      "st_source": "IF TankLevelPV <= 20.0 THEN\n    AlarmLow := TRUE;\nELSIF TankLevelPV > 22.0 THEN\n    AlarmLow := FALSE;\nEND_IF;",
+      "recipe_key": "COIL_SET",
+      "category": "COIL",
+      "recipe_catalog_entry": {
+        "construct_name": "Set / Latch Coil (OTL / SET)",
+        "category": "COIL",
+        "ladder_syntax": "---(S Tag )---  or  ---(L Tag )---  or  OTL(Tag)  or  [SET Tag]",
+        "st_equivalent": "IF <Rung_Condition> THEN\n    Tag := TRUE;\nEND_IF;",
+        "explanation": "A latch or set coil turns the output TRUE when rung condition is met, retaining state when condition goes FALSE.",
+        "notes": "In ST, write a conditional assignment: IF StartTrigger THEN LatchActive := TRUE; END_IF;"
+      },
+      "elements": [
+        {
+          "element_type": "CONTACT_NO",
+          "tag": "TankLevelPV <= 20.0"
+        },
+        {
+          "element_type": "COIL_SET",
+          "tag": "AlarmLow"
+        }
+      ],
+      "ascii_diagram": "|---[ TankLevelPV <= 20.0 ]-----------------------------(S AlarmLow )---|"
+    },
+    {
+      "rung_number": 10,
+      "title": "InflowValveCmd Latch (Set Coil)",
+      "comment": "Conditional latching coil activated when condition evaluates to TRUE",
+      "st_source": "IF (ControlOutput > 5.0) AND NOT AlarmHighHigh THEN\n    InflowValveCmd := TRUE;\nELSE\n    InflowValveCmd := FALSE;\nEND_IF;",
+      "recipe_key": "COIL_SET",
+      "category": "COIL",
+      "recipe_catalog_entry": {
+        "construct_name": "Set / Latch Coil (OTL / SET)",
+        "category": "COIL",
+        "ladder_syntax": "---(S Tag )---  or  ---(L Tag )---  or  OTL(Tag)  or  [SET Tag]",
+        "st_equivalent": "IF <Rung_Condition> THEN\n    Tag := TRUE;\nEND_IF;",
+        "explanation": "A latch or set coil turns the output TRUE when rung condition is met, retaining state when condition goes FALSE.",
+        "notes": "In ST, write a conditional assignment: IF StartTrigger THEN LatchActive := TRUE; END_IF;"
+      },
+      "elements": [
+        {
+          "element_type": "CONTACT_NO",
+          "tag": "(ControlOutput > 5.0) AND NOT AlarmHighHigh"
+        },
+        {
+          "element_type": "COIL_SET",
+          "tag": "InflowValveCmd"
+        }
+      ],
+      "ascii_diagram": "|---[ (ControlOutput > 5.0) AND NOT AlarmHighHigh ]-----------------------------(S InflowValveCmd )---|"
+    }
+  ]
+}

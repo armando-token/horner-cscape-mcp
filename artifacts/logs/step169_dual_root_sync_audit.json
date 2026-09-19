@@ -1,0 +1,120 @@
+{
+  "step": 169,
+  "name": "step169_dual_root_sync_audit",
+  "status": "PASSED",
+  "timestamp_start": "2026-09-06T04:34:08.183Z",
+  "timestamp_complete": "2026-09-06T04:34:08.248Z",
+  "duration_seconds": 0.065,
+  "checkpoint_sha256": "e5ed53dc8b94a7f22d9c869aee976c99be1c93e1aa76221bee7e39d33fb142b2",
+  "parity_verified": true,
+  "details": {
+    "checkpoints": {
+      "step169_visible_gui_proof_checkpoint": {
+        "file": "artifacts/checkpoints/step169_visible_gui_proof_checkpoint.json",
+        "exists_in_both": true,
+        "valid_json": true,
+        "status": "PASSED",
+        "step": 169,
+        "file_sha256": "d4fe5c97df22a431e22c02d97d3f17c76e14fbef06a44b201575c1431cf2262a",
+        "roots_identical": true,
+        "size_bytes": 670
+      },
+      "step169_security_audit_checkpoint": {
+        "file": "artifacts/checkpoints/step169_security_audit_checkpoint.json",
+        "exists_in_both": true,
+        "valid_json": true,
+        "status": "PASSED",
+        "step": 169,
+        "file_sha256": "4dc1a1a91c82258f7bec08b9deea0fba4366836df567aeea708050b45dea2e23",
+        "roots_identical": true,
+        "size_bytes": 556
+      },
+      "step169_mcp_combustion_control_cross_limiting_checkpoint": {
+        "file": "artifacts/checkpoints/step169_mcp_combustion_control_cross_limiting_checkpoint.json",
+        "exists_in_both": true,
+        "valid_json": true,
+        "status": "PASSED",
+        "step": 169,
+        "file_sha256": "6c89b20ad987f0a43473279f88b057b6b422fb26dc8664973ba958529011aa76",
+        "roots_identical": true,
+        "size_bytes": 796
+      }
+    },
+    "logs": {
+      "step169_visible_gui_proof": {
+        "file": "artifacts/logs/step169_visible_gui_proof.json",
+        "exists_in_both": true,
+        "valid_json": true,
+        "status": "PASSED",
+        "file_sha256": "2d7ecc1baafef8f77cafb1d4581dab99b5624ddc20201b996c735000c7c21f79",
+        "roots_identical": true,
+        "size_bytes": 1891
+      },
+      "step169_security_audit": {
+        "file": "artifacts/logs/step169_security_audit.json",
+        "exists_in_both": true,
+        "valid_json": true,
+        "status": "PASSED",
+        "file_sha256": "dff8409f4045ea323847d17e66dc233eaa8ca7264d00548c119033dadcb8b8d3",
+        "roots_identical": true,
+        "size_bytes": 2762
+      },
+      "step169_mcp_combustion_control_cross_limiting": {
+        "file": "artifacts/logs/step169_mcp_combustion_control_cross_limiting.json",
+        "exists_in_both": true,
+        "valid_json": true,
+        "status": "PASSED",
+        "file_sha256": "2d834d41e8d4395f09bc7bd4905594b36cef993cc2f626d89f682af44a081555",
+        "roots_identical": true,
+        "size_bytes": 3074
+      }
+    },
+    "screenshots": {
+      "live_cscape_tank_level_step169": {
+        "file": "artifacts/screenshots/live_cscape_tank_level_step169.png",
+        "exists_in_both": true,
+        "size_bytes": 72686,
+        "gt_10kb": true,
+        "file_sha256": "4730540e881c216fe988f2ab82b86a21b3bf9b10e662d57effe44a71b6cb657f",
+        "roots_identical": true
+      }
+    },
+    "code_files": {
+      "execute_step169_visible_cscape_gui_driver.py": {
+        "file": "scripts/execute_step169_visible_cscape_gui_driver.py",
+        "exists_in_both": true,
+        "file_sha256": "3ecc4c87057df68ac73714553b990faef77be295814458f733178801bf3dc8bf",
+        "roots_identical": true,
+        "size_bytes": 16149
+      },
+      "execute_step169_security_audit.py": {
+        "file": "scripts/execute_step169_security_audit.py",
+        "exists_in_both": true,
+        "file_sha256": "f3acebfbfc99dfeb72035b36b43a3e42dd954d592157f15c615301626a5ef406",
+        "roots_identical": true,
+        "size_bytes": 15141
+      },
+      "execute_step169_mcp_combustion_control_cross_limiting.py": {
+        "file": "scripts/execute_step169_mcp_combustion_control_cross_limiting.py",
+        "exists_in_both": true,
+        "file_sha256": "a6324c4ca849958c8cf137cbf895ab84b2aef6a9bacba75f1ee7888a1b5f854b",
+        "roots_identical": true,
+        "size_bytes": 31281
+      },
+      "test_step169_visible_cscape_gui_driver.py": {
+        "file": "tests/test_step169_visible_cscape_gui_driver.py",
+        "exists_in_both": true,
+        "file_sha256": "0fc1982e9967dc0aff5bfad1c09ae5ca3b362041ea3db0b42a84f3d1f7bf33b8",
+        "roots_identical": true,
+        "size_bytes": 3655
+      },
+      "test_step169_mcp_combustion_control_cross_limiting.py": {
+        "file": "tests/test_step169_mcp_combustion_control_cross_limiting.py",
+        "exists_in_both": true,
+        "file_sha256": "41786e2666f40bedaf50c33d10f3b22e6958e93591ae9517df9bc4b6f81ff07c",
+        "roots_identical": true,
+        "size_bytes": 3225
+      }
+    }
+  }
+}

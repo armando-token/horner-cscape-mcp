@@ -1,0 +1,6 @@
+PROGRAM HashTest
+VAR
+    y : INT;
+END_VAR
+y := 99;
+END_PROGRAM

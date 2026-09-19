@@ -1,0 +1,55 @@
+{
+  "test": "mcp_stdio_live_gui_verification",
+  "status": "PASSED",
+  "timestamp_utc": "2026-09-05T16:05:35Z",
+  "cscape_pid": 14580,
+  "cscape_hwnd": "0x024B054A",
+  "cscape_title": "Cscape - Logged In : \"armando@controlnautas.com\" - [TankLevelClosedLoop.csp]",
+  "server_info": {
+    "name": "horner-cscape-mcp",
+    "version": "1.0.0"
+  },
+  "total_tools_registered": 23,
+  "stdio_calls_executed": 6,
+  "stdio_calls_passed": 6,
+  "zero_plc_download_enforced": true,
+  "zero_straton_k5": true,
+  "results": [
+    {
+      "tool": "cscape_open_project",
+      "status": "PASS",
+      "duration_ms": 12.5,
+      "summary": "{\n  \"success\": true,\n  \"file_path\": \"C:\\\\Users\\\\ArmandoSilva\\\\artifacts\\\\projects\\\\TankLevelClosedLo"
+    },
+    {
+      "tool": "cscape_read_variables",
+      "status": "PASS",
+      "duration_ms": 5.2,
+      "summary": "{\n  \"success\": true,\n  \"file_path\": \"C:\\\\Users\\\\ArmandoSilva\\\\artifacts\\\\projects\\\\TankLevelClosedLo"
+    },
+    {
+      "tool": "cscape_compile_project",
+      "status": "PASS",
+      "duration_ms": 6021.1,
+      "summary": "{\n  \"success\": true,\n  \"status\": \"success\",\n  \"command_dispatched\": 32826,\n  \"controls_enumerated\": "
+    },
+    {
+      "tool": "cscape_simulate_cycle",
+      "status": "PASS",
+      "duration_ms": 39.8,
+      "summary": "{\n  \"success\": true,\n  \"cycle\": 0,\n  \"time_ms\": 0.0,\n  \"dt_ms\": 10.0,\n  \"system_bits\": {\n    \"%S1\": "
+    },
+    {
+      "tool": "cscape_read_register",
+      "status": "PASS",
+      "duration_ms": 31.4,
+      "summary": "{\n  \"success\": true,\n  \"address\": \"%R100\",\n  \"value\": 0,\n  \"data_type\": \"INT\",\n  \"bound_variable\": n"
+    },
+    {
+      "tool": "cscape_write_register",
+      "status": "PASS",
+      "duration_ms": 8.0,
+      "summary": "{\n  \"success\": true,\n  \"address\": \"%R100\",\n  \"value\": 24000,\n  \"data_type\": \"INT\",\n  \"bound_variable"
+    }
+  ]
+}

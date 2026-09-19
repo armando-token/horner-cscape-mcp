@@ -1,0 +1,19 @@
+{
+  "step": 119,
+  "status": "COMPLETED",
+  "name": "Cryogenic Air Separation Unit (ASU) Low-Pressure Liquid Nitrogen (LN2) Subcooler Sump Audit",
+  "timestamp": "2026-09-05T12:45:11.177Z",
+  "cscape_pid": 4272,
+  "cscape_hwnd": "0x7033e",
+  "project": "TankLevelClosedLoop.csp",
+  "assertions_passed": [
+    "Phase 1 high-purity cryogenic nitrogen distillation equilibrium error 0.0000% < 0.10%",
+    "Phase 2 expansion turbine flash gas upset transient drift 7.10% > 5.0%",
+    "Phase 3 subcooled reflux liquid return decoupled column level regulation error 0.0000% < 0.35%",
+    "Flash gas disturbance surge rejection ratio 100.0% > 95.0%",
+    "Phase 4 cryo-chiller capacity ramping step settling error 0.0379% < 0.35%",
+    "Phase 5 high-high subcooler flood expansion turbine safety trip at cycle 501 == 501",
+    "Fail-closed download lockout ID_CONTROLLER_DOWNLOAD=32827 strictly enforced",
+    "Live Cscape GUI healthy and responsive throughout test"
+  ]
+}

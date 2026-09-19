@@ -1,0 +1,92 @@
+{
+  "step": "step8_fault_injection_600cycles",
+  "status": "PASSED",
+  "timestamp_utc": "2026-09-05T06:02:41.624Z",
+  "gate_verified": true,
+  "cscape_pid": 7616,
+  "cscape_hwnd": "0x007B06D6",
+  "total_cycles_executed": 600,
+  "nominal_scan_rate_ms": 10.0,
+  "elapsed_seconds": 0.4173,
+  "phases": {
+    "phase_1_steady_state_pid_tracking": {
+      "description": "Quiescent steady-state PID setpoint tracking at 60.0%",
+      "cycles": "1-100",
+      "setpoint": 60.0,
+      "final_pv": 60.0,
+      "mean_error": 0.0,
+      "windup_state": "NORMAL",
+      "alarm_high_high": false,
+      "alarm_low_low": false,
+      "status": "PASSED"
+    },
+    "phase_2_sensor_calibration_drift": {
+      "description": "Sensor calibration drift (+15% to +22% linear ramp, triggering deviation and High alarm)",
+      "cycles": "101-200",
+      "peak_drift_percent": 22.0,
+      "deviation_alarm_tripped": true,
+      "deviation_alarm_cycles": 78,
+      "high_alarm_tripped": true,
+      "high_alarm_cycles": 10,
+      "status": "PASSED"
+    },
+    "phase_3_actuator_stuck_closed": {
+      "description": "Actuator stuck-closed fault (%AQ1=0%), testing integral anti-windup clamp",
+      "cycles": "201-300",
+      "valve_command_override": 0.0,
+      "min_pv_reached": 0.36,
+      "alarm_low_tripped": true,
+      "alarm_low_low_tripped": true,
+      "dry_run_pump_cutoff": true,
+      "anti_windup_clamp_active": true,
+      "anti_windup_clamped_cycles": 100,
+      "max_integral": 100.0,
+      "status": "PASSED"
+    },
+    "phase_4_actuator_runaway": {
+      "description": "Actuator runaway fault (%AQ1=100%), High-High trip, and emergency dump valve at 92.0%",
+      "cycles": "301-400",
+      "valve_command_override": 100.0,
+      "peak_pv_reached": 92.12,
+      "alarm_high_tripped": true,
+      "alarm_high_high_tripped": true,
+      "inflow_valve_safety_cutoff": true,
+      "emergency_dump_valve_tripped": true,
+      "dump_trip_cycles": 59,
+      "anti_windup_clamp_low_active": true,
+      "min_integral": 0.0,
+      "status": "PASSED"
+    },
+    "phase_5_wire_break_signal_chatter": {
+      "description": "Intermittent sensor wire break / signal chatter (alternating 0mA and 4mA)",
+      "cycles": "401-500",
+      "signal_chatter_cycles": 100,
+      "wire_break_zero_ma_cycles": 50,
+      "sensor_fault_flag_asserted": true,
+      "alarm_low_low_chatter_count": 50,
+      "dry_run_pump_chatter_protection": true,
+      "status": "PASSED"
+    },
+    "phase_6_fault_clearance_bumpless_return": {
+      "description": "Fault clearance and bumpless return to normal closed-loop operation",
+      "cycles": "501-600",
+      "setpoint": 60.0,
+      "final_pv": 60.0,
+      "final_error": 0.0,
+      "settled_within_tolerance_cycles": 100,
+      "all_alarms_cleared": true,
+      "windup_state": "NORMAL",
+      "status": "PASSED"
+    }
+  },
+  "mcp_tools_used": [
+    "cscape_simulate_cycle",
+    "cscape_read_register",
+    "cscape_write_register"
+  ],
+  "zero_plc_download_enforced": true,
+  "zero_straton_dependencies_enforced": true,
+  "air_gapped_software_isolation": true,
+  "trajectory_json": "C:\\Users\\ArmandoSilva\\artifacts\\logs\\mcp_closed_loop_fault_injection_600cycles.json",
+  "trajectory_log": "C:\\Users\\ArmandoSilva\\artifacts\\logs\\mcp_closed_loop_fault_injection_600cycles.log"
+}

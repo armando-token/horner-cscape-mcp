@@ -1,0 +1,16 @@
+{
+  "step": "tanklevel_closed_loop_live_verified",
+  "status": "VERIFIED",
+  "timestamp_utc": "2026-09-05T16:20:39.637202+00:00",
+  "cscape_pid": 14580,
+  "hwnd": "0x024B054A",
+  "main_window_title": "Cscape - Logged In : \"armando@controlnautas.com\" - [TankLevelClosedLoop.csp]",
+  "process_start_time_utc": "2026-09-05T16:02:57.958113+00:00",
+  "total_cscape_uptime_seconds": 1061.68,
+  "is_hung_win32": false,
+  "zero_straton_dependencies": true,
+  "zero_plc_download_enforced": true,
+  "mcp_compile_clean": true,
+  "closed_loop_failure_logs_verified": true,
+  "screenshot_path": "C:\\Users\\ArmandoSilva\\artifacts\\screenshots\\live_cscape_tank_level_compile_clean_proof.png"
+}

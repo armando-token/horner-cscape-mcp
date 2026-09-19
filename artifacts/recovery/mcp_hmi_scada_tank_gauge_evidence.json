@@ -1,0 +1,33 @@
+{
+  "mission_id": "MCP_HMI_SCADA_TANK_GAUGE",
+  "status": "success",
+  "timestamp_utc": "2026-09-09T10:18:38Z",
+  "pid": 19932,
+  "hwnd": "0x01C80338",
+  "project_file": "C:\\HornerAI\\horner-cscape-mcp\\artifacts\\projects\\TankLevelClosedLoop\\TankLevelClosedLoop.csp",
+  "file_size": 114688,
+  "sha256": "ab90134e520ef62d2727a1d6b711e4df5154ec79bc050b0609f5db0177cae99b",
+  "total_screen1_objects": 8,
+  "objects_on_screen1": [
+    "Screen 1 Baseline Boundary Rectangle (320x240 OCS XL4)",
+    "Setpoint (123 Numeric Data Entry, REAL, %R1/%R2)",
+    "TankLevelPV (123 Numeric Display, REAL, %R3/%R4)",
+    "Error (123 Numeric Display, REAL, %R5/%R6)",
+    "ControlOutput (123 Numeric Display, REAL, %R7/%R8)",
+    "Native Tank Rectangle (Vessel outline, snap-to-grid)",
+    "TankLevelPV Fill Bar (Bar Graph, REAL, 32-Bit, 0.0..100.0, red fill)",
+    "Native Tank Gauge (Round Dial Gauge, Needle, REAL, 32-Bit, 0.0..100.0, TankLevelPV)"
+  ],
+  "gauge_properties": {
+    "control_type": "Native Cscape Gauge (Live Graphic Data -> Gauge)",
+    "bound_variable": "TankLevelPV",
+    "data_size": "32-Bit (REAL)",
+    "data_type": "Real / Floating Point",
+    "min_value": 0.0,
+    "max_value": 100.0,
+    "gauge_style": "Needle Style",
+    "needle_style": "Rhombus Style Needle",
+    "screen_offset": "72, 18",
+    "dimensions": "80 x 78 px"
+  }
+}

@@ -1,0 +1,234 @@
+{
+  "audit_step": 107,
+  "name": "Bio-Methane Anaerobic Digester Hydrostatic Slurry Level Closed-Loop Audit",
+  "timestamp": "2026-09-05T12:13:13.914Z",
+  "completed_at": "2026-09-05T12:13:23.904Z",
+  "cscape_pid": 9472,
+  "cscape_hwnd": "0x9b08f8",
+  "compile_mutex": "Local\\CscapeCompileLock",
+  "total_cycles": 600,
+  "metrics": {
+    "max_phase1_level_error_pct": 0.0,
+    "mean_phase1_level_error_pct": 0.0,
+    "max_phase2_uncomp_drift_pct": 6.71,
+    "mean_phase2_uncomp_drift_pct": 4.93,
+    "max_phase3_comp_error_pct": 0.0,
+    "mean_phase3_comp_error_pct": 0.0,
+    "foam_swell_surge_rejection_pct": 100.0,
+    "phase4_final_level_error_pct": 0.061,
+    "phase4_mean_tail_level_error_pct": 0.0377,
+    "gas_overpressure_trip_cycle": 501
+  },
+  "trace_samples": [
+    {
+      "cycle": 0,
+      "phase": "PHASE_1_MESOPHILIC_STEADY_GAS_SLURRY",
+      "target_sp": 50.0,
+      "slurry_level": 50.0,
+      "substrate_feed": 30.0,
+      "trip_safety": false,
+      "cv_pid": 50.0
+    },
+    {
+      "cycle": 50,
+      "phase": "PHASE_1_MESOPHILIC_STEADY_GAS_SLURRY",
+      "target_sp": 50.0,
+      "slurry_level": 50.0,
+      "substrate_feed": 30.0,
+      "trip_safety": false,
+      "cv_pid": 50.0
+    },
+    {
+      "cycle": 100,
+      "phase": "PHASE_1_MESOPHILIC_STEADY_GAS_SLURRY",
+      "target_sp": 50.0,
+      "slurry_level": 50.0,
+      "substrate_feed": 30.0,
+      "trip_safety": false,
+      "cv_pid": 50.0
+    },
+    {
+      "cycle": 101,
+      "phase": "PHASE_2_ORGANIC_OVERLOAD_FOAMING_SWELL",
+      "target_sp": 50.0,
+      "slurry_level": 50.023,
+      "substrate_feed": 30.4,
+      "trip_safety": false,
+      "cv_pid": 50.0
+    },
+    {
+      "cycle": 125,
+      "phase": "PHASE_2_ORGANIC_OVERLOAD_FOAMING_SWELL",
+      "target_sp": 50.0,
+      "slurry_level": 54.558,
+      "substrate_feed": 38.8,
+      "trip_safety": false,
+      "cv_pid": 42.88
+    },
+    {
+      "cycle": 150,
+      "phase": "PHASE_2_ORGANIC_OVERLOAD_FOAMING_SWELL",
+      "target_sp": 50.0,
+      "slurry_level": 56.663,
+      "substrate_feed": 47.5,
+      "trip_safety": false,
+      "cv_pid": 26.81
+    },
+    {
+      "cycle": 175,
+      "phase": "PHASE_2_ORGANIC_OVERLOAD_FOAMING_SWELL",
+      "target_sp": 50.0,
+      "slurry_level": 55.594,
+      "substrate_feed": 56.2,
+      "trip_safety": false,
+      "cv_pid": 15.29
+    },
+    {
+      "cycle": 200,
+      "phase": "PHASE_2_ORGANIC_OVERLOAD_FOAMING_SWELL",
+      "target_sp": 50.0,
+      "slurry_level": 55.532,
+      "substrate_feed": 65.0,
+      "trip_safety": false,
+      "cv_pid": 4.75
+    },
+    {
+      "cycle": 201,
+      "phase": "PHASE_3_ANTIFOAM_DIGESTATE_DECOUPLING",
+      "target_sp": 50.0,
+      "slurry_level": 50.0,
+      "substrate_feed": 65.0,
+      "trip_safety": false,
+      "cv_pid": 50.0
+    },
+    {
+      "cycle": 225,
+      "phase": "PHASE_3_ANTIFOAM_DIGESTATE_DECOUPLING",
+      "target_sp": 50.0,
+      "slurry_level": 50.0,
+      "substrate_feed": 65.0,
+      "trip_safety": false,
+      "cv_pid": 50.0
+    },
+    {
+      "cycle": 250,
+      "phase": "PHASE_3_ANTIFOAM_DIGESTATE_DECOUPLING",
+      "target_sp": 50.0,
+      "slurry_level": 50.0,
+      "substrate_feed": 65.0,
+      "trip_safety": false,
+      "cv_pid": 50.0
+    },
+    {
+      "cycle": 275,
+      "phase": "PHASE_3_ANTIFOAM_DIGESTATE_DECOUPLING",
+      "target_sp": 50.0,
+      "slurry_level": 50.0,
+      "substrate_feed": 65.0,
+      "trip_safety": false,
+      "cv_pid": 50.0
+    },
+    {
+      "cycle": 300,
+      "phase": "PHASE_3_ANTIFOAM_DIGESTATE_DECOUPLING",
+      "target_sp": 50.0,
+      "slurry_level": 50.0,
+      "substrate_feed": 65.0,
+      "trip_safety": false,
+      "cv_pid": 50.0
+    },
+    {
+      "cycle": 350,
+      "phase": "PHASE_3_ANTIFOAM_DIGESTATE_DECOUPLING",
+      "target_sp": 50.0,
+      "slurry_level": 50.0,
+      "substrate_feed": 65.0,
+      "trip_safety": false,
+      "cv_pid": 50.0
+    },
+    {
+      "cycle": 351,
+      "phase": "PHASE_4_THROUGHPUT_STEP_RAMP",
+      "target_sp": 58.0,
+      "slurry_level": 50.672,
+      "substrate_feed": 50.0,
+      "trip_safety": false,
+      "cv_pid": 63.44
+    },
+    {
+      "cycle": 400,
+      "phase": "PHASE_4_THROUGHPUT_STEP_RAMP",
+      "target_sp": 58.0,
+      "slurry_level": 58.761,
+      "substrate_feed": 50.0,
+      "trip_safety": false,
+      "cv_pid": 46.15
+    },
+    {
+      "cycle": 450,
+      "phase": "PHASE_4_THROUGHPUT_STEP_RAMP",
+      "target_sp": 58.0,
+      "slurry_level": 58.125,
+      "substrate_feed": 50.0,
+      "trip_safety": false,
+      "cv_pid": 50.53
+    },
+    {
+      "cycle": 500,
+      "phase": "PHASE_4_THROUGHPUT_STEP_RAMP",
+      "target_sp": 58.0,
+      "slurry_level": 57.939,
+      "substrate_feed": 50.0,
+      "trip_safety": false,
+      "cv_pid": 49.97
+    },
+    {
+      "cycle": 501,
+      "phase": "PHASE_5_GAS_OVERPRESSURE_TRIP",
+      "target_sp": 58.0,
+      "slurry_level": 57.939,
+      "substrate_feed": 30.0,
+      "trip_safety": true,
+      "cv_pid": 49.98
+    },
+    {
+      "cycle": 520,
+      "phase": "PHASE_5_GAS_OVERPRESSURE_TRIP",
+      "target_sp": 58.0,
+      "slurry_level": 57.939,
+      "substrate_feed": 30.0,
+      "trip_safety": true,
+      "cv_pid": 50.1
+    },
+    {
+      "cycle": 550,
+      "phase": "PHASE_5_GAS_OVERPRESSURE_TRIP",
+      "target_sp": 58.0,
+      "slurry_level": 57.939,
+      "substrate_feed": 30.0,
+      "trip_safety": true,
+      "cv_pid": 50.25
+    },
+    {
+      "cycle": 599,
+      "phase": "PHASE_5_GAS_OVERPRESSURE_TRIP",
+      "target_sp": 58.0,
+      "slurry_level": 57.939,
+      "substrate_feed": 30.0,
+      "trip_safety": true,
+      "cv_pid": 50.5
+    }
+  ],
+  "cscape_health": {
+    "healthy": true,
+    "pid": 9472,
+    "hwnd": "0x9b08f8",
+    "desktop": "Default",
+    "is_hung": false,
+    "wm_null_ping_ok": true,
+    "working_set_mb": 228.18,
+    "num_threads": 16,
+    "uptime_sec": 332.63
+  },
+  "download_lockout_verified": true
+}

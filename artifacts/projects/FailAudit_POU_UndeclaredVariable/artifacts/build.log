@@ -1,0 +1,14 @@
+=== Horner Cscape 10.2 Compile Pass: FailAudit_POU_UndeclaredVariable ===
+Clean Build: True
+Mode: IEC 61131-3 Structured Text (Advanced Ladder Excluded)
+Timestamp: 2026-09-04T14:07:41.696464
+----------------------------------------------------------------
+Compiling POU: POU_UndeclaredVariable (113 bytes)...
+  POU_UndeclaredVariable.st(5,1): error ERR_UNDECLARED_VAR: Assignment to undeclared variable 'UnallocatedSensor'.
+  POU_UndeclaredVariable.st(5,1): error ERR_UNDECLARED_VAR: Undeclared variable or identifier 'UnallocatedSensor' used in logic.
+----------------------------------------------------------------
+Build Result: FAILED
+Errors: 2, Warnings: 0
+Estimated Code Size: 1024 bytes, Data Size: 512 bytes
+Duration: 0.024s
+Hardware Lockout: ENFORCED (Zero PLC communication / No download)

@@ -1,0 +1,19 @@
+{
+  "step": 111,
+  "status": "COMPLETED",
+  "name": "Offshore Floating LNG (FLNG) Motion-Compensated Condensate Separator Slosh Mitigation Audit",
+  "timestamp": "2026-09-05T12:36:18.937Z",
+  "cscape_pid": 4272,
+  "cscape_hwnd": "0x7033e",
+  "project": "TankLevelClosedLoop.csp",
+  "assertions_passed": [
+    "Phase 1 calm sea marine condensate equilibrium error 0.0000% < 0.10%",
+    "Phase 2 severe sea state roll/pitch slosh drift 6.71% > 5.0%",
+    "Phase 3 motion-compensated wave notch filtering decoupled error 0.0000% < 0.35%",
+    "Slosh surge rejection ratio 100.0% > 95.0%",
+    "Phase 4 offloading parcel draw-down step settling error 0.0912% < 0.35%",
+    "Phase 5 hull pitch extreme high-high ESD trip at cycle 501 == 501",
+    "Fail-closed download lockout ID_CONTROLLER_DOWNLOAD=32827 strictly enforced",
+    "Live Cscape GUI healthy and responsive throughout test"
+  ]
+}

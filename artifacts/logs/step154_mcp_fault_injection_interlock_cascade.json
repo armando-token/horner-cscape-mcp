@@ -1,0 +1,36 @@
+{
+  "step": 154,
+  "title": "Live FastMCP Fault Injection & Cascading Interlock Tripping Telemetry Audit",
+  "timestamp_start_utc": "2026-09-05T20:15:32.307Z",
+  "timestamp_end_utc": "2026-09-05T20:15:58.684Z",
+  "duration_seconds": 26.375,
+  "status": "PASSED",
+  "target_pid": 15624,
+  "target_hwnd": "0x0167056A",
+  "interlock_scenarios": {
+    "scenario_a_high_high_trip": true,
+    "scenario_b_dry_run_trip": true,
+    "scenario_c_discrete_bits": true,
+    "scenario_d_system_registers": true
+  },
+  "gui_error_check_dispatched": 32826,
+  "gui_error_count": 0,
+  "gui_warning_count": 0,
+  "hardware_lockout_enforced": true,
+  "zero_straton_dependencies": true,
+  "cscape_process_health": {
+    "pid": 15624,
+    "hwnd": "0x0167056A",
+    "uptime_seconds": 4502.8,
+    "working_set_mb": 171.76,
+    "is_hung": false,
+    "is_enabled": true,
+    "ping_ok": true
+  },
+  "screenshot_evidence": {
+    "path": "C:\\Users\\ArmandoSilva\\artifacts\\screenshots\\live_cscape_tank_level_step154.png",
+    "size_bytes": 868,
+    "sha256": "83198ad12f58b287bfe0ba657aca97fc6effb54bc0980d88a12200c4b4c0c0e5"
+  },
+  "log_sha256": "38db5c54ea9e5232068cc37b4e3761bbe0e02f7eca9e3d295d92ddd56ad84ea0"
+}

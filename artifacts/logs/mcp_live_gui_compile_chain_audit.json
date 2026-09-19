@@ -1,0 +1,71 @@
+{
+  "step": 21,
+  "title": "Live Cscape Compile-to-Simulation Toolchain Chain Audit",
+  "timestamp_utc_start": "2026-09-05T08:53:52.240Z",
+  "timestamp_utc_end": "2026-09-05T08:53:58.495Z",
+  "status": "VERIFIED_LIVE",
+  "cscape_process": {
+    "healthy": true,
+    "pid": 14556,
+    "is_hung": false,
+    "working_set_mb": 203.11,
+    "threads": 25,
+    "gate_status": "READY_FOR_TESTS",
+    "window_title": "Cscape - Logged In : \"armando@controlnautas.com\" - [TankLevelClosedLoop.csp]"
+  },
+  "compilation_result": {
+    "success": true,
+    "status": "success",
+    "error_count": 0,
+    "warning_count": 0,
+    "duration_seconds": 6.109,
+    "memory_footprint": {
+      "code_size_bytes": 1024,
+      "data_size_bytes": 512,
+      "retain_size_bytes": 128
+    },
+    "hardware_lockout_enforced": true
+  },
+  "chained_simulation_result": {
+    "cycles_executed": 100,
+    "duration_seconds": 0.1,
+    "throughput_cycles_per_sec": 998.39,
+    "initial_error_pct": 8.175,
+    "final_settled_error_pct": 0.0226,
+    "converged": true
+  },
+  "safety_audit": {
+    "controller_download_32827_blocked": true,
+    "zero_physical_hardware_touched": true
+  },
+  "sample_simulation_trace": [
+    {
+      "cycle": 0,
+      "pv": 51.825,
+      "sp": 60.0,
+      "cv": 86.5,
+      "error": 8.175
+    },
+    {
+      "cycle": 10,
+      "pv": 56.8593,
+      "sp": 60.0,
+      "cv": 64.6234,
+      "error": 3.1407
+    },
+    {
+      "cycle": 25,
+      "pv": 60.3059,
+      "sp": 60.0,
+      "cv": 62.2206,
+      "error": 0.3059
+    },
+    {
+      "cycle": 49,
+      "pv": 60.4521,
+      "sp": 60.0,
+      "cv": 59.9181,
+      "error": 0.4521
+    }
+  ]
+}

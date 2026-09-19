@@ -1,0 +1,55 @@
+{
+  "config_id": "TankLevel_P5_Dedicated_ModbusPV_Config",
+  "description": "Native Cscape Modbus PV Provider Configuration for TankLevel_P5_Dedicated",
+  "transport": "MODBUS_TCP",
+  "role": "CLIENT_MASTER_READ_ONLY",
+  "unit_id": 1,
+  "function_code": 3,
+  "function_name": "Read Holding Registers (0x03)",
+  "tcp_endpoint": {
+    "ip_address": "127.0.0.1",
+    "port": 15502,
+    "connect_timeout_ms": 1000
+  },
+  "rtu_endpoint": {
+    "serial_port": "MJ2_RS485",
+    "baud_rate": 19200,
+    "data_bits": 8,
+    "parity": "NONE",
+    "stop_bits": 1
+  },
+  "address_mapping": {
+    "modicon_1based": 40001,
+    "wire_offset_0based": 0,
+    "register_count": 1,
+    "horner_ocs_register": "%AI1",
+    "variable_name": "TankLevelPV"
+  },
+  "raw_data_type": "UINT16",
+  "endianness": "BIG_ENDIAN_AB",
+  "scaling": {
+    "raw_min": 0.0,
+    "raw_max": 32000.0,
+    "eu_min": 0.0,
+    "eu_max": 100.0,
+    "engineering_unit": "%",
+    "clamp_to_limits": true,
+    "fail_safe_value": 0.0
+  },
+  "policy": {
+    "poll_interval_ms": 100,
+    "response_timeout_ms": 1000,
+    "retry_count": 3,
+    "stale_timeout_ms": 2000,
+    "comm_failure_alarm_reg": "%M10",
+    "stale_quality_bit_reg": "%M11",
+    "action_on_stale": "CLAMP_TO_FAIL_SAFE"
+  },
+  "revision": "1.0.0",
+  "created_utc": "2026-09-16T03:00:32.807171+00:00",
+  "last_modified_utc": "2026-09-16T03:00:32.807171+00:00",
+  "read_only_enforced": true,
+  "safety_lockout_verified": true,
+  "physical_runtime_verification": "PENDING_P7 (Strictly deferred to Phase P7; zero PLC download)",
+  "sha256": "b0c33664dd330e457bbac4cea94663dd98b6c22f76c1057c66c2e7b59d928887"
+}

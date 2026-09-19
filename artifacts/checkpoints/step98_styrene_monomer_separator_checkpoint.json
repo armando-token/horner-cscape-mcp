@@ -1,0 +1,19 @@
+{
+  "step": 98,
+  "status": "COMPLETED",
+  "name": "Styrene Monomer Dehydrogenation Vacuum Separator Level Closed-Loop Audit",
+  "timestamp": "2026-09-05T11:35:56.425Z",
+  "cscape_pid": 13268,
+  "cscape_hwnd": "0x1f100e6",
+  "project": "TankLevelClosedLoop.csp",
+  "assertions_passed": [
+    "Phase 1 nominal equilibrium error 0.0000% < 0.10%",
+    "Phase 2 uncompensated offgas surge drift 6.71% > 5.0%",
+    "Phase 3 discharge decoupled error 0.0000% < 0.35%",
+    "Offgas surge rejection ratio 100.0% > 95.0%",
+    "Phase 4 dynamic sump step settling error 0.1138% < 0.35%",
+    "Phase 5 high-high compressor carryover trip at cycle 501 == 501",
+    "Fail-closed download lockout ID_CONTROLLER_DOWNLOAD=32827 strictly enforced",
+    "Live Cscape GUI healthy and responsive throughout test"
+  ]
+}

@@ -1,0 +1,94 @@
+================================================================================
+HORNER CSCAPE MCP - GATE G1 CASE 48 APPLIED AUDIT REPORT
+Mission ID: G1_WRITE_ONE_CASE_APPLIED (Next Case Continuation)
+Generated (UTC): 2026-09-09T05:07:00Z
+Classification: STRICT OFFLINE FAIL-CLOSED HARDENING & VERIFICATION
+Status Contract Invariant: success | failed | blocked | inconclusive
+================================================================================
+
+1. CASE IDENTIFICATION
+--------------------------------------------------------------------------------
+- Case ID: CASE 48
+- Vulnerability Title: cscape_new_iec_project Empty & Whitespace target_dir Defaults to CWD and Pollutes Root
+- Component: FastMCP Project Container Lifecycle Engine
+- Target Source File: src/mcp/tools.py (Lines 815-832)
+- Test Identifier: tests/test_g1_false_success_negative_cases.py::test_case48_new_iec_project_empty_or_whitespace_target_dir_fails_closed
+
+2. VULNERABILITY ANALYSIS & FAIL-CLOSED HAZARD
+--------------------------------------------------------------------------------
+- Trigger Conditions:
+  1. Invoking cscape_new_iec_project(project_name="Proj", target_dir="") with empty string.
+  2. Invoking cscape_new_iec_project(project_name="Proj", target_dir="   ") with whitespace string.
+- Flaw in Previous Behavior:
+  1. target_dir was never validated at tool entry.
+  2. Path("").resolve() or Path("   ").resolve() resolved directly to the current working
+     directory (C:\Users\ArmandoSilva).
+  3. p_dir = Path(target_dir).resolve() / clean_name created project directories, .csp files,
+     manifests, and pous/ subdirectories directly in the repository root / CWD, returning
+     status: "success" and success: True!
+  4. This violated fail-closed container isolation and caused severe filesystem pollution.
+
+3. FAIL-CLOSED FIX IMPLEMENTATION (WHAT CHANGED)
+--------------------------------------------------------------------------------
+1. In src/mcp/tools.py (cscape_new_iec_project):
+   - Added strict validation for target_dir:
+     if not target_dir or not isinstance(target_dir, str) or not target_dir.strip():
+         return {
+             "success": False,
+             "status": "failed",
+             "error_code": "INVALID_TARGET_DIR",
+             "project_name": clean_name,
+             "project_path": "",
+             "target_dir": str(target_dir),
+             "controller_model": clean_model,
+             "message": "Target directory must be a non-empty string and cannot be whitespace.",
+             "errors": ["Target directory must be a non-empty string and cannot be whitespace."],
+             "files_created": [],
+             "duration_seconds": 0.0,
+         }
+   - Guarantees zero directory creation or disk leakage when target_dir is empty or whitespace.
+
+2. In tests/test_g1_false_success_negative_cases.py:
+   - Added test_case48_new_iec_project_empty_or_whitespace_target_dir_fails_closed verifying:
+     [A] Empty string target_dir fails closed with INVALID_TARGET_DIR, status='failed', success=False, and no project folder leaks to CWD.
+     [B] Whitespace target_dir ('   ', '\t', '  \n  ') fails closed with INVALID_TARGET_DIR, status='failed', success=False, and no project folder leaks to CWD.
+     [C] Valid target_dir creates project strictly in designated location with authentic containers.
+
+3. Dual-Root Parity:
+   - Synchronized across C:\HornerAI\horner-cscape-mcp and C:\Users\ArmandoSilva.
+
+4. PYTEST VERIFICATION PROOF (THIS CASE & FULL SUITE)
+--------------------------------------------------------------------------------
+Command 1 (Case 48 Isolation):
+pytest tests/test_g1_false_success_negative_cases.py -k "test_case48" -v
+
+Output:
+============================= test session starts =============================
+platform win32 -- Python 3.12.10, pytest-9.1.1, pluggy-1.6.0
+rootdir: C:\Users\ArmandoSilva
+configfile: pyproject.toml
+plugins: anyio-4.15.0, asyncio-1.4.0, cov-7.1.0
+collected 48 items / 47 deselected / 1 selected
+
+tests/test_g1_false_success_negative_cases.py::test_case48_new_iec_project_empty_or_whitespace_target_dir_fails_closed PASSED [100%]
+
+====================== 1 passed, 47 deselected in 3.28s =======================
+Exit Code: 0 (PASSED)
+
+Command 2 (Full Negative Cases Regression Suite):
+pytest tests/test_g1_false_success_negative_cases.py
+
+Output:
+============================= 48 passed in 3.71s ==============================
+Exit Code: 0 (100% PASS - 48/48 negative tests passing)
+
+5. OPERATIONAL DIRECTIVES COMPLIANCE
+--------------------------------------------------------------------------------
+- Single Case Addressed: Case 48 (cscape_new_iec_project target_dir validation).
+- Offline / DEV Only: Pure software verification; zero physical PLC hardware access.
+- Fail-Closed Safety: Zero directory leakage; strict INVALID_TARGET_DIR enforcement.
+- Single GUI Owner Preserved: winsta0\Default interactive desktop untouched; zero GUI automation spawned.
+- Status Contract Invariant: All responses strictly return status: success | failed | blocked | inconclusive.
+================================================================================
+END OF GATE G1 CASE 48 APPLIED AUDIT REPORT
+================================================================================

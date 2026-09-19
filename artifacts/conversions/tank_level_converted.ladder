@@ -1,0 +1,300 @@
+{
+  "format": "IEC_61131_3_LADDER_AST",
+  "version": "1.0",
+  "pou_name": "TankLevelControl",
+  "pou_type": "PROGRAM",
+  "total_rungs": 6,
+  "conversion_timestamp": "2026-09-05T00:11:38.049512+00:00",
+  "variables": [
+    {
+      "name": "bStartSwitch",
+      "type": "BOOL",
+      "section": "VAR"
+    },
+    {
+      "name": "bStopSwitch",
+      "type": "BOOL",
+      "section": "VAR"
+    },
+    {
+      "name": "bEStop",
+      "type": "BOOL",
+      "section": "VAR"
+    },
+    {
+      "name": "bPumpRun",
+      "type": "BOOL",
+      "section": "VAR"
+    },
+    {
+      "name": "bHighLevelSensor",
+      "type": "BOOL",
+      "section": "VAR"
+    },
+    {
+      "name": "bResetFault",
+      "type": "BOOL",
+      "section": "VAR"
+    },
+    {
+      "name": "bHighAlarmLatched",
+      "type": "BOOL",
+      "section": "VAR"
+    },
+    {
+      "name": "nRawLevelSensor",
+      "type": "INT",
+      "section": "VAR"
+    },
+    {
+      "name": "nScaledLevelPercent",
+      "type": "INT",
+      "section": "VAR"
+    },
+    {
+      "name": "tonFillTimer",
+      "type": "TON",
+      "section": "VAR"
+    },
+    {
+      "name": "bFillTimeout",
+      "type": "BOOL",
+      "section": "VAR"
+    },
+    {
+      "name": "ctuBatchCounter",
+      "type": "CTU",
+      "section": "VAR"
+    },
+    {
+      "name": "bBatchPulse",
+      "type": "BOOL",
+      "section": "VAR"
+    },
+    {
+      "name": "bResetCounter",
+      "type": "BOOL",
+      "section": "VAR"
+    },
+    {
+      "name": "bBatchComplete",
+      "type": "BOOL",
+      "section": "VAR"
+    },
+    {
+      "name": "nBatchCount",
+      "type": "INT",
+      "section": "VAR"
+    }
+  ],
+  "rungs": [
+    {
+      "rung_number": 1,
+      "title": "bPumpRun Control Logic",
+      "comment": "Normal output coil energized when series/parallel rung conditions evaluate to TRUE",
+      "st_source": "bPumpRun := ((bStartSwitch OR bPumpRun) AND NOT bStopSwitch) AND NOT bEStop",
+      "recipe_key": "COIL_NORMAL",
+      "category": "COIL",
+      "recipe_catalog_entry": {
+        "construct_name": "Normal Output Coil (OTE)",
+        "category": "COIL",
+        "ladder_syntax": "---( Tag )---  or  OTE(Tag)",
+        "st_equivalent": "Tag := <Rung_Condition>;",
+        "explanation": "A normal ladder coil assigns the evaluated rung state directly to the boolean variable.",
+        "notes": "Example: 'Pump := AutoMode AND TankLevelLow;'"
+      },
+      "elements": [
+        {
+          "element_type": "BRANCH_OR",
+          "tag": "",
+          "sub_branches": [
+            [
+              {
+                "element_type": "CONTACT_NO",
+                "tag": "bStartSwitch"
+              }
+            ],
+            [
+              {
+                "element_type": "CONTACT_NO",
+                "tag": "bPumpRun"
+              }
+            ]
+          ]
+        },
+        {
+          "element_type": "CONTACT_NC",
+          "tag": "bStopSwitch"
+        },
+        {
+          "element_type": "CONTACT_NC",
+          "tag": "bEStop"
+        },
+        {
+          "element_type": "COIL_NORMAL",
+          "tag": "bPumpRun"
+        }
+      ],
+      "ascii_diagram": "|      +---[ bStartSwitch ]---+                                                  |\n|---+--+                      +--[/ bStopSwitch ]--[/ bEStop ]--( bPumpRun )---|\n|      +---[ bPumpRun     ]---+                                                  |"
+    },
+    {
+      "rung_number": 2,
+      "title": "bHighAlarmLatched Latch (Set Coil)",
+      "comment": "Conditional latching coil activated when condition evaluates to TRUE",
+      "st_source": "IF bHighLevelSensor THEN\n    bHighAlarmLatched := TRUE;\nEND_IF;",
+      "recipe_key": "COIL_SET",
+      "category": "COIL",
+      "recipe_catalog_entry": {
+        "construct_name": "Set / Latch Coil (OTL / SET)",
+        "category": "COIL",
+        "ladder_syntax": "---(S Tag )---  or  ---(L Tag )---  or  OTL(Tag)  or  [SET Tag]",
+        "st_equivalent": "IF <Rung_Condition> THEN\n    Tag := TRUE;\nEND_IF;",
+        "explanation": "A latch or set coil turns the output TRUE when rung condition is met, retaining state when condition goes FALSE.",
+        "notes": "In ST, write a conditional assignment: IF StartTrigger THEN LatchActive := TRUE; END_IF;"
+      },
+      "elements": [
+        {
+          "element_type": "CONTACT_NO",
+          "tag": "bHighLevelSensor"
+        },
+        {
+          "element_type": "COIL_SET",
+          "tag": "bHighAlarmLatched"
+        }
+      ],
+      "ascii_diagram": "|---[ bHighLevelSensor ]-----------------------------(S bHighAlarmLatched )---|"
+    },
+    {
+      "rung_number": 3,
+      "title": "bHighAlarmLatched Unlatch (Reset Coil)",
+      "comment": "Conditional unlatching coil deactivated when condition evaluates to TRUE",
+      "st_source": "IF bResetFault THEN\n    bHighAlarmLatched := FALSE;\nEND_IF;",
+      "recipe_key": "COIL_RESET",
+      "category": "COIL",
+      "recipe_catalog_entry": {
+        "construct_name": "Reset / Unlatch Coil (OTU / RESET)",
+        "category": "COIL",
+        "ladder_syntax": "---(R Tag )---  or  ---(U Tag )---  or  OTU(Tag)  or  [RESET Tag]",
+        "st_equivalent": "IF <Rung_Condition> THEN\n    Tag := FALSE;\nEND_IF;",
+        "explanation": "A reset or unlatch coil turns the output FALSE when rung condition is met.",
+        "notes": "In ST, write a conditional assignment: IF StopTrigger THEN LatchActive := FALSE; END_IF;"
+      },
+      "elements": [
+        {
+          "element_type": "CONTACT_NO",
+          "tag": "bResetFault"
+        },
+        {
+          "element_type": "COIL_RESET",
+          "tag": "bHighAlarmLatched"
+        }
+      ],
+      "ascii_diagram": "|---[ bResetFault ]-----------------------------(R bHighAlarmLatched )---|"
+    },
+    {
+      "rung_number": 4,
+      "title": "tonFillTimer On-Delay Timer (TON)",
+      "comment": "IEC 61131-3 standard TON on-delay timer block with preset and done output",
+      "st_source": "tonFillTimer(IN := bPumpRun, PT := T#10s); bFillTimeout := tonFillTimer.Q;",
+      "recipe_key": "TIMER_ON",
+      "category": "TIMER",
+      "recipe_catalog_entry": {
+        "construct_name": "Timer On-Delay (TON)",
+        "category": "TIMER",
+        "ladder_syntax": "[TON TimerInstance, Preset=T#5s]",
+        "st_equivalent": "fbTimer(IN := RunCondition, PT := T#5S);\nTimerDone := fbTimer.Q;\nCurrentTime := fbTimer.ET;",
+        "explanation": "Standard IEC 61131-3 TON function block replaces graphical ladder timer boxes.",
+        "notes": "Must declare 'fbTimer : TON;' in VAR ... END_VAR."
+      },
+      "elements": [
+        {
+          "element_type": "CONTACT_NO",
+          "tag": "bPumpRun"
+        },
+        {
+          "element_type": "TIMER_TON",
+          "tag": "tonFillTimer",
+          "parameters": {
+            "IN": "bPumpRun",
+            "PT": "T#10s",
+            "Q": "bFillTimeout"
+          }
+        },
+        {
+          "element_type": "COIL_NORMAL",
+          "tag": "bFillTimeout"
+        }
+      ],
+      "ascii_diagram": "|---[ bPumpRun ]---------+-----------+----------------------------------------------|\n                         |    TON    |\n                         |tonFillTime|\n                         |IN        Q|-------------------------( bFillTimeout )---|\n                   T#10s |PT       ET|\n                         +-----------+"
+    },
+    {
+      "rung_number": 5,
+      "title": "ctuBatchCounter Up-Counter (CTU)",
+      "comment": "IEC 61131-3 standard CTU counter block with pulse input, reset, and preset count",
+      "st_source": "ctuBatchCounter(CU := bBatchPulse, RESET := bResetCounter, PV := 100); bBatchComplete := ctuBatchCounter.Q; nBatchCount := ctuBatchCounter.CV;",
+      "recipe_key": "COUNTER_UP",
+      "category": "COUNTER",
+      "recipe_catalog_entry": {
+        "construct_name": "Up Counter (CTU)",
+        "category": "COUNTER",
+        "ladder_syntax": "[CTU CounterInstance, PV=10]",
+        "st_equivalent": "fbCounter(CU := PulseInput, RESET := ResetCmd, PV := 10);\nCounterDone := fbCounter.Q;\nCurrentCount := fbCounter.CV;",
+        "explanation": "Standard IEC 61131-3 CTU function block replaces ladder counter rungs.",
+        "notes": "Must declare 'fbCounter : CTU;' in VAR ... END_VAR."
+      },
+      "elements": [
+        {
+          "element_type": "CONTACT_NO",
+          "tag": "bBatchPulse"
+        },
+        {
+          "element_type": "CONTACT_NO",
+          "tag": "bResetCounter"
+        },
+        {
+          "element_type": "COUNTER_CTU",
+          "tag": "ctuBatchCounter",
+          "parameters": {
+            "CU": "bBatchPulse",
+            "RESET": "bResetCounter",
+            "PV": "100",
+            "Q": "bBatchComplete",
+            "CV": "nBatchCount"
+          }
+        },
+        {
+          "element_type": "COIL_NORMAL",
+          "tag": "bBatchComplete"
+        }
+      ],
+      "ascii_diagram": "|---[ bBatchPulse ]------+-----------+-------------------------------------------|\n                         |    CTU    |\n                         |ctuBatchCou|\n                         |CU        Q|--------------------( bBatchComplete )---|\n|---[ bResetCounter ]----|RESET    CV|---[ nBatchCount ]-------------------------|\n                     100 |PV         |\n                         +-----------+"
+    },
+    {
+      "rung_number": 6,
+      "title": "nScaledLevelPercent Math Calculation",
+      "comment": "Arithmetic calculation box evaluating expression and storing in destination variable",
+      "st_source": "nScaledLevelPercent := (nRawLevelSensor * 100) / 32000",
+      "recipe_key": "MATH_BOX",
+      "category": "MATH",
+      "recipe_catalog_entry": {
+        "construct_name": "Math Operation Box (ADD, SUB, MUL, DIV)",
+        "category": "MATH",
+        "ladder_syntax": "[ADD In1, In2 -> Dest]  or  [SUB In1, In2 -> Dest]",
+        "st_equivalent": "Dest := In1 + In2;  or  Dest := In1 - In2;",
+        "explanation": "In Structured Text, arithmetic expressions use direct algebraic notation (+, -, *, /).",
+        "notes": "Direct assignment: Dest := In1 + In2;"
+      },
+      "elements": [
+        {
+          "element_type": "MATH_BOX",
+          "tag": "nScaledLevelPercent",
+          "parameters": {
+            "expression": "(nRawLevelSensor * 100) / 32000",
+            "dest": "nScaledLevelPercent"
+          }
+        }
+      ],
+      "ascii_diagram": "|---+-------------------------------------------------------------------+---|\n    |                                 CALC                              |\n    |  Dest : nScaledLevelPercent                                     |\n    |  Expr : (nRawLevelSensor * 100) / 32000                         |\n    +-------------------------------------------------------------------+"
+    }
+  ]
+}

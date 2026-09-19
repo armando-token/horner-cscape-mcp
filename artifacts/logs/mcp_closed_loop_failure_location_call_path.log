@@ -1,0 +1,137 @@
+================================================================================
+HORNER CSCAPE 10.2: MCP CLOSED-LOOP CALL PATH & FAILURE LOCATION AUDIT
+PROOF NOT CLAIMS: 100% VERIFIED CLOSED-LOOP + FAIL-CLOSED HARDWARE LOCKOUT
+================================================================================
+Run Timestamp (UTC) : 2026-09-04T21:57:42.099152+00:00
+Repository Root    : C:\HornerAI\horner-cscape-mcp
+Workspace Mode     : Pure IEC 61131-3 Structured Text Simulation
+Security Invariant : ZERO Physical PLC Connections | ZERO Controller Downloads
+--------------------------------------------------------------------------------
+
+>>> PART 1: MCP CLOSED-LOOP CALL PATH (HAPPY PATH PIPELINE)
+
+[TOOL 1/8] cscape_create_project
+  -> SUCCESS: Project 'MCP_ClosedLoop_Master_Audit' created at C:\HornerAI\horner-cscape-mcp\artifacts\projects\MCP_ClosedLoop_Master_Audit
+
+[TOOL 2/8] cscape_validate_st
+  -> SUCCESS: Code validated. POU=TankLevelPID, variables=9
+
+[TOOL 3/8] cscape_add_st_pou
+  -> SUCCESS: POU 'TankLevelPID' added at C:\HornerAI\horner-cscape-mcp\artifacts\projects\MCP_ClosedLoop_Master_Audit\pous\TankLevelPID.st
+
+[TOOL 4/8] cscape_inspect_variables
+  -> SUCCESS: Inspected 9 variables across POUs: ['TankLevelPID']
+
+[TOOL 5/8] cscape_compile_project
+  -> SUCCESS: Clean compilation. Errors: 0, Warnings: 0, Code Size: 1525 bytes
+
+[TOOL 6/8] cscape_get_diagnostics
+  -> SUCCESS: Retrieved diagnostics. Build status clean (0 errors).
+
+[TOOL 7/8] cscape_simulate_pou
+  -> SUCCESS: Simulation 5 cycles complete. LevelPercent=50.0%, hardware_lockout_enforced=True
+
+[TOOL 8/8] cscape_export_project
+  -> SUCCESS: Exported 'csp' -> C:\HornerAI\horner-cscape-mcp\artifacts\exports\MCP_ClosedLoop_Master_Audit.csp (47 bytes)
+  -> SUCCESS: Exported 'st' -> C:\HornerAI\horner-cscape-mcp\artifacts\exports\MCP_ClosedLoop_Master_Audit.st (46 bytes)
+  -> SUCCESS: Exported 'xml' -> C:\HornerAI\horner-cscape-mcp\artifacts\exports\MCP_ClosedLoop_Master_Audit.xml (47 bytes)
+  -> SUCCESS: Exported 'json' -> C:\HornerAI\horner-cscape-mcp\artifacts\exports\MCP_ClosedLoop_Master_Audit.json (48 bytes)
+>>> ALL 8 MCP TOOLS VERIFIED CLEANLY IN HAPPY PATH.
+
+================================================================================
+>>> PART 2: CONCRETE FAILURE SCENARIOS & FAILURE LOCATION LOG EXTRACTION
+================================================================================
+
+--- [EXECUTION] Scenario 1: Syntax Error (Unclosed IF block missing END_IF) ---
+  [cscape_validate_st] valid=False | errors=["Mismatched closing block at line 10, col 1: got 'END_PROGRAM', expected closing for 'IF' (opened at line 6, col 1).", "ERR_UNCLOSED_PROGRAM: Unclosed 'PROGRAM' block (opened at line 1, col 0) missing terminating keyword.", "Syntax error at line 10, col 1: Unexpected token in statement: END_PROGRAM ('END_PROGRAM')", "ERR_UNCLOSED_IF at line 6, col 1: Unclosed IF block: 1 'IF' opened, but only 0 'END_IF' closed."]
+  [cscape_add_st_pou] status=error (Pre-automation rejection confirmed)
+  [cscape_compile_project] compile_successful=False | error_count=4
+  [cscape_get_diagnostics] status=error | error_count=4
+  Concrete Failure Location Diagnostic Entries:
+    -> FAILURE LOCATION: File: POU_SyntaxError.st | Line: 10 | Col: 1 | Code: ST_SYNTAX_ERROR
+       Message: Mismatched closing block at line 10, col 1: got 'END_PROGRAM', expected closing for 'IF' (opened at line 6, col 1).
+    -> FAILURE LOCATION: File: POU_SyntaxError.st | Line: 1 | Col: 1 | Code: ERR_UNCLOSED_PROGRAM
+       Message: : Unclosed 'PROGRAM' block (opened at line 1, col 0) missing terminating keyword.
+    -> FAILURE LOCATION: File: POU_SyntaxError.st | Line: 10 | Col: 1 | Code: ST_SYNTAX_ERROR
+       Message: Syntax error at line 10, col 1: Unexpected token in statement: END_PROGRAM ('END_PROGRAM')
+    -> FAILURE LOCATION: File: POU_SyntaxError.st | Line: 6 | Col: 1 | Code: ERR_UNCLOSED_IF
+       Message: Unclosed IF block: 1 'IF' opened, but only 0 'END_IF' closed.
+
+--- [EXECUTION] Scenario 2: Missing Semicolon (Assignment missing ';') ---
+  [cscape_validate_st] valid=False | errors=["Syntax error at line 7, col 1: Expected ';' after assignment", "ERR_MISSING_SEMICOLON at line 6, col 18: Statement missing terminating semicolon: 'TargetCount := 42'"]
+  [cscape_add_st_pou] status=error (Pre-automation rejection confirmed)
+  [cscape_compile_project] compile_successful=False | error_count=2
+  [cscape_get_diagnostics] status=error | error_count=2
+  Concrete Failure Location Diagnostic Entries:
+    -> FAILURE LOCATION: File: POU_MissingSemicolon.st | Line: 7 | Col: 1 | Code: ST_SYNTAX_ERROR
+       Message: Syntax error at line 7, col 1: Expected ';' after assignment
+    -> FAILURE LOCATION: File: POU_MissingSemicolon.st | Line: 6 | Col: 18 | Code: ERR_MISSING_SEMICOLON
+       Message: Statement missing terminating semicolon: 'TargetCount := 42'
+
+--- [EXECUTION] Scenario 3: Undeclared Variable (Assignment to unallocated symbol) ---
+  [cscape_validate_st] valid=False | errors=["ERR_UNDECLARED_VAR at line 6, col 1: Assignment to undeclared variable 'PhantomOutput'.", "ERR_UNDECLARED_VAR at line 6, col 1: Undeclared variable or identifier 'PhantomOutput' used in logic."]
+  [cscape_add_st_pou] status=error (Pre-automation rejection confirmed)
+  [cscape_compile_project] compile_successful=False | error_count=2
+  [cscape_get_diagnostics] status=error | error_count=2
+  Concrete Failure Location Diagnostic Entries:
+    -> FAILURE LOCATION: File: POU_UndeclaredVar.st | Line: 6 | Col: 1 | Code: ERR_UNDECLARED_VAR
+       Message: Assignment to undeclared variable 'PhantomOutput'.
+    -> FAILURE LOCATION: File: POU_UndeclaredVar.st | Line: 6 | Col: 1 | Code: ERR_UNDECLARED_VAR
+       Message: Undeclared variable or identifier 'PhantomOutput' used in logic.
+
+--- [EXECUTION] Scenario 4: Ladder Logic Injection (Forbidden contact '---[ ]---') ---
+  [cscape_validate_st] valid=False | errors=["Ladder logic artifact detected: Ladder logic construct rejected! Horner Cscape MCP strictly enforces IEC 61131-3 Structured Text (ST) only.\nViolations detected:\n[Line 7] ASCII_NO_CONTACT: '---[ ]---'\n  Explanation: Normally open contact symbol detected. Structured Text uses boolean identifiers directly.\n  Recommendation: Tag\n\nRecommended Structured Text Conversion:\n- Normally Open Contact (XIC / NO): Replace '---[ Tag ]---  or  |---[ Tag ]---|  or  XIC(Tag)' with 'Tag'"]
+  [cscape_add_st_pou] status=error (Pre-automation rejection confirmed)
+  [cscape_compile_project] compile_successful=False | error_count=3
+  [cscape_get_diagnostics] status=error | error_count=3
+  Concrete Failure Location Diagnostic Entries:
+    -> FAILURE LOCATION: File: POU_LadderInjection.st | Line: 7 | Col: 1 | Code: ERR_LADDER_FORBIDDEN
+       Message: : Ladder logic artifact detected at line 7, col 1 matching pattern '---\[\s*\]---'. Only pure IEC 61131-3 Structured Text is permitted.
+    -> FAILURE LOCATION: File: POU_LadderInjection.st | Line: 7 | Col: 1 | Code: ST_SYNTAX_ERROR
+       Message: Syntax error at line 7, col 1: Unexpected token in statement: MINUS ('-')
+    -> FAILURE LOCATION: File: POU_LadderInjection.st | Line: 7 | Col: 1 | Code: ERR_LADDER_FORBIDDEN
+       Message: Forbidden ladder logic construct 'Normally open contact' detected: '---[ ]--- InSensor'. Strict constraint violated: ONLY pure IEC 61131-3 Structured Text is permitted.
+
+--- [EXECUTION] Scenario 5: Syntax Error Near Semicolon (TargetLevel := TankLevel + ;) ---
+  [cscape_validate_st] valid=False | errors=["Syntax error at line 7, col 28: Unexpected token in expression: SEMICOLON (';')"]
+  [cscape_add_st_pou] status=error (Pre-automation rejection confirmed)
+  [cscape_compile_project] compile_successful=False | error_count=1
+  [cscape_get_diagnostics] status=error | error_count=1
+  Concrete Failure Location Diagnostic Entries:
+    -> FAILURE LOCATION: File: POU_SyntaxNearSemi.st | Line: 7 | Col: 28 | Code: ST_SYNTAX_ERROR
+       Message: Syntax error at line 7, col 28: Unexpected token in expression: SEMICOLON (';')
+
+================================================================================
+>>> PART 3: ZERO PHYSICAL PLC DOWNLOAD LOCKOUT ENFORCEMENT
+================================================================================
+
+[LOCKOUT 1/6] Safety Policy Invariants Verification
+  -> Invariants: simulation_only=True, allow_hardware_comm=False, allow_download=False, allow_flash=False
+
+[LOCKOUT 2/6] Physical PLC Download Commands (IDs 32827, 33149)
+  -> BLOCKED: Command ID 32827 (ID_CONTROLLER_DOWNLOAD / ID_PLC_DOWNLOAD) raised UnauthorizedDownloadError.
+  -> BLOCKED: Command ID 33149 (ID_PROGRAM_DOWNLOADOPTIONS / ID_CONTROLLER_DOWNLOAD_ALT) raised UnauthorizedDownloadError.
+  -> BLOCKED: Command ID 32828 (ID_PLC_UPLOAD) raised UnauthorizedDownloadError.
+  -> BLOCKED: Command ID 32862 (ID_PLC_VERIFY) raised UnauthorizedDownloadError.
+  -> BLOCKED: Command ID 32993 (ID_PLC_CLEARMEMORY) raised UnauthorizedDownloadError.
+  -> BLOCKED: Command ID 38295 (ID_ONLINECHANGEACTION) raised UnauthorizedDownloadError.
+
+[LOCKOUT 3/6] Serial/COM Ports Lockout (COM1 - COM256, device namespaces)
+  -> BLOCKED: Verified fail-closed lockout across 10 COM/serial interfaces (COM1..COM256).
+
+[LOCKOUT 4/6] CAN Bus Interfaces Lockout
+  -> BLOCKED: Verified fail-closed lockout across 15 CAN interfaces.
+  -> BLOCKED: Verified fail-closed lockout across 9 USB physical devices.
+
+[LOCKOUT 5/6] USB Flash Tools & Dangerous Companion Executables
+  -> BLOCKED: Verified fail-closed interception for 8 dangerous binaries.
+
+[LOCKOUT 6/6] CLI Download Flags & Automation Bridge Methods
+  -> BLOCKED: Verified fail-closed rejection for 11 CLI download/flash flags.
+  -> BLOCKED: CLIRunner.download_to_controller() raised UnauthorizedDownloadError.
+  -> BLOCKED: CscapeAutomationBridge.download_to_controller() raised UnauthorizedDownloadError.
+  -> BLOCKED: CscapeAutomationBridge.connect_hardware() raised HardwareLockoutError.
+--------------------------------------------------------------------------------
+VERIFICATION COMPLETED IN 0.79s WITH ZERO ERRORS.
+ALL 8 MCP TOOLS OPERATING IN AIR-GAPPED SOFTWARE SIMULATION.
+================================================================================

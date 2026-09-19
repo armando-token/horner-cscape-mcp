@@ -1,0 +1,18 @@
+Offline Package Ready Evidence - Screen 3 Trend (pen STBlock1.TankLevelPV_I16, trigger STBlock1.HI), compile clean, timestamp Thursday, Sep 10, 2026, 4:41 PM (UTC-7), NOT VERIFIED_LIVE; Local:Disconnected; no PLC download.
+Screen Jump 2<->3 + DOWNLOAD_READY_NOTES.txt created.
+Setpoint_I16 + dual Trend pens (PV_I16 + SP_I16), trigger HI, compile clean, timestamp Thursday, Sep 10, 2026, 5:15 PM (UTC-7), NOT VERIFIED_LIVE.
+Setpoint_I16 + dual Trend pens (PV_I16 + SP_I16), trigger HI, compile clean, timestamp Thursday, Sep 10, 2026, 5:15 PM (UTC-7), NOT VERIFIED_LIVE.
+Screen 2 ControlOutput display (REAL, %), compile clean, timestamp Thursday, Sep 10, 2026, 5:33 PM (UTC-7), NOT VERIFIED_LIVE.
+reopen OK with ALARM HI/LO + ControlOutput
+Screen 2 Error display added: Numeric/Data bound to Error, labeled Error cm; Error Check clean.
+Screen 2 TankLevelClosedLoop Kp Numeric/Data added, bound to Kp, labeled Kp; Error Check clean.
+full Screen2 loop displays reopen OK.package complete ~ Thursday, Sep 10, 2026, 6:27 PM (UTC-7)
+zip_path=C:\HornerAI\horner-cscape-mcp\TankLevelClosedLoop_OFFLINE_HANDOFF.zip; timestamp=2026-09-10 18:35:52 -07:00
+Checklist: C:\HornerAI\horner-cscape-mcp\LIVE_CONNECT_CHECKLIST.txt
+AlwaysOn trigger + reopen OK + 2026-09-10 20:53:00 -0700 + NOT VERIFIED_LIVE
+2026-09-10 21:10 PDT | ZIP inventory: CSP=70656 bytes + 4 docs (notes/checklist/status); final_size=37395 bytes; Downloads copy OK; NOT VERIFIED_LIVE.
+SP(I16) label Screen3 + zip refresh + NOT VERIFIED_LIVE
+force_demo: blocked offline; Debug Data Watch/Enable Forcing unavailable while Local:Disconnected; no values forced; compile not run.
+IO map: C:\HornerAI\horner-cscape-mcp\LIVE_CONNECT_IO_MAP.txt (NOT VERIFIED_LIVE)
+Offline package ready. Final zip size: 41742 bytes. CSP is inside ZIP: yes (TankLevelClosedLoop.csp). Downloads path: C:\Users\ArmandoSilva\Downloads\TankLevelClosedLoop_OFFLINE_HANDOFF.zip. Repo path: C:\HornerAI\horner-cscape-mcp\TankLevelClosedLoop_HANDOFF.csp. XL4 IP: 192.168.254.128. Status: Local:Disconnected / not VERIFIED_LIVE. Engineer downloads when ready.
+cleaned zip without scratch_verifier

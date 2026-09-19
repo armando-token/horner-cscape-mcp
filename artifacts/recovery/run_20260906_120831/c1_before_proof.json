@@ -1,0 +1,77 @@
+{
+  "C1-N01_empty_dict": {
+    "input": {},
+    "success": true,
+    "status": "success",
+    "errors": [],
+    "flaw": "Empty dict was accepted as success=True, status=success with 0 errors"
+  },
+  "C1-N02_verified": {
+    "input": {
+      "status": "VERIFIED"
+    },
+    "success": true,
+    "status": "success",
+    "errors": [],
+    "flaw": "VERIFIED was stripped and quietly converted to success=True"
+  },
+  "C1-N03_100_percent": {
+    "input": {
+      "status": "100%"
+    },
+    "success": true,
+    "status": "success",
+    "errors": [],
+    "flaw": "100% was stripped and quietly converted to success=True"
+  },
+  "C1-N04_unknown_status": {
+    "input": {
+      "status": "BOGUS_STATUS"
+    },
+    "success": true,
+    "status": "success",
+    "errors": [],
+    "flaw": "Unknown status BOGUS_STATUS was accepted as success=True"
+  },
+  "C1-N05_decorated_none": {
+    "input": "decorated function returning None",
+    "success": true,
+    "status": "success",
+    "errors": [],
+    "flaw": "Decorated function returning None was wrapped as success=True"
+  },
+  "C1-N06_contradiction_error_diag": {
+    "input": {
+      "success": true,
+      "diagnostics": [
+        {
+          "severity": "ERROR"
+        }
+      ]
+    },
+    "success": true,
+    "status": "success",
+    "errors": [],
+    "flaw": "Contradiction between success=True and ERROR diagnostic was accepted"
+  },
+  "C1_invented_line_col_1": {
+    "input": {
+      "success": false,
+      "errors": [
+        "Unlocated generic runtime error"
+      ]
+    },
+    "failure_locations": [
+      {
+        "file_path": "Unknown",
+        "full_path": "Unknown",
+        "line": 1,
+        "column": 1,
+        "error_code": "GENERIC_ERROR",
+        "severity": "ERROR",
+        "message": "Unlocated generic runtime error"
+      }
+    ],
+    "flaw": "Invented line: 1, column: 1 when error string lacked location info"
+  }
+}

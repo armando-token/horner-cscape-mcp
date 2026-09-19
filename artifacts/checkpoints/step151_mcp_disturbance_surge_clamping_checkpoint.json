@@ -1,0 +1,17 @@
+{
+  "step": 151,
+  "name": "step151_mcp_disturbance_surge_clamping_checkpoint",
+  "status": "PASSED",
+  "timestamp_utc": "2026-09-05T20:07:34.555Z",
+  "cscape_pid": 3572,
+  "hwnd": "0x00BA0848",
+  "closed_loop_cycles": 100,
+  "surge_trip_verified": true,
+  "anti_windup_clamping_verified": true,
+  "dryrun_protection_verified": true,
+  "gui_compile_status": "SUCCESS",
+  "zero_straton_dependencies": true,
+  "hardware_lockout_enforced": true,
+  "live_screenshot_sha256": "d7023c7218a445d4f74f6f68627afa99108901ca8363f7120ff01d184ec67e50",
+  "checkpoint_sha256": "e127a3524c1f6dbd6ac42200d02559a57f20d2baed78a7683127d16ba80d72d8"
+}

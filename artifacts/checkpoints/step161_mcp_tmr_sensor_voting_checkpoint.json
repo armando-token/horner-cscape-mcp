@@ -1,0 +1,18 @@
+{
+  "step": 161,
+  "name": "step161_mcp_tmr_sensor_voting_checkpoint",
+  "status": "PASSED",
+  "timestamp_utc": "2026-09-06T12:23:18.045Z",
+  "cscape_pid": 10892,
+  "hwnd": "0x01B005DC",
+  "tmr_sensor_voting_verified": true,
+  "drift_isolation_degradation_verified": true,
+  "dual_failure_sis_trip_verified": true,
+  "on_line_recommission_verified": true,
+  "zero_straton_dependencies": true,
+  "hardware_lockout_enforced": true,
+  "live_screenshot_sha256": "bc43766c83319fd52574940020f6a1b1316dc6ba62fa60593dec82592cdfd0e1",
+  "log_sha256": "5af6dc9087db1f2b236370835932c2e4af384fc868c36325083e06ee9c2b399b",
+  "dual_root_mirrored": true,
+  "checkpoint_sha256": "97047553de2285255fd52f07576d169b8b2dc7181947321a7f585c402f29f649"
+}

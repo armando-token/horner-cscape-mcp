@@ -1,0 +1,18 @@
+{
+  "step": 158,
+  "name": "step158_mcp_decoupled_mimo_level_pressure_checkpoint",
+  "status": "PASSED",
+  "timestamp_utc": "2026-09-06T12:22:50.521Z",
+  "cscape_pid": 10892,
+  "hwnd": "0x01B005DC",
+  "dual_loop_mimo_decoupling_verified": true,
+  "boil_off_shrink_compensation_verified": true,
+  "overpressure_emergency_venting_verified": true,
+  "double_fault_cavitation_isolation_verified": true,
+  "zero_straton_dependencies": true,
+  "hardware_lockout_enforced": true,
+  "live_screenshot_sha256": "bc43766c83319fd52574940020f6a1b1316dc6ba62fa60593dec82592cdfd0e1",
+  "log_sha256": "c3923916c136385b37aaa4ac0a5e8382d1d7ce1f03a4aef82dfb99301962a295",
+  "dual_root_mirrored": true,
+  "checkpoint_sha256": "de81c2c7b75c788ba37f2285f7c26fa9de9b2e6a5beebf65573dd00e53d59b59"
+}

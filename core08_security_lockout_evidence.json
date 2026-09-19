@@ -1,0 +1,359 @@
+{
+  "gate": "G1",
+  "milestone": "CORE-08",
+  "name": "core08_security_lockout_evidence",
+  "role": "Security & Hardware Safety Guard",
+  "status": "success",
+  "timestamp_utc": "2026-09-16T06:29:52.877073+00:00",
+  "mandate": "CORE-08: Fail-Closed Hardware Lockout & Safety Guard Policy Verification",
+  "audit_summary": {
+    "total_checks_evaluated": 792,
+    "hardware_serial_ports_locked_out": true,
+    "win32_download_commands_locked_out": true,
+    "companion_binaries_locked_out": true,
+    "download_cli_flags_locked_out": true,
+    "pytest_227_tests_passed": true,
+    "overall_safety_verdict": "VERIFIED_FAIL_CLOSED"
+  },
+  "serial_ports_audit": {
+    "com_ports_tested": 256,
+    "com_ports_blocked": 256,
+    "unc_ports_tested": 256,
+    "unc_ports_blocked": 256,
+    "linux_tty_tested": 8,
+    "linux_tty_blocked": 8,
+    "total_port_checks": 520,
+    "all_blocked_and_raise_security_error": true
+  },
+  "win32_download_commands_audit": {
+    "constants_verified": {
+      "ID_PROGRAM_DOWNLOAD": 32827,
+      "ID_CONTROLLER_DOWNLOAD": 32827,
+      "ID_CONTROLLER_DOWNLOAD_ALT": 33149,
+      "ID_PROGRAM_DOWNLOADOPTIONS": 33149
+    },
+    "commands_tested": [
+      {
+        "command_id": "32827",
+        "description": "ID_PROGRAM_DOWNLOAD / ID_CONTROLLER_DOWNLOAD",
+        "policy_blocked": true,
+        "guard_raises_security_error": true,
+        "cscape_safety_raises_security_error": true,
+        "fail_closed_status": "BLOCKED_CONFIRMED"
+      },
+      {
+        "command_id": "33149",
+        "description": "ID_CONTROLLER_DOWNLOAD_ALT / ID_PROGRAM_DOWNLOADOPTIONS",
+        "policy_blocked": true,
+        "guard_raises_security_error": true,
+        "cscape_safety_raises_security_error": true,
+        "fail_closed_status": "BLOCKED_CONFIRMED"
+      },
+      {
+        "command_id": "32827",
+        "description": "String ID 32827",
+        "policy_blocked": true,
+        "guard_raises_security_error": true,
+        "cscape_safety_raises_security_error": true,
+        "fail_closed_status": "BLOCKED_CONFIRMED"
+      },
+      {
+        "command_id": "33149",
+        "description": "String ID 33149",
+        "policy_blocked": true,
+        "guard_raises_security_error": true,
+        "cscape_safety_raises_security_error": true,
+        "fail_closed_status": "BLOCKED_CONFIRMED"
+      },
+      {
+        "command_id": "ID_PROGRAM_DOWNLOAD",
+        "description": "Symbolic ID_PROGRAM_DOWNLOAD",
+        "policy_blocked": true,
+        "guard_raises_security_error": true,
+        "cscape_safety_raises_security_error": true,
+        "fail_closed_status": "BLOCKED_CONFIRMED"
+      },
+      {
+        "command_id": "ID_CONTROLLER_DOWNLOAD",
+        "description": "Symbolic ID_CONTROLLER_DOWNLOAD",
+        "policy_blocked": true,
+        "guard_raises_security_error": true,
+        "cscape_safety_raises_security_error": true,
+        "fail_closed_status": "BLOCKED_CONFIRMED"
+      },
+      {
+        "command_id": "ID_PROGRAM_DOWNLOADOPTIONS",
+        "description": "Symbolic ID_PROGRAM_DOWNLOADOPTIONS",
+        "policy_blocked": true,
+        "guard_raises_security_error": true,
+        "cscape_safety_raises_security_error": true,
+        "fail_closed_status": "BLOCKED_CONFIRMED"
+      },
+      {
+        "command_id": "ID_CONTROLLER_DOWNLOAD_ALT",
+        "description": "Symbolic ID_CONTROLLER_DOWNLOAD_ALT",
+        "policy_blocked": true,
+        "guard_raises_security_error": true,
+        "cscape_safety_raises_security_error": true,
+        "fail_closed_status": "BLOCKED_CONFIRMED"
+      }
+    ],
+    "all_commands_blocked_fail_closed": true
+  },
+  "companion_binaries_audit": {
+    "binaries_tested": [
+      {
+        "binary": "PGMUpdateUtility.exe",
+        "policy_blocked": true,
+        "validate_command_blocked": true,
+        "validate_execution_blocked": true,
+        "status": "BLOCKED_CONFIRMED"
+      },
+      {
+        "binary": "pgmupdateutility.exe",
+        "policy_blocked": true,
+        "validate_command_blocked": true,
+        "validate_execution_blocked": true,
+        "status": "BLOCKED_CONFIRMED"
+      },
+      {
+        "binary": "DfuSeCommand.exe",
+        "policy_blocked": true,
+        "validate_command_blocked": true,
+        "validate_execution_blocked": true,
+        "status": "BLOCKED_CONFIRMED"
+      },
+      {
+        "binary": "dfusecommand.exe",
+        "policy_blocked": true,
+        "validate_command_blocked": true,
+        "validate_execution_blocked": true,
+        "status": "BLOCKED_CONFIRMED"
+      },
+      {
+        "binary": "STMFlashLoader.exe",
+        "policy_blocked": true,
+        "validate_command_blocked": true,
+        "validate_execution_blocked": true,
+        "status": "BLOCKED_CONFIRMED"
+      },
+      {
+        "binary": "stmflashloader.exe",
+        "policy_blocked": true,
+        "validate_command_blocked": true,
+        "validate_execution_blocked": true,
+        "status": "BLOCKED_CONFIRMED"
+      },
+      {
+        "binary": "WinJTAG.exe",
+        "policy_blocked": true,
+        "validate_command_blocked": true,
+        "validate_execution_blocked": true,
+        "status": "BLOCKED_CONFIRMED"
+      },
+      {
+        "binary": "winjtag.exe",
+        "policy_blocked": true,
+        "validate_command_blocked": true,
+        "validate_execution_blocked": true,
+        "status": "BLOCKED_CONFIRMED"
+      },
+      {
+        "binary": "CscapeAutoUpdt.exe",
+        "policy_blocked": true,
+        "validate_command_blocked": true,
+        "validate_execution_blocked": true,
+        "status": "BLOCKED_CONFIRMED"
+      },
+      {
+        "binary": "XLeTerm.exe",
+        "policy_blocked": true,
+        "validate_command_blocked": true,
+        "validate_execution_blocked": true,
+        "status": "BLOCKED_CONFIRMED"
+      }
+    ],
+    "all_binaries_blocked": true
+  },
+  "download_flags_audit": {
+    "flags_tested": [
+      {
+        "flag": "/d",
+        "policy_blocked": true,
+        "guard_raises_security_error": true,
+        "status": "BLOCKED_CONFIRMED"
+      },
+      {
+        "flag": "-d",
+        "policy_blocked": true,
+        "guard_raises_security_error": true,
+        "status": "BLOCKED_CONFIRMED"
+      },
+      {
+        "flag": "/download",
+        "policy_blocked": true,
+        "guard_raises_security_error": true,
+        "status": "BLOCKED_CONFIRMED"
+      },
+      {
+        "flag": "-download",
+        "policy_blocked": true,
+        "guard_raises_security_error": true,
+        "status": "BLOCKED_CONFIRMED"
+      },
+      {
+        "flag": "--download",
+        "policy_blocked": true,
+        "guard_raises_security_error": true,
+        "status": "BLOCKED_CONFIRMED"
+      },
+      {
+        "flag": "/flash",
+        "policy_blocked": true,
+        "guard_raises_security_error": true,
+        "status": "BLOCKED_CONFIRMED"
+      },
+      {
+        "flag": "-flash",
+        "policy_blocked": true,
+        "guard_raises_security_error": true,
+        "status": "BLOCKED_CONFIRMED"
+      },
+      {
+        "flag": "--flash",
+        "policy_blocked": true,
+        "guard_raises_security_error": true,
+        "status": "BLOCKED_CONFIRMED"
+      },
+      {
+        "flag": "/burn",
+        "policy_blocked": true,
+        "guard_raises_security_error": true,
+        "status": "BLOCKED_CONFIRMED"
+      },
+      {
+        "flag": "-burn",
+        "policy_blocked": true,
+        "guard_raises_security_error": true,
+        "status": "BLOCKED_CONFIRMED"
+      },
+      {
+        "flag": "/write-flash",
+        "policy_blocked": true,
+        "guard_raises_security_error": true,
+        "status": "BLOCKED_CONFIRMED"
+      },
+      {
+        "flag": "--write-flash",
+        "policy_blocked": true,
+        "guard_raises_security_error": true,
+        "status": "BLOCKED_CONFIRMED"
+      },
+      {
+        "flag": "/pgm",
+        "policy_blocked": true,
+        "guard_raises_security_error": true,
+        "status": "BLOCKED_CONFIRMED"
+      },
+      {
+        "flag": "-pgm",
+        "policy_blocked": true,
+        "guard_raises_security_error": true,
+        "status": "BLOCKED_CONFIRMED"
+      },
+      {
+        "flag": "--pgm",
+        "policy_blocked": true,
+        "guard_raises_security_error": true,
+        "status": "BLOCKED_CONFIRMED"
+      },
+      {
+        "flag": "/firmware",
+        "policy_blocked": true,
+        "guard_raises_security_error": true,
+        "status": "BLOCKED_CONFIRMED"
+      },
+      {
+        "flag": "--firmware",
+        "policy_blocked": true,
+        "guard_raises_security_error": true,
+        "status": "BLOCKED_CONFIRMED"
+      },
+      {
+        "flag": "/erase",
+        "policy_blocked": true,
+        "guard_raises_security_error": true,
+        "status": "BLOCKED_CONFIRMED"
+      },
+      {
+        "flag": "-erase",
+        "policy_blocked": true,
+        "guard_raises_security_error": true,
+        "status": "BLOCKED_CONFIRMED"
+      },
+      {
+        "flag": "--erase",
+        "policy_blocked": true,
+        "guard_raises_security_error": true,
+        "status": "BLOCKED_CONFIRMED"
+      },
+      {
+        "flag": "/upload",
+        "policy_blocked": true,
+        "guard_raises_security_error": true,
+        "status": "BLOCKED_CONFIRMED"
+      },
+      {
+        "flag": "-upload",
+        "policy_blocked": true,
+        "guard_raises_security_error": true,
+        "status": "BLOCKED_CONFIRMED"
+      },
+      {
+        "flag": "--upload",
+        "policy_blocked": true,
+        "guard_raises_security_error": true,
+        "status": "BLOCKED_CONFIRMED"
+      },
+      {
+        "flag": "/target:hardware",
+        "policy_blocked": true,
+        "guard_raises_security_error": true,
+        "status": "BLOCKED_CONFIRMED"
+      },
+      {
+        "flag": "/target:plc",
+        "policy_blocked": true,
+        "guard_raises_security_error": true,
+        "status": "BLOCKED_CONFIRMED"
+      },
+      {
+        "flag": "--target=hardware",
+        "policy_blocked": true,
+        "guard_raises_security_error": true,
+        "status": "BLOCKED_CONFIRMED"
+      },
+      {
+        "flag": "--target=plc",
+        "policy_blocked": true,
+        "guard_raises_security_error": true,
+        "status": "BLOCKED_CONFIRMED"
+      }
+    ],
+    "all_flags_blocked": true
+  },
+  "pytest_suite": {
+    "test_file": "tests/test_security.py",
+    "total_tests": 227,
+    "passed": 227,
+    "failed": 0,
+    "skipped": 0,
+    "warnings": 1,
+    "warning_details": "DeprecationWarning: Target PLC 'T5SIMUL' is deprecated and quarantined under legacy Straton K5 support.",
+    "exit_code": 0,
+    "duration_seconds": 13.15,
+    "status": "success"
+  },
+  "dual_root_parity": true,
+  "duration_seconds": 0.1304
+}

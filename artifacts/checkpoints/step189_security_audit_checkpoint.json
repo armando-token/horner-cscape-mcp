@@ -1,0 +1,98 @@
+{
+  "gate": "G1",
+  "step": 189,
+  "name": "step189_security_audit_checkpoint",
+  "role": "Security & Safety Guard",
+  "status": "success",
+  "total_rules_evaluated": 422,
+  "mandate": "Step 189: Comprehensive Fail-Closed Security Lockout, Modern Model Allowlist & Straton Quarantine Audit",
+  "timestamp_utc": "2026-09-06T22:32:53.751051+00:00",
+  "duration_seconds": 0.082,
+  "all_safety_checks_passed": true,
+  "hardware_lockout": "ACTIVE_FAIL_CLOSED",
+  "straton_isolation": "ACTIVE_QUARANTINED",
+  "verification_taxonomy": {
+    "offline_audits": "offline/DEV (TESTED_MOCK)",
+    "live_gui_gate": "VERIFIED_LIVE",
+    "safety_lockout": "BLOCKED_SAFETY"
+  },
+  "dual_root_parity": true,
+  "roots_verified": {
+    "horner_root": "C:\\HornerAI\\horner-cscape-mcp",
+    "user_root": "C:\\Users\\ArmandoSilva"
+  },
+  "safety_policies_enforced": {
+    "hardware_ports_blocked": [
+      "COM1-COM256",
+      "\\\\.\\COM*",
+      "/dev/tty*",
+      "CAN*",
+      "CsCAN",
+      "DeviceNet",
+      "Profibus",
+      "USB*",
+      "JTAG",
+      "SWD",
+      "LPT*"
+    ],
+    "download_command_ids_blocked": [
+      32827,
+      33149,
+      32828,
+      32862,
+      32993,
+      38293,
+      38294,
+      38295,
+      38296,
+      38297,
+      38372,
+      38373,
+      2112,
+      38458,
+      38269,
+      33049,
+      32850
+    ],
+    "companion_binaries_blocked": [
+      "PGMUpdateUtility.exe",
+      "DfuSeCommand.exe",
+      "STMFlashLoader.exe",
+      "WinJTAG.exe",
+      "CscapeAutoUpdt.exe"
+    ],
+    "download_cli_switches_blocked": [
+      "/d",
+      "/download",
+      "/flash",
+      "/burn",
+      "/write-flash",
+      "/pgm",
+      "/firmware",
+      "/com",
+      "/port",
+      "/baud",
+      "/serial"
+    ],
+    "straton_k5_quarantine_path": "quarantine/straton_k5_legacy/",
+    "legacy_targets_deprecated": [
+      "T5RTI",
+      "T5SIMUL"
+    ],
+    "modern_horner_models_allowlisted": [
+      "EXL10",
+      "XL10",
+      "XL+",
+      "Micro OCS",
+      "X2",
+      "X4",
+      "X5",
+      "X7"
+    ]
+  },
+  "log_proof": {
+    "file": "artifacts/logs/step189_security_audit.json",
+    "size_bytes": 35776,
+    "sha256": "9576eda77614f0ed310a94aa6d4db44df982db0a699dd786fe860cc47bea8c6d"
+  }
+}

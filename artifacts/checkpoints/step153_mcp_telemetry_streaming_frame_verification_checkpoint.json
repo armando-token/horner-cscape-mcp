@@ -1,0 +1,17 @@
+{
+  "step": 153,
+  "name": "step153_mcp_telemetry_streaming_frame_verification_checkpoint",
+  "status": "PASSED",
+  "timestamp_utc": "2026-09-05T20:13:08.918Z",
+  "cscape_pid": 3120,
+  "hwnd": "0x00830976",
+  "frames_streamed": 200,
+  "frame_loss_percent": 0.0,
+  "streaming_fps": 256.28,
+  "mean_latency_ms": 3.83,
+  "gui_compile_status": "SUCCESS",
+  "zero_straton_dependencies": true,
+  "hardware_lockout_enforced": true,
+  "live_screenshot_sha256": "ba028ddc59b5690ad99f67b577b41eeaf7e5b78ce1e648c31332c407d12f1817",
+  "checkpoint_sha256": "522db8f8c5c23005a4e9f30b1c3cef41a8013b1afb79f346b38d30291c091931"
+}

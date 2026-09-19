@@ -1,0 +1,661 @@
+{
+  "step": 185,
+  "name": "step185_pure_st_audit",
+  "status": "success",
+  "timestamp_utc": "2026-09-06T22:32:41.697323+00:00",
+  "mandate": "PLC / IEC 61131-3 Pure ST Audit for FB_PIDTemperatureControl",
+  "execution_duration_sec": 0.5468,
+  "dual_root_parity": true,
+  "cscape_gui_mode": "headless_static_analysis_only",
+  "target_pou": {
+    "name": "FB_PIDTemperatureControl",
+    "type": "FUNCTION_BLOCK",
+    "relative_path": "examples/st_applications/pid_temperature_controller.st",
+    "sha256": "287ab36da0e02e4771ba5004b0fb32c7c1964b12081913f90bd71f9d841230bb",
+    "expected_sha256": "287ab36da0e02e4771ba5004b0fb32c7c1964b12081913f90bd71f9d841230bb",
+    "byte_size": 6885,
+    "lines": 160
+  },
+  "tasks": {
+    "task1_file_existence_and_parity": {
+      "status": "success",
+      "horner_file": "C:\\HornerAI\\horner-cscape-mcp\\examples\\st_applications\\pid_temperature_controller.st",
+      "user_file": "C:\\Users\\ArmandoSilva\\examples\\st_applications\\pid_temperature_controller.st",
+      "horner_sha256": "287ab36da0e02e4771ba5004b0fb32c7c1964b12081913f90bd71f9d841230bb",
+      "user_sha256": "287ab36da0e02e4771ba5004b0fb32c7c1964b12081913f90bd71f9d841230bb",
+      "expected_sha256": "287ab36da0e02e4771ba5004b0fb32c7c1964b12081913f90bd71f9d841230bb",
+      "sha_match": true,
+      "dual_root_parity": true,
+      "diff_line_count": 0,
+      "diff": "",
+      "file_size_bytes": 6885,
+      "duration_sec": 0.0007892000139690936
+    },
+    "task2_ladder_construct_scan_and_fail_closed": {
+      "status": "success",
+      "clean_scan_artifacts_count": 0,
+      "clean_scan_artifacts": [],
+      "clean_validator_errors": [],
+      "clean_st_parser_ladder_errors": [],
+      "mutation_tests_total": 12,
+      "mutation_tests_fail_closed": 12,
+      "mutation_results": [
+        {
+          "construct_name": "Normally Open Contact",
+          "construct_syntax": "---[ ]---",
+          "guard_rejected": true,
+          "validator_rejected": true,
+          "parser_rejected": true,
+          "mcp_rejected": true,
+          "fail_closed": true
+        },
+        {
+          "construct_name": "Normally Closed Contact",
+          "construct_syntax": "---[/]---",
+          "guard_rejected": true,
+          "validator_rejected": true,
+          "parser_rejected": true,
+          "mcp_rejected": true,
+          "fail_closed": true
+        },
+        {
+          "construct_name": "Spaced Inverted Contact",
+          "construct_syntax": "---[ / ]---",
+          "guard_rejected": true,
+          "validator_rejected": true,
+          "parser_rejected": true,
+          "mcp_rejected": true,
+          "fail_closed": true
+        },
+        {
+          "construct_name": "Normal Output Coil",
+          "construct_syntax": "---( )---",
+          "guard_rejected": true,
+          "validator_rejected": true,
+          "parser_rejected": true,
+          "mcp_rejected": true,
+          "fail_closed": true
+        },
+        {
+          "construct_name": "Set Latch Coil",
+          "construct_syntax": "---(S)---",
+          "guard_rejected": true,
+          "validator_rejected": true,
+          "parser_rejected": true,
+          "mcp_rejected": true,
+          "fail_closed": true
+        },
+        {
+          "construct_name": "Reset Unlatch Coil",
+          "construct_syntax": "---(R)---",
+          "guard_rejected": true,
+          "validator_rejected": true,
+          "parser_rejected": true,
+          "mcp_rejected": true,
+          "fail_closed": true
+        },
+        {
+          "construct_name": "Rung Header Marker",
+          "construct_syntax": "RUNG 1: Condenser Hotwell Vacuum Sequence",
+          "guard_rejected": true,
+          "validator_rejected": true,
+          "parser_rejected": true,
+          "mcp_rejected": true,
+          "fail_closed": true
+        },
+        {
+          "construct_name": "Rung Terminator Marker",
+          "construct_syntax": "END_RUNG",
+          "guard_rejected": true,
+          "validator_rejected": true,
+          "parser_rejected": true,
+          "mcp_rejected": true,
+          "fail_closed": true
+        },
+        {
+          "construct_name": "Ladder Network Section",
+          "construct_syntax": "NETWORK 10",
+          "guard_rejected": true,
+          "validator_rejected": true,
+          "parser_rejected": true,
+          "mcp_rejected": true,
+          "fail_closed": true
+        },
+        {
+          "construct_name": "Instruction Mnemonic XIC",
+          "construct_syntax": "XIC(Permissive_Run)",
+          "guard_rejected": true,
+          "validator_rejected": true,
+          "parser_rejected": true,
+          "mcp_rejected": true,
+          "fail_closed": true
+        },
+        {
+          "construct_name": "Instruction Mnemonic XIO",
+          "construct_syntax": "XIO(Reset_Alarms)",
+          "guard_rejected": true,
+          "validator_rejected": true,
+          "parser_rejected": true,
+          "mcp_rejected": true,
+          "fail_closed": true
+        },
+        {
+          "construct_name": "Instruction Mnemonic OTE",
+          "construct_syntax": "OTE(Condensate_Pumps_Run)",
+          "guard_rejected": true,
+          "validator_rejected": true,
+          "parser_rejected": true,
+          "mcp_rejected": true,
+          "fail_closed": true
+        }
+      ],
+      "duration_sec": 0.4877585000358522
+    },
+    "task3_iec61131_syntax_and_datatypes": {
+      "status": "success",
+      "pou_name": "FB_PIDTemperatureControl",
+      "pou_type": "FUNCTION_BLOCK",
+      "total_variables": 36,
+      "input_count": 19,
+      "output_count": 10,
+      "local_count": 7,
+      "case_states_valid": true,
+      "type_violations": [],
+      "iec_validator_valid": true,
+      "st_parser_valid": true,
+      "mcp_validator_valid": true,
+      "variables": [
+        {
+          "name": "Enable",
+          "data_type": "BOOL",
+          "scope": "VAR_INPUT",
+          "initial_value": "TRUE"
+        },
+        {
+          "name": "Setpoint",
+          "data_type": "REAL",
+          "scope": "VAR_INPUT",
+          "initial_value": "150.0"
+        },
+        {
+          "name": "RawPV",
+          "data_type": "REAL",
+          "scope": "VAR_INPUT",
+          "initial_value": "25.0"
+        },
+        {
+          "name": "ManualMode",
+          "data_type": "BOOL",
+          "scope": "VAR_INPUT",
+          "initial_value": "FALSE"
+        },
+        {
+          "name": "ManualOutput",
+          "data_type": "REAL",
+          "scope": "VAR_INPUT",
+          "initial_value": "0.0"
+        },
+        {
+          "name": "Kp",
+          "data_type": "REAL",
+          "scope": "VAR_INPUT",
+          "initial_value": "4.5"
+        },
+        {
+          "name": "Ki",
+          "data_type": "REAL",
+          "scope": "VAR_INPUT",
+          "initial_value": "0.05"
+        },
+        {
+          "name": "Kd",
+          "data_type": "REAL",
+          "scope": "VAR_INPUT",
+          "initial_value": "1.20"
+        },
+        {
+          "name": "Deadband",
+          "data_type": "REAL",
+          "scope": "VAR_INPUT",
+          "initial_value": "0.5"
+        },
+        {
+          "name": "FilterAlpha",
+          "data_type": "REAL",
+          "scope": "VAR_INPUT",
+          "initial_value": "0.25"
+        },
+        {
+          "name": "CycleTimeSec",
+          "data_type": "REAL",
+          "scope": "VAR_INPUT",
+          "initial_value": "0.1"
+        },
+        {
+          "name": "PwmPeriodSec",
+          "data_type": "REAL",
+          "scope": "VAR_INPUT",
+          "initial_value": "5.0"
+        },
+        {
+          "name": "SplitRangeMid",
+          "data_type": "REAL",
+          "scope": "VAR_INPUT",
+          "initial_value": "50.0"
+        },
+        {
+          "name": "HighHighSP",
+          "data_type": "REAL",
+          "scope": "VAR_INPUT",
+          "initial_value": "220.0"
+        },
+        {
+          "name": "HighSP",
+          "data_type": "REAL",
+          "scope": "VAR_INPUT",
+          "initial_value": "180.0"
+        },
+        {
+          "name": "LowSP",
+          "data_type": "REAL",
+          "scope": "VAR_INPUT",
+          "initial_value": "80.0"
+        },
+        {
+          "name": "LowLowSP",
+          "data_type": "REAL",
+          "scope": "VAR_INPUT",
+          "initial_value": "50.0"
+        },
+        {
+          "name": "SensorFault",
+          "data_type": "BOOL",
+          "scope": "VAR_INPUT",
+          "initial_value": "FALSE"
+        },
+        {
+          "name": "ResetAlarm",
+          "data_type": "BOOL",
+          "scope": "VAR_INPUT",
+          "initial_value": "FALSE"
+        },
+        {
+          "name": "HeatOutput",
+          "data_type": "REAL",
+          "scope": "VAR_OUTPUT",
+          "initial_value": "0.0"
+        },
+        {
+          "name": "CoolOutput",
+          "data_type": "REAL",
+          "scope": "VAR_OUTPUT",
+          "initial_value": "0.0"
+        },
+        {
+          "name": "PWM_Heater",
+          "data_type": "BOOL",
+          "scope": "VAR_OUTPUT",
+          "initial_value": "FALSE"
+        },
+        {
+          "name": "FilteredPV",
+          "data_type": "REAL",
+          "scope": "VAR_OUTPUT",
+          "initial_value": "25.0"
+        },
+        {
+          "name": "Error",
+          "data_type": "REAL",
+          "scope": "VAR_OUTPUT",
+          "initial_value": "0.0"
+        },
+        {
+          "name": "AlarmHH",
+          "data_type": "BOOL",
+          "scope": "VAR_OUTPUT",
+          "initial_value": "FALSE"
+        },
+        {
+          "name": "AlarmH",
+          "data_type": "BOOL",
+          "scope": "VAR_OUTPUT",
+          "initial_value": "FALSE"
+        },
+        {
+          "name": "AlarmL",
+          "data_type": "BOOL",
+          "scope": "VAR_OUTPUT",
+          "initial_value": "FALSE"
+        },
+        {
+          "name": "AlarmLL",
+          "data_type": "BOOL",
+          "scope": "VAR_OUTPUT",
+          "initial_value": "FALSE"
+        },
+        {
+          "name": "LoopHealthy",
+          "data_type": "BOOL",
+          "scope": "VAR_OUTPUT",
+          "initial_value": "TRUE"
+        },
+        {
+          "name": "LastPV",
+          "data_type": "REAL",
+          "scope": "VAR",
+          "initial_value": "25.0"
+        },
+        {
+          "name": "IntegralSum",
+          "data_type": "REAL",
+          "scope": "VAR",
+          "initial_value": "0.0"
+        },
+        {
+          "name": "PropTerm",
+          "data_type": "REAL",
+          "scope": "VAR",
+          "initial_value": "0.0"
+        },
+        {
+          "name": "DerivTerm",
+          "data_type": "REAL",
+          "scope": "VAR",
+          "initial_value": "0.0"
+        },
+        {
+          "name": "TotalEffort",
+          "data_type": "REAL",
+          "scope": "VAR",
+          "initial_value": "0.0"
+        },
+        {
+          "name": "EffectiveError",
+          "data_type": "REAL",
+          "scope": "VAR",
+          "initial_value": "0.0"
+        },
+        {
+          "name": "PwmAccumulator",
+          "data_type": "REAL",
+          "scope": "VAR",
+          "initial_value": "0.0"
+        }
+      ],
+      "duration_sec": 0.051935199997387826
+    },
+    "task4_ast_decomposition": {
+      "status": "success",
+      "pou_name": "FB_PIDTemperatureControl",
+      "pou_type": "FUNCTION_BLOCK",
+      "sha256": "287ab36da0e02e4771ba5004b0fb32c7c1964b12081913f90bd71f9d841230bb",
+      "total_lines": 160,
+      "total_tokens": 617,
+      "var_blocks_count": 3,
+      "var_blocks": [
+        {
+          "block_type": "VAR_INPUT",
+          "declarations_count": 19,
+          "declarations": [
+            {
+              "name": "Enable",
+              "data_type": "BOOL",
+              "initial_value": "LiteralNode(True, 'BOOL')"
+            },
+            {
+              "name": "Setpoint",
+              "data_type": "REAL",
+              "initial_value": "LiteralNode(150.0, 'REAL')"
+            },
+            {
+              "name": "RawPV",
+              "data_type": "REAL",
+              "initial_value": "LiteralNode(25.0, 'REAL')"
+            },
+            {
+              "name": "ManualMode",
+              "data_type": "BOOL",
+              "initial_value": "LiteralNode(False, 'BOOL')"
+            },
+            {
+              "name": "ManualOutput",
+              "data_type": "REAL",
+              "initial_value": "LiteralNode(0.0, 'REAL')"
+            },
+            {
+              "name": "Kp",
+              "data_type": "REAL",
+              "initial_value": "LiteralNode(4.5, 'REAL')"
+            },
+            {
+              "name": "Ki",
+              "data_type": "REAL",
+              "initial_value": "LiteralNode(0.05, 'REAL')"
+            },
+            {
+              "name": "Kd",
+              "data_type": "REAL",
+              "initial_value": "LiteralNode(1.2, 'REAL')"
+            },
+            {
+              "name": "Deadband",
+              "data_type": "REAL",
+              "initial_value": "LiteralNode(0.5, 'REAL')"
+            },
+            {
+              "name": "FilterAlpha",
+              "data_type": "REAL",
+              "initial_value": "LiteralNode(0.25, 'REAL')"
+            },
+            {
+              "name": "CycleTimeSec",
+              "data_type": "REAL",
+              "initial_value": "LiteralNode(0.1, 'REAL')"
+            },
+            {
+              "name": "PwmPeriodSec",
+              "data_type": "REAL",
+              "initial_value": "LiteralNode(5.0, 'REAL')"
+            },
+            {
+              "name": "SplitRangeMid",
+              "data_type": "REAL",
+              "initial_value": "LiteralNode(50.0, 'REAL')"
+            },
+            {
+              "name": "HighHighSP",
+              "data_type": "REAL",
+              "initial_value": "LiteralNode(220.0, 'REAL')"
+            },
+            {
+              "name": "HighSP",
+              "data_type": "REAL",
+              "initial_value": "LiteralNode(180.0, 'REAL')"
+            },
+            {
+              "name": "LowSP",
+              "data_type": "REAL",
+              "initial_value": "LiteralNode(80.0, 'REAL')"
+            },
+            {
+              "name": "LowLowSP",
+              "data_type": "REAL",
+              "initial_value": "LiteralNode(50.0, 'REAL')"
+            },
+            {
+              "name": "SensorFault",
+              "data_type": "BOOL",
+              "initial_value": "LiteralNode(False, 'BOOL')"
+            },
+            {
+              "name": "ResetAlarm",
+              "data_type": "BOOL",
+              "initial_value": "LiteralNode(False, 'BOOL')"
+            }
+          ]
+        },
+        {
+          "block_type": "VAR_OUTPUT",
+          "declarations_count": 10,
+          "declarations": [
+            {
+              "name": "HeatOutput",
+              "data_type": "REAL",
+              "initial_value": "LiteralNode(0.0, 'REAL')"
+            },
+            {
+              "name": "CoolOutput",
+              "data_type": "REAL",
+              "initial_value": "LiteralNode(0.0, 'REAL')"
+            },
+            {
+              "name": "PWM_Heater",
+              "data_type": "BOOL",
+              "initial_value": "LiteralNode(False, 'BOOL')"
+            },
+            {
+              "name": "FilteredPV",
+              "data_type": "REAL",
+              "initial_value": "LiteralNode(25.0, 'REAL')"
+            },
+            {
+              "name": "Error",
+              "data_type": "REAL",
+              "initial_value": "LiteralNode(0.0, 'REAL')"
+            },
+            {
+              "name": "AlarmHH",
+              "data_type": "BOOL",
+              "initial_value": "LiteralNode(False, 'BOOL')"
+            },
+            {
+              "name": "AlarmH",
+              "data_type": "BOOL",
+              "initial_value": "LiteralNode(False, 'BOOL')"
+            },
+            {
+              "name": "AlarmL",
+              "data_type": "BOOL",
+              "initial_value": "LiteralNode(False, 'BOOL')"
+            },
+            {
+              "name": "AlarmLL",
+              "data_type": "BOOL",
+              "initial_value": "LiteralNode(False, 'BOOL')"
+            },
+            {
+              "name": "LoopHealthy",
+              "data_type": "BOOL",
+              "initial_value": "LiteralNode(True, 'BOOL')"
+            }
+          ]
+        },
+        {
+          "block_type": "VAR",
+          "declarations_count": 7,
+          "declarations": [
+            {
+              "name": "LastPV",
+              "data_type": "REAL",
+              "initial_value": "LiteralNode(25.0, 'REAL')"
+            },
+            {
+              "name": "IntegralSum",
+              "data_type": "REAL",
+              "initial_value": "LiteralNode(0.0, 'REAL')"
+            },
+            {
+              "name": "PropTerm",
+              "data_type": "REAL",
+              "initial_value": "LiteralNode(0.0, 'REAL')"
+            },
+            {
+              "name": "DerivTerm",
+              "data_type": "REAL",
+              "initial_value": "LiteralNode(0.0, 'REAL')"
+            },
+            {
+              "name": "TotalEffort",
+              "data_type": "REAL",
+              "initial_value": "LiteralNode(0.0, 'REAL')"
+            },
+            {
+              "name": "EffectiveError",
+              "data_type": "REAL",
+              "initial_value": "LiteralNode(0.0, 'REAL')"
+            },
+            {
+              "name": "PwmAccumulator",
+              "data_type": "REAL",
+              "initial_value": "LiteralNode(0.0, 'REAL')"
+            }
+          ]
+        }
+      ],
+      "statements_count": 12,
+      "statements": [
+        {
+          "index": 1,
+          "statement_type": "IfNode",
+          "line": 63
+        },
+        {
+          "index": 2,
+          "statement_type": "IfNode",
+          "line": 68
+        },
+        {
+          "index": 3,
+          "statement_type": "AssignmentNode",
+          "line": 77
+        },
+        {
+          "index": 4,
+          "statement_type": "IfNode",
+          "line": 80
+        },
+        {
+          "index": 5,
+          "statement_type": "IfNode",
+          "line": 84
+        },
+        {
+          "index": 6,
+          "statement_type": "AssignmentNode",
+          "line": 88
+        },
+        {
+          "index": 7,
+          "statement_type": "AssignmentNode",
+          "line": 89
+        },
+        {
+          "index": 8,
+          "statement_type": "AssignmentNode",
+          "line": 90
+        },
+        {
+          "index": 9,
+          "statement_type": "AssignmentNode",
+          "line": 93
+        },
+        {
+          "index": 10,
+          "statement_type": "IfNode",
+          "line": 95
+        },
+        {
+          "index": 11,
+          "statement_type": "IfNode",
+          "line": 102
+        },
+        {
+          "index": 12,
+          "statement_type": "IfNode",
+          "line": 149
+        }
+      ],
+      "duration_sec": 0.006190899992361665
+    }
+  }
+}

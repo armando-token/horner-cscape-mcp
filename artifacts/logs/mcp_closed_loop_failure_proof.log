@@ -1,0 +1,854 @@
+================================================================================
+STEP 4: CLOSED-LOOP PROOF WITH CONCRETE FAILURE LOGS
+================================================================================
+Timestamp UTC : 2026-09-04T23:45:48.409Z
+Mode          : Air-Gapped Simulation (Zero Physical PLC Download)
+Engine        : Horner Cscape 10.2 Native IEC 61131-3 (Zero Straton K5)
+
+------------------------------------------------------------
+PART 1: INDUSTRIAL CLOSED-LOOP OVERFILL TRIP FAILURE SCENARIO
+------------------------------------------------------------
+  Cycle 1-3 (Steady-State 60.0%): PV=60.0%, Trip=False, Valve=True
+  [FAILURE INDUCTION] RawLevelIn = 30400 counts (95.0% Level)
+  -> TankLevelPV     : 95.0% (>= 90.0% High-High Limit)
+  -> AlarmHigh       : True (High Warning Active)
+  -> AlarmHighHigh   : True (CRITICAL HIGH-HIGH TRIP ACTIVE)
+  -> InflowValveCmd  : False (INFLOW VALVE ISOLATED/CLOSED)
+  -> DischargePump   : True (EVACUATION DISCHARGE ACTIVE)
+  -> TripActive      : True (SYSTEM SAFETY INTERLOCK TRIPPED)
+
+------------------------------------------------------------
+PART 2: CONCRETE MCP COMPILER FAILURE LOCATION LOGGING
+------------------------------------------------------------
+  Failure Test: Syntax Error near semicolon
+  -> Valid           : False
+================================================================================
+STEP 4: CLOSED-LOOP PROOF WITH CONCRETE FAILURE LOGS
+================================================================================
+Timestamp UTC : 2026-09-04T23:46:05.295Z
+Mode          : Air-Gapped Simulation (Zero Physical PLC Download)
+Engine        : Horner Cscape 10.2 Native IEC 61131-3 (Zero Straton K5)
+
+------------------------------------------------------------
+PART 1: INDUSTRIAL CLOSED-LOOP OVERFILL TRIP FAILURE SCENARIO
+------------------------------------------------------------
+  Cycle 1-3 (Steady-State 60.0%): PV=60.0%, Trip=False, Valve=True
+  [FAILURE INDUCTION] RawLevelIn = 30400 counts (95.0% Level)
+  -> TankLevelPV     : 95.0% (>= 90.0% High-High Limit)
+  -> AlarmHigh       : True (High Warning Active)
+  -> AlarmHighHigh   : True (CRITICAL HIGH-HIGH TRIP ACTIVE)
+  -> InflowValveCmd  : False (INFLOW VALVE ISOLATED/CLOSED)
+  -> DischargePump   : True (EVACUATION DISCHARGE ACTIVE)
+  -> TripActive      : True (SYSTEM SAFETY INTERLOCK TRIPPED)
+
+------------------------------------------------------------
+PART 2: CONCRETE MCP COMPILER FAILURE LOCATION LOGGING
+------------------------------------------------------------
+  Failure Test: Syntax Error near semicolon
+  -> Valid           : False
+  -> Error Count     : 1
+  [FAILURE_LOCATION] File: BrokenPOU.st | Line: 6 | Col: 16 | Code: ST_SYNTAX_ERROR | Message: Syntax error at line 6, col 16: Unexpected token in expression: SEMICOLON (';')
+Checkpoint saved to: C:\Users\ArmandoSilva\artifacts\checkpoints\step4_closed_loop_checkpoint.json
+Checkpoint saved to: C:\HornerAI\horner-cscape-mcp\artifacts\checkpoints\step4_closed_loop_checkpoint.json
+================================================================================
+STEP 4: CLOSED-LOOP PROOF WITH FAILURE LOGS COMPLETED & CHECKPOINTED
+================================================================================
+================================================================================
+STEP 4: CLOSED-LOOP PROOF WITH CONCRETE FAILURE LOGS
+================================================================================
+Timestamp UTC : 2026-09-05T00:00:56.130Z
+Mode          : Air-Gapped Simulation (Zero Physical PLC Download)
+Engine        : Horner Cscape 10.2 Native IEC 61131-3 (Zero Straton K5)
+
+------------------------------------------------------------
+PART 1: INDUSTRIAL CLOSED-LOOP OVERFILL TRIP FAILURE SCENARIO
+------------------------------------------------------------
+  Cycle 1-3 (Steady-State 60.0%): PV=60.0%, Trip=False, Valve=True
+  [FAILURE INDUCTION] RawLevelIn = 30400 counts (95.0% Level)
+  -> TankLevelPV     : 95.0% (>= 90.0% High-High Limit)
+  -> AlarmHigh       : True (High Warning Active)
+  -> AlarmHighHigh   : True (CRITICAL HIGH-HIGH TRIP ACTIVE)
+  -> InflowValveCmd  : False (INFLOW VALVE ISOLATED/CLOSED)
+  -> DischargePump   : True (EVACUATION DISCHARGE ACTIVE)
+  -> TripActive      : True (SYSTEM SAFETY INTERLOCK TRIPPED)
+
+------------------------------------------------------------
+PART 2: CONCRETE MCP COMPILER FAILURE LOCATION LOGGING
+------------------------------------------------------------
+  Failure Test: Syntax Error near semicolon
+  -> Valid           : False
+  -> Error Count     : 1
+  [FAILURE_LOCATION] File: BrokenPOU.st | Line: 6 | Col: 16 | Code: ST_SYNTAX_ERROR | Message: Syntax error at line 6, col 16: Unexpected token in expression: SEMICOLON (';')
+Checkpoint saved to: C:\Users\ArmandoSilva\artifacts\checkpoints\step4_closed_loop_checkpoint.json
+Checkpoint saved to: C:\HornerAI\horner-cscape-mcp\artifacts\checkpoints\step4_closed_loop_checkpoint.json
+================================================================================
+STEP 4: CLOSED-LOOP PROOF WITH FAILURE LOGS COMPLETED & CHECKPOINTED
+================================================================================
+================================================================================
+STEP 4: CLOSED-LOOP PROOF WITH CONCRETE FAILURE LOGS
+================================================================================
+Timestamp UTC : 2026-09-05T00:36:21.787Z
+Mode          : Air-Gapped Simulation (Zero Physical PLC Download)
+Engine        : Horner Cscape 10.2 Native IEC 61131-3 (Zero Straton K5)
+
+------------------------------------------------------------
+PART 1: INDUSTRIAL CLOSED-LOOP OVERFILL TRIP FAILURE SCENARIO
+------------------------------------------------------------
+  Cycle 1-3 (Steady-State 60.0%): PV=60.0%, Trip=False, Valve=True
+  [FAILURE INDUCTION] RawLevelIn = 30400 counts (95.0% Level)
+  -> TankLevelPV     : 95.0% (>= 90.0% High-High Limit)
+  -> AlarmHigh       : True (High Warning Active)
+  -> AlarmHighHigh   : True (CRITICAL HIGH-HIGH TRIP ACTIVE)
+  -> InflowValveCmd  : False (INFLOW VALVE ISOLATED/CLOSED)
+  -> DischargePump   : True (EVACUATION DISCHARGE ACTIVE)
+  -> TripActive      : True (SYSTEM SAFETY INTERLOCK TRIPPED)
+
+------------------------------------------------------------
+PART 2: CONCRETE MCP COMPILER FAILURE LOCATION LOGGING
+------------------------------------------------------------
+  Failure Test: Syntax Error near semicolon
+  -> Valid           : False
+  -> Error Count     : 1
+  [FAILURE_LOCATION] File: BrokenPOU.st | Line: 6 | Col: 16 | Code: ST_SYNTAX_ERROR | Message: Syntax error at line 6, col 16: Unexpected token in expression: SEMICOLON (';')
+Checkpoint saved to: C:\Users\ArmandoSilva\artifacts\checkpoints\step4_closed_loop_checkpoint.json
+Checkpoint saved to: C:\HornerAI\horner-cscape-mcp\artifacts\checkpoints\step4_closed_loop_checkpoint.json
+================================================================================
+STEP 4: CLOSED-LOOP PROOF WITH FAILURE LOGS COMPLETED & CHECKPOINTED
+================================================================================
+================================================================================
+STEP 4: CLOSED-LOOP PROOF WITH CONCRETE FAILURE LOGS
+================================================================================
+Timestamp UTC : 2026-09-05T00:39:14.183Z
+Mode          : Air-Gapped Simulation (Zero Physical PLC Download)
+Engine        : Horner Cscape 10.2 Native IEC 61131-3 (Zero Straton K5)
+
+------------------------------------------------------------
+PART 1: INDUSTRIAL CLOSED-LOOP OVERFILL TRIP FAILURE SCENARIO
+------------------------------------------------------------
+  Cycle 1-3 (Steady-State 60.0%): PV=60.0%, Trip=False, Valve=True
+  [FAILURE INDUCTION] RawLevelIn = 30400 counts (95.0% Level)
+  -> TankLevelPV     : 95.0% (>= 90.0% High-High Limit)
+  -> AlarmHigh       : True (High Warning Active)
+  -> AlarmHighHigh   : True (CRITICAL HIGH-HIGH TRIP ACTIVE)
+  -> InflowValveCmd  : False (INFLOW VALVE ISOLATED/CLOSED)
+  -> DischargePump   : True (EVACUATION DISCHARGE ACTIVE)
+  -> TripActive      : True (SYSTEM SAFETY INTERLOCK TRIPPED)
+
+------------------------------------------------------------
+PART 2: CONCRETE MCP COMPILER FAILURE LOCATION LOGGING
+------------------------------------------------------------
+  Failure Test: Syntax Error near semicolon
+  -> Valid           : False
+  -> Error Count     : 1
+  [FAILURE_LOCATION] File: BrokenPOU.st | Line: 6 | Col: 16 | Code: ST_SYNTAX_ERROR | Message: Syntax error at line 6, col 16: Unexpected token in expression: SEMICOLON (';')
+Checkpoint saved to: C:\Users\ArmandoSilva\artifacts\checkpoints\step4_closed_loop_checkpoint.json
+Checkpoint saved to: C:\HornerAI\horner-cscape-mcp\artifacts\checkpoints\step4_closed_loop_checkpoint.json
+================================================================================
+STEP 4: CLOSED-LOOP PROOF WITH FAILURE LOGS COMPLETED & CHECKPOINTED
+================================================================================
+================================================================================
+STEP 4: CLOSED-LOOP PROOF WITH CONCRETE FAILURE LOGS
+================================================================================
+Timestamp UTC : 2026-09-05T00:40:01.948Z
+Mode          : Air-Gapped Simulation (Zero Physical PLC Download)
+Engine        : Horner Cscape 10.2 Native IEC 61131-3 (Zero Straton K5)
+
+------------------------------------------------------------
+PART 1: INDUSTRIAL CLOSED-LOOP OVERFILL TRIP FAILURE SCENARIO
+------------------------------------------------------------
+  Cycle 1-3 (Steady-State 60.0%): PV=60.0%, Trip=False, Valve=True
+  [FAILURE INDUCTION] RawLevelIn = 30400 counts (95.0% Level)
+  -> TankLevelPV     : 95.0% (>= 90.0% High-High Limit)
+  -> AlarmHigh       : True (High Warning Active)
+  -> AlarmHighHigh   : True (CRITICAL HIGH-HIGH TRIP ACTIVE)
+  -> InflowValveCmd  : False (INFLOW VALVE ISOLATED/CLOSED)
+  -> DischargePump   : True (EVACUATION DISCHARGE ACTIVE)
+  -> TripActive      : True (SYSTEM SAFETY INTERLOCK TRIPPED)
+  [FAILURE INDUCTION: SENSOR DISCONNECT] RawLevelIn = 0 counts (0.0% Level / Open Circuit)
+  -> TankLevelPV     : 0.0% (<= 10.0% Low-Low Limit)
+  -> AlarmLow        : True (Low Warning Active)
+  -> AlarmLowLow     : True (CRITICAL LOW-LOW TRIP ACTIVE)
+  -> DischargePump   : False (PUMP CUTOFF / DRY-RUN CAVITATION PROTECTION)
+  -> InflowValveCmd  : True (INFLOW RECOVERY DEMAND)
+  -> TripActive      : True (FAIL-SAFE SAFETY INTERLOCK TRIPPED)
+
+------------------------------------------------------------
+PART 2: CONCRETE MCP COMPILER FAILURE LOCATION LOGGING
+------------------------------------------------------------
+  Failure Test: Syntax Error near semicolon
+  -> Valid           : False
+  -> Error Count     : 1
+  [FAILURE_LOCATION] File: BrokenPOU.st | Line: 6 | Col: 16 | Code: ST_SYNTAX_ERROR | Message: Syntax error at line 6, col 16: Unexpected token in expression: SEMICOLON (';')
+Checkpoint saved to: C:\Users\ArmandoSilva\artifacts\checkpoints\step4_closed_loop_checkpoint.json
+Checkpoint saved to: C:\HornerAI\horner-cscape-mcp\artifacts\checkpoints\step4_closed_loop_checkpoint.json
+================================================================================
+STEP 4: CLOSED-LOOP PROOF WITH FAILURE LOGS COMPLETED & CHECKPOINTED
+================================================================================
+================================================================================
+STEP 4: CLOSED-LOOP PROOF WITH CONCRETE FAILURE LOGS
+================================================================================
+Timestamp UTC : 2026-09-05T01:05:15.020Z
+Mode          : Air-Gapped Simulation (Zero Physical PLC Download)
+Engine        : Horner Cscape 10.2 Native IEC 61131-3 (Zero Straton K5)
+
+------------------------------------------------------------
+PART 1: INDUSTRIAL CLOSED-LOOP OVERFILL TRIP FAILURE SCENARIO
+------------------------------------------------------------
+  Cycle 1-3 (Steady-State 60.0%): PV=60.0%, Trip=False, Valve=True
+  [FAILURE INDUCTION] RawLevelIn = 30400 counts (95.0% Level)
+  -> TankLevelPV     : 95.0% (>= 90.0% High-High Limit)
+  -> AlarmHigh       : True (High Warning Active)
+  -> AlarmHighHigh   : True (CRITICAL HIGH-HIGH TRIP ACTIVE)
+  -> InflowValveCmd  : False (INFLOW VALVE ISOLATED/CLOSED)
+  -> DischargePump   : True (EVACUATION DISCHARGE ACTIVE)
+  -> TripActive      : True (SYSTEM SAFETY INTERLOCK TRIPPED)
+  [FAILURE INDUCTION: SENSOR DISCONNECT & LOW-LOW DRY-RUN CUTOFF] RawLevelIn = 0 counts (0.0% Level / Open Circuit)
+  -> TankLevelPV     : 0.0% (<= 10.0% Low-Low Limit)
+  -> AlarmLow        : True (Low Warning Active)
+  -> AlarmLowLow     : True (CRITICAL LOW-LOW TRIP ACTIVE)
+  -> DischargePump   : False (PUMP CUTOFF / LOW-LOW DRY-RUN CAVITATION PROTECTION)
+  -> InflowValveCmd  : True (INFLOW RECOVERY DEMAND)
+  -> TripActive      : True (FAIL-SAFE SAFETY INTERLOCK TRIPPED)
+
+------------------------------------------------------------
+PART 2: CONCRETE MCP COMPILER FAILURE LOCATION LOGGING
+------------------------------------------------------------
+  Failure Test: Syntax Error near semicolon
+  -> Valid           : False
+  -> Error Count     : 1
+  [FAILURE_LOCATION] File: BrokenPOU.st | Line: 6 | Col: 16 | Code: ST_SYNTAX_ERROR | Message: Syntax error at line 6, col 16: Unexpected token in expression: SEMICOLON (';')
+Checkpoint saved to: C:\Users\ArmandoSilva\artifacts\checkpoints\step4_closed_loop_checkpoint.json
+Checkpoint saved to: C:\HornerAI\horner-cscape-mcp\artifacts\checkpoints\step4_closed_loop_checkpoint.json
+================================================================================
+STEP 4: CLOSED-LOOP PROOF WITH FAILURE LOGS COMPLETED & CHECKPOINTED
+================================================================================
+================================================================================
+STEP 4: CLOSED-LOOP PROOF WITH CONCRETE FAILURE LOGS
+================================================================================
+Timestamp UTC : 2026-09-05T01:25:16.507Z
+Mode          : Air-Gapped Simulation (Zero Physical PLC Download)
+Engine        : Horner Cscape 10.2 Native IEC 61131-3 (Zero Straton K5)
+
+------------------------------------------------------------
+PART 1: INDUSTRIAL CLOSED-LOOP OVERFILL TRIP FAILURE SCENARIO
+------------------------------------------------------------
+  Cycle 1-3 (Steady-State 60.0%): PV=60.0%, Trip=False, Valve=True
+  [FAILURE INDUCTION] RawLevelIn = 30400 counts (95.0% Level)
+  -> TankLevelPV     : 95.0% (>= 90.0% High-High Limit)
+  -> AlarmHigh       : True (High Warning Active)
+  -> AlarmHighHigh   : True (CRITICAL HIGH-HIGH TRIP ACTIVE)
+  -> InflowValveCmd  : False (INFLOW VALVE ISOLATED/CLOSED)
+  -> DischargePump   : True (EVACUATION DISCHARGE ACTIVE)
+  -> TripActive      : True (SYSTEM SAFETY INTERLOCK TRIPPED)
+  [FAILURE INDUCTION: SENSOR DISCONNECT & LOW-LOW DRY-RUN CUTOFF] RawLevelIn = 0 counts (0.0% Level / Open Circuit)
+  -> TankLevelPV     : 0.0% (<= 10.0% Low-Low Limit)
+  -> AlarmLow        : True (Low Warning Active)
+  -> AlarmLowLow     : True (CRITICAL LOW-LOW TRIP ACTIVE)
+  -> DischargePump   : False (PUMP CUTOFF / LOW-LOW DRY-RUN CAVITATION PROTECTION)
+  -> InflowValveCmd  : True (INFLOW RECOVERY DEMAND)
+  -> TripActive      : True (FAIL-SAFE SAFETY INTERLOCK TRIPPED)
+
+------------------------------------------------------------
+PART 2: CONCRETE MCP COMPILER FAILURE LOCATION LOGGING
+------------------------------------------------------------
+  Failure Test: Syntax Error near semicolon
+  -> Valid           : False
+  -> Error Count     : 1
+  [FAILURE_LOCATION] File: BrokenPOU.st | Line: 6 | Col: 16 | Code: ST_SYNTAX_ERROR | Message: Syntax error at line 6, col 16: Unexpected token in expression: SEMICOLON (';')
+
+  Repair Verification: Syntax Fixed ('RawVal := 10 + 5;')
+  -> Valid           : True
+  -> Error Count     : 0
+  -> POU Name        : BrokenPOU
+  Repaired POU written to: C:\Users\ArmandoSilva\artifacts\projects\TankLevelClosedLoop\pous\BrokenPOU.st
+  Repaired POU written to: C:\HornerAI\horner-cscape-mcp\artifacts\projects\TankLevelClosedLoop\pous\BrokenPOU.st
+Checkpoint saved to: C:\Users\ArmandoSilva\artifacts\checkpoints\step4_closed_loop_checkpoint.json
+Checkpoint saved to: C:\HornerAI\horner-cscape-mcp\artifacts\checkpoints\step4_closed_loop_checkpoint.json
+================================================================================
+STEP 4: CLOSED-LOOP PROOF WITH FAILURE LOGS COMPLETED & CHECKPOINTED
+================================================================================
+================================================================================
+STEP 4: CLOSED-LOOP PROOF WITH CONCRETE FAILURE LOGS
+================================================================================
+Timestamp UTC : 2026-09-05T01:58:08.366Z
+Mode          : Air-Gapped Simulation (Zero Physical PLC Download)
+Engine        : Horner Cscape 10.2 Native IEC 61131-3 (Zero Straton K5)
+
+------------------------------------------------------------
+PART 1: INDUSTRIAL CLOSED-LOOP OVERFILL TRIP FAILURE SCENARIO
+------------------------------------------------------------
+  Cycle 1-3 (Steady-State 60.0%): PV=60.0%, Trip=False, Valve=True
+  [FAILURE INDUCTION] RawLevelIn = 30400 counts (95.0% Level)
+  -> TankLevelPV     : 95.0% (>= 90.0% High-High Limit)
+  -> AlarmHigh       : True (High Warning Active)
+  -> AlarmHighHigh   : True (CRITICAL HIGH-HIGH TRIP ACTIVE)
+  -> InflowValveCmd  : False (INFLOW VALVE ISOLATED/CLOSED)
+  -> DischargePump   : True (EVACUATION DISCHARGE ACTIVE)
+  -> TripActive      : True (SYSTEM SAFETY INTERLOCK TRIPPED)
+  [FAILURE INDUCTION: SENSOR DISCONNECT & LOW-LOW DRY-RUN CUTOFF] RawLevelIn = 0 counts (0.0% Level / Open Circuit)
+  -> TankLevelPV     : 0.0% (<= 10.0% Low-Low Limit)
+  -> AlarmLow        : True (Low Warning Active)
+  -> AlarmLowLow     : True (CRITICAL LOW-LOW TRIP ACTIVE)
+  -> DischargePump   : False (PUMP CUTOFF / LOW-LOW DRY-RUN CAVITATION PROTECTION)
+  -> InflowValveCmd  : True (INFLOW RECOVERY DEMAND)
+  -> TripActive      : True (FAIL-SAFE SAFETY INTERLOCK TRIPPED)
+
+------------------------------------------------------------
+PART 2: CONCRETE MCP COMPILER FAILURE LOCATION LOGGING
+------------------------------------------------------------
+  Failure Test: Syntax Error near semicolon
+  -> Valid           : False
+  -> Error Count     : 1
+  [FAILURE_LOCATION] File: BrokenPOU.st | Line: 6 | Col: 16 | Code: ST_SYNTAX_ERROR | Message: Syntax error at line 6, col 16: Unexpected token in expression: SEMICOLON (';')
+
+  Repair Verification: Syntax Fixed ('RawVal := 10 + 5;')
+  -> Valid           : True
+  -> Error Count     : 0
+  -> POU Name        : BrokenPOU
+  Repaired POU written to: C:\Users\ArmandoSilva\artifacts\projects\TankLevelClosedLoop\pous\BrokenPOU.st
+  Repaired POU written to: C:\HornerAI\horner-cscape-mcp\artifacts\projects\TankLevelClosedLoop\pous\BrokenPOU.st
+Checkpoint saved to: C:\Users\ArmandoSilva\artifacts\checkpoints\step4_closed_loop_checkpoint.json
+Checkpoint saved to: C:\HornerAI\horner-cscape-mcp\artifacts\checkpoints\step4_closed_loop_checkpoint.json
+================================================================================
+STEP 4: CLOSED-LOOP PROOF WITH FAILURE LOGS COMPLETED & CHECKPOINTED
+================================================================================
+================================================================================
+STEP 4: CLOSED-LOOP PROOF WITH CONCRETE FAILURE LOGS
+================================================================================
+Timestamp UTC : 2026-09-05T03:08:36.389Z
+Mode          : Air-Gapped Simulation (Zero Physical PLC Download)
+Engine        : Horner Cscape 10.2 Native IEC 61131-3 (Zero Straton K5)
+
+------------------------------------------------------------
+PART 1: INDUSTRIAL CLOSED-LOOP OVERFILL TRIP FAILURE SCENARIO
+------------------------------------------------------------
+  Cycle 1-3 (Steady-State 60.0%): PV=60.0%, Trip=False, Valve=True
+  [FAILURE INDUCTION] RawLevelIn = 30400 counts (95.0% Level)
+  -> TankLevelPV     : 95.0% (>= 90.0% High-High Limit)
+  -> AlarmHigh       : True (High Warning Active)
+  -> AlarmHighHigh   : True (CRITICAL HIGH-HIGH TRIP ACTIVE)
+  -> InflowValveCmd  : False (INFLOW VALVE ISOLATED/CLOSED)
+  -> DischargePump   : True (EVACUATION DISCHARGE ACTIVE)
+  -> TripActive      : True (SYSTEM SAFETY INTERLOCK TRIPPED)
+  [FAILURE INDUCTION: SENSOR DISCONNECT & LOW-LOW DRY-RUN CUTOFF] RawLevelIn = 0 counts (0.0% Level / Open Circuit)
+  -> TankLevelPV     : 0.0% (<= 10.0% Low-Low Limit)
+  -> AlarmLow        : True (Low Warning Active)
+  -> AlarmLowLow     : True (CRITICAL LOW-LOW TRIP ACTIVE)
+  -> DischargePump   : False (PUMP CUTOFF / LOW-LOW DRY-RUN CAVITATION PROTECTION)
+  -> InflowValveCmd  : True (INFLOW RECOVERY DEMAND)
+  -> TripActive      : True (FAIL-SAFE SAFETY INTERLOCK TRIPPED)
+
+------------------------------------------------------------
+PART 2: CONCRETE MCP COMPILER FAILURE LOCATION LOGGING
+------------------------------------------------------------
+  Failure Test: Syntax Error near semicolon
+  -> Valid           : False
+  -> Error Count     : 1
+  [FAILURE_LOCATION] File: BrokenPOU.st | Line: 6 | Col: 16 | Code: ST_SYNTAX_ERROR | Message: Syntax error at line 6, col 16: Unexpected token in expression: SEMICOLON (';')
+
+  Repair Verification: Syntax Fixed ('RawVal := 10 + 5;')
+  -> Valid           : True
+  -> Error Count     : 0
+  -> POU Name        : BrokenPOU
+  Repaired POU written to: C:\Users\ArmandoSilva\artifacts\projects\TankLevelClosedLoop\pous\BrokenPOU.st
+  Repaired POU written to: C:\HornerAI\horner-cscape-mcp\artifacts\projects\TankLevelClosedLoop\pous\BrokenPOU.st
+Checkpoint saved to: C:\Users\ArmandoSilva\artifacts\checkpoints\step4_closed_loop_checkpoint.json
+Checkpoint saved to: C:\HornerAI\horner-cscape-mcp\artifacts\checkpoints\step4_closed_loop_checkpoint.json
+================================================================================
+STEP 4: CLOSED-LOOP PROOF WITH FAILURE LOGS COMPLETED & CHECKPOINTED
+================================================================================
+================================================================================
+STEP 4: CLOSED-LOOP PROOF WITH CONCRETE FAILURE LOGS
+================================================================================
+Timestamp UTC : 2026-09-05T03:21:08.935Z
+Mode          : Air-Gapped Simulation (Zero Physical PLC Download)
+Engine        : Horner Cscape 10.2 Native IEC 61131-3 (Zero Straton K5)
+
+------------------------------------------------------------
+PART 1: INDUSTRIAL CLOSED-LOOP OVERFILL TRIP FAILURE SCENARIO
+------------------------------------------------------------
+  Cycle 1-3 (Steady-State 60.0%): PV=60.0%, Trip=False, Valve=True
+  [FAILURE INDUCTION] RawLevelIn = 30400 counts (95.0% Level)
+  -> TankLevelPV     : 95.0% (>= 90.0% High-High Limit)
+  -> AlarmHigh       : True (High Warning Active)
+  -> AlarmHighHigh   : True (CRITICAL HIGH-HIGH TRIP ACTIVE)
+  -> InflowValveCmd  : False (INFLOW VALVE ISOLATED/CLOSED)
+  -> DischargePump   : True (EVACUATION DISCHARGE ACTIVE)
+  -> TripActive      : True (SYSTEM SAFETY INTERLOCK TRIPPED)
+  [FAILURE INDUCTION: SENSOR DISCONNECT & LOW-LOW DRY-RUN CUTOFF] RawLevelIn = 0 counts (0.0% Level / Open Circuit)
+  -> TankLevelPV     : 0.0% (<= 10.0% Low-Low Limit)
+  -> AlarmLow        : True (Low Warning Active)
+  -> AlarmLowLow     : True (CRITICAL LOW-LOW TRIP ACTIVE)
+  -> DischargePump   : False (PUMP CUTOFF / LOW-LOW DRY-RUN CAVITATION PROTECTION)
+  -> InflowValveCmd  : True (INFLOW RECOVERY DEMAND)
+  -> TripActive      : True (FAIL-SAFE SAFETY INTERLOCK TRIPPED)
+
+------------------------------------------------------------
+PART 2: CONCRETE MCP COMPILER FAILURE LOCATION LOGGING
+------------------------------------------------------------
+  Failure Test: Syntax Error near semicolon
+  -> Valid           : False
+  -> Error Count     : 1
+  [FAILURE_LOCATION] File: BrokenPOU.st | Line: 6 | Col: 16 | Code: ST_SYNTAX_ERROR | Message: Syntax error at line 6, col 16: Unexpected token in expression: SEMICOLON (';')
+
+  Repair Verification: Syntax Fixed ('RawVal := 10 + 5;')
+  -> Valid           : True
+  -> Error Count     : 0
+  -> POU Name        : BrokenPOU
+  Repaired POU written to: C:\Users\ArmandoSilva\artifacts\projects\TankLevelClosedLoop\pous\BrokenPOU.st
+  Repaired POU written to: C:\HornerAI\horner-cscape-mcp\artifacts\projects\TankLevelClosedLoop\pous\BrokenPOU.st
+Checkpoint saved to: C:\Users\ArmandoSilva\artifacts\checkpoints\step4_closed_loop_checkpoint.json
+Checkpoint saved to: C:\HornerAI\horner-cscape-mcp\artifacts\checkpoints\step4_closed_loop_checkpoint.json
+================================================================================
+STEP 4: CLOSED-LOOP PROOF WITH FAILURE LOGS COMPLETED & CHECKPOINTED
+================================================================================
+================================================================================
+STEP 4: CLOSED-LOOP PROOF WITH CONCRETE FAILURE LOGS
+================================================================================
+Timestamp UTC : 2026-09-05T03:56:52.775Z
+Mode          : Air-Gapped Simulation (Zero Physical PLC Download)
+Engine        : Horner Cscape 10.2 Native IEC 61131-3 (Zero Straton K5)
+
+------------------------------------------------------------
+PART 1: INDUSTRIAL CLOSED-LOOP OVERFILL TRIP FAILURE SCENARIO
+------------------------------------------------------------
+  Cycle 1-3 (Steady-State 60.0%): PV=60.0%, Trip=False, Valve=True
+  [FAILURE INDUCTION] RawLevelIn = 30400 counts (95.0% Level)
+  -> TankLevelPV     : 95.0% (>= 90.0% High-High Limit)
+  -> AlarmHigh       : True (High Warning Active)
+  -> AlarmHighHigh   : True (CRITICAL HIGH-HIGH TRIP ACTIVE)
+  -> InflowValveCmd  : False (INFLOW VALVE ISOLATED/CLOSED)
+  -> DischargePump   : True (EVACUATION DISCHARGE ACTIVE)
+  -> TripActive      : True (SYSTEM SAFETY INTERLOCK TRIPPED)
+  [FAILURE INDUCTION: SENSOR DISCONNECT & LOW-LOW DRY-RUN CUTOFF] RawLevelIn = 0 counts (0.0% Level / Open Circuit)
+  -> TankLevelPV     : 0.0% (<= 10.0% Low-Low Limit)
+  -> AlarmLow        : True (Low Warning Active)
+  -> AlarmLowLow     : True (CRITICAL LOW-LOW TRIP ACTIVE)
+  -> DischargePump   : False (PUMP CUTOFF / LOW-LOW DRY-RUN CAVITATION PROTECTION)
+  -> InflowValveCmd  : True (INFLOW RECOVERY DEMAND)
+  -> TripActive      : True (FAIL-SAFE SAFETY INTERLOCK TRIPPED)
+
+------------------------------------------------------------
+PART 2: CONCRETE MCP COMPILER FAILURE LOCATION LOGGING
+------------------------------------------------------------
+  Failure Test: Syntax Error near semicolon
+  -> Valid           : False
+  -> Error Count     : 1
+  [FAILURE_LOCATION] File: BrokenPOU.st | Line: 6 | Col: 16 | Code: ST_SYNTAX_ERROR | Message: Syntax error at line 6, col 16: Unexpected token in expression: SEMICOLON (';')
+
+  Repair Verification: Syntax Fixed ('RawVal := 10 + 5;')
+  -> Valid           : True
+  -> Error Count     : 0
+  -> POU Name        : BrokenPOU
+  Repaired POU written to: C:\Users\ArmandoSilva\artifacts\projects\TankLevelClosedLoop\pous\BrokenPOU.st
+  Repaired POU written to: C:\HornerAI\horner-cscape-mcp\artifacts\projects\TankLevelClosedLoop\pous\BrokenPOU.st
+Checkpoint saved to: C:\Users\ArmandoSilva\artifacts\checkpoints\step4_closed_loop_checkpoint.json
+Checkpoint saved to: C:\HornerAI\horner-cscape-mcp\artifacts\checkpoints\step4_closed_loop_checkpoint.json
+================================================================================
+STEP 4: CLOSED-LOOP PROOF WITH FAILURE LOGS COMPLETED & CHECKPOINTED
+================================================================================
+================================================================================
+STEP 4: CLOSED-LOOP PROOF WITH CONCRETE FAILURE LOGS
+================================================================================
+Timestamp UTC : 2026-09-05T04:23:47.853Z
+Mode          : Air-Gapped Simulation (Zero Physical PLC Download)
+Engine        : Horner Cscape 10.2 Native IEC 61131-3 (Zero Straton K5)
+
+------------------------------------------------------------
+PART 1: INDUSTRIAL CLOSED-LOOP OVERFILL TRIP FAILURE SCENARIO
+------------------------------------------------------------
+  Cycle 1-3 (Steady-State 60.0%): PV=60.0%, Trip=False, Valve=True
+  [FAILURE INDUCTION] RawLevelIn = 30400 counts (95.0% Level)
+  -> TankLevelPV     : 95.0% (>= 90.0% High-High Limit)
+  -> AlarmHigh       : True (High Warning Active)
+  -> AlarmHighHigh   : True (CRITICAL HIGH-HIGH TRIP ACTIVE)
+  -> InflowValveCmd  : False (INFLOW VALVE ISOLATED/CLOSED)
+  -> DischargePump   : True (EVACUATION DISCHARGE ACTIVE)
+  -> TripActive      : True (SYSTEM SAFETY INTERLOCK TRIPPED)
+  [FAILURE INDUCTION: SENSOR DISCONNECT & LOW-LOW DRY-RUN CUTOFF] RawLevelIn = 0 counts (0.0% Level / Open Circuit)
+  -> TankLevelPV     : 0.0% (<= 10.0% Low-Low Limit)
+  -> AlarmLow        : True (Low Warning Active)
+  -> AlarmLowLow     : True (CRITICAL LOW-LOW TRIP ACTIVE)
+  -> DischargePump   : False (PUMP CUTOFF / LOW-LOW DRY-RUN CAVITATION PROTECTION)
+  -> InflowValveCmd  : True (INFLOW RECOVERY DEMAND)
+  -> TripActive      : True (FAIL-SAFE SAFETY INTERLOCK TRIPPED)
+
+------------------------------------------------------------
+PART 2: CONCRETE MCP COMPILER FAILURE LOCATION LOGGING
+------------------------------------------------------------
+  Failure Test: Syntax Error near semicolon
+  -> Valid           : False
+  -> Error Count     : 1
+  [FAILURE_LOCATION] File: BrokenPOU.st | Line: 6 | Col: 16 | Code: ST_SYNTAX_ERROR | Message: Syntax error at line 6, col 16: Unexpected token in expression: SEMICOLON (';')
+
+  Repair Verification: Syntax Fixed ('RawVal := 10 + 5;')
+  -> Valid           : True
+  -> Error Count     : 0
+  -> POU Name        : BrokenPOU
+  Repaired POU written to: C:\Users\ArmandoSilva\artifacts\projects\TankLevelClosedLoop\pous\BrokenPOU.st
+  Repaired POU written to: C:\HornerAI\horner-cscape-mcp\artifacts\projects\TankLevelClosedLoop\pous\BrokenPOU.st
+Checkpoint saved to: C:\Users\ArmandoSilva\artifacts\checkpoints\step4_closed_loop_checkpoint.json
+Checkpoint saved to: C:\HornerAI\horner-cscape-mcp\artifacts\checkpoints\step4_closed_loop_checkpoint.json
+================================================================================
+STEP 4: CLOSED-LOOP PROOF WITH FAILURE LOGS COMPLETED & CHECKPOINTED
+================================================================================
+================================================================================
+STEP 4: CLOSED-LOOP PROOF WITH CONCRETE FAILURE LOGS
+================================================================================
+Timestamp UTC : 2026-09-05T04:49:59.472Z
+Mode          : Air-Gapped Simulation (Zero Physical PLC Download)
+Engine        : Horner Cscape 10.2 Native IEC 61131-3 (Zero Straton K5)
+
+------------------------------------------------------------
+PART 1: INDUSTRIAL CLOSED-LOOP OVERFILL TRIP FAILURE SCENARIO
+------------------------------------------------------------
+  Cycle 1-3 (Steady-State 60.0%): PV=60.0%, Trip=False, Valve=True
+  [FAILURE INDUCTION] RawLevelIn = 30400 counts (95.0% Level)
+  -> TankLevelPV     : 95.0% (>= 90.0% High-High Limit)
+  -> AlarmHigh       : True (High Warning Active)
+  -> AlarmHighHigh   : True (CRITICAL HIGH-HIGH TRIP ACTIVE)
+  -> InflowValveCmd  : False (INFLOW VALVE ISOLATED/CLOSED)
+  -> DischargePump   : True (EVACUATION DISCHARGE ACTIVE)
+  -> TripActive      : True (SYSTEM SAFETY INTERLOCK TRIPPED)
+  [FAILURE INDUCTION: SENSOR DISCONNECT & LOW-LOW DRY-RUN CUTOFF] RawLevelIn = 0 counts (0.0% Level / Open Circuit)
+  -> TankLevelPV     : 0.0% (<= 10.0% Low-Low Limit)
+  -> AlarmLow        : True (Low Warning Active)
+  -> AlarmLowLow     : True (CRITICAL LOW-LOW TRIP ACTIVE)
+  -> DischargePump   : False (PUMP CUTOFF / LOW-LOW DRY-RUN CAVITATION PROTECTION)
+  -> InflowValveCmd  : True (INFLOW RECOVERY DEMAND)
+  -> TripActive      : True (FAIL-SAFE SAFETY INTERLOCK TRIPPED)
+
+------------------------------------------------------------
+PART 2: CONCRETE MCP COMPILER FAILURE LOCATION LOGGING
+------------------------------------------------------------
+  Failure Test: Syntax Error near semicolon
+  -> Valid           : False
+  -> Error Count     : 1
+  [FAILURE_LOCATION] File: BrokenPOU.st | Line: 6 | Col: 16 | Code: ST_SYNTAX_ERROR | Message: Syntax error at line 6, col 16: Unexpected token in expression: SEMICOLON (';')
+
+  Repair Verification: Syntax Fixed ('RawVal := 10 + 5;')
+  -> Valid           : True
+  -> Error Count     : 0
+  -> POU Name        : BrokenPOU
+  Repaired POU written to: C:\Users\ArmandoSilva\artifacts\projects\TankLevelClosedLoop\pous\BrokenPOU.st
+  Repaired POU written to: C:\HornerAI\horner-cscape-mcp\artifacts\projects\TankLevelClosedLoop\pous\BrokenPOU.st
+Checkpoint saved to: C:\Users\ArmandoSilva\artifacts\checkpoints\step4_closed_loop_checkpoint.json
+Checkpoint saved to: C:\HornerAI\horner-cscape-mcp\artifacts\checkpoints\step4_closed_loop_checkpoint.json
+================================================================================
+STEP 4: CLOSED-LOOP PROOF WITH FAILURE LOGS COMPLETED & CHECKPOINTED
+================================================================================
+================================================================================
+STEP 4: CLOSED-LOOP PROOF WITH CONCRETE FAILURE LOGS
+================================================================================
+Timestamp UTC : 2026-09-05T04:51:17.733Z
+Mode          : Air-Gapped Simulation (Zero Physical PLC Download)
+Engine        : Horner Cscape 10.2 Native IEC 61131-3 (Zero Straton K5)
+
+------------------------------------------------------------
+PART 1: INDUSTRIAL CLOSED-LOOP OVERFILL TRIP FAILURE SCENARIO
+------------------------------------------------------------
+  Cycle 1-3 (Steady-State 60.0%): PV=60.0%, Trip=False, Valve=True
+  [FAILURE INDUCTION] RawLevelIn = 30400 counts (95.0% Level)
+  -> TankLevelPV     : 95.0% (>= 90.0% High-High Limit)
+  -> AlarmHigh       : True (High Warning Active)
+  -> AlarmHighHigh   : True (CRITICAL HIGH-HIGH TRIP ACTIVE)
+  -> InflowValveCmd  : False (INFLOW VALVE ISOLATED/CLOSED)
+  -> DischargePump   : True (EVACUATION DISCHARGE ACTIVE)
+  -> TripActive      : True (SYSTEM SAFETY INTERLOCK TRIPPED)
+  [FAILURE INDUCTION: SENSOR DISCONNECT & LOW-LOW DRY-RUN CUTOFF] RawLevelIn = 0 counts (0.0% Level / Open Circuit)
+  -> TankLevelPV     : 0.0% (<= 10.0% Low-Low Limit)
+  -> AlarmLow        : True (Low Warning Active)
+  -> AlarmLowLow     : True (CRITICAL LOW-LOW TRIP ACTIVE)
+  -> DischargePump   : False (PUMP CUTOFF / LOW-LOW DRY-RUN CAVITATION PROTECTION)
+  -> InflowValveCmd  : True (INFLOW RECOVERY DEMAND)
+  -> TripActive      : True (FAIL-SAFE SAFETY INTERLOCK TRIPPED)
+
+------------------------------------------------------------
+PART 2: CONCRETE MCP COMPILER FAILURE LOCATION LOGGING
+------------------------------------------------------------
+  Failure Test: Syntax Error near semicolon
+  -> Valid           : False
+  -> Error Count     : 1
+  [FAILURE_LOCATION] File: BrokenPOU.st | Line: 6 | Col: 16 | Code: ST_SYNTAX_ERROR | Message: Syntax error at line 6, col 16: Unexpected token in expression: SEMICOLON (';')
+
+  Repair Verification: Syntax Fixed ('RawVal := 10 + 5;')
+  -> Valid           : True
+  -> Error Count     : 0
+  -> POU Name        : BrokenPOU
+  Repaired POU written to: C:\Users\ArmandoSilva\artifacts\projects\TankLevelClosedLoop\pous\BrokenPOU.st
+  Repaired POU written to: C:\HornerAI\horner-cscape-mcp\artifacts\projects\TankLevelClosedLoop\pous\BrokenPOU.st
+Checkpoint saved to: C:\Users\ArmandoSilva\artifacts\checkpoints\step4_closed_loop_checkpoint.json
+Checkpoint saved to: C:\HornerAI\horner-cscape-mcp\artifacts\checkpoints\step4_closed_loop_checkpoint.json
+================================================================================
+STEP 4: CLOSED-LOOP PROOF WITH FAILURE LOGS COMPLETED & CHECKPOINTED
+================================================================================
+================================================================================
+STEP 4: CLOSED-LOOP PROOF WITH CONCRETE FAILURE LOGS
+================================================================================
+Timestamp UTC : 2026-09-05T04:59:29.972Z
+Mode          : Air-Gapped Simulation (Zero Physical PLC Download)
+Engine        : Horner Cscape 10.2 Native IEC 61131-3 (Zero Straton K5)
+
+------------------------------------------------------------
+PART 1: INDUSTRIAL CLOSED-LOOP OVERFILL TRIP FAILURE SCENARIO
+------------------------------------------------------------
+  Cycle 1-3 (Steady-State 60.0%): PV=60.0%, Trip=False, Valve=True
+  [FAILURE INDUCTION] RawLevelIn = 30400 counts (95.0% Level)
+  -> TankLevelPV     : 95.0% (>= 90.0% High-High Limit)
+  -> AlarmHigh       : True (High Warning Active)
+  -> AlarmHighHigh   : True (CRITICAL HIGH-HIGH TRIP ACTIVE)
+  -> InflowValveCmd  : False (INFLOW VALVE ISOLATED/CLOSED)
+  -> DischargePump   : True (EVACUATION DISCHARGE ACTIVE)
+  -> TripActive      : True (SYSTEM SAFETY INTERLOCK TRIPPED)
+  [FAILURE INDUCTION: SENSOR DISCONNECT & LOW-LOW DRY-RUN CUTOFF] RawLevelIn = 0 counts (0.0% Level / Open Circuit)
+  -> TankLevelPV     : 0.0% (<= 10.0% Low-Low Limit)
+  -> AlarmLow        : True (Low Warning Active)
+  -> AlarmLowLow     : True (CRITICAL LOW-LOW TRIP ACTIVE)
+  -> DischargePump   : False (PUMP CUTOFF / LOW-LOW DRY-RUN CAVITATION PROTECTION)
+  -> InflowValveCmd  : True (INFLOW RECOVERY DEMAND)
+  -> TripActive      : True (FAIL-SAFE SAFETY INTERLOCK TRIPPED)
+
+------------------------------------------------------------
+PART 2: CONCRETE MCP COMPILER FAILURE LOCATION LOGGING
+------------------------------------------------------------
+  Failure Test: Syntax Error near semicolon
+  -> Valid           : False
+  -> Error Count     : 1
+  [FAILURE_LOCATION] File: BrokenPOU.st | Line: 6 | Col: 16 | Code: ST_SYNTAX_ERROR | Message: Syntax error at line 6, col 16: Unexpected token in expression: SEMICOLON (';')
+
+  Repair Verification: Syntax Fixed ('RawVal := 10 + 5;')
+  -> Valid           : True
+  -> Error Count     : 0
+  -> POU Name        : BrokenPOU
+  Repaired POU written to: C:\Users\ArmandoSilva\artifacts\projects\TankLevelClosedLoop\pous\BrokenPOU.st
+  Repaired POU written to: C:\HornerAI\horner-cscape-mcp\artifacts\projects\TankLevelClosedLoop\pous\BrokenPOU.st
+Checkpoint saved to: C:\Users\ArmandoSilva\artifacts\checkpoints\step4_closed_loop_checkpoint.json
+Checkpoint saved to: C:\HornerAI\horner-cscape-mcp\artifacts\checkpoints\step4_closed_loop_checkpoint.json
+================================================================================
+STEP 4: CLOSED-LOOP PROOF WITH FAILURE LOGS COMPLETED & CHECKPOINTED
+================================================================================
+================================================================================
+STEP 4: CLOSED-LOOP PROOF WITH CONCRETE FAILURE LOGS
+================================================================================
+Timestamp UTC : 2026-09-05T05:27:58.424Z
+Mode          : Air-Gapped Simulation (Zero Physical PLC Download)
+Engine        : Horner Cscape 10.2 Native IEC 61131-3 (Zero Straton K5)
+
+------------------------------------------------------------
+PART 1: INDUSTRIAL CLOSED-LOOP OVERFILL TRIP FAILURE SCENARIO
+------------------------------------------------------------
+  Cycle 1-3 (Steady-State 60.0%): PV=60.0%, Trip=False, Valve=True
+  [FAILURE INDUCTION] RawLevelIn = 30400 counts (95.0% Level)
+  -> TankLevelPV     : 95.0% (>= 90.0% High-High Limit)
+  -> AlarmHigh       : True (High Warning Active)
+  -> AlarmHighHigh   : True (CRITICAL HIGH-HIGH TRIP ACTIVE)
+  -> InflowValveCmd  : False (INFLOW VALVE ISOLATED/CLOSED)
+  -> DischargePump   : True (EVACUATION DISCHARGE ACTIVE)
+  -> TripActive      : True (SYSTEM SAFETY INTERLOCK TRIPPED)
+  [FAILURE INDUCTION: SENSOR DISCONNECT & LOW-LOW DRY-RUN CUTOFF] RawLevelIn = 0 counts (0.0% Level / Open Circuit)
+  -> TankLevelPV     : 0.0% (<= 10.0% Low-Low Limit)
+  -> AlarmLow        : True (Low Warning Active)
+  -> AlarmLowLow     : True (CRITICAL LOW-LOW TRIP ACTIVE)
+  -> DischargePump   : False (PUMP CUTOFF / LOW-LOW DRY-RUN CAVITATION PROTECTION)
+  -> InflowValveCmd  : True (INFLOW RECOVERY DEMAND)
+  -> TripActive      : True (FAIL-SAFE SAFETY INTERLOCK TRIPPED)
+
+------------------------------------------------------------
+PART 2: CONCRETE MCP COMPILER FAILURE LOCATION LOGGING
+------------------------------------------------------------
+  Failure Test: Syntax Error near semicolon
+  -> Valid           : False
+  -> Error Count     : 1
+  [FAILURE_LOCATION] File: BrokenPOU.st | Line: 6 | Col: 16 | Code: ST_SYNTAX_ERROR | Message: Syntax error at line 6, col 16: Unexpected token in expression: SEMICOLON (';')
+
+  Repair Verification: Syntax Fixed ('RawVal := 10 + 5;')
+  -> Valid           : True
+  -> Error Count     : 0
+  -> POU Name        : BrokenPOU
+  Repaired POU written to: C:\Users\ArmandoSilva\artifacts\projects\TankLevelClosedLoop\pous\BrokenPOU.st
+  Repaired POU written to: C:\HornerAI\horner-cscape-mcp\artifacts\projects\TankLevelClosedLoop\pous\BrokenPOU.st
+Checkpoint saved to: C:\Users\ArmandoSilva\artifacts\checkpoints\step4_closed_loop_checkpoint.json
+Checkpoint saved to: C:\HornerAI\horner-cscape-mcp\artifacts\checkpoints\step4_closed_loop_checkpoint.json
+================================================================================
+STEP 4: CLOSED-LOOP PROOF WITH FAILURE LOGS COMPLETED & CHECKPOINTED
+================================================================================
+================================================================================
+STEP 4: CLOSED-LOOP PROOF WITH CONCRETE FAILURE LOGS
+================================================================================
+Timestamp UTC : 2026-09-05T09:23:40.624Z
+Mode          : Air-Gapped Simulation (Zero Physical PLC Download)
+Engine        : Horner Cscape 10.2 Native IEC 61131-3 (Zero Straton K5)
+
+------------------------------------------------------------
+PART 1: INDUSTRIAL CLOSED-LOOP OVERFILL TRIP FAILURE SCENARIO
+------------------------------------------------------------
+  Cycle 1-3 (Steady-State 60.0%): PV=60.0%, Trip=False, Valve=True
+  [FAILURE INDUCTION] RawLevelIn = 30400 counts (95.0% Level)
+  -> TankLevelPV     : 95.0% (>= 90.0% High-High Limit)
+  -> AlarmHigh       : True (High Warning Active)
+  -> AlarmHighHigh   : True (CRITICAL HIGH-HIGH TRIP ACTIVE)
+  -> InflowValveCmd  : False (INFLOW VALVE ISOLATED/CLOSED)
+  -> DischargePump   : True (EVACUATION DISCHARGE ACTIVE)
+  -> TripActive      : True (SYSTEM SAFETY INTERLOCK TRIPPED)
+  [FAILURE INDUCTION: SENSOR DISCONNECT & LOW-LOW DRY-RUN CUTOFF] RawLevelIn = 0 counts (0.0% Level / Open Circuit)
+  -> TankLevelPV     : 0.0% (<= 10.0% Low-Low Limit)
+  -> AlarmLow        : True (Low Warning Active)
+  -> AlarmLowLow     : True (CRITICAL LOW-LOW TRIP ACTIVE)
+  -> DischargePump   : False (PUMP CUTOFF / LOW-LOW DRY-RUN CAVITATION PROTECTION)
+  -> InflowValveCmd  : True (INFLOW RECOVERY DEMAND)
+  -> TripActive      : True (FAIL-SAFE SAFETY INTERLOCK TRIPPED)
+
+------------------------------------------------------------
+PART 2: CONCRETE MCP COMPILER FAILURE LOCATION LOGGING
+------------------------------------------------------------
+  Failure Test: Syntax Error near semicolon
+  -> Valid           : False
+  -> Error Count     : 1
+  [FAILURE_LOCATION] File: BrokenPOU.st | Line: 6 | Col: 16 | Code: ST_SYNTAX_ERROR | Message: Syntax error at line 6, col 16: Unexpected token in expression: SEMICOLON (';')
+
+  Repair Verification: Syntax Fixed ('RawVal := 10 + 5;')
+  -> Valid           : True
+  -> Error Count     : 0
+  -> POU Name        : BrokenPOU
+  Repaired POU written to: C:\Users\ArmandoSilva\artifacts\projects\TankLevelClosedLoop\pous\BrokenPOU.st
+  Repaired POU written to: C:\HornerAI\horner-cscape-mcp\artifacts\projects\TankLevelClosedLoop\pous\BrokenPOU.st
+Checkpoint saved to: C:\Users\ArmandoSilva\artifacts\checkpoints\step4_closed_loop_checkpoint.json
+Checkpoint saved to: C:\HornerAI\horner-cscape-mcp\artifacts\checkpoints\step4_closed_loop_checkpoint.json
+================================================================================
+STEP 4: CLOSED-LOOP PROOF WITH FAILURE LOGS COMPLETED & CHECKPOINTED
+================================================================================
+================================================================================
+STEP 4: CLOSED-LOOP PROOF WITH CONCRETE FAILURE LOGS
+================================================================================
+Timestamp UTC : 2026-09-05T09:38:06.428Z
+Mode          : Air-Gapped Simulation (Zero Physical PLC Download)
+Engine        : Horner Cscape 10.2 Native IEC 61131-3 (Zero Straton K5)
+
+------------------------------------------------------------
+PART 1: INDUSTRIAL CLOSED-LOOP OVERFILL TRIP FAILURE SCENARIO
+------------------------------------------------------------
+  Cycle 1-3 (Steady-State 60.0%): PV=60.0%, Trip=False, Valve=True
+  [FAILURE INDUCTION] RawLevelIn = 30400 counts (95.0% Level)
+  -> TankLevelPV     : 95.0% (>= 90.0% High-High Limit)
+  -> AlarmHigh       : True (High Warning Active)
+  -> AlarmHighHigh   : True (CRITICAL HIGH-HIGH TRIP ACTIVE)
+  -> InflowValveCmd  : False (INFLOW VALVE ISOLATED/CLOSED)
+  -> DischargePump   : True (EVACUATION DISCHARGE ACTIVE)
+  -> TripActive      : True (SYSTEM SAFETY INTERLOCK TRIPPED)
+  [FAILURE INDUCTION: SENSOR DISCONNECT & LOW-LOW DRY-RUN CUTOFF] RawLevelIn = 0 counts (0.0% Level / Open Circuit)
+  -> TankLevelPV     : 0.0% (<= 10.0% Low-Low Limit)
+  -> AlarmLow        : True (Low Warning Active)
+  -> AlarmLowLow     : True (CRITICAL LOW-LOW TRIP ACTIVE)
+  -> DischargePump   : False (PUMP CUTOFF / LOW-LOW DRY-RUN CAVITATION PROTECTION)
+  -> InflowValveCmd  : True (INFLOW RECOVERY DEMAND)
+  -> TripActive      : True (FAIL-SAFE SAFETY INTERLOCK TRIPPED)
+
+------------------------------------------------------------
+PART 2: CONCRETE MCP COMPILER FAILURE LOCATION LOGGING
+------------------------------------------------------------
+  Failure Test: Syntax Error near semicolon
+  -> Valid           : False
+  -> Error Count     : 1
+  [FAILURE_LOCATION] File: BrokenPOU.st | Line: 6 | Col: 16 | Code: ST_SYNTAX_ERROR | Message: Syntax error at line 6, col 16: Unexpected token in expression: SEMICOLON (';')
+
+  Repair Verification: Syntax Fixed ('RawVal := 10 + 5;')
+  -> Valid           : True
+  -> Error Count     : 0
+  -> POU Name        : BrokenPOU
+  Repaired POU written to: C:\Users\ArmandoSilva\artifacts\projects\TankLevelClosedLoop\pous\BrokenPOU.st
+  Repaired POU written to: C:\HornerAI\horner-cscape-mcp\artifacts\projects\TankLevelClosedLoop\pous\BrokenPOU.st
+Checkpoint saved to: C:\Users\ArmandoSilva\artifacts\checkpoints\step4_closed_loop_checkpoint.json
+Checkpoint saved to: C:\HornerAI\horner-cscape-mcp\artifacts\checkpoints\step4_closed_loop_checkpoint.json
+================================================================================
+STEP 4: CLOSED-LOOP PROOF WITH FAILURE LOGS COMPLETED & CHECKPOINTED
+================================================================================
+================================================================================
+STEP 4: CLOSED-LOOP PROOF WITH CONCRETE FAILURE LOGS
+================================================================================
+Timestamp UTC : 2026-09-06T01:39:28.988Z
+Mode          : Air-Gapped Simulation (Zero Physical PLC Download)
+Engine        : Horner Cscape 10.2 Native IEC 61131-3 (Zero Straton K5)
+
+------------------------------------------------------------
+PART 1: INDUSTRIAL CLOSED-LOOP OVERFILL TRIP FAILURE SCENARIO
+------------------------------------------------------------
+  Cycle 1-3 (Steady-State 60.0%): PV=60.0%, Trip=False, Valve=True
+  [FAILURE INDUCTION] RawLevelIn = 30400 counts (95.0% Level)
+  -> TankLevelPV     : 95.0% (>= 90.0% High-High Limit)
+  -> AlarmHigh       : True (High Warning Active)
+  -> AlarmHighHigh   : True (CRITICAL HIGH-HIGH TRIP ACTIVE)
+  -> InflowValveCmd  : False (INFLOW VALVE ISOLATED/CLOSED)
+  -> DischargePump   : True (EVACUATION DISCHARGE ACTIVE)
+  -> TripActive      : True (SYSTEM SAFETY INTERLOCK TRIPPED)
+  [FAILURE INDUCTION: SENSOR DISCONNECT & LOW-LOW DRY-RUN CUTOFF] RawLevelIn = 0 counts (0.0% Level / Open Circuit)
+  -> TankLevelPV     : 0.0% (<= 10.0% Low-Low Limit)
+  -> AlarmLow        : True (Low Warning Active)
+  -> AlarmLowLow     : True (CRITICAL LOW-LOW TRIP ACTIVE)
+  -> DischargePump   : False (PUMP CUTOFF / LOW-LOW DRY-RUN CAVITATION PROTECTION)
+  -> InflowValveCmd  : True (INFLOW RECOVERY DEMAND)
+  -> TripActive      : True (FAIL-SAFE SAFETY INTERLOCK TRIPPED)
+
+------------------------------------------------------------
+PART 2: CONCRETE MCP COMPILER FAILURE LOCATION LOGGING
+------------------------------------------------------------
+  Failure Test: Syntax Error near semicolon
+  -> Valid           : False
+  -> Error Count     : 1
+  [FAILURE_LOCATION] File: BrokenPOU.st | Line: 6 | Col: 16 | Code: ST_SYNTAX_ERROR | Message: Syntax error at line 6, col 16: Unexpected token in expression: SEMICOLON (';')
+
+  Repair Verification: Syntax Fixed ('RawVal := 10 + 5;')
+  -> Valid           : True
+  -> Error Count     : 0
+  -> POU Name        : BrokenPOU
+  Repaired POU written to: C:\Users\ArmandoSilva\artifacts\projects\TankLevelClosedLoop\pous\BrokenPOU.st
+  Repaired POU written to: C:\HornerAI\horner-cscape-mcp\artifacts\projects\TankLevelClosedLoop\pous\BrokenPOU.st
+Checkpoint saved to: C:\Users\ArmandoSilva\artifacts\checkpoints\step4_closed_loop_checkpoint.json
+Checkpoint saved to: C:\HornerAI\horner-cscape-mcp\artifacts\checkpoints\step4_closed_loop_checkpoint.json
+================================================================================
+STEP 4: CLOSED-LOOP PROOF WITH FAILURE LOGS COMPLETED & CHECKPOINTED
+================================================================================
+================================================================================
+STEP 4: CLOSED-LOOP PROOF WITH CONCRETE FAILURE LOGS
+================================================================================
+Timestamp UTC : 2026-09-06T01:52:17.572Z
+Mode          : Air-Gapped Simulation (Zero Physical PLC Download)
+Engine        : Horner Cscape 10.2 Native IEC 61131-3 (Zero Straton K5)
+
+------------------------------------------------------------
+PART 1: INDUSTRIAL CLOSED-LOOP OVERFILL TRIP FAILURE SCENARIO
+------------------------------------------------------------
+  Cycle 1-3 (Steady-State 60.0%): PV=60.0%, Trip=False, Valve=True
+  [FAILURE INDUCTION] RawLevelIn = 30400 counts (95.0% Level)
+  -> TankLevelPV     : 95.0% (>= 90.0% High-High Limit)
+  -> AlarmHigh       : True (High Warning Active)
+  -> AlarmHighHigh   : True (CRITICAL HIGH-HIGH TRIP ACTIVE)
+  -> InflowValveCmd  : False (INFLOW VALVE ISOLATED/CLOSED)
+  -> DischargePump   : True (EVACUATION DISCHARGE ACTIVE)
+  -> TripActive      : True (SYSTEM SAFETY INTERLOCK TRIPPED)
+  [FAILURE INDUCTION: SENSOR DISCONNECT & LOW-LOW DRY-RUN CUTOFF] RawLevelIn = 0 counts (0.0% Level / Open Circuit)
+  -> TankLevelPV     : 0.0% (<= 10.0% Low-Low Limit)
+  -> AlarmLow        : True (Low Warning Active)
+  -> AlarmLowLow     : True (CRITICAL LOW-LOW TRIP ACTIVE)
+  -> DischargePump   : False (PUMP CUTOFF / LOW-LOW DRY-RUN CAVITATION PROTECTION)
+  -> InflowValveCmd  : True (INFLOW RECOVERY DEMAND)
+  -> TripActive      : True (FAIL-SAFE SAFETY INTERLOCK TRIPPED)
+
+------------------------------------------------------------
+PART 2: CONCRETE MCP COMPILER FAILURE LOCATION LOGGING
+------------------------------------------------------------
+  Failure Test: Syntax Error near semicolon
+  -> Valid           : False
+  -> Error Count     : 1
+  [FAILURE_LOCATION] File: BrokenPOU.st | Line: 6 | Col: 16 | Code: ST_SYNTAX_ERROR | Message: Syntax error at line 6, col 16: Unexpected token in expression: SEMICOLON (';')
+
+  Repair Verification: Syntax Fixed ('RawVal := 10 + 5;')
+  -> Valid           : True
+  -> Error Count     : 0
+  -> POU Name        : BrokenPOU
+  Repaired POU written to: C:\Users\ArmandoSilva\artifacts\projects\TankLevelClosedLoop\pous\BrokenPOU.st
+  Repaired POU written to: C:\HornerAI\horner-cscape-mcp\artifacts\projects\TankLevelClosedLoop\pous\BrokenPOU.st
+Checkpoint saved to: C:\Users\ArmandoSilva\artifacts\checkpoints\step4_closed_loop_checkpoint.json
+Checkpoint saved to: C:\HornerAI\horner-cscape-mcp\artifacts\checkpoints\step4_closed_loop_checkpoint.json
+================================================================================
+STEP 4: CLOSED-LOOP PROOF WITH FAILURE LOGS COMPLETED & CHECKPOINTED
+================================================================================

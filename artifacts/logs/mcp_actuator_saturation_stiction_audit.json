@@ -1,0 +1,150 @@
+{
+  "step": 25,
+  "title": "Actuator Saturation & Valve Stiction Non-Linearity Closed-Loop Audit",
+  "timestamp_utc_start": "2026-09-05T06:56:48.691Z",
+  "timestamp_utc_end": "2026-09-05T06:56:55.288Z",
+  "status": "VERIFIED_LIVE",
+  "cscape_process": {
+    "healthy": true,
+    "pid": 7616,
+    "is_hung": false,
+    "working_set_mb": 127.3,
+    "threads": 15,
+    "gate_status": "READY_FOR_TESTS",
+    "window_title": "Cscape - Logged In : \"armando@controlnautas.com\" - [TankLevelClosedLoop.csp]"
+  },
+  "simulation_summary": {
+    "total_cycles": 500,
+    "duration_seconds": 0.319,
+    "throughput_cycles_per_sec": 1568.13
+  },
+  "non_linearity_metrics": {
+    "stiction_deadband_pct": 1.0,
+    "cv_min_pct": 0.0,
+    "cv_max_pct": 100.0,
+    "phase_1_baseline_error_pct": 0.0,
+    "phase_2_saturated_up_error_pct": 0.0002,
+    "phase_3_saturated_down_error_pct": 0.0005,
+    "phase_4_stiction_error_pct": 0.1137,
+    "anti_windup_verified": true,
+    "saturation_recovery_verified": true,
+    "stiction_regulation_verified": true
+  },
+  "safety_audit": {
+    "physical_plc_download_blocked": true,
+    "zero_physical_hardware_touched": true,
+    "hardware_lockout_enforced": true
+  },
+  "sample_trace": [
+    {
+      "cycle": 0,
+      "phase": "PHASE_1_BASELINE_HOLD",
+      "sp": 50.0,
+      "pv_plant": 50.0,
+      "cv": 50.0,
+      "cv_clamped": 50.0,
+      "valve_pos": 50.0,
+      "deriv": 0.0,
+      "error": 0.0
+    },
+    {
+      "cycle": 50,
+      "phase": "PHASE_1_BASELINE_HOLD",
+      "sp": 50.0,
+      "pv_plant": 50.0,
+      "cv": 50.0,
+      "cv_clamped": 50.0,
+      "valve_pos": 50.0,
+      "deriv": 0.0,
+      "error": 0.0
+    },
+    {
+      "cycle": 100,
+      "phase": "PHASE_2_SATURATION_UP",
+      "sp": 95.0,
+      "pv_plant": 52.5,
+      "cv": 100.0,
+      "cv_clamped": 100.0,
+      "valve_pos": 100.0,
+      "deriv": 90.0,
+      "error": 42.5
+    },
+    {
+      "cycle": 150,
+      "phase": "PHASE_2_SATURATION_UP",
+      "sp": 95.0,
+      "pv_plant": 95.9849,
+      "cv": 97.9813,
+      "cv_clamped": 97.9813,
+      "valve_pos": 97.9813,
+      "deriv": -0.2562,
+      "error": 0.9849
+    },
+    {
+      "cycle": 200,
+      "phase": "PHASE_2_SATURATION_UP",
+      "sp": 95.0,
+      "pv_plant": 94.9717,
+      "cv": 94.8442,
+      "cv_clamped": 94.8442,
+      "valve_pos": 94.8442,
+      "deriv": 0.0187,
+      "error": 0.0283
+    },
+    {
+      "cycle": 250,
+      "phase": "PHASE_3_SATURATION_DOWN",
+      "sp": 10.0,
+      "pv_plant": 90.2498,
+      "cv": 0.0,
+      "cv_clamped": 0.0,
+      "valve_pos": 0.0,
+      "deriv": -170.0,
+      "error": 80.2498
+    },
+    {
+      "cycle": 300,
+      "phase": "PHASE_3_SATURATION_DOWN",
+      "sp": 10.0,
+      "pv_plant": 7.8561,
+      "cv": 4.5594,
+      "cv_clamped": 4.5594,
+      "valve_pos": 4.5594,
+      "deriv": 0.425,
+      "error": 2.1439
+    },
+    {
+      "cycle": 350,
+      "phase": "PHASE_3_SATURATION_DOWN",
+      "sp": 10.0,
+      "pv_plant": 10.068,
+      "cv": 10.2959,
+      "cv_clamped": 10.2959,
+      "valve_pos": 10.2959,
+      "deriv": -0.025,
+      "error": 0.068
+    },
+    {
+      "cycle": 400,
+      "phase": "PHASE_4_STICTION_REGULATION",
+      "sp": 50.0,
+      "pv_plant": 14.4995,
+      "cv": 100.0,
+      "cv_clamped": 100.0,
+      "valve_pos": 100.0,
+      "deriv": 80.0,
+      "error": 35.5005
+    },
+    {
+      "cycle": 450,
+      "phase": "PHASE_4_STICTION_REGULATION",
+      "sp": 50.0,
+      "pv_plant": 51.9113,
+      "cv": 49.0044,
+      "cv_clamped": 49.0044,
+      "valve_pos": 49.9195,
+      "deriv": 0.2188,
+      "error": 1.9113
+    }
+  ]
+}

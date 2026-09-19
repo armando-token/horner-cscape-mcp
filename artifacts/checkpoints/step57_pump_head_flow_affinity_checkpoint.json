@@ -1,0 +1,17 @@
+{
+  "step": 57,
+  "step_name": "Nonlinear Pump Head-Flow (Q-H) Curve & Variable-Speed Affinity Law Closed-Loop Audit",
+  "timestamp_utc": "2026-09-05T10:22:25.825Z",
+  "cscape_pid": 6244,
+  "cscape_hwnd": "0x036103C4",
+  "cscape_working_set_mb": 225.86,
+  "compilation_verified": true,
+  "error_count": 0,
+  "phase2_uncompensated_flow_drift_max": 41.9621,
+  "phase3_compensated_flow_error_max": 0.0,
+  "flow_drift_rejection_percentage": 100.0,
+  "phase4_settling_error": 0.019672,
+  "deadhead_churn_trip_cycle": 501,
+  "download_lockout_enforced": true,
+  "all_assertions_passed": true
+}

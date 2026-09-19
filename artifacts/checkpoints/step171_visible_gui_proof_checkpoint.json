@@ -1,0 +1,32 @@
+{
+  "step": 171,
+  "name": "step171_visible_gui_proof_checkpoint",
+  "status": "PASSED",
+  "timestamp_utc": "2026-09-06T08:06:19.931069+00:00",
+  "auditor": "Step 171 Visible Cscape GUI Driver",
+  "mandate": "Gate G3/G4/G5 Live GUI Error Check & Evidence Lockout",
+  "dual_root_parity": true,
+  "roots_verified": {
+    "horner_root": "C:\\HornerAI\\horner-cscape-mcp",
+    "user_root": "C:\\Users\\ArmandoSilva"
+  },
+  "live_cscape": {
+    "pid": 14996,
+    "hwnd": "0x00130C78",
+    "status": "READY_FOR_TESTS",
+    "visible_on_desktop": "Default",
+    "project": "TankLevelClosedLoop.csp"
+  },
+  "live_gui_compile_clean": true,
+  "screenshot_proof": {
+    "file": "artifacts/screenshots/live_cscape_tank_level_step171.png",
+    "size_bytes": 72686,
+    "sha256": "4730540e881c216fe988f2ab82b86a21b3bf9b10e662d57effe44a71b6cb657f"
+  },
+  "log_proof": {
+    "file": "artifacts/logs/step171_visible_gui_proof.json",
+    "size_bytes": 1263,
+    "sha256": "ce6ca810ef76faa7f72660de413dca859e9d1f55d47706cdd2701b00a7849762"
+  },
+  "checkpoint_sha256": "504a54c6edcb5a1ff95e566d05507bd2cb6c1bf490da9e21c8539ffcd4ae1b94"
+}

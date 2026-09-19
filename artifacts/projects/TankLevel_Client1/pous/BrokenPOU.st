@@ -1,0 +1,7 @@
+PROGRAM BrokenPOU
+VAR
+    RawVal : INT;
+END_VAR
+
+RawVal := 10 + 5;
+END_PROGRAM

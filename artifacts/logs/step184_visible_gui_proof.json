@@ -1,0 +1,118 @@
+{
+  "step": 184,
+  "role": "Single Visible Cscape GUI Automation Agent",
+  "mandate": "Exclusive Visible Cscape GUI Automation Gate G1/G2 Live Evidence",
+  "status": "success",
+  "start_time_utc": "2026-09-06T15:14:19.621800+00:00",
+  "completion_time_utc": "2026-09-06T15:14:26.852217+00:00",
+  "execution_duration_sec": 7.232,
+  "cscape": {
+    "pid": 10892,
+    "hwnd_hex": "0x01B005DC",
+    "hwnd_int": 28313052,
+    "process_name": "Cscape.exe",
+    "uptime_sec": 20601.76,
+    "working_set_mb": 114.57,
+    "window_title": "Cscape - Logged In : \"armando@controlnautas.com\" - [TankLevelClosedLoop.csp]",
+    "is_window": true,
+    "is_visible": true,
+    "is_hung": false,
+    "is_enabled": true,
+    "responsive_ping": true,
+    "desktop": "Default",
+    "project_file": "C:\\HornerAI\\horner-cscape-mcp\\artifacts\\projects\\TankLevelClosedLoop\\TankLevelClosedLoop.csp"
+  },
+  "project_navigator": {
+    "is_visible": true,
+    "controls_matching": [
+      {
+        "hwnd": "0x00930508",
+        "hwnd_int": 9635080,
+        "cid": 1001,
+        "class": "SysTreeView32",
+        "title": "CW5EditTLWnd_Dico - Tree",
+        "visible": false
+      },
+      {
+        "hwnd": "0x00A80872",
+        "hwnd_int": 11012210,
+        "cid": 45012,
+        "class": "Afx:ControlBar:7a0000:8:10003:10",
+        "title": "Project Navigator",
+        "visible": true
+      },
+      {
+        "hwnd": "0x00FA089C",
+        "hwnd_int": 16386204,
+        "cid": 300,
+        "class": "SysTreeView32",
+        "title": "",
+        "visible": true
+      },
+      {
+        "hwnd": "0x00130C9E",
+        "hwnd_int": 1248414,
+        "cid": 300,
+        "class": "CNewLookBitmapButton",
+        "title": "",
+        "visible": false
+      }
+    ],
+    "visible_controls": [
+      {
+        "hwnd": "0x00A80872",
+        "hwnd_int": 11012210,
+        "cid": 45012,
+        "class": "Afx:ControlBar:7a0000:8:10003:10",
+        "title": "Project Navigator",
+        "visible": true
+      },
+      {
+        "hwnd": "0x00FA089C",
+        "hwnd_int": 16386204,
+        "cid": 300,
+        "class": "SysTreeView32",
+        "title": "",
+        "visible": true
+      }
+    ]
+  },
+  "tasks": {
+    "task1_thread_attached_default_desktop": true,
+    "task2_cscape_pid_and_hwnd_verified": true,
+    "task3_window_state_verified": true,
+    "task4_window_title_verified": true,
+    "task5_project_navigator_verified": true,
+    "task6_modal_dialogs_swept": {
+      "pre_sweep": 0,
+      "post_sweep": 2
+    },
+    "task7_live_gui_error_check_dispatched": {
+      "command_id": 32826,
+      "success": true,
+      "duration_sec": 6.017,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    "task8_high_res_screenshot_captured": {
+      "bytes": 71597,
+      "sha256": "3629ca11ab19c8a2ec8b2c58e5bfcbb6febc2d45132107708368cf014cbf09b9",
+      "dual_root_identical": true
+    },
+    "task9_checkpoints_written": true,
+    "task10_gate_synchronized": true
+  },
+  "hardware_safety": {
+    "zero_physical_plc": true,
+    "download_lockout_enforced": true,
+    "locked_command_ids": [
+      32827,
+      33149
+    ]
+  },
+  "dual_root_parity": true,
+  "roots_verified": {
+    "horner_root": "C:\\HornerAI\\horner-cscape-mcp",
+    "user_root": "C:\\Users\\ArmandoSilva"
+  }
+}

@@ -1,0 +1,25 @@
+================================================================================
+CSCAPE 10.2 LIVE PROJECT OPEN VERIFICATION PROOF LOG
+================================================================================
+Project File:         C:\HornerAI\horner-cscape-mcp\artifacts\projects\TankLevelClosedLoop\TankLevelClosedLoop.csp
+Project File Size:    49152 bytes
+Executable Path:      C:\Program Files (x86)\Cscape 10.2\Cscape.exe
+Cscape PID:           14628
+Main Window HWND:     19792914 (0x12E0412)
+Main Window Title:    Cscape - [TankLevelClosedLoop.csp]
+Window Rect:          (26, 26, 986, 539)
+Start Timestamp UTC:  2026-09-04T21:02:07.821020+00:00
+End Timestamp UTC:    2026-09-04T21:02:20.618111+00:00
+Proof Screenshot:     C:\HornerAI\horner-cscape-mcp\artifacts\screenshots\tank_level_closed_loop_opened.png
+Screenshot File Size: 58030 bytes
+
+AUTOMATION VERIFICATIONS:
+- Single-instance lifecycle managed: YES (Clean launch & single instance isolation)
+- Modal splash dialog handled:       YES ('About Cscape' #32770 dismissed)
+- Allow/Security dialogs checked:    YES (Auto-accepted via handle_allow_dialogs)
+- IEC 61131 Mode asserted:           YES (ID 1461)
+- Hardware Lockout Enforced:         YES (Strict Zero PLC Download / Zero PLC Comm)
+- Project Loaded into UI:            YES (Title: Cscape - [TankLevelClosedLoop.csp])
+
+STATUS: SUCCESS
+================================================================================

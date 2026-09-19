@@ -1,0 +1,44 @@
+{
+  "step": 157,
+  "role": "Visible Cscape GUI Driver",
+  "mandate": "Exclusive Visible Cscape GUI Automation (Step 157 Historical Milestone - Gate G1 Discipline Enforced)",
+  "status": "PASSED",
+  "start_time_utc": "2026-09-06T02:58:50.565306+00:00",
+  "completion_time_utc": "2026-09-06T02:58:57.043234+00:00",
+  "execution_duration_sec": 6.477,
+  "cscape": {
+    "pid": 16128,
+    "hwnd_hex": "0x024903DC",
+    "hwnd_int": 38339548,
+    "window_title": "Cscape - Logged In : \"armando@controlnautas.com\" - [TankLevelClosedLoop.csp]",
+    "process_name": "Cscape.exe",
+    "uptime_seconds": 4271.937276124954,
+    "working_set_mb": 126.09,
+    "desktop": "Default",
+    "is_window": true,
+    "is_window_visible": true,
+    "is_hung_app_window": false,
+    "is_window_enabled": true,
+    "ping_responsive": true
+  },
+  "dialog_sweep": {
+    "pre_dispatch_dismissed": 0,
+    "post_dispatch_dismissed": 0
+  },
+  "live_gui_compile": {
+    "command_dispatched": 32826,
+    "command_name": "ID_PROGRAM_ERRORCHECK",
+    "success": true,
+    "error_count": 0,
+    "warning_count": 0,
+    "controls_enumerated": 55,
+    "build_log": "Compiler V12.0.200.82\nLoading application symbols...\nEnhancedDisplayAttributes\nNo error detected\n\nLoading application symbols...\nBuilding application data...\nRelocating code...\nNo error detected\nOnline Change is disabled\nGenerate OCS code...\nNo error detected\nWarn : Screen set as first screen is empty.Screen 1",
+    "compile_duration_sec": 6.149
+  },
+  "screenshot": {
+    "primary_path": "C:\\HornerAI\\horner-cscape-mcp\\artifacts\\screenshots\\live_cscape_tank_level_step157.png",
+    "mirrored_path": "C:\\Users\\ArmandoSilva\\artifacts\\screenshots\\live_cscape_tank_level_step157.png",
+    "file_size_bytes": 72686,
+    "sha256": "4730540e881c216fe988f2ab82b86a21b3bf9b10e662d57effe44a71b6cb657f"
+  }
+}

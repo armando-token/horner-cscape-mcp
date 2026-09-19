@@ -1,0 +1,240 @@
+{
+  "step": 51,
+  "audit_title": "Multi-Loop Cascade (Master Level / Slave Flow Rate) Closed-Loop Audit",
+  "timestamp_start": "2026-09-05T10:00:33.198Z",
+  "timestamp_end": "2026-09-05T10:00:40.969Z",
+  "status": "VERIFIED_LIVE",
+  "cscape_active_process": {
+    "healthy": true,
+    "pid": 3784,
+    "hwnd": "0xbb06c2",
+    "desktop": "Default",
+    "is_hung": false,
+    "wm_null_ping_ok": true,
+    "working_set_mb": 223.98,
+    "uptime_seconds": 312.1,
+    "thread_count": 16,
+    "gate_status": "READY_FOR_TESTS",
+    "window_title": "Cscape - Logged In : \"armando@controlnautas.com\" - [TankLevelClosedLoop.csp]"
+  },
+  "cscape_gate": {
+    "ready_for_tests": true,
+    "status": "READY_FOR_TESTS",
+    "pid": 3784,
+    "hwnd": "0x00BB06C2",
+    "window_title": "Cscape - Logged In : \"armando@controlnautas.com\" - [TankLevelClosedLoop.csp]",
+    "project_file": "C:\\Users\\ArmandoSilva\\artifacts\\projects\\TankLevelClosedLoop\\TankLevelClosedLoop.csp",
+    "exit_code": null,
+    "reason": "TankLevelClosedLoop verified active and responsive",
+    "cycle": 1,
+    "timestamp_utc": "2026-09-05T10:00:33.037Z"
+  },
+  "gui_compilation": {
+    "command_id": 32826,
+    "status": "success",
+    "errors": 0,
+    "warnings": 0
+  },
+  "cascade_metrics": {
+    "total_cycles": 500,
+    "phase2_pressure_drop_max_dev_pct": 1.9184,
+    "phase3_pressure_surge_max_dev_pct": 6.2844,
+    "phase5_final_error_percent": 0.2572,
+    "phase5_mean_last15_error_percent": 0.2565
+  },
+  "safety_audit": {
+    "physical_plc_download_blocked": true,
+    "blocked_command_id": 32827,
+    "zero_physical_hardware_touched": true,
+    "zero_straton_dependencies": true
+  },
+  "sample_trace": [
+    {
+      "cycle": 0,
+      "phase": "PHASE_1_NOMINAL_CASCADE",
+      "header_p": 1.0,
+      "level_sp": 50.0,
+      "flow_sp": 50.0,
+      "actual_flow": 50.0,
+      "valve_pos": 50.0,
+      "pv_level": 50.0,
+      "error": 0.0
+    },
+    {
+      "cycle": 50,
+      "phase": "PHASE_1_NOMINAL_CASCADE",
+      "header_p": 1.0,
+      "level_sp": 50.0,
+      "flow_sp": 50.0,
+      "actual_flow": 50.0,
+      "valve_pos": 50.0,
+      "pv_level": 50.0,
+      "error": 0.0
+    },
+    {
+      "cycle": 100,
+      "phase": "PHASE_1_NOMINAL_CASCADE",
+      "header_p": 1.0,
+      "level_sp": 50.0,
+      "flow_sp": 50.0,
+      "actual_flow": 50.0,
+      "valve_pos": 50.0,
+      "pv_level": 50.0,
+      "error": 0.0
+    },
+    {
+      "cycle": 101,
+      "phase": "PHASE_2_PRESSURE_DROP",
+      "header_p": 0.6,
+      "level_sp": 50.0,
+      "flow_sp": 50.0,
+      "actual_flow": 38.73,
+      "valve_pos": 50.0,
+      "pv_level": 49.4365,
+      "error": 0.5635
+    },
+    {
+      "cycle": 105,
+      "phase": "PHASE_2_PRESSURE_DROP",
+      "header_p": 0.6,
+      "level_sp": 50.0,
+      "flow_sp": 50.02,
+      "actual_flow": 34.56,
+      "valve_pos": 44.61,
+      "pv_level": 48.6946,
+      "error": 1.3054
+    },
+    {
+      "cycle": 140,
+      "phase": "PHASE_2_PRESSURE_DROP",
+      "header_p": 0.6,
+      "level_sp": 50.0,
+      "flow_sp": 53.32,
+      "actual_flow": 59.94,
+      "valve_pos": 77.38,
+      "pv_level": 50.3106,
+      "error": 0.3106
+    },
+    {
+      "cycle": 180,
+      "phase": "PHASE_2_PRESSURE_DROP",
+      "header_p": 0.6,
+      "level_sp": 50.0,
+      "flow_sp": 51.5,
+      "actual_flow": 59.4,
+      "valve_pos": 76.69,
+      "pv_level": 50.8131,
+      "error": 0.8131
+    },
+    {
+      "cycle": 181,
+      "phase": "PHASE_3_PRESSURE_SURGE",
+      "header_p": 1.5,
+      "level_sp": 50.0,
+      "flow_sp": 49.05,
+      "actual_flow": 65.29,
+      "valve_pos": 53.31,
+      "pv_level": 51.5368,
+      "error": 1.5368
+    },
+    {
+      "cycle": 185,
+      "phase": "PHASE_3_PRESSURE_SURGE",
+      "header_p": 1.5,
+      "level_sp": 50.0,
+      "flow_sp": 49.26,
+      "actual_flow": 81.01,
+      "valve_pos": 66.15,
+      "pv_level": 53.5472,
+      "error": 3.5472
+    },
+    {
+      "cycle": 220,
+      "phase": "PHASE_3_PRESSURE_SURGE",
+      "header_p": 1.5,
+      "level_sp": 50.0,
+      "flow_sp": 41.52,
+      "actual_flow": 30.69,
+      "valve_pos": 25.06,
+      "pv_level": 49.3498,
+      "error": 0.6502
+    },
+    {
+      "cycle": 270,
+      "phase": "PHASE_3_PRESSURE_SURGE",
+      "header_p": 1.5,
+      "level_sp": 50.0,
+      "flow_sp": 47.13,
+      "actual_flow": 32.94,
+      "valve_pos": 26.89,
+      "pv_level": 48.3263,
+      "error": 1.6737
+    },
+    {
+      "cycle": 271,
+      "phase": "PHASE_4_STEP_SETPOINT",
+      "header_p": 1.0,
+      "level_sp": 70.0,
+      "flow_sp": 100.0,
+      "actual_flow": 63.45,
+      "valve_pos": 63.45,
+      "pv_level": 49.0823,
+      "error": 20.9177
+    },
+    {
+      "cycle": 300,
+      "phase": "PHASE_4_STEP_SETPOINT",
+      "header_p": 1.0,
+      "level_sp": 70.0,
+      "flow_sp": 83.46,
+      "actual_flow": 72.9,
+      "valve_pos": 72.9,
+      "pv_level": 71.4799,
+      "error": 1.4799
+    },
+    {
+      "cycle": 370,
+      "phase": "PHASE_4_STEP_SETPOINT",
+      "header_p": 1.0,
+      "level_sp": 70.0,
+      "flow_sp": 68.9,
+      "actual_flow": 60.42,
+      "valve_pos": 60.42,
+      "pv_level": 71.1517,
+      "error": 1.1517
+    },
+    {
+      "cycle": 371,
+      "phase": "PHASE_5_CALIBRATED_SETTLING",
+      "header_p": 1.0,
+      "level_sp": 70.0,
+      "flow_sp": 71.53,
+      "actual_flow": 80.21,
+      "valve_pos": 80.21,
+      "pv_level": 71.6047,
+      "error": 1.6047
+    },
+    {
+      "cycle": 420,
+      "phase": "PHASE_5_CALIBRATED_SETTLING",
+      "header_p": 1.0,
+      "level_sp": 70.0,
+      "flow_sp": 68.64,
+      "actual_flow": 59.98,
+      "valve_pos": 59.98,
+      "pv_level": 69.8711,
+      "error": 0.1289
+    },
+    {
+      "cycle": 499,
+      "phase": "PHASE_5_CALIBRATED_SETTLING",
+      "header_p": 1.0,
+      "level_sp": 70.0,
+      "flow_sp": 71.34,
+      "actual_flow": 80.0,
+      "valve_pos": 80.0,
+      "pv_level": 70.2572,
+      "error": 0.2572
+    }
+  ]
+}

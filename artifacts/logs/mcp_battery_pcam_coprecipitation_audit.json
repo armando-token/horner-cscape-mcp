@@ -1,0 +1,234 @@
+{
+  "audit_step": 106,
+  "name": "Li-Ion Battery pCAM Co-Precipitation CSTR Level Closed-Loop Audit",
+  "timestamp": "2026-09-05T12:13:10.018Z",
+  "completed_at": "2026-09-05T12:13:18.168Z",
+  "cscape_pid": 9472,
+  "cscape_hwnd": "0x9b08f8",
+  "total_cycles": 600,
+  "metrics": {
+    "max_phase1_level_error_pct": 0.0,
+    "mean_phase1_level_error_pct": 0.0,
+    "max_phase2_uncomp_drift_pct": 6.71,
+    "mean_phase2_uncomp_drift_pct": 4.93,
+    "max_phase3_comp_error_pct": 0.0,
+    "mean_phase3_comp_error_pct": 0.0,
+    "density_surge_rejection_pct": 100.0,
+    "phase4_final_level_error_pct": 0.0912,
+    "phase4_mean_tail_level_error_pct": 0.0563,
+    "thickener_overflow_trip_cycle": 501,
+    "high_high_trip_level_pct": 85.0
+  },
+  "trace_samples": [
+    {
+      "cycle": 0,
+      "phase": "PHASE_1_NMC_PRECIPITATION_STEADY_STATE",
+      "target_sp": 52.0,
+      "cstr_level": 52.0,
+      "feed_rate_lmin": 45.0,
+      "thickener_trip": false,
+      "cv_pid": 50.0
+    },
+    {
+      "cycle": 50,
+      "phase": "PHASE_1_NMC_PRECIPITATION_STEADY_STATE",
+      "target_sp": 52.0,
+      "cstr_level": 52.0,
+      "feed_rate_lmin": 45.0,
+      "thickener_trip": false,
+      "cv_pid": 50.0
+    },
+    {
+      "cycle": 100,
+      "phase": "PHASE_1_NMC_PRECIPITATION_STEADY_STATE",
+      "target_sp": 52.0,
+      "cstr_level": 52.0,
+      "feed_rate_lmin": 45.0,
+      "thickener_trip": false,
+      "cv_pid": 50.0
+    },
+    {
+      "cycle": 101,
+      "phase": "PHASE_2_AMMONIA_COMPLEXING_SURGE_UNCOMP",
+      "target_sp": 52.0,
+      "cstr_level": 52.023,
+      "feed_rate_lmin": 45.4,
+      "thickener_trip": false,
+      "cv_pid": 50.0
+    },
+    {
+      "cycle": 125,
+      "phase": "PHASE_2_AMMONIA_COMPLEXING_SURGE_UNCOMP",
+      "target_sp": 52.0,
+      "cstr_level": 56.558,
+      "feed_rate_lmin": 53.8,
+      "thickener_trip": false,
+      "cv_pid": 42.88
+    },
+    {
+      "cycle": 150,
+      "phase": "PHASE_2_AMMONIA_COMPLEXING_SURGE_UNCOMP",
+      "target_sp": 52.0,
+      "cstr_level": 58.663,
+      "feed_rate_lmin": 62.5,
+      "thickener_trip": false,
+      "cv_pid": 26.81
+    },
+    {
+      "cycle": 175,
+      "phase": "PHASE_2_AMMONIA_COMPLEXING_SURGE_UNCOMP",
+      "target_sp": 52.0,
+      "cstr_level": 57.594,
+      "feed_rate_lmin": 71.2,
+      "thickener_trip": false,
+      "cv_pid": 15.29
+    },
+    {
+      "cycle": 200,
+      "phase": "PHASE_2_AMMONIA_COMPLEXING_SURGE_UNCOMP",
+      "target_sp": 52.0,
+      "cstr_level": 57.532,
+      "feed_rate_lmin": 80.0,
+      "thickener_trip": false,
+      "cv_pid": 4.75
+    },
+    {
+      "cycle": 201,
+      "phase": "PHASE_3_SLURRY_WITHDRAWAL_DECOUPLING",
+      "target_sp": 52.0,
+      "cstr_level": 52.0,
+      "feed_rate_lmin": 80.0,
+      "thickener_trip": false,
+      "cv_pid": 50.0
+    },
+    {
+      "cycle": 225,
+      "phase": "PHASE_3_SLURRY_WITHDRAWAL_DECOUPLING",
+      "target_sp": 52.0,
+      "cstr_level": 52.0,
+      "feed_rate_lmin": 80.0,
+      "thickener_trip": false,
+      "cv_pid": 50.0
+    },
+    {
+      "cycle": 250,
+      "phase": "PHASE_3_SLURRY_WITHDRAWAL_DECOUPLING",
+      "target_sp": 52.0,
+      "cstr_level": 52.0,
+      "feed_rate_lmin": 80.0,
+      "thickener_trip": false,
+      "cv_pid": 50.0
+    },
+    {
+      "cycle": 275,
+      "phase": "PHASE_3_SLURRY_WITHDRAWAL_DECOUPLING",
+      "target_sp": 52.0,
+      "cstr_level": 52.0,
+      "feed_rate_lmin": 80.0,
+      "thickener_trip": false,
+      "cv_pid": 50.0
+    },
+    {
+      "cycle": 300,
+      "phase": "PHASE_3_SLURRY_WITHDRAWAL_DECOUPLING",
+      "target_sp": 52.0,
+      "cstr_level": 52.0,
+      "feed_rate_lmin": 80.0,
+      "thickener_trip": false,
+      "cv_pid": 50.0
+    },
+    {
+      "cycle": 350,
+      "phase": "PHASE_3_SLURRY_WITHDRAWAL_DECOUPLING",
+      "target_sp": 52.0,
+      "cstr_level": 52.0,
+      "feed_rate_lmin": 80.0,
+      "thickener_trip": false,
+      "cv_pid": 50.0
+    },
+    {
+      "cycle": 351,
+      "phase": "PHASE_4_RESIDENCE_TIME_ADJUSTMENT_STEP",
+      "target_sp": 40.0,
+      "cstr_level": 50.992,
+      "feed_rate_lmin": 65.0,
+      "thickener_trip": false,
+      "cv_pid": 29.84
+    },
+    {
+      "cycle": 400,
+      "phase": "PHASE_4_RESIDENCE_TIME_ADJUSTMENT_STEP",
+      "target_sp": 40.0,
+      "cstr_level": 38.858,
+      "feed_rate_lmin": 65.0,
+      "thickener_trip": false,
+      "cv_pid": 55.77
+    },
+    {
+      "cycle": 450,
+      "phase": "PHASE_4_RESIDENCE_TIME_ADJUSTMENT_STEP",
+      "target_sp": 40.0,
+      "cstr_level": 39.811,
+      "feed_rate_lmin": 65.0,
+      "thickener_trip": false,
+      "cv_pid": 49.2
+    },
+    {
+      "cycle": 500,
+      "phase": "PHASE_4_RESIDENCE_TIME_ADJUSTMENT_STEP",
+      "target_sp": 40.0,
+      "cstr_level": 40.091,
+      "feed_rate_lmin": 65.0,
+      "thickener_trip": false,
+      "cv_pid": 50.04
+    },
+    {
+      "cycle": 501,
+      "phase": "PHASE_5_THICKENER_OVERFLOW_TRIP",
+      "target_sp": 40.0,
+      "cstr_level": 40.091,
+      "feed_rate_lmin": 25.0,
+      "thickener_trip": true,
+      "cv_pid": 50.03
+    },
+    {
+      "cycle": 520,
+      "phase": "PHASE_5_THICKENER_OVERFLOW_TRIP",
+      "target_sp": 40.0,
+      "cstr_level": 40.091,
+      "feed_rate_lmin": 25.0,
+      "thickener_trip": true,
+      "cv_pid": 49.85
+    },
+    {
+      "cycle": 550,
+      "phase": "PHASE_5_THICKENER_OVERFLOW_TRIP",
+      "target_sp": 40.0,
+      "cstr_level": 40.091,
+      "feed_rate_lmin": 25.0,
+      "thickener_trip": true,
+      "cv_pid": 49.63
+    },
+    {
+      "cycle": 599,
+      "phase": "PHASE_5_THICKENER_OVERFLOW_TRIP",
+      "target_sp": 40.0,
+      "cstr_level": 40.091,
+      "feed_rate_lmin": 25.0,
+      "thickener_trip": true,
+      "cv_pid": 49.27
+    }
+  ],
+  "cscape_health": {
+    "healthy": true,
+    "pid": 9472,
+    "hwnd": "0x9b08f8",
+    "desktop": "Default",
+    "is_hung": false,
+    "wm_null_ping_ok": true,
+    "working_set_mb": 227.93,
+    "num_threads": 16,
+    "uptime_sec": 326.89
+  },
+  "download_lockout_verified": true
+}

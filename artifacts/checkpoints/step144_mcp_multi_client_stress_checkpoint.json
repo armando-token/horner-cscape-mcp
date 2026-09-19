@@ -1,0 +1,21 @@
+{
+  "step": 144,
+  "name": "step144_mcp_multi_client_stress_checkpoint",
+  "status": "PASSED",
+  "timestamp_utc": "2026-09-05T19:06:38.701Z",
+  "cscape_pid": 3572,
+  "hwnd": "0x00BA0848",
+  "clients_count": 4,
+  "total_calls": 100,
+  "success_rate_percent": 100.0,
+  "aggregate_throughput_calls_per_sec": 0.77,
+  "median_latency_ms": 3.15,
+  "p95_latency_ms": 6461.18,
+  "errors": 0,
+  "dropped_frames": 0,
+  "cross_client_contamination": 0,
+  "live_screenshot_sha256": "83198ad12f58b287bfe0ba657aca97fc6effb54bc0980d88a12200c4b4c0c0e5",
+  "zero_straton_dependencies": true,
+  "hardware_lockout_enforced": true,
+  "checkpoint_sha256": "0a34a0bfa87c6118f7ccd4e59a8a0c8ba3fe06df07ac2e620f979e70f0969b05"
+}

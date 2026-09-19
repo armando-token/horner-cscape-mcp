@@ -1,0 +1,144 @@
+{
+  "test_name": "Live Cscape Syntax Error Roundtrip Verification",
+  "timestamp_utc": "2026-09-05T05:54:04.983424+00:00",
+  "gate_verification": {
+    "status": "READY_FOR_TESTS",
+    "hwnd_hex": "0x7b06d6",
+    "pid": 7616,
+    "window_title": "Cscape - Logged In : \"armando@controlnautas.com\" - [TankLevelClosedLoop.csp]",
+    "project_file": "C:\\Users\\ArmandoSilva\\artifacts\\projects\\TankLevelClosedLoop\\TankLevelClosedLoop.csp",
+    "cycle": 1
+  },
+  "safety_guardrails": {
+    "id_controller_download_blocked": true,
+    "blocked_command_id": 32827,
+    "zero_plc_download_enforced": true,
+    "zero_straton_k5_dependencies": true,
+    "hardware_lockout_enforced": true
+  },
+  "backup_verification": {
+    "source_files": [
+      "C:\\Users\\ArmandoSilva\\artifacts\\projects\\TankLevelClosedLoop\\pous\\TankLevelClosedLoop.st",
+      "C:\\HornerAI\\horner-cscape-mcp\\artifacts\\projects\\TankLevelClosedLoop\\pous\\TankLevelClosedLoop.st"
+    ],
+    "backup_files": [
+      "C:\\Users\\ArmandoSilva\\artifacts\\projects\\TankLevelClosedLoop\\pous\\TankLevelClosedLoop.st.bak",
+      "C:\\HornerAI\\horner-cscape-mcp\\artifacts\\projects\\TankLevelClosedLoop\\pous\\TankLevelClosedLoop.st.bak"
+    ],
+    "original_sha256": "7fd73e139c3c6475dd0f4c84351c339a0c66b96f2b160f452fc2564017de7ea9",
+    "file_size_bytes": 2503
+  },
+  "error_injection_phase": {
+    "injected_statement": "INJECTED_SYNTAX_ERROR := ;",
+    "injected_file_sha256": "fa79e93556fb5f9e93ddfbb8e4c2d17e0811fb8ffa371f95f94cf027512cb853",
+    "compile_successful": false,
+    "status": "error",
+    "error_count": 3,
+    "warning_count": 0,
+    "errors": [
+      "Syntax error at line 2, col 30: Unexpected token in expression: SEMICOLON (';')",
+      "Assignment to undeclared variable 'INJECTED_SYNTAX_ERROR'.",
+      "Undeclared variable or identifier 'INJECTED_SYNTAX_ERROR' used in logic."
+    ],
+    "diagnostics": [
+      {
+        "level": "ERROR",
+        "message": "Syntax error at line 2, col 30: Unexpected token in expression: SEMICOLON (';')",
+        "line": 2,
+        "column": 30,
+        "file_path": "C:\\HornerAI\\horner-cscape-mcp\\artifacts\\projects\\TankLevelClosedLoop\\pous\\TankLevelClosedLoop.st",
+        "pou_name": "TankLevelClosedLoop",
+        "error_code": "ST_SYNTAX_ERROR",
+        "failure_location": {
+          "file_path": "TankLevelClosedLoop.st",
+          "full_path": "C:\\HornerAI\\horner-cscape-mcp\\artifacts\\projects\\TankLevelClosedLoop\\pous\\TankLevelClosedLoop.st",
+          "line": 2,
+          "column": 30,
+          "error_code": "ST_SYNTAX_ERROR",
+          "severity": "ERROR",
+          "message": "Syntax error at line 2, col 30: Unexpected token in expression: SEMICOLON (';')"
+        }
+      },
+      {
+        "level": "ERROR",
+        "message": "Assignment to undeclared variable 'INJECTED_SYNTAX_ERROR'.",
+        "line": 96,
+        "column": 1,
+        "file_path": "C:\\HornerAI\\horner-cscape-mcp\\artifacts\\projects\\TankLevelClosedLoop\\pous\\TankLevelClosedLoop.st",
+        "pou_name": "TankLevelClosedLoop",
+        "error_code": "ERR_UNDECLARED_VAR",
+        "failure_location": {
+          "file_path": "TankLevelClosedLoop.st",
+          "full_path": "C:\\HornerAI\\horner-cscape-mcp\\artifacts\\projects\\TankLevelClosedLoop\\pous\\TankLevelClosedLoop.st",
+          "line": 96,
+          "column": 1,
+          "error_code": "ERR_UNDECLARED_VAR",
+          "severity": "ERROR",
+          "message": "Assignment to undeclared variable 'INJECTED_SYNTAX_ERROR'."
+        }
+      },
+      {
+        "level": "ERROR",
+        "message": "Undeclared variable or identifier 'INJECTED_SYNTAX_ERROR' used in logic.",
+        "line": 96,
+        "column": 1,
+        "file_path": "C:\\HornerAI\\horner-cscape-mcp\\artifacts\\projects\\TankLevelClosedLoop\\pous\\TankLevelClosedLoop.st",
+        "pou_name": "TankLevelClosedLoop",
+        "error_code": "ERR_UNDECLARED_VAR",
+        "failure_location": {
+          "file_path": "TankLevelClosedLoop.st",
+          "full_path": "C:\\HornerAI\\horner-cscape-mcp\\artifacts\\projects\\TankLevelClosedLoop\\pous\\TankLevelClosedLoop.st",
+          "line": 96,
+          "column": 1,
+          "error_code": "ERR_UNDECLARED_VAR",
+          "severity": "ERROR",
+          "message": "Undeclared variable or identifier 'INJECTED_SYNTAX_ERROR' used in logic."
+        }
+      }
+    ],
+    "build_log": "=== Horner Cscape 10.2 Compile Pass: TankLevelClosedLoop ===\nClean Build: True\nMode: IEC 61131-3 Structured Text (Advanced Ladder Excluded)\nTimestamp: 2026-09-04T22:54:05.028587\n----------------------------------------------------------------\nCompiling POU: AlarmMonitor (72 bytes)...\n  POU 'AlarmMonitor' parsed and validated cleanly.\nCompiling POU: BrokenPOU (79 bytes)...\n  POU 'BrokenPOU' parsed and validated cleanly.\nCompiling POU: TankLevelClosedLoop (2534 bytes)...\n  TankLevelClosedLoop.st(2,30): error ST_SYNTAX_ERROR: Syntax error at line 2, col 30: Unexpected token in expression: SEMICOLON (';')\n  TankLevelClosedLoop.st(96,1): error ERR_UNDECLARED_VAR: Assignment to undeclared variable 'INJECTED_SYNTAX_ERROR'.\n  TankLevelClosedLoop.st(96,1): error ERR_UNDECLARED_VAR: Undeclared variable or identifier 'INJECTED_SYNTAX_ERROR' used in logic.\n----------------------------------------------------------------\nBuild Result: FAILED\nErrors: 3, Warnings: 0\nEstimated Code Size: 4221 bytes, Data Size: 768 bytes\nDuration: 0.122s\nHardware Lockout: ENFORCED (Zero PLC communication / No download)",
+    "output_window_scraped_lines": 13
+  },
+  "restoration_phase": {
+    "restored_files": [
+      "C:\\Users\\ArmandoSilva\\artifacts\\projects\\TankLevelClosedLoop\\pous\\TankLevelClosedLoop.st",
+      "C:\\HornerAI\\horner-cscape-mcp\\artifacts\\projects\\TankLevelClosedLoop\\pous\\TankLevelClosedLoop.st"
+    ],
+    "restored_sha256": "7fd73e139c3c6475dd0f4c84351c339a0c66b96f2b160f452fc2564017de7ea9",
+    "matches_original": true,
+    "backup_cleaned_up": true
+  },
+  "clean_compile_phase": {
+    "ast_compile_result": {
+      "success": true,
+      "status": "success",
+      "error_count": 0,
+      "warning_count": 0,
+      "pous_compiled": [
+        "AlarmMonitor",
+        "BrokenPOU",
+        "TankLevelClosedLoop"
+      ],
+      "memory_footprint": {
+        "code_size_bytes": 4190,
+        "data_size_bytes": 768,
+        "retain_size_bytes": 128,
+        "total_size_bytes": 5086,
+        "target_architecture": "Horner OCS XL4 (Native CFBF)"
+      },
+      "hardware_lockout_enforced": true
+    },
+    "gui_compile_result": {
+      "cscape_hwnd": "0x7b06d6",
+      "cscape_pid": 7616,
+      "success": true,
+      "error_count": 0,
+      "warning_count": 0,
+      "scraped_build_log": "Compiler V12.0.200.82\nLoading application symbols...\nEnhancedDisplayAttributes\nNo error detected\n\nLoading application symbols...\nBuilding application data...\nRelocating code...\nNo error detected\nOnline Change is disabled\nGenerate OCS code...\nNo error detected\nWarn : Screen set as first screen is empty.Screen 1",
+      "scraped_control": "ListBox ID 372 in Output Window Frame 45011",
+      "modal_dialogs_handled": true
+    }
+  },
+  "roundtrip_verdict": "PASSED",
+  "completed_at_utc": "2026-09-05T05:54:11.938818+00:00"
+}

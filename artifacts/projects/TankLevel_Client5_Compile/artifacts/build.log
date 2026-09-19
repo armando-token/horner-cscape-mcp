@@ -1,0 +1,17 @@
+=== Horner Cscape 10.2 Compile Pass: TankLevel_Client5_Compile ===
+Clean Build: True
+Mode: IEC 61131-3 Structured Text (Advanced Ladder Excluded)
+Timestamp: 2026-09-04T23:31:41.906033
+----------------------------------------------------------------
+Compiling POU: AlarmMonitor (72 bytes)...
+  POU 'AlarmMonitor' parsed and validated cleanly.
+Compiling POU: BrokenPOU (79 bytes)...
+  POU 'BrokenPOU' parsed and validated cleanly.
+Compiling POU: TankLevelClosedLoop (2503 bytes)...
+  POU 'TankLevelClosedLoop' parsed and validated cleanly.
+----------------------------------------------------------------
+Build Result: SUCCESS
+Errors: 0, Warnings: 0
+Estimated Code Size: 4190 bytes, Data Size: 768 bytes
+Duration: 0.014s
+Hardware Lockout: ENFORCED (Zero PLC communication / No download)

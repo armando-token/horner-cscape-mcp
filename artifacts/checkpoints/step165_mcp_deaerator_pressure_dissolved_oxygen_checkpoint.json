@@ -1,0 +1,18 @@
+{
+  "step": 165,
+  "name": "step165_mcp_deaerator_pressure_dissolved_oxygen_checkpoint",
+  "status": "PASSED",
+  "timestamp_utc": "2026-09-06T12:24:02.947Z",
+  "cscape_pid": 10892,
+  "hwnd": "0x01B005DC",
+  "saturation_equilibrium_verified": true,
+  "antivacuum_implosion_protection_verified": true,
+  "sentinel_overpressure_dump_verified": true,
+  "dissolved_oxygen_stripping_verified": true,
+  "zero_straton_dependencies": true,
+  "hardware_lockout_enforced": true,
+  "live_screenshot_sha256": "bc43766c83319fd52574940020f6a1b1316dc6ba62fa60593dec82592cdfd0e1",
+  "log_sha256": "9273782f74fc2d9e3a4e79c0782b74f5c0dfd8bfbbf3e1999164b08f41c39c90",
+  "dual_root_mirrored": true,
+  "checkpoint_sha256": "5afbc8a2be8965dc79c0124bccde8c10a57113941e0922456b155053675861f2"
+}

@@ -1,0 +1,35 @@
+{
+  "step": 131,
+  "title": "Live GUI Compile Fault-Injection & Recovery Roundtrip on PID 14580",
+  "timestamp_start_utc": "2026-09-05T17:14:45.841Z",
+  "timestamp_end_utc": "2026-09-05T17:14:58.226Z",
+  "status": "VERIFIED_LIVE",
+  "cscape_active_process": {
+    "pid": 14580,
+    "hwnd": "0x024B054A",
+    "uptime_seconds": 4320.26,
+    "working_set_mb": 137.59,
+    "is_hung": false,
+    "ping_ok": true
+  },
+  "fault_injection_roundtrip": {
+    "baseline_compile_success": true,
+    "baseline_errors": 0,
+    "fault_injected": "nVal : INT := ;",
+    "fault_compile_rejected": true,
+    "fault_error_count": 1,
+    "fault_diagnostic_messages": [
+      "Syntax error at line 3, col 19: Unexpected token in expression: SEMICOLON (';')"
+    ],
+    "gui_survived_fault_unhung": true,
+    "recovery_compile_success": true,
+    "recovery_errors": 0,
+    "gui_continuity_confirmed": true
+  },
+  "safety_audit": {
+    "physical_plc_download_blocked": true,
+    "hardware_lockout_enforced": true,
+    "zero_physical_hardware_touched": true,
+    "zero_straton_dependencies": true
+  }
+}

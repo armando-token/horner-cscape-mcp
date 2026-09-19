@@ -1,0 +1,10 @@
+================================================================================
+CSCAPE ERROR CHECK COMPILATION RESULT RECORD
+================================================================================
+compile_started=true
+errors_seen=0
+error_dialog="There were no errors or warnings"
+non_fatal_dismissed=false
+plc_download=no
+loop_still_visible=true
+================================================================================

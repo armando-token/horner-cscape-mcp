@@ -1,0 +1,61 @@
+{
+  "step": 181,
+  "role": "Simulation & Verification Agent",
+  "mandate": "Pure-Software ISA-18.2 First-Out Alarm Annunciator & Multi-Client Concurrency Audit",
+  "status": "success",
+  "start_time_utc": "2026-09-06T14:13:55.300Z",
+  "completion_time_utc": "2026-09-06T14:14:08.301Z",
+  "execution_duration_sec": 13.002,
+  "gate_target": {
+    "pid": 10892,
+    "hwnd": "0x01B005DC"
+  },
+  "scenarios": {
+    "invariant_A_first_out_discrimination": {
+      "status": "success",
+      "description": "Root-cause Point 1 identified as FirstOutId=1 in cascading outage (Points 2, 4, 7)"
+    },
+    "invariant_B_flasher_discrimination": {
+      "status": "success",
+      "description": "Fast flash toggled 4x (2.0 Hz) vs slow flash 2x (1.0 Hz)"
+    },
+    "invariant_C_horn_and_acknowledge": {
+      "status": "success",
+      "description": "Horn silenced and beacon steady-on upon operator acknowledgment"
+    },
+    "invariant_D_failsafe_reset_interlock": {
+      "status": "success",
+      "description": "Reset interlock clears points only when field condition is normal; FirstOutId resets when 100% clear"
+    },
+    "invariant_E_lamp_horn_test": {
+      "status": "success",
+      "description": "Lamp test illuminates all 8 beacons and horn without clearing unack/latched state"
+    },
+    "mcp_annunciator_register_sync": {
+      "status": "success",
+      "registers": {
+        "%R230": 1,
+        "%Q81": true,
+        "%Q89": true
+      }
+    },
+    "multi_client_stdio_concurrency": {
+      "status": "success",
+      "clients": 2,
+      "partitioned_registers": {
+        "%R220": 220.5,
+        "%R221": 221.5
+      },
+      "cross_contamination_detected": false
+    },
+    "invariant_G_hardware_download_lockout": {
+      "status": "blocked",
+      "description": "Download commands [32827, 33149] intercepted fail-closed"
+    }
+  },
+  "hardware_safety": {
+    "zero_physical_plc": true,
+    "download_lockout_enforced": true
+  },
+  "dual_root_parity": true
+}

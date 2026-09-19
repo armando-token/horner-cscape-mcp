@@ -1,0 +1,26 @@
+[2026-09-04T04:57:55.037806+00:00] ================================================================
+[2026-09-04T04:57:55.037806+00:00] === Horner Cscape 10.2 Live UI Open & Compile Proof ===
+[2026-09-04T04:57:55.037806+00:00] ================================================================
+[2026-09-04T04:57:55.037806+00:00] Executable Path: C:\Program Files (x86)\Cscape 10.2\Cscape.exe
+[2026-09-04T04:57:55.037806+00:00] File Exists: True
+[2026-09-04T04:57:55.037806+00:00] File Size: 17663488 bytes
+[2026-09-04T04:57:55.038810+00:00] Launching Cscape 10.2 via CscapeLifecycleManager...
+[2026-09-04T04:58:02.104786+00:00] Process PID: 12808
+[2026-09-04T04:58:02.104786+00:00] Main Window HWND: 4458042
+[2026-09-04T04:58:02.104786+00:00] Lifecycle State: READY
+[2026-09-04T04:58:02.104786+00:00] Is Running: True
+[2026-09-04T04:58:02.104786+00:00] Is Ready: True
+[2026-09-04T04:58:02.104786+00:00] Main Window Title: 'Cscape - [untitled1]'
+[2026-09-04T04:58:03.618485+00:00] Capturing HWND window buffer to C:\HornerAI\horner-cscape-mcp\artifacts\screenshots\cscape_open_proof.png...
+[2026-09-04T04:58:05.723285+00:00] SUCCESS: Screenshot saved to C:\HornerAI\horner-cscape-mcp\artifacts\screenshots\cscape_open_proof.png (56902 bytes)
+[2026-09-04T04:58:05.723285+00:00] Dispatching WM_COMMAND ID_PROGRAM_ERRORCHECK (32826 / Ctrl+F7) to HWND 4458042...
+[2026-09-04T04:58:07.231070+00:00] Running CscapeCompiler.compile_project on workspace...
+[2026-09-04T04:58:07.241083+00:00] CscapeCompiler Success: True
+[2026-09-04T04:58:07.241083+00:00] Build Status: SUCCESS
+[2026-09-04T04:58:07.241083+00:00] Build Time: 0.006s
+[2026-09-04T04:58:07.241083+00:00] Errors: 0, Warnings: 0
+[2026-09-04T04:58:07.241083+00:00] Hardware Lockout Enforced: True
+[2026-09-04T04:58:07.241083+00:00] Capturing compile window buffer to C:\HornerAI\horner-cscape-mcp\artifacts\screenshots\cscape_compile_proof.png...
+[2026-09-04T04:58:07.411004+00:00] SUCCESS: Compile screenshot saved to C:\HornerAI\horner-cscape-mcp\artifacts\screenshots\cscape_compile_proof.png (63170 bytes)
+[2026-09-04T04:58:07.411004+00:00] Closing Cscape 10.2 via WM_CLOSE graceful shutdown...
+[2026-09-04T04:58:23.319473+00:00] Cscape shutdown completed: closed=True, exit_code=3221226525

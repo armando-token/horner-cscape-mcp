@@ -1,0 +1,89 @@
+<?xml version='1.0' encoding='utf-8'?>
+<ProjectVariables version="1.0">
+   <vargroup name="globals">
+      <var name="RawLevelInput" type="INT">
+         <varinfo type="tag" data="%AI1" />
+         <varinfo type="desc" data="Tank Level Sensor 4-20mA Raw ADC Counts (0-32000)" />
+      </var>
+      <var name="RawPumpOutput" type="INT">
+         <varinfo type="tag" data="%AQ1" />
+         <varinfo type="desc" data="Inflow Modulating Valve Positioner 4-20mA (0-32000)" />
+      </var>
+      <var name="RawValveOutput" type="INT">
+         <varinfo type="tag" data="%AQ2" />
+         <varinfo type="desc" data="Inflow Solenoid Valve Positioner (0-32000)" />
+      </var>
+      <var name="DI_System_Start_PB" type="BOOL">
+         <varinfo type="tag" data="%I1" />
+         <varinfo type="desc" data="Panel System Start Pushbutton NO Contact" />
+      </var>
+      <var name="DI_System_Stop_PB" type="BOOL">
+         <varinfo type="tag" data="%I2" />
+         <varinfo type="desc" data="Panel System Stop Pushbutton NC Fail-Safe Contact" />
+      </var>
+      <var name="DI_EStop_Healthy" type="BOOL">
+         <varinfo type="tag" data="%I3" />
+         <varinfo type="desc" data="Emergency Stop Dual-Channel NC Healthy Contact" />
+      </var>
+      <var name="DI_LSHH_Level_Float" type="BOOL">
+         <varinfo type="tag" data="%I4" />
+         <varinfo type="desc" data="High-High Level Hardwired Float Switch NC Contact" />
+      </var>
+      <var name="PumpRunCmd" type="BOOL">
+         <varinfo type="tag" data="%Q1" />
+         <varinfo type="desc" data="Inlet Feed Pump Contactor Coil Command Output" />
+      </var>
+      <var name="InflowValveCmd" type="BOOL">
+         <varinfo type="tag" data="%Q2" />
+         <varinfo type="desc" data="Inlet Emergency Isolation Solenoid Valve" />
+      </var>
+      <var name="AlarmHighHigh" type="BOOL">
+         <varinfo type="tag" data="%M7" />
+         <varinfo type="desc" data="High-High Level Critical Trip Alarm" />
+      </var>
+      <var name="AlarmHigh" type="BOOL">
+         <varinfo type="tag" data="%M8" />
+         <varinfo type="desc" data="High Level Warning Alarm" />
+      </var>
+      <var name="AlarmLow" type="BOOL">
+         <varinfo type="tag" data="%M9" />
+         <varinfo type="desc" data="Low Level Warning Alarm" />
+      </var>
+      <var name="AlarmLowLow" type="BOOL">
+         <varinfo type="tag" data="%M10" />
+         <varinfo type="desc" data="Low-Low Level Critical Dry-Run Trip Alarm" />
+      </var>
+      <var name="TankLevelPV" type="REAL">
+         <varinfo type="tag" data="%R1" />
+         <varinfo type="desc" data="Scaled Tank Level Process Variable (0.0 - 100.0%)" />
+      </var>
+      <var name="Setpoint" type="REAL">
+         <varinfo type="tag" data="%R3" />
+         <varinfo type="desc" data="Active Tank Level Setpoint (0.0 - 100.0%)" />
+      </var>
+      <var name="ControlOutput" type="REAL">
+         <varinfo type="tag" data="%R7" />
+         <varinfo type="desc" data="Calculated PID Manipulated Variable Output (0.0 - 100.0%)" />
+      </var>
+      <var name="ManualOutput" type="REAL">
+         <varinfo type="tag" data="%R9" />
+         <varinfo type="desc" data="Manual Operator Output Setting (0.0 - 100.0%)" />
+      </var>
+      <var name="Kp" type="REAL">
+         <varinfo type="tag" data="%R29" />
+         <varinfo type="desc" data="PID Proportional Gain Constant" />
+      </var>
+      <var name="Ki" type="REAL">
+         <varinfo type="tag" data="%R31" />
+         <varinfo type="desc" data="PID Integral Reset Time Constant" />
+      </var>
+      <var name="Kd" type="REAL">
+         <varinfo type="tag" data="%R33" />
+         <varinfo type="desc" data="PID Derivative Rate Time Constant" />
+      </var>
+      <var name="CycleCounter" type="DINT">
+         <varinfo type="tag" data="%R21" />
+         <varinfo type="desc" data="Total Tank Cycles Completed" />
+      </var>
+   </vargroup>
+</ProjectVariables>

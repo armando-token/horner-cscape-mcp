@@ -1,0 +1,201 @@
+{
+  "manifest_version": "1.0.0",
+  "bundle_filename": "offline_evidence_bundle_v1.0.0.zip",
+  "bundle_size_bytes": 335933,
+  "bundle_sha256": "16a1ac91445a9067c24617b61063ddf9585ef272af6fa1c707fd83f1d8fec512",
+  "created_at_utc": "2026-09-17T20:00:43.669776+00:00",
+  "operational_mode": "offline/DEV [PRODUCT_EVIDENCE]",
+  "total_files_archived": 30,
+  "evidence_files_count": 28,
+  "total_uncompressed_evidence_bytes": 437812,
+  "safety_invariants": {
+    "plc_download": false,
+    "verified_live": false,
+    "zero_download_enforced": true,
+    "offline_safety_enforced": true,
+    "no_error_check_loop": true,
+    "p7_status": "DEFERRED_MANUAL_ENGINEER_LOAD"
+  },
+  "archive_contents": [
+    {
+      "archive_path": "MANIFEST-SHA256.json",
+      "size_bytes": 7877,
+      "sha256": "c008e0939703f1112d6a988eebe87fe1f9c27d5c2bebd8db78ada9cf78e7adfa",
+      "description": "Internal cryptographic manifest of archived evidence files"
+    },
+    {
+      "archive_path": "README.md",
+      "size_bytes": 1647,
+      "sha256": "7c398c557f3a48abde8ebb8cfd71aedfee45cfa357a44ff5ef9b16ecbab3a748",
+      "description": "Offline bundle documentation and safety invariants"
+    },
+    {
+      "archive_path": "p4_continuation/p4_selective_edit_continuation_evidence.json",
+      "original_filename": "p4_selective_edit_continuation_evidence.json",
+      "size_bytes": 4175,
+      "sha256": "81193ef63c3e87e68694dd65c896bd5cc15cf6de8e7125a2a0841d43b05ec470"
+    },
+    {
+      "archive_path": "p4_continuation/p4_selective_edit_continuation_evidence.md",
+      "original_filename": "p4_selective_edit_continuation_evidence.md",
+      "size_bytes": 4497,
+      "sha256": "26c86cb38cc8ace5cb22e9f1ce33b7b305ad06dacd9d9102b342894817ef71ba"
+    },
+    {
+      "archive_path": "p4_continuation/p4_selective_edit_evidence.json",
+      "original_filename": "p4_selective_edit_evidence.json",
+      "size_bytes": 14406,
+      "sha256": "e4c4e97c14c3c34f6825f6d6d36c0633ad3dfc064ab95193c7b3c80fc658b86c"
+    },
+    {
+      "archive_path": "p4_continuation/p4_selective_edit_evidence.md",
+      "original_filename": "p4_selective_edit_evidence.md",
+      "size_bytes": 20408,
+      "sha256": "e3221302b35923b54426322201ea8a7fc18fb517b4de5b9d701a2f99f0a098ec"
+    },
+    {
+      "archive_path": "p6_continuation/p6_second_context_handoff_evidence.json",
+      "original_filename": "p6_second_context_handoff_evidence.json",
+      "size_bytes": 7631,
+      "sha256": "c6b61d86ecdf7120aa83845e770dfe9db56925cc7607ca16771b3f03bf131906"
+    },
+    {
+      "archive_path": "p6_continuation/p6_second_context_handoff_evidence.md",
+      "original_filename": "p6_second_context_handoff_evidence.md",
+      "size_bytes": 4531,
+      "sha256": "df7386a21839bc249a33733570943bb122c32c81ec2bbab9e46eb17e3a031708"
+    },
+    {
+      "archive_path": "p6_continuation/p6_external_handoff_evidence.json",
+      "original_filename": "p6_external_handoff_evidence.json",
+      "size_bytes": 7725,
+      "sha256": "e1bf28cc69fffc77f1f7eb36cbf15d43b58686618e8d9095357625b931087334"
+    },
+    {
+      "archive_path": "p6_continuation/p6_external_handoff_evidence.md",
+      "original_filename": "p6_external_handoff_evidence.md",
+      "size_bytes": 6725,
+      "sha256": "d10e223564e976dc51d5cad156f16dff9d5bf31ddfa6f86d1a5bc2baf87b2cae"
+    },
+    {
+      "archive_path": "mj1_scan/mj1_devices_scan_evidence.json",
+      "original_filename": "mj1_devices_scan_evidence.json",
+      "size_bytes": 333,
+      "sha256": "d38d30b3a7c1354578faa4604438db320713a29409d97d9fcfda0c615ee4199a"
+    },
+    {
+      "archive_path": "mj1_scan/mj1_devices_scan_evidence.md",
+      "original_filename": "mj1_devices_scan_evidence.md",
+      "size_bytes": 467,
+      "sha256": "dff792e7e9077dc9fc7198bb588817feafb6f0e89167832fc26a6c7b32f30f29"
+    },
+    {
+      "archive_path": "scan_list_validation/mj1_scan_list_validation_evidence.json",
+      "original_filename": "mj1_scan_list_validation_evidence.json",
+      "size_bytes": 3317,
+      "sha256": "b2b68d13da3661d23b0b97bac6908623cc890f24d952bc13cd335d634e4b6c87"
+    },
+    {
+      "archive_path": "scan_list_validation/mj1_scan_list_validation_evidence.md",
+      "original_filename": "mj1_scan_list_validation_evidence.md",
+      "size_bytes": 11443,
+      "sha256": "e03379a4370e77b85213837ca77c030417041ac1dae929a2fbf7ef839994fe83"
+    },
+    {
+      "archive_path": "scan_list_inspection/mj1_scan_list_inspection_evidence.json",
+      "original_filename": "mj1_scan_list_inspection_evidence.json",
+      "size_bytes": 4899,
+      "sha256": "fce014fd65caeadbad695bcc30ee0338955c74473bd58d671aa7a1d17dead94c"
+    },
+    {
+      "archive_path": "scan_list_inspection/mj1_scan_list_inspection_evidence.md",
+      "original_filename": "mj1_scan_list_inspection_evidence.md",
+      "size_bytes": 8124,
+      "sha256": "56fa26fdae24ba2a3296d4636471654ab28c1510eae47c41f3e60a2ec0dd4362"
+    },
+    {
+      "archive_path": "scan_list_reconciliation/mj1_scan_list_reconciliation_evidence.json",
+      "original_filename": "mj1_scan_list_reconciliation_evidence.json",
+      "size_bytes": 8894,
+      "sha256": "e5c53f1756f8b02031cba33952a571422d091422359caf0f93969fc823d7f2db"
+    },
+    {
+      "archive_path": "scan_list_reconciliation/mj1_scan_list_reconciliation_evidence.md",
+      "original_filename": "mj1_scan_list_reconciliation_evidence.md",
+      "size_bytes": 8843,
+      "sha256": "b8116b33e196aebc10836642e78ddf59e6822833478c466b001c618baef0eeb8"
+    },
+    {
+      "archive_path": "save_failed_diagnosis/cscape_save_failed_diagnosis.md",
+      "original_filename": "cscape_save_failed_diagnosis.md",
+      "size_bytes": 16560,
+      "sha256": "e7b8c556fbe9af5de90322e4b4f98ac1c0362987699876d4073e2518124f5e11"
+    },
+    {
+      "archive_path": "save_failed_diagnosis/cscape_save_failed_evidence.json",
+      "original_filename": "cscape_save_failed_evidence.json",
+      "size_bytes": 885,
+      "sha256": "27c86d2eba955b90be8830ff307363eb152ba45e35444d9dc16599c93c6dd3d8"
+    },
+    {
+      "archive_path": "save_failed_diagnosis/cscape_save_failed_reproduction.png",
+      "original_filename": "cscape_save_failed_reproduction.png",
+      "size_bytes": 156882,
+      "sha256": "32551bcfef4ac339cfd337e5d1bf07f55cfcee4077b0048ef79fe21bc6f74704"
+    },
+    {
+      "archive_path": "save_failed_diagnosis/cscape_save_test_locked.csp",
+      "original_filename": "cscape_save_test_locked.csp",
+      "size_bytes": 15,
+      "sha256": "92973b3d7b2a9e98ad3ebf49f389a1f0e42dff35f6bd604907718055a1318bd7"
+    },
+    {
+      "archive_path": "save_failed_diagnosis/save_failed_caveat.txt",
+      "original_filename": "save_failed_caveat.txt",
+      "size_bytes": 19,
+      "sha256": "797d7e2cb29bc5a7c9c3fb45f8c9f21fa2f82cfca439c4d9aa39ded45fed4175"
+    },
+    {
+      "archive_path": "modbus_protocol_inventory/modbus_protocol_inventory.json",
+      "original_filename": "modbus_protocol_inventory.json",
+      "size_bytes": 5943,
+      "sha256": "d1d0809eb48d4ad9b274276f817adcfdcdae1b6476ca6c8d5613eaf1f2fa14ac"
+    },
+    {
+      "archive_path": "modbus_protocol_inventory/modbus_pv_config.json",
+      "original_filename": "modbus_pv_config.json",
+      "size_bytes": 1675,
+      "sha256": "fb06d8740cccaf3f90312715723b1960971ad4da15b34f21c0d305380b91314d"
+    },
+    {
+      "archive_path": "core08_verification/core08_cscape_gui_evidence.json",
+      "original_filename": "core08_cscape_gui_evidence.json",
+      "size_bytes": 3246,
+      "sha256": "72d3a75a22f9a3b77e3c11c5d8bfe221e70703e04d6689c7bf0f301d13ca2403"
+    },
+    {
+      "archive_path": "core08_verification/core08_labeled_test_server_verification.json",
+      "original_filename": "core08_labeled_test_server_verification.json",
+      "size_bytes": 3908,
+      "sha256": "1a5306c1bf9362283e327e3ddf63847923835ab54e130ca53e2ab804123f6383"
+    },
+    {
+      "archive_path": "core08_verification/core08_security_lockout_evidence.json",
+      "original_filename": "core08_security_lockout_evidence.json",
+      "size_bytes": 11007,
+      "sha256": "d3aae87be49e3b906bdfc9fba7d898ce8a7b0712d384a1dfa81c697849a9c9d9"
+    },
+    {
+      "archive_path": "error_check_proof/error_check_dedicated_result.json",
+      "original_filename": "error_check_dedicated_result.json",
+      "size_bytes": 1642,
+      "sha256": "19364f5daf245e00055f92bd2c313cef5d6c61fca0b03938cbca3288e9f6af37"
+    },
+    {
+      "archive_path": "error_check_proof/error_check_dedicated_proof.png",
+      "original_filename": "error_check_dedicated_proof.png",
+      "size_bytes": 119612,
+      "sha256": "c8eafcf30400a6fa4a65ec6b2b67a15162f82dcb80c59838b27b7725cd70ab8d"
+    }
+  ]
+}

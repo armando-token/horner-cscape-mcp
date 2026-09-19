@@ -1,0 +1,644 @@
+{
+  "timestamp_utc": "2026-09-05T17:43:04.799716+00:00",
+  "step": 138,
+  "mission": "Multi-POU FastMCP Full Lifecycle Verification (Insert, Validate, Simulate, Diagnostics Roundtrip)",
+  "target_project": "TankLevelClosedLoop",
+  "cscape_health": {
+    "pid": 14580,
+    "name": "Cscape.exe",
+    "memory_rss_bytes": 125702144,
+    "cpu_percent": 71.7,
+    "status": "running",
+    "hwnd": "0x24b054a",
+    "is_hung": false,
+    "ping_responsive": true
+  },
+  "tool1_validate_st": {
+    "pous_validation": {
+      "TankLevelClosedLoop.st": {
+        "path": "C:\\HornerAI\\horner-cscape-mcp\\artifacts\\projects\\TankLevelClosedLoop\\pous\\TankLevelClosedLoop.st",
+        "size_chars": 2503,
+        "lines": 96,
+        "valid": true,
+        "errors": [],
+        "warnings": [],
+        "failure_locations": []
+      },
+      "AlarmMonitor.st": {
+        "path": "C:\\HornerAI\\horner-cscape-mcp\\artifacts\\projects\\TankLevelClosedLoop\\pous\\AlarmMonitor.st",
+        "size_chars": 72,
+        "lines": 4,
+        "valid": true,
+        "errors": [],
+        "warnings": [],
+        "failure_locations": []
+      },
+      "BrokenPOU.st": {
+        "path": "C:\\HornerAI\\horner-cscape-mcp\\artifacts\\projects\\TankLevelClosedLoop\\pous\\BrokenPOU.st",
+        "size_chars": 79,
+        "lines": 7,
+        "valid": true,
+        "errors": [],
+        "warnings": [],
+        "failure_locations": []
+      },
+      "AuxPumpControl.st": {
+        "path": "C:\\HornerAI\\horner-cscape-mcp\\artifacts\\projects\\TankLevelClosedLoop\\pous\\AuxPumpControl.st",
+        "size_chars": 71,
+        "lines": 4,
+        "valid": true,
+        "errors": [],
+        "warnings": [],
+        "failure_locations": []
+      },
+      "SafetyInterlockST.st": {
+        "path": "C:\\HornerAI\\horner-cscape-mcp\\artifacts\\projects\\TankLevelClosedLoop\\pous\\SafetyInterlockST.st",
+        "size_chars": 66,
+        "lines": 4,
+        "valid": true,
+        "errors": [],
+        "warnings": [],
+        "failure_locations": []
+      }
+    },
+    "synthetic_syntax_faults": [
+      {
+        "name": "unclosed_if",
+        "code_snippet": "PROGRAM FaultUnclosedIf\nVAR val : INT; END_VAR\nIF val > 10 THEN\n    val := 0;\nEND_PROGRAM",
+        "valid": false,
+        "errors": [
+          "Mismatched closing block at line 5, col 1: got 'END_PROGRAM', expected closing for 'IF' (opened at line 3, col 1).",
+          "ERR_UNCLOSED_PROGRAM: Unclosed 'PROGRAM' block (opened at line 1, col 0) missing terminating keyword.",
+          "Syntax error at line 5, col 1: Unexpected token in statement: END_PROGRAM ('END_PROGRAM')",
+          "ERR_UNCLOSED_IF at line 3, col 1: Unclosed IF block: 1 'IF' opened, but only 0 'END_IF' closed."
+        ],
+        "failure_locations": [
+          {
+            "file_path": "FaultUnclosedIf.st",
+            "line": 5,
+            "column": 1,
+            "error_code": "ST_SYNTAX_ERROR",
+            "severity": "ERROR",
+            "message": "Mismatched closing block at line 5, col 1: got 'END_PROGRAM', expected closing for 'IF' (opened at line 3, col 1)."
+          },
+          {
+            "file_path": "FaultUnclosedIf.st",
+            "line": 1,
+            "column": 0,
+            "error_code": "ERR_UNCLOSED_PROGRAM",
+            "severity": "ERROR",
+            "message": ": Unclosed 'PROGRAM' block (opened at line 1, col 0) missing terminating keyword."
+          },
+          {
+            "file_path": "FaultUnclosedIf.st",
+            "line": 5,
+            "column": 1,
+            "error_code": "ST_SYNTAX_ERROR",
+            "severity": "ERROR",
+            "message": "Syntax error at line 5, col 1: Unexpected token in statement: END_PROGRAM ('END_PROGRAM')"
+          },
+          {
+            "file_path": "FaultUnclosedIf.st",
+            "line": 3,
+            "column": 1,
+            "error_code": "ERR_UNCLOSED_IF",
+            "severity": "ERROR",
+            "message": "Unclosed IF block: 1 'IF' opened, but only 0 'END_IF' closed."
+          }
+        ]
+      },
+      {
+        "name": "invalid_token",
+        "code_snippet": "PROGRAM FaultInvalidToken\nVAR ###bad_token : INT; END_VAR\nEND_PROGRAM",
+        "valid": false,
+        "errors": [
+          "Invalid variable identifier '###bad_token' at line 2 in VAR.",
+          "Syntax parsing exception: Unexpected character '#' at line 2, col 5",
+          "ERR_INVALID_IDENTIFIER at line 2, col 1: Invalid variable identifier '###bad_token' in declaration."
+        ],
+        "failure_locations": [
+          {
+            "file_path": "FaultInvalidToken.st",
+            "line": 2,
+            "column": 1,
+            "error_code": "ST_SYNTAX_ERROR",
+            "severity": "ERROR",
+            "message": "Invalid variable identifier '###bad_token' at line 2 in VAR."
+          },
+          {
+            "file_path": "FaultInvalidToken.st",
+            "line": 2,
+            "column": 5,
+            "error_code": "ST_SYNTAX_ERROR",
+            "severity": "ERROR",
+            "message": "Syntax parsing exception: Unexpected character '#' at line 2, col 5"
+          },
+          {
+            "file_path": "FaultInvalidToken.st",
+            "line": 2,
+            "column": 1,
+            "error_code": "ERR_INVALID_IDENTIFIER",
+            "severity": "ERROR",
+            "message": "Invalid variable identifier '###bad_token' in declaration."
+          }
+        ]
+      },
+      {
+        "name": "missing_semicolon",
+        "code_snippet": "PROGRAM FaultMissingSemi\nVAR x : INT END_VAR\nEND_PROGRAM",
+        "valid": false,
+        "errors": [
+          "Syntax error at line 2, col 13: Expected ';' after variable declaration",
+          "ERR_MISSING_SEMICOLON at line 2, col 1: Variable declaration missing terminating semicolon: 'x : INT'"
+        ],
+        "failure_locations": [
+          {
+            "file_path": "FaultMissingSemi.st",
+            "line": 2,
+            "column": 13,
+            "error_code": "ST_SYNTAX_ERROR",
+            "severity": "ERROR",
+            "message": "Syntax error at line 2, col 13: Expected ';' after variable declaration"
+          },
+          {
+            "file_path": "FaultMissingSemi.st",
+            "line": 2,
+            "column": 1,
+            "error_code": "ERR_MISSING_SEMICOLON",
+            "severity": "ERROR",
+            "message": "Variable declaration missing terminating semicolon: 'x : INT'"
+          }
+        ]
+      }
+    ],
+    "ladder_rejections": [
+      {
+        "name": "ladder_contacts_and_coil",
+        "code_snippet": "PROGRAM LadderRung\nVAR b : BOOL; END_VAR\n--[ Start_PB ]--( Run_Motor )--\nEND_PROGRAM",
+        "valid": false,
+        "error_code": "ERR_LADDER_FORBIDDEN",
+        "errors": [
+          "Ladder logic artifact detected: Ladder logic construct rejected! Horner Cscape MCP strictly enforces IEC 61131-3 Structured Text (ST) only.\nViolations detected:\n[Line 3] ASCII_NO_CONTACT: '--[ Start_PB ]--'\n  Explanation: Normally open contact symbol detected. Structured Text uses boolean identifiers directly.\n  Recommendation: Tag\n[Line 3] ASCII_NORMAL_COIL: '--( Run_Motor )--'\n  Explanation: Normal output coil symbol detected. Structured Text uses variable assignment (:=).\n  Recommendation: Tag := <Rung_Condition>;\n\nRecommended Structured Text Conversion:\n- Normally Open Contact (XIC / NO): Replace '---[ Tag ]---  or  |---[ Tag ]---|  or  XIC(Tag)' with 'Tag'\n- Normal Output Coil (OTE): Replace '---( Tag )---  or  OTE(Tag)' with 'Tag := <Rung_Condition>;'"
+        ],
+        "failure_locations": [
+          {
+            "file_path": "Anonymous.st",
+            "line": 1,
+            "column": 1,
+            "error_code": "ERR_LADDER_FORBIDDEN",
+            "severity": "ERROR",
+            "message": "Ladder logic construct rejected! Horner Cscape MCP strictly enforces IEC 61131-3 Structured Text (ST) only.\nViolations detected:\n[Line 3] ASCII_NO_CONTACT: '--[ Start_PB ]--'\n  Explanation: Normally open contact symbol detected. Structured Text uses boolean identifiers directly.\n  Recommendation: Tag\n[Line 3] ASCII_NORMAL_COIL: '--( Run_Motor )--'\n  Explanation: Normal output coil symbol detected. Structured Text uses variable assignment (:=).\n  Recommendation: Tag := <Rung_Condition>;\n\nRecommended Structured Text Conversion:\n- Normally Open Contact (XIC / NO): Replace '---[ Tag ]---  or  |---[ Tag ]---|  or  XIC(Tag)' with 'Tag'\n- Normal Output Coil (OTE): Replace '---( Tag )---  or  OTE(Tag)' with 'Tag := <Rung_Condition>;'"
+          }
+        ]
+      },
+      {
+        "name": "ladder_nc_contact",
+        "code_snippet": "PROGRAM LadderNC\nVAR b : BOOL; END_VAR\n|--[ /Stop_PB ]--|\nEND_PROGRAM",
+        "valid": false,
+        "error_code": "ERR_LADDER_FORBIDDEN",
+        "errors": [
+          "Ladder logic artifact detected: Ladder logic construct rejected! Horner Cscape MCP strictly enforces IEC 61131-3 Structured Text (ST) only.\nViolations detected:\n[Line 3] ASCII_NC_CONTACT: '|--[ /Stop_PB ]--'\n  Explanation: Normally closed contact symbol detected. Structured Text uses the NOT operator.\n  Recommendation: NOT Tag\n\nRecommended Structured Text Conversion:\n- Normally Closed Contact (XIO / NC): Replace '---[/ Tag ]---  or  ---[ / Tag ]---  or  XIO(Tag)' with 'NOT Tag'"
+        ],
+        "failure_locations": [
+          {
+            "file_path": "Anonymous.st",
+            "line": 1,
+            "column": 1,
+            "error_code": "ERR_LADDER_FORBIDDEN",
+            "severity": "ERROR",
+            "message": "Ladder logic construct rejected! Horner Cscape MCP strictly enforces IEC 61131-3 Structured Text (ST) only.\nViolations detected:\n[Line 3] ASCII_NC_CONTACT: '|--[ /Stop_PB ]--'\n  Explanation: Normally closed contact symbol detected. Structured Text uses the NOT operator.\n  Recommendation: NOT Tag\n\nRecommended Structured Text Conversion:\n- Normally Closed Contact (XIO / NC): Replace '---[/ Tag ]---  or  ---[ / Tag ]---  or  XIO(Tag)' with 'NOT Tag'"
+          }
+        ]
+      }
+    ]
+  },
+  "tool2_simulate_pou": {
+    "AlarmMonitor": {
+      "success": true,
+      "steps_executed": 10,
+      "total_cycles": 10,
+      "isolation_enforced": true,
+      "hardware_lockout_enforced": true,
+      "final_state": {
+        "trip": false
+      },
+      "final_registers": {
+        "%SR1": 10,
+        "%SR2": 1,
+        "%SR3": 9,
+        "%S7": true
+      },
+      "trace_length": 10,
+      "trace_sample_first": {
+        "cycle": 0,
+        "time_ms": 0.0,
+        "variables": {
+          "trip": false
+        },
+        "registers": {
+          "%SR1": 10,
+          "%SR2": 1,
+          "%S1": true
+        },
+        "system_bits": {
+          "%S1": true,
+          "%S7": false,
+          "%S8": false,
+          "%S9": false
+        }
+      },
+      "trace_sample_last": {
+        "cycle": 9,
+        "time_ms": 90.0,
+        "variables": {
+          "trip": false
+        },
+        "registers": {
+          "%SR1": 10,
+          "%SR2": 1,
+          "%SR3": 9,
+          "%S7": true
+        },
+        "system_bits": {
+          "%S1": false,
+          "%S7": true,
+          "%S8": false,
+          "%S9": false
+        }
+      }
+    },
+    "AuxPumpControl": {
+      "success": true,
+      "steps_executed": 10,
+      "total_cycles": 10,
+      "isolation_enforced": true,
+      "hardware_lockout_enforced": true,
+      "final_state": {
+        "cmd": true
+      },
+      "final_registers": {
+        "%SR1": 10,
+        "%SR2": 1,
+        "%SR3": 9,
+        "%S7": true
+      },
+      "trace_length": 10,
+      "trace_sample_first": {
+        "cycle": 0,
+        "time_ms": 0.0,
+        "variables": {
+          "cmd": true
+        },
+        "registers": {
+          "%SR1": 10,
+          "%SR2": 1,
+          "%S1": true
+        },
+        "system_bits": {
+          "%S1": true,
+          "%S7": false,
+          "%S8": false,
+          "%S9": false
+        }
+      },
+      "trace_sample_last": {
+        "cycle": 9,
+        "time_ms": 90.0,
+        "variables": {
+          "cmd": true
+        },
+        "registers": {
+          "%SR1": 10,
+          "%SR2": 1,
+          "%SR3": 9,
+          "%S7": true
+        },
+        "system_bits": {
+          "%S1": false,
+          "%S7": true,
+          "%S8": false,
+          "%S9": false
+        }
+      }
+    },
+    "BrokenPOU": {
+      "success": true,
+      "steps_executed": 10,
+      "total_cycles": 10,
+      "isolation_enforced": true,
+      "hardware_lockout_enforced": true,
+      "final_state": {
+        "RawVal": 15
+      },
+      "final_registers": {
+        "%SR1": 10,
+        "%SR2": 1,
+        "%SR3": 9,
+        "%S7": true
+      },
+      "trace_length": 10,
+      "trace_sample_first": {
+        "cycle": 0,
+        "time_ms": 0.0,
+        "variables": {
+          "RawVal": 15
+        },
+        "registers": {
+          "%SR1": 10,
+          "%SR2": 1,
+          "%S1": true
+        },
+        "system_bits": {
+          "%S1": true,
+          "%S7": false,
+          "%S8": false,
+          "%S9": false
+        }
+      },
+      "trace_sample_last": {
+        "cycle": 9,
+        "time_ms": 90.0,
+        "variables": {
+          "RawVal": 15
+        },
+        "registers": {
+          "%SR1": 10,
+          "%SR2": 1,
+          "%SR3": 9,
+          "%S7": true
+        },
+        "system_bits": {
+          "%S1": false,
+          "%S7": true,
+          "%S8": false,
+          "%S9": false
+        }
+      }
+    },
+    "SafetyInterlockST": {
+      "success": true,
+      "steps_executed": 10,
+      "total_cycles": 10,
+      "isolation_enforced": true,
+      "hardware_lockout_enforced": true,
+      "final_state": {
+        "x": 1
+      },
+      "final_registers": {
+        "%SR1": 10,
+        "%SR2": 1,
+        "%SR3": 9,
+        "%S7": true
+      },
+      "trace_length": 10,
+      "trace_sample_first": {
+        "cycle": 0,
+        "time_ms": 0.0,
+        "variables": {
+          "x": 1
+        },
+        "registers": {
+          "%SR1": 10,
+          "%SR2": 1,
+          "%S1": true
+        },
+        "system_bits": {
+          "%S1": true,
+          "%S7": false,
+          "%S8": false,
+          "%S9": false
+        }
+      },
+      "trace_sample_last": {
+        "cycle": 9,
+        "time_ms": 90.0,
+        "variables": {
+          "x": 1
+        },
+        "registers": {
+          "%SR1": 10,
+          "%SR2": 1,
+          "%SR3": 9,
+          "%S7": true
+        },
+        "system_bits": {
+          "%S1": false,
+          "%S7": true,
+          "%S8": false,
+          "%S9": false
+        }
+      }
+    },
+    "TankLevelClosedLoop": {
+      "success": true,
+      "steps_executed": 10,
+      "total_cycles": 10,
+      "isolation_enforced": true,
+      "hardware_lockout_enforced": true,
+      "final_state": {
+        "RawLevelInput": 16000,
+        "TankLevelPV": 50.0,
+        "Setpoint": 60.0,
+        "ControlOutput": 25.2,
+        "RawPumpOutput": 8064,
+        "RawValveOutput": 8064,
+        "ManualMode": false,
+        "ManualOutput": 0.0,
+        "Kp": 2.5,
+        "Ki": 0.2,
+        "Kd": 0.05,
+        "OutMin": 0.0,
+        "OutMax": 100.0,
+        "Error": 10.0,
+        "LastError": 10.0,
+        "IntegralSum": 0.19999999999999998,
+        "DerivTerm": 0.0,
+        "PumpRunCmd": true,
+        "InflowValveCmd": true,
+        "AlarmHighHigh": false,
+        "AlarmHigh": false,
+        "AlarmLow": false,
+        "AlarmLowLow": false,
+        "CycleCounter": 10
+      },
+      "final_registers": {
+        "%SR1": 10,
+        "%SR2": 1,
+        "%SR3": 9,
+        "%S7": true
+      },
+      "trace_length": 10,
+      "trace_sample_first": {
+        "cycle": 0,
+        "time_ms": 0.0,
+        "variables": {
+          "RawLevelInput": 16000,
+          "TankLevelPV": 50.0,
+          "Setpoint": 60.0,
+          "ControlOutput": 75.02,
+          "RawPumpOutput": 24006,
+          "RawValveOutput": 24006,
+          "ManualMode": false,
+          "ManualOutput": 0.0,
+          "Kp": 2.5,
+          "Ki": 0.2,
+          "Kd": 0.05,
+          "OutMin": 0.0,
+          "OutMax": 100.0,
+          "Error": 10.0,
+          "LastError": 10.0,
+          "IntegralSum": 0.02,
+          "DerivTerm": 50.0,
+          "PumpRunCmd": true,
+          "InflowValveCmd": true,
+          "AlarmHighHigh": false,
+          "AlarmHigh": false,
+          "AlarmLow": false,
+          "AlarmLowLow": false,
+          "CycleCounter": 1
+        },
+        "registers": {
+          "%SR1": 10,
+          "%SR2": 1,
+          "%S1": true
+        },
+        "system_bits": {
+          "%S1": true,
+          "%S7": false,
+          "%S8": false,
+          "%S9": false
+        }
+      },
+      "trace_sample_last": {
+        "cycle": 9,
+        "time_ms": 90.0,
+        "variables": {
+          "RawLevelInput": 16000,
+          "TankLevelPV": 50.0,
+          "Setpoint": 60.0,
+          "ControlOutput": 25.2,
+          "RawPumpOutput": 8064,
+          "RawValveOutput": 8064,
+          "ManualMode": false,
+          "ManualOutput": 0.0,
+          "Kp": 2.5,
+          "Ki": 0.2,
+          "Kd": 0.05,
+          "OutMin": 0.0,
+          "OutMax": 100.0,
+          "Error": 10.0,
+          "LastError": 10.0,
+          "IntegralSum": 0.19999999999999998,
+          "DerivTerm": 0.0,
+          "PumpRunCmd": true,
+          "InflowValveCmd": true,
+          "AlarmHighHigh": false,
+          "AlarmHigh": false,
+          "AlarmLow": false,
+          "AlarmLowLow": false,
+          "CycleCounter": 10
+        },
+        "registers": {
+          "%SR1": 10,
+          "%SR2": 1,
+          "%SR3": 9,
+          "%S7": true
+        },
+        "system_bits": {
+          "%S1": false,
+          "%S7": true,
+          "%S8": false,
+          "%S9": false
+        }
+      }
+    }
+  },
+  "tool3_get_diagnostics": {
+    "success": true,
+    "raw_log": "=== Horner Cscape 10.2 Compile Pass: TankLevelClosedLoop ===\nClean Build: False\nMode: IEC 61131-3 Structured Text (Advanced Ladder Excluded)\nTimestamp: 2026-09-05T10:06:37.379837\n----------------------------------------------------------------\nCompiling POU: AlarmMonitor (72 bytes)...\n  POU 'AlarmMonitor' parsed and validated cleanly.\nCompiling POU: BrokenPOU (79 bytes)...\n  POU 'BrokenPOU' parsed and validated cleanly.\nCompiling POU: TankLevelClosedLoop (2503 bytes)...\n  POU 'TankLevelClosedLoop' parsed and validated cleanly.\n----------------------------------------------------------------\nBuild Result: SUCCESS\nErrors: 0, Warnings: 0\nEstimated Code Size: 4190 bytes, Data Size: 768 bytes\nDuration: 0.014s\nHardware Lockout: ENFORCED (Zero PLC communication / No download)",
+    "diagnostics": [],
+    "error_count": 0,
+    "warning_count": 0,
+    "build_successful": true,
+    "message": "Retrieved 0 diagnostics from build log.",
+    "compile_successful": true,
+    "clean_build": true,
+    "project_name": "TankLevelClosedLoop",
+    "build_log": "=== Horner Cscape 10.2 Compile Pass: TankLevelClosedLoop ===\nClean Build: False\nMode: IEC 61131-3 Structured Text (Advanced Ladder Excluded)\nTimestamp: 2026-09-05T10:06:37.379837\n----------------------------------------------------------------\nCompiling POU: AlarmMonitor (72 bytes)...\n  POU 'AlarmMonitor' parsed and validated cleanly.\nCompiling POU: BrokenPOU (79 bytes)...\n  POU 'BrokenPOU' parsed and validated cleanly.\nCompiling POU: TankLevelClosedLoop (2503 bytes)...\n  POU 'TankLevelClosedLoop' parsed and validated cleanly.\n----------------------------------------------------------------\nBuild Result: SUCCESS\nErrors: 0, Warnings: 0\nEstimated Code Size: 4190 bytes, Data Size: 768 bytes\nDuration: 0.014s\nHardware Lockout: ENFORCED (Zero PLC communication / No download)",
+    "memory_footprint": {
+      "code_size_bytes": 1024,
+      "data_size_bytes": 512,
+      "retain_size_bytes": 64
+    },
+    "status": "success",
+    "failure_locations": [],
+    "failure_location": null
+  },
+  "tool4_export_project": {
+    "csp": {
+      "format": "csp",
+      "status": "success",
+      "export_file": "C:\\HornerAI\\horner-cscape-mcp\\artifacts\\exports\\TankLevelClosedLoop.csp",
+      "size_bytes": 39,
+      "sha256": "c057bef438a6ba8e6d47c43f573dcd0f6e856d7afebdc8d8aed2d7e0fc144c2e",
+      "warning": null,
+      "quarantined": false
+    },
+    "cpj": {
+      "format": "cpj",
+      "status": "success",
+      "export_file": "C:\\HornerAI\\horner-cscape-mcp\\artifacts\\exports\\TankLevelClosedLoop.cpj",
+      "size_bytes": 39,
+      "sha256": "fa3c2e1eec1cc0a53691d09c5e09ed34c5b6c030931fa34dc3a2468ad9a1019f",
+      "warning": null,
+      "quarantined": false
+    },
+    "json": {
+      "format": "json",
+      "status": "success",
+      "export_file": "C:\\HornerAI\\horner-cscape-mcp\\artifacts\\exports\\TankLevelClosedLoop.json",
+      "size_bytes": 40,
+      "sha256": "0fb8d51df76f49dc67eda023379aeefb36d7ee73a8770a50f42008202e5da7ec",
+      "warning": null,
+      "quarantined": false
+    },
+    "xml": {
+      "format": "xml",
+      "status": "success",
+      "export_file": "C:\\HornerAI\\horner-cscape-mcp\\artifacts\\exports\\TankLevelClosedLoop.xml",
+      "size_bytes": 39,
+      "sha256": "9163253d138a7d81d24ffafb48291fba27d1927cf8a48e8c2080c2affcc100b1",
+      "warning": null,
+      "quarantined": false
+    },
+    "k5p": {
+      "format": "k5p",
+      "status": "success",
+      "export_file": "C:\\HornerAI\\horner-cscape-mcp\\quarantine\\straton_k5_legacy\\artifacts\\exports\\TankLevelClosedLoop.k5p",
+      "size_bytes": 39,
+      "sha256": "96aca80a2bd367153d07ac6608b24938bb448874babe86919ac9e588e92f3e94",
+      "warning": "k5p is a legacy Straton format; export quarantined under quarantine/straton_k5_legacy/",
+      "quarantined": true
+    }
+  },
+  "tool5_safety_audit": {
+    "id_controller_download": 32827,
+    "id_controller_download_alt": 33149,
+    "download_cmd_32827_blocked": true,
+    "download_cmd_33149_blocked": true,
+    "cli_download_blocked": true,
+    "cli_project_download_blocked": true,
+    "physical_ports_tested": [
+      "COM1",
+      "COM3",
+      "CAN0",
+      "USB",
+      "JTAG"
+    ],
+    "physical_ports_blocked_count": 5,
+    "active_straton_processes": 0,
+    "hardware_lockout_enforced": true,
+    "zero_straton_dependencies": true
+  },
+  "status": "PASSED"
+}

@@ -1,0 +1,79 @@
+================================================================================
+MISSION EXECUTION REPORT: MCP_HMI_SCADA_TANK_DRAW_DIRECT
+================================================================================
+MISSION ID             : MCP_HMI_SCADA_TANK_DRAW_DIRECT
+STATUS                 : success
+TIMESTAMP (UTC)        : 2026-09-09T11:10:08Z
+OPERATIONAL MODE       : OFFLINE/DEV (STRICT HARDWARE LOCKOUT ENFORCED)
+SINGLE GUI OWNER       : VERIFIED (Exclusive desktop: winsta0\Default)
+CSCAPE VERSION         : Horner APG Cscape 10.2 (Build 10.2.751.4)
+ACTIVE PROCESS PID     : 19932
+MAIN WINDOW HWND       : 0x01C80338
+
+--------------------------------------------------------------------------------
+1. MISSION DIRECTIVES & VERIFICATION MATRIX
+--------------------------------------------------------------------------------
+[PASS] Native Tank Outline     : Simple tank outline rectangle placed from Project
+                                  Toolbox (Fixed Objects -> Rectangle) surrounding
+                                  the TankLevelPV level bar (geometry: 72x210 px).
+[PASS] Native Title Text       : Placed native Text Label from Project Toolbox
+                                  (Fixed Objects -> Text Label) with text
+                                  "Tank Level" visibly rendered near the gauge
+                                  and level bar.
+[PASS] Retain 4 Numeric Tags   : Setpoint (REAL, data entry), TankLevelPV (REAL,
+                                  display), Error (REAL, display), and ControlOutput
+                                  (REAL, display) 100% retained and bound.
+[PASS] Retain SCADA Gauge/Bar  : Analog dial Gauge (bound to TankLevelPV, 0..100)
+                                  and Bar Graph (bound to TankLevelPV with solid
+                                  red fill) 100% retained on Screen 1.
+[PASS] Screen 1 Elements Count : HornerAPGTabbedGraphicsEditor status bar verifies
+                                  exactly 9 Objects on Screen 1 (1 boundary rect +
+                                  4 numeric objects + 1 tank outline rect +
+                                  1 level fill bar + 1 analog gauge + 1 text label).
+[PASS] Project File Save       : Dispatched WM_COMMAND ID_FILE_SAVE (57603) via Ctrl+S.
+                                  Confirmed on-disk persistence and valid SHA256.
+[PASS] Screen 1 Retention      : Screen 1 remains active and visibly open in Cscape
+                                  without closing or minimizing the IDE.
+[PASS] Dual-Root Parity        : Bit-for-bit SHA256 match between primary workspace
+                                  and user environment.
+[PASS] Safety Enforcement      : Strict offline execution; zero COM/CAN/USB access;
+                                  Win32 download commands (32827/33149) locked out;
+                                  zero physical PLC connections; no pytest ran.
+
+--------------------------------------------------------------------------------
+2. GRAPHICS OBJECT SPECIFICATION & GEOMETRY (SCREEN 1)
+--------------------------------------------------------------------------------
+Total Graphic Elements on Screen 1: 9 objects
+
+OBJECT 1: Canvas Baseline Boundary Rectangle (320x240 OCS XL4 resolution)
+OBJECT 2: Setpoint Numeric Object (Data Entry, REAL, %R1/%R2)
+OBJECT 3: TankLevelPV Numeric Object (Display, REAL, %R3/%R4)
+OBJECT 4: Error Numeric Object (Display, REAL, %R5/%R6)
+OBJECT 5: ControlOutput Numeric Object (Display, REAL, %R7/%R8)
+OBJECT 6: Native Tank Outline Rectangle (Vessel Outline, 72x210 px)
+OBJECT 7: TankLevelPV Fill Bar (Bar Graph, REAL, 32-Bit, 0..100, Red Fill)
+OBJECT 8: Native Tank Gauge (Round Dial, Needle, REAL, 32-Bit, 0..100, TankLevelPV)
+OBJECT 9: Native Title Text Label ("Tank Level", Fixed Objects -> Text Label)
+
+--------------------------------------------------------------------------------
+3. ARTIFACT & PROJECT CHECKSUMS (DUAL-ROOT)
+--------------------------------------------------------------------------------
+Target Project File : TankLevelClosedLoop.csp
+File Size           : 114688 bytes
+SHA256 Checksum     : fc5e8e85241fd6ddf75ffa0f8e519ea65baa508175624af19b399ca6f23a32f4
+Primary Location    : C:\HornerAI\horner-cscape-mcp\artifacts\projects\TankLevelClosedLoop\TankLevelClosedLoop.csp
+Mirror Location     : C:\Users\ArmandoSilva\artifacts\projects\TankLevelClosedLoop\TankLevelClosedLoop.csp
+
+Visual Proof Artifacts:
+  - C:\HornerAI\horner-cscape-mcp\artifacts\screenshots\mcp_hmi_scada_tank_draw_proof.png
+  - C:\Users\ArmandoSilva\artifacts\screenshots\mcp_hmi_scada_tank_draw_proof.png
+  - C:\HornerAI\horner-cscape-mcp\artifacts\screenshots\live_cscape_tanklevel_visible.png
+  - C:\Users\ArmandoSilva\artifacts\screenshots\live_cscape_tanklevel_visible.png
+
+Mission Execution Log:
+  - C:\HornerAI\horner-cscape-mcp\artifacts\recovery\mcp_hmi_scada_tank_draw.txt
+  - C:\Users\ArmandoSilva\artifacts\recovery\mcp_hmi_scada_tank_draw.txt
+
+================================================================================
+END OF REPORT - NATIVE TANK OUTLINE AND TITLE TEXT VISIBLY VERIFIED
+================================================================================

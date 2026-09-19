@@ -1,0 +1,620 @@
+{
+  "report_type": "MCP_CLOSED_LOOP_FAILURE_LOCATION_CALL_PATH",
+  "generated_at": "2026-09-04T21:57:42.099152+00:00",
+  "zero_plc_download_policy": "ENFORCED_FAIL_CLOSED",
+  "mcp_tools_call_path": [
+    {
+      "step": 1,
+      "tool": "cscape_create_project",
+      "status": "success",
+      "project_name": "MCP_ClosedLoop_Master_Audit",
+      "target_plc": "XL4",
+      "project_path": "C:\\HornerAI\\horner-cscape-mcp\\artifacts\\projects\\MCP_ClosedLoop_Master_Audit"
+    },
+    {
+      "step": 2,
+      "tool": "cscape_validate_st",
+      "status": "success",
+      "valid": true,
+      "pou_name": "TankLevelPID",
+      "variable_count": 9
+    },
+    {
+      "step": 3,
+      "tool": "cscape_add_st_pou",
+      "status": "success",
+      "pou_name": "TankLevelPID",
+      "file_path": "C:\\HornerAI\\horner-cscape-mcp\\artifacts\\projects\\MCP_ClosedLoop_Master_Audit\\pous\\TankLevelPID.st"
+    },
+    {
+      "step": 4,
+      "tool": "cscape_inspect_variables",
+      "status": "success",
+      "total_variables": 9,
+      "pous": [
+        "TankLevelPID"
+      ]
+    },
+    {
+      "step": 5,
+      "tool": "cscape_compile_project",
+      "status": "success",
+      "compile_successful": true,
+      "error_count": 0,
+      "code_size_bytes": 1525
+    },
+    {
+      "step": 6,
+      "tool": "cscape_get_diagnostics",
+      "status": "success",
+      "compile_successful": true,
+      "error_count": 0
+    },
+    {
+      "step": 7,
+      "tool": "cscape_simulate_pou",
+      "status": "success",
+      "steps_executed": 5,
+      "level_percent": 50.0,
+      "hardware_lockout_enforced": true
+    },
+    {
+      "step": 8,
+      "tool": "cscape_export_project",
+      "status": "success",
+      "exported_formats": [
+        {
+          "format": "csp",
+          "export_file": "C:\\HornerAI\\horner-cscape-mcp\\artifacts\\exports\\MCP_ClosedLoop_Master_Audit.csp",
+          "size_bytes": 47
+        },
+        {
+          "format": "st",
+          "export_file": "C:\\HornerAI\\horner-cscape-mcp\\artifacts\\exports\\MCP_ClosedLoop_Master_Audit.st",
+          "size_bytes": 46
+        },
+        {
+          "format": "xml",
+          "export_file": "C:\\HornerAI\\horner-cscape-mcp\\artifacts\\exports\\MCP_ClosedLoop_Master_Audit.xml",
+          "size_bytes": 47
+        },
+        {
+          "format": "json",
+          "export_file": "C:\\HornerAI\\horner-cscape-mcp\\artifacts\\exports\\MCP_ClosedLoop_Master_Audit.json",
+          "size_bytes": 48
+        }
+      ]
+    }
+  ],
+  "failure_location_scenarios": [
+    {
+      "scenario_id": "SCENARIO_1_SYNTAX_ERROR",
+      "scenario_name": "Scenario 1: Syntax Error (Unclosed IF block missing END_IF)",
+      "target_pou": "POU_SyntaxError.st",
+      "validate_st_errors": [
+        "Mismatched closing block at line 10, col 1: got 'END_PROGRAM', expected closing for 'IF' (opened at line 6, col 1).",
+        "ERR_UNCLOSED_PROGRAM: Unclosed 'PROGRAM' block (opened at line 1, col 0) missing terminating keyword.",
+        "Syntax error at line 10, col 1: Unexpected token in statement: END_PROGRAM ('END_PROGRAM')",
+        "ERR_UNCLOSED_IF at line 6, col 1: Unclosed IF block: 1 'IF' opened, but only 0 'END_IF' closed."
+      ],
+      "compile_project_error_count": 4,
+      "concrete_failure_locations": [
+        {
+          "file_path": "POU_SyntaxError.st",
+          "pou_name": "POU_SyntaxError",
+          "line": 10,
+          "column": 1,
+          "error_code": "ST_SYNTAX_ERROR",
+          "level": "ERROR",
+          "message": "Mismatched closing block at line 10, col 1: got 'END_PROGRAM', expected closing for 'IF' (opened at line 6, col 1)."
+        },
+        {
+          "file_path": "POU_SyntaxError.st",
+          "pou_name": "POU_SyntaxError",
+          "line": 1,
+          "column": 1,
+          "error_code": "ERR_UNCLOSED_PROGRAM",
+          "level": "ERROR",
+          "message": ": Unclosed 'PROGRAM' block (opened at line 1, col 0) missing terminating keyword."
+        },
+        {
+          "file_path": "POU_SyntaxError.st",
+          "pou_name": "POU_SyntaxError",
+          "line": 10,
+          "column": 1,
+          "error_code": "ST_SYNTAX_ERROR",
+          "level": "ERROR",
+          "message": "Syntax error at line 10, col 1: Unexpected token in statement: END_PROGRAM ('END_PROGRAM')"
+        },
+        {
+          "file_path": "POU_SyntaxError.st",
+          "pou_name": "POU_SyntaxError",
+          "line": 6,
+          "column": 1,
+          "error_code": "ERR_UNCLOSED_IF",
+          "level": "ERROR",
+          "message": "Unclosed IF block: 1 'IF' opened, but only 0 'END_IF' closed."
+        }
+      ],
+      "relevant_build_log_lines": [
+        "Compiling POU: POU_SyntaxError (169 bytes)...",
+        "  POU_SyntaxError.st(10,1): error ST_SYNTAX_ERROR: Mismatched closing block at line 10, col 1: got 'END_PROGRAM', expected closing for 'IF' (opened at line 6, col 1).",
+        "  POU_SyntaxError.st(1,1): error ERR_UNCLOSED_PROGRAM: : Unclosed 'PROGRAM' block (opened at line 1, col 0) missing terminating keyword.",
+        "  POU_SyntaxError.st(10,1): error ST_SYNTAX_ERROR: Syntax error at line 10, col 1: Unexpected token in statement: END_PROGRAM ('END_PROGRAM')",
+        "  POU_SyntaxError.st(6,1): error ERR_UNCLOSED_IF: Unclosed IF block: 1 'IF' opened, but only 0 'END_IF' closed.",
+        "Errors: 4, Warnings: 0"
+      ]
+    },
+    {
+      "scenario_id": "SCENARIO_2_MISSING_SEMICOLON",
+      "scenario_name": "Scenario 2: Missing Semicolon (Assignment missing ';')",
+      "target_pou": "POU_MissingSemicolon.st",
+      "validate_st_errors": [
+        "Syntax error at line 7, col 1: Expected ';' after assignment",
+        "ERR_MISSING_SEMICOLON at line 6, col 18: Statement missing terminating semicolon: 'TargetCount := 42'"
+      ],
+      "compile_project_error_count": 2,
+      "concrete_failure_locations": [
+        {
+          "file_path": "POU_MissingSemicolon.st",
+          "pou_name": "POU_MissingSemicolon",
+          "line": 7,
+          "column": 1,
+          "error_code": "ST_SYNTAX_ERROR",
+          "level": "ERROR",
+          "message": "Syntax error at line 7, col 1: Expected ';' after assignment"
+        },
+        {
+          "file_path": "POU_MissingSemicolon.st",
+          "pou_name": "POU_MissingSemicolon",
+          "line": 6,
+          "column": 18,
+          "error_code": "ERR_MISSING_SEMICOLON",
+          "level": "ERROR",
+          "message": "Statement missing terminating semicolon: 'TargetCount := 42'"
+        }
+      ],
+      "relevant_build_log_lines": [
+        "=== Horner Cscape 10.2 Compile Pass: Fail_Semicolon_Location_Proj ===",
+        "Compiling POU: POU_MissingSemicolon (95 bytes)...",
+        "  POU_MissingSemicolon.st(7,1): error ST_SYNTAX_ERROR: Syntax error at line 7, col 1: Expected ';' after assignment",
+        "  POU_MissingSemicolon.st(6,18): error ERR_MISSING_SEMICOLON: Statement missing terminating semicolon: 'TargetCount := 42'",
+        "Errors: 2, Warnings: 0"
+      ]
+    },
+    {
+      "scenario_id": "SCENARIO_3_UNDECLARED_VARIABLE",
+      "scenario_name": "Scenario 3: Undeclared Variable (Assignment to unallocated symbol)",
+      "target_pou": "POU_UndeclaredVar.st",
+      "validate_st_errors": [
+        "ERR_UNDECLARED_VAR at line 6, col 1: Assignment to undeclared variable 'PhantomOutput'.",
+        "ERR_UNDECLARED_VAR at line 6, col 1: Undeclared variable or identifier 'PhantomOutput' used in logic."
+      ],
+      "compile_project_error_count": 2,
+      "concrete_failure_locations": [
+        {
+          "file_path": "POU_UndeclaredVar.st",
+          "pou_name": "POU_UndeclaredVar",
+          "line": 6,
+          "column": 1,
+          "error_code": "ERR_UNDECLARED_VAR",
+          "level": "ERROR",
+          "message": "Assignment to undeclared variable 'PhantomOutput'."
+        },
+        {
+          "file_path": "POU_UndeclaredVar.st",
+          "pou_name": "POU_UndeclaredVar",
+          "line": 6,
+          "column": 1,
+          "error_code": "ERR_UNDECLARED_VAR",
+          "level": "ERROR",
+          "message": "Undeclared variable or identifier 'PhantomOutput' used in logic."
+        }
+      ],
+      "relevant_build_log_lines": [
+        "  POU_UndeclaredVar.st(6,1): error ERR_UNDECLARED_VAR: Assignment to undeclared variable 'PhantomOutput'.",
+        "  POU_UndeclaredVar.st(6,1): error ERR_UNDECLARED_VAR: Undeclared variable or identifier 'PhantomOutput' used in logic.",
+        "Errors: 2, Warnings: 0"
+      ]
+    },
+    {
+      "scenario_id": "SCENARIO_4_LADDER_LOGIC_INJECTION",
+      "scenario_name": "Scenario 4: Ladder Logic Injection (Forbidden contact '---[ ]---')",
+      "target_pou": "POU_LadderInjection.st",
+      "validate_st_errors": [
+        "Ladder logic artifact detected: Ladder logic construct rejected! Horner Cscape MCP strictly enforces IEC 61131-3 Structured Text (ST) only.\nViolations detected:\n[Line 7] ASCII_NO_CONTACT: '---[ ]---'\n  Explanation: Normally open contact symbol detected. Structured Text uses boolean identifiers directly.\n  Recommendation: Tag\n\nRecommended Structured Text Conversion:\n- Normally Open Contact (XIC / NO): Replace '---[ Tag ]---  or  |---[ Tag ]---|  or  XIC(Tag)' with 'Tag'"
+      ],
+      "compile_project_error_count": 3,
+      "concrete_failure_locations": [
+        {
+          "file_path": "POU_LadderInjection.st",
+          "pou_name": "POU_LadderInjection",
+          "line": 7,
+          "column": 1,
+          "error_code": "ERR_LADDER_FORBIDDEN",
+          "level": "ERROR",
+          "message": ": Ladder logic artifact detected at line 7, col 1 matching pattern '---\\[\\s*\\]---'. Only pure IEC 61131-3 Structured Text is permitted."
+        },
+        {
+          "file_path": "POU_LadderInjection.st",
+          "pou_name": "POU_LadderInjection",
+          "line": 7,
+          "column": 1,
+          "error_code": "ST_SYNTAX_ERROR",
+          "level": "ERROR",
+          "message": "Syntax error at line 7, col 1: Unexpected token in statement: MINUS ('-')"
+        },
+        {
+          "file_path": "POU_LadderInjection.st",
+          "pou_name": "POU_LadderInjection",
+          "line": 7,
+          "column": 1,
+          "error_code": "ERR_LADDER_FORBIDDEN",
+          "level": "ERROR",
+          "message": "Forbidden ladder logic construct 'Normally open contact' detected: '---[ ]--- InSensor'. Strict constraint violated: ONLY pure IEC 61131-3 Structured Text is permitted."
+        }
+      ],
+      "relevant_build_log_lines": [
+        "  POU_LadderInjection.st(7,1): error ERR_LADDER_FORBIDDEN: : Ladder logic artifact detected at line 7, col 1 matching pattern '---\\[\\s*\\]---'. Only pure IEC 61131-3 Structured Text is permitted.",
+        "  POU_LadderInjection.st(7,1): error ST_SYNTAX_ERROR: Syntax error at line 7, col 1: Unexpected token in statement: MINUS ('-')",
+        "  POU_LadderInjection.st(7,1): error ERR_LADDER_FORBIDDEN: Forbidden ladder logic construct 'Normally open contact' detected: '---[ ]--- InSensor'. Strict constraint violated: ONLY pure IEC 61131-3 Structured Text is permitted.",
+        "Errors: 3, Warnings: 0"
+      ]
+    },
+    {
+      "scenario_id": "SCENARIO_5_SYNTAX_ERROR_NEAR_SEMICOLON",
+      "scenario_name": "Scenario 5: Syntax Error Near Semicolon (TargetLevel := TankLevel + ;)",
+      "target_pou": "POU_SyntaxNearSemi.st",
+      "validate_st_errors": [
+        "Syntax error at line 7, col 28: Unexpected token in expression: SEMICOLON (';')"
+      ],
+      "compile_project_error_count": 1,
+      "concrete_failure_locations": [
+        {
+          "file_path": "POU_SyntaxNearSemi.st",
+          "pou_name": "POU_SyntaxNearSemi",
+          "line": 7,
+          "column": 28,
+          "error_code": "ST_SYNTAX_ERROR",
+          "level": "ERROR",
+          "message": "Syntax error at line 7, col 28: Unexpected token in expression: SEMICOLON (';')"
+        }
+      ],
+      "relevant_build_log_lines": [
+        "  POU_SyntaxNearSemi.st(7,28): error ST_SYNTAX_ERROR: Syntax error at line 7, col 28: Unexpected token in expression: SEMICOLON (';')",
+        "Errors: 1, Warnings: 0"
+      ]
+    }
+  ],
+  "zero_plc_download_lockout_assertions": {
+    "safety_policy_invariants": {
+      "simulation_only": true,
+      "allow_hardware_communication": false,
+      "allow_controller_download": false,
+      "allow_firmware_flash": false,
+      "enforce_file_sandbox": true,
+      "status": "VERIFIED_LOCKED"
+    },
+    "download_command_ids": [
+      {
+        "id": 32827,
+        "name": "ID_CONTROLLER_DOWNLOAD / ID_PLC_DOWNLOAD",
+        "blocked": true,
+        "error": "UnauthorizedDownloadError"
+      },
+      {
+        "id": 33149,
+        "name": "ID_PROGRAM_DOWNLOADOPTIONS / ID_CONTROLLER_DOWNLOAD_ALT",
+        "blocked": true,
+        "error": "UnauthorizedDownloadError"
+      },
+      {
+        "id": 32828,
+        "name": "ID_PLC_UPLOAD",
+        "blocked": true,
+        "error": "UnauthorizedDownloadError"
+      },
+      {
+        "id": 32862,
+        "name": "ID_PLC_VERIFY",
+        "blocked": true,
+        "error": "UnauthorizedDownloadError"
+      },
+      {
+        "id": 32993,
+        "name": "ID_PLC_CLEARMEMORY",
+        "blocked": true,
+        "error": "UnauthorizedDownloadError"
+      },
+      {
+        "id": 38295,
+        "name": "ID_ONLINECHANGEACTION",
+        "blocked": true,
+        "error": "UnauthorizedDownloadError"
+      }
+    ],
+    "serial_com_ports": [
+      {
+        "port": "COM1",
+        "blocked": true,
+        "error": "HardwareLockoutError"
+      },
+      {
+        "port": "COM2",
+        "blocked": true,
+        "error": "HardwareLockoutError"
+      },
+      {
+        "port": "COM4",
+        "blocked": true,
+        "error": "HardwareLockoutError"
+      },
+      {
+        "port": "COM10",
+        "blocked": true,
+        "error": "HardwareLockoutError"
+      },
+      {
+        "port": "COM256",
+        "blocked": true,
+        "error": "HardwareLockoutError"
+      },
+      {
+        "port": "\\\\.\\COM1",
+        "blocked": true,
+        "error": "HardwareLockoutError"
+      },
+      {
+        "port": "\\\\.\\COM4",
+        "blocked": true,
+        "error": "HardwareLockoutError"
+      },
+      {
+        "port": "/dev/ttyS0",
+        "blocked": true,
+        "error": "HardwareLockoutError"
+      },
+      {
+        "port": "/dev/ttyUSB0",
+        "blocked": true,
+        "error": "HardwareLockoutError"
+      },
+      {
+        "port": "/dev/ttyACM0",
+        "blocked": true,
+        "error": "HardwareLockoutError"
+      }
+    ],
+    "can_interfaces": [
+      {
+        "interface": "CAN",
+        "blocked": true,
+        "error": "HardwareLockoutError"
+      },
+      {
+        "interface": "can0",
+        "blocked": true,
+        "error": "HardwareLockoutError"
+      },
+      {
+        "interface": "CAN1",
+        "blocked": true,
+        "error": "HardwareLockoutError"
+      },
+      {
+        "interface": "pcan",
+        "blocked": true,
+        "error": "HardwareLockoutError"
+      },
+      {
+        "interface": "pcan_usb",
+        "blocked": true,
+        "error": "HardwareLockoutError"
+      },
+      {
+        "interface": "kvaser",
+        "blocked": true,
+        "error": "HardwareLockoutError"
+      },
+      {
+        "interface": "kvaser_leaf",
+        "blocked": true,
+        "error": "HardwareLockoutError"
+      },
+      {
+        "interface": "vector",
+        "blocked": true,
+        "error": "HardwareLockoutError"
+      },
+      {
+        "interface": "vector_can",
+        "blocked": true,
+        "error": "HardwareLockoutError"
+      },
+      {
+        "interface": "socketcan",
+        "blocked": true,
+        "error": "HardwareLockoutError"
+      },
+      {
+        "interface": "slcan0",
+        "blocked": true,
+        "error": "HardwareLockoutError"
+      },
+      {
+        "interface": "CsCAN",
+        "blocked": true,
+        "error": "HardwareLockoutError"
+      },
+      {
+        "interface": "CANopen",
+        "blocked": true,
+        "error": "HardwareLockoutError"
+      },
+      {
+        "interface": "DeviceNet",
+        "blocked": true,
+        "error": "HardwareLockoutError"
+      },
+      {
+        "interface": "J1939",
+        "blocked": true,
+        "error": "HardwareLockoutError"
+      }
+    ],
+    "usb_interfaces": [
+      {
+        "device": "USB",
+        "blocked": true,
+        "error": "HardwareLockoutError"
+      },
+      {
+        "device": "usb0",
+        "blocked": true,
+        "error": "HardwareLockoutError"
+      },
+      {
+        "device": "USB1",
+        "blocked": true,
+        "error": "HardwareLockoutError"
+      },
+      {
+        "device": "\\\\?\\usb#vid_0483&pid_df11",
+        "blocked": true,
+        "error": "HardwareLockoutError"
+      },
+      {
+        "device": "HORNER_USB",
+        "blocked": true,
+        "error": "HardwareLockoutError"
+      },
+      {
+        "device": "DFU",
+        "blocked": true,
+        "error": "HardwareLockoutError"
+      },
+      {
+        "device": "JTAG",
+        "blocked": true,
+        "error": "HardwareLockoutError"
+      },
+      {
+        "device": "VID_0483",
+        "blocked": true,
+        "error": "HardwareLockoutError"
+      },
+      {
+        "device": "PID_DF11",
+        "blocked": true,
+        "error": "HardwareLockoutError"
+      }
+    ],
+    "prohibited_executables": [
+      {
+        "executable": "PGMUpdateUtility.exe",
+        "blocked": true,
+        "error": "SecurityError/BlockedExecutableError"
+      },
+      {
+        "executable": "DfuSeCommand.exe",
+        "blocked": true,
+        "error": "SecurityError/BlockedExecutableError"
+      },
+      {
+        "executable": "STMFlashLoader.exe",
+        "blocked": true,
+        "error": "SecurityError/BlockedExecutableError"
+      },
+      {
+        "executable": "WinJTAG.exe",
+        "blocked": true,
+        "error": "SecurityError/BlockedExecutableError"
+      },
+      {
+        "executable": "CscapeAutoUpdt.exe",
+        "blocked": true,
+        "error": "SecurityError/BlockedExecutableError"
+      },
+      {
+        "executable": "XLeTerm.exe",
+        "blocked": true,
+        "error": "SecurityError/BlockedExecutableError"
+      },
+      {
+        "executable": "DnCfg.exe",
+        "blocked": true,
+        "error": "SecurityError/BlockedExecutableError"
+      },
+      {
+        "executable": "DNXCfg.exe",
+        "blocked": true,
+        "error": "SecurityError/BlockedExecutableError"
+      }
+    ],
+    "cli_download_flags": [
+      {
+        "flag": "/download",
+        "blocked": true,
+        "error": "UnauthorizedDownloadError"
+      },
+      {
+        "flag": "--download",
+        "blocked": true,
+        "error": "UnauthorizedDownloadError"
+      },
+      {
+        "flag": "-d",
+        "blocked": true,
+        "error": "UnauthorizedDownloadError"
+      },
+      {
+        "flag": "/d",
+        "blocked": true,
+        "error": "UnauthorizedDownloadError"
+      },
+      {
+        "flag": "/flash",
+        "blocked": true,
+        "error": "UnauthorizedDownloadError"
+      },
+      {
+        "flag": "--flash",
+        "blocked": true,
+        "error": "UnauthorizedDownloadError"
+      },
+      {
+        "flag": "/pgm",
+        "blocked": true,
+        "error": "UnauthorizedDownloadError"
+      },
+      {
+        "flag": "/burn",
+        "blocked": true,
+        "error": "UnauthorizedDownloadError"
+      },
+      {
+        "flag": "/firmware",
+        "blocked": true,
+        "error": "UnauthorizedDownloadError"
+      },
+      {
+        "flag": "/target:hardware",
+        "blocked": true,
+        "error": "UnauthorizedDownloadError"
+      },
+      {
+        "flag": "/target:plc",
+        "blocked": true,
+        "error": "UnauthorizedDownloadError"
+      }
+    ],
+    "direct_automation_methods": {
+      "CLIRunner.download_to_controller": "UnauthorizedDownloadError",
+      "CscapeAutomationBridge.download_to_controller": "UnauthorizedDownloadError",
+      "CscapeAutomationBridge.connect_hardware": "HardwareLockoutError",
+      "status": "ALL_LOCKED_OUT"
+    }
+  },
+  "overall_status": "PASSED_100_PERCENT",
+  "execution_duration_seconds": 0.789665
+}

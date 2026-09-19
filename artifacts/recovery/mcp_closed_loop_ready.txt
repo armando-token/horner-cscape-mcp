@@ -1,0 +1,83 @@
+================================================================================
+MCP CLOSED-LOOP CREATION, VISIBILITY & COMPILATION REPORT
+Mission ID: MISSION_ID=MCP_CLOSED_LOOP_READY
+Timestamp (UTC): 2026-09-09T05:18:21.817322+00:00
+Timestamp (Local): 2026-09-08 22:18:21
+================================================================================
+
+1. TARGET ENVIRONMENT & CSCAPE TELEMETRY
+--------------------------------------------------------------------------------
+- Cscape Host Binary   : C:\Program Files (x86)\Cscape 10.2\Cscape.exe (Build 10.2.751.4)
+- Process ID (PID)     : 19224
+- Main Window Handle   : 0x02B90182 (45678978)
+- Window Title         : Cscape - Logged In : "armando@controlnautas.com" - [TankLevelClosedLoop.csp]
+- Desktop Boundary     : winsta0\Default (Interactive Windows Desktop)
+- Operational Mode     : offline/DEV (Status Bar: Local:Disconnected)
+- Active Project File  : C:\HornerAI\horner-cscape-mcp\artifacts\projects\TankLevelClosedLoop\TankLevelClosedLoop.csp
+
+2. WHAT WAS CREATED VIA MCP
+--------------------------------------------------------------------------------
+- MCP Tool Invoked     : cscape_add_st_pou
+- Target Project       : TankLevelClosedLoop
+- POU Name             : TankLevelClosedLoop
+- POU Type             : PROGRAM (IEC 61131-3 Structured Text)
+- MCP Tool Status      : success
+- MCP Success Flag     : True
+- Storage Mode         : staging
+- Is Staged on Disk    : True
+- Native Persisted     : False
+- Variables Defined    : Setpoint (REAL, 60.0), TankLevelPV (REAL, 50.0 - measured level),
+                         Error (REAL, 0.0), ControlOutput (REAL, 0.0 - output), Kp (REAL, 2.5)
+- POU File Location    : artifacts/projects/TankLevelClosedLoop/pous/TankLevelClosedLoop.st
+- POU SHA-256          : 3bd9b0be2d996c314656c6212ed0a0db0935c56be777b6f3d5e94afb2ef13a4b
+
+3. LOGIC VISIBILITY IN NATIVE CSCAPE GUI
+--------------------------------------------------------------------------------
+- Is Visible on Screen : NO
+- Visual Status        : NOT_VISIBLE_ON_SCREEN
+- Open MDI Windows     : 1
+- Logic Editors Open   : 0
+- Main Loop Module Cnt : 0
+- Visibility Details   : No logic editor window is open or visible in Cscape MDI client. Project Navigator 'Main Loop Modules' child count = 0. Active MDI client contains 1 visible window(s), none of which are logic editors.
+- Root Cause / Reality :
+  * The active Cscape container TankLevelClosedLoop.csp is an Advanced Ladder project.
+  * Cscape 10.2 lacks native ST-to-LD conversion menus, commands, or DLL exports (BLOCKED_NATIVE).
+  * Advanced Ladder project tree ('Logic Modules -> Main Loop Modules') contains 0 ladder modules.
+  * FastMCP tool 'cscape_add_st_pou' stages IEC 61131-3 ST POUs in pous/ on disk,
+    but cannot render or inject logic directly into the open Cscape GUI canvas or ladder editor.
+  * MCP contains zero GUI canvas drawing or rung-injection tools.
+
+4. NATIVE SAVE OPERATION
+--------------------------------------------------------------------------------
+- Save Dispatch        : WM_COMMAND ID_FILE_SAVE (57603) to HWND 0x02B90182
+- Pre-Save Size        : 114688 bytes
+- Post-Save Size       : 114688 bytes
+- Container CFBF Valid : True (OLE2 compound binary file)
+- Modal Prompts        : None (clean background serialization)
+
+5. COMPILE ONCE EXECUTION & RESULTS
+--------------------------------------------------------------------------------
+- Compile Dispatch     : WM_COMMAND ID_PROGRAM_ERRORCHECK (32826) to HWND 0x02B90182
+- Modal Intercepted    : 'There were no errors or warnings'
+- Modal Child Texts    : ['OK']
+- Clean Compile Result : YES (0 errors, 0 warnings)
+- Non-Fatal Modal Seen : NO
+- Auto-Yes Prohibition : STRICTLY ENFORCED (Yes was never clicked; IDNO/IDOK used only)
+- Download Lockout     : STRICTLY ENFORCED (32827/33149 and COM/CAN/USB locked out)
+
+6. MCP CAPABILITY ASSESSMENT & HONEST STATUS
+--------------------------------------------------------------------------------
+- MCP Loop Creation    : PARTIAL / DISK_STAGED_ONLY (Logic created in pous/, but NOT visible on screen)
+- In-GUI Visibility    : FAIL (MCP cannot render ST closed loop in native Cscape Advanced Ladder GUI)
+- Exact Limitation     : BLOCKED_NATIVE (Cscape 10.2 has zero ST-to-LD conversion; MCP has no GUI canvas tools)
+- Status Contract      : inconclusive (Logic created on disk; compile clean; in-GUI loop visibility blocked)
+
+7. SAFETY & GOVERNANCE COMPLIANCE
+--------------------------------------------------------------------------------
+- Single GUI Owner     : YES (Exclusive winsta0\Default automation)
+- Do Not Click Yes     : YES (Strictly honored; Non-Fatal Auto-Yes avoided)
+- Do Not Download PLC  : YES (Physical ports & download command IDs locked out)
+- Cscape Left Open     : YES (Visible on winsta0\Default, untouched)
+- No VERIFIED_LIVE     : YES (Honest classification, zero synthetic live claims)
+- Proof Screenshot     : artifacts/recovery/mcp_closed_loop_ready.png
+================================================================================

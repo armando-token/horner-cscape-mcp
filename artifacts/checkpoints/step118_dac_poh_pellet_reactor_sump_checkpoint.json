@@ -1,0 +1,19 @@
+{
+  "step": 118,
+  "status": "COMPLETED",
+  "name": "Direct Air Capture (DAC) Potassium Hydroxide Pellet Reactor Sump Audit",
+  "timestamp": "2026-09-05T12:44:35.218Z",
+  "cscape_pid": 4272,
+  "cscape_hwnd": "0x7033e",
+  "project": "TankLevelClosedLoop.csp",
+  "assertions_passed": [
+    "Phase 1 alkaline carbonate slurry crystallization steady-state return error 0.0000% < 0.10%",
+    "Phase 2 ambient atmospheric CO2 adsorption surge drift 6.71% > 5.0%",
+    "Phase 3 hydroxide make-up dosing decoupled pellet level error 0.0000% < 0.35%",
+    "Surge rejection ratio 100.0% > 95.0%",
+    "Phase 4 pellet washer dewatering step settling error 0.0912% < 0.35%",
+    "Phase 5 high-high caustic solution overflow containment trip at cycle 501 == 501",
+    "Fail-closed download lockout ID_CONTROLLER_DOWNLOAD=32827 strictly enforced",
+    "Live Cscape GUI healthy and responsive throughout test"
+  ]
+}

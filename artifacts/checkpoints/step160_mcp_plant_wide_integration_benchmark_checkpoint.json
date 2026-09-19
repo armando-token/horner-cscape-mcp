@@ -1,0 +1,18 @@
+{
+  "step": 160,
+  "name": "step160_mcp_plant_wide_integration_benchmark_checkpoint",
+  "status": "PASSED",
+  "timestamp_utc": "2026-09-06T12:23:07.635Z",
+  "cscape_pid": 10892,
+  "hwnd": "0x01B005DC",
+  "plant_wide_integration_verified": true,
+  "steam_trip_rejection_verified": true,
+  "multi_fault_containment_verified": true,
+  "cold_restart_restoration_verified": true,
+  "zero_straton_dependencies": true,
+  "hardware_lockout_enforced": true,
+  "live_screenshot_sha256": "bc43766c83319fd52574940020f6a1b1316dc6ba62fa60593dec82592cdfd0e1",
+  "log_sha256": "83c16cb4beaac333d66f6bb45ea779b45501ed15644a4bf449584114ff7e9b34",
+  "dual_root_mirrored": true,
+  "checkpoint_sha256": "4c44809fc507ae054a75759fe638e5e4c37403796f1464fa7446f91acc06d3a8"
+}

@@ -1,0 +1,18 @@
+{
+  "step": 167,
+  "name": "step167_mcp_superheater_attemperator_spray_checkpoint",
+  "status": "PASSED",
+  "timestamp_utc": "2026-09-06T12:24:21.395Z",
+  "cscape_pid": 10892,
+  "hwnd": "0x01B005DC",
+  "attemperator_spray_modulation_verified": true,
+  "superheat_excursion_suppression_verified": true,
+  "thermal_quenching_protection_verified": true,
+  "atomization_delta_p_lockout_verified": true,
+  "zero_straton_dependencies": true,
+  "hardware_lockout_enforced": true,
+  "live_screenshot_sha256": "bc43766c83319fd52574940020f6a1b1316dc6ba62fa60593dec82592cdfd0e1",
+  "log_sha256": "73d89c8b437510aa57adc4daaeebdda0d1214427eda634ee727c47ce9a133435",
+  "dual_root_mirrored": true,
+  "checkpoint_sha256": "e95b9065727bd1436afb2926f9fb5d850d1d313e3d203d5f1f0c9a394d3d9c22"
+}

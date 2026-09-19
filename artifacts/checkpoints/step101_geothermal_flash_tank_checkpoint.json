@@ -1,0 +1,20 @@
+{
+  "step": 101,
+  "status": "COMPLETED",
+  "name": "Geothermal Flash Tank Brine Level & NCG Coupling Closed-Loop Audit",
+  "timestamp": "2026-09-05T12:12:33.717Z",
+  "cscape_pid": 9472,
+  "cscape_hwnd": "0x9b08f8",
+  "project": "TankLevelClosedLoop.csp",
+  "assertions_passed": [
+    "Phase 1 geothermal flash equilibrium error 0.0000% < 0.10%",
+    "Phase 2 uncompensated carryover swell drift 6.71% > 5.0%",
+    "Phase 3 coordinated flash level & NCG decoupled error 0.0000% < 0.35%",
+    "Steam throttling carryover surge rejection ratio 100.0% > 95.0%",
+    "Phase 4 production demand ramp settling error 0.0758% < 0.35%",
+    "Phase 5 high-high carryover turbine trip at cycle 501 == 501",
+    "Fail-closed download lockout ID_CONTROLLER_DOWNLOAD=32827 strictly enforced",
+    "Cross-process mutex Local\\CscapeCompileLock synchronized compilation successful",
+    "Live Cscape GUI healthy and responsive throughout test"
+  ]
+}

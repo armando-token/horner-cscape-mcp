@@ -1,0 +1,113 @@
+{
+  "status": "success",
+  "step": 180,
+  "title": "FastMCP Industrial Duplex Lead-Lag Alternating Pump Controller Simulation Audit",
+  "gate": "G4",
+  "classification": "offline/DEV (TESTED_MOCK)",
+  "live_hardware_execution": false,
+  "straton_runtime_execution": false,
+  "start_time_utc": "2026-09-06T13:24:40.337Z",
+  "completion_time_utc": "2026-09-06T13:24:57.459Z",
+  "duration_seconds": 17.122,
+  "live_cscape_gate": {
+    "pid": 10892,
+    "hwnd": "0x01B005DC",
+    "project": "TankLevelClosedLoop.csp",
+    "desktop": "Default",
+    "classification": "VERIFIED_LIVE (Live Cscape GUI Gate)"
+  },
+  "st_source": {
+    "path": "C:\\HornerAI\\horner-cscape-mcp\\examples\\st_applications\\lead_lag_pump_controller.st",
+    "sha256": "45c493c7d45e04cd83e8cb6f28efcf807f6358eb0c980068a36831656d097a0e",
+    "bytes": 9152
+  },
+  "invariants": {
+    "invariant_A_wear_leveling_alternation": {
+      "status": "success",
+      "description": "Duty/standby rotation equalizes accumulated run hours (P1->P2->P1)"
+    },
+    "invariant_B_lag_pump_staging": {
+      "status": "success",
+      "description": "Lag pump staged at 90.0% (>=85.0%) and destaged cleanly below 60.0%"
+    },
+    "invariant_C_auto_switchover_failover": {
+      "status": "success",
+      "description": "Instantaneous failover to standby pump upon thermal trip / dry-run fault"
+    },
+    "invariant_D_anti_short_cycling": {
+      "status": "success",
+      "description": "Enforced 20s minimum rest before restart and 15s minimum run before stop"
+    },
+    "invariant_E_all_pumps_faulted": {
+      "status": "success",
+      "description": "Emergency AllPumpsFaulted asserted, all outputs safely de-energized"
+    },
+    "mcp_duplex_pump_register_sync": {
+      "status": "success",
+      "registers": {
+        "%R210": 72.5,
+        "%R225": 1,
+        "%Q73": true
+      }
+    },
+    "multi_client_stdio_concurrency": {
+      "status": "success",
+      "clients": 2,
+      "partitioned_registers": {
+        "%R200": 200.5,
+        "%R201": 201.5
+      },
+      "cross_contamination_detected": false
+    },
+    "hardware_download_lockout": {
+      "status": "success",
+      "command_ids_blocked": [
+        32827,
+        33149
+      ]
+    }
+  },
+  "safety_checks": {
+    "hardware_download_blocked": true,
+    "blocked_command_ids": [
+      "ID_CONTROLLER_DOWNLOAD",
+      "ID_DEBUGOPTIONSELECTIONMENU_DOWNLOADONLINECHANGE",
+      38293,
+      "ID_DEBUGOPTIONSELECTIONMENU_DOONLINECHANGE",
+      38295,
+      38294,
+      38297,
+      "ID_ONLINECHANGECONNECT",
+      38296,
+      "ID_PLC_DOWNLOAD",
+      "ID_CONTROLLER_DOWNLOAD_ALT",
+      "ID_PLC_VERIFY",
+      "ID_FIRMWARE_UPDATE",
+      32827,
+      "ID_PROGRAM_DOWNLOADOPTIONS",
+      32828,
+      "ID_PLC_CLEARMEMORY",
+      "ID_PLC_UPLOAD",
+      "ID_ONLINECHANGEACTION",
+      "ID_ONLINECHANGEREVERT",
+      32862,
+      "ID_DOWNLOAD_PROGRAM",
+      32993,
+      "ID_CONTROLLER_FLASH",
+      38372,
+      38373,
+      "ID_DOWNLOAD",
+      "ID_FIRMWARE_DOWNLOAD",
+      33149
+    ],
+    "straton_k5_tools_found": 0,
+    "zero_gui_mutation": true
+  },
+  "parity": {
+    "dual_roots": [
+      "C:\\HornerAI\\horner-cscape-mcp",
+      "C:\\Users\\ArmandoSilva"
+    ],
+    "identical": true
+  }
+}

@@ -1,0 +1,137 @@
+{
+  "step": 178,
+  "mandate": "MEGAPLAN Dual-Root Checkpoint & Telemetry Verification",
+  "gate": "G1",
+  "status": "success",
+  "start_time_utc": "2026-09-06T10:55:32.923Z",
+  "completion_time_utc": "2026-09-06T10:55:32.938Z",
+  "execution_duration_sec": 0.015,
+  "roots": {
+    "horner_root": "C:\\HornerAI\\horner-cscape-mcp",
+    "user_root": "C:\\Users\\ArmandoSilva"
+  },
+  "live_cscape_gate": {
+    "pid": 10892,
+    "hwnd": "0x01B005DC",
+    "status": "READY_FOR_TESTS",
+    "project": "C:\\HornerAI\\horner-cscape-mcp\\artifacts\\projects\\TankLevelClosedLoop\\TankLevelClosedLoop.csp",
+    "window_title": "Cscape - Logged In : \"armando@controlnautas.com\" - [TankLevelClosedLoop.csp]"
+  },
+  "f0_baseline": {
+    "offline_suites_label": "offline/DEV",
+    "live_evidence": "G1 active with visible Cscape"
+  },
+  "parity_verified": true,
+  "details": {
+    "checkpoints": {
+      "artifacts/checkpoints/step178_visible_gui_proof_checkpoint.json": {
+        "rel_path": "artifacts/checkpoints/step178_visible_gui_proof_checkpoint.json",
+        "size_bytes": 1095,
+        "sha256": "352f126f0b22caea3a174bb0fd1cd85cb2105615d89db8e9320198d33bed717f",
+        "identical": true,
+        "json_valid": true,
+        "status": "success"
+      },
+      "artifacts/checkpoints/step178_security_audit_checkpoint.json": {
+        "rel_path": "artifacts/checkpoints/step178_security_audit_checkpoint.json",
+        "size_bytes": 395,
+        "sha256": "a6cef3666b8de52d56c3da26061277aa77aff75604c2ed57eb5bbba9a95496cc",
+        "identical": true,
+        "json_valid": true,
+        "status": "success"
+      },
+      "artifacts/checkpoints/step178_mcp_ccgt_hrsg_checkpoint.json": {
+        "rel_path": "artifacts/checkpoints/step178_mcp_ccgt_hrsg_checkpoint.json",
+        "size_bytes": 512,
+        "sha256": "07d1ecfae9afcca1fecaacc301e9f701c11b0ac5103845f0df9d6a3d98f1d4bd",
+        "identical": true,
+        "json_valid": true,
+        "status": "success"
+      }
+    },
+    "logs": {
+      "artifacts/logs/step178_visible_gui_proof.json": {
+        "rel_path": "artifacts/logs/step178_visible_gui_proof.json",
+        "size_bytes": 1648,
+        "sha256": "28f139eed89b6153c2a34ac62a03d187567f316dbb120d056448ed92363ceb80",
+        "identical": true,
+        "json_valid": true,
+        "status": "success"
+      },
+      "artifacts/logs/step178_security_audit.json": {
+        "rel_path": "artifacts/logs/step178_security_audit.json",
+        "size_bytes": 1748,
+        "sha256": "1ed2353449e45e46a8109075c6fd70f715244d0391dce832d5d2fa20d584aa8e",
+        "identical": true,
+        "json_valid": true,
+        "status": "success"
+      },
+      "artifacts/logs/step178_mcp_ccgt_hrsg.json": {
+        "rel_path": "artifacts/logs/step178_mcp_ccgt_hrsg.json",
+        "size_bytes": 1782,
+        "sha256": "00b37ab82ac4f09c1347ab6ac1cc9283b857d4724e8516e5399ae6eadbc42f0b",
+        "identical": true,
+        "json_valid": true,
+        "status": "success"
+      }
+    },
+    "screenshots": {
+      "artifacts/screenshots/live_cscape_tank_level_step178.png": {
+        "rel_path": "artifacts/screenshots/live_cscape_tank_level_step178.png",
+        "size_bytes": 71589,
+        "sha256": "1e338571102531a95e4afe48b0fb7333a73278dccc71dc481a0aaf43aad8bc2b",
+        "identical": true
+      }
+    },
+    "code_files": {
+      "scripts/execute_step178_visible_cscape_gui_driver.py": {
+        "rel_path": "scripts/execute_step178_visible_cscape_gui_driver.py",
+        "size_bytes": 15766,
+        "sha256": "0690a74cf88e75afa8e584a3e90973a566236807ae8d5c055db58b2a540cf336",
+        "identical": true
+      },
+      "scripts/execute_step178_security_audit.py": {
+        "rel_path": "scripts/execute_step178_security_audit.py",
+        "size_bytes": 14576,
+        "sha256": "2a6113d6d2a4392fe81eb61f3c766e20c849185135fe319f12d67d2e2c65cfc8",
+        "identical": true
+      },
+      "scripts/execute_step178_mcp_ccgt_hrsg.py": {
+        "rel_path": "scripts/execute_step178_mcp_ccgt_hrsg.py",
+        "size_bytes": 21635,
+        "sha256": "ca6dfff0b9cafa6d725cf0725119d0abba16b392c98c7f4a7f2cf5862f37d337",
+        "identical": true
+      },
+      "scripts/execute_step178_dual_root_sync_audit.py": {
+        "rel_path": "scripts/execute_step178_dual_root_sync_audit.py",
+        "size_bytes": 8066,
+        "sha256": "19c281f6da3096b24d1f3eeb7b0e4b53702689527e8a8cdd2d1be8883a143a54",
+        "identical": true
+      },
+      "tests/test_step178_visible_cscape_gui_driver.py": {
+        "rel_path": "tests/test_step178_visible_cscape_gui_driver.py",
+        "size_bytes": 4909,
+        "sha256": "b7b8a91054def004103e18cce06577424e3117f68aac017af929c8b64c47e3bd",
+        "identical": true
+      },
+      "tests/test_step178_mcp_ccgt_hrsg.py": {
+        "rel_path": "tests/test_step178_mcp_ccgt_hrsg.py",
+        "size_bytes": 1384,
+        "sha256": "48ee068a378ac85fffa25c64e172dcb0426321b39952808913991dce917f5a9a",
+        "identical": true
+      },
+      "tests/test_step178_security_audit.py": {
+        "rel_path": "tests/test_step178_security_audit.py",
+        "size_bytes": 3114,
+        "sha256": "26330f7714e9b23f8bc498f5deb5b7516a2ffeb4c97f1b9081f72d7db3091e54",
+        "identical": true
+      },
+      "examples/st_applications/ccgt_hrsg_drum_level_duct_burner_control.st": {
+        "rel_path": "examples/st_applications/ccgt_hrsg_drum_level_duct_burner_control.st",
+        "size_bytes": 8049,
+        "sha256": "09e86d14886ba862429a44b20e1d70a318a684b8da0b6fcfed65385a81ea6009",
+        "identical": true
+      }
+    }
+  }
+}

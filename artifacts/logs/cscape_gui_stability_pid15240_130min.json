@@ -1,0 +1,42 @@
+{
+  "step": 44,
+  "title": "Live GUI Stability & Screenshot Verifier (130-Min Single-Process Benchmark on Successor PID 15240)",
+  "timestamp_start_utc": "2026-09-05T08:13:19.606Z",
+  "timestamp_end_utc": "2026-09-05T08:13:19.863Z",
+  "status": "VERIFIED_LIVE",
+  "cscape_active_process": {
+    "pid": 15240,
+    "hwnd": "0x710582",
+    "window_title": "Cscape - Logged In : \"armando@controlnautas.com\" - [TankLevelClosedLoop.csp]",
+    "project_file": "C:\\Users\\ArmandoSilva\\artifacts\\projects\\TankLevelClosedLoop\\TankLevelClosedLoop.csp",
+    "desktop": "Default",
+    "working_set_mb": 124.3,
+    "thread_count": 11,
+    "is_hung": false,
+    "wm_null_ping_ok": true,
+    "uptime_seconds": 7828.05,
+    "uptime_minutes": 130.47,
+    "uptime_hours": 2.17
+  },
+  "cumulative_stay_open": {
+    "pid7616_certified_uptime_seconds": 5989.0,
+    "pid15240_active_uptime_seconds": 7828.05,
+    "total_stay_open_seconds": 13817.05,
+    "total_stay_open_minutes": 230.28,
+    "total_stay_open_hours": 3.84,
+    "milestone_exceeded": "130_MINUTES_SINGLE_PROCESS_230_MINUTES_CUMULATIVE"
+  },
+  "screenshot_evidence": {
+    "path": "C:\\Users\\ArmandoSilva\\artifacts\\screenshots\\live_cscape_tank_level_stay_open_pid15240_130min.png",
+    "width": 1296,
+    "height": 728,
+    "size_bytes": 80644,
+    "sha256": "7ccf9536e473eeace83146d465561b9462b783e2147904793ed069c764a7f6e2"
+  },
+  "safety_audit": {
+    "physical_plc_download_blocked": true,
+    "zero_physical_hardware_touched": true,
+    "hardware_lockout_enforced": true,
+    "zero_straton_dependencies": true
+  }
+}

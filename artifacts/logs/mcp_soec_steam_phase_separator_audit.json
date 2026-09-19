@@ -1,0 +1,233 @@
+{
+  "audit_step": 112,
+  "name": "Solid Oxide Electrolyzer (SOEC) High-Temperature Steam Phase Separator Level Audit",
+  "timestamp": "2026-09-05T12:35:16.487Z",
+  "completed_at": "2026-09-05T12:35:23.082Z",
+  "cscape_pid": 4272,
+  "cscape_hwnd": "0x7033e",
+  "total_cycles": 600,
+  "metrics": {
+    "max_phase1_level_error_pct": 0.0,
+    "mean_phase1_level_error_pct": 0.0,
+    "max_phase2_uncomp_drift_pct": 6.71,
+    "mean_phase2_uncomp_drift_pct": 4.93,
+    "max_phase3_comp_error_pct": 0.0,
+    "mean_phase3_comp_error_pct": 0.0,
+    "surge_rejection_pct": 100.0,
+    "phase4_final_level_error_pct": 0.0912,
+    "phase4_mean_tail_level_error_pct": 0.0563,
+    "thermal_shock_carryover_trip_cycle": 501
+  },
+  "trace_samples": [
+    {
+      "cycle": 0,
+      "phase": "PHASE_1_STEAM_GENERATION_EQUILIBRIUM",
+      "target_sp": 50.0,
+      "separator_level": 50.0,
+      "steam_feed_kgh": 45.0,
+      "thermal_shock_trip": false,
+      "cv_pid": 50.0
+    },
+    {
+      "cycle": 50,
+      "phase": "PHASE_1_STEAM_GENERATION_EQUILIBRIUM",
+      "target_sp": 50.0,
+      "separator_level": 50.0,
+      "steam_feed_kgh": 45.0,
+      "thermal_shock_trip": false,
+      "cv_pid": 50.0
+    },
+    {
+      "cycle": 100,
+      "phase": "PHASE_1_STEAM_GENERATION_EQUILIBRIUM",
+      "target_sp": 50.0,
+      "separator_level": 50.0,
+      "steam_feed_kgh": 45.0,
+      "thermal_shock_trip": false,
+      "cv_pid": 50.0
+    },
+    {
+      "cycle": 101,
+      "phase": "PHASE_2_STACK_LOAD_REJECTION_FLASH_SWELL",
+      "target_sp": 50.0,
+      "separator_level": 50.023,
+      "steam_feed_kgh": 45.4,
+      "thermal_shock_trip": false,
+      "cv_pid": 50.0
+    },
+    {
+      "cycle": 125,
+      "phase": "PHASE_2_STACK_LOAD_REJECTION_FLASH_SWELL",
+      "target_sp": 50.0,
+      "separator_level": 54.558,
+      "steam_feed_kgh": 53.8,
+      "thermal_shock_trip": false,
+      "cv_pid": 42.88
+    },
+    {
+      "cycle": 150,
+      "phase": "PHASE_2_STACK_LOAD_REJECTION_FLASH_SWELL",
+      "target_sp": 50.0,
+      "separator_level": 56.663,
+      "steam_feed_kgh": 62.5,
+      "thermal_shock_trip": false,
+      "cv_pid": 26.81
+    },
+    {
+      "cycle": 175,
+      "phase": "PHASE_2_STACK_LOAD_REJECTION_FLASH_SWELL",
+      "target_sp": 50.0,
+      "separator_level": 55.594,
+      "steam_feed_kgh": 71.2,
+      "thermal_shock_trip": false,
+      "cv_pid": 15.29
+    },
+    {
+      "cycle": 200,
+      "phase": "PHASE_2_STACK_LOAD_REJECTION_FLASH_SWELL",
+      "target_sp": 50.0,
+      "separator_level": 55.532,
+      "steam_feed_kgh": 80.0,
+      "thermal_shock_trip": false,
+      "cv_pid": 4.75
+    },
+    {
+      "cycle": 201,
+      "phase": "PHASE_3_COORDINATED_HEAT_RECOVERY_DECOUPLING",
+      "target_sp": 50.0,
+      "separator_level": 50.0,
+      "steam_feed_kgh": 80.0,
+      "thermal_shock_trip": false,
+      "cv_pid": 50.0
+    },
+    {
+      "cycle": 225,
+      "phase": "PHASE_3_COORDINATED_HEAT_RECOVERY_DECOUPLING",
+      "target_sp": 50.0,
+      "separator_level": 50.0,
+      "steam_feed_kgh": 80.0,
+      "thermal_shock_trip": false,
+      "cv_pid": 50.0
+    },
+    {
+      "cycle": 250,
+      "phase": "PHASE_3_COORDINATED_HEAT_RECOVERY_DECOUPLING",
+      "target_sp": 50.0,
+      "separator_level": 50.0,
+      "steam_feed_kgh": 80.0,
+      "thermal_shock_trip": false,
+      "cv_pid": 50.0
+    },
+    {
+      "cycle": 275,
+      "phase": "PHASE_3_COORDINATED_HEAT_RECOVERY_DECOUPLING",
+      "target_sp": 50.0,
+      "separator_level": 50.0,
+      "steam_feed_kgh": 80.0,
+      "thermal_shock_trip": false,
+      "cv_pid": 50.0
+    },
+    {
+      "cycle": 300,
+      "phase": "PHASE_3_COORDINATED_HEAT_RECOVERY_DECOUPLING",
+      "target_sp": 50.0,
+      "separator_level": 50.0,
+      "steam_feed_kgh": 80.0,
+      "thermal_shock_trip": false,
+      "cv_pid": 50.0
+    },
+    {
+      "cycle": 350,
+      "phase": "PHASE_3_COORDINATED_HEAT_RECOVERY_DECOUPLING",
+      "target_sp": 50.0,
+      "separator_level": 50.0,
+      "steam_feed_kgh": 80.0,
+      "thermal_shock_trip": false,
+      "cv_pid": 50.0
+    },
+    {
+      "cycle": 351,
+      "phase": "PHASE_4_H2_PRODUCTION_MODULATION_STEP",
+      "target_sp": 62.0,
+      "separator_level": 51.008,
+      "steam_feed_kgh": 65.0,
+      "thermal_shock_trip": false,
+      "cv_pid": 70.16
+    },
+    {
+      "cycle": 400,
+      "phase": "PHASE_4_H2_PRODUCTION_MODULATION_STEP",
+      "target_sp": 62.0,
+      "separator_level": 63.142,
+      "steam_feed_kgh": 65.0,
+      "thermal_shock_trip": false,
+      "cv_pid": 44.23
+    },
+    {
+      "cycle": 450,
+      "phase": "PHASE_4_H2_PRODUCTION_MODULATION_STEP",
+      "target_sp": 62.0,
+      "separator_level": 62.189,
+      "steam_feed_kgh": 65.0,
+      "thermal_shock_trip": false,
+      "cv_pid": 50.8
+    },
+    {
+      "cycle": 500,
+      "phase": "PHASE_4_H2_PRODUCTION_MODULATION_STEP",
+      "target_sp": 62.0,
+      "separator_level": 61.909,
+      "steam_feed_kgh": 65.0,
+      "thermal_shock_trip": false,
+      "cv_pid": 49.96
+    },
+    {
+      "cycle": 501,
+      "phase": "PHASE_5_CERAMIC_STACK_THERMAL_SHOCK_TRIP",
+      "target_sp": 62.0,
+      "separator_level": 61.909,
+      "steam_feed_kgh": 25.0,
+      "thermal_shock_trip": true,
+      "cv_pid": 49.97
+    },
+    {
+      "cycle": 520,
+      "phase": "PHASE_5_CERAMIC_STACK_THERMAL_SHOCK_TRIP",
+      "target_sp": 62.0,
+      "separator_level": 61.909,
+      "steam_feed_kgh": 25.0,
+      "thermal_shock_trip": true,
+      "cv_pid": 50.15
+    },
+    {
+      "cycle": 550,
+      "phase": "PHASE_5_CERAMIC_STACK_THERMAL_SHOCK_TRIP",
+      "target_sp": 62.0,
+      "separator_level": 61.909,
+      "steam_feed_kgh": 25.0,
+      "thermal_shock_trip": true,
+      "cv_pid": 50.37
+    },
+    {
+      "cycle": 599,
+      "phase": "PHASE_5_CERAMIC_STACK_THERMAL_SHOCK_TRIP",
+      "target_sp": 62.0,
+      "separator_level": 61.909,
+      "steam_feed_kgh": 25.0,
+      "thermal_shock_trip": true,
+      "cv_pid": 50.73
+    }
+  ],
+  "cscape_health": {
+    "healthy": true,
+    "pid": 4272,
+    "hwnd": "0x7033e",
+    "desktop": "Default",
+    "is_hung": false,
+    "wm_null_ping_ok": true,
+    "working_set_mb": 203.18,
+    "num_threads": 11,
+    "uptime_sec": 1424.58
+  },
+  "download_lockout_verified": true
+}

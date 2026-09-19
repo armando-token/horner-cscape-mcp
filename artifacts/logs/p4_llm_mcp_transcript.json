@@ -1,0 +1,1194 @@
+[
+  {
+    "tool": "cscape_fixture_request_to_spec",
+    "arguments": {
+      "fixture_id": "TankLevel_P4_Fixture",
+      "description": "Closed-loop buffer tank level controller with dual threshold alarms",
+      "process_variable": "TankLevelPV",
+      "engineering_unit": "%",
+      "lo_limit": 30.0,
+      "hi_limit": 70.0,
+      "setpoint": 50.0,
+      "level_label": "Tank Level PV",
+      "project_name": "TankLevel_P4_Dedicated",
+      "screen_id": 1
+    },
+    "response": {
+      "status": "success",
+      "spec": {
+        "spec_version": "1.0.0",
+        "project_name": "TankLevel_P4_Dedicated",
+        "revision": "1.0.0",
+        "pou_name": "TankLevelControl",
+        "pou_type": "PROGRAM",
+        "st_code": "PROGRAM TankLevelControl\nVAR\n    TankLevelPV : REAL := 0.0; (* %AI1 *)\n    Setpoint : REAL := 50.0; (* %AQ1 *)\n    AutoMode : BOOL := TRUE; (* %M10 *)\n    ManualOutputCmd : REAL := 0.0; (* %AQ2 *)\n    PumpCmdActive : BOOL := FALSE; (* %Q1 *)\n    PumpRunningFeedback : BOOL := FALSE; (* %I1 *)\n    HighAlarm : BOOL := FALSE; (* %T3 *)\n    LowAlarm : BOOL := FALSE; (* %T4 *)\n    ControlError : REAL := 0.0; (* %R10 *)\n    HI_Limit : REAL := 70.0;\n    LO_Limit : REAL := 30.0;\nEND_VAR\n\n(* Control error calculation *)\nControlError := Setpoint - TankLevelPV;\n\n(* High and Low alarm trip conditions *)\nIF TankLevelPV >= HI_Limit THEN\n    HighAlarm := TRUE;\nELSE\n    HighAlarm := FALSE;\nEND_IF;\n\nIF TankLevelPV <= LO_Limit THEN\n    LowAlarm := TRUE;\nELSE\n    LowAlarm := FALSE;\nEND_IF;\n\n(* Control logic: Auto vs Manual *)\nIF AutoMode THEN\n    IF TankLevelPV < Setpoint THEN\n        PumpCmdActive := TRUE;\n    ELSE\n        PumpCmdActive := FALSE;\n    END_IF;\nELSE\n    IF ManualOutputCmd > 0.0 THEN\n        PumpCmdActive := TRUE;\n    ELSE\n        PumpCmdActive := FALSE;\n    END_IF;\nEND_IF;\n\nEND_PROGRAM\n",
+        "variables": [
+          {
+            "name": "TankLevelPV",
+            "type": "REAL",
+            "address": "%AI1",
+            "scope": "VAR",
+            "description": "Analog level measurement (0..100 %)"
+          },
+          {
+            "name": "Setpoint",
+            "type": "REAL",
+            "address": "%AQ1",
+            "scope": "VAR",
+            "description": "Target level setpoint (0..100 %)"
+          },
+          {
+            "name": "AutoMode",
+            "type": "BOOL",
+            "address": "%M10",
+            "scope": "VAR",
+            "description": "Loop mode: TRUE=Auto, FALSE=Manual"
+          },
+          {
+            "name": "ManualOutputCmd",
+            "type": "REAL",
+            "address": "%AQ2",
+            "scope": "VAR",
+            "description": "Manual pump command percentage"
+          },
+          {
+            "name": "PumpCmdActive",
+            "type": "BOOL",
+            "address": "%Q1",
+            "scope": "VAR",
+            "description": "Pump run command digital output"
+          },
+          {
+            "name": "PumpRunningFeedback",
+            "type": "BOOL",
+            "address": "%I1",
+            "scope": "VAR",
+            "description": "Pump run auxiliary contact feedback"
+          },
+          {
+            "name": "HighAlarm",
+            "type": "BOOL",
+            "address": "%T3",
+            "scope": "VAR",
+            "description": "High level alarm bit"
+          },
+          {
+            "name": "LowAlarm",
+            "type": "BOOL",
+            "address": "%T4",
+            "scope": "VAR",
+            "description": "Low level alarm bit"
+          },
+          {
+            "name": "ControlError",
+            "type": "REAL",
+            "address": "%R10",
+            "scope": "VAR",
+            "description": "Setpoint minus PV error word"
+          },
+          {
+            "name": "HI_Limit",
+            "type": "REAL",
+            "address": "%R12",
+            "scope": "VAR",
+            "description": "High alarm trip threshold parameter"
+          },
+          {
+            "name": "LO_Limit",
+            "type": "REAL",
+            "address": "%R14",
+            "scope": "VAR",
+            "description": "Low alarm trip threshold parameter"
+          }
+        ],
+        "hmi_objects": [
+          {
+            "name": "HMI_TankLevelPV",
+            "object_type": "NUMERIC_DATA",
+            "role": "Process Variable Display with Engineering Unit",
+            "bound_variable": "TankLevelPV",
+            "data_type": "REAL",
+            "memory_address": "%AI1",
+            "unit": "%",
+            "min_limit": 0.0,
+            "max_limit": 100.0,
+            "threshold": null,
+            "indicator_type": "FEEDBACK",
+            "permission_state": null,
+            "feedback_state": null,
+            "properties": {
+              "label": "Tank Level PV",
+              "unit_text": "%",
+              "display_format": "999.9",
+              "x": 60,
+              "y": 80,
+              "width": 120,
+              "height": 36,
+              "font": "Arial 14 Bold",
+              "text_color": "#002060",
+              "bg_color": "#E6F0FA"
+            }
+          },
+          {
+            "name": "HMI_ModeSelector",
+            "object_type": "SELECTOR_SWITCH",
+            "role": "Manual/Auto Loop Mode Selector",
+            "bound_variable": "AutoMode",
+            "data_type": "BOOL",
+            "memory_address": "%M10",
+            "unit": null,
+            "min_limit": null,
+            "max_limit": null,
+            "threshold": null,
+            "indicator_type": "COMMAND",
+            "permission_state": null,
+            "feedback_state": null,
+            "properties": {
+              "label": "Mode: AUTO / MAN",
+              "position_true": "AUTO (Closed-Loop)",
+              "position_false": "MAN (Manual Output)",
+              "command_variable": "AutoMode",
+              "x": 220,
+              "y": 80,
+              "width": 140,
+              "height": 36,
+              "default": true
+            }
+          },
+          {
+            "name": "HMI_ManualCommand",
+            "object_type": "NUMERIC_INPUT",
+            "role": "Manual Output Command Setpoint",
+            "bound_variable": "ManualOutputCmd",
+            "data_type": "REAL",
+            "memory_address": "%AQ2",
+            "unit": "%",
+            "min_limit": 0.0,
+            "max_limit": 100.0,
+            "threshold": null,
+            "indicator_type": "COMMAND",
+            "permission_state": null,
+            "feedback_state": null,
+            "properties": {
+              "label": "Manual Cmd",
+              "unit_text": "%",
+              "display_format": "999.9",
+              "active_when": "AutoMode == FALSE",
+              "x": 380,
+              "y": 80,
+              "width": 120,
+              "height": 36
+            }
+          },
+          {
+            "name": "HMI_Setpoint",
+            "object_type": "NUMERIC_INPUT",
+            "role": "Target Setpoint with Upper/Lower Limits",
+            "bound_variable": "Setpoint",
+            "data_type": "REAL",
+            "memory_address": "%AQ1",
+            "unit": "%",
+            "min_limit": 0.0,
+            "max_limit": 100.0,
+            "threshold": 50.0,
+            "indicator_type": "COMMAND",
+            "permission_state": null,
+            "feedback_state": null,
+            "properties": {
+              "label": "Target Setpoint",
+              "unit_text": "%",
+              "display_format": "999.9",
+              "hi_threshold_trip": 70.0,
+              "lo_threshold_trip": 30.0,
+              "x": 60,
+              "y": 140,
+              "width": 120,
+              "height": 36
+            }
+          },
+          {
+            "name": "HMI_TankLevel_BarGraph",
+            "object_type": "BAR_GRAPH",
+            "role": "Tank Level Silhouette Fill (0..100 %)",
+            "bound_variable": "TankLevelPV_I16",
+            "data_type": "INT",
+            "memory_address": "%R16",
+            "unit": "%",
+            "min_limit": 0.0,
+            "max_limit": 100.0,
+            "threshold": null,
+            "indicator_type": "FEEDBACK",
+            "permission_state": null,
+            "feedback_state": null,
+            "properties": {
+              "label": "Level Fill",
+              "orientation": "Vertical",
+              "fill_color": "#0070C0",
+              "alarm_hi_trip": 70.0,
+              "alarm_lo_trip": 30.0,
+              "x": 220,
+              "y": 140,
+              "width": 60,
+              "height": 160
+            }
+          },
+          {
+            "name": "HMI_HighAlarm_Lamp",
+            "object_type": "INDICATOR_LAMP",
+            "role": "High Level Alarm Trip Indicator",
+            "bound_variable": "HighAlarm",
+            "data_type": "BOOL",
+            "memory_address": "%T3",
+            "unit": null,
+            "min_limit": null,
+            "max_limit": null,
+            "threshold": 70.0,
+            "indicator_type": "ALARM",
+            "permission_state": null,
+            "feedback_state": null,
+            "properties": {
+              "label": "HI ALARM (>=70.0%)",
+              "color_active": "#FF0000",
+              "color_inactive": "#404040",
+              "trip_threshold": 70.0,
+              "x": 300,
+              "y": 140,
+              "width": 100,
+              "height": 36
+            }
+          },
+          {
+            "name": "HMI_LowAlarm_Lamp",
+            "object_type": "INDICATOR_LAMP",
+            "role": "Low Level Alarm Trip Indicator",
+            "bound_variable": "LowAlarm",
+            "data_type": "BOOL",
+            "memory_address": "%T4",
+            "unit": null,
+            "min_limit": null,
+            "max_limit": null,
+            "threshold": 30.0,
+            "indicator_type": "ALARM",
+            "permission_state": null,
+            "feedback_state": null,
+            "properties": {
+              "label": "LO ALARM (<=30.0%)",
+              "color_active": "#FFC000",
+              "color_inactive": "#404040",
+              "trip_threshold": 30.0,
+              "x": 300,
+              "y": 190,
+              "width": 100,
+              "height": 36
+            }
+          },
+          {
+            "name": "HMI_PumpCommandIndicator",
+            "object_type": "STATUS_MONITOR",
+            "role": "Pump Run Command Output Status",
+            "bound_variable": "PumpCmdActive",
+            "data_type": "BOOL",
+            "memory_address": "%Q1",
+            "unit": null,
+            "min_limit": null,
+            "max_limit": null,
+            "threshold": null,
+            "indicator_type": "COMMAND",
+            "permission_state": null,
+            "feedback_state": null,
+            "properties": {
+              "label": "PUMP CMD (OUT)",
+              "color_on": "#00B050",
+              "color_off": "#7F7F7F",
+              "is_command": true,
+              "x": 420,
+              "y": 140,
+              "width": 110,
+              "height": 36
+            }
+          },
+          {
+            "name": "HMI_PumpFeedbackIndicator",
+            "object_type": "STATUS_MONITOR",
+            "role": "Pump Running Field Feedback Status",
+            "bound_variable": "PumpRunningFeedback",
+            "data_type": "BOOL",
+            "memory_address": "%I1",
+            "unit": null,
+            "min_limit": null,
+            "max_limit": null,
+            "threshold": null,
+            "indicator_type": "FEEDBACK",
+            "permission_state": null,
+            "feedback_state": null,
+            "properties": {
+              "label": "PUMP RUN (AUX)",
+              "color_on": "#00FF00",
+              "color_off": "#333333",
+              "is_command": false,
+              "differentiated_from_cmd": true,
+              "x": 420,
+              "y": 190,
+              "width": 110,
+              "height": 36
+            }
+          },
+          {
+            "name": "HMI_SensorPermissionState",
+            "object_type": "STATUS_MONITOR",
+            "role": "Physical Sensor Permission State (Fail-Closed)",
+            "bound_variable": "SensorPermissionState",
+            "data_type": "STRING",
+            "memory_address": "%SR1",
+            "unit": null,
+            "min_limit": null,
+            "max_limit": null,
+            "threshold": null,
+            "indicator_type": "PERMISSION",
+            "permission_state": "UNAVAILABLE (FAIL_CLOSED)",
+            "feedback_state": "NO_PHYSICAL_FEEDBACK (DEV_MODE)",
+            "properties": {
+              "label": "SENSOR / HW PORT",
+              "lockout_mode": "FAIL_CLOSED",
+              "hardware_ports": "BLOCKED_COM_CAN_USB",
+              "x": 60,
+              "y": 240,
+              "width": 240,
+              "height": 30
+            }
+          }
+        ],
+        "limits": {
+          "lo_limit": 30.0,
+          "hi_limit": 70.0
+        },
+        "level_label": "Tank Level PV",
+        "created_utc": "2026-09-17T17:12:08.822095+00:00",
+        "spec_hash": "c4d9d8c4ea41fdff951c69fc1a6f22473a0a2af4d3854b87c9361704fd31e99f",
+        "status": "success"
+      },
+      "message": "Fixture specification generated and validated successfully.",
+      "success": true,
+      "errors": [],
+      "warnings": [],
+      "diagnostics": [],
+      "failure_locations": [],
+      "failure_location": null
+    },
+    "timestamp_utc": "2026-09-17T17:12:08.786553+00:00"
+  },
+  {
+    "tool": "cscape_fixture_create",
+    "arguments": {
+      "spec": {
+        "spec_version": "1.0.0",
+        "project_name": "TankLevel_P4_Dedicated",
+        "revision": "1.0.0",
+        "pou_name": "TankLevelControl",
+        "pou_type": "PROGRAM",
+        "st_code": "PROGRAM TankLevelControl\nVAR\n    TankLevelPV : REAL := 0.0; (* %AI1 *)\n    Setpoint : REAL := 50.0; (* %AQ1 *)\n    AutoMode : BOOL := TRUE; (* %M10 *)\n    ManualOutputCmd : REAL := 0.0; (* %AQ2 *)\n    PumpCmdActive : BOOL := FALSE; (* %Q1 *)\n    PumpRunningFeedback : BOOL := FALSE; (* %I1 *)\n    HighAlarm : BOOL := FALSE; (* %T3 *)\n    LowAlarm : BOOL := FALSE; (* %T4 *)\n    ControlError : REAL := 0.0; (* %R10 *)\n    HI_Limit : REAL := 70.0;\n    LO_Limit : REAL := 30.0;\nEND_VAR\n\n(* Control error calculation *)\nControlError := Setpoint - TankLevelPV;\n\n(* High and Low alarm trip conditions *)\nIF TankLevelPV >= HI_Limit THEN\n    HighAlarm := TRUE;\nELSE\n    HighAlarm := FALSE;\nEND_IF;\n\nIF TankLevelPV <= LO_Limit THEN\n    LowAlarm := TRUE;\nELSE\n    LowAlarm := FALSE;\nEND_IF;\n\n(* Control logic: Auto vs Manual *)\nIF AutoMode THEN\n    IF TankLevelPV < Setpoint THEN\n        PumpCmdActive := TRUE;\n    ELSE\n        PumpCmdActive := FALSE;\n    END_IF;\nELSE\n    IF ManualOutputCmd > 0.0 THEN\n        PumpCmdActive := TRUE;\n    ELSE\n        PumpCmdActive := FALSE;\n    END_IF;\nEND_IF;\n\nEND_PROGRAM\n",
+        "variables": [
+          {
+            "name": "TankLevelPV",
+            "type": "REAL",
+            "address": "%AI1",
+            "scope": "VAR",
+            "description": "Analog level measurement (0..100 %)"
+          },
+          {
+            "name": "Setpoint",
+            "type": "REAL",
+            "address": "%AQ1",
+            "scope": "VAR",
+            "description": "Target level setpoint (0..100 %)"
+          },
+          {
+            "name": "AutoMode",
+            "type": "BOOL",
+            "address": "%M10",
+            "scope": "VAR",
+            "description": "Loop mode: TRUE=Auto, FALSE=Manual"
+          },
+          {
+            "name": "ManualOutputCmd",
+            "type": "REAL",
+            "address": "%AQ2",
+            "scope": "VAR",
+            "description": "Manual pump command percentage"
+          },
+          {
+            "name": "PumpCmdActive",
+            "type": "BOOL",
+            "address": "%Q1",
+            "scope": "VAR",
+            "description": "Pump run command digital output"
+          },
+          {
+            "name": "PumpRunningFeedback",
+            "type": "BOOL",
+            "address": "%I1",
+            "scope": "VAR",
+            "description": "Pump run auxiliary contact feedback"
+          },
+          {
+            "name": "HighAlarm",
+            "type": "BOOL",
+            "address": "%T3",
+            "scope": "VAR",
+            "description": "High level alarm bit"
+          },
+          {
+            "name": "LowAlarm",
+            "type": "BOOL",
+            "address": "%T4",
+            "scope": "VAR",
+            "description": "Low level alarm bit"
+          },
+          {
+            "name": "ControlError",
+            "type": "REAL",
+            "address": "%R10",
+            "scope": "VAR",
+            "description": "Setpoint minus PV error word"
+          },
+          {
+            "name": "HI_Limit",
+            "type": "REAL",
+            "address": "%R12",
+            "scope": "VAR",
+            "description": "High alarm trip threshold parameter"
+          },
+          {
+            "name": "LO_Limit",
+            "type": "REAL",
+            "address": "%R14",
+            "scope": "VAR",
+            "description": "Low alarm trip threshold parameter"
+          }
+        ],
+        "hmi_objects": [
+          {
+            "name": "HMI_TankLevelPV",
+            "object_type": "NUMERIC_DATA",
+            "role": "Process Variable Display with Engineering Unit",
+            "bound_variable": "TankLevelPV",
+            "data_type": "REAL",
+            "memory_address": "%AI1",
+            "unit": "%",
+            "min_limit": 0.0,
+            "max_limit": 100.0,
+            "threshold": null,
+            "indicator_type": "FEEDBACK",
+            "permission_state": null,
+            "feedback_state": null,
+            "properties": {
+              "label": "Tank Level PV",
+              "unit_text": "%",
+              "display_format": "999.9",
+              "x": 60,
+              "y": 80,
+              "width": 120,
+              "height": 36,
+              "font": "Arial 14 Bold",
+              "text_color": "#002060",
+              "bg_color": "#E6F0FA"
+            }
+          },
+          {
+            "name": "HMI_ModeSelector",
+            "object_type": "SELECTOR_SWITCH",
+            "role": "Manual/Auto Loop Mode Selector",
+            "bound_variable": "AutoMode",
+            "data_type": "BOOL",
+            "memory_address": "%M10",
+            "unit": null,
+            "min_limit": null,
+            "max_limit": null,
+            "threshold": null,
+            "indicator_type": "COMMAND",
+            "permission_state": null,
+            "feedback_state": null,
+            "properties": {
+              "label": "Mode: AUTO / MAN",
+              "position_true": "AUTO (Closed-Loop)",
+              "position_false": "MAN (Manual Output)",
+              "command_variable": "AutoMode",
+              "x": 220,
+              "y": 80,
+              "width": 140,
+              "height": 36,
+              "default": true
+            }
+          },
+          {
+            "name": "HMI_ManualCommand",
+            "object_type": "NUMERIC_INPUT",
+            "role": "Manual Output Command Setpoint",
+            "bound_variable": "ManualOutputCmd",
+            "data_type": "REAL",
+            "memory_address": "%AQ2",
+            "unit": "%",
+            "min_limit": 0.0,
+            "max_limit": 100.0,
+            "threshold": null,
+            "indicator_type": "COMMAND",
+            "permission_state": null,
+            "feedback_state": null,
+            "properties": {
+              "label": "Manual Cmd",
+              "unit_text": "%",
+              "display_format": "999.9",
+              "active_when": "AutoMode == FALSE",
+              "x": 380,
+              "y": 80,
+              "width": 120,
+              "height": 36
+            }
+          },
+          {
+            "name": "HMI_Setpoint",
+            "object_type": "NUMERIC_INPUT",
+            "role": "Target Setpoint with Upper/Lower Limits",
+            "bound_variable": "Setpoint",
+            "data_type": "REAL",
+            "memory_address": "%AQ1",
+            "unit": "%",
+            "min_limit": 0.0,
+            "max_limit": 100.0,
+            "threshold": 50.0,
+            "indicator_type": "COMMAND",
+            "permission_state": null,
+            "feedback_state": null,
+            "properties": {
+              "label": "Target Setpoint",
+              "unit_text": "%",
+              "display_format": "999.9",
+              "hi_threshold_trip": 70.0,
+              "lo_threshold_trip": 30.0,
+              "x": 60,
+              "y": 140,
+              "width": 120,
+              "height": 36
+            }
+          },
+          {
+            "name": "HMI_TankLevel_BarGraph",
+            "object_type": "BAR_GRAPH",
+            "role": "Tank Level Silhouette Fill (0..100 %)",
+            "bound_variable": "TankLevelPV_I16",
+            "data_type": "INT",
+            "memory_address": "%R16",
+            "unit": "%",
+            "min_limit": 0.0,
+            "max_limit": 100.0,
+            "threshold": null,
+            "indicator_type": "FEEDBACK",
+            "permission_state": null,
+            "feedback_state": null,
+            "properties": {
+              "label": "Level Fill",
+              "orientation": "Vertical",
+              "fill_color": "#0070C0",
+              "alarm_hi_trip": 70.0,
+              "alarm_lo_trip": 30.0,
+              "x": 220,
+              "y": 140,
+              "width": 60,
+              "height": 160
+            }
+          },
+          {
+            "name": "HMI_HighAlarm_Lamp",
+            "object_type": "INDICATOR_LAMP",
+            "role": "High Level Alarm Trip Indicator",
+            "bound_variable": "HighAlarm",
+            "data_type": "BOOL",
+            "memory_address": "%T3",
+            "unit": null,
+            "min_limit": null,
+            "max_limit": null,
+            "threshold": 70.0,
+            "indicator_type": "ALARM",
+            "permission_state": null,
+            "feedback_state": null,
+            "properties": {
+              "label": "HI ALARM (>=70.0%)",
+              "color_active": "#FF0000",
+              "color_inactive": "#404040",
+              "trip_threshold": 70.0,
+              "x": 300,
+              "y": 140,
+              "width": 100,
+              "height": 36
+            }
+          },
+          {
+            "name": "HMI_LowAlarm_Lamp",
+            "object_type": "INDICATOR_LAMP",
+            "role": "Low Level Alarm Trip Indicator",
+            "bound_variable": "LowAlarm",
+            "data_type": "BOOL",
+            "memory_address": "%T4",
+            "unit": null,
+            "min_limit": null,
+            "max_limit": null,
+            "threshold": 30.0,
+            "indicator_type": "ALARM",
+            "permission_state": null,
+            "feedback_state": null,
+            "properties": {
+              "label": "LO ALARM (<=30.0%)",
+              "color_active": "#FFC000",
+              "color_inactive": "#404040",
+              "trip_threshold": 30.0,
+              "x": 300,
+              "y": 190,
+              "width": 100,
+              "height": 36
+            }
+          },
+          {
+            "name": "HMI_PumpCommandIndicator",
+            "object_type": "STATUS_MONITOR",
+            "role": "Pump Run Command Output Status",
+            "bound_variable": "PumpCmdActive",
+            "data_type": "BOOL",
+            "memory_address": "%Q1",
+            "unit": null,
+            "min_limit": null,
+            "max_limit": null,
+            "threshold": null,
+            "indicator_type": "COMMAND",
+            "permission_state": null,
+            "feedback_state": null,
+            "properties": {
+              "label": "PUMP CMD (OUT)",
+              "color_on": "#00B050",
+              "color_off": "#7F7F7F",
+              "is_command": true,
+              "x": 420,
+              "y": 140,
+              "width": 110,
+              "height": 36
+            }
+          },
+          {
+            "name": "HMI_PumpFeedbackIndicator",
+            "object_type": "STATUS_MONITOR",
+            "role": "Pump Running Field Feedback Status",
+            "bound_variable": "PumpRunningFeedback",
+            "data_type": "BOOL",
+            "memory_address": "%I1",
+            "unit": null,
+            "min_limit": null,
+            "max_limit": null,
+            "threshold": null,
+            "indicator_type": "FEEDBACK",
+            "permission_state": null,
+            "feedback_state": null,
+            "properties": {
+              "label": "PUMP RUN (AUX)",
+              "color_on": "#00FF00",
+              "color_off": "#333333",
+              "is_command": false,
+              "differentiated_from_cmd": true,
+              "x": 420,
+              "y": 190,
+              "width": 110,
+              "height": 36
+            }
+          },
+          {
+            "name": "HMI_SensorPermissionState",
+            "object_type": "STATUS_MONITOR",
+            "role": "Physical Sensor Permission State (Fail-Closed)",
+            "bound_variable": "SensorPermissionState",
+            "data_type": "STRING",
+            "memory_address": "%SR1",
+            "unit": null,
+            "min_limit": null,
+            "max_limit": null,
+            "threshold": null,
+            "indicator_type": "PERMISSION",
+            "permission_state": "UNAVAILABLE (FAIL_CLOSED)",
+            "feedback_state": "NO_PHYSICAL_FEEDBACK (DEV_MODE)",
+            "properties": {
+              "label": "SENSOR / HW PORT",
+              "lockout_mode": "FAIL_CLOSED",
+              "hardware_ports": "BLOCKED_COM_CAN_USB",
+              "x": 60,
+              "y": 240,
+              "width": 240,
+              "height": 30
+            }
+          }
+        ],
+        "limits": {
+          "lo_limit": 30.0,
+          "hi_limit": 70.0
+        },
+        "level_label": "Tank Level PV",
+        "created_utc": "2026-09-17T17:12:08.822095+00:00",
+        "spec_hash": "c4d9d8c4ea41fdff951c69fc1a6f22473a0a2af4d3854b87c9361704fd31e99f",
+        "status": "success"
+      },
+      "project_name": "TankLevel_P4_Dedicated"
+    },
+    "response": {
+      "status": "success",
+      "project_name": "TankLevel_P4_Dedicated",
+      "revision": "1.0.0",
+      "csp_file_path": "C:\\HornerAI\\horner-cscape-mcp\\artifacts\\projects\\TankLevel_P4_Dedicated\\TankLevel_P4_Dedicated.csp",
+      "csp_size_bytes": 139776,
+      "cfbf_valid": true,
+      "pous_count": 1,
+      "variables_count": 11,
+      "hmi_objects_count": 10,
+      "limits": {
+        "lo_limit": 30.0,
+        "hi_limit": 70.0
+      },
+      "level_label": "Tank Level PV",
+      "message": "Fixture project, ST POU, variables, and HMI screen group created successfully.",
+      "success": true,
+      "errors": [],
+      "warnings": [],
+      "diagnostics": [],
+      "failure_locations": [],
+      "failure_location": null
+    },
+    "timestamp_utc": "2026-09-17T17:12:09.323563+00:00"
+  },
+  {
+    "tool": "cscape_compile_project",
+    "arguments": {
+      "project_name": "TankLevel_P4_Dedicated",
+      "clean_build": true
+    },
+    "response": {
+      "success": true,
+      "status": "success",
+      "error_code": "COMPILE_ERROR",
+      "project_name": "TankLevel_P4_Dedicated",
+      "build_time_seconds": 0.009788,
+      "error_count": 0,
+      "warning_count": 0,
+      "errors": [],
+      "warnings": [],
+      "build_log": "=== Horner Cscape 10.2 Compile Pass: TankLevel_P4_Dedicated ===\nClean Build: True\nMode: IEC 61131-3 Structured Text (Advanced Ladder Excluded)\nTimestamp: 2026-09-17T10:12:09.361025\n----------------------------------------------------------------\nCompiling POU: TankLevelControl (1098 bytes)...\n  POU 'TankLevelControl' parsed and validated cleanly.\n----------------------------------------------------------------\nBuild Result: SUCCESS\nErrors: 0, Warnings: 0\nEstimated AST Footprint: Statements: 14, Variables: 11, Expressions: 33, Source: 1098 bytes\nDuration: 0.010s\nHardware Lockout: ENFORCED (Zero PLC communication / No download)",
+      "scraped_output_lines": [
+        "=== Horner Cscape 10.2 Compile Pass: TankLevel_P4_Dedicated ===",
+        "Clean Build: True",
+        "Mode: IEC 61131-3 Structured Text (Advanced Ladder Excluded)",
+        "Timestamp: 2026-09-17T10:12:09.361025",
+        "----------------------------------------------------------------",
+        "Compiling POU: TankLevelControl (1098 bytes)...",
+        "  POU 'TankLevelControl' parsed and validated cleanly.",
+        "----------------------------------------------------------------",
+        "Build Result: SUCCESS",
+        "Errors: 0, Warnings: 0",
+        "Estimated AST Footprint: Statements: 14, Variables: 11, Expressions: 33, Source: 1098 bytes",
+        "Duration: 0.010s",
+        "Hardware Lockout: ENFORCED (Zero PLC communication / No download)"
+      ],
+      "diagnostics": [],
+      "memory_footprint": {
+        "estimated_ast_footprint": {
+          "ast_statement_count": 14,
+          "ast_variable_count": 11,
+          "ast_expression_count": 33,
+          "source_bytes_total": 1098,
+          "pou_count": 1,
+          "target_architecture": "Horner OCS (XL4 Native CFBF)"
+        },
+        "ast_statement_count": 14,
+        "ast_variable_count": 11,
+        "ast_expression_count": 33,
+        "source_bytes_total": 1098,
+        "code_size_bytes": 1098,
+        "data_size_bytes": 44,
+        "retain_size_bytes": 0,
+        "total_size_bytes": 1142,
+        "target_architecture": "Horner OCS (XL4 Native CFBF)"
+      },
+      "hardware_lockout_enforced": true,
+      "message": "Compilation completed: SUCCESS (0 errors, 0 warnings)",
+      "compiled_at": "2026-09-17T17:12:09.372825+00:00",
+      "failure_locations": [],
+      "failure_location": null,
+      "compile_successful": true,
+      "clean_build": true,
+      "pous_compiled": [
+        "TankLevelControl"
+      ]
+    },
+    "timestamp_utc": "2026-09-17T17:12:09.339268+00:00"
+  },
+  {
+    "tool": "cscape_fixture_selective_edit",
+    "arguments": {
+      "project_name": "TankLevel_P4_Dedicated",
+      "new_lo_limit": 35.0,
+      "new_hi_limit": 75.0,
+      "new_level_label": "Buffer Tank Level PV",
+      "expected_prior_revision": "1.0.0",
+      "expected_prior_hash": "f5c4f9a35acc11613bffccea6292f78017e111249d2d39763bafe8c3b8876525"
+    },
+    "response": {
+      "status": "success",
+      "action": "MUTATION_APPLIED",
+      "path_used": "native_cscape_gui",
+      "mock": "NO_MOCKS_PERMITTED; real live Cscape GUI on winsta0\\Default",
+      "project_name": "TankLevel_P4_Dedicated",
+      "prior_revision": "1.0.0",
+      "new_revision": "1.1.0",
+      "mutated_limits": {
+        "lo_limit": 35.0,
+        "hi_limit": 75.0
+      },
+      "prior_limits": {
+        "lo_limit": 30.0,
+        "hi_limit": 70.0
+      },
+      "mutated_label": "Buffer Tank Level PV",
+      "prior_label": "Tank Level PV",
+      "screenshots": [
+        "C:\\HornerAI\\horner-cscape-mcp\\artifacts\\screenshots\\p4_redo_cscape_ui_35_75.png",
+        "C:\\Users\\ArmandoSilva\\artifacts\\screenshots\\p4_redo_cscape_ui_35_75.png"
+      ],
+      "message": "Selective edit applied successfully: limits updated to 35/75 and label renamed to Buffer Tank Level PV.",
+      "success": true,
+      "errors": [],
+      "warnings": [],
+      "diagnostics": [],
+      "failure_locations": [],
+      "failure_location": null
+    },
+    "timestamp_utc": "2026-09-17T17:12:09.386388+00:00"
+  },
+  {
+    "tool": "cscape_fixture_revision_impact",
+    "arguments": {
+      "project_name": "TankLevel_P4_Dedicated"
+    },
+    "response": {
+      "status": "success",
+      "report": {
+        "project_name": "TankLevel_P4_Dedicated",
+        "prior_revision": "1.0.0",
+        "new_revision": "1.1.0",
+        "timestamp_utc": "2026-09-17T17:12:09.673883+00:00",
+        "mutations": {
+          "limits_changed": {
+            "lo_limit": {
+              "before": 30.0,
+              "after": 35.0
+            },
+            "hi_limit": {
+              "before": 70.0,
+              "after": 75.0
+            }
+          },
+          "labels_changed": {
+            "level_label": {
+              "before": "Tank Level PV",
+              "after": "Buffer Tank Level PV"
+            }
+          },
+          "st_code_lines_mutated": [
+            "HI_Limit : REAL := 75.0;",
+            "LO_Limit : REAL := 35.0;"
+          ]
+        },
+        "untouched_elements": {
+          "variables_preserved_count": 9,
+          "variables_preserved": [
+            "TankLevelPV (%AI1)",
+            "Setpoint (%AQ1)",
+            "AutoMode (%M10)",
+            "ManualOutputCmd (%AQ2)",
+            "PumpCmdActive (%Q1)",
+            "PumpRunningFeedback (%I1)",
+            "HighAlarm (%T3)",
+            "LowAlarm (%T4)",
+            "ControlError (%R10)"
+          ],
+          "hmi_objects_preserved_count": 5,
+          "hmi_objects_preserved": [
+            "HMI_ModeSelector (Switch)",
+            "HMI_ManualCommand (Numeric Input)",
+            "HMI_PumpCommandIndicator (Status Monitor)",
+            "HMI_PumpFeedbackIndicator (Status Monitor)",
+            "HMI_SensorPermissionState (Lockout Monitor)"
+          ],
+          "memory_addresses_preserved": [
+            "%AI1",
+            "%AQ1",
+            "%M10",
+            "%AQ2",
+            "%Q1",
+            "%I1",
+            "%T3",
+            "%T4",
+            "%R10",
+            "%R16"
+          ],
+          "control_logic_preserved": "Pump on/off staging and manual bypass logic intact"
+        },
+        "ast_syntax_valid": true,
+        "impact_rating": "LOW_LOCALIZED",
+        "safety_lockout_verified": true,
+        "status": "success"
+      },
+      "message": "Revision impact audit completed successfully. 100% localized mutation confirmed.",
+      "success": true,
+      "errors": [],
+      "warnings": [],
+      "diagnostics": [],
+      "failure_locations": [],
+      "failure_location": null
+    },
+    "timestamp_utc": "2026-09-17T17:12:09.599346+00:00"
+  },
+  {
+    "tool": "cscape_fixture_durability_check",
+    "arguments": {
+      "project_name": "TankLevel_P4_Dedicated"
+    },
+    "response": {
+      "status": "success",
+      "durability_verified": true,
+      "path_used": "native_cscape_gui",
+      "mock": "NO_MOCKS_PERMITTED; real live Cscape GUI on winsta0\\Default",
+      "project_name": "TankLevel_P4_Dedicated",
+      "cscape_pid": 928,
+      "main_hwnd": 197644,
+      "reopened_screens_count": 3,
+      "hmi_objects_count": 10,
+      "semantic_checks": {
+        "lo_limit_equals_35": true,
+        "hi_limit_equals_75": true,
+        "level_label_equals_BufferTankLevelPV": true,
+        "st_code_contains_35": true,
+        "st_code_contains_75": true,
+        "clean_reopen_status": true,
+        "clean_compile_scraped": true,
+        "container_cfbf_valid": true,
+        "screens_count_retained": true,
+        "hmi_objects_count_retained": true
+      },
+      "native_compiler_output_lines": [
+        "Compiler V12.0.200.82",
+        "Loading application symbols...",
+        "EnhancedDisplayAttributes",
+        "No error detected",
+        "Loading application symbols...",
+        "STBlock1",
+        "Building application data...",
+        "Relocating code...",
+        "No error detected",
+        "Online Change is disabled",
+        "Generate OCS code...",
+        "No error detected"
+      ],
+      "screenshots": [
+        "C:\\HornerAI\\horner-cscape-mcp\\artifacts\\screenshots\\p4_redo_cscape_reopened_35_75.png",
+        "C:\\Users\\ArmandoSilva\\artifacts\\screenshots\\p4_redo_cscape_reopened_35_75.png"
+      ],
+      "verified_state": {
+        "revision": "1.1.0",
+        "lo_limit": 35.0,
+        "hi_limit": 75.0,
+        "level_label": "Buffer Tank Level PV"
+      },
+      "message": "Durability and semantic check passed across save, close, reopen, and native live compile.",
+      "success": true,
+      "errors": [],
+      "warnings": [],
+      "diagnostics": [],
+      "failure_locations": [],
+      "failure_location": null
+    },
+    "timestamp_utc": "2026-09-17T17:12:09.676446+00:00"
+  },
+  {
+    "tool": "cscape_fixture_selective_edit",
+    "arguments": {
+      "project_name": "TankLevel_P4_Dedicated",
+      "new_lo_limit": 35.0,
+      "new_hi_limit": 75.0,
+      "new_level_label": "Buffer Tank Level PV"
+    },
+    "response": {
+      "status": "success",
+      "action": "NO_OP",
+      "duplicate_prevented": true,
+      "revision": "1.1.0",
+      "message": "Identical request detected. Target state is already active; zero duplicate mutations applied.",
+      "limits": {
+        "lo_limit": 35.0,
+        "hi_limit": 75.0
+      },
+      "level_label": "Buffer Tank Level PV",
+      "success": true,
+      "errors": [],
+      "warnings": [],
+      "diagnostics": [],
+      "failure_locations": [],
+      "failure_location": null
+    },
+    "timestamp_utc": "2026-09-17T17:12:21.015750+00:00"
+  },
+  {
+    "tool": "cscape_fixture_selective_edit",
+    "arguments": {
+      "project_name": "TankLevel_P4_Dedicated",
+      "new_lo_limit": 85.0,
+      "new_hi_limit": 25.0,
+      "new_level_label": "Illegal Inverted Limits"
+    },
+    "response": {
+      "status": "failed",
+      "error_code": "ERR_INVALID_LIMITS",
+      "message": "Invalid limits: new_lo_limit (85.0) must be strictly less than new_hi_limit (25.0)",
+      "data": {
+        "new_lo_limit": 85.0,
+        "new_hi_limit": 25.0
+      },
+      "success": false,
+      "errors": [
+        "Invalid limits: new_lo_limit (85.0) must be strictly less than new_hi_limit (25.0)"
+      ],
+      "warnings": [],
+      "diagnostics": [
+        {
+          "level": "ERROR",
+          "severity": "ERROR",
+          "message": "Invalid limits: new_lo_limit (85.0) must be strictly less than new_hi_limit (25.0)",
+          "file_path": "TankLevel_P4_Dedicated"
+        }
+      ],
+      "failure_locations": [
+        {
+          "file_path": "TankLevel_P4_Dedicated",
+          "full_path": "TankLevel_P4_Dedicated",
+          "line": null,
+          "column": null,
+          "error_code": "ERR_INVALID_LIMITS",
+          "severity": "ERROR",
+          "message": "Invalid limits: new_lo_limit (85.0) must be strictly less than new_hi_limit (25.0)"
+        }
+      ],
+      "failure_location": {
+        "file_path": "TankLevel_P4_Dedicated",
+        "full_path": "TankLevel_P4_Dedicated",
+        "line": null,
+        "column": null,
+        "error_code": "ERR_INVALID_LIMITS",
+        "severity": "ERROR",
+        "message": "Invalid limits: new_lo_limit (85.0) must be strictly less than new_hi_limit (25.0)"
+      }
+    },
+    "timestamp_utc": "2026-09-17T17:12:21.020074+00:00"
+  },
+  {
+    "tool": "cscape_fixture_selective_edit",
+    "arguments": {
+      "project_name": "TankLevel_P4_Dedicated",
+      "new_lo_limit": 35.0,
+      "new_hi_limit": 75.0,
+      "new_level_label": "---[ ]--- Injected Ladder Contact"
+    },
+    "response": {
+      "status": "failed",
+      "error_code": "ERR_LADDER_FORBIDDEN",
+      "message": "Forbidden ladder construct in level label: ---[ ]---",
+      "data": {
+        "forbidden_token": "---[ ]---"
+      },
+      "success": false,
+      "errors": [
+        "Forbidden ladder construct in level label: ---[ ]---"
+      ],
+      "warnings": [],
+      "diagnostics": [
+        {
+          "level": "ERROR",
+          "severity": "ERROR",
+          "message": "Forbidden ladder construct in level label: ---[ ]---",
+          "file_path": "TankLevel_P4_Dedicated"
+        }
+      ],
+      "failure_locations": [
+        {
+          "file_path": "TankLevel_P4_Dedicated",
+          "full_path": "TankLevel_P4_Dedicated",
+          "line": null,
+          "column": null,
+          "error_code": "ERR_LADDER_FORBIDDEN",
+          "severity": "ERROR",
+          "message": "Forbidden ladder construct in level label: ---[ ]---"
+        }
+      ],
+      "failure_location": {
+        "file_path": "TankLevel_P4_Dedicated",
+        "full_path": "TankLevel_P4_Dedicated",
+        "line": null,
+        "column": null,
+        "error_code": "ERR_LADDER_FORBIDDEN",
+        "severity": "ERROR",
+        "message": "Forbidden ladder construct in level label: ---[ ]---"
+      }
+    },
+    "timestamp_utc": "2026-09-17T17:12:21.026511+00:00"
+  },
+  {
+    "tool": "cscape_fixture_detect_conflict",
+    "arguments": {
+      "project_name": "TankLevel_P4_Dedicated",
+      "expected_hash": "deadbeef0000111122223333444455556666777788889999aaaabbbbccccdddd"
+    },
+    "response": {
+      "status": "failed",
+      "error_code": "ERR_EXTERNAL_CONFLICT",
+      "conflict_detected": true,
+      "expected_hash": "deadbeef0000111122223333444455556666777788889999aaaabbbbccccdddd",
+      "actual_hash": "f5c4f9a35acc11613bffccea6292f78017e111249d2d39763bafe8c3b8876525",
+      "message": "External manual conflict detected: expected deadbeef0000111122223333444455556666777788889999aaaabbbbccccdddd, actual f5c4f9a35acc11613bffccea6292f78017e111249d2d39763bafe8c3b8876525",
+      "success": false,
+      "errors": [
+        "External manual conflict detected: expected deadbeef0000111122223333444455556666777788889999aaaabbbbccccdddd, actual f5c4f9a35acc11613bffccea6292f78017e111249d2d39763bafe8c3b8876525"
+      ],
+      "warnings": [],
+      "diagnostics": [
+        {
+          "level": "ERROR",
+          "severity": "ERROR",
+          "message": "External manual conflict detected: expected deadbeef0000111122223333444455556666777788889999aaaabbbbccccdddd, actual f5c4f9a35acc11613bffccea6292f78017e111249d2d39763bafe8c3b8876525",
+          "file_path": "TankLevel_P4_Dedicated"
+        }
+      ],
+      "failure_locations": [
+        {
+          "file_path": "TankLevel_P4_Dedicated",
+          "full_path": "TankLevel_P4_Dedicated",
+          "line": null,
+          "column": null,
+          "error_code": "ERR_EXTERNAL_CONFLICT",
+          "severity": "ERROR",
+          "message": "External manual conflict detected: expected deadbeef0000111122223333444455556666777788889999aaaabbbbccccdddd, actual f5c4f9a35acc11613bffccea6292f78017e111249d2d39763bafe8c3b8876525"
+        }
+      ],
+      "failure_location": {
+        "file_path": "TankLevel_P4_Dedicated",
+        "full_path": "TankLevel_P4_Dedicated",
+        "line": null,
+        "column": null,
+        "error_code": "ERR_EXTERNAL_CONFLICT",
+        "severity": "ERROR",
+        "message": "External manual conflict detected: expected deadbeef0000111122223333444455556666777788889999aaaabbbbccccdddd, actual f5c4f9a35acc11613bffccea6292f78017e111249d2d39763bafe8c3b8876525"
+      }
+    },
+    "timestamp_utc": "2026-09-17T17:12:21.053251+00:00"
+  }
+]

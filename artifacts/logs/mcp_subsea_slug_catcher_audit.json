@@ -1,0 +1,234 @@
+{
+  "audit_step": 108,
+  "name": "Offshore Subsea Deepwater Multiphase Slug Catcher Sump Surge Attenuation Audit",
+  "timestamp": "2026-09-05T12:12:59.629Z",
+  "completed_at": "2026-09-05T12:13:11.287Z",
+  "cscape_pid": 9472,
+  "cscape_hwnd": "0x9b08f8",
+  "total_cycles": 600,
+  "metrics": {
+    "max_phase1_level_error_pct": 0.0,
+    "mean_phase1_level_error_pct": 0.0,
+    "max_phase2_uncomp_drift_pct": 6.71,
+    "mean_phase2_uncomp_drift_pct": 4.93,
+    "max_phase3_comp_error_pct": 0.0,
+    "mean_phase3_comp_error_pct": 0.0,
+    "surge_rejection_pct": 100.0,
+    "phase4_final_level_error_pct": 0.061,
+    "phase4_mean_tail_level_error_pct": 0.0377,
+    "flare_carryover_esd_trip_cycle": 501,
+    "high_high_trip_level_pct": 85.0
+  },
+  "trace_samples": [
+    {
+      "cycle": 0,
+      "phase": "PHASE_1_DEEPWATER_EQUILIBRIUM",
+      "target_sp": 50.0,
+      "sump_level": 50.0,
+      "liquid_rate": 55.0,
+      "esd_trip": false,
+      "cv_pid": 50.0
+    },
+    {
+      "cycle": 50,
+      "phase": "PHASE_1_DEEPWATER_EQUILIBRIUM",
+      "target_sp": 50.0,
+      "sump_level": 50.0,
+      "liquid_rate": 55.0,
+      "esd_trip": false,
+      "cv_pid": 50.0
+    },
+    {
+      "cycle": 100,
+      "phase": "PHASE_1_DEEPWATER_EQUILIBRIUM",
+      "target_sp": 50.0,
+      "sump_level": 50.0,
+      "liquid_rate": 55.0,
+      "esd_trip": false,
+      "cv_pid": 50.0
+    },
+    {
+      "cycle": 101,
+      "phase": "PHASE_2_RISER_SLUG_SURGE_UNCOMP",
+      "target_sp": 50.0,
+      "sump_level": 50.023,
+      "liquid_rate": 55.4,
+      "esd_trip": false,
+      "cv_pid": 50.0
+    },
+    {
+      "cycle": 125,
+      "phase": "PHASE_2_RISER_SLUG_SURGE_UNCOMP",
+      "target_sp": 50.0,
+      "sump_level": 54.558,
+      "liquid_rate": 63.8,
+      "esd_trip": false,
+      "cv_pid": 42.88
+    },
+    {
+      "cycle": 150,
+      "phase": "PHASE_2_RISER_SLUG_SURGE_UNCOMP",
+      "target_sp": 50.0,
+      "sump_level": 56.663,
+      "liquid_rate": 72.5,
+      "esd_trip": false,
+      "cv_pid": 26.81
+    },
+    {
+      "cycle": 175,
+      "phase": "PHASE_2_RISER_SLUG_SURGE_UNCOMP",
+      "target_sp": 50.0,
+      "sump_level": 55.594,
+      "liquid_rate": 81.2,
+      "esd_trip": false,
+      "cv_pid": 15.29
+    },
+    {
+      "cycle": 200,
+      "phase": "PHASE_2_RISER_SLUG_SURGE_UNCOMP",
+      "target_sp": 50.0,
+      "sump_level": 55.532,
+      "liquid_rate": 90.0,
+      "esd_trip": false,
+      "cv_pid": 4.75
+    },
+    {
+      "cycle": 201,
+      "phase": "PHASE_3_DECOUPLED_SURGE_ATTENUATION",
+      "target_sp": 50.0,
+      "sump_level": 50.0,
+      "liquid_rate": 90.0,
+      "esd_trip": false,
+      "cv_pid": 50.0
+    },
+    {
+      "cycle": 225,
+      "phase": "PHASE_3_DECOUPLED_SURGE_ATTENUATION",
+      "target_sp": 50.0,
+      "sump_level": 50.0,
+      "liquid_rate": 90.0,
+      "esd_trip": false,
+      "cv_pid": 50.0
+    },
+    {
+      "cycle": 250,
+      "phase": "PHASE_3_DECOUPLED_SURGE_ATTENUATION",
+      "target_sp": 50.0,
+      "sump_level": 50.0,
+      "liquid_rate": 90.0,
+      "esd_trip": false,
+      "cv_pid": 50.0
+    },
+    {
+      "cycle": 275,
+      "phase": "PHASE_3_DECOUPLED_SURGE_ATTENUATION",
+      "target_sp": 50.0,
+      "sump_level": 50.0,
+      "liquid_rate": 90.0,
+      "esd_trip": false,
+      "cv_pid": 50.0
+    },
+    {
+      "cycle": 300,
+      "phase": "PHASE_3_DECOUPLED_SURGE_ATTENUATION",
+      "target_sp": 50.0,
+      "sump_level": 50.0,
+      "liquid_rate": 90.0,
+      "esd_trip": false,
+      "cv_pid": 50.0
+    },
+    {
+      "cycle": 350,
+      "phase": "PHASE_3_DECOUPLED_SURGE_ATTENUATION",
+      "target_sp": 50.0,
+      "sump_level": 50.0,
+      "liquid_rate": 90.0,
+      "esd_trip": false,
+      "cv_pid": 50.0
+    },
+    {
+      "cycle": 351,
+      "phase": "PHASE_4_INVENTORY_DRAW_DOWN_STEP",
+      "target_sp": 42.0,
+      "sump_level": 49.328,
+      "liquid_rate": 75.0,
+      "esd_trip": false,
+      "cv_pid": 36.56
+    },
+    {
+      "cycle": 400,
+      "phase": "PHASE_4_INVENTORY_DRAW_DOWN_STEP",
+      "target_sp": 42.0,
+      "sump_level": 41.239,
+      "liquid_rate": 75.0,
+      "esd_trip": false,
+      "cv_pid": 53.85
+    },
+    {
+      "cycle": 450,
+      "phase": "PHASE_4_INVENTORY_DRAW_DOWN_STEP",
+      "target_sp": 42.0,
+      "sump_level": 41.875,
+      "liquid_rate": 75.0,
+      "esd_trip": false,
+      "cv_pid": 49.47
+    },
+    {
+      "cycle": 500,
+      "phase": "PHASE_4_INVENTORY_DRAW_DOWN_STEP",
+      "target_sp": 42.0,
+      "sump_level": 42.061,
+      "liquid_rate": 75.0,
+      "esd_trip": false,
+      "cv_pid": 50.03
+    },
+    {
+      "cycle": 501,
+      "phase": "PHASE_5_FLARE_CARRYOVER_ESD_TRIP",
+      "target_sp": 42.0,
+      "sump_level": 42.061,
+      "liquid_rate": 30.0,
+      "esd_trip": true,
+      "cv_pid": 50.02
+    },
+    {
+      "cycle": 520,
+      "phase": "PHASE_5_FLARE_CARRYOVER_ESD_TRIP",
+      "target_sp": 42.0,
+      "sump_level": 42.061,
+      "liquid_rate": 30.0,
+      "esd_trip": true,
+      "cv_pid": 49.9
+    },
+    {
+      "cycle": 550,
+      "phase": "PHASE_5_FLARE_CARRYOVER_ESD_TRIP",
+      "target_sp": 42.0,
+      "sump_level": 42.061,
+      "liquid_rate": 30.0,
+      "esd_trip": true,
+      "cv_pid": 49.75
+    },
+    {
+      "cycle": 599,
+      "phase": "PHASE_5_FLARE_CARRYOVER_ESD_TRIP",
+      "target_sp": 42.0,
+      "sump_level": 42.061,
+      "liquid_rate": 30.0,
+      "esd_trip": true,
+      "cv_pid": 49.5
+    }
+  ],
+  "cscape_health": {
+    "healthy": true,
+    "pid": 9472,
+    "hwnd": "0x9b08f8",
+    "desktop": "Default",
+    "is_hung": false,
+    "wm_null_ping_ok": true,
+    "working_set_mb": 227.67,
+    "num_threads": 16,
+    "uptime_sec": 320.01
+  },
+  "download_lockout_verified": true
+}

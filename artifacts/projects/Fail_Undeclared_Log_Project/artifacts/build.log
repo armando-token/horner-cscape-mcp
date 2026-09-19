@@ -1,0 +1,14 @@
+=== Horner Cscape 10.2 Compile Pass: Fail_Undeclared_Log_Project ===
+Clean Build: True
+Mode: IEC 61131-3 Structured Text (Advanced Ladder Excluded)
+Timestamp: 2026-09-05T02:27:32.264940
+----------------------------------------------------------------
+Compiling POU: POU_UndeclaredVar (101 bytes)...
+  POU_UndeclaredVar.st(6,1): error ERR_UNDECLARED_VAR: Assignment to undeclared variable 'PhantomOutput'.
+  POU_UndeclaredVar.st(6,1): error ERR_UNDECLARED_VAR: Undeclared variable or identifier 'PhantomOutput' used in logic.
+----------------------------------------------------------------
+Build Result: FAILED
+Errors: 2, Warnings: 0
+Estimated Code Size: 1024 bytes, Data Size: 512 bytes
+Duration: 0.013s
+Hardware Lockout: ENFORCED (Zero PLC communication / No download)

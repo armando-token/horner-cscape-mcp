@@ -1,0 +1,226 @@
+================================================================================
+HORNER CSCAPE MCP - GATE G1 NEXT CASE AFTER ONE APPLIED AUDIT REPORT
+Mission ID: G1_NEXT_CASE_AFTER_ONE_APPLIED
+Generated (UTC): 2026-09-09T06:00:00Z
+Classification: STRICT OFFLINE FAIL-CLOSED HARDENING & VERIFICATION
+Environment: Offline/DEV
+Status Contract Invariant: success | failed | blocked | inconclusive
+================================================================================
+
+1. CASE IDENTIFICATION
+--------------------------------------------------------------------------------
+- Case ID: CASE 49
+- Vulnerability Title: cscape_compile_project Path Traversal, Dot/Slash Escapes, & Uncontained Directory Compilation Bypass
+- Component: FastMCP Project Compilation & Safety Boundary
+- Target Source File: src/mcp/tools.py (Lines 2732-2805, 2905-2965)
+- Test Identifier: tests/test_g1_false_success_negative_cases.py::test_case49_compile_project_path_traversal_and_escapes_fail_closed
+- Associated Security Rule: Hardware & File System Security Boundary (AGENTS.md Section 4)
+
+2. VULNERABILITY ANALYSIS & FAIL-CLOSED HAZARD
+--------------------------------------------------------------------------------
+- Trigger Conditions:
+  1. Invoking cscape_compile_project(project_name=".") or project_name="./" or project_name=".\\"
+  2. Invoking cscape_compile_project(project_name="../../escape") or project_name="../outside"
+  3. Invoking cscape_compile_project(project_name=str(uncontained_dir)) where uncontained_dir
+     is an arbitrary disk directory lacking authentic Cscape project files (.csp, .cpj, cscape_project.json).
+- Flaw in Previous Behavior:
+  1. When project_name was supplied, cscape_compile_project executed:
+         cand_p = Path(project_name)
+         if cand_p.is_dir():
+             proj_dir = cand_p.resolve()
+  2. For project_name=".", cand_p.is_dir() evaluated to True for the current working directory,
+     allowing compilation of arbitrary workspace folders rather than managed Cscape projects.
+  3. Paths containing traversal sequences (e.g., "../../escape") or relative slash directory
+     references ("./", ".\\") bypassed SafetyGuard.validate_project_name() whenever they
+     resolved to existing directories.
+  4. Any arbitrary folder with a pous/ subfolder was treated as a genuine Cscape project,
+     even if it had no .csp, .cpj, or cscape_project.json manifest, violating fail-closed
+     container integrity.
+
+3. FAIL-CLOSED FIX IMPLEMENTATION (WHAT CHANGED)
+--------------------------------------------------------------------------------
+1. In src/mcp/tools.py (cscape_compile_project):
+   - Added strict traversal and dot/slash guard at candidate resolution:
+     cand_p = Path(project_name)
+     clean_project_name = str(project_name)
+     if cand_p.is_dir() and project_name.strip() not in (".", "/", "\\", "..") and ".." not in project_name:
+         proj_dir = cand_p.resolve()
+     else:
+         from src.security.guard import SafetyGuard
+         try:
+             clean_project_name = SafetyGuard.validate_project_name(project_name)
+         except Exception as e:
+             err_msg = f"Invalid project name '{project_name}': {e}"
+             err_code = "SECURITY_BLOCKED" if any(k in type(e).__name__ for k in ("Security", "Traversal", "Device")) else "INVALID_PROJECT_NAME"
+             return {
+                 "success": False,
+                 "compile_successful": False,
+                 "status": "failed",
+                 "error_code": err_code,
+                 "project_name": str(project_name),
+                 "clean_build": clean_build,
+                 "error_count": 1,
+                 "warning_count": 0,
+                 "errors": [err_msg],
+                 "warnings": [],
+                 "build_log": err_msg,
+                 "diagnostics": [{
+                     "level": "ERROR",
+                     "message": err_msg,
+                     "file_path": f"{project_name}.csp",
+                     "line": 1,
+                     "column": 1,
+                     "error_code": err_code,
+                 }],
+                 "hardware_lockout_enforced": True,
+                 "pous_compiled": [],
+                 "memory_footprint": {},
+                 "failure_locations": [{
+                     "file_path": f"{project_name}.csp",
+                     "full_path": None,
+                     "line": 1,
+                     "column": 1,
+                     "error_code": err_code,
+                     "severity": "ERROR",
+                     "message": err_msg,
+                 }],
+                 "failure_location": {
+                     "file_path": f"{project_name}.csp",
+                     "full_path": None,
+                     "line": 1,
+                     "column": 1,
+                     "error_code": err_code,
+                     "severity": "ERROR",
+                     "message": err_msg,
+                 },
+                 "message": err_msg,
+                 "compiled_at": _get_utc_timestamp(),
+             }
+   - Added authentic container verification check before proceeding:
+     has_container = (
+         (proj_dir / "cscape_project.json").exists()
+         or any(proj_dir.glob("*.csp"))
+         or any(proj_dir.glob("*.cpj"))
+     )
+     if not has_container:
+         err_msg = f"Project directory '{proj_dir}' exists but contains no valid project container (.csp, .cpj, cscape_project.json)."
+         return {
+             "success": False,
+             "compile_successful": False,
+             "status": "failed",
+             "error_code": "PROJECT_NOT_FOUND",
+             "project_name": clean_project_name,
+             "clean_build": clean_build,
+             "error_count": 1,
+             "warning_count": 0,
+             "errors": [err_msg],
+             "warnings": [],
+             "build_log": err_msg,
+             "diagnostics": [{
+                 "level": "ERROR",
+                 "message": err_msg,
+                 "file_path": f"{clean_project_name}.csp",
+                 "line": 1,
+                 "column": 1,
+                 "error_code": "PROJECT_NOT_FOUND",
+             }],
+             "hardware_lockout_enforced": True,
+             "pous_compiled": [],
+             "memory_footprint": {
+                 "code_size_bytes": 0,
+                 "data_size_bytes": 0,
+                 "retain_size_bytes": 0,
+                 "total_size_bytes": 0,
+                 "ast_statement_count": 0,
+                 "ast_variable_count": 0,
+                 "ast_expression_count": 0,
+                 "source_bytes_total": 0,
+             },
+             "failure_locations": [{
+                 "file_path": f"{clean_project_name}.csp",
+                 "full_path": str(proj_dir),
+                 "line": 1,
+                 "column": 1,
+                 "error_code": "PROJECT_NOT_FOUND",
+                 "severity": "ERROR",
+                 "message": err_msg,
+             }],
+             "failure_location": {
+                 "file_path": f"{clean_project_name}.csp",
+                 "full_path": str(proj_dir),
+                 "line": 1,
+                 "column": 1,
+                 "error_code": "PROJECT_NOT_FOUND",
+                 "severity": "ERROR",
+                 "message": err_msg,
+             },
+             "message": err_msg,
+             "compiled_at": _get_utc_timestamp(),
+         }
+
+2. In tests/test_g1_false_success_negative_cases.py:
+   - Added test_case49_compile_project_path_traversal_and_escapes_fail_closed verifying:
+     [A] Dot and slash directory references (".", "./", ".\\") fail closed with SECURITY_BLOCKED or INVALID_PROJECT_NAME and status="failed".
+     [B] Path traversal sequences ("../../escape", "../outside", "proj/../../escape") fail closed with SECURITY_BLOCKED and status="failed".
+     [C] Existing directory lacking a Cscape project container (.csp, .cpj, cscape_project.json) fails closed with PROJECT_NOT_FOUND and status="failed".
+
+3. Dual-Root Synchronization:
+   - Mirrored across C:\HornerAI\horner-cscape-mcp and C:\Users\ArmandoSilva.
+
+4. EVIDENCE PATHS & CODE ARTIFACTS
+--------------------------------------------------------------------------------
+- Primary Source File: src/mcp/tools.py (Lines 2732-2805, 2905-2965)
+- Negative Test Harness: tests/test_g1_false_success_negative_cases.py (Lines 1439-1476)
+- Security Guard Interface: src/security/guard.py (SafetyGuard.validate_project_name)
+- Project Container Paths: artifacts/projects/
+- Synchronization Targets:
+  - C:\HornerAI\horner-cscape-mcp\src\mcp\tools.py
+  - C:\Users\ArmandoSilva\src\mcp\tools.py
+  - C:\HornerAI\horner-cscape-mcp\tests\test_g1_false_success_negative_cases.py
+  - C:\Users\ArmandoSilva\tests\test_g1_false_success_negative_cases.py
+
+5. OPERATIONAL DIRECTIVES & INVARIANTS COMPLIANCE
+--------------------------------------------------------------------------------
+- Distinct Fail-Closed Case: Case 49 uniquely addresses cscape_compile_project path traversal,
+  escape sequences, and uncontained directory compilation.
+- Offline / DEV Invariant: Software-only execution; physical PLC hardware access is hard-blocked.
+- Single GUI Agent Boundary: winsta0\Default interactive desktop untouched; zero GUI automation spawned.
+- Status Contract Enforcement: All fail-closed return branches strictly adhere to the 4-state
+  ontology: status in ("success", "failed", "blocked", "inconclusive").
+- Prohibited Actions Enforced:
+  - No PLC hardware connections.
+  - No live Cscape GUI interactions.
+  - No claims of VERIFIED_LIVE.
+  - No premature Gate G5 completion declarations.
+  - No pseudo-status claims (100% / VERIFIED / PERFECT).
+  - No unauthorized subagent fanout.
+
+6. CONTINUATION: NEXT DISTINCT CASE QUEUED (CASE 50)
+--------------------------------------------------------------------------------
+- Queued Case ID: CASE 50
+- Vulnerability Title: cscape_get_diagnostics Dot/Slash Escapes, Path Traversal, & Uncontained Directory Inspection Bypass
+- Component: FastMCP Diagnostics & Health Reporting Boundary
+- Target Source File: src/mcp/tools.py (Lines 3101-3165)
+- Target Test File: tests/test_g1_false_success_negative_cases.py (test_case50)
+- Vulnerability Analysis:
+  In src/mcp/tools.py (cscape_get_diagnostics):
+      cand_p = Path(project_name)
+      if cand_p.is_dir() and project_name.strip() not in (".", "/"):
+          proj_dir = cand_p.resolve()
+  Flaw: The exclusion check `project_name.strip() not in (".", "/")` fails to catch:
+  1. Windows backslash dot directory `".\\"` or slash relative directory `"./"`
+  2. Relative path traversal sequences like `"../escape"` or `"../../outside"`
+  3. Directories lacking authentic Cscape containers (.csp, .cpj, cscape_project.json),
+     allowing uncontained filesystem directories to be inspected without validation.
+- Planned Remediation:
+  1. Enforce strict directory traversal rejection in cscape_get_diagnostics matching Case 49:
+     `if cand_p.is_dir() and project_name.strip() not in (".", "/", "\\", "..") and ".." not in project_name:`
+  2. Route all invalid/traversal paths through SafetyGuard.validate_project_name() with
+     fail-closed error_code="SECURITY_BLOCKED" and status="failed".
+  3. Enforce authentic container check (cscape_project.json, *.csp, *.cpj) before inspecting
+     directory contents, failing closed with PROJECT_NOT_FOUND.
+  4. Add test_case50_get_diagnostics_path_traversal_and_escapes_fail_closed to
+     tests/test_g1_false_success_negative_cases.py.
+================================================================================
+END OF GATE G1 NEXT CASE AFTER ONE APPLIED AUDIT REPORT
+================================================================================

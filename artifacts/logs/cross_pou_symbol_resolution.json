@@ -1,0 +1,1202 @@
+{
+  "step": 136,
+  "title": "Multi-POU Cross-Reference, Symbol Resolution & Memory Allocation Matrix Verification",
+  "timestamp_utc": "2026-09-05T17:36:34.814635+00:00",
+  "status": "PASSED",
+  "target_project": "TankLevelClosedLoop",
+  "cscape_health": {
+    "gate_status": "READY_FOR_TESTS",
+    "ready_for_tests": true,
+    "pid": 14580,
+    "name": "Cscape.exe",
+    "status": "running",
+    "window_title": "Cscape - Logged In : \"armando@controlnautas.com\" - [TankLevelClosedLoop.csp]"
+  },
+  "pous_analyzed": [
+    {
+      "name": "TankLevelClosedLoop.st",
+      "path": "C:\\HornerAI\\horner-cscape-mcp\\artifacts\\projects\\TankLevelClosedLoop\\pous\\TankLevelClosedLoop.st",
+      "line_count": 96,
+      "ast_node_count": 217,
+      "parse_time_ms": 14.065,
+      "local_declarations": {
+        "RawLevelInput": {
+          "name": "RawLevelInput",
+          "data_type": "INT",
+          "initial_value": "16000",
+          "address": null,
+          "array_bounds": null
+        },
+        "TankLevelPV": {
+          "name": "TankLevelPV",
+          "data_type": "REAL",
+          "initial_value": "50.0",
+          "address": null,
+          "array_bounds": null
+        },
+        "Setpoint": {
+          "name": "Setpoint",
+          "data_type": "REAL",
+          "initial_value": "60.0",
+          "address": null,
+          "array_bounds": null
+        },
+        "ControlOutput": {
+          "name": "ControlOutput",
+          "data_type": "REAL",
+          "initial_value": "0.0",
+          "address": null,
+          "array_bounds": null
+        },
+        "RawPumpOutput": {
+          "name": "RawPumpOutput",
+          "data_type": "INT",
+          "initial_value": "0",
+          "address": null,
+          "array_bounds": null
+        },
+        "RawValveOutput": {
+          "name": "RawValveOutput",
+          "data_type": "INT",
+          "initial_value": "0",
+          "address": null,
+          "array_bounds": null
+        },
+        "ManualMode": {
+          "name": "ManualMode",
+          "data_type": "BOOL",
+          "initial_value": "FALSE",
+          "address": null,
+          "array_bounds": null
+        },
+        "ManualOutput": {
+          "name": "ManualOutput",
+          "data_type": "REAL",
+          "initial_value": "0.0",
+          "address": null,
+          "array_bounds": null
+        },
+        "Kp": {
+          "name": "Kp",
+          "data_type": "REAL",
+          "initial_value": "2.5",
+          "address": null,
+          "array_bounds": null
+        },
+        "Ki": {
+          "name": "Ki",
+          "data_type": "REAL",
+          "initial_value": "0.2",
+          "address": null,
+          "array_bounds": null
+        },
+        "Kd": {
+          "name": "Kd",
+          "data_type": "REAL",
+          "initial_value": "0.05",
+          "address": null,
+          "array_bounds": null
+        },
+        "OutMin": {
+          "name": "OutMin",
+          "data_type": "REAL",
+          "initial_value": "0.0",
+          "address": null,
+          "array_bounds": null
+        },
+        "OutMax": {
+          "name": "OutMax",
+          "data_type": "REAL",
+          "initial_value": "100.0",
+          "address": null,
+          "array_bounds": null
+        },
+        "Error": {
+          "name": "Error",
+          "data_type": "REAL",
+          "initial_value": "0.0",
+          "address": null,
+          "array_bounds": null
+        },
+        "LastError": {
+          "name": "LastError",
+          "data_type": "REAL",
+          "initial_value": "0.0",
+          "address": null,
+          "array_bounds": null
+        },
+        "IntegralSum": {
+          "name": "IntegralSum",
+          "data_type": "REAL",
+          "initial_value": "0.0",
+          "address": null,
+          "array_bounds": null
+        },
+        "DerivTerm": {
+          "name": "DerivTerm",
+          "data_type": "REAL",
+          "initial_value": "0.0",
+          "address": null,
+          "array_bounds": null
+        },
+        "PumpRunCmd": {
+          "name": "PumpRunCmd",
+          "data_type": "BOOL",
+          "initial_value": "FALSE",
+          "address": null,
+          "array_bounds": null
+        },
+        "InflowValveCmd": {
+          "name": "InflowValveCmd",
+          "data_type": "BOOL",
+          "initial_value": "FALSE",
+          "address": null,
+          "array_bounds": null
+        },
+        "AlarmHighHigh": {
+          "name": "AlarmHighHigh",
+          "data_type": "BOOL",
+          "initial_value": "FALSE",
+          "address": null,
+          "array_bounds": null
+        },
+        "AlarmHigh": {
+          "name": "AlarmHigh",
+          "data_type": "BOOL",
+          "initial_value": "FALSE",
+          "address": null,
+          "array_bounds": null
+        },
+        "AlarmLow": {
+          "name": "AlarmLow",
+          "data_type": "BOOL",
+          "initial_value": "FALSE",
+          "address": null,
+          "array_bounds": null
+        },
+        "AlarmLowLow": {
+          "name": "AlarmLowLow",
+          "data_type": "BOOL",
+          "initial_value": "FALSE",
+          "address": null,
+          "array_bounds": null
+        },
+        "CycleCounter": {
+          "name": "CycleCounter",
+          "data_type": "DINT",
+          "initial_value": "0",
+          "address": null,
+          "array_bounds": null
+        }
+      },
+      "referenced_variables": [
+        "AlarmHigh",
+        "AlarmHighHigh",
+        "AlarmLow",
+        "AlarmLowLow",
+        "ControlOutput",
+        "CycleCounter",
+        "DerivTerm",
+        "Error",
+        "InflowValveCmd",
+        "IntegralSum",
+        "Kd",
+        "Ki",
+        "Kp",
+        "LastError",
+        "ManualMode",
+        "ManualOutput",
+        "OutMax",
+        "OutMin",
+        "PumpRunCmd",
+        "RawLevelInput",
+        "RawPumpOutput",
+        "RawValveOutput",
+        "Setpoint",
+        "TankLevelPV"
+      ],
+      "function_calls": [
+        "INT_TO_REAL",
+        "REAL_TO_INT"
+      ]
+    },
+    {
+      "name": "AlarmMonitor.st",
+      "path": "C:\\HornerAI\\horner-cscape-mcp\\artifacts\\projects\\TankLevelClosedLoop\\pous\\AlarmMonitor.st",
+      "line_count": 4,
+      "ast_node_count": 6,
+      "parse_time_ms": 0.181,
+      "local_declarations": {
+        "trip": {
+          "name": "trip",
+          "data_type": "BOOL",
+          "initial_value": null,
+          "address": null,
+          "array_bounds": null
+        }
+      },
+      "referenced_variables": [
+        "trip"
+      ],
+      "function_calls": []
+    },
+    {
+      "name": "BrokenPOU.st",
+      "path": "C:\\HornerAI\\horner-cscape-mcp\\artifacts\\projects\\TankLevelClosedLoop\\pous\\BrokenPOU.st",
+      "line_count": 7,
+      "ast_node_count": 8,
+      "parse_time_ms": 0.205,
+      "local_declarations": {
+        "RawVal": {
+          "name": "RawVal",
+          "data_type": "INT",
+          "initial_value": null,
+          "address": null,
+          "array_bounds": null
+        }
+      },
+      "referenced_variables": [
+        "RawVal"
+      ],
+      "function_calls": []
+    },
+    {
+      "name": "AuxPumpControl.st",
+      "path": "C:\\HornerAI\\horner-cscape-mcp\\artifacts\\projects\\TankLevelClosedLoop\\pous\\AuxPumpControl.st",
+      "line_count": 4,
+      "ast_node_count": 6,
+      "parse_time_ms": 0.15,
+      "local_declarations": {
+        "cmd": {
+          "name": "cmd",
+          "data_type": "BOOL",
+          "initial_value": null,
+          "address": null,
+          "array_bounds": null
+        }
+      },
+      "referenced_variables": [
+        "cmd"
+      ],
+      "function_calls": []
+    },
+    {
+      "name": "SafetyInterlockST.st",
+      "path": "C:\\HornerAI\\horner-cscape-mcp\\artifacts\\projects\\TankLevelClosedLoop\\pous\\SafetyInterlockST.st",
+      "line_count": 4,
+      "ast_node_count": 6,
+      "parse_time_ms": 0.147,
+      "local_declarations": {
+        "x": {
+          "name": "x",
+          "data_type": "INT",
+          "initial_value": null,
+          "address": null,
+          "array_bounds": null
+        }
+      },
+      "referenced_variables": [
+        "x"
+      ],
+      "function_calls": []
+    }
+  ],
+  "symbol_resolution": {
+    "total_symbols_evaluated": 28,
+    "resolved_symbols_count": 28,
+    "unresolved_symbols_count": 0,
+    "resolution_percentage": 100.0,
+    "matrix": [
+      {
+        "pou_name": "TankLevelClosedLoop.st",
+        "symbol_name": "AlarmHigh",
+        "declared_in_pou": true,
+        "local_data_type": "BOOL",
+        "in_global_table": true,
+        "global_data_type": "BOOL",
+        "global_register_tag": "%M8",
+        "resolution_status": "RESOLVED_LOCAL_AND_GLOBAL",
+        "is_resolved": true
+      },
+      {
+        "pou_name": "TankLevelClosedLoop.st",
+        "symbol_name": "AlarmHighHigh",
+        "declared_in_pou": true,
+        "local_data_type": "BOOL",
+        "in_global_table": true,
+        "global_data_type": "BOOL",
+        "global_register_tag": "%M7",
+        "resolution_status": "RESOLVED_LOCAL_AND_GLOBAL",
+        "is_resolved": true
+      },
+      {
+        "pou_name": "TankLevelClosedLoop.st",
+        "symbol_name": "AlarmLow",
+        "declared_in_pou": true,
+        "local_data_type": "BOOL",
+        "in_global_table": true,
+        "global_data_type": "BOOL",
+        "global_register_tag": "%M9",
+        "resolution_status": "RESOLVED_LOCAL_AND_GLOBAL",
+        "is_resolved": true
+      },
+      {
+        "pou_name": "TankLevelClosedLoop.st",
+        "symbol_name": "AlarmLowLow",
+        "declared_in_pou": true,
+        "local_data_type": "BOOL",
+        "in_global_table": true,
+        "global_data_type": "BOOL",
+        "global_register_tag": "%M10",
+        "resolution_status": "RESOLVED_LOCAL_AND_GLOBAL",
+        "is_resolved": true
+      },
+      {
+        "pou_name": "TankLevelClosedLoop.st",
+        "symbol_name": "ControlOutput",
+        "declared_in_pou": true,
+        "local_data_type": "REAL",
+        "in_global_table": true,
+        "global_data_type": "REAL",
+        "global_register_tag": "%R7",
+        "resolution_status": "RESOLVED_LOCAL_AND_GLOBAL",
+        "is_resolved": true
+      },
+      {
+        "pou_name": "TankLevelClosedLoop.st",
+        "symbol_name": "CycleCounter",
+        "declared_in_pou": true,
+        "local_data_type": "DINT",
+        "in_global_table": true,
+        "global_data_type": "DINT",
+        "global_register_tag": "%R21",
+        "resolution_status": "RESOLVED_LOCAL_AND_GLOBAL",
+        "is_resolved": true
+      },
+      {
+        "pou_name": "TankLevelClosedLoop.st",
+        "symbol_name": "DerivTerm",
+        "declared_in_pou": true,
+        "local_data_type": "REAL",
+        "in_global_table": false,
+        "global_data_type": null,
+        "global_register_tag": null,
+        "resolution_status": "RESOLVED_LOCAL_ONLY",
+        "is_resolved": true
+      },
+      {
+        "pou_name": "TankLevelClosedLoop.st",
+        "symbol_name": "Error",
+        "declared_in_pou": true,
+        "local_data_type": "REAL",
+        "in_global_table": false,
+        "global_data_type": null,
+        "global_register_tag": null,
+        "resolution_status": "RESOLVED_LOCAL_ONLY",
+        "is_resolved": true
+      },
+      {
+        "pou_name": "TankLevelClosedLoop.st",
+        "symbol_name": "InflowValveCmd",
+        "declared_in_pou": true,
+        "local_data_type": "BOOL",
+        "in_global_table": true,
+        "global_data_type": "BOOL",
+        "global_register_tag": "%Q2",
+        "resolution_status": "RESOLVED_LOCAL_AND_GLOBAL",
+        "is_resolved": true
+      },
+      {
+        "pou_name": "TankLevelClosedLoop.st",
+        "symbol_name": "IntegralSum",
+        "declared_in_pou": true,
+        "local_data_type": "REAL",
+        "in_global_table": false,
+        "global_data_type": null,
+        "global_register_tag": null,
+        "resolution_status": "RESOLVED_LOCAL_ONLY",
+        "is_resolved": true
+      },
+      {
+        "pou_name": "TankLevelClosedLoop.st",
+        "symbol_name": "Kd",
+        "declared_in_pou": true,
+        "local_data_type": "REAL",
+        "in_global_table": true,
+        "global_data_type": "REAL",
+        "global_register_tag": "%R33",
+        "resolution_status": "RESOLVED_LOCAL_AND_GLOBAL",
+        "is_resolved": true
+      },
+      {
+        "pou_name": "TankLevelClosedLoop.st",
+        "symbol_name": "Ki",
+        "declared_in_pou": true,
+        "local_data_type": "REAL",
+        "in_global_table": true,
+        "global_data_type": "REAL",
+        "global_register_tag": "%R31",
+        "resolution_status": "RESOLVED_LOCAL_AND_GLOBAL",
+        "is_resolved": true
+      },
+      {
+        "pou_name": "TankLevelClosedLoop.st",
+        "symbol_name": "Kp",
+        "declared_in_pou": true,
+        "local_data_type": "REAL",
+        "in_global_table": true,
+        "global_data_type": "REAL",
+        "global_register_tag": "%R29",
+        "resolution_status": "RESOLVED_LOCAL_AND_GLOBAL",
+        "is_resolved": true
+      },
+      {
+        "pou_name": "TankLevelClosedLoop.st",
+        "symbol_name": "LastError",
+        "declared_in_pou": true,
+        "local_data_type": "REAL",
+        "in_global_table": false,
+        "global_data_type": null,
+        "global_register_tag": null,
+        "resolution_status": "RESOLVED_LOCAL_ONLY",
+        "is_resolved": true
+      },
+      {
+        "pou_name": "TankLevelClosedLoop.st",
+        "symbol_name": "ManualMode",
+        "declared_in_pou": true,
+        "local_data_type": "BOOL",
+        "in_global_table": false,
+        "global_data_type": null,
+        "global_register_tag": null,
+        "resolution_status": "RESOLVED_LOCAL_ONLY",
+        "is_resolved": true
+      },
+      {
+        "pou_name": "TankLevelClosedLoop.st",
+        "symbol_name": "ManualOutput",
+        "declared_in_pou": true,
+        "local_data_type": "REAL",
+        "in_global_table": true,
+        "global_data_type": "REAL",
+        "global_register_tag": "%R9",
+        "resolution_status": "RESOLVED_LOCAL_AND_GLOBAL",
+        "is_resolved": true
+      },
+      {
+        "pou_name": "TankLevelClosedLoop.st",
+        "symbol_name": "OutMax",
+        "declared_in_pou": true,
+        "local_data_type": "REAL",
+        "in_global_table": false,
+        "global_data_type": null,
+        "global_register_tag": null,
+        "resolution_status": "RESOLVED_LOCAL_ONLY",
+        "is_resolved": true
+      },
+      {
+        "pou_name": "TankLevelClosedLoop.st",
+        "symbol_name": "OutMin",
+        "declared_in_pou": true,
+        "local_data_type": "REAL",
+        "in_global_table": false,
+        "global_data_type": null,
+        "global_register_tag": null,
+        "resolution_status": "RESOLVED_LOCAL_ONLY",
+        "is_resolved": true
+      },
+      {
+        "pou_name": "TankLevelClosedLoop.st",
+        "symbol_name": "PumpRunCmd",
+        "declared_in_pou": true,
+        "local_data_type": "BOOL",
+        "in_global_table": true,
+        "global_data_type": "BOOL",
+        "global_register_tag": "%Q1",
+        "resolution_status": "RESOLVED_LOCAL_AND_GLOBAL",
+        "is_resolved": true
+      },
+      {
+        "pou_name": "TankLevelClosedLoop.st",
+        "symbol_name": "RawLevelInput",
+        "declared_in_pou": true,
+        "local_data_type": "INT",
+        "in_global_table": true,
+        "global_data_type": "INT",
+        "global_register_tag": "%AI1",
+        "resolution_status": "RESOLVED_LOCAL_AND_GLOBAL",
+        "is_resolved": true
+      },
+      {
+        "pou_name": "TankLevelClosedLoop.st",
+        "symbol_name": "RawPumpOutput",
+        "declared_in_pou": true,
+        "local_data_type": "INT",
+        "in_global_table": true,
+        "global_data_type": "INT",
+        "global_register_tag": "%AQ1",
+        "resolution_status": "RESOLVED_LOCAL_AND_GLOBAL",
+        "is_resolved": true
+      },
+      {
+        "pou_name": "TankLevelClosedLoop.st",
+        "symbol_name": "RawValveOutput",
+        "declared_in_pou": true,
+        "local_data_type": "INT",
+        "in_global_table": true,
+        "global_data_type": "INT",
+        "global_register_tag": "%AQ2",
+        "resolution_status": "RESOLVED_LOCAL_AND_GLOBAL",
+        "is_resolved": true
+      },
+      {
+        "pou_name": "TankLevelClosedLoop.st",
+        "symbol_name": "Setpoint",
+        "declared_in_pou": true,
+        "local_data_type": "REAL",
+        "in_global_table": true,
+        "global_data_type": "REAL",
+        "global_register_tag": "%R3",
+        "resolution_status": "RESOLVED_LOCAL_AND_GLOBAL",
+        "is_resolved": true
+      },
+      {
+        "pou_name": "TankLevelClosedLoop.st",
+        "symbol_name": "TankLevelPV",
+        "declared_in_pou": true,
+        "local_data_type": "REAL",
+        "in_global_table": true,
+        "global_data_type": "REAL",
+        "global_register_tag": "%R1",
+        "resolution_status": "RESOLVED_LOCAL_AND_GLOBAL",
+        "is_resolved": true
+      },
+      {
+        "pou_name": "TankLevelClosedLoop.st",
+        "symbol_name": "INT_TO_REAL",
+        "symbol_category": "FUNCTION_CALL",
+        "is_iec_builtin": true,
+        "resolution_status": "RESOLVED_IEC_BUILTIN",
+        "is_resolved": true
+      },
+      {
+        "pou_name": "TankLevelClosedLoop.st",
+        "symbol_name": "REAL_TO_INT",
+        "symbol_category": "FUNCTION_CALL",
+        "is_iec_builtin": true,
+        "resolution_status": "RESOLVED_IEC_BUILTIN",
+        "is_resolved": true
+      },
+      {
+        "pou_name": "AlarmMonitor.st",
+        "symbol_name": "trip",
+        "declared_in_pou": true,
+        "local_data_type": "BOOL",
+        "in_global_table": false,
+        "global_data_type": null,
+        "global_register_tag": null,
+        "resolution_status": "RESOLVED_LOCAL_ONLY",
+        "is_resolved": true
+      },
+      {
+        "pou_name": "BrokenPOU.st",
+        "symbol_name": "RawVal",
+        "declared_in_pou": true,
+        "local_data_type": "INT",
+        "in_global_table": false,
+        "global_data_type": null,
+        "global_register_tag": null,
+        "resolution_status": "RESOLVED_LOCAL_ONLY",
+        "is_resolved": true
+      },
+      {
+        "pou_name": "AuxPumpControl.st",
+        "symbol_name": "cmd",
+        "declared_in_pou": true,
+        "local_data_type": "BOOL",
+        "in_global_table": false,
+        "global_data_type": null,
+        "global_register_tag": null,
+        "resolution_status": "RESOLVED_LOCAL_ONLY",
+        "is_resolved": true
+      },
+      {
+        "pou_name": "SafetyInterlockST.st",
+        "symbol_name": "x",
+        "declared_in_pou": true,
+        "local_data_type": "INT",
+        "in_global_table": false,
+        "global_data_type": null,
+        "global_register_tag": null,
+        "resolution_status": "RESOLVED_LOCAL_ONLY",
+        "is_resolved": true
+      }
+    ]
+  },
+  "memory_allocation": {
+    "total_variables_mapped": 21,
+    "r_register_word_ranges": {
+      "ControlOutput": {
+        "start_register": "%R7",
+        "end_register": "%R8",
+        "word_range": "%R7-%R8",
+        "words_used": 2,
+        "data_type": "REAL"
+      },
+      "CycleCounter": {
+        "start_register": "%R21",
+        "end_register": "%R22",
+        "word_range": "%R21-%R22",
+        "words_used": 2,
+        "data_type": "DINT"
+      },
+      "Kd": {
+        "start_register": "%R33",
+        "end_register": "%R34",
+        "word_range": "%R33-%R34",
+        "words_used": 2,
+        "data_type": "REAL"
+      },
+      "Ki": {
+        "start_register": "%R31",
+        "end_register": "%R32",
+        "word_range": "%R31-%R32",
+        "words_used": 2,
+        "data_type": "REAL"
+      },
+      "Kp": {
+        "start_register": "%R29",
+        "end_register": "%R30",
+        "word_range": "%R29-%R30",
+        "words_used": 2,
+        "data_type": "REAL"
+      },
+      "ManualOutput": {
+        "start_register": "%R9",
+        "end_register": "%R10",
+        "word_range": "%R9-%R10",
+        "words_used": 2,
+        "data_type": "REAL"
+      },
+      "Setpoint": {
+        "start_register": "%R3",
+        "end_register": "%R4",
+        "word_range": "%R3-%R4",
+        "words_used": 2,
+        "data_type": "REAL"
+      },
+      "TankLevelPV": {
+        "start_register": "%R1",
+        "end_register": "%R2",
+        "word_range": "%R1-%R2",
+        "words_used": 2,
+        "data_type": "REAL"
+      }
+    },
+    "baseline_collisions_count": 0,
+    "allocation_matrix": {
+      "AlarmHigh": {
+        "name": "AlarmHigh",
+        "data_type": "BOOL",
+        "tag": "%M8",
+        "prefix": "%M",
+        "index": 8,
+        "bit_offset": null,
+        "footprint_type": "BIT",
+        "word_span": 0,
+        "bit_size": 1,
+        "spanned_registers": [
+          "%M8"
+        ],
+        "word_range": "N/A (Discrete Bit)",
+        "description": "High Level Warning Alarm"
+      },
+      "AlarmHighHigh": {
+        "name": "AlarmHighHigh",
+        "data_type": "BOOL",
+        "tag": "%M7",
+        "prefix": "%M",
+        "index": 7,
+        "bit_offset": null,
+        "footprint_type": "BIT",
+        "word_span": 0,
+        "bit_size": 1,
+        "spanned_registers": [
+          "%M7"
+        ],
+        "word_range": "N/A (Discrete Bit)",
+        "description": "High-High Level Critical Trip Alarm"
+      },
+      "AlarmLow": {
+        "name": "AlarmLow",
+        "data_type": "BOOL",
+        "tag": "%M9",
+        "prefix": "%M",
+        "index": 9,
+        "bit_offset": null,
+        "footprint_type": "BIT",
+        "word_span": 0,
+        "bit_size": 1,
+        "spanned_registers": [
+          "%M9"
+        ],
+        "word_range": "N/A (Discrete Bit)",
+        "description": "Low Level Warning Alarm"
+      },
+      "AlarmLowLow": {
+        "name": "AlarmLowLow",
+        "data_type": "BOOL",
+        "tag": "%M10",
+        "prefix": "%M",
+        "index": 10,
+        "bit_offset": null,
+        "footprint_type": "BIT",
+        "word_span": 0,
+        "bit_size": 1,
+        "spanned_registers": [
+          "%M10"
+        ],
+        "word_range": "N/A (Discrete Bit)",
+        "description": "Low-Low Level Critical Dry-Run Trip Alarm"
+      },
+      "ControlOutput": {
+        "name": "ControlOutput",
+        "data_type": "REAL",
+        "tag": "%R7",
+        "prefix": "%R",
+        "index": 7,
+        "bit_offset": null,
+        "footprint_type": "WORD",
+        "word_span": 2,
+        "bit_size": 32,
+        "spanned_registers": [
+          "%R7",
+          "%R8"
+        ],
+        "word_range": "%R7-%R8",
+        "description": "Calculated PID Manipulated Variable Output (0.0 - 100.0%)"
+      },
+      "CycleCounter": {
+        "name": "CycleCounter",
+        "data_type": "DINT",
+        "tag": "%R21",
+        "prefix": "%R",
+        "index": 21,
+        "bit_offset": null,
+        "footprint_type": "WORD",
+        "word_span": 2,
+        "bit_size": 32,
+        "spanned_registers": [
+          "%R21",
+          "%R22"
+        ],
+        "word_range": "%R21-%R22",
+        "description": "Total Tank Cycles Completed"
+      },
+      "DI_EStop_Healthy": {
+        "name": "DI_EStop_Healthy",
+        "data_type": "BOOL",
+        "tag": "%I3",
+        "prefix": "%I",
+        "index": 3,
+        "bit_offset": null,
+        "footprint_type": "BIT",
+        "word_span": 0,
+        "bit_size": 1,
+        "spanned_registers": [
+          "%I3"
+        ],
+        "word_range": "N/A (Discrete Bit)",
+        "description": "Emergency Stop Dual-Channel NC Healthy Contact"
+      },
+      "DI_LSHH_Level_Float": {
+        "name": "DI_LSHH_Level_Float",
+        "data_type": "BOOL",
+        "tag": "%I4",
+        "prefix": "%I",
+        "index": 4,
+        "bit_offset": null,
+        "footprint_type": "BIT",
+        "word_span": 0,
+        "bit_size": 1,
+        "spanned_registers": [
+          "%I4"
+        ],
+        "word_range": "N/A (Discrete Bit)",
+        "description": "High-High Level Hardwired Float Switch NC Contact"
+      },
+      "DI_System_Start_PB": {
+        "name": "DI_System_Start_PB",
+        "data_type": "BOOL",
+        "tag": "%I1",
+        "prefix": "%I",
+        "index": 1,
+        "bit_offset": null,
+        "footprint_type": "BIT",
+        "word_span": 0,
+        "bit_size": 1,
+        "spanned_registers": [
+          "%I1"
+        ],
+        "word_range": "N/A (Discrete Bit)",
+        "description": "Panel System Start Pushbutton NO Contact"
+      },
+      "DI_System_Stop_PB": {
+        "name": "DI_System_Stop_PB",
+        "data_type": "BOOL",
+        "tag": "%I2",
+        "prefix": "%I",
+        "index": 2,
+        "bit_offset": null,
+        "footprint_type": "BIT",
+        "word_span": 0,
+        "bit_size": 1,
+        "spanned_registers": [
+          "%I2"
+        ],
+        "word_range": "N/A (Discrete Bit)",
+        "description": "Panel System Stop Pushbutton NC Fail-Safe Contact"
+      },
+      "InflowValveCmd": {
+        "name": "InflowValveCmd",
+        "data_type": "BOOL",
+        "tag": "%Q2",
+        "prefix": "%Q",
+        "index": 2,
+        "bit_offset": null,
+        "footprint_type": "BIT",
+        "word_span": 0,
+        "bit_size": 1,
+        "spanned_registers": [
+          "%Q2"
+        ],
+        "word_range": "N/A (Discrete Bit)",
+        "description": "Inlet Emergency Isolation Solenoid Valve"
+      },
+      "Kd": {
+        "name": "Kd",
+        "data_type": "REAL",
+        "tag": "%R33",
+        "prefix": "%R",
+        "index": 33,
+        "bit_offset": null,
+        "footprint_type": "WORD",
+        "word_span": 2,
+        "bit_size": 32,
+        "spanned_registers": [
+          "%R33",
+          "%R34"
+        ],
+        "word_range": "%R33-%R34",
+        "description": "PID Derivative Rate Time Constant"
+      },
+      "Ki": {
+        "name": "Ki",
+        "data_type": "REAL",
+        "tag": "%R31",
+        "prefix": "%R",
+        "index": 31,
+        "bit_offset": null,
+        "footprint_type": "WORD",
+        "word_span": 2,
+        "bit_size": 32,
+        "spanned_registers": [
+          "%R31",
+          "%R32"
+        ],
+        "word_range": "%R31-%R32",
+        "description": "PID Integral Reset Time Constant"
+      },
+      "Kp": {
+        "name": "Kp",
+        "data_type": "REAL",
+        "tag": "%R29",
+        "prefix": "%R",
+        "index": 29,
+        "bit_offset": null,
+        "footprint_type": "WORD",
+        "word_span": 2,
+        "bit_size": 32,
+        "spanned_registers": [
+          "%R29",
+          "%R30"
+        ],
+        "word_range": "%R29-%R30",
+        "description": "PID Proportional Gain Constant"
+      },
+      "ManualOutput": {
+        "name": "ManualOutput",
+        "data_type": "REAL",
+        "tag": "%R9",
+        "prefix": "%R",
+        "index": 9,
+        "bit_offset": null,
+        "footprint_type": "WORD",
+        "word_span": 2,
+        "bit_size": 32,
+        "spanned_registers": [
+          "%R9",
+          "%R10"
+        ],
+        "word_range": "%R9-%R10",
+        "description": "Manual Operator Output Setting (0.0 - 100.0%)"
+      },
+      "PumpRunCmd": {
+        "name": "PumpRunCmd",
+        "data_type": "BOOL",
+        "tag": "%Q1",
+        "prefix": "%Q",
+        "index": 1,
+        "bit_offset": null,
+        "footprint_type": "BIT",
+        "word_span": 0,
+        "bit_size": 1,
+        "spanned_registers": [
+          "%Q1"
+        ],
+        "word_range": "N/A (Discrete Bit)",
+        "description": "Inlet Feed Pump Contactor Coil Command Output"
+      },
+      "RawLevelInput": {
+        "name": "RawLevelInput",
+        "data_type": "INT",
+        "tag": "%AI1",
+        "prefix": "%AI",
+        "index": 1,
+        "bit_offset": null,
+        "footprint_type": "WORD",
+        "word_span": 1,
+        "bit_size": 16,
+        "spanned_registers": [
+          "%AI1"
+        ],
+        "word_range": "%AI1",
+        "description": "Tank Level Sensor 4-20mA Raw ADC Counts (0-32000)"
+      },
+      "RawPumpOutput": {
+        "name": "RawPumpOutput",
+        "data_type": "INT",
+        "tag": "%AQ1",
+        "prefix": "%AQ",
+        "index": 1,
+        "bit_offset": null,
+        "footprint_type": "WORD",
+        "word_span": 1,
+        "bit_size": 16,
+        "spanned_registers": [
+          "%AQ1"
+        ],
+        "word_range": "%AQ1",
+        "description": "Inflow Modulating Valve Positioner 4-20mA (0-32000)"
+      },
+      "RawValveOutput": {
+        "name": "RawValveOutput",
+        "data_type": "INT",
+        "tag": "%AQ2",
+        "prefix": "%AQ",
+        "index": 2,
+        "bit_offset": null,
+        "footprint_type": "WORD",
+        "word_span": 1,
+        "bit_size": 16,
+        "spanned_registers": [
+          "%AQ2"
+        ],
+        "word_range": "%AQ2",
+        "description": "Inflow Solenoid Valve Positioner (0-32000)"
+      },
+      "Setpoint": {
+        "name": "Setpoint",
+        "data_type": "REAL",
+        "tag": "%R3",
+        "prefix": "%R",
+        "index": 3,
+        "bit_offset": null,
+        "footprint_type": "WORD",
+        "word_span": 2,
+        "bit_size": 32,
+        "spanned_registers": [
+          "%R3",
+          "%R4"
+        ],
+        "word_range": "%R3-%R4",
+        "description": "Active Tank Level Setpoint (0.0 - 100.0%)"
+      },
+      "TankLevelPV": {
+        "name": "TankLevelPV",
+        "data_type": "REAL",
+        "tag": "%R1",
+        "prefix": "%R",
+        "index": 1,
+        "bit_offset": null,
+        "footprint_type": "WORD",
+        "word_span": 2,
+        "bit_size": 32,
+        "spanned_registers": [
+          "%R1",
+          "%R2"
+        ],
+        "word_range": "%R1-%R2",
+        "description": "Scaled Tank Level Process Variable (0.0 - 100.0%)"
+      }
+    }
+  },
+  "collision_fault_injection": [
+    {
+      "fault_id": "FAULT_R2_COLLISION_WITH_R1",
+      "description": "Inject REAL variable 'InjectedReal_R2' at %R2 (collides with TankLevelPV %R1-%R2 and Setpoint %R3-%R4)",
+      "conflicts_detected_count": 2,
+      "detected_fail_closed": true,
+      "target_overlap_identified": true,
+      "conflict_details": [
+        {
+          "variable1": "TankLevelPV",
+          "scope1": "globals",
+          "register1": "%R1",
+          "type1": "REAL",
+          "spanned1": [
+            "%R1",
+            "%R2"
+          ],
+          "variable2": "InjectedReal_R2",
+          "scope2": "globals",
+          "register2": "%R2",
+          "type2": "REAL",
+          "spanned2": [
+            "%R2",
+            "%R3"
+          ],
+          "overlapping_registers": [
+            "%R2"
+          ],
+          "reason": "Memory overlap between TankLevelPV (%R1) and InjectedReal_R2 (%R2) on %R2"
+        },
+        {
+          "variable1": "Setpoint",
+          "scope1": "globals",
+          "register1": "%R3",
+          "type1": "REAL",
+          "spanned1": [
+            "%R3",
+            "%R4"
+          ],
+          "variable2": "InjectedReal_R2",
+          "scope2": "globals",
+          "register2": "%R2",
+          "type2": "REAL",
+          "spanned2": [
+            "%R2",
+            "%R3"
+          ],
+          "overlapping_registers": [
+            "%R3"
+          ],
+          "reason": "Memory overlap between Setpoint (%R3) and InjectedReal_R2 (%R2) on %R3"
+        }
+      ],
+      "status": "PASSED"
+    },
+    {
+      "fault_id": "FAULT_R8_COLLISION_WITH_R7",
+      "description": "Inject REAL variable 'InjectedReal_R8' at %R8 (collides with ControlOutput %R7-%R8 and ManualOutput %R9-%R10)",
+      "conflicts_detected_count": 2,
+      "detected_fail_closed": true,
+      "target_overlap_identified": true,
+      "conflict_details": [
+        {
+          "variable1": "ControlOutput",
+          "scope1": "globals",
+          "register1": "%R7",
+          "type1": "REAL",
+          "spanned1": [
+            "%R7",
+            "%R8"
+          ],
+          "variable2": "InjectedReal_R8",
+          "scope2": "globals",
+          "register2": "%R8",
+          "type2": "REAL",
+          "spanned2": [
+            "%R8",
+            "%R9"
+          ],
+          "overlapping_registers": [
+            "%R8"
+          ],
+          "reason": "Memory overlap between ControlOutput (%R7) and InjectedReal_R8 (%R8) on %R8"
+        },
+        {
+          "variable1": "ManualOutput",
+          "scope1": "globals",
+          "register1": "%R9",
+          "type1": "REAL",
+          "spanned1": [
+            "%R9",
+            "%R10"
+          ],
+          "variable2": "InjectedReal_R8",
+          "scope2": "globals",
+          "register2": "%R8",
+          "type2": "REAL",
+          "spanned2": [
+            "%R8",
+            "%R9"
+          ],
+          "overlapping_registers": [
+            "%R9"
+          ],
+          "reason": "Memory overlap between ManualOutput (%R9) and InjectedReal_R8 (%R8) on %R9"
+        }
+      ],
+      "status": "PASSED"
+    },
+    {
+      "fault_id": "FAULT_M7_COLLISION_WITH_ALARMHH",
+      "description": "Inject BOOL variable 'InjectedBool_M7' at %M7 (collides with AlarmHighHigh %M7)",
+      "conflicts_detected_count": 1,
+      "detected_fail_closed": true,
+      "target_overlap_identified": true,
+      "conflict_details": [
+        {
+          "variable1": "AlarmHighHigh",
+          "scope1": "globals",
+          "register1": "%M7",
+          "type1": "BOOL",
+          "spanned1": [
+            "%M7"
+          ],
+          "variable2": "InjectedBool_M7",
+          "scope2": "globals",
+          "register2": "%M7",
+          "type2": "BOOL",
+          "spanned2": [
+            "%M7"
+          ],
+          "overlapping_registers": [
+            "%M7"
+          ],
+          "reason": "Memory overlap between AlarmHighHigh (%M7) and InjectedBool_M7 (%M7) on %M7"
+        }
+      ],
+      "status": "PASSED"
+    }
+  ],
+  "roundtrip_export_import": {
+    "csv_export_written": 21,
+    "xml_export_written": 21,
+    "csv_reimported_count": 21,
+    "xml_reimported_count": 21,
+    "csv_exact_match": true,
+    "xml_exact_match": true,
+    "total_tags_verified": 21,
+    "match_fidelity_percent": 100.0
+  },
+  "safety_audit": {
+    "id_controller_download": 32827,
+    "cli_download_blocked": true,
+    "cli_project_download_blocked": true,
+    "command_interception_blocked": true,
+    "physical_ports_blocked": true,
+    "zero_straton_dependencies": true
+  }
+}

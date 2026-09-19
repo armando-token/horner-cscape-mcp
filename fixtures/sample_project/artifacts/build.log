@@ -1,0 +1,13 @@
+=== Horner Cscape 10.2 Compile Pass: sample_project ===
+Clean Build: True
+Mode: IEC 61131-3 Structured Text (Advanced Ladder Excluded)
+Timestamp: 2026-09-03T21:58:07.234074
+----------------------------------------------------------------
+Compiling POU: MainControl (256 bytes)...
+  POU 'MainControl' parsed and validated cleanly.
+----------------------------------------------------------------
+Build Result: SUCCESS
+Errors: 0, Warnings: 0
+Estimated Code Size: 1024 bytes, Data Size: 512 bytes
+Duration: 0.006s
+Hardware Lockout: ENFORCED (Zero PLC communication / No download)

@@ -1,0 +1,12 @@
+{
+  "proof_name": "keepalive_auto_relaunch_and_tanklevel_reopen",
+  "status": "PASSED",
+  "timestamp_utc": "2026-09-05T16:18:42.569149+00:00",
+  "pid": 14580,
+  "hwnd": "0x024B054A",
+  "window_title": "Cscape - Logged In : \"armando@controlnautas.com\" - [TankLevelClosedLoop.csp]",
+  "project_file": "C:\\Users\\ArmandoSilva\\artifacts\\projects\\TankLevelClosedLoop\\TankLevelClosedLoop.csp",
+  "relaunch_verified": true,
+  "keepalive_intact": true,
+  "fail_closed_gate_status": "READY_FOR_TESTS"
+}

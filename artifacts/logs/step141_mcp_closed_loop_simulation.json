@@ -1,0 +1,202 @@
+{
+  "step": 141,
+  "name": "step141_mcp_closed_loop_simulation",
+  "timestamp_utc": "2026-09-05T18:11:36.827409+00Z",
+  "phases": {
+    "gate_check": {
+      "status": "PASSED",
+      "ready_for_tests": true,
+      "pid": 14580,
+      "hwnd": "0x024B054A",
+      "window_title": "Cscape - Logged In : \"armando@controlnautas.com\" - [TankLevelClosedLoop.csp]"
+    },
+    "register_verification": {
+      "status": "PASSED",
+      "audit": {
+        "types_tested": [
+          {
+            "type": "%R_INT16",
+            "value": 12345,
+            "status": "PASSED"
+          },
+          {
+            "type": "%R_INT16_NEG",
+            "value": -2468,
+            "status": "PASSED"
+          },
+          {
+            "type": "%R_REAL32",
+            "value": 62.875,
+            "status": "PASSED"
+          },
+          {
+            "type": "%R_DINT32",
+            "value": 98765432,
+            "status": "PASSED"
+          },
+          {
+            "type": "%AI_and_%AQ",
+            "status": "PASSED"
+          },
+          {
+            "type": "discrete_bits_I_Q_M_T",
+            "status": "PASSED"
+          },
+          {
+            "type": "bit_of_word",
+            "status": "PASSED"
+          }
+        ],
+        "boundaries_tested": [
+          {
+            "reg": "%R10000",
+            "rejected": true
+          },
+          {
+            "reg": "%AI513",
+            "rejected": true
+          },
+          {
+            "reg": "%AQ513",
+            "rejected": true
+          },
+          {
+            "reg": "%M2049",
+            "rejected": true
+          },
+          {
+            "reg": "%Q2049",
+            "rejected": true
+          },
+          {
+            "reg": "%I2049",
+            "rejected": true
+          },
+          {
+            "reg": "%S17",
+            "rejected": true
+          },
+          {
+            "reg": "%SR257",
+            "rejected": true
+          },
+          {
+            "reg": "%R9999_REAL",
+            "rejected": true
+          },
+          {
+            "reg": "INVALID",
+            "rejected": true
+          },
+          {
+            "reg": "%XYZ1",
+            "rejected": true
+          },
+          {
+            "reg": "%I1.0",
+            "rejected": true
+          },
+          {
+            "reg": "%R100.16",
+            "rejected": true
+          }
+        ]
+      }
+    },
+    "closed_loop_simulation": {
+      "status": "PASSED",
+      "cycles_executed": 50,
+      "initial_level": 45.0,
+      "final_level": 52.291,
+      "setpoint": 60.0,
+      "telemetry_sample": [
+        {
+          "cycle": 0,
+          "plant_level": 53.0,
+          "pv": 45.0,
+          "cv": 100.0,
+          "pump_cmd": true,
+          "valve_cmd": true,
+          "alarms": {
+            "HH": false,
+            "H": false,
+            "L": false,
+            "LL": false
+          }
+        },
+        {
+          "cycle": 25,
+          "plant_level": 52.139,
+          "pv": 52.128,
+          "cv": 20.077,
+          "pump_cmd": true,
+          "valve_cmd": true,
+          "alarms": {
+            "HH": false,
+            "H": false,
+            "L": false,
+            "LL": false
+          }
+        },
+        {
+          "cycle": 49,
+          "plant_level": 52.291,
+          "pv": 52.284,
+          "cv": 20.061,
+          "pump_cmd": true,
+          "valve_cmd": true,
+          "alarms": {
+            "HH": false,
+            "H": false,
+            "L": false,
+            "LL": false
+          }
+        }
+      ]
+    },
+    "alarm_thresholds": {
+      "status": "PASSED",
+      "results": {
+        "high_high": "PASSED_WITH_HYSTERESIS_AND_VALVE_INTERLOCK",
+        "high": "PASSED_WITH_HYSTERESIS",
+        "low": "PASSED_WITH_HYSTERESIS",
+        "low_low": "PASSED_WITH_HYSTERESIS_AND_DRY_RUN_PUMP_TRIP"
+      }
+    },
+    "disturbance_injection": {
+      "status": "PASSED",
+      "history": [
+        {
+          "phase": "steady_state",
+          "pv": 60.0,
+          "hh": false,
+          "valve_cmd": true
+        },
+        {
+          "phase": "surge_trip",
+          "pv": 95.0,
+          "hh": true,
+          "valve_cmd": false
+        },
+        {
+          "phase": "drain_recovery",
+          "pv": 70.0,
+          "hh": false,
+          "valve_cmd": true
+        }
+      ]
+    },
+    "mcp_server_dispatch": {
+      "status": "PASSED",
+      "tools_called": 4
+    },
+    "safety_isolation": {
+      "status": "PASSED",
+      "id_controller_download_32827_blocked": true,
+      "id_controller_download_33149_blocked": true,
+      "com_can_usb_lockout_enforced": true,
+      "zero_straton_processes": true
+    }
+  },
+  "metrics": {}
+}

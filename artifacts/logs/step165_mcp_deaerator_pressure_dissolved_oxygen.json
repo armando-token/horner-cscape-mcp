@@ -1,0 +1,108 @@
+{
+  "step": 165,
+  "name": "step165_mcp_deaerator_pressure_dissolved_oxygen",
+  "status": "PASSED",
+  "mission": "Live FastMCP Multi-Point Deaerator Saturated Steam Pressure Equilibrium & Anti-Vacuum Audit",
+  "timestamp_start": "2026-09-06T12:23:51.767Z",
+  "timestamp_complete": "2026-09-06T12:24:02.947Z",
+  "duration_seconds": 11.18,
+  "gate": {
+    "ready_for_tests": true,
+    "status": "READY_FOR_TESTS",
+    "pid": 10892,
+    "hwnd": "0x01B005DC",
+    "window_title": "Cscape - Logged In : \"armando@controlnautas.com\" - [TankLevelClosedLoop.csp]",
+    "project_file": "C:\\HornerAI\\horner-cscape-mcp\\artifacts\\projects\\TankLevelClosedLoop\\TankLevelClosedLoop.csp",
+    "exit_code": null,
+    "reason": "Gate G3 Error Check and Output Scrape Verified Clean (0 errors, 0 warnings)",
+    "cycle": 17,
+    "timestamp_utc": "2026-09-06T11:43:46.709Z",
+    "heartbeat_utc": "2026-09-06T11:43:46.709Z"
+  },
+  "cscape_pid": 10892,
+  "hwnd": "0x01B005DC",
+  "scenarios_passed": 5,
+  "scenarios_total": 5,
+  "scenario_results": {
+    "scenario_a_saturation_equilibrium": {
+      "verified": true,
+      "da_pressure_psig": 10.0,
+      "sat_temperature_f": 240.0,
+      "dissolved_oxygen_ppb": 4.5,
+      "vacuum_breaker_closed": true,
+      "vacuum_alarm": false
+    },
+    "scenario_b_antivacuum_implosion_protection": {
+      "verified": true,
+      "vacuum_pressure_psig": -0.800000011920929,
+      "vacuum_breaker_actuated": true,
+      "anti_vacuum_alarm": true,
+      "pegging_steam_full_dump": 100.0
+    },
+    "scenario_c_overpressure_sentinel_dump": {
+      "verified": true,
+      "peak_surge_pressure_psig": 18.5,
+      "sentinel_valve_actuated": true,
+      "overpressure_alarm": true,
+      "relieved_pressure_psig": 10.5
+    },
+    "scenario_d_dissolved_oxygen_vent_purge": {
+      "verified": true,
+      "high_dissolved_oxygen_ppb": 12.0,
+      "high_do_alarm": true,
+      "vent_purge_valve_actuated": true,
+      "restored_do_ppb": 4.2
+    },
+    "scenario_e_normal_equilibrium_restored": {
+      "verified": true,
+      "restored_pressure_psig": 10.0,
+      "restored_temperature_f": 240.0,
+      "restored_do_ppb": 4.0,
+      "all_alarms_cleared": true
+    }
+  },
+  "telemetry_records": [
+    {
+      "scenario": "A_SATURATION_EQUILIBRIUM",
+      "cycle": 1,
+      "p": 10.0,
+      "t": 240.0,
+      "o2": 4.5
+    },
+    {
+      "scenario": "B_ANTIVACUUM_PROTECTION",
+      "cycle": 2,
+      "p": -0.800000011920929,
+      "q13": true,
+      "m30": true,
+      "steam": 100.0
+    },
+    {
+      "scenario": "C_OVERPRESSURE_SENTINEL_DUMP",
+      "cycle": 3,
+      "p": 18.5,
+      "q14": true,
+      "m31": true
+    },
+    {
+      "scenario": "D_DISSOLVED_OXYGEN_VENT_PURGE",
+      "cycle": 4,
+      "o2": 12.0,
+      "m32": true,
+      "q15": true
+    },
+    {
+      "scenario": "E_NORMAL_EQUILIBRIUM_RESTORED",
+      "cycle": 5,
+      "p": 10.0,
+      "t": 240.0,
+      "o2": 4.0
+    }
+  ],
+  "security": {
+    "hardware_download_lockout": "FAIL_CLOSED_BLOCKED",
+    "zero_straton_dependencies": true,
+    "zero_plc_hardware_interaction": true,
+    "no_gui_hwnd_command_dispatched": true
+  }
+}

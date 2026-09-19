@@ -1,0 +1,260 @@
+{
+  "step": 182,
+  "gate": "G5",
+  "mandate": "MEGAPLAN Gate G5: Evidence-Gated Final Signoff & Dual-Root Parity Audit for Step 182",
+  "status": "success",
+  "start_time_utc": "2026-09-06T14:35:37.908Z",
+  "completion_time_utc": "2026-09-06T14:35:38.015Z",
+  "execution_duration_sec": 0.106,
+  "roots": {
+    "horner_root": "C:\\HornerAI\\horner-cscape-mcp",
+    "user_root": "C:\\Users\\ArmandoSilva"
+  },
+  "live_cscape_gate": {
+    "pid": 10892,
+    "hwnd": "0x01B005DC",
+    "status": "READY_FOR_TESTS",
+    "project": "C:\\HornerAI\\horner-cscape-mcp\\artifacts\\projects\\TankLevelClosedLoop\\TankLevelClosedLoop.csp",
+    "window_title": "Cscape - Logged In : \"armando@controlnautas.com\" - [TankLevelClosedLoop.csp]",
+    "desktop": "winsta0\\Default",
+    "classification": "VERIFIED_LIVE (Live Cscape GUI Gate on winsta0\\Default)"
+  },
+  "gates_verified": {
+    "G0": "PASSED (Inventory & PE binary audit: Cscape 10.2 x86 PE Build 10.2.751.4)",
+    "G1": "PASSED (False successes H01-H13 dismantled, honest PARTIAL classification enforced, ephemeral PIDs recognized as gate-dependent)",
+    "G2": "PASSED (Live Cscape 10.2 visible GUI on winsta0\\Default with TankLevelClosedLoop.csp and Project Navigator visible)",
+    "G3": "PASSED (Live GUI Error Check 32826 clean build 0 errors/0 warnings, download lockout)",
+    "G4": "PASSED (Pure-software closed-loop plant simulation & Industrial Process Valve Actuator Controller, offline/DEV TESTED_MOCK)",
+    "G5": "PASSED (Evidence-gated final signoff & dual-root parity passed across all checkpoints, logs, and guides)"
+  },
+  "verification_classification": {
+    "offline_suites_label": "offline/DEV (TESTED_MOCK)",
+    "live_gui_gates": "VERIFIED_LIVE (Live Cscape GUI Gate on winsta0\\Default)",
+    "hardware_lockout": "BLOCKED_SAFETY (Fail-closed lockout enforced)"
+  },
+  "parity_verified": true,
+  "details": {
+    "checkpoints": {
+      "artifacts/checkpoints/megaplan_g2_visible_gui_checkpoint.json": {
+        "rel_path": "artifacts/checkpoints/megaplan_g2_visible_gui_checkpoint.json",
+        "size_bytes": 1764,
+        "sha256": "2adc7fa632396f50d54d69f1873e68e91a09edef02f4e92fad1497b08ef23fa3",
+        "identical": true,
+        "json_valid": true,
+        "status": "success"
+      },
+      "artifacts/checkpoints/megaplan_g3_live_compile_pipeline_checkpoint.json": {
+        "rel_path": "artifacts/checkpoints/megaplan_g3_live_compile_pipeline_checkpoint.json",
+        "size_bytes": 1754,
+        "sha256": "b514116f8369b2617d8d7a164286733408bb4f784ea33c011d0c5649e15f867c",
+        "identical": true,
+        "json_valid": true,
+        "status": "success"
+      },
+      "artifacts/checkpoints/megaplan_g4_closed_loop_simulation_checkpoint.json": {
+        "rel_path": "artifacts/checkpoints/megaplan_g4_closed_loop_simulation_checkpoint.json",
+        "size_bytes": 2942,
+        "sha256": "5d48c707028fdaaa6e2224dee9374d1d93d515babcfed29e9baaf36280e93f6c",
+        "identical": true,
+        "json_valid": true,
+        "status": "success"
+      },
+      "artifacts/checkpoints/megaplan_g5_final_parity_checkpoint.json": {
+        "rel_path": "artifacts/checkpoints/megaplan_g5_final_parity_checkpoint.json",
+        "size_bytes": 4047,
+        "sha256": "8165cdeeafe3072a38602f54bc44c70873c1bbabd05bae86762d84cbce56870e",
+        "identical": true,
+        "json_valid": true,
+        "status": "success"
+      },
+      "artifacts/checkpoints/step182_visible_gui_proof_checkpoint.json": {
+        "rel_path": "artifacts/checkpoints/step182_visible_gui_proof_checkpoint.json",
+        "size_bytes": 1571,
+        "sha256": "1b776956350e9ea4e93894f537ad1c439e6e4c6aed6163755f1d889678f82d89",
+        "identical": true,
+        "json_valid": true,
+        "status": "success"
+      },
+      "artifacts/checkpoints/step182_security_audit_checkpoint.json": {
+        "rel_path": "artifacts/checkpoints/step182_security_audit_checkpoint.json",
+        "size_bytes": 1732,
+        "sha256": "e558f8bf07c24f257211d698ca6aa0c82400cfd35b79c0b1bef8752a24f383b2",
+        "identical": true,
+        "json_valid": true,
+        "status": "success"
+      },
+      "artifacts/checkpoints/step182_mcp_valve_actuator_checkpoint.json": {
+        "rel_path": "artifacts/checkpoints/step182_mcp_valve_actuator_checkpoint.json",
+        "size_bytes": 3226,
+        "sha256": "793c8364e3841707697dd2519421a7e35c82a5b8580a3c42fe505a8c3ddea670",
+        "identical": true,
+        "json_valid": true,
+        "status": "success"
+      },
+      "artifacts/checkpoints/step182_pure_st_audit_checkpoint.json": {
+        "rel_path": "artifacts/checkpoints/step182_pure_st_audit_checkpoint.json",
+        "size_bytes": 718,
+        "sha256": "177da20c5c309803d4cab752459be8a35dda3a227e1a61e2b7ea9163abcb859f",
+        "identical": true,
+        "json_valid": true,
+        "status": "success"
+      }
+    },
+    "logs": {
+      "artifacts/logs/step182_visible_gui_proof.json": {
+        "rel_path": "artifacts/logs/step182_visible_gui_proof.json",
+        "size_bytes": 3257,
+        "sha256": "a911ceba412806cd0c5e41d9edbb4ca2055d8aa3acb4039261fd9b1f8d1381ce",
+        "identical": true,
+        "json_valid": true,
+        "status": "success"
+      },
+      "artifacts/logs/step182_security_audit.json": {
+        "rel_path": "artifacts/logs/step182_security_audit.json",
+        "size_bytes": 27005,
+        "sha256": "737436dd035d715b2b307af9ab95783874ba9f3f3fb1d8bd8842fd1ba8f3f329",
+        "identical": true,
+        "json_valid": true,
+        "status": "success"
+      },
+      "artifacts/logs/step182_mcp_valve_actuator.json": {
+        "rel_path": "artifacts/logs/step182_mcp_valve_actuator.json",
+        "size_bytes": 2776,
+        "sha256": "0b3c5a7e26a1adbbd87fb4b9be828d90c2171cd5b860814b3d0d0ec362084ba4",
+        "identical": true,
+        "json_valid": true,
+        "status": "success"
+      },
+      "artifacts/logs/step182_pure_st_audit.json": {
+        "rel_path": "artifacts/logs/step182_pure_st_audit.json",
+        "size_bytes": 15385,
+        "sha256": "f30e2120abcddfab27c4593d34b5ec1618abc026f45ef8eb577620d26984627a",
+        "identical": true,
+        "json_valid": true,
+        "status": "success"
+      },
+      "artifacts/logs/megaplan_g4_closed_loop_simulation.json": {
+        "rel_path": "artifacts/logs/megaplan_g4_closed_loop_simulation.json",
+        "size_bytes": 2973,
+        "sha256": "f0fadf6c99557ab2246b1c7905a6a2d1fcd4904cff64257d72ae2a52d0043033",
+        "identical": true,
+        "json_valid": true,
+        "status": "success"
+      }
+    },
+    "screenshots": {
+      "artifacts/screenshots/live_cscape_tank_level_step182.png": {
+        "rel_path": "artifacts/screenshots/live_cscape_tank_level_step182.png",
+        "size_bytes": 71597,
+        "sha256": "3629ca11ab19c8a2ec8b2c58e5bfcbb6febc2d45132107708368cf014cbf09b9",
+        "identical": true
+      }
+    },
+    "scripts": {
+      "scripts/execute_step182_visible_cscape_gui_driver.py": {
+        "rel_path": "scripts/execute_step182_visible_cscape_gui_driver.py",
+        "size_bytes": 35248,
+        "sha256": "8f4904ef29ae91fb3fc02243ad8c0803675148a3acfb19b1972a0aa3f656e2ab",
+        "identical": true
+      },
+      "scripts/step182_security_audit.py": {
+        "rel_path": "scripts/step182_security_audit.py",
+        "size_bytes": 28606,
+        "sha256": "e7d42923a71902cbd17720c24623d4fcad201a15f9dcd336c603248bb726aa05",
+        "identical": true
+      },
+      "scripts/execute_step182_mcp_valve_actuator.py": {
+        "rel_path": "scripts/execute_step182_mcp_valve_actuator.py",
+        "size_bytes": 36819,
+        "sha256": "18cac56cd64adeaeb73bdd1fc54af7e4f256fb2eaa1b311fb51dca87872b17a2",
+        "identical": true
+      },
+      "scripts/execute_step182_pure_st_audit.py": {
+        "rel_path": "scripts/execute_step182_pure_st_audit.py",
+        "size_bytes": 15898,
+        "sha256": "d1e4692228720648a69bc05a1bb39d363a56b672481f839bb5a5d95a3d485d7e",
+        "identical": true
+      },
+      "scripts/execute_step182_dual_root_sync_audit.py": {
+        "rel_path": "scripts/execute_step182_dual_root_sync_audit.py",
+        "size_bytes": 11272,
+        "sha256": "0f4e430ae5b87a77a80ffe8f0d3a396d9ca6d4e83cf29b3caea20cafea6098ac",
+        "identical": true
+      }
+    },
+    "tests": {
+      "tests/test_step182_visible_cscape_gui_driver.py": {
+        "rel_path": "tests/test_step182_visible_cscape_gui_driver.py",
+        "size_bytes": 5837,
+        "sha256": "13f15a80cf45a93c1ea2faf1c91c9fbcba83792a43b8e7f90e71bd16acd3e5b2",
+        "identical": true
+      },
+      "tests/test_step182_security_audit.py": {
+        "rel_path": "tests/test_step182_security_audit.py",
+        "size_bytes": 6430,
+        "sha256": "9085b920757cc415a2d05afdba3af30a9f19ee8bf8878ff15a1c52dc2980e7ea",
+        "identical": true
+      },
+      "tests/test_step182_mcp_valve_actuator.py": {
+        "rel_path": "tests/test_step182_mcp_valve_actuator.py",
+        "size_bytes": 9581,
+        "sha256": "400d0acb4c7db9f29a41d37e4de8fef5cd7e85835580aced1f11a4c2f7c6425e",
+        "identical": true
+      },
+      "tests/test_step182_pure_st_audit.py": {
+        "rel_path": "tests/test_step182_pure_st_audit.py",
+        "size_bytes": 8164,
+        "sha256": "de7dba9ee94d443d3194ebe2324cc77319ddeaef661dda8ad2120ac22e7bf176",
+        "identical": true
+      },
+      "tests/test_step182_dual_root_sync.py": {
+        "rel_path": "tests/test_step182_dual_root_sync.py",
+        "size_bytes": 7800,
+        "sha256": "32fc4499ef2ad9db5fa311a1bf54fa8ff6a7d3f13047f60b96a9c019256b253d",
+        "identical": true
+      }
+    },
+    "examples": {
+      "examples/st_applications/valve_actuator_controller.st": {
+        "rel_path": "examples/st_applications/valve_actuator_controller.st",
+        "size_bytes": 5730,
+        "sha256": "d42e07a1a149d696839e6b2d470c0939a2cf16bd442379b0161331402a1a3dc2",
+        "identical": true
+      }
+    },
+    "project_files": {
+      "artifacts/projects/TankLevelClosedLoop/TankLevelClosedLoop.csp": {
+        "rel_path": "artifacts/projects/TankLevelClosedLoop/TankLevelClosedLoop.csp",
+        "size_bytes": 49152,
+        "sha256": "d075e67d80be031a99a6895078735918b7a15c8086590a6d20ec8484b27749af",
+        "identical": true
+      },
+      "artifacts/projects/TankLevelClosedLoop/pous/TankLevelClosedLoop.st": {
+        "rel_path": "artifacts/projects/TankLevelClosedLoop/pous/TankLevelClosedLoop.st",
+        "size_bytes": 2599,
+        "sha256": "7fd73e139c3c6475dd0f4c84351c339a0c66b96f2b160f452fc2564017de7ea9",
+        "identical": true
+      },
+      "artifacts/projects/TankLevelClosedLoop/artifacts/build.log": {
+        "rel_path": "artifacts/projects/TankLevelClosedLoop/artifacts/build.log",
+        "size_bytes": 1037,
+        "sha256": "c33ff7d978ba29eeb674118e444c7bf0822cc91ea29631ca8f4696e4af90d13a",
+        "identical": true
+      }
+    },
+    "documentation": {
+      "CAPABILITY_MATRIX.md": {
+        "rel_path": "CAPABILITY_MATRIX.md",
+        "size_bytes": 199457,
+        "sha256": "da89807e57ba06c5c6a363928e8879cbc1c2822922c90528c39162091bd1100e",
+        "identical": true
+      },
+      "AGENTS.md": {
+        "rel_path": "AGENTS.md",
+        "size_bytes": 16810,
+        "sha256": "8a244be78d71e3063f802ca6ac2d3e88aa3d26c84c942de965925f379516b8b4",
+        "identical": true
+      }
+    }
+  }
+}

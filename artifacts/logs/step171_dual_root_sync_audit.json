@@ -1,0 +1,154 @@
+{
+  "step": 171,
+  "name": "step171_dual_root_sync_checkpoint",
+  "status": "PASSED",
+  "timestamp_utc": "2026-09-06T08:09:25.416Z",
+  "auditor": "Dual-Root Step 171 Parity Auditor",
+  "mandate": "MEGAPLAN Dual-Root Checkpoint & Telemetry Verification",
+  "dual_root_parity": true,
+  "roots_verified": {
+    "horner_root": "C:\\HornerAI\\horner-cscape-mcp",
+    "user_root": "C:\\Users\\ArmandoSilva"
+  },
+  "live_cscape": {
+    "pid": 14996,
+    "hwnd": "0x00130C78",
+    "status": "READY_FOR_TESTS",
+    "ready_for_tests": true
+  },
+  "artifacts_audited": {
+    "checkpoints_count": 3,
+    "logs_count": 3,
+    "screenshots_count": 1,
+    "code_files_count": 7,
+    "all_roots_identical": true
+  },
+  "audit_details": {
+    "checkpoints": {
+      "step171_visible_gui_proof_checkpoint": {
+        "file": "artifacts/checkpoints/step171_visible_gui_proof_checkpoint.json",
+        "exists_in_both": true,
+        "size_bytes": 1116,
+        "file_sha256": "7b732d5d6d5d8a931d8dc06924bf3cacbf57073ef26509c901ba27688dcb066e",
+        "roots_identical": true,
+        "valid_json": true,
+        "status": "PASSED",
+        "step": 171
+      },
+      "step171_security_audit_checkpoint": {
+        "file": "artifacts/checkpoints/step171_security_audit_checkpoint.json",
+        "exists_in_both": true,
+        "size_bytes": 1089,
+        "file_sha256": "da634810eab6478b5d6d7c4b89965fc207c49d336d0b5d20f4f37052a872f5ed",
+        "roots_identical": true,
+        "valid_json": true,
+        "status": "PASSED",
+        "step": 171
+      },
+      "step171_mcp_condenser_hotwell_vacuum_control_checkpoint": {
+        "file": "artifacts/checkpoints/step171_mcp_condenser_hotwell_vacuum_control_checkpoint.json",
+        "exists_in_both": true,
+        "size_bytes": 795,
+        "file_sha256": "43ca32d21fc34ba5b2c78ad5a8d6d9c41e4b42c95e097ec2b1b76fcbf51eee42",
+        "roots_identical": true,
+        "valid_json": true,
+        "status": "PASSED",
+        "step": 171
+      }
+    },
+    "logs": {
+      "step171_visible_gui_proof": {
+        "file": "artifacts/logs/step171_visible_gui_proof.json",
+        "exists_in_both": true,
+        "size_bytes": 1263,
+        "file_sha256": "ce6ca810ef76faa7f72660de413dca859e9d1f55d47706cdd2701b00a7849762",
+        "roots_identical": true,
+        "valid_json": true,
+        "status": "PASSED",
+        "step": 171
+      },
+      "step171_security_audit": {
+        "file": "artifacts/logs/step171_security_audit.json",
+        "exists_in_both": true,
+        "size_bytes": 1566,
+        "file_sha256": "cde5ab559a0323712e776c483e6735880716f2de329fdead517d4425f0a554fd",
+        "roots_identical": true,
+        "valid_json": true,
+        "status": "PASSED",
+        "step": 171
+      },
+      "step171_mcp_condenser_hotwell_vacuum_control": {
+        "file": "artifacts/logs/step171_mcp_condenser_hotwell_vacuum_control.json",
+        "exists_in_both": true,
+        "size_bytes": 670,
+        "file_sha256": "f47af0035812322a7a79bc94a733c68c8553bb9ae473c5050cc3bac3d4f50570",
+        "roots_identical": true,
+        "valid_json": true,
+        "status": "PASSED",
+        "step": 171
+      }
+    },
+    "screenshots": {
+      "live_cscape_tank_level_step171": {
+        "file": "artifacts/screenshots/live_cscape_tank_level_step171.png",
+        "exists_in_both": true,
+        "size_bytes": 72686,
+        "file_sha256": "4730540e881c216fe988f2ab82b86a21b3bf9b10e662d57effe44a71b6cb657f",
+        "roots_identical": true,
+        "gt_10kb": true
+      }
+    },
+    "code_files": {
+      "execute_step171_visible_cscape_gui_driver.py": {
+        "file": "scripts/execute_step171_visible_cscape_gui_driver.py",
+        "exists_in_both": true,
+        "size_bytes": 15890,
+        "file_sha256": "7e34795964abaeb33d94b9653168c46d2e18947a99e52dc52e4ccc192920ad87",
+        "roots_identical": true
+      },
+      "execute_step171_security_audit.py": {
+        "file": "scripts/execute_step171_security_audit.py",
+        "exists_in_both": true,
+        "size_bytes": 15803,
+        "file_sha256": "f2d1ea0d0b0096b39eeaa08441caef1366b68cfe82dd74bd29bbb467da87c9bc",
+        "roots_identical": true
+      },
+      "execute_step171_mcp_condenser_hotwell_vacuum_control.py": {
+        "file": "scripts/execute_step171_mcp_condenser_hotwell_vacuum_control.py",
+        "exists_in_both": true,
+        "size_bytes": 23043,
+        "file_sha256": "37dfec91bf13e6060e11ceec2410e48d99138cc2b23871485f0a09293717df72",
+        "roots_identical": true
+      },
+      "execute_step171_dual_root_sync_audit.py": {
+        "file": "scripts/execute_step171_dual_root_sync_audit.py",
+        "exists_in_both": true,
+        "size_bytes": 8101,
+        "file_sha256": "b362c27b758ff6339f62e3511b30de00cf14da7a1b563c36162d8769f848bc34",
+        "roots_identical": true
+      },
+      "test_step171_visible_cscape_gui_driver.py": {
+        "file": "tests/test_step171_visible_cscape_gui_driver.py",
+        "exists_in_both": true,
+        "size_bytes": 5369,
+        "file_sha256": "2f3c7f9c49b0dd7efe27bfa04ed71f32e9d228f70f98ce5d4acf932ccac1234e",
+        "roots_identical": true
+      },
+      "test_step171_mcp_condenser_hotwell_vacuum_control.py": {
+        "file": "tests/test_step171_mcp_condenser_hotwell_vacuum_control.py",
+        "exists_in_both": true,
+        "size_bytes": 4538,
+        "file_sha256": "a88e8afe40923d7143aceb815d5d46624e5dd142cfdc0f109eb773d1a07a246d",
+        "roots_identical": true
+      },
+      "condenser_hotwell_vacuum_control.st": {
+        "file": "examples/st_applications/condenser_hotwell_vacuum_control.st",
+        "exists_in_both": true,
+        "size_bytes": 5706,
+        "file_sha256": "7a6513aa5a08468597ad2ccce03029447fc8df5cea3a031f86359423f35db1de",
+        "roots_identical": true
+      }
+    }
+  },
+  "checkpoint_sha256": "9be340ffe722d0042d43d2db8f15a8bbbae2071e5a0d679ecc5239b38a63fc85"
+}

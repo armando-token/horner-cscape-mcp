@@ -1,0 +1,266 @@
+{
+  "step": 185,
+  "gate": "G5",
+  "mandate": "MEGAPLAN Gate G5: Evidence-Gated Final Signoff & Dual-Root Parity Audit for Step 185",
+  "status": "success",
+  "start_time_utc": "2026-09-06T15:44:23.088Z",
+  "completion_time_utc": "2026-09-06T15:44:23.144Z",
+  "execution_duration_sec": 0.056,
+  "roots": {
+    "horner_root": "C:\\HornerAI\\horner-cscape-mcp",
+    "user_root": "C:\\Users\\ArmandoSilva"
+  },
+  "live_cscape_gate": {
+    "pid": 10892,
+    "hwnd": "0x01B005DC",
+    "status": "READY_FOR_TESTS",
+    "project": "C:\\HornerAI\\horner-cscape-mcp\\artifacts\\projects\\TankLevelClosedLoop\\TankLevelClosedLoop.csp",
+    "window_title": "Cscape - Logged In : \"armando@controlnautas.com\" - [TankLevelClosedLoop.csp]",
+    "desktop": "winsta0\\Default",
+    "classification": "VERIFIED_LIVE (Live Cscape GUI Gate on winsta0\\Default)"
+  },
+  "gates_verified": {
+    "G0": "PASSED (Inventory & PE binary audit: Cscape 10.2 x86 PE Build 10.2.751.4)",
+    "G1": "PASSED (False successes H01-H13 dismantled, honest PARTIAL classification enforced, ephemeral PIDs recognized as gate-dependent)",
+    "G2": "PASSED (Live Cscape 10.2 visible GUI on winsta0\\Default with TankLevelClosedLoop.csp and Project Navigator visible)",
+    "G3": "PASSED (Live GUI Error Check 32826 clean build 0 errors/0 warnings, download lockout)",
+    "G4": "PASSED (Pure-software closed-loop plant simulation & Industrial Process Precision Temperature PID Control FB_PIDTemperatureControl, offline/DEV TESTED_MOCK)",
+    "G5": "PASSED (Evidence-gated final signoff & dual-root parity passed across all checkpoints, logs, and guides)"
+  },
+  "verification_classification": {
+    "offline_suites_label": "offline/DEV (TESTED_MOCK)",
+    "live_gui_gates": "VERIFIED_LIVE (Live Cscape GUI Gate on winsta0\\Default)",
+    "hardware_lockout": "BLOCKED_SAFETY (Fail-closed lockout enforced)"
+  },
+  "parity_verified": true,
+  "details": {
+    "checkpoints": {
+      "artifacts/checkpoints/megaplan_g2_visible_gui_checkpoint.json": {
+        "rel_path": "artifacts/checkpoints/megaplan_g2_visible_gui_checkpoint.json",
+        "size_bytes": 1764,
+        "sha256": "225bae0c74377127396d9b3e04d299671a730ceb59d3b40ebf0d260e83986fac",
+        "identical": true,
+        "json_valid": true,
+        "status": "success"
+      },
+      "artifacts/checkpoints/megaplan_g3_live_compile_pipeline_checkpoint.json": {
+        "rel_path": "artifacts/checkpoints/megaplan_g3_live_compile_pipeline_checkpoint.json",
+        "size_bytes": 1754,
+        "sha256": "b514116f8369b2617d8d7a164286733408bb4f784ea33c011d0c5649e15f867c",
+        "identical": true,
+        "json_valid": true,
+        "status": "success"
+      },
+      "artifacts/checkpoints/megaplan_g4_closed_loop_simulation_checkpoint.json": {
+        "rel_path": "artifacts/checkpoints/megaplan_g4_closed_loop_simulation_checkpoint.json",
+        "size_bytes": 760,
+        "sha256": "a36133d0b01c36cf476b5b96b05e42ca6404fc524e71a83a15478f23b8dd6445",
+        "identical": true,
+        "json_valid": true,
+        "status": "success"
+      },
+      "artifacts/checkpoints/megaplan_g5_final_parity_checkpoint.json": {
+        "rel_path": "artifacts/checkpoints/megaplan_g5_final_parity_checkpoint.json",
+        "size_bytes": 4095,
+        "sha256": "6f93431be25f4f2b8e9d9edc331f9ff138ffd7057ff2b2f0ca988d0da18f04fd",
+        "identical": true,
+        "json_valid": true,
+        "status": "success"
+      },
+      "artifacts/checkpoints/step185_visible_gui_proof_checkpoint.json": {
+        "rel_path": "artifacts/checkpoints/step185_visible_gui_proof_checkpoint.json",
+        "size_bytes": 1569,
+        "sha256": "e6bcd4e36fd00608d256da8fa1bd5c42d039f9534e4bdde2797e6a7ac02dc6e2",
+        "identical": true,
+        "json_valid": true,
+        "status": "success"
+      },
+      "artifacts/checkpoints/step185_security_audit_checkpoint.json": {
+        "rel_path": "artifacts/checkpoints/step185_security_audit_checkpoint.json",
+        "size_bytes": 2131,
+        "sha256": "c7bd03d82ccfcd68e4a5c79ee998e4d93e103c77e789b686a49c11f52925be4d",
+        "identical": true,
+        "json_valid": true,
+        "status": "success"
+      },
+      "artifacts/checkpoints/step185_pure_st_audit_checkpoint.json": {
+        "rel_path": "artifacts/checkpoints/step185_pure_st_audit_checkpoint.json",
+        "size_bytes": 728,
+        "sha256": "88c073847a4a1dbae2bc7526e5a7484a11cc5db3ac9b83359cdecfb0a55b8e7f",
+        "identical": true,
+        "json_valid": true,
+        "status": "success"
+      },
+      "artifacts/checkpoints/step185_mcp_pid_temperature_controller_checkpoint.json": {
+        "rel_path": "artifacts/checkpoints/step185_mcp_pid_temperature_controller_checkpoint.json",
+        "size_bytes": 344,
+        "sha256": "42ae8212273881543daeec54d45f90f04ef7ed4d3b0887694b002dd0d417a518",
+        "identical": true,
+        "json_valid": true,
+        "status": "success"
+      }
+    },
+    "logs": {
+      "artifacts/logs/step185_visible_gui_proof.json": {
+        "rel_path": "artifacts/logs/step185_visible_gui_proof.json",
+        "size_bytes": 3255,
+        "sha256": "5fb525c23f8339e85b4fb87f4b0c10ef202576f686701f38ef337ef7bf2de45f",
+        "identical": true,
+        "json_valid": true,
+        "status": "success"
+      },
+      "artifacts/logs/step185_security_audit.json": {
+        "rel_path": "artifacts/logs/step185_security_audit.json",
+        "size_bytes": 30638,
+        "sha256": "34218c249e6b7bcc462e335dd6784ed27b86908266b2695064b9d71757da89ed",
+        "identical": true,
+        "json_valid": true,
+        "status": "success"
+      },
+      "artifacts/logs/step185_pure_st_audit.json": {
+        "rel_path": "artifacts/logs/step185_pure_st_audit.json",
+        "size_bytes": 19609,
+        "sha256": "b4382d13ec950d38182697f342341ed637b94b48d77d14940a6ecfe9a5b75efe",
+        "identical": true,
+        "json_valid": true,
+        "status": "success"
+      },
+      "artifacts/logs/step185_mcp_pid_temperature_controller.json": {
+        "rel_path": "artifacts/logs/step185_mcp_pid_temperature_controller.json",
+        "size_bytes": 3468,
+        "sha256": "d04b6027ae23c66775bce3a20cc2a3dd449b7a1383c3795e593d70eb993bc8f7",
+        "identical": true,
+        "json_valid": true,
+        "status": "success"
+      },
+      "artifacts/logs/megaplan_g4_closed_loop_simulation.json": {
+        "rel_path": "artifacts/logs/megaplan_g4_closed_loop_simulation.json",
+        "size_bytes": 3457,
+        "sha256": "fc3db8e08e7f98243497e0db6fad86833837a49d0b2daeaef39911ad626880e6",
+        "identical": true,
+        "json_valid": true,
+        "status": "success"
+      }
+    },
+    "screenshots": {
+      "artifacts/screenshots/live_cscape_tank_level_step185.png": {
+        "rel_path": "artifacts/screenshots/live_cscape_tank_level_step185.png",
+        "size_bytes": 71597,
+        "sha256": "3629ca11ab19c8a2ec8b2c58e5bfcbb6febc2d45132107708368cf014cbf09b9",
+        "identical": true
+      }
+    },
+    "scripts": {
+      "scripts/execute_step185_visible_cscape_gui_driver.py": {
+        "rel_path": "scripts/execute_step185_visible_cscape_gui_driver.py",
+        "size_bytes": 35248,
+        "sha256": "89500e59fdb132f3d8aa6af46913772285f38e42a42f735207ecfb073bb470bb",
+        "identical": true
+      },
+      "scripts/step185_security_audit.py": {
+        "rel_path": "scripts/step185_security_audit.py",
+        "size_bytes": 34370,
+        "sha256": "31cda2e68035f0906228a8f2a3ee1a0b2fb5eda15552b2900530051320b08133",
+        "identical": true
+      },
+      "scripts/execute_step185_pure_st_audit.py": {
+        "rel_path": "scripts/execute_step185_pure_st_audit.py",
+        "size_bytes": 16563,
+        "sha256": "793b07b633df0bf3ae4ff49fe42d74b6d87bd12edb14544436405e85fb2f89e9",
+        "identical": true
+      },
+      "scripts/execute_step185_mcp_pid_temperature_controller.py": {
+        "rel_path": "scripts/execute_step185_mcp_pid_temperature_controller.py",
+        "size_bytes": 23655,
+        "sha256": "0830e2f1942440f49e4bc0e3edb2e63d90c91c9e8f3c789ea6eaf23ac6b800e5",
+        "identical": true
+      },
+      "scripts/execute_step185_dual_root_sync_audit.py": {
+        "rel_path": "scripts/execute_step185_dual_root_sync_audit.py",
+        "size_bytes": 12167,
+        "sha256": "68559a6f431b115c29a1787a98e8e7610d839b4c570a13706eef6886788b6965",
+        "identical": true
+      }
+    },
+    "tests": {
+      "tests/test_step185_visible_cscape_gui_driver.py": {
+        "rel_path": "tests/test_step185_visible_cscape_gui_driver.py",
+        "size_bytes": 5837,
+        "sha256": "8093306a6b2a6dc8b90c91c609615c5284bb430070b5328bea611edb00dcc770",
+        "identical": true
+      },
+      "tests/test_step185_security_audit.py": {
+        "rel_path": "tests/test_step185_security_audit.py",
+        "size_bytes": 8254,
+        "sha256": "ed8434aa60c749f66f9cad92301485836f363ca13f573a5aa0cb7f1376defc7d",
+        "identical": true
+      },
+      "tests/test_step185_pure_st_audit.py": {
+        "rel_path": "tests/test_step185_pure_st_audit.py",
+        "size_bytes": 8628,
+        "sha256": "810303072175d41f3aabe8050ce21d87d4c2f79a319e6cb695ec960012edc956",
+        "identical": true
+      },
+      "tests/test_step185_mcp_pid_temperature_controller.py": {
+        "rel_path": "tests/test_step185_mcp_pid_temperature_controller.py",
+        "size_bytes": 9080,
+        "sha256": "0cfcb259e6261b77bcc66671b2bcad38ee4a92270bb722368f36f490828663d2",
+        "identical": true
+      },
+      "tests/test_step185_dual_root_sync.py": {
+        "rel_path": "tests/test_step185_dual_root_sync.py",
+        "size_bytes": 9253,
+        "sha256": "6099023e880d6c8337577d0443acfb50fcec9cc987d334babe8dc4bf74e07034",
+        "identical": true
+      }
+    },
+    "examples": {
+      "examples/st_applications/pid_temperature_controller.st": {
+        "rel_path": "examples/st_applications/pid_temperature_controller.st",
+        "size_bytes": 6885,
+        "sha256": "287ab36da0e02e4771ba5004b0fb32c7c1964b12081913f90bd71f9d841230bb",
+        "identical": true
+      }
+    },
+    "project_files": {
+      "artifacts/projects/TankLevelClosedLoop/TankLevelClosedLoop.csp": {
+        "rel_path": "artifacts/projects/TankLevelClosedLoop/TankLevelClosedLoop.csp",
+        "size_bytes": 49152,
+        "sha256": "d075e67d80be031a99a6895078735918b7a15c8086590a6d20ec8484b27749af",
+        "identical": true
+      },
+      "artifacts/projects/TankLevelClosedLoop/pous/TankLevelClosedLoop.st": {
+        "rel_path": "artifacts/projects/TankLevelClosedLoop/pous/TankLevelClosedLoop.st",
+        "size_bytes": 2599,
+        "sha256": "7fd73e139c3c6475dd0f4c84351c339a0c66b96f2b160f452fc2564017de7ea9",
+        "identical": true
+      },
+      "artifacts/projects/TankLevelClosedLoop/artifacts/build.log": {
+        "rel_path": "artifacts/projects/TankLevelClosedLoop/artifacts/build.log",
+        "size_bytes": 1037,
+        "sha256": "c33ff7d978ba29eeb674118e444c7bf0822cc91ea29631ca8f4696e4af90d13a",
+        "identical": true
+      }
+    },
+    "documentation": {
+      "CAPABILITY_MATRIX.md": {
+        "rel_path": "CAPABILITY_MATRIX.md",
+        "size_bytes": 203640,
+        "sha256": "ff22f73fa6562a2af46925a3c9767ca728dd6a3e41184ebec234718f52f64501",
+        "identical": true
+      },
+      "AGENTS.md": {
+        "rel_path": "AGENTS.md",
+        "size_bytes": 17722,
+        "sha256": "25943094ff5d33d9ec94d6ecf2fe88a9129112f43ba051b6f481544c7628bf93",
+        "identical": true
+      },
+      "CHANGELOG.md": {
+        "rel_path": "CHANGELOG.md",
+        "size_bytes": 25220,
+        "sha256": "9ec4dd7618c86efc90a8d19fd1c2b95f2a890eed2acd1c0f56a01a2914fc311a",
+        "identical": true
+      }
+    }
+  }
+}

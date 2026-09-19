@@ -1,0 +1,308 @@
+{
+  "step": "G1",
+  "name": "g1_security_parity_audit",
+  "agent": "Agent 7: Dual-Root Synchronization and Security Auditor",
+  "mandate": "Verify cryptographic parity between C:\\HornerAI\\horner-cscape-mcp and C:\\Users\\ArmandoSilva, and audit safety lockout enforcement.",
+  "safety_mandate": {
+    "absolute_hardware_lockout_policy": true,
+    "zero_hardware_download": true,
+    "zero_plc_download": true,
+    "zero_gui_interaction": true,
+    "no_straton": true,
+    "no_fake_metrics": true,
+    "actual_tests_passed": 227
+  },
+  "status": "success",
+  "timestamp_start_utc": "2026-09-06T13:51:53.432Z",
+  "timestamp_end_utc": "2026-09-06T13:53:19.985Z",
+  "duration_sec": 86.554,
+  "tasks": {
+    "task1_dual_root_synchronization": {
+      "status": "success",
+      "total_files_audited": 829,
+      "dual_root_parity_verified": true,
+      "directories": {
+        "src": {
+          "horner_path": "C:\\HornerAI\\horner-cscape-mcp\\src",
+          "user_path": "C:\\Users\\ArmandoSilva\\src",
+          "horner_file_count": 64,
+          "user_file_count": 64,
+          "missing_in_horner_count": 0,
+          "missing_in_user_count": 0,
+          "mismatch_count": 0,
+          "cryptographic_parity": true,
+          "missing_in_horner": [],
+          "missing_in_user": [],
+          "mismatches": []
+        },
+        "scripts": {
+          "horner_path": "C:\\HornerAI\\horner-cscape-mcp\\scripts",
+          "user_path": "C:\\Users\\ArmandoSilva\\scripts",
+          "horner_file_count": 305,
+          "user_file_count": 305,
+          "missing_in_horner_count": 0,
+          "missing_in_user_count": 0,
+          "mismatch_count": 0,
+          "cryptographic_parity": true,
+          "missing_in_horner": [],
+          "missing_in_user": [],
+          "mismatches": []
+        },
+        "tests": {
+          "horner_path": "C:\\HornerAI\\horner-cscape-mcp\\tests",
+          "user_path": "C:\\Users\\ArmandoSilva\\tests",
+          "horner_file_count": 167,
+          "user_file_count": 167,
+          "missing_in_horner_count": 0,
+          "missing_in_user_count": 0,
+          "mismatch_count": 0,
+          "cryptographic_parity": true,
+          "missing_in_horner": [],
+          "missing_in_user": [],
+          "mismatches": []
+        },
+        "artifacts/checkpoints": {
+          "horner_path": "C:\\HornerAI\\horner-cscape-mcp\\artifacts\\checkpoints",
+          "user_path": "C:\\Users\\ArmandoSilva\\artifacts\\checkpoints",
+          "horner_file_count": 268,
+          "user_file_count": 268,
+          "missing_in_horner_count": 0,
+          "missing_in_user_count": 0,
+          "mismatch_count": 0,
+          "cryptographic_parity": true,
+          "missing_in_horner": [],
+          "missing_in_user": [],
+          "mismatches": []
+        },
+        "quarantine": {
+          "horner_path": "C:\\HornerAI\\horner-cscape-mcp\\quarantine",
+          "user_path": "C:\\Users\\ArmandoSilva\\quarantine",
+          "horner_file_count": 25,
+          "user_file_count": 25,
+          "missing_in_horner_count": 0,
+          "missing_in_user_count": 0,
+          "mismatch_count": 0,
+          "cryptographic_parity": true,
+          "missing_in_horner": [],
+          "missing_in_user": [],
+          "mismatches": []
+        }
+      },
+      "key_code_files": {
+        "src/cscape/safety.py": {
+          "exists_in_both": true,
+          "sha256_horner": "f58209fbb154f48c3ec04fa0f2249010950a0ed80a6fbe9bc032b03a008ab6a5",
+          "sha256_user": "f58209fbb154f48c3ec04fa0f2249010950a0ed80a6fbe9bc032b03a008ab6a5",
+          "identical": true,
+          "size_bytes": 9043
+        },
+        "src/cscape/compilation.py": {
+          "exists_in_both": true,
+          "sha256_horner": "1d565d818e83cb9cb470d909628b23d7737d3e0c6fdd2c9de0502310e86315e1",
+          "sha256_user": "1d565d818e83cb9cb470d909628b23d7737d3e0c6fdd2c9de0502310e86315e1",
+          "identical": true,
+          "size_bytes": 46785
+        },
+        "src/cscape/compiler.py": {
+          "exists_in_both": true,
+          "sha256_horner": "96502755717baf93e4818ad5122720039b652e8a83fa596afc3ca396612dc40a",
+          "sha256_user": "96502755717baf93e4818ad5122720039b652e8a83fa596afc3ca396612dc40a",
+          "identical": true,
+          "size_bytes": 1614
+        },
+        "src/cscape/gate.py": {
+          "exists_in_both": true,
+          "sha256_horner": "0ec01075cae9c3093764dd62a5ddfb3c81a5d6658a1bec10007f5ae1809cad84",
+          "sha256_user": "0ec01075cae9c3093764dd62a5ddfb3c81a5d6658a1bec10007f5ae1809cad84",
+          "identical": true,
+          "size_bytes": 7279
+        },
+        "src/security/guard.py": {
+          "exists_in_both": true,
+          "sha256_horner": "295ab7b05f41847eec017aa38203d8edc9217d5277c3283597234aee00ff5cf4",
+          "sha256_user": "295ab7b05f41847eec017aa38203d8edc9217d5277c3283597234aee00ff5cf4",
+          "identical": true,
+          "size_bytes": 33364
+        },
+        "src/security/policy.py": {
+          "exists_in_both": true,
+          "sha256_horner": "404ab2285aaae8c23edac444fca19d5362942aa0115956f243fea0806892aa2c",
+          "sha256_user": "404ab2285aaae8c23edac444fca19d5362942aa0115956f243fea0806892aa2c",
+          "identical": true,
+          "size_bytes": 20158
+        },
+        "src/security/exceptions.py": {
+          "exists_in_both": true,
+          "sha256_horner": "4db5e9138ff854f3268dd39c5b0abc560c2eb8095c5980c577a1004e4c331664",
+          "sha256_user": "4db5e9138ff854f3268dd39c5b0abc560c2eb8095c5980c577a1004e4c331664",
+          "identical": true,
+          "size_bytes": 2241
+        },
+        "scripts/execute_g1_visible_gui_proof.py": {
+          "exists_in_both": true,
+          "sha256_horner": "926df22597ef149c647e7aa79a684566476bc46a992696e7517f32ec379cb6e2",
+          "sha256_user": "926df22597ef149c647e7aa79a684566476bc46a992696e7517f32ec379cb6e2",
+          "identical": true,
+          "size_bytes": 18407
+        },
+        "scripts/run_mcp_server.py": {
+          "exists_in_both": true,
+          "sha256_horner": "8ef5c22895f26a9e7b5ec3837ce0809884bede3fbe741b3b9718b207e5fbd8af",
+          "sha256_user": "8ef5c22895f26a9e7b5ec3837ce0809884bede3fbe741b3b9718b207e5fbd8af",
+          "identical": true,
+          "size_bytes": 1458
+        },
+        "tests/test_security.py": {
+          "exists_in_both": true,
+          "sha256_horner": "b07e0ae3bc7a35d8b1e5f412a0123647a98149796184fcbe7b797c02a8fd1786",
+          "sha256_user": "b07e0ae3bc7a35d8b1e5f412a0123647a98149796184fcbe7b797c02a8fd1786",
+          "identical": true,
+          "size_bytes": 37808
+        },
+        "tests/test_step157_security_audit.py": {
+          "exists_in_both": true,
+          "sha256_horner": "53eb947dffa3110e4b60414c6dcc1591914a3c7bccc8eb2e223cd23274905faf",
+          "sha256_user": "53eb947dffa3110e4b60414c6dcc1591914a3c7bccc8eb2e223cd23274905faf",
+          "identical": true,
+          "size_bytes": 2590
+        },
+        "artifacts/checkpoints/step170_security_audit_checkpoint.json": {
+          "exists_in_both": true,
+          "sha256_horner": "049111db9969e2531e09ae8a2052ca896a6780586092e1c2d5c5108e3d1739c2",
+          "sha256_user": "049111db9969e2531e09ae8a2052ca896a6780586092e1c2d5c5108e3d1739c2",
+          "identical": true,
+          "size_bytes": 556
+        }
+      }
+    },
+    "task2_security_audit": {
+      "status": "success",
+      "hardware_ports": {
+        "zero_com_can_usb_imports_verified": true,
+        "py_files_scanned": 369,
+        "port_regex_blocking_verified": true,
+        "sample_ports_tested": [
+          "COM1",
+          "COM256",
+          "\\\\.\\COM1",
+          "/dev/ttyS0",
+          "/dev/ttyUSB0",
+          "CAN0",
+          "PCAN_USBBUS1",
+          "\\\\?\\usb#vid_1234&pid_5678",
+          "JTAG_ICE",
+          "LPT1"
+        ],
+        "blocked_flashing_executables_count": 15
+      },
+      "straton_quarantine": {
+        "quarantine_directory": "quarantine/straton_k5_legacy",
+        "legacy_files_count": 24,
+        "legacy_files_sample": [
+          "legacy_automation_project_manager.py",
+          "legacy_iec_project_builder.py",
+          "legacy_project_manager.py",
+          "legacy_project___init__.py",
+          "README.md",
+          "test_legacy_iec_project_builder.py",
+          "__init__.py",
+          "template_project/appli.CPO",
+          "template_project/appli.k5p",
+          "template_project/appli.lge"
+        ],
+        "active_py_files_scanned": 536,
+        "active_straton_k5_imports_count": 0,
+        "zero_straton_imports_verified": true
+      },
+      "download_lockout": {
+        "id_controller_download": 32827,
+        "id_controller_download_alt": 33149,
+        "commands_tested": [
+          {
+            "cmd": "32827",
+            "caller": "intercept_download_command",
+            "blocked": true,
+            "error": "CscapeSafetyViolationError"
+          },
+          {
+            "cmd": "33149",
+            "caller": "intercept_download_command",
+            "blocked": true,
+            "error": "CscapeSafetyViolationError"
+          },
+          {
+            "cmd": "32827",
+            "caller": "intercept_download_command",
+            "blocked": true,
+            "error": "CscapeSafetyViolationError"
+          },
+          {
+            "cmd": "33149",
+            "caller": "intercept_download_command",
+            "blocked": true,
+            "error": "CscapeSafetyViolationError"
+          },
+          {
+            "cmd": "ID_CONTROLLER_DOWNLOAD",
+            "caller": "intercept_download_command",
+            "blocked": true,
+            "error": "CscapeSafetyViolationError"
+          },
+          {
+            "cmd": "ID_CONTROLLER_DOWNLOAD_ALT",
+            "caller": "intercept_download_command",
+            "blocked": true,
+            "error": "CscapeSafetyViolationError"
+          },
+          {
+            "cmd": "ID_DOWNLOAD",
+            "caller": "intercept_download_command",
+            "blocked": true,
+            "error": "CscapeSafetyViolationError"
+          },
+          {
+            "cmd": "32827",
+            "caller": "CscapeSafetyGuard.validate_cscape_download",
+            "blocked": true,
+            "error": "CscapeSafetyViolationError"
+          },
+          {
+            "cmd": "33149",
+            "caller": "CscapeSafetyGuard.validate_cscape_download",
+            "blocked": true,
+            "error": "CscapeSafetyViolationError"
+          },
+          {
+            "cmd": "32827",
+            "caller": "CscapeCompiler.trigger_cscape_gui_compile",
+            "blocked": true,
+            "error": "UnauthorizedDownloadError"
+          },
+          {
+            "cmd": "33149",
+            "caller": "CscapeCompiler.trigger_cscape_gui_compile",
+            "blocked": true,
+            "error": "UnauthorizedDownloadError"
+          }
+        ],
+        "fail_closed_verified": true
+      }
+    },
+    "task3_security_tests": {
+      "status": "success",
+      "command": "pytest tests/test_security.py -q --tb=short",
+      "return_code": 0,
+      "duration_sec": 27.258,
+      "tests_passed": 227,
+      "tests_failed": 0,
+      "warnings": 12374,
+      "stdout_summary": [
+        "============================== warnings summary ===============================",
+        "-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html",
+        "======================= 227 passed, 1 warning in 23.74s ======================="
+      ],
+      "zero_gui_interaction_verified": true
+    }
+  },
+  "log_file_sha256": "3e073a8163d6390eede096b40b78a37aeaf6af0f91a0e311fb3264bbd6a342ad"
+}

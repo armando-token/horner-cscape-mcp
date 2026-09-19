@@ -1,0 +1,24 @@
+{
+  "status": "success",
+  "command_id": 32826,
+  "command_name": "ID_PROGRAM_ERRORCHECK",
+  "pid": 928,
+  "hwnd": "0x0003040C",
+  "window_title": "Cscape - Logged In : \"armando@controlnautas.com\" - [TankLevel_P5_Dedicated.csp]",
+  "compile_duration_sec": 1.22,
+  "clean_build": true,
+  "error_count": 0,
+  "warning_count": 0,
+  "status_text": "SUCCESS",
+  "proof_lines": [
+    "No error detected",
+    "No error detected",
+    "No error detected"
+  ],
+  "output_text": "Compiler V12.0.200.82\nLoading application symbols...\nEnhancedDisplayAttributes\nNo error detected\n\nLoading application symbols...\nSTBlock1\nBuilding application data...\nRelocating code...\nNo error detected\nOnline Change is disabled\nGenerate OCS code...\nNo error detected",
+  "diagnostics": [],
+  "modal_detected": true,
+  "modal_classification": "CLEAN_RESULT",
+  "screenshot_horner": "C:\\HornerAI\\horner-cscape-mcp\\artifacts\\screenshots\\live_cscape_errorcheck_proof.png",
+  "screenshot_user": "C:\\Users\\ArmandoSilva\\artifacts\\screenshots\\live_cscape_errorcheck_proof.png"
+}

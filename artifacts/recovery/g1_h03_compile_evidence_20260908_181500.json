@@ -1,0 +1,17 @@
+{
+  "item_id": "H03",
+  "name": "Fake Compile Success Dismantled & Honest AST Metrics Enforced",
+  "mission_id": "G1_REMAINING_NEGATIVES_OFFLINE_v3",
+  "timestamp_utc": "2026-09-09T01:19:34.566673+00:00",
+  "status": "success",
+  "invariant": "Compile on non-existent project fails closed; AST metrics honest; download command blocked",
+  "verification": {
+    "compile_missing_project_status": "failed",
+    "compile_missing_project_success": false,
+    "compile_successful_flag": false,
+    "honest_ast_statements": 1,
+    "honest_ast_variables": 1,
+    "unauthorized_download_command_32827_blocked": true,
+    "pass": true
+  }
+}

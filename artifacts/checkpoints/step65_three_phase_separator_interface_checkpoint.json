@@ -1,0 +1,19 @@
+{
+  "step": 65,
+  "status": "COMPLETED",
+  "name": "Three-Phase Separator Oil/Water Interface Level & Gas Pad Closed-Loop Audit",
+  "timestamp": "2026-09-05T10:48:23.005Z",
+  "cscape_pid": 8660,
+  "cscape_hwnd": "0x147068c",
+  "project": "TankLevelClosedLoop.csp",
+  "assertions_passed": [
+    "Phase 1 nominal equilibrium error 0.0000% < 0.10%",
+    "Phase 2 uncompensated slug surge drift 7.56% > 5.0%",
+    "Phase 3 hydrostatic decoupled error 0.0000% < 0.35%",
+    "Wellhead slug surge rejection ratio 100.0% > 95.0%",
+    "Phase 4 dynamic interface step settling error 0.1138% < 0.35%",
+    "Phase 5 high-high carryover trip at cycle 501 == 501",
+    "Fail-closed download lockout ID_CONTROLLER_DOWNLOAD=32827 strictly enforced",
+    "Live Cscape GUI healthy and responsive throughout test"
+  ]
+}

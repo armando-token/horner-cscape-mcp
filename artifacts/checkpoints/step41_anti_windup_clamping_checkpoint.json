@@ -1,0 +1,19 @@
+{
+  "step": 41,
+  "name": "step41_anti_windup_clamping_checkpoint",
+  "description": "Closed-loop anti-windup reset clamping and saturation recovery audit verified across 500 cycles with upper/lower saturation clamping, zero unwinding lag, and sub-0.05% post-reversal settling.",
+  "timestamp_utc": "2026-09-05T09:46:40.228Z",
+  "cscape_pid": 11808,
+  "cscape_hwnd": "0x01F00670",
+  "cscape_healthy": true,
+  "simulation_cycles": 500,
+  "cycles_per_sec": 2277.4,
+  "upper_clamp_verified": true,
+  "lower_clamp_verified": true,
+  "zero_unwind_lag_verified": true,
+  "phase2_recovery_error_percent": 0.004,
+  "phase4_recovery_error_percent": 0.003,
+  "hardware_lockout_enforced": true,
+  "audit_log": "C:\\Users\\ArmandoSilva\\artifacts\\logs\\mcp_anti_windup_clamping_audit.json",
+  "status": "VERIFIED_LIVE"
+}

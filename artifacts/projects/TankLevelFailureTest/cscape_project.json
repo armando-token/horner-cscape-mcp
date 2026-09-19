@@ -1,0 +1,10 @@
+{
+  "name": "TankLevelFailureTest",
+  "controller": "XL4",
+  "description": "Tank Level Control with Concrete Failure Location Auditing",
+  "author": "Horner AI Agent",
+  "iec_engine": "Cscape 10.2 IEC 61131-3 Structured Text",
+  "created_at": "2026-09-04T21:07:41.482194+00:00",
+  "hardware_lockout": true,
+  "pous": []
+}

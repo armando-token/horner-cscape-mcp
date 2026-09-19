@@ -1,0 +1,234 @@
+{
+  "audit_step": 74,
+  "name": "LNG Cryogenic Run-Down Drum Level & Heavy Hydrocarbon Extraction Closed-Loop Audit",
+  "timestamp": "2026-09-05T10:53:10.537Z",
+  "completed_at": "2026-09-05T10:53:16.818Z",
+  "cscape_pid": 8660,
+  "cscape_hwnd": "0x147068c",
+  "total_cycles": 600,
+  "metrics": {
+    "max_phase1_level_error_pct": 0.0,
+    "mean_phase1_level_error_pct": 0.0,
+    "max_phase2_uncomp_drift_pct": 6.66,
+    "mean_phase2_uncomp_drift_pct": 4.89,
+    "max_phase3_comp_error_pct": 0.0,
+    "mean_phase3_comp_error_pct": 0.0,
+    "cryogenic_surge_rejection_pct": 100.0,
+    "phase4_final_level_error_pct": 0.1138,
+    "phase4_mean_tail_level_error_pct": 0.0703,
+    "high_high_bog_interlock_trip_cycle": 501,
+    "high_high_trip_level_pct": 85.0
+  },
+  "trace_samples": [
+    {
+      "cycle": 0,
+      "phase": "PHASE_1_EQUILIBRIUM_CRYOGENIC",
+      "target_sp": 50.0,
+      "drum_level": 50.0,
+      "lng_flow": 50.0,
+      "bog_trip": false,
+      "cv_pid": 50.0
+    },
+    {
+      "cycle": 50,
+      "phase": "PHASE_1_EQUILIBRIUM_CRYOGENIC",
+      "target_sp": 50.0,
+      "drum_level": 50.0,
+      "lng_flow": 50.0,
+      "bog_trip": false,
+      "cv_pid": 50.0
+    },
+    {
+      "cycle": 100,
+      "phase": "PHASE_1_EQUILIBRIUM_CRYOGENIC",
+      "target_sp": 50.0,
+      "drum_level": 50.0,
+      "lng_flow": 50.0,
+      "bog_trip": false,
+      "cv_pid": 50.0
+    },
+    {
+      "cycle": 101,
+      "phase": "PHASE_2_REFRIGERANT_SURGE_UNCOMP",
+      "target_sp": 50.0,
+      "drum_level": 50.023,
+      "lng_flow": 50.4,
+      "bog_trip": false,
+      "cv_pid": 50.0
+    },
+    {
+      "cycle": 125,
+      "phase": "PHASE_2_REFRIGERANT_SURGE_UNCOMP",
+      "target_sp": 50.0,
+      "drum_level": 54.523,
+      "lng_flow": 58.8,
+      "bog_trip": false,
+      "cv_pid": 42.94
+    },
+    {
+      "cycle": 150,
+      "phase": "PHASE_2_REFRIGERANT_SURGE_UNCOMP",
+      "target_sp": 50.0,
+      "drum_level": 56.613,
+      "lng_flow": 67.5,
+      "bog_trip": false,
+      "cv_pid": 26.99
+    },
+    {
+      "cycle": 175,
+      "phase": "PHASE_2_REFRIGERANT_SURGE_UNCOMP",
+      "target_sp": 50.0,
+      "drum_level": 55.551,
+      "lng_flow": 76.2,
+      "bog_trip": false,
+      "cv_pid": 15.55
+    },
+    {
+      "cycle": 200,
+      "phase": "PHASE_2_REFRIGERANT_SURGE_UNCOMP",
+      "target_sp": 50.0,
+      "drum_level": 55.49,
+      "lng_flow": 85.0,
+      "bog_trip": false,
+      "cv_pid": 5.09
+    },
+    {
+      "cycle": 201,
+      "phase": "PHASE_3_REFRIGERATION_DECOUPLING",
+      "target_sp": 50.0,
+      "drum_level": 50.0,
+      "lng_flow": 85.0,
+      "bog_trip": false,
+      "cv_pid": 50.0
+    },
+    {
+      "cycle": 225,
+      "phase": "PHASE_3_REFRIGERATION_DECOUPLING",
+      "target_sp": 50.0,
+      "drum_level": 50.0,
+      "lng_flow": 85.0,
+      "bog_trip": false,
+      "cv_pid": 50.0
+    },
+    {
+      "cycle": 250,
+      "phase": "PHASE_3_REFRIGERATION_DECOUPLING",
+      "target_sp": 50.0,
+      "drum_level": 50.0,
+      "lng_flow": 85.0,
+      "bog_trip": false,
+      "cv_pid": 50.0
+    },
+    {
+      "cycle": 275,
+      "phase": "PHASE_3_REFRIGERATION_DECOUPLING",
+      "target_sp": 50.0,
+      "drum_level": 50.0,
+      "lng_flow": 85.0,
+      "bog_trip": false,
+      "cv_pid": 50.0
+    },
+    {
+      "cycle": 300,
+      "phase": "PHASE_3_REFRIGERATION_DECOUPLING",
+      "target_sp": 50.0,
+      "drum_level": 50.0,
+      "lng_flow": 85.0,
+      "bog_trip": false,
+      "cv_pid": 50.0
+    },
+    {
+      "cycle": 350,
+      "phase": "PHASE_3_REFRIGERATION_DECOUPLING",
+      "target_sp": 50.0,
+      "drum_level": 50.0,
+      "lng_flow": 85.0,
+      "bog_trip": false,
+      "cv_pid": 50.0
+    },
+    {
+      "cycle": 351,
+      "phase": "PHASE_4_DYNAMIC_DRUM_STEP",
+      "target_sp": 65.0,
+      "drum_level": 51.26,
+      "lng_flow": 75.0,
+      "bog_trip": false,
+      "cv_pid": 75.2
+    },
+    {
+      "cycle": 400,
+      "phase": "PHASE_4_DYNAMIC_DRUM_STEP",
+      "target_sp": 65.0,
+      "drum_level": 66.427,
+      "lng_flow": 75.0,
+      "bog_trip": false,
+      "cv_pid": 42.79
+    },
+    {
+      "cycle": 450,
+      "phase": "PHASE_4_DYNAMIC_DRUM_STEP",
+      "target_sp": 65.0,
+      "drum_level": 65.236,
+      "lng_flow": 75.0,
+      "bog_trip": false,
+      "cv_pid": 51.0
+    },
+    {
+      "cycle": 500,
+      "phase": "PHASE_4_DYNAMIC_DRUM_STEP",
+      "target_sp": 65.0,
+      "drum_level": 64.886,
+      "lng_flow": 75.0,
+      "bog_trip": false,
+      "cv_pid": 49.95
+    },
+    {
+      "cycle": 501,
+      "phase": "PHASE_5_HIGH_HIGH_BOG_TRIP",
+      "target_sp": 65.0,
+      "drum_level": 64.886,
+      "lng_flow": 30.0,
+      "bog_trip": true,
+      "cv_pid": 49.96
+    },
+    {
+      "cycle": 520,
+      "phase": "PHASE_5_HIGH_HIGH_BOG_TRIP",
+      "target_sp": 65.0,
+      "drum_level": 64.886,
+      "lng_flow": 30.0,
+      "bog_trip": true,
+      "cv_pid": 50.19
+    },
+    {
+      "cycle": 550,
+      "phase": "PHASE_5_HIGH_HIGH_BOG_TRIP",
+      "target_sp": 65.0,
+      "drum_level": 64.886,
+      "lng_flow": 30.0,
+      "bog_trip": true,
+      "cv_pid": 50.46
+    },
+    {
+      "cycle": 599,
+      "phase": "PHASE_5_HIGH_HIGH_BOG_TRIP",
+      "target_sp": 65.0,
+      "drum_level": 64.886,
+      "lng_flow": 30.0,
+      "bog_trip": true,
+      "cv_pid": 50.9
+    }
+  ],
+  "cscape_health": {
+    "healthy": true,
+    "pid": 8660,
+    "hwnd": "0x147068c",
+    "desktop": "Default",
+    "is_hung": false,
+    "wm_null_ping_ok": true,
+    "working_set_mb": 65.93,
+    "num_threads": 11,
+    "uptime_sec": 1013.43
+  },
+  "download_lockout_verified": true
+}

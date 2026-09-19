@@ -1,0 +1,54 @@
+================================================================================
+C6 AUTOMATE NATIVE PATH: SINGLE MCP COMPILE STEP EVIDENCE
+Mission ID: C6_AUTOMATE_NATIVE_PATH
+Step: cscape_compile_project
+Timestamp (UTC): 2026-09-08T07:02:00.362921+00:00
+Timestamp (Local): 2026-09-08 00:02:00
+================================================================================
+
+1. MCP CLIENT HANDSHAKE
+--------------------------------------------------------------------------------
+- Transport            : stdio (JSON-RPC 2.0)
+- Server Entrypoint    : C:\HornerAI\horner-cscape-mcp\scripts\run_mcp_server.py
+- Protocol Version     : 2025-11-25
+
+2. TARGET CSCAPE & PROJECT TELEMETRY
+--------------------------------------------------------------------------------
+- Cscape PID           : 19036
+- Interactive Desktop  : winsta0\Default (Visible)
+- Project Container    : C:\HornerAI\horner-cscape-mcp\artifacts\projects\C6_Native_Run\C6_Native_Run.csp
+- Mode                 : offline/DEV if Disconnected
+
+3. COMPILATION OUTCOME VIA FASTMCP
+--------------------------------------------------------------------------------
+- Status Contract      : success
+- Compile Successful   : True
+- Clean Build          : True
+- Error Count          : 0
+- Warning Count        : 0
+- POUs Compiled        : ['MainProcessControl', 'ScaleAnalogFilter']
+- Build Log            :
+=== Horner Cscape 10.2 Compile Pass: C6_Native_Run ===
+Clean Build: True
+Mode: IEC 61131-3 Structured Text (Advanced Ladder Excluded)
+Timestamp: 2026-09-08T00:02:12.182862
+----------------------------------------------------------------
+Compiling POU: MainProcessControl (886 bytes)...
+  POU 'MainProcessControl' parsed and validated cleanly.
+Compiling POU: ScaleAnalogFilter (769 bytes)...
+  POU 'ScaleAnalogFilter' parsed and validated cleanly.
+----------------------------------------------------------------
+Build Result: SUCCESS
+Errors: 0, Warnings: 0
+Estimated AST Footprint: Statements: 14, Variables: 18, Expressions: 53, Source: 1655 bytes
+Duration: 0.054s
+Hardware Lockout: ENFORCED (Zero PLC communication / No download)
+
+4. GOVERNANCE & SAFETY
+--------------------------------------------------------------------------------
+- Single GUI Owner     : YES (winsta0\Default)
+- Zero Physical PLC    : YES (COM/CAN/USB locked out; status: blocked)
+- C0-C3 Frozen         : YES (Untouched)
+- Gate G5 Claimed      : NO (Gate G5 strictly NOT RUN / CLOSED)
+- Stop Condition       : Step completed deterministically, stopping immediately.
+================================================================================

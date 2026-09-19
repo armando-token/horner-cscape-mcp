@@ -1,0 +1,83 @@
+{
+  "step": "step5_st_ld_conversion_proof",
+  "status": "PASSED",
+  "timestamp_utc": "2026-09-06T01:52:34.823Z",
+  "cscape_pid": 16128,
+  "cscape_hwnd": "0x024903DC",
+  "cscape_title": "Cscape - Logged In : \"armando@controlnautas.com\" - [TankLevelClosedLoop.csp]",
+  "st_to_ld_conversion": {
+    "pou_name": "TankLevelClosedLoop",
+    "total_variables": 24,
+    "total_rungs": 10,
+    "rungs_summary": [
+      {
+        "rung": 1,
+        "title": "CycleCounter Math Calculation",
+        "category": "MATH",
+        "recipe": "MATH_BOX"
+      },
+      {
+        "rung": 2,
+        "title": "TankLevelPV Math Calculation",
+        "category": "MATH",
+        "recipe": "MATH_BOX"
+      },
+      {
+        "rung": 3,
+        "title": "Error Math Calculation",
+        "category": "MATH",
+        "recipe": "MATH_BOX"
+      },
+      {
+        "rung": 4,
+        "title": "LastError Control Logic",
+        "category": "COIL",
+        "recipe": "COIL_NORMAL"
+      },
+      {
+        "rung": 5,
+        "title": "RawPumpOutput Control Logic",
+        "category": "COIL",
+        "recipe": "COIL_NORMAL"
+      },
+      {
+        "rung": 6,
+        "title": "RawValveOutput Control Logic",
+        "category": "COIL",
+        "recipe": "COIL_NORMAL"
+      },
+      {
+        "rung": 7,
+        "title": "AlarmHighHigh Latch (Set Coil)",
+        "category": "COIL",
+        "recipe": "COIL_SET"
+      },
+      {
+        "rung": 8,
+        "title": "AlarmHigh Latch (Set Coil)",
+        "category": "COIL",
+        "recipe": "COIL_SET"
+      },
+      {
+        "rung": 9,
+        "title": "AlarmLow Latch (Set Coil)",
+        "category": "COIL",
+        "recipe": "COIL_SET"
+      },
+      {
+        "rung": 10,
+        "title": "InflowValveCmd Latch (Set Coil)",
+        "category": "COIL",
+        "recipe": "COIL_SET"
+      }
+    ],
+    "ascii_proof_path": "C:\\Users\\ArmandoSilva\\artifacts\\proofs\\tank_level_ladder_diagram.txt",
+    "ast_proof_path": "C:\\Users\\ArmandoSilva\\artifacts\\proofs\\tank_level_ladder_ast.json"
+  },
+  "interop_guard_fail_closed_verified": true,
+  "mcp_tools_executed": 16,
+  "mcp_tools_passed": 16,
+  "zero_straton_dependencies": true,
+  "zero_plc_download_enforced": true,
+  "log_proof": "C:\\Users\\ArmandoSilva\\artifacts\\logs\\st_to_ld_conversion_proof.log"
+}

@@ -1,0 +1,67 @@
+{
+  "status": "success",
+  "task_id": "FASTMCP_SCAN_LIST_SCHEMA_VALIDATION",
+  "mission_id": "MJ1_SCAN_LIST_FASTMCP_VALIDATION_EVIDENCE",
+  "timestamp_utc": "2026-09-17T18:50:00Z",
+  "governing_rules": "RULE[C:\\Users\\ArmandoSilva\\AGENTS.md]",
+  "operational_mode": "offline/DEV [PRODUCT_EVIDENCE]",
+  "system_state": "RUNTIME_PENDING_P7",
+  "verified_live": false,
+  "zero_plc_download": true,
+  "no_error_check_loop": true,
+  "single_gui_boundary": "Cscape 10.2 on winsta0\\Default (single GUI owner; zero keep-alive loops)",
+  "fastmcp_validation_tool": {
+    "tool_name": "cscape_validate_scan_list_evidence",
+    "transport": "FastMCP JSON-RPC 2.0 stdio",
+    "status_contract": "success | failed | blocked | inconclusive",
+    "input_schema": "CscapeValidateScanListEvidenceInput",
+    "output_schema": "CscapeValidateScanListEvidenceOutput",
+    "registered_tools_count": 41,
+    "registered_schemas_count": 41,
+    "schemas_parity": "41/41 (100% matched)"
+  },
+  "target_evidence_audit": {
+    "target_evidence_file": "Downloads/mj1_devices_scan_evidence.json",
+    "companion_md_file": "Downloads/mj1_devices_scan_evidence.md",
+    "project": "TankLevel_P5_Dedicated.csp",
+    "port": "MJ1",
+    "protocol": "CT RTU Modbus CMP v5.05",
+    "scan_list_status": "empty",
+    "native_fill_status": "blocked_offline",
+    "blocker": "Native add requires a configured target node/device and/or live PLC context.",
+    "plc_download": false,
+    "verified_live": false,
+    "scope": "offline_product_documentation",
+    "schema_validation_outcome": "success",
+    "invariant_breaches": 0
+  },
+  "fail_closed_lockout_matrix": {
+    "plc_download_true_in_payload": "BLOCKED_FAIL_CLOSED (SECURITY_BLOCKED)",
+    "plc_download_true_in_tool_argument": "BLOCKED_FAIL_CLOSED (SECURITY_BLOCKED)",
+    "verified_live_true_in_payload": "BLOCKED_FAIL_CLOSED (SECURITY_BLOCKED)",
+    "verified_live_true_in_tool_argument": "BLOCKED_FAIL_CLOSED (SECURITY_BLOCKED)",
+    "scan_list_populated_offline": "FAILED_INVARIANT_MISMATCH (SCAN_LIST_STATUS_MISMATCH)",
+    "native_fill_success_offline": "FAILED_INVARIANT_MISMATCH (NATIVE_FILL_STATUS_MISMATCH)",
+    "extra_parameter_injection": "FAILED_VALIDATION (SCHEMA_VALIDATION_ERROR extra='forbid')",
+    "missing_inputs": "INCONCLUSIVE_PRECONDITION (MISSING_EVIDENCE_INPUT)"
+  },
+  "test_execution_results": {
+    "test_suite": "tests/test_scan_list_evidence_schema.py",
+    "framework": "pytest 9.1.1 / Python 3.12.10",
+    "total_tests": 16,
+    "passed": 16,
+    "failed": 0,
+    "offline_gaps_test_suite": "tests/test_p9_offline_gaps.py (9/9 passed, 41-tool parity verified)",
+    "core08_modbus_test_suite": "tests/test_core08_modbus_inventory.py (5/5 passed)",
+    "total_targeted_tests_passed": 30
+  },
+  "offline_handoff_continuation": {
+    "phase_p4_status": "ACCEPTED_EVIDENCE_RECONCILED",
+    "phase_p6_status": "ACCEPTED",
+    "phase_p7_status": "DEFERRED_MANUAL_ENGINEER_LOAD",
+    "deep_modbus_inventory": "artifacts/projects/TankLevel_P5_Dedicated/modbus_protocol_inventory.json",
+    "inventory_devices_count": 3,
+    "inventory_scan_list_count": 3,
+    "deferred_to_p7_note": "Physical MJ1 device scan table configuration requires physical target node and live PLC communication context; deferred to manual loading by commissioning engineer in Phase P7."
+  }
+}

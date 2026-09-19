@@ -1,0 +1,22 @@
+﻿LIVE CONNECT IO MAP - Cscape TankLevelClosedLoop
+Read/config only; no PLC Download/Update; NOT VERIFIED_LIVE
+HW: XL Prime OCS Series, XL4 Prime, HE-XPCE2; fixed-I/O touch station; 240x320 LCD; 4 keys; 2048 KB
+Network: CsCAN; CAN1=CsCAN (Network Required off; CAN IDs 1; Max packets/scan 1; baud blank/not shown); LAN1=ETN300
+LAN1: DHCP off; IP 192.168.254.128; mask 255.255.255.0; gateway/DNS 0.0.0.0; resident and ETN1/1,ETN1/2 protocols None
+IP port and node not visible in inspected menus
+Tags/type: Setpoint Global REAL; TankLevelPV Global REAL; Error Global REAL; ControlOutput Global REAL; Kp Global REAL; TankLevelPV_I16 STBlock1 INT; Setpoint_I16 STBlock1 INT; HI STBlock1 BOOL; LO STBlock1 BOOL; AlwaysOn STBlock1 BOOL
+Addresses (%R) not shown in Program Variables; Force needs Connected; SoftPLC N/A; NOT VERIFIED_LIVE
+
+## Register addresses
+Custom/global tags in this project do not expose %R in Cscape Variable UI (symbolic allocation). Live Force/monitor by tag name when PLC connected. Do not invent %R.
+Known tag names + types from inspection:
+- Setpoint: REAL (custom/global)
+- TankLevelPV: REAL (custom/global)
+- Error: REAL (custom/global)
+- ControlOutput: REAL (custom/global)
+- Kp: REAL (custom/global)
+- TankLevelPV_I16: INT (local)
+- Setpoint_I16: INT (local)
+- AlwaysOn: BOOL (local)
+- HI: BOOL (local)
+- LO: BOOL (local)

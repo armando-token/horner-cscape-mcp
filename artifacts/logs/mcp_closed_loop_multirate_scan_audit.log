@@ -1,0 +1,65 @@
+================================================================================
+HORNER CSCAPE 10.2 MULTI-RATE CLOSED-LOOP SCAN BENCHMARK AUDIT (STEP 16)
+================================================================================
+Timestamp UTC : 2026-09-05T06:31:23.640Z
+Project       : TankLevelClosedLoop
+POU Under Test: artifacts/projects/TankLevelClosedLoop/pous/TankLevelClosedLoop.st
+Scan Rates    : 6 distinct tasks (1.0 ms, 5.0 ms, 10.0 ms, 20.0 ms, 50.0 ms, 100.0 ms)
+Cycles / Rate : 500 cycles
+Total Cycles  : 3,000 discrete cycles
+Elapsed Time  : 7.7499 s
+Isolation     : Air-Gapped Software Emulation (Zero Hardware / Zero Download)
+Straton Free  : True (Zero Straton Dependencies Enforced)
+Cscape Gate   : Verified Live (PID: 7616, HWND: 0x007B06D6)
+--------------------------------------------------------------------------------
+MULTI-RATE PERFORMANCE MATRIX:
+--------------------------------------------------------------------------------
+| Rate           | dt (ms) | Task Type                  | Recovery       | Overshoot | SS Err  | Windup   | Status |
+|----------------|---------|----------------------------|----------------|-----------|---------|----------|--------|
+| Rate 1 (1.0 ms) | 1.0     | High-speed interrupt task  | 38 cyc (38.0ms) | 2.77%     | 0.0007% | CLAMPED  | PASSED |
+| Rate 2 (5.0 ms) | 5.0     | Fast cyclic task           | 38 cyc (190.0ms) | 2.77%     | 0.0007% | CLAMPED  | PASSED |
+| Rate 3 (10.0 ms) | 10.0    | Nominal Cscape scan task   | 38 cyc (380.0ms) | 2.77%     | 0.0007% | CLAMPED  | PASSED |
+| Rate 4 (20.0 ms) | 20.0    | Standard I/O update task   | 38 cyc (760.0ms) | 2.77%     | 0.0007% | CLAMPED  | PASSED |
+| Rate 5 (50.0 ms) | 50.0    | Slow background task       | 38 cyc (1900.0ms) | 2.77%     | 0.0007% | CLAMPED  | PASSED |
+| Rate 6 (100.0 ms) | 100.0   | Low-rate telemetry task    | 38 cyc (3800.0ms) | 2.77%     | 0.0007% | CLAMPED  | PASSED |
+--------------------------------------------------------------------------------
+SCIENTIFIC VERIFICATION FINDINGS:
+--------------------------------------------------------------------------------
+1. Quiescent Steady-State Hold (60.0% SP):
+   - Verified steady-state error = 0.0000% across all 6 rates.
+   - Actuators (%AQ1, %AQ2) held rock-steady at 19200 counts (60.0% CV).
+   - Alarms (%M7, %M8, %M9, %M10) all FALSE; interlocks (%Q1, %Q2) TRUE.
+
+2. Disturbance Rejection (+20% Inflow Surge):
+   - Peak overshoot: 2.769% across all 6 rates (strictly <= 5.0%).
+   - Closed-loop recovery: exactly 38 scan cycles to return within +/-0.5% tolerance.
+   - Physical recovery time scales proportionally with scan interval:
+     * Rate 1 (dt = 1.0 ms)   : 38.0 ms recovery
+     * Rate 2 (dt = 5.0 ms)   : 190.0 ms recovery
+     * Rate 3 (dt = 10.0 ms)  : 380.0 ms recovery
+     * Rate 4 (dt = 20.0 ms)  : 760.0 ms recovery
+     * Rate 5 (dt = 50.0 ms)  : 1,900.0 ms recovery
+     * Rate 6 (dt = 100.0 ms) : 3,800.0 ms recovery
+   - Final steady-state error: 0.0007% (strictly <= 0.50%).
+   - Compensated CV: exactly 50.000% (matching theoretical equilibrium 60.0 / 1.20 = 50.0%).
+
+3. Anti-Reset Windup Clamping Behavior:
+   - High Saturation (SP=100%, PV=0%): IntegralSum strictly clamped to 100.0% limit.
+     ControlOutput clamped to 100.0%, RawPumpOutput clamped to 32000 counts.
+   - High Desaturation: Instant on cycle 1 of error reversal (CV dropped from 100% to 0%).
+   - Low Saturation (SP=0%, PV=100%): IntegralSum strictly clamped to 0.0% limit.
+     ControlOutput clamped to 0.0%, RawPumpOutput clamped to 0 counts.
+   - Low Desaturation: Instant on cycle 1 of error reversal (CV jumped from 0% to 100%).
+
+4. Bumpless Manual-to-Auto Transfer:
+   - Manual mode back-calculation continuously aligns IntegralSum with ManualOutput (50.0%).
+   - Transfer instant produced delta CV = 0.0000% (tolerance <= 0.05%).
+   - Derivative kick: 0.0000% (zero kick verified).
+
+5. Numerical Stability & Discretization Invariance:
+   - Zero NaN values detected across all 3,000 cycles.
+   - Zero float overflow (Inf) detected across all 3,000 cycles.
+   - Algorithm exhibits identical, deterministic discrete response across all 6 rates.
+================================================================================
+OVERALL VERIFICATION STATUS: PASSED
+================================================================================

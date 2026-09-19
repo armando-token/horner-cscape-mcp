@@ -1,0 +1,174 @@
+{
+  "mission_id": "C3_OFFLINE_DEV",
+  "phase": "C3",
+  "plan": "PLAN_CORRECTIVO MCP Horner/Cscape v2.0 (correctivo)",
+  "run_id": "run_20260906_120831",
+  "timestamp_utc": "2026-09-06T20:45:00Z",
+  "execution_mode": "Headless / Offline DEV (Zero Live GUI mutation; Leave Cscape untouched)",
+  "cscape_process_safety": {
+    "observed_pid": 16564,
+    "observed_status": "running",
+    "proc_name": "Cscape.exe",
+    "gui_mutated": false,
+    "gui_automation_triggered": false,
+    "process_state": "UNTOUCHED"
+  },
+  "implementation_summary": {
+    "critical_path_task": "Offline Compilation, Gate Validation, Modal Safety & Simulation Mock Rigor Contracts (Phase C3)",
+    "files_modified": [
+      "src/cscape/gate.py",
+      "src/cscape/compilation.py",
+      "src/cscape/diagnostics.py",
+      "src/cscape/simulation.py",
+      "src/cscape/lifecycle.py",
+      "src/cscape/project_manager.py",
+      "src/iec/simulator.py",
+      "src/simulation/simulator.py",
+      "src/iec/st_parser.py",
+      "src/mcp/tools.py",
+      "src/mcp/schemas.py",
+      "tests/test_c3_offline_contracts.py",
+      "tests/test_compilation.py",
+      "tests/test_diagnostics.py",
+      "tests/test_cscape_compiler.py",
+      "tests/test_compiler.py",
+      "tests/test_mcp_status_contract.py"
+    ],
+    "mandates_enforced": [
+      "Compilation empty-output fails closed (COMPILATION_OUTPUT_EMPTY; success=False, status=failed)",
+      "Compilation whitespace-only output fails closed (COMPILATION_OUTPUT_EMPTY)",
+      "Stale success tokens without genuine compilation activity rejected (is_clean=False, status=FAILED)",
+      "Bare success status without clean summary rejected (is_clean=False, status=FAILED)",
+      "Compiling project with zero .st source files fails closed (NO_SOURCE_POUS, status=FAILED)",
+      "Gate without PID fails closed (INCOMPLETE_GATE_DATA; ready_for_tests=False)",
+      "Gate without HWND fails closed (INCOMPLETE_GATE_DATA; ready_for_tests=False)",
+      "Gate with PID <= 0 fails closed (INCOMPLETE_GATE_DATA)",
+      "Gate with HWND == 0 or empty string fails closed (INCOMPLETE_GATE_DATA)",
+      "Non-fatal compilation error dialog auto-Yes is strictly eliminated and prohibited",
+      "Foreign / unknown modal dialogs fail closed without blind auto-dismissal (FOREIGN_MODAL)",
+      "Modal dialog process ID filtering enforced: dialogs belonging to foreign processes are ignored",
+      "classify_compilation_modal helper categorizes CLEAN_RESULT, NON_FATAL_ERROR, and FOREIGN_MODAL",
+      "Simulation mode='VERIFIED_LIVE' strictly prohibited (ERR_VERIFIED_LIVE_PROHIBITED_ON_SIMULATION; status=failed)",
+      "Simulation POU pre-validates pure ST and rejects ladder logic (ERR_LADDER_FORBIDDEN)",
+      "Simulation POU pre-validates syntax and rejects errors (ST_SYNTAX_ERROR)",
+      "All 4 simulator modules explicitly declare CLASSIFICATION = 'TESTED_MOCK [offline/DEV only]'",
+      "All simulation MCP tools return explicit 'TESTED_MOCK [offline/DEV only]' taxonomy",
+      "CscapeOutputBase schema permits classification, verification_classification, and error_code without extra_forbidden"
+    ],
+    "scope_boundary_notice": "Phase C3 is strictly confined to offline compilation, gate validation, modal safety, and simulation mock rigor. Cscape PID 16564 untouched. Gate G5 and live GUI verification NOT claimed closed. Zero FINAL_REPORT spam."
+  },
+  "verification_evidence": {
+    "test_c3_offline_contracts": {
+      "test_file": "tests/test_c3_offline_contracts.py",
+      "tests_collected": 44,
+      "tests_passed": 44,
+      "tests_failed": 0,
+      "status": "success"
+    },
+    "full_offline_regression_suite": {
+      "suites_evaluated": [
+        "tests/test_c1_contract_hardening.py",
+        "tests/test_c2_cfbf_staging_rigor.py",
+        "tests/test_c2_pou_ast_rollback.py",
+        "tests/test_c3_offline_contracts.py",
+        "tests/test_compilation.py",
+        "tests/test_diagnostics.py",
+        "tests/test_compiler_diagnostics_audit.py",
+        "tests/test_security.py",
+        "tests/test_mcp_simulation_audit.py",
+        "tests/test_mcp_status_contract.py",
+        "tests/test_cscape_simulation.py",
+        "tests/test_iec_validator.py",
+        "tests/test_parser.py",
+        "tests/test_cscape_compiler.py",
+        "tests/test_compiler.py"
+      ],
+      "total_tests_passed": 584,
+      "total_tests_failed": 0,
+      "status": "success"
+    }
+  },
+  "deliverable_hashes": {
+    "src/cscape/gate.py": {
+      "sha256": "f6896db537f9a5c0994ebcf0800309f7522cc57d77ee3ce0fd2566a1c127bfb3",
+      "size_bytes": 10564
+    },
+    "src/cscape/compilation.py": {
+      "sha256": "a544d5d4f30d8497e64871523d581fb90028cecef426fc874ea388f359efba7a",
+      "size_bytes": 61856
+    },
+    "src/cscape/diagnostics.py": {
+      "sha256": "93bae857fcbb352ed9ac5ac62110066a2e4e179bf4f24a6d03fdf90360d2ed81",
+      "size_bytes": 17261
+    },
+    "src/cscape/simulation.py": {
+      "sha256": "f97c162353feebd1bd8bcd978b3cbf47a6ed326b2498e4c72a689d1086ebfd38",
+      "size_bytes": 54501
+    },
+    "src/cscape/lifecycle.py": {
+      "sha256": "1a8d3a4906b35a656618ec5d238fb0a3fae7a5ecc1d78ad6491d8cb9175794c9",
+      "size_bytes": 96291
+    },
+    "src/cscape/project_manager.py": {
+      "sha256": "230214513d634afbced2b673b48fe4203f5c0c847c40190243e40b3d54544c5c",
+      "size_bytes": 86735
+    },
+    "src/iec/simulator.py": {
+      "sha256": "c830d163318c69c82f31151483929aded90d9bd4d5448667a2fd9418fc9085af",
+      "size_bytes": 12045
+    },
+    "src/simulation/simulator.py": {
+      "sha256": "be77fcf473933e7866fab6bb051e79300ae980ca02d6c788234fab9a89e2b8b0",
+      "size_bytes": 24700
+    },
+    "src/iec/st_parser.py": {
+      "sha256": "132b3212b8e71969cf52c1ae61312261dcd30d73aceca0e7671cfb9931b390cd",
+      "size_bytes": 46144
+    },
+    "src/mcp/tools.py": {
+      "sha256": "b143dadba095a88bf4ea2f9c8622cb0d9cb7bc7a364b34e7ce445591d752bb32",
+      "size_bytes": 133587
+    },
+    "src/mcp/schemas.py": {
+      "sha256": "6e594507568747e9713950bd8374489864063d9dd2a6f248f30cc97bb16f873a",
+      "size_bytes": 78298
+    },
+    "tests/test_c3_offline_contracts.py": {
+      "sha256": "90dfaee2da185230e71aa9be9b81e398afd30d56faa4c8925dfc1685a26df072",
+      "size_bytes": 43086
+    },
+    "tests/test_compilation.py": {
+      "sha256": "d997da1b6710c59febd34ffcc13743f092fd191e309e5f7b5a9ae1f8247a23d0",
+      "size_bytes": 16644
+    },
+    "tests/test_diagnostics.py": {
+      "sha256": "a858295d018201bbb51eec072dc07c57b1a06f46e11345a4c07c6295221dedc0",
+      "size_bytes": 11273
+    },
+    "tests/test_cscape_compiler.py": {
+      "sha256": "f0cfe0fd685e6adc0589255f8a54c5c0b0b25f50a338db268f98d6beb1f53f74",
+      "size_bytes": 15745
+    },
+    "tests/test_compiler.py": {
+      "sha256": "fd050547e6402a71a9aaa6b342c29169eea304b7dfea05afe019748484ab16b4",
+      "size_bytes": 7996
+    },
+    "tests/test_mcp_status_contract.py": {
+      "sha256": "0cbddb051cf3369634330664989cd27eac2bf4b2590f6dfb4561d13179c37786",
+      "size_bytes": 29100
+    },
+    "artifacts/recovery/run_20260906_120831/c3_before_proof.json": {
+      "sha256": "f489b56828ddb558448ce85058c0af7100e96c49a7e4213057121eb33dc00687",
+      "size_bytes": 3028
+    },
+    "artifacts/recovery/run_20260906_120831/c3_after_proof.json": {
+      "sha256": "8163db00e1e2966966c51139857e67e2f0fb2440fbd8fc71874eac82c0c76ca8",
+      "size_bytes": 2352
+    },
+    "artifacts/recovery/run_20260906_120831/c3_unified_diff.patch": {
+      "sha256": "8106d4e39a3694948ac584d517e7609227e673703ecdbb5a89a0e38af804898e",
+      "size_bytes": 1083095
+    }
+  },
+  "status": "success"
+}

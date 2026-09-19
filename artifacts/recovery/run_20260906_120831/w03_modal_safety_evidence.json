@@ -1,0 +1,76 @@
+{
+  "mission_id": "C4_WINDOWS_MATRIX",
+  "item_id": "W03",
+  "name": "Modal Dialog Interception & Fail-Closed Safety",
+  "status": "done",
+  "run_id": "run_20260906_120831",
+  "completed_at_utc": "2026-09-07T02:26:14.950596+00:00",
+  "policy": "Prefer blocked+capture over blind Yes/No. Auto-clicking Yes on Non-Fatal is strictly forbidden.",
+  "classifier_module": "src.cscape.compilation.classify_compilation_modal",
+  "decision_table_rules": [
+    {
+      "modal_type": "SPLASH_SCREEN",
+      "window_class": "#32770",
+      "match_condition": "title contains 'splash' or 'about cscape'",
+      "action": "AUTO_DISMISS_OK",
+      "target_ctrl_id": 1,
+      "status": "success",
+      "invariant": "Auto-dismiss splash screen to unblock GUI initialization"
+    },
+    {
+      "modal_type": "SELECT_EDITOR_TYPE",
+      "window_class": "#32770",
+      "match_condition": "title contains 'select editor' or ctrl_id 1461 present",
+      "action": "AUTO_SELECT_IEC_DISMISS_OK",
+      "target_ctrl_id": 1461,
+      "status": "success",
+      "invariant": "Auto-select IEC Structured Text radio (1461) and confirm with OK (1)"
+    },
+    {
+      "modal_type": "NON_FATAL_COMPILATION_ERROR",
+      "window_class": "#32770",
+      "match_condition": "text contains 'Non-Fatal Compilation Errors were found' or 'Do you wish to continue'",
+      "action": "BLOCKED_CAPTURE_NO_CLICK",
+      "target_ctrl_id": 7,
+      "status": "blocked",
+      "invariant": "Auto-clicking Yes (ID 6) is strictly forbidden; capture telemetry and dismiss cleanly with No (ID 7)"
+    },
+    {
+      "modal_type": "HARDWARE_DOWNLOAD_PROMPT",
+      "window_class": "#32770",
+      "match_condition": "title/text contains 'download' or 'target' or command 32827/33149",
+      "action": "BLOCKED_HARDWARE_LOCKOUT",
+      "target_ctrl_id": 2,
+      "status": "blocked",
+      "invariant": "Physical hardware download commands are unconditionally blocked fail-closed"
+    },
+    {
+      "modal_type": "COMMON_SAVE_AS",
+      "window_class": "#32770",
+      "match_condition": "title contains 'save as'",
+      "action": "CONTROLLED_FILE_SAVE",
+      "target_ctrl_id": 1,
+      "status": "success",
+      "invariant": "Targeted project path enforcement; prevents overwriting baseline containers"
+    },
+    {
+      "modal_type": "FOREIGN_OR_UNRECOGNIZED_MODAL",
+      "window_class": "#32770",
+      "match_condition": "foreign pid or unrecognized dialog prompt",
+      "action": "BLOCKED_CAPTURE_FAIL_CLOSED",
+      "target_ctrl_id": 2,
+      "status": "blocked",
+      "invariant": "Never blindly click Yes/OK on unknown modals; fail closed and capture diagnostic telemetry"
+    }
+  ],
+  "verification_results": {
+    "auto_yes_eliminated": true,
+    "fail_closed_on_non_fatal": true,
+    "fail_closed_on_foreign": true,
+    "deterministic_classification_verified": true
+  },
+  "proof_artifacts": [
+    "c4_decision_table.json",
+    "c4_decision_table.md"
+  ]
+}

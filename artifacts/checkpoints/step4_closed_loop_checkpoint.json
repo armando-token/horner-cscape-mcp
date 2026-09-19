@@ -1,0 +1,21 @@
+{
+  "step": "step4_closed_loop_failure_proof",
+  "status": "PASSED",
+  "timestamp_utc": "2026-09-06T01:52:17.657Z",
+  "industrial_failure_scenario": "High-High Overfill Trip, Sensor Disconnect & Low-Low Dry-Run Cutoff",
+  "overfill_pv_percent": 95.0,
+  "alarm_high_high": true,
+  "inflow_valve_isolated": true,
+  "sensor_disconnect_pv_percent": 0.0,
+  "alarm_low_low": true,
+  "pump_cutoff_dry_run_protected": true,
+  "safety_trip_active": true,
+  "compiler_failure_locations_verified": true,
+  "compiler_syntax_repair_verified": true,
+  "repaired_pou_path": "C:\\Users\\ArmandoSilva\\artifacts\\projects\\TankLevelClosedLoop\\pous\\BrokenPOU.st",
+  "repaired_pou_valid": true,
+  "repaired_pou_errors": 0,
+  "zero_straton_dependencies": true,
+  "zero_plc_download_enforced": true,
+  "log_proof": "C:\\Users\\ArmandoSilva\\artifacts\\logs\\mcp_closed_loop_failure_proof.log"
+}

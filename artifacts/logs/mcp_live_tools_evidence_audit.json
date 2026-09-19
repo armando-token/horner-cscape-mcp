@@ -1,0 +1,91 @@
+{
+  "step": "step127_mcp_live_tools_evidence",
+  "timestamp_utc": "2026-09-05T16:52:57.431604+00:00",
+  "cscape_pid": 14252,
+  "initial_health": {
+    "alive": true,
+    "pid": 14252,
+    "hwnd": "0x00BD070C",
+    "window_title": "Cscape - Logged In : \"armando@controlnautas.com\" - [TankLevelClosedLoop.csp]",
+    "uptime_seconds": 710.47,
+    "cpu_percent": 0.0,
+    "memory_mb": 202.89,
+    "is_hung": false,
+    "is_visible": true
+  },
+  "tools_proven": {
+    "cscape_compile_project": {
+      "status": "PASSED",
+      "duration_seconds": 6.356,
+      "command_dispatched": 32826,
+      "error_count": 0,
+      "warning_count": 0,
+      "pous_compiled": [
+        "AlarmMonitor",
+        "BrokenPOU",
+        "TankLevelClosedLoop"
+      ]
+    },
+    "cscape_read_variables": {
+      "status": "PASSED",
+      "duration_seconds": 0.006,
+      "variable_count": 21
+    },
+    "cscape_export_variables": {
+      "status": "PASSED",
+      "duration_seconds": 0.021,
+      "csv_vars": 21,
+      "xml_vars": 21
+    },
+    "cscape_register_tools": {
+      "status": "PASSED",
+      "duration_seconds": 0.092,
+      "r100_value": 18500,
+      "m1_value": true
+    },
+    "cscape_simulate_cycle": {
+      "status": "PASSED",
+      "duration_seconds": 0.0,
+      "cycle": 0
+    },
+    "cscape_run_simulation": {
+      "status": "PASSED",
+      "duration_seconds": 0.016,
+      "steps": 100
+    },
+    "cscape_validate_st": {
+      "status": "PASSED",
+      "duration_seconds": 0.007,
+      "valid": true
+    },
+    "st_ladder_interop_guard": {
+      "status": "PASSED",
+      "duration_seconds": 0.002,
+      "rejected_as_expected": true,
+      "interop_guard_active": true
+    },
+    "cscape_diagnostics_tools": {
+      "status": "PASSED",
+      "duration_seconds": 0.002,
+      "log_length": 0,
+      "diagnostic_count": 0
+    },
+    "hardware_safety_lockout": {
+      "status": "PASSED",
+      "download_blocked": true,
+      "zero_plc_disturbance_certified": true
+    }
+  },
+  "final_health": {
+    "alive": true,
+    "pid": 14252,
+    "hwnd": "0x00BD070C",
+    "window_title": "Cscape - Logged In : \"armando@controlnautas.com\" - [TankLevelClosedLoop.csp]",
+    "uptime_seconds": 717.08,
+    "cpu_percent": 14.3,
+    "memory_mb": 212.59,
+    "is_hung": false,
+    "is_visible": true
+  },
+  "status": "PASSED"
+}

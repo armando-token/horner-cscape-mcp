@@ -1,0 +1,16 @@
+{
+  "step": 170,
+  "name": "step170_visible_gui_proof_checkpoint",
+  "status": "PASSED",
+  "timestamp_utc": "2026-09-06T07:29:24.311243+00:00",
+  "cscape_pid": 13248,
+  "cscape_hwnd": "0x01F30750",
+  "window_title": "Cscape - Logged In : \"armando@controlnautas.com\" - [TankLevelClosedLoop.csp]",
+  "live_gui_compile_clean": true,
+  "error_count": 0,
+  "warning_count": 0,
+  "screenshot_sha256": "bc43766c83319fd52574940020f6a1b1316dc6ba62fa60593dec82592cdfd0e1",
+  "log_sha256": "10e02e4b323257b2d3203d3a321901d36b7649ceacf6a111d5a64965c0b4e1a2",
+  "dual_root_mirrored": true,
+  "checkpoint_sha256": "fc1d3b6458995c23b342e3371f0285587268eb74264f7aef0fc382e6d81f953e"
+}

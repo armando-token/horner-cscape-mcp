@@ -1,0 +1,311 @@
+{
+  "manifest_version": "1.0.0",
+  "timestamp_utc": "2026-09-16T03:10:00Z",
+  "total_files": 76,
+  "files": {
+    "CAPABILITY_MATRIX.md": {
+      "size_bytes": 4247,
+      "sha256": "15dde887eae922453c4da6cfd7aaf364343c8de147c1bea163f0e15c20418598"
+    },
+    "INSTALL.md": {
+      "size_bytes": 2068,
+      "sha256": "d05992a0ad6996022aa872fbc9c833f81b11a3973e5505b6337dec175ae3f178"
+    },
+    "pyproject.toml": {
+      "size_bytes": 1122,
+      "sha256": "7371b66b0022224e9b6739be2d63c68fcab7b36c671971ac87df3a14dc078750"
+    },
+    "README.md": {
+      "size_bytes": 1266,
+      "sha256": "000424b20af55abea9bb3af29ca7db048fd24d3e044ae5fe7c4725f5feec4c50"
+    },
+    "requirements.txt": {
+      "size_bytes": 589,
+      "sha256": "3fa052b6b1589e54eb6354c9910ad08d3667f2f16ac20c47a20dd823033f6fd7"
+    },
+    "run_mcp_server.py": {
+      "size_bytes": 1484,
+      "sha256": "33d7fdf2cf4fb7b786af1f43094b4800ab4e72a4b0d918b3d18179a1efb424b0"
+    },
+    "SECURITY.md": {
+      "size_bytes": 1218,
+      "sha256": "1cf490e8232c5d03e4d8ceeee3399c9265dd3f421e455f07ca05837dc652cb8c"
+    },
+    "src/__init__.py": {
+      "size_bytes": 84,
+      "sha256": "c5bf757b7d6300e7823106b3aed4a32ee3e7ed3ad069d10dc18769fca4b560a7"
+    },
+    "src/automation/__init__.py": {
+      "size_bytes": 1992,
+      "sha256": "52b802318d44dae240a0af901c693c20c52266e697308f88d9b1a5d606acacb9"
+    },
+    "src/automation/cli_runner.py": {
+      "size_bytes": 17615,
+      "sha256": "1ebdb5ee9730594bdbe0c3cd92152fc9cc19c768893826e2cbe04feb325661bb"
+    },
+    "src/automation/com_bridge.py": {
+      "size_bytes": 16500,
+      "sha256": "c4449ee1825d4fca35fcf5c03c4d6e0f4e23d7772f90ded5a24ad392843f1552"
+    },
+    "src/automation/process.py": {
+      "size_bytes": 1336,
+      "sha256": "8676c488baef93f14a247c04589aaf1d148a2c8ebff84433c21b5a6d65593c1a"
+    },
+    "src/automation/process_manager.py": {
+      "size_bytes": 20608,
+      "sha256": "f9406f574bd39551a03b81a7515eaee23dcf668144e04185f94692c5a43947c9"
+    },
+    "src/automation/project_manager.py": {
+      "size_bytes": 21653,
+      "sha256": "c7f77734a35a380fdc6aa70ff859d175d75d39be331ce30216481906c2183856"
+    },
+    "src/automation/ui_automation.py": {
+      "size_bytes": 18429,
+      "sha256": "94e12a603ab3021286e649d1c511b637ea686d0335b0b572ede7459bad5feeb7"
+    },
+    "src/cscape/__init__.py": {
+      "size_bytes": 6790,
+      "sha256": "ab4bc3410604b17332caba28b9b0d0cb01df5a5f4f5ed923b5e742bf532d55f8"
+    },
+    "src/cscape/cfbf.py": {
+      "size_bytes": 25655,
+      "sha256": "6762638fe333a10578805772f23d55880c6f326c32a8ea87dc08edd47233e1c4"
+    },
+    "src/cscape/compilation.py": {
+      "size_bytes": 65773,
+      "sha256": "29bbb703966ec00bdd6a11b60e597e9155fb52edd10b459e50f755e2257e7831"
+    },
+    "src/cscape/compiler.py": {
+      "size_bytes": 1614,
+      "sha256": "96502755717baf93e4818ad5122720039b652e8a83fa596afc3ca396612dc40a"
+    },
+    "src/cscape/diagnostics.py": {
+      "size_bytes": 21807,
+      "sha256": "6b07a51c9443b9b15e69c8116ff3763b354d43474869dac61409ca7c63bb43b9"
+    },
+    "src/cscape/fixture_evolution.py": {
+      "size_bytes": 57801,
+      "sha256": "89051c409e2b72f75f585e5db8f25ea050dbfa383ec96ec1dbb49eef99dd55b1"
+    },
+    "src/cscape/gate.py": {
+      "size_bytes": 11076,
+      "sha256": "d9ce4eb4ed2734ac2e2b2922f99350759f32c934997a71d5324cef82c6ba6331"
+    },
+    "src/cscape/hmi.py": {
+      "size_bytes": 33460,
+      "sha256": "38f00027990972dcf36d126095cabc2fd65f5768fd9b8bb2832591da22e52e49"
+    },
+    "src/cscape/lifecycle.py": {
+      "size_bytes": 101901,
+      "sha256": "5d867e8204438d4a8bff5c7de37fa4ea8dfc3655ba82f1d14c5c1c67886e90c9"
+    },
+    "src/cscape/modbus_config.py": {
+      "size_bytes": 21547,
+      "sha256": "fe642e079648999a212fd1cecbf523777d73954ffde10d1aa0e6f55b3154059b"
+    },
+    "src/cscape/native_adapter.py": {
+      "size_bytes": 36230,
+      "sha256": "68dc16a4c09829d585ea4dc6b4ff9b32a1816ea7b3a21afa20f1e053446584aa"
+    },
+    "src/cscape/project_manager.py": {
+      "size_bytes": 97077,
+      "sha256": "8e459704f40b0737317071ea4da6bdcf2d2bbac06a9798a9b85d3ed2491e20cb"
+    },
+    "src/cscape/safety.py": {
+      "size_bytes": 9969,
+      "sha256": "ecf225bb6c97292ed6b1f33c870ffe27a9b6d5c0b03851f06bcbda2eb7e17509"
+    },
+    "src/cscape/simulation.py": {
+      "size_bytes": 55805,
+      "sha256": "a66f3f7978a1137f986e0acdb63c2356a2a94a8d0ce54e8e14ee67b49e166f55"
+    },
+    "src/cscape/simulator.py": {
+      "size_bytes": 1058,
+      "sha256": "0b0310bcd6002c5d94a200e57aea4a9159230075aa6d025b88230b2b142a9717"
+    },
+    "src/cscape/st_inserter.py": {
+      "size_bytes": 57209,
+      "sha256": "648f4c7e5e979c0348905ffc976b6660a1ec4d928aa781ba802dda2d30f2b4ce"
+    },
+    "src/cscape/st_ld_interop.py": {
+      "size_bytes": 67831,
+      "sha256": "507cf6dfe6bc4846dfedc302bfe259b93c36b0fa0ee24b834f9e60379a711078"
+    },
+    "src/cscape/validator.py": {
+      "size_bytes": 1863,
+      "sha256": "0a931d4967a86f3a6509210484244a2de4a7a18a94f2762539c39f9c635d6a8d"
+    },
+    "src/cscape/variables.py": {
+      "size_bytes": 60717,
+      "sha256": "7fe2a7b74449e031a6f943f8c54afdca18f8d93dcf7270e68a074ab1ed5e8bca"
+    },
+    "src/diagnostics/__init__.py": {
+      "size_bytes": 222,
+      "sha256": "4855b71e488887da9d1989fce62fd8c719523ee2274cc00cd512a3a6e3f25899"
+    },
+    "src/diagnostics/verifier.py": {
+      "size_bytes": 6881,
+      "sha256": "2a3311a443215f1589fa0595255f3334a8fa501ab6eebdd0e13d16cf2815c0d2"
+    },
+    "src/iec/__init__.py": {
+      "size_bytes": 2432,
+      "sha256": "0e67d3e5ed7f42c40f35f0b17b05ccf36588e2e49684996e7d94d9d390f8cdda"
+    },
+    "src/iec/ast_nodes.py": {
+      "size_bytes": 30163,
+      "sha256": "b50c4b2ca3375ddf1d997610714e3832945b97bd8f949152cab9f259e7f47aec"
+    },
+    "src/iec/lexer.py": {
+      "size_bytes": 22985,
+      "sha256": "a54fbef047908817d053c6ca9692801f3eb8dc80a699087d878da4996338b6bc"
+    },
+    "src/iec/parser.py": {
+      "size_bytes": 33927,
+      "sha256": "ab1f21eec426028ca3d7d51f0ad968fc689f42405f34557f0b5583469db2e299"
+    },
+    "src/iec/simulator.py": {
+      "size_bytes": 13526,
+      "sha256": "5e5eef9f8dead40aecaeddbb63bdeaeedb92f97c70b4aaea53ba2170a8c544e7"
+    },
+    "src/iec/st_generator.py": {
+      "size_bytes": 33565,
+      "sha256": "546df9499c0306c818361ef56c44aaf6a892afb539f7ee765b9eb524e0654560"
+    },
+    "src/iec/st_parser.py": {
+      "size_bytes": 47817,
+      "sha256": "5c62209b9d92d09ee5f9b6248c00d91644e5deccb81d5cfb80801fc8e6c4e03d"
+    },
+    "src/iec/templates.py": {
+      "size_bytes": 11633,
+      "sha256": "b7e8996c742daf10f8f2d38ae2ee674c5b3fdbd7114dd12197a9de920050b7d9"
+    },
+    "src/iec/validator.py": {
+      "size_bytes": 17707,
+      "sha256": "bcfe81281887af71c70dc9ff0c23c579cecd3facb3d4c69f3fb685018fa53ef2"
+    },
+    "src/iec61131/__init__.py": {
+      "size_bytes": 1155,
+      "sha256": "7077d653d0943ba6e23357f16ae31a0a5c78ee15f41fd4e6153c3307fa16266f"
+    },
+    "src/iec61131/ast_nodes.py": {
+      "size_bytes": 82,
+      "sha256": "d1cb2e87e72b7884f059645dd90e8a0813a845be6eff3beb942e3f1ed7da0901"
+    },
+    "src/iec61131/lexer.py": {
+      "size_bytes": 74,
+      "sha256": "f1288c9dd07e90f7c134c9f7e263f1a48371a7ea247949481c2f007ee38889ab"
+    },
+    "src/iec61131/parser.py": {
+      "size_bytes": 76,
+      "sha256": "ce29849d81ec801f44b1de9c3bb2b2bc055097afba0f0ec9fe960156c90cdd87"
+    },
+    "src/iec61131/st_ld_interop.py": {
+      "size_bytes": 93,
+      "sha256": "89d801dbbd0612800f12fccf2281b9b1c7d833337776a38b3006448009e926be"
+    },
+    "src/mcp/__init__.py": {
+      "size_bytes": 6023,
+      "sha256": "55faa953c2ffb60e456c596d24919e2aba1e88e59ef7debea06c97a5cb95fece"
+    },
+    "src/mcp/prompts.py": {
+      "size_bytes": 5603,
+      "sha256": "74f72444bc74d21ae820fc2bfd8003097c6889e240102c588c0baf34b4c66c5a"
+    },
+    "src/mcp/resources.py": {
+      "size_bytes": 6610,
+      "sha256": "7fa499c4424f5b58148aad1aaf812b50a8f0c717f07d3000beaa9ae380f6c9a6"
+    },
+    "src/mcp/schemas.py": {
+      "size_bytes": 100450,
+      "sha256": "125d82bc84921164794829d1046a9b80ad9629e0cedf43c5ee05e1a732c2835f"
+    },
+    "src/mcp/server.py": {
+      "size_bytes": 2175,
+      "sha256": "e8716dc1217922a48e7abd61bd052cd83085247278f8daab699207d3c7f8df06"
+    },
+    "src/mcp/tools.py": {
+      "size_bytes": 207579,
+      "sha256": "63d91a4a4be921bceb3b838c1b65472afe60caf487eb4989ae73abca9ce76190"
+    },
+    "src/parser/__init__.py": {
+      "size_bytes": 1156,
+      "sha256": "8053a83916b6d2b482d03b4ae743dc472b5ad84461c0cc7fee3f6fc050ac728f"
+    },
+    "src/parser/ast_nodes.py": {
+      "size_bytes": 79,
+      "sha256": "27407c63e7b63210d33cdeac7053b5bd5d80657a142582fd281612b99b970875"
+    },
+    "src/parser/lexer.py": {
+      "size_bytes": 71,
+      "sha256": "c0fa6f9571811f2393efd82ac35b299c9345e031b7f9d2db78faa24e24976a60"
+    },
+    "src/parser/parser.py": {
+      "size_bytes": 73,
+      "sha256": "126ccbed26ff47c9d2d96fe9d49cd5f6b04d03d305cef635773f9132b72dfc2b"
+    },
+    "src/project/__init__.py": {
+      "size_bytes": 214,
+      "sha256": "4857a5370f7467fa79b9024df60a0bacc4a0c899afbc93e480beb22fe582f33d"
+    },
+    "src/project/manager.py": {
+      "size_bytes": 8297,
+      "sha256": "70de98f137f6448af7bc62cd7e7f33a7a99f818da6f5ffd1cc530115c561fc8a"
+    },
+    "src/security/__init__.py": {
+      "size_bytes": 1527,
+      "sha256": "1ac1bea54308c5094b32c468a3367e8bdeb3e1ad94c48e15960057f9246933ec"
+    },
+    "src/security/exceptions.py": {
+      "size_bytes": 2444,
+      "sha256": "8db5ba4636e975cf472853be460ab87c53ee99542c340899cb0c22324f7cc9d1"
+    },
+    "src/security/guard.py": {
+      "size_bytes": 34333,
+      "sha256": "a6b10dc1c3d41ecce1e59d492c47eb64f56b41868e990984d70126930d6126ca"
+    },
+    "src/security/policy.py": {
+      "size_bytes": 21101,
+      "sha256": "92cd2d74b7fecc48967a8ca51716dd98c74c561c6b64859ccb13af1ad5fe4e45"
+    },
+    "src/security/sandbox.py": {
+      "size_bytes": 9183,
+      "sha256": "d743cfef997b724f305f029ff62ca0a896e8fac551c0c848c970cc1dc5987e55"
+    },
+    "src/simulation/__init__.py": {
+      "size_bytes": 651,
+      "sha256": "f75be2ef586a7f97e92f57e26834f4af551d57e74bb0232c56b7c77de2040bcd"
+    },
+    "src/simulation/function_blocks.py": {
+      "size_bytes": 11769,
+      "sha256": "b921f8dad6fae22ca8622a94b455092004b82ce64d51cda63a34a5cbae31f826"
+    },
+    "src/simulation/simulator.py": {
+      "size_bytes": 25282,
+      "sha256": "41aa05cdee774eac39dc97def815c81ea80d550edfbf7e1ba040dc8d945c145e"
+    },
+    "src/simulation/test_modbus_server.py": {
+      "size_bytes": 10814,
+      "sha256": "a640ef52c3bb16ef3b71d96a9aeca9906c05a24bd08630c472bc26e2f79bdf4b"
+    },
+    "src/simulation/test_runner.py": {
+      "size_bytes": 10815,
+      "sha256": "a941a251e8b54e6e64a7398aab7a4ffc23aa34e8dc681554fbc1881db1a95427"
+    },
+    "src/validation/__init__.py": {
+      "size_bytes": 208,
+      "sha256": "298b81a616efef877dce6b53f11abf193c2edd6b292a48df5efd86740d3e5ba6"
+    },
+    "src/validation/validator.py": {
+      "size_bytes": 9058,
+      "sha256": "8fa7feb57920d45a3c5bd25bcde15c6bc72d88219a23249ae42357553ae43bdd"
+    },
+    "src/verification/__init__.py": {
+      "size_bytes": 109,
+      "sha256": "18487b1e42a8e61f6997e3d3a483ac56b0b9674d814cd34adcbf67f4c36ab255"
+    },
+    "src/verification/test_runner.py": {
+      "size_bytes": 109,
+      "sha256": "18487b1e42a8e61f6997e3d3a483ac56b0b9674d814cd34adcbf67f4c36ab255"
+    }
+  }
+}

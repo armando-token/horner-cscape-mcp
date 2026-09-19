@@ -1,0 +1,79 @@
+{
+  "step": 38,
+  "title": "Three-Zone Dynamic Gain Scheduling & Live Compile Audit",
+  "timestamp_start_utc": "2026-09-05T09:45:26.017Z",
+  "timestamp_end_utc": "2026-09-05T09:45:32.337Z",
+  "status": "VERIFIED_LIVE",
+  "cscape_active_process": {
+    "pid": 11808,
+    "hwnd": "0x01F00670",
+    "uptime_seconds": 914.34,
+    "working_set_mb": 205.04,
+    "thread_count": 11,
+    "is_hung": false,
+    "wm_null_ping_ok": true,
+    "desktop": "Default"
+  },
+  "live_compile_metrics": {
+    "project_name": "TankLevelClosedLoop",
+    "clean_build": true,
+    "duration_seconds": 6.0311,
+    "error_count": 0,
+    "warning_count": 0,
+    "success": true
+  },
+  "gain_scheduling_metrics": {
+    "total_cycles": 500,
+    "duration_seconds": 0.2336,
+    "cycles_per_sec": 2140.6,
+    "zones_evaluated": 3,
+    "all_zones_settled_successfully": true,
+    "zone_results": {
+      "ZONE_1_LOW": {
+        "sp": 25.0,
+        "kp_scheduled": 1.8,
+        "ki_scheduled": 18.0,
+        "kd_scheduled": 0.02,
+        "plant_alpha": 0.04,
+        "cycles": 160,
+        "settled_scan_cycles": 38,
+        "max_error_percent": 6.086,
+        "final_error_percent": 0.0019,
+        "final_pv": 25.0,
+        "zone_settled_successfully": true
+      },
+      "ZONE_2_MID": {
+        "sp": 55.0,
+        "kp_scheduled": 1.5,
+        "ki_scheduled": 15.0,
+        "kd_scheduled": 0.02,
+        "plant_alpha": 0.05,
+        "cycles": 170,
+        "settled_scan_cycles": 21,
+        "max_error_percent": 26.248,
+        "final_error_percent": 0.0011,
+        "final_pv": 55.0,
+        "zone_settled_successfully": true
+      },
+      "ZONE_3_HIGH": {
+        "sp": 82.0,
+        "kp_scheduled": 1.2,
+        "ki_scheduled": 12.0,
+        "kd_scheduled": 0.01,
+        "plant_alpha": 0.06,
+        "cycles": 170,
+        "settled_scan_cycles": 24,
+        "max_error_percent": 24.299,
+        "final_error_percent": 0.0008,
+        "final_pv": 82.0,
+        "zone_settled_successfully": true
+      }
+    }
+  },
+  "safety_audit": {
+    "physical_plc_download_blocked": true,
+    "zero_physical_hardware_touched": true,
+    "hardware_lockout_enforced": true,
+    "zero_straton_dependencies": true
+  }
+}

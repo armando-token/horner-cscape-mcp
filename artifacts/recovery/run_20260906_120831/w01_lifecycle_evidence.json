@@ -1,0 +1,74 @@
+{
+  "mission_id": "C4_WINDOWS_MATRIX",
+  "item_id": "W01",
+  "name": "Minimal Project Lifecycle (Start -> Edit -> Save -> Reopen)",
+  "status": "done",
+  "run_id": "run_20260906_120831",
+  "completed_at_utc": "2026-09-07T02:26:14.807365+00:00",
+  "target_file": "C:\\HornerAI\\horner-cscape-mcp\\artifacts\\projects\\LabProject_W01\\LabProject_W01.csp",
+  "connection_status": "Disconnected",
+  "operational_mode": "offline/DEV if Disconnected",
+  "lifecycle_stages": {
+    "1_start": {
+      "stage": "start",
+      "timestamp_utc": "2026-09-07T02:26:05.872084+00:00",
+      "pid": 2108,
+      "hwnd": "0xa9033c",
+      "window_title": "Cscape - Logged In : \"armando@controlnautas.com\" - [LabProject_W01.csp]",
+      "project_file": "C:\\HornerAI\\horner-cscape-mcp\\artifacts\\projects\\LabProject_W01\\LabProject_W01.csp",
+      "file_size_bytes": 99840,
+      "sha256": "43421dfefe0ef6a39158227ce36c8ceae9451e0855c87f9791805081a9d4e186",
+      "cfbf_valid": true,
+      "has_contents_stream": true,
+      "streams": [
+        "Contents"
+      ],
+      "screenshot": "w01_stage1_start.png"
+    },
+    "2_edit": {
+      "stage": "edit",
+      "timestamp_utc": "2026-09-07T02:26:07.835555+00:00",
+      "action": "Activated Program Variables / Logic view components via WM_COMMAND 38053",
+      "editor_component_active": true,
+      "screenshot": "w01_stage2_edit.png"
+    },
+    "3_save": {
+      "stage": "save",
+      "timestamp_utc": "2026-09-07T02:26:11.202226+00:00",
+      "command_dispatched": "ID_FILE_SAVE (57603)",
+      "file_size_bytes": 99840,
+      "sha256_after_save": "5ecf04840e3be0ab95540547fcfbf2a24e121d5b085a99d2aa1d38e3aa48b216",
+      "cfbf_valid": true,
+      "has_contents_stream": true,
+      "streams": [
+        "Contents"
+      ],
+      "screenshot": "w01_stage3_save.png"
+    },
+    "4_reopen": {
+      "stage": "reopen",
+      "timestamp_utc": "2026-09-07T02:26:14.807365+00:00",
+      "reopen_command": "ID_FILE_MRU_FILE1 (57616)",
+      "title_reopened": "Cscape - Logged In : \"armando@controlnautas.com\" - [LabProject_W01.csp]",
+      "reopened_successfully": true,
+      "file_size_bytes": 99840,
+      "sha256": "5ecf04840e3be0ab95540547fcfbf2a24e121d5b085a99d2aa1d38e3aa48b216",
+      "cfbf_valid": true,
+      "has_contents_stream": true,
+      "screenshot_reopened": "w01_stage4_reopened.png"
+    }
+  },
+  "baseline_isolation": {
+    "original_tanklevel_csp": "C:\\HornerAI\\horner-cscape-mcp\\artifacts\\projects\\TankLevelClosedLoop\\TankLevelClosedLoop.csp",
+    "original_tanklevel_sha256": "d075e67d80be031a99a6895078735918b7a15c8086590a6d20ec8484b27749af",
+    "verified_untouched": true
+  },
+  "proof_artifacts": [
+    "w01_stage1_start.png",
+    "w01_stage2_edit.png",
+    "w01_stage3_save.png",
+    "w01_stage4_reopened.png",
+    "cscape_lab_w01_visible.png"
+  ],
+  "visibility_classification": "PARTIAL / SUPERVISOR-DEPENDENT (visibility is NOT claimed as VERIFIED_LIVE)"
+}

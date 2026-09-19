@@ -1,0 +1,20 @@
+{
+  "step": 188,
+  "gate": "G4",
+  "name": "step188_pure_st_audit_checkpoint",
+  "status": "success",
+  "timestamp_utc": "2026-09-06T22:32:49.729110+00:00",
+  "mandate": "PLC / IEC 61131-3 Pure ST Audit: pump_lead_lag_alternator.st",
+  "execution_duration_sec": 0.9466,
+  "dual_root_parity": true,
+  "sha256": "73b3669359e12aca1d50932ac65339b2b3e67e486ff84812e334e683237abaeb",
+  "expected_sha256": "73b3669359e12aca1d50932ac65339b2b3e67e486ff84812e334e683237abaeb",
+  "pure_iec61131_3_verified": true,
+  "ladder_artifacts_detected": 0,
+  "ladder_mutations_rejected_fail_closed": 12,
+  "pou": "FB_PumpLeadLagAlternator",
+  "pou_type": "FUNCTION_BLOCK",
+  "total_variables": 44,
+  "total_ast_statements": 18,
+  "st_to_ld_status": "BLOCKED_NATIVE: DOCUMENT_ONLY"
+}

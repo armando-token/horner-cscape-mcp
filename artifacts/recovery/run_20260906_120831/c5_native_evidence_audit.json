@@ -1,0 +1,212 @@
+{
+  "mission_id": "C5_NATIVE_MANUAL",
+  "audit_timestamp_utc": "2026-09-07T04:21:07.235008+00:00",
+  "status": "success",
+  "audit_verdict": "REAL_NATIVE_EVIDENCE_VERIFIED",
+  "why_tests_alone_insufficient": "Pytest 18/18+397 verifies schema and contract assertions, but native completion requires verifying real binary files on disk, live Win32 window handles on winsta0\\Default, genuine pixel screenshots, and zero baseline container modification.",
+  "native_cfbf_audit": {
+    "lab_project": {
+      "path": "C:\\HornerAI\\horner-cscape-mcp\\artifacts\\projects\\LabProject_W01\\LabProject_W01.csp",
+      "size_bytes": 114688,
+      "sha256": "5371fab7021dcc074bc6945a740b6381f00e8f6eb7184eb4a34fdf03d3ad8efd",
+      "magic_hex": "d0cf11e0a1b11ae1",
+      "magic_valid": true,
+      "sector_shift": 9,
+      "sector_size": 512,
+      "mini_sector_shift": 6,
+      "mini_sector_size": 64,
+      "num_fat_sectors": 2,
+      "first_dir_sector": 2,
+      "has_contents_marker": true,
+      "native_storage_type": "Compound File Binary Format (OLE2)"
+    },
+    "baseline_project": {
+      "path": "C:\\HornerAI\\horner-cscape-mcp\\artifacts\\projects\\TankLevelClosedLoop\\TankLevelClosedLoop.csp",
+      "size_bytes": 49152,
+      "sha256": "d075e67d80be031a99a6895078735918b7a15c8086590a6d20ec8484b27749af",
+      "magic_hex": "d0cf11e0a1b11ae1",
+      "magic_valid": true,
+      "sector_shift": 9,
+      "sector_size": 512,
+      "mini_sector_shift": 6,
+      "mini_sector_size": 64,
+      "num_fat_sectors": 1,
+      "first_dir_sector": 2,
+      "has_contents_marker": true,
+      "native_storage_type": "Compound File Binary Format (OLE2)"
+    },
+    "baseline_untouched": true
+  },
+  "live_gui_audit": {
+    "pid": 13544,
+    "hwnd_hex": "0xde08b8",
+    "title": "Cscape - Logged In : \"armando@controlnautas.com\" - [LabProject_W01.csp]",
+    "class": "Afx:007A0000:8:00010003:00000000:0BCB0C0D",
+    "visible": true,
+    "rect": [
+      40,
+      40,
+      1340,
+      676
+    ],
+    "session_id": 2,
+    "desktop": "winsta0\\Default",
+    "connection_state": "Disconnected",
+    "operational_mode": "offline/DEV if Disconnected",
+    "visibility_classification": "PARTIAL / SUPERVISOR-DEPENDENT (offline/DEV if Disconnected) - NOT VERIFIED_LIVE"
+  },
+  "screenshot_evidence_audit": [
+    {
+      "filename": "c5_cscape_native_gui.png",
+      "exists": true,
+      "size_bytes": 63774,
+      "sha256": "c2a16ac1c40335ef1abc27c7271fa90be0219b0ab45faa03ceff91c12181b61e",
+      "valid": true
+    },
+    {
+      "filename": "w01_stage1_start.png",
+      "exists": true,
+      "size_bytes": 85378,
+      "sha256": "f30af3cc8d78989c82be024fc8f9ceab29cfde7c55e5b9863d6acdf9f959f55d",
+      "valid": true
+    },
+    {
+      "filename": "w01_stage2_edit.png",
+      "exists": true,
+      "size_bytes": 91443,
+      "sha256": "e5460b861bc92886cfb2452ecb96be6cdaa0c92545fc6267ce9bce679a8b3219",
+      "valid": true
+    },
+    {
+      "filename": "w01_stage3_save.png",
+      "exists": true,
+      "size_bytes": 76274,
+      "sha256": "50eac37b2f7b0019c17681601c2bf4f38ee2ef0a39c1a58bec331b5bd4065244",
+      "valid": true
+    },
+    {
+      "filename": "w01_stage4_reopened.png",
+      "exists": true,
+      "size_bytes": 216670,
+      "sha256": "14a9adfabfa387ceb1951b342418c5898599d9cb4172ca5a1c9a453f98d17399",
+      "valid": true
+    },
+    {
+      "filename": "w02_project_navigator.png",
+      "exists": true,
+      "size_bytes": 5685,
+      "sha256": "55a582655f54597d390d59ee43d85557b4338afdfbb03275499d51b6801faa27",
+      "valid": true
+    },
+    {
+      "filename": "w02_status_bar.png",
+      "exists": true,
+      "size_bytes": 151,
+      "sha256": "489e3d48fbb051eb2ee12d4ab83e26ed599e828f924994ca6d3c174ff7587bf6",
+      "valid": true
+    },
+    {
+      "filename": "modal_non_fatal_dialog.png",
+      "exists": true,
+      "size_bytes": 5908,
+      "sha256": "68bd09fb0ab6e4a7d3f4efc33e98d88d7a22861ae5457f84fad5e16267f3ff78",
+      "valid": true
+    }
+  ],
+  "output_window_scrape_evidence": {
+    "scraped_line_count": 13,
+    "lines": [
+      "Compiler V12.0.200.82",
+      "Loading application symbols...",
+      "EnhancedDisplayAttributes",
+      "No error detected",
+      "",
+      "Loading application symbols...",
+      "Building application data...",
+      "Relocating code...",
+      "No error detected",
+      "Online Change is disabled",
+      "Generate OCS code...",
+      "No error detected",
+      "Warn : Screen set as first screen is empty.Screen 1"
+    ],
+    "modal_detected": {},
+    "dismissal_action": "IDNO (7) fail-closed; auto-Yes prohibited"
+  },
+  "hardware_lockout_evidence": {
+    "restricted_command_ids": [
+      32827,
+      33149
+    ],
+    "lockout_verifications": [
+      {
+        "target": "ID_PROGRAM_DOWNLOAD (32827)",
+        "mechanism": "src.cscape.safety.intercept_download_command",
+        "exception": "CscapeSafetyViolationError",
+        "message": "Physical controller download command '32827' (ID_CONTROLLER_DOWNLOAD=32827, ID_CONTROLLER_DOWNLOAD_ALT=33149) is strictly locked out. Zero physical PLC flashing permitted.",
+        "status": "blocked"
+      },
+      {
+        "target": "ID_CONTROLLER_DOWNLOAD (33149)",
+        "mechanism": "src.cscape.safety.intercept_download_command",
+        "exception": "CscapeSafetyViolationError",
+        "message": "Physical controller download command '33149' (ID_CONTROLLER_DOWNLOAD=32827, ID_CONTROLLER_DOWNLOAD_ALT=33149) is strictly locked out. Zero physical PLC flashing permitted.",
+        "status": "blocked"
+      },
+      {
+        "target": "cscape_compile_project(command_id=32827)",
+        "mechanism": "src.cscape.compilation.cscape_compile_project",
+        "result_status": "blocked",
+        "error_code": "ERR_HARDWARE_LOCKOUT",
+        "status": "blocked"
+      },
+      {
+        "target": "cscape_compile_project(command_id=33149)",
+        "mechanism": "src.cscape.compilation.cscape_compile_project",
+        "result_status": "blocked",
+        "error_code": "ERR_HARDWARE_LOCKOUT",
+        "status": "blocked"
+      },
+      {
+        "target": "CscapeCompiler.download_to_controller()",
+        "mechanism": "src.cscape.compilation.CscapeCompiler",
+        "exception": "UnauthorizedDownloadError",
+        "message": "Hardware lockout: Physical controller download (ID_CONTROLLER_DOWNLOAD = 32827 / ID_PROGRAM_DOWNLOADOPTIONS = 33149) is strictly blocked.",
+        "status": "blocked"
+      },
+      {
+        "target": "CscapeCompiler.download_options()",
+        "mechanism": "src.cscape.compilation.CscapeCompiler",
+        "exception": "UnauthorizedDownloadError",
+        "message": "Hardware lockout: Controller download options (ID_PROGRAM_DOWNLOADOPTIONS = 33149) is strictly blocked.",
+        "status": "blocked"
+      },
+      {
+        "target": "Physical COM Port Access (COM1..COM256, CAN, USB)",
+        "mechanism": "src.security.guard.SecurityGuard.validate_command",
+        "exception": "HardwareLockoutError",
+        "message": "Hardware port or communication parameter '--port' detected in command arguments. Physical communication is locked out.",
+        "status": "blocked"
+      },
+      {
+        "target": "Flashing Utility (PGMUpdateUtility.exe)",
+        "mechanism": "src.security.guard.SecurityGuard.validate_command",
+        "exception": "BlockedExecutableError",
+        "message": "Execution of dangerous executable 'PGMUpdateUtility.exe' is blocked. Hardware flashing, firmware updates, and direct download utilities are strictly prohibited.",
+        "status": "blocked"
+      },
+      {
+        "target": "CLI Download Flag (/download)",
+        "mechanism": "src.security.guard.SecurityGuard.validate_command",
+        "exception": "DangerousArgumentError",
+        "message": "Prohibited download/flashing flag '/download' detected in command arguments. Controller downloads and flashing are strictly prohibited.",
+        "status": "blocked"
+      }
+    ],
+    "status": "blocked"
+  },
+  "operational_mode_enforced": "offline/DEV if Disconnected",
+  "visibility_honesty": "Window visibility alone is NOT claimed as VERIFIED_LIVE. Classified as PARTIAL / SUPERVISOR-DEPENDENT (offline/DEV if Disconnected).",
+  "gate_g5_boundary": "Gate G5 is explicitly NOT RUN per user mandate and remains closed.",
+  "dual_root_parity_count": 45
+}

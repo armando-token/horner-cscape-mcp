@@ -1,0 +1,81 @@
+{
+  "step": 186,
+  "role": "Simulation & FastMCP Verification Agent",
+  "mandate": "Step 186: FastMCP Analog Scaling with Out-of-Bounds & Sensor Diagnostics Simulation Audit",
+  "classification": "offline/DEV [TESTED_MOCK]",
+  "status": "success",
+  "timestamp_start_utc": "2026-09-06T22:32:43.230Z",
+  "timestamp_complete_utc": "2026-09-06T22:32:43.231Z",
+  "duration_sec": 0.0015,
+  "target_pou": "FB_AnalogScalingOutOfBounds",
+  "target_st_file": "C:/HornerAI/horner-cscape-mcp/examples/st_applications/analog_scaling_bounds.st",
+  "st_sha256": "9e130a26c3f8cc9dff9370a3fc99c29d4c7029234d6af9c58ac5f6698a96018d",
+  "register_mappings": {
+    "%R141": "RawIn",
+    "%R142": "RawFiltered",
+    "%R143": "ScaledValue",
+    "%R144": "ErrorCode",
+    "%M71": "QualityOK",
+    "%M72": "AlarmUnderflow",
+    "%M73": "AlarmOverflow",
+    "%M74": "LatchedFault"
+  },
+  "simulation_invariants": {
+    "status": "success",
+    "all_invariants_passed": true,
+    "invariants": {
+      "invariant_01_normal_midpoint_scaling": {
+        "description": "Normal linear scaling at 50% midpoint (RawIn=12000, 4-20mA -> ScaledValue=50.0, QualityOK=True, ErrorCode=0)",
+        "passed": true
+      },
+      "invariant_02_normal_baseline_scaling": {
+        "description": "Normal linear scaling at 0% baseline (RawIn=4000 -> ScaledValue=0.0, QualityOK=True)",
+        "passed": true
+      },
+      "invariant_03_normal_fullscale_scaling": {
+        "description": "Normal linear scaling at 100% full-scale (RawIn=20000 -> ScaledValue=100.0, QualityOK=True)",
+        "passed": true
+      },
+      "invariant_04_underflow_wire_break": {
+        "description": "Out-of-bounds underflow wire break (< 3600 -> AlarmUnderflow=True, QualityOK=False, LatchedFault=True, ErrorCode=1)",
+        "passed": true
+      },
+      "invariant_05_overflow_short_circuit": {
+        "description": "Out-of-bounds overflow short circuit (> 20800 -> AlarmOverflow=True, QualityOK=False, LatchedFault=True, ErrorCode=2)",
+        "passed": true
+      },
+      "invariant_06_exponential_smoothing_filter": {
+        "description": "Exponential smoothing filter (FilterAlpha=0.20 smooths step input)",
+        "passed": true
+      },
+      "invariant_07_clamping_output_enforcement": {
+        "description": "Clamping output enforcement (ClampOutput=True restricts between EngMin and EngMax)",
+        "passed": true
+      },
+      "invariant_08_failsafe_mode_0_preset": {
+        "description": "Failsafe Mode 0 preset (emits FailSafeValue on fault)",
+        "passed": true
+      },
+      "invariant_09_failsafe_mode_1_hold_last_valid": {
+        "description": "Failsafe Mode 1 hold last valid (retains LastValidValue on fault)",
+        "passed": true
+      },
+      "invariant_10_config_error_zero_raw_span": {
+        "description": "Configuration error zero raw span (RawMax == RawMin -> ErrorCode=3, LatchedFault=True)",
+        "passed": true
+      },
+      "invariant_11_reset_fault_acknowledgment": {
+        "description": "ResetFault acknowledgment (ResetFault=True clears LatchedFault and ErrorCode after recovery)",
+        "passed": true
+      },
+      "invariant_12_fastmcp_partitioned_registers": {
+        "description": "FastMCP multi-client partitioned registers (%R141 vs %R151 isolation, zero cross-talk)",
+        "passed": true
+      },
+      "invariant_13_download_lockout": {
+        "description": "Download lockout enforcement (commands 32827 and 33149 blocked fail-closed)",
+        "passed": true
+      }
+    }
+  }
+}

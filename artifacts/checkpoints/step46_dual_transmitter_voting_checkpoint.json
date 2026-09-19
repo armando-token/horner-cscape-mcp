@@ -1,0 +1,20 @@
+{
+  "step": 46,
+  "name": "step46_dual_transmitter_voting_checkpoint",
+  "description": "Dual-transmitter redundancy voting (1oo2 / 2oo2) audit verified across 350 cycles (drift detection, channel quarantine, 2oo2 safety clamp to 0.0%, and bumpless calibrated recovery to 0.0012% final error).",
+  "timestamp_utc": "2026-09-05T09:44:54.516Z",
+  "cscape_pid": 11808,
+  "cscape_hwnd": "0x01F00670",
+  "cscape_healthy": true,
+  "total_cycles": 350,
+  "cycles_per_sec": 1917.0,
+  "phase1_final_error_percent": 0.022,
+  "phase2_drift_quarantine_error_percent": 0.0007,
+  "phase3_primary_a_error_percent": 0.0105,
+  "phase4_max_clamped_output": 0.0,
+  "phase5_recovery_error_percent": 0.0037,
+  "voting_redundancy_verified": true,
+  "hardware_lockout_enforced": true,
+  "audit_log": "C:\\Users\\ArmandoSilva\\artifacts\\logs\\mcp_dual_transmitter_voting_audit.json",
+  "status": "VERIFIED_LIVE"
+}

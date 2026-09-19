@@ -1,0 +1,1033 @@
+{
+  "step": 133,
+  "title": "FastMCP Multi-Client Live Concurrency Benchmark on Live Cscape PID 14580",
+  "timestamp_start_utc": "2026-09-05T17:25:21.304Z",
+  "timestamp_end_utc": "2026-09-05T17:27:40.984Z",
+  "status": "VERIFIED_LIVE",
+  "cscape_active_process": {
+    "pid": 14580,
+    "hwnd": "0x024B054A",
+    "uptime_seconds": 5082.86,
+    "working_set_mb": 133.33,
+    "is_hung": false,
+    "wm_null_ping_ok": true,
+    "desktop": "Default"
+  },
+  "concurrency_configuration": {
+    "num_clients": 5,
+    "client_names": [
+      "Client_1",
+      "Client_2",
+      "Client_3",
+      "Client_4",
+      "Client_5"
+    ],
+    "calls_per_client": 20,
+    "total_calls": 100,
+    "transport": "stdio",
+    "server_script": "scripts/run_mcp_server.py",
+    "tools": [
+      "cscape_read_variables",
+      "cscape_simulate_cycle",
+      "cscape_read_register",
+      "cscape_write_register",
+      "cscape_compile_project"
+    ],
+    "gui_arbitration": "serialized_asyncio_lock",
+    "dialog_sweeper_active": true,
+    "sweeper_interventions": 0
+  },
+  "aggregate_metrics": {
+    "total_calls": 100,
+    "successful_calls": 100,
+    "errors": 0,
+    "success_rate_percent": 100.0,
+    "dropped_frames": 0,
+    "cross_client_frame_contamination": 0,
+    "duration_seconds": 127.901,
+    "throughput_calls_per_sec": 0.78,
+    "latency_ms": {
+      "min": 1.54,
+      "median": 3.63,
+      "p90": 6357.35,
+      "p95": 6435.16,
+      "p99": 6593.88,
+      "max": 6622.05,
+      "mean": 1288.87,
+      "stddev": 2563.5
+    }
+  },
+  "per_client_metrics": {
+    "Client_1": {
+      "calls": 20,
+      "errors": 0,
+      "dropped_frames": 0,
+      "contamination": 0,
+      "success_rate_percent": 100.0,
+      "duration_seconds": 102.198,
+      "throughput_calls_per_sec": 0.2,
+      "latency_ms": {
+        "min": 1.67,
+        "median": 5.7,
+        "p90": 6306.45,
+        "p95": 6327.51,
+        "p99": 6504.59,
+        "max": 6548.86,
+        "mean": 1278.43,
+        "stddev": 2603.17
+      }
+    },
+    "Client_2": {
+      "calls": 20,
+      "errors": 0,
+      "dropped_frames": 0,
+      "contamination": 0,
+      "success_rate_percent": 100.0,
+      "duration_seconds": 108.532,
+      "throughput_calls_per_sec": 0.18,
+      "latency_ms": {
+        "min": 1.54,
+        "median": 2.79,
+        "p90": 6280.13,
+        "p95": 6335.12,
+        "p99": 6350.58,
+        "max": 6354.45,
+        "mean": 1268.81,
+        "stddev": 2581.77
+      }
+    },
+    "Client_3": {
+      "calls": 20,
+      "errors": 0,
+      "dropped_frames": 0,
+      "contamination": 0,
+      "success_rate_percent": 100.0,
+      "duration_seconds": 114.934,
+      "throughput_calls_per_sec": 0.17,
+      "latency_ms": {
+        "min": 1.58,
+        "median": 6.7,
+        "p90": 6316.42,
+        "p95": 6410.21,
+        "p99": 6531.61,
+        "max": 6561.96,
+        "mean": 1287.51,
+        "stddev": 2610.0
+      }
+    },
+    "Client_4": {
+      "calls": 20,
+      "errors": 0,
+      "dropped_frames": 0,
+      "contamination": 0,
+      "success_rate_percent": 100.0,
+      "duration_seconds": 121.364,
+      "throughput_calls_per_sec": 0.16,
+      "latency_ms": {
+        "min": 1.67,
+        "median": 4.09,
+        "p90": 6407.14,
+        "p95": 6438.05,
+        "p99": 6562.49,
+        "max": 6593.6,
+        "mean": 1303.76,
+        "stddev": 2642.63
+      }
+    },
+    "Client_5": {
+      "calls": 20,
+      "errors": 0,
+      "dropped_frames": 0,
+      "contamination": 0,
+      "success_rate_percent": 100.0,
+      "duration_seconds": 127.9,
+      "throughput_calls_per_sec": 0.16,
+      "latency_ms": {
+        "min": 1.6,
+        "median": 2.65,
+        "p90": 6398.67,
+        "p95": 6540.27,
+        "p99": 6605.69,
+        "max": 6622.05,
+        "mean": 1305.85,
+        "stddev": 2646.21
+      }
+    }
+  },
+  "per_tool_metrics": {
+    "cscape_read_variables": {
+      "call_count": 20,
+      "latency_ms": {
+        "min": 6.83,
+        "median": 7.58,
+        "p90": 25.76,
+        "p95": 35.49,
+        "p99": 45.2,
+        "max": 47.63,
+        "mean": 12.48,
+        "stddev": 10.98
+      }
+    },
+    "cscape_simulate_cycle": {
+      "call_count": 20,
+      "latency_ms": {
+        "min": 2.26,
+        "median": 2.64,
+        "p90": 114.6,
+        "p95": 174.33,
+        "p99": 193.64,
+        "max": 198.47,
+        "mean": 31.18,
+        "stddev": 59.19
+      }
+    },
+    "cscape_read_register": {
+      "call_count": 20,
+      "latency_ms": {
+        "min": 1.59,
+        "median": 1.8,
+        "p90": 8.09,
+        "p95": 56.84,
+        "p99": 102.13,
+        "max": 113.45,
+        "mean": 10.17,
+        "stddev": 26.93
+      }
+    },
+    "cscape_write_register": {
+      "call_count": 20,
+      "latency_ms": {
+        "min": 1.54,
+        "median": 1.86,
+        "p90": 2.17,
+        "p95": 2.21,
+        "p99": 2.27,
+        "max": 2.28,
+        "mean": 1.86,
+        "stddev": 0.23
+      }
+    },
+    "cscape_compile_project": {
+      "call_count": 20,
+      "latency_ms": {
+        "min": 6224.26,
+        "median": 6368.93,
+        "p90": 6565.12,
+        "p95": 6595.02,
+        "p99": 6616.64,
+        "max": 6622.05,
+        "mean": 6388.68,
+        "stddev": 123.58
+      }
+    }
+  },
+  "safety_audit": {
+    "id_controller_download_32827_blocked": true,
+    "physical_plc_download_blocked": true,
+    "zero_physical_hardware_touched": true,
+    "hardware_lockout_enforced": true,
+    "zero_straton_dependencies": true
+  },
+  "call_records": [
+    {
+      "client_id": "Client_1",
+      "call_idx": 1,
+      "global_idx": 1,
+      "tool": "cscape_read_variables",
+      "latency_ms": 10.47,
+      "success": true
+    },
+    {
+      "client_id": "Client_1",
+      "call_idx": 2,
+      "global_idx": 2,
+      "tool": "cscape_simulate_cycle",
+      "latency_ms": 50.96,
+      "success": true
+    },
+    {
+      "client_id": "Client_1",
+      "call_idx": 3,
+      "global_idx": 3,
+      "tool": "cscape_read_register",
+      "latency_ms": 53.86,
+      "success": true
+    },
+    {
+      "client_id": "Client_1",
+      "call_idx": 4,
+      "global_idx": 4,
+      "tool": "cscape_write_register",
+      "latency_ms": 2.28,
+      "success": true
+    },
+    {
+      "client_id": "Client_1",
+      "call_idx": 5,
+      "global_idx": 5,
+      "tool": "cscape_compile_project",
+      "latency_ms": 6305.41,
+      "success": true
+    },
+    {
+      "client_id": "Client_1",
+      "call_idx": 6,
+      "global_idx": 6,
+      "tool": "cscape_read_variables",
+      "latency_ms": 7.21,
+      "success": true
+    },
+    {
+      "client_id": "Client_1",
+      "call_idx": 7,
+      "global_idx": 7,
+      "tool": "cscape_simulate_cycle",
+      "latency_ms": 2.7,
+      "success": true
+    },
+    {
+      "client_id": "Client_1",
+      "call_idx": 8,
+      "global_idx": 8,
+      "tool": "cscape_read_register",
+      "latency_ms": 1.8,
+      "success": true
+    },
+    {
+      "client_id": "Client_1",
+      "call_idx": 9,
+      "global_idx": 9,
+      "tool": "cscape_write_register",
+      "latency_ms": 1.91,
+      "success": true
+    },
+    {
+      "client_id": "Client_1",
+      "call_idx": 10,
+      "global_idx": 10,
+      "tool": "cscape_compile_project",
+      "latency_ms": 6315.86,
+      "success": true
+    },
+    {
+      "client_id": "Client_1",
+      "call_idx": 11,
+      "global_idx": 11,
+      "tool": "cscape_read_variables",
+      "latency_ms": 7.15,
+      "success": true
+    },
+    {
+      "client_id": "Client_1",
+      "call_idx": 12,
+      "global_idx": 12,
+      "tool": "cscape_simulate_cycle",
+      "latency_ms": 4.25,
+      "success": true
+    },
+    {
+      "client_id": "Client_1",
+      "call_idx": 13,
+      "global_idx": 13,
+      "tool": "cscape_read_register",
+      "latency_ms": 1.67,
+      "success": true
+    },
+    {
+      "client_id": "Client_1",
+      "call_idx": 14,
+      "global_idx": 14,
+      "tool": "cscape_write_register",
+      "latency_ms": 2.21,
+      "success": true
+    },
+    {
+      "client_id": "Client_1",
+      "call_idx": 15,
+      "global_idx": 15,
+      "tool": "cscape_compile_project",
+      "latency_ms": 6236.94,
+      "success": true
+    },
+    {
+      "client_id": "Client_1",
+      "call_idx": 16,
+      "global_idx": 16,
+      "tool": "cscape_read_variables",
+      "latency_ms": 8.74,
+      "success": true
+    },
+    {
+      "client_id": "Client_1",
+      "call_idx": 17,
+      "global_idx": 17,
+      "tool": "cscape_simulate_cycle",
+      "latency_ms": 2.56,
+      "success": true
+    },
+    {
+      "client_id": "Client_1",
+      "call_idx": 18,
+      "global_idx": 18,
+      "tool": "cscape_read_register",
+      "latency_ms": 1.73,
+      "success": true
+    },
+    {
+      "client_id": "Client_1",
+      "call_idx": 19,
+      "global_idx": 19,
+      "tool": "cscape_write_register",
+      "latency_ms": 1.99,
+      "success": true
+    },
+    {
+      "client_id": "Client_1",
+      "call_idx": 20,
+      "global_idx": 20,
+      "tool": "cscape_compile_project",
+      "latency_ms": 6548.86,
+      "success": true
+    },
+    {
+      "client_id": "Client_2",
+      "call_idx": 1,
+      "global_idx": 21,
+      "tool": "cscape_read_variables",
+      "latency_ms": 18.38,
+      "success": true
+    },
+    {
+      "client_id": "Client_2",
+      "call_idx": 2,
+      "global_idx": 22,
+      "tool": "cscape_simulate_cycle",
+      "latency_ms": 108.11,
+      "success": true
+    },
+    {
+      "client_id": "Client_2",
+      "call_idx": 3,
+      "global_idx": 23,
+      "tool": "cscape_read_register",
+      "latency_ms": 3.0,
+      "success": true
+    },
+    {
+      "client_id": "Client_2",
+      "call_idx": 4,
+      "global_idx": 24,
+      "tool": "cscape_write_register",
+      "latency_ms": 2.03,
+      "success": true
+    },
+    {
+      "client_id": "Client_2",
+      "call_idx": 5,
+      "global_idx": 25,
+      "tool": "cscape_compile_project",
+      "latency_ms": 6242.32,
+      "success": true
+    },
+    {
+      "client_id": "Client_2",
+      "call_idx": 6,
+      "global_idx": 26,
+      "tool": "cscape_read_variables",
+      "latency_ms": 7.01,
+      "success": true
+    },
+    {
+      "client_id": "Client_2",
+      "call_idx": 7,
+      "global_idx": 27,
+      "tool": "cscape_simulate_cycle",
+      "latency_ms": 2.37,
+      "success": true
+    },
+    {
+      "client_id": "Client_2",
+      "call_idx": 8,
+      "global_idx": 28,
+      "tool": "cscape_read_register",
+      "latency_ms": 1.59,
+      "success": true
+    },
+    {
+      "client_id": "Client_2",
+      "call_idx": 9,
+      "global_idx": 29,
+      "tool": "cscape_write_register",
+      "latency_ms": 1.57,
+      "success": true
+    },
+    {
+      "client_id": "Client_2",
+      "call_idx": 10,
+      "global_idx": 30,
+      "tool": "cscape_compile_project",
+      "latency_ms": 6274.13,
+      "success": true
+    },
+    {
+      "client_id": "Client_2",
+      "call_idx": 11,
+      "global_idx": 31,
+      "tool": "cscape_read_variables",
+      "latency_ms": 7.47,
+      "success": true
+    },
+    {
+      "client_id": "Client_2",
+      "call_idx": 12,
+      "global_idx": 32,
+      "tool": "cscape_simulate_cycle",
+      "latency_ms": 2.58,
+      "success": true
+    },
+    {
+      "client_id": "Client_2",
+      "call_idx": 13,
+      "global_idx": 33,
+      "tool": "cscape_read_register",
+      "latency_ms": 1.83,
+      "success": true
+    },
+    {
+      "client_id": "Client_2",
+      "call_idx": 14,
+      "global_idx": 34,
+      "tool": "cscape_write_register",
+      "latency_ms": 1.69,
+      "success": true
+    },
+    {
+      "client_id": "Client_2",
+      "call_idx": 15,
+      "global_idx": 35,
+      "tool": "cscape_compile_project",
+      "latency_ms": 6354.45,
+      "success": true
+    },
+    {
+      "client_id": "Client_2",
+      "call_idx": 16,
+      "global_idx": 36,
+      "tool": "cscape_read_variables",
+      "latency_ms": 8.09,
+      "success": true
+    },
+    {
+      "client_id": "Client_2",
+      "call_idx": 17,
+      "global_idx": 37,
+      "tool": "cscape_simulate_cycle",
+      "latency_ms": 2.34,
+      "success": true
+    },
+    {
+      "client_id": "Client_2",
+      "call_idx": 18,
+      "global_idx": 38,
+      "tool": "cscape_read_register",
+      "latency_ms": 1.7,
+      "success": true
+    },
+    {
+      "client_id": "Client_2",
+      "call_idx": 19,
+      "global_idx": 39,
+      "tool": "cscape_write_register",
+      "latency_ms": 1.54,
+      "success": true
+    },
+    {
+      "client_id": "Client_2",
+      "call_idx": 20,
+      "global_idx": 40,
+      "tool": "cscape_compile_project",
+      "latency_ms": 6334.1,
+      "success": true
+    },
+    {
+      "client_id": "Client_3",
+      "call_idx": 1,
+      "global_idx": 41,
+      "tool": "cscape_read_variables",
+      "latency_ms": 47.63,
+      "success": true
+    },
+    {
+      "client_id": "Client_3",
+      "call_idx": 2,
+      "global_idx": 42,
+      "tool": "cscape_simulate_cycle",
+      "latency_ms": 47.09,
+      "success": true
+    },
+    {
+      "client_id": "Client_3",
+      "call_idx": 3,
+      "global_idx": 43,
+      "tool": "cscape_read_register",
+      "latency_ms": 113.45,
+      "success": true
+    },
+    {
+      "client_id": "Client_3",
+      "call_idx": 4,
+      "global_idx": 44,
+      "tool": "cscape_write_register",
+      "latency_ms": 1.89,
+      "success": true
+    },
+    {
+      "client_id": "Client_3",
+      "call_idx": 5,
+      "global_idx": 45,
+      "tool": "cscape_compile_project",
+      "latency_ms": 6306.88,
+      "success": true
+    },
+    {
+      "client_id": "Client_3",
+      "call_idx": 6,
+      "global_idx": 46,
+      "tool": "cscape_read_variables",
+      "latency_ms": 6.83,
+      "success": true
+    },
+    {
+      "client_id": "Client_3",
+      "call_idx": 7,
+      "global_idx": 47,
+      "tool": "cscape_simulate_cycle",
+      "latency_ms": 6.58,
+      "success": true
+    },
+    {
+      "client_id": "Client_3",
+      "call_idx": 8,
+      "global_idx": 48,
+      "tool": "cscape_read_register",
+      "latency_ms": 1.78,
+      "success": true
+    },
+    {
+      "client_id": "Client_3",
+      "call_idx": 9,
+      "global_idx": 49,
+      "tool": "cscape_write_register",
+      "latency_ms": 1.58,
+      "success": true
+    },
+    {
+      "client_id": "Client_3",
+      "call_idx": 10,
+      "global_idx": 50,
+      "tool": "cscape_compile_project",
+      "latency_ms": 6224.26,
+      "success": true
+    },
+    {
+      "client_id": "Client_3",
+      "call_idx": 11,
+      "global_idx": 51,
+      "tool": "cscape_read_variables",
+      "latency_ms": 7.31,
+      "success": true
+    },
+    {
+      "client_id": "Client_3",
+      "call_idx": 12,
+      "global_idx": 52,
+      "tool": "cscape_simulate_cycle",
+      "latency_ms": 2.53,
+      "success": true
+    },
+    {
+      "client_id": "Client_3",
+      "call_idx": 13,
+      "global_idx": 53,
+      "tool": "cscape_read_register",
+      "latency_ms": 2.54,
+      "success": true
+    },
+    {
+      "client_id": "Client_3",
+      "call_idx": 14,
+      "global_idx": 54,
+      "tool": "cscape_write_register",
+      "latency_ms": 1.61,
+      "success": true
+    },
+    {
+      "client_id": "Client_3",
+      "call_idx": 15,
+      "global_idx": 55,
+      "tool": "cscape_compile_project",
+      "latency_ms": 6561.96,
+      "success": true
+    },
+    {
+      "client_id": "Client_3",
+      "call_idx": 16,
+      "global_idx": 56,
+      "tool": "cscape_read_variables",
+      "latency_ms": 8.07,
+      "success": true
+    },
+    {
+      "client_id": "Client_3",
+      "call_idx": 17,
+      "global_idx": 57,
+      "tool": "cscape_simulate_cycle",
+      "latency_ms": 2.44,
+      "success": true
+    },
+    {
+      "client_id": "Client_3",
+      "call_idx": 18,
+      "global_idx": 58,
+      "tool": "cscape_read_register",
+      "latency_ms": 1.77,
+      "success": true
+    },
+    {
+      "client_id": "Client_3",
+      "call_idx": 19,
+      "global_idx": 59,
+      "tool": "cscape_write_register",
+      "latency_ms": 1.77,
+      "success": true
+    },
+    {
+      "client_id": "Client_3",
+      "call_idx": 20,
+      "global_idx": 60,
+      "tool": "cscape_compile_project",
+      "latency_ms": 6402.23,
+      "success": true
+    },
+    {
+      "client_id": "Client_4",
+      "call_idx": 1,
+      "global_idx": 61,
+      "tool": "cscape_read_variables",
+      "latency_ms": 34.85,
+      "success": true
+    },
+    {
+      "client_id": "Client_4",
+      "call_idx": 2,
+      "global_idx": 62,
+      "tool": "cscape_simulate_cycle",
+      "latency_ms": 173.06,
+      "success": true
+    },
+    {
+      "client_id": "Client_4",
+      "call_idx": 3,
+      "global_idx": 63,
+      "tool": "cscape_read_register",
+      "latency_ms": 2.97,
+      "success": true
+    },
+    {
+      "client_id": "Client_4",
+      "call_idx": 4,
+      "global_idx": 64,
+      "tool": "cscape_write_register",
+      "latency_ms": 2.09,
+      "success": true
+    },
+    {
+      "client_id": "Client_4",
+      "call_idx": 5,
+      "global_idx": 65,
+      "tool": "cscape_compile_project",
+      "latency_ms": 6404.62,
+      "success": true
+    },
+    {
+      "client_id": "Client_4",
+      "call_idx": 6,
+      "global_idx": 66,
+      "tool": "cscape_read_variables",
+      "latency_ms": 7.67,
+      "success": true
+    },
+    {
+      "client_id": "Client_4",
+      "call_idx": 7,
+      "global_idx": 67,
+      "tool": "cscape_simulate_cycle",
+      "latency_ms": 5.21,
+      "success": true
+    },
+    {
+      "client_id": "Client_4",
+      "call_idx": 8,
+      "global_idx": 68,
+      "tool": "cscape_read_register",
+      "latency_ms": 1.67,
+      "success": true
+    },
+    {
+      "client_id": "Client_4",
+      "call_idx": 9,
+      "global_idx": 69,
+      "tool": "cscape_write_register",
+      "latency_ms": 2.16,
+      "success": true
+    },
+    {
+      "client_id": "Client_4",
+      "call_idx": 10,
+      "global_idx": 70,
+      "tool": "cscape_compile_project",
+      "latency_ms": 6388.49,
+      "success": true
+    },
+    {
+      "client_id": "Client_4",
+      "call_idx": 11,
+      "global_idx": 71,
+      "tool": "cscape_read_variables",
+      "latency_ms": 8.78,
+      "success": true
+    },
+    {
+      "client_id": "Client_4",
+      "call_idx": 12,
+      "global_idx": 72,
+      "tool": "cscape_simulate_cycle",
+      "latency_ms": 2.74,
+      "success": true
+    },
+    {
+      "client_id": "Client_4",
+      "call_idx": 13,
+      "global_idx": 73,
+      "tool": "cscape_read_register",
+      "latency_ms": 1.94,
+      "success": true
+    },
+    {
+      "client_id": "Client_4",
+      "call_idx": 14,
+      "global_idx": 74,
+      "tool": "cscape_write_register",
+      "latency_ms": 2.05,
+      "success": true
+    },
+    {
+      "client_id": "Client_4",
+      "call_idx": 15,
+      "global_idx": 75,
+      "tool": "cscape_compile_project",
+      "latency_ms": 6593.6,
+      "success": true
+    },
+    {
+      "client_id": "Client_4",
+      "call_idx": 16,
+      "global_idx": 76,
+      "tool": "cscape_read_variables",
+      "latency_ms": 7.49,
+      "success": true
+    },
+    {
+      "client_id": "Client_4",
+      "call_idx": 17,
+      "global_idx": 77,
+      "tool": "cscape_simulate_cycle",
+      "latency_ms": 2.46,
+      "success": true
+    },
+    {
+      "client_id": "Client_4",
+      "call_idx": 18,
+      "global_idx": 78,
+      "tool": "cscape_read_register",
+      "latency_ms": 1.72,
+      "success": true
+    },
+    {
+      "client_id": "Client_4",
+      "call_idx": 19,
+      "global_idx": 79,
+      "tool": "cscape_write_register",
+      "latency_ms": 1.79,
+      "success": true
+    },
+    {
+      "client_id": "Client_4",
+      "call_idx": 20,
+      "global_idx": 80,
+      "tool": "cscape_compile_project",
+      "latency_ms": 6429.86,
+      "success": true
+    },
+    {
+      "client_id": "Client_5",
+      "call_idx": 1,
+      "global_idx": 81,
+      "tool": "cscape_read_variables",
+      "latency_ms": 24.75,
+      "success": true
+    },
+    {
+      "client_id": "Client_5",
+      "call_idx": 2,
+      "global_idx": 82,
+      "tool": "cscape_simulate_cycle",
+      "latency_ms": 198.47,
+      "success": true
+    },
+    {
+      "client_id": "Client_5",
+      "call_idx": 3,
+      "global_idx": 83,
+      "tool": "cscape_read_register",
+      "latency_ms": 2.88,
+      "success": true
+    },
+    {
+      "client_id": "Client_5",
+      "call_idx": 4,
+      "global_idx": 84,
+      "tool": "cscape_write_register",
+      "latency_ms": 1.86,
+      "success": true
+    },
+    {
+      "client_id": "Client_5",
+      "call_idx": 5,
+      "global_idx": 85,
+      "tool": "cscape_compile_project",
+      "latency_ms": 6308.17,
+      "success": true
+    },
+    {
+      "client_id": "Client_5",
+      "call_idx": 6,
+      "global_idx": 86,
+      "tool": "cscape_read_variables",
+      "latency_ms": 7.11,
+      "success": true
+    },
+    {
+      "client_id": "Client_5",
+      "call_idx": 7,
+      "global_idx": 87,
+      "tool": "cscape_simulate_cycle",
+      "latency_ms": 2.43,
+      "success": true
+    },
+    {
+      "client_id": "Client_5",
+      "call_idx": 8,
+      "global_idx": 88,
+      "tool": "cscape_read_register",
+      "latency_ms": 1.8,
+      "success": true
+    },
+    {
+      "client_id": "Client_5",
+      "call_idx": 9,
+      "global_idx": 89,
+      "tool": "cscape_write_register",
+      "latency_ms": 1.76,
+      "success": true
+    },
+    {
+      "client_id": "Client_5",
+      "call_idx": 10,
+      "global_idx": 90,
+      "tool": "cscape_compile_project",
+      "latency_ms": 6383.41,
+      "success": true
+    },
+    {
+      "client_id": "Client_5",
+      "call_idx": 11,
+      "global_idx": 91,
+      "tool": "cscape_read_variables",
+      "latency_ms": 7.38,
+      "success": true
+    },
+    {
+      "client_id": "Client_5",
+      "call_idx": 12,
+      "global_idx": 92,
+      "tool": "cscape_simulate_cycle",
+      "latency_ms": 2.38,
+      "success": true
+    },
+    {
+      "client_id": "Client_5",
+      "call_idx": 13,
+      "global_idx": 93,
+      "tool": "cscape_read_register",
+      "latency_ms": 2.06,
+      "success": true
+    },
+    {
+      "client_id": "Client_5",
+      "call_idx": 14,
+      "global_idx": 94,
+      "tool": "cscape_write_register",
+      "latency_ms": 1.86,
+      "success": true
+    },
+    {
+      "client_id": "Client_5",
+      "call_idx": 15,
+      "global_idx": 95,
+      "tool": "cscape_compile_project",
+      "latency_ms": 6622.05,
+      "success": true
+    },
+    {
+      "client_id": "Client_5",
+      "call_idx": 16,
+      "global_idx": 96,
+      "tool": "cscape_read_variables",
+      "latency_ms": 7.25,
+      "success": true
+    },
+    {
+      "client_id": "Client_5",
+      "call_idx": 17,
+      "global_idx": 97,
+      "tool": "cscape_simulate_cycle",
+      "latency_ms": 2.26,
+      "success": true
+    },
+    {
+      "client_id": "Client_5",
+      "call_idx": 18,
+      "global_idx": 98,
+      "tool": "cscape_read_register",
+      "latency_ms": 1.6,
+      "success": true
+    },
+    {
+      "client_id": "Client_5",
+      "call_idx": 19,
+      "global_idx": 99,
+      "tool": "cscape_write_register",
+      "latency_ms": 1.62,
+      "success": true
+    },
+    {
+      "client_id": "Client_5",
+      "call_idx": 20,
+      "global_idx": 100,
+      "tool": "cscape_compile_project",
+      "latency_ms": 6535.96,
+      "success": true
+    }
+  ]
+}

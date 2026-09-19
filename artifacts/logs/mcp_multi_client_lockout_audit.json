@@ -1,0 +1,329 @@
+{
+  "step": 43,
+  "title": "Multi-Client FastMCP Concurrent Lockout Stress & State Partitioning Audit",
+  "timestamp_start_utc": "2026-09-05T09:47:31.722Z",
+  "timestamp_end_utc": "2026-09-05T09:47:50.489Z",
+  "status": "VERIFIED_LIVE",
+  "cscape_active_process": {
+    "healthy": true,
+    "pid": 11808,
+    "hwnd": "0x1f00670",
+    "is_hung": false,
+    "wm_null_ping_ok": true,
+    "working_set_mb": 218.09,
+    "uptime_seconds": 1058.81,
+    "thread_count": 11,
+    "gate_status": "READY_FOR_TESTS",
+    "window_title": "Cscape - Logged In : \"armando@controlnautas.com\" - [TankLevelClosedLoop.csp]"
+  },
+  "multi_client_metrics": {
+    "num_clients": 5,
+    "cycles_per_client": 120,
+    "total_sim_cycles": 600,
+    "sim_duration_seconds": 0.3668,
+    "aggregate_cycles_per_sec": 1635.77,
+    "all_clients_converged_sub_0_05": true,
+    "state_cross_talk_detected": false,
+    "state_partitioning_verified": true,
+    "client_results": {
+      "Alpha": {
+        "client_name": "Alpha",
+        "session_project": "Client_Alpha",
+        "success": true,
+        "target_sp": 32.0,
+        "cycles_completed": 120,
+        "duration_seconds": 0.3124,
+        "cycles_per_sec": 384.12,
+        "final_pv": 31.9957,
+        "final_error_percent": 0.0043,
+        "settled_error_percent": 0.0078,
+        "converged_sub_0_05": true,
+        "verified_stored_sp": 32.0,
+        "verified_stored_pv": 16320,
+        "sample_trace": [
+          {
+            "cycle": 0,
+            "target_sp": 32.0,
+            "pv": 22.19,
+            "cv": 63.8,
+            "error": 9.81
+          },
+          {
+            "cycle": 30,
+            "target_sp": 32.0,
+            "pv": 32.7523,
+            "cv": 33.7275,
+            "error": 0.7523
+          },
+          {
+            "cycle": 60,
+            "target_sp": 32.0,
+            "pv": 32.2184,
+            "cv": 31.7552,
+            "error": 0.2184
+          },
+          {
+            "cycle": 90,
+            "target_sp": 32.0,
+            "pv": 31.9638,
+            "cv": 31.9719,
+            "error": 0.0362
+          },
+          {
+            "cycle": 119,
+            "target_sp": 32.0,
+            "pv": 31.9957,
+            "cv": 32.0017,
+            "error": 0.0043
+          }
+        ]
+      },
+      "Delta": {
+        "client_name": "Delta",
+        "session_project": "Client_Delta",
+        "success": true,
+        "target_sp": 72.0,
+        "cycles_completed": 120,
+        "duration_seconds": 0.3485,
+        "cycles_per_sec": 344.35,
+        "final_pv": 71.9958,
+        "final_error_percent": 0.0042,
+        "settled_error_percent": 0.0078,
+        "converged_sub_0_05": true,
+        "verified_stored_sp": 72.0,
+        "verified_stored_pv": 16320,
+        "sample_trace": [
+          {
+            "cycle": 0,
+            "target_sp": 72.0,
+            "pv": 62.0,
+            "cv": 100.0,
+            "error": 10.0
+          },
+          {
+            "cycle": 30,
+            "target_sp": 72.0,
+            "pv": 72.7877,
+            "cv": 73.7444,
+            "error": 0.7877
+          },
+          {
+            "cycle": 60,
+            "target_sp": 72.0,
+            "pv": 72.2206,
+            "cv": 71.7562,
+            "error": 0.2206
+          },
+          {
+            "cycle": 90,
+            "target_sp": 72.0,
+            "pv": 71.9626,
+            "cv": 71.97,
+            "error": 0.0374
+          },
+          {
+            "cycle": 119,
+            "target_sp": 72.0,
+            "pv": 71.9958,
+            "cv": 72.0022,
+            "error": 0.0042
+          }
+        ]
+      },
+      "Beta": {
+        "client_name": "Beta",
+        "session_project": "Client_Beta",
+        "success": true,
+        "target_sp": 48.0,
+        "cycles_completed": 120,
+        "duration_seconds": 0.3533,
+        "cycles_per_sec": 339.68,
+        "final_pv": 47.9957,
+        "final_error_percent": 0.0043,
+        "settled_error_percent": 0.0078,
+        "converged_sub_0_05": true,
+        "verified_stored_sp": 48.0,
+        "verified_stored_pv": 16320,
+        "sample_trace": [
+          {
+            "cycle": 0,
+            "target_sp": 48.0,
+            "pv": 38.19,
+            "cv": 79.8,
+            "error": 9.81
+          },
+          {
+            "cycle": 30,
+            "target_sp": 48.0,
+            "pv": 48.7523,
+            "cv": 49.7275,
+            "error": 0.7523
+          },
+          {
+            "cycle": 60,
+            "target_sp": 48.0,
+            "pv": 48.2184,
+            "cv": 47.7552,
+            "error": 0.2184
+          },
+          {
+            "cycle": 90,
+            "target_sp": 48.0,
+            "pv": 47.9638,
+            "cv": 47.9719,
+            "error": 0.0362
+          },
+          {
+            "cycle": 119,
+            "target_sp": 48.0,
+            "pv": 47.9957,
+            "cv": 48.0017,
+            "error": 0.0043
+          }
+        ]
+      },
+      "Epsilon": {
+        "client_name": "Epsilon",
+        "session_project": "Client_Epsilon",
+        "success": true,
+        "target_sp": 85.0,
+        "cycles_completed": 120,
+        "duration_seconds": 0.3586,
+        "cycles_per_sec": 334.62,
+        "final_pv": 84.9961,
+        "final_error_percent": 0.0039,
+        "settled_error_percent": 0.0083,
+        "converged_sub_0_05": true,
+        "verified_stored_sp": 85.0,
+        "verified_stored_pv": 16320,
+        "sample_trace": [
+          {
+            "cycle": 0,
+            "target_sp": 85.0,
+            "pv": 74.35,
+            "cv": 100.0,
+            "error": 10.65
+          },
+          {
+            "cycle": 30,
+            "target_sp": 85.0,
+            "pv": 85.9088,
+            "cv": 86.8067,
+            "error": 0.9088
+          },
+          {
+            "cycle": 60,
+            "target_sp": 85.0,
+            "pv": 85.2275,
+            "cv": 84.7234,
+            "error": 0.2275
+          },
+          {
+            "cycle": 90,
+            "target_sp": 85.0,
+            "pv": 84.9584,
+            "cv": 84.9628,
+            "error": 0.0416
+          },
+          {
+            "cycle": 119,
+            "target_sp": 85.0,
+            "pv": 84.9961,
+            "cv": 85.0141,
+            "error": 0.0039
+          }
+        ]
+      },
+      "Gamma": {
+        "client_name": "Gamma",
+        "session_project": "Client_Gamma",
+        "success": true,
+        "target_sp": 60.0,
+        "cycles_completed": 120,
+        "duration_seconds": 0.3625,
+        "cycles_per_sec": 331.01,
+        "final_pv": 59.9957,
+        "final_error_percent": 0.0043,
+        "settled_error_percent": 0.0078,
+        "converged_sub_0_05": true,
+        "verified_stored_sp": 60.0,
+        "verified_stored_pv": 16320,
+        "sample_trace": [
+          {
+            "cycle": 0,
+            "target_sp": 60.0,
+            "pv": 50.19,
+            "cv": 91.8,
+            "error": 9.81
+          },
+          {
+            "cycle": 30,
+            "target_sp": 60.0,
+            "pv": 60.7523,
+            "cv": 61.7275,
+            "error": 0.7523
+          },
+          {
+            "cycle": 60,
+            "target_sp": 60.0,
+            "pv": 60.2184,
+            "cv": 59.7552,
+            "error": 0.2184
+          },
+          {
+            "cycle": 90,
+            "target_sp": 60.0,
+            "pv": 59.9638,
+            "cv": 59.9719,
+            "error": 0.0362
+          },
+          {
+            "cycle": 119,
+            "target_sp": 60.0,
+            "pv": 59.9957,
+            "cv": 60.0017,
+            "error": 0.0043
+          }
+        ]
+      }
+    }
+  },
+  "concurrent_compile_metrics": {
+    "concurrent_compiles_requested": 3,
+    "all_compiles_succeeded": true,
+    "total_errors": 0,
+    "total_warnings": 0,
+    "mutex_lock_enforced": true,
+    "compile_results": [
+      {
+        "worker_id": 0,
+        "duration_seconds": 6.0843,
+        "success": true,
+        "error_count": 0,
+        "warning_count": 0
+      },
+      {
+        "worker_id": 1,
+        "duration_seconds": 12.2115,
+        "success": true,
+        "error_count": 0,
+        "warning_count": 0
+      },
+      {
+        "worker_id": 2,
+        "duration_seconds": 18.3259,
+        "success": true,
+        "error_count": 0,
+        "warning_count": 0
+      }
+    ]
+  },
+  "safety_audit": {
+    "concurrent_download_attempts": 5,
+    "all_downloads_blocked_fail_closed": true,
+    "physical_plc_download_blocked": true,
+    "zero_physical_hardware_touched": true,
+    "hardware_lockout_enforced": true,
+    "zero_straton_dependencies": true
+  }
+}

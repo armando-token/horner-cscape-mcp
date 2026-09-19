@@ -1,0 +1,19 @@
+{
+  "step": 116,
+  "status": "COMPLETED",
+  "name": "Small Modular Nuclear Reactor (SMR) Passive Containment Cooling System (PCCS) Condensate Sump Level Audit",
+  "timestamp": "2026-09-05T12:36:42.378Z",
+  "cscape_pid": 4272,
+  "cscape_hwnd": "0x7033e",
+  "project": "TankLevelClosedLoop.csp",
+  "assertions_passed": [
+    "Phase 1 passive condensation loop steady-state return error 0.0000% < 0.10%",
+    "Phase 2 postulated DBA steam condensation transient surge drift 6.71% > 5.0%",
+    "Phase 3 gravity-driven ECC makeup decoupled sump error 0.0000% < 0.35%",
+    "Surge rejection ratio 100.0% > 95.0%",
+    "Phase 4 long-term passive containment heat removal draw-down step settling error 0.0758% < 0.35%",
+    "Phase 5 high-high containment flooding emergency recirculation actuation trip at cycle 501 == 501",
+    "Fail-closed download lockout ID_CONTROLLER_DOWNLOAD=32827 strictly enforced",
+    "Live Cscape GUI healthy and responsive throughout test"
+  ]
+}

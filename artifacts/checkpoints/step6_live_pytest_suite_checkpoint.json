@@ -1,0 +1,40 @@
+{
+  "step": "step6_live_pytest_suite_checkpoint",
+  "status": "PASSED",
+  "timestamp_utc": "2026-09-05T05:49:30.000Z",
+  "cscape_pid": 7616,
+  "cscape_hwnd": "0x007B06D6",
+  "cscape_title": "Cscape - Logged In : \"armando@controlnautas.com\" - [TankLevelClosedLoop.csp]",
+  "pytest_results": {
+    "total_tests": 50,
+    "passed_tests": 50,
+    "failed_tests": 0,
+    "duration_seconds": 11.99,
+    "suites": [
+      {
+        "name": "tests/test_mcp_e2e_closed_loop_verification.py",
+        "passed": 7,
+        "failed": 0
+      },
+      {
+        "name": "tests/test_live_mcp_e2e_exerciser.py",
+        "passed": 8,
+        "failed": 0
+      },
+      {
+        "name": "tests/test_live_mcp_fail_closed_on_gui_death.py",
+        "passed": 5,
+        "failed": 0
+      },
+      {
+        "name": "tests/test_tank_level_incident_failure.py",
+        "passed": 30,
+        "failed": 0
+      }
+    ]
+  },
+  "fail_closed_enforced": true,
+  "zero_plc_download_enforced": true,
+  "zero_straton_dependencies": true,
+  "log_path": "C:\\HornerAI\\horner-cscape-mcp\\artifacts\\logs\\live_mcp_test_suite_execution.json"
+}

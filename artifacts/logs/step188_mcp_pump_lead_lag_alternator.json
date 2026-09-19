@@ -1,0 +1,89 @@
+{
+  "step": 188,
+  "role": "Simulation & FastMCP Verification Agent",
+  "mandate": "Step 188: FastMCP Duplex Pump Lead/Lag Alternator & Wear-Leveling Simulation Audit",
+  "classification": "offline/DEV [TESTED_MOCK]",
+  "status": "success",
+  "timestamp_start_utc": "2026-09-06T22:32:48.164Z",
+  "timestamp_complete_utc": "2026-09-06T22:32:48.239Z",
+  "duration_sec": 0.0759,
+  "target_pou": "FB_PumpLeadLagAlternator",
+  "target_st_file": "C:/HornerAI/horner-cscape-mcp/examples/st_applications/pump_lead_lag_alternator.st",
+  "st_sha256": "73b3669359e12aca1d50932ac65339b2b3e67e486ff84812e334e683237abaeb",
+  "register_mappings": {
+    "%R151": "SystemPressure",
+    "%R152": "PressureSetpoint",
+    "%R153": "Pump1_RunHours",
+    "%R154": "Pump2_RunHours",
+    "%R155": "BoostPressureThreshold",
+    "%R156": "AlternationIntervalHours",
+    "%M81": "Pump1_TripFault",
+    "%M82": "Pump2_TripFault",
+    "%M83": "AutoMode",
+    "%M84": "Pump1_Manual",
+    "%M85": "Pump2_Manual",
+    "%M86": "Pump1_Lockout",
+    "%M87": "Pump2_Lockout",
+    "%M88": "ResetFaults",
+    "%Q51": "Pump1_RunCmd",
+    "%Q52": "Pump2_RunCmd"
+  },
+  "simulation_invariants": {
+    "status": "success",
+    "all_invariants_passed": true,
+    "invariants": {
+      "invariant_01_normal_single_pump_lead_operation": {
+        "description": "Normal single-pump lead operation (Pump 1 lead, %Q51=TRUE, %Q52=FALSE, BoostActive=FALSE)",
+        "passed": true
+      },
+      "invariant_02_runtime_hour_accumulation": {
+        "description": "Deterministic runtime hour accumulation (%R153 increments by dt/3600 per run scan)",
+        "passed": true
+      },
+      "invariant_03_duty_cycle_alternation_on_restart": {
+        "description": "Duty cycle alternation on demand restart (Pump 2 selected when Pump1_RunHours > Pump2_RunHours)",
+        "passed": true
+      },
+      "invariant_04_continuous_runtime_threshold_alternation": {
+        "description": "Continuous runtime hour threshold alternation (lead transfers when delta >= AlternationIntervalHours)",
+        "passed": true
+      },
+      "invariant_05_subsecond_standby_pump_failover": {
+        "description": "Sub-second standby pump failover on thermal trip (Pump 1 trips -> Pump 2 starts in 1 scan / 0.1s)",
+        "passed": true
+      },
+      "invariant_06_latched_fault_and_reset": {
+        "description": "Failover latched fault state and ResetFaults clear (Pump1_Fault remains TRUE until ResetFaults=TRUE)",
+        "passed": true
+      },
+      "invariant_07_dual_pump_boost_activation": {
+        "description": "Dual-pump boost activation on low pressure (%R151 <= %R155 -> %Q51=TRUE AND %Q52=TRUE, BoostActive=TRUE)",
+        "passed": true
+      },
+      "invariant_08_boost_recovery_hysteresis": {
+        "description": "Boost recovery hysteresis (recovering above PressureSetpoint de-escalates boost to single lead pump)",
+        "passed": true
+      },
+      "invariant_09_manual_override_mode": {
+        "description": "Manual Hand mode override (AutoMode=FALSE, manual bits %M84/%M85 control %Q51/%Q52 directly)",
+        "passed": true
+      },
+      "invariant_10_maintenance_lockout_protection": {
+        "description": "Maintenance lockout protection (%M86/%M87 forces contactor OFF regardless of auto/manual demand)",
+        "passed": true
+      },
+      "invariant_11_all_pumps_unavailable_alarm": {
+        "description": "All pumps unavailable alarm (both pumps faulted or locked out asserts AllPumpsFaulted=TRUE)",
+        "passed": true
+      },
+      "invariant_12_fastmcp_partitioned_registers": {
+        "description": "FastMCP multi-client partitioned registers (%R151-%R156, %M81-%M88, %Q51-%Q52 stdio isolation)",
+        "passed": true
+      },
+      "invariant_13_download_lockout": {
+        "description": "Download lockout enforcement (commands 32827 and 33149 blocked fail-closed)",
+        "passed": true
+      }
+    }
+  }
+}

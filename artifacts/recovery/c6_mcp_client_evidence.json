@@ -1,0 +1,143 @@
+{
+  "mission_id": "C6_AUTOMATE_NATIVE_PATH_MCP_CLIENT",
+  "plan": "PLAN_CORRECTIVO MCP Horner/Cscape v2.0 (correctivo)",
+  "run_id": "run_20260906_120831",
+  "completed_at_utc": "2026-09-08T05:14:20.505206+00:00",
+  "status": "success",
+  "mcp_client": {
+    "transport": "stdio",
+    "protocol": "JSON-RPC 2.0",
+    "server_entrypoint": "scripts/run_mcp_server.py",
+    "tools_discovered_count": 23
+  },
+  "unique_run_copy": {
+    "project_name": "C6_Native_Run",
+    "project_dir": "C:\\HornerAI\\horner-cscape-mcp\\artifacts\\projects\\C6_Native_Run",
+    "csp_path": "C:\\HornerAI\\horner-cscape-mcp\\artifacts\\projects\\C6_Native_Run\\C6_Native_Run.csp",
+    "cloned_from": "C:\\HornerAI\\horner-cscape-mcp\\artifacts\\projects\\LabProject_W01\\LabProject_W01.csp",
+    "initial_sha256": "26bd9ef87bb26020d1ee938c0852c1619234329047cd02af0321074a5aba0c6a",
+    "initial_size_bytes": 114688
+  },
+  "import_instances_connect": {
+    "status": "done",
+    "udfb_added": "ScaleAnalogFilter",
+    "udfb_type": "FUNCTION_BLOCK",
+    "program_added": "MainProcessControl",
+    "instances": [
+      "Filter1",
+      "Filter2"
+    ],
+    "variables_connected": [
+      "RawSensor1",
+      "RawSensor2",
+      "Alpha",
+      "MinRange",
+      "MaxRange",
+      "OutFiltered1",
+      "OutFiltered2",
+      "Alarm1",
+      "Alarm2",
+      "Filter1",
+      "Filter2"
+    ]
+  },
+  "deliberate_fail_compile_then_fix": {
+    "status": "done",
+    "fail_stage": {
+      "injected_error": "Syntax error: missing comma between arguments",
+      "compile_status": "failed",
+      "compile_success": false,
+      "error_count": 2,
+      "errors_captured": [
+        "MainProcessControl.st: Syntax error at line 9, col 32: Expected ')' after function arguments",
+        "MainProcessControl.st: ERR_UNDECLARED_VAR at line 9, col 32: Undeclared variable or identifier 'SmoothingFactor' used in logic."
+      ]
+    },
+    "fix_stage": {
+      "repaired_code_accepted": true,
+      "compile_status": "success",
+      "compile_success": true,
+      "error_count": 0,
+      "clean_build": true
+    }
+  },
+  "save_reopen_compare": {
+    "status": "done",
+    "action_save": "ID_FILE_SAVE (57603)",
+    "action_close": "ID_FILE_CLOSE (57602)",
+    "action_reopen": "ID_FILE_MRU_FILE1 (57616)",
+    "comparison": {
+      "container_path": "C:\\HornerAI\\horner-cscape-mcp\\artifacts\\projects\\C6_Native_Run\\C6_Native_Run.csp",
+      "initial_size_bytes": 114688,
+      "initial_sha256": "26bd9ef87bb26020d1ee938c0852c1619234329047cd02af0321074a5aba0c6a",
+      "post_save_size_bytes": 114688,
+      "post_save_sha256": "c2d0526233ed844a86b92aa2a4dff27fd3226f616dbcf8b9cf9b1a1b519a3b1f",
+      "reopened_is_valid_cfbf": true,
+      "sector_size": 512,
+      "streams_verified": [
+        "Root Entry",
+        "Contents"
+      ],
+      "pous_verified_on_disk": [
+        "ScaleAnalogFilter.st",
+        "MainProcessControl.st"
+      ],
+      "mtime_updated": true
+    }
+  },
+  "live_gui_telemetry": {
+    "pid": 8528,
+    "hwnd": "0x157051c",
+    "title": "Cscape - Logged In : \"armando@controlnautas.com\" - [C6_Native_Run.csp]",
+    "reopened_title": "Cscape - Logged In : \"armando@controlnautas.com\" - [C6_Native_Run.csp]",
+    "visible": true,
+    "status_bar_connection": "Disconnected",
+    "operational_mode": "offline/DEV if Disconnected",
+    "visibility_classification": "PARTIAL / SUPERVISOR-DEPENDENT (offline/DEV if Disconnected) - NOT VERIFIED_LIVE"
+  },
+  "modal_defense": {
+    "title": "Non-Fatal Compilation Errors",
+    "action_taken": "IDNO (7) fail-closed; auto-Yes prohibited",
+    "status": "blocked"
+  },
+  "hardware_and_download_lockout": {
+    "status": "blocked",
+    "restricted_command_ids": [
+      32827,
+      33149
+    ],
+    "ports_blocked": [
+      "COM1",
+      "COM256",
+      "CAN0",
+      "USB0"
+    ]
+  },
+  "baseline_isolation": {
+    "baseline_path": "C:\\HornerAI\\horner-cscape-mcp\\artifacts\\projects\\TankLevelClosedLoop\\TankLevelClosedLoop.csp",
+    "baseline_sha256": "d075e67d80be031a99a6895078735918b7a15c8086590a6d20ec8484b27749af",
+    "expected_sha256": "d075e67d80be031a99a6895078735918b7a15c8086590a6d20ec8484b27749af",
+    "verified_untouched": true
+  },
+  "invariants_enforced": {
+    "gate_g5_strictly_not_run": true,
+    "no_c1_c2_c3_restart": true,
+    "no_plc_or_straton": true,
+    "keep_offline_dev_if_disconnected": true,
+    "cscape_visibility_not_verified_live": true,
+    "baseline_untouched": true,
+    "pytest_counts_not_g5_completion": true
+  },
+  "proof_artifacts": [
+    "c6_mcp_stage1_opened.png",
+    "c6_mcp_stage2_connected.png",
+    "c6_mcp_stage3_fail_compile.png",
+    "c6_mcp_stage4_clean_compile.png",
+    "c6_mcp_stage5_saved.png",
+    "c6_mcp_stage6_reopened.png",
+    "c6_mcp_navigator_visible.png",
+    "c6_mcp_modal_defense.png",
+    "c6_mcp_client_evidence.json",
+    "c6_mcp_client_execution_log.json"
+  ]
+}

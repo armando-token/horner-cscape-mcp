@@ -1,0 +1,62 @@
+{
+  "mission_id": "C6_AUTOMATE_NATIVE_PATH",
+  "step_name": "cscape_compile_project",
+  "protocol": "FastMCP stdio JSON-RPC 2.0",
+  "timestamp_start_utc": "2026-09-08T07:02:00.362921+00:00",
+  "timestamp_end_utc": "2026-09-08T07:02:15.242818+00:00",
+  "timestamp_local": "2026-09-08 00:02:00",
+  "cscape_process": {
+    "pid": 19036,
+    "operational_mode": "offline/DEV if Disconnected",
+    "visible_on_desktop": "winsta0\\Default",
+    "visibility_claim": "SUPERVISOR-DEPENDENT (NOT CLAIMED AS VERIFIED_LIVE)"
+  },
+  "target_project": {
+    "name": "C6_Native_Run",
+    "csp_path": "C:\\HornerAI\\horner-cscape-mcp\\artifacts\\projects\\C6_Native_Run\\C6_Native_Run.csp"
+  },
+  "mcp_tool_result": {
+    "success": true,
+    "status": "success",
+    "error_code": "COMPILE_ERROR",
+    "project_name": "C6_Native_Run",
+    "build_time_seconds": 0.05374,
+    "error_count": 0,
+    "warning_count": 0,
+    "errors": [],
+    "warnings": [],
+    "build_log": "=== Horner Cscape 10.2 Compile Pass: C6_Native_Run ===\nClean Build: True\nMode: IEC 61131-3 Structured Text (Advanced Ladder Excluded)\nTimestamp: 2026-09-08T00:02:12.182862\n----------------------------------------------------------------\nCompiling POU: MainProcessControl (886 bytes)...\n  POU 'MainProcessControl' parsed and validated cleanly.\nCompiling POU: ScaleAnalogFilter (769 bytes)...\n  POU 'ScaleAnalogFilter' parsed and validated cleanly.\n----------------------------------------------------------------\nBuild Result: SUCCESS\nErrors: 0, Warnings: 0\nEstimated AST Footprint: Statements: 14, Variables: 18, Expressions: 53, Source: 1655 bytes\nDuration: 0.054s\nHardware Lockout: ENFORCED (Zero PLC communication / No download)",
+    "diagnostics": [],
+    "memory_footprint": {
+      "estimated_ast_footprint": {
+        "ast_statement_count": 14,
+        "ast_variable_count": 18,
+        "ast_expression_count": 53,
+        "source_bytes_total": 1655,
+        "pou_count": 2,
+        "target_architecture": "Horner OCS (XL4 Native CFBF)"
+      },
+      "ast_statement_count": 14,
+      "ast_variable_count": 18,
+      "ast_expression_count": 53,
+      "source_bytes_total": 1655,
+      "code_size_bytes": 1655,
+      "data_size_bytes": 72,
+      "retain_size_bytes": 0,
+      "total_size_bytes": 1727,
+      "target_architecture": "Horner OCS (XL4 Native CFBF)"
+    },
+    "hardware_lockout_enforced": true,
+    "message": "Compilation completed: SUCCESS (0 errors, 0 warnings)",
+    "compiled_at": "2026-09-08T07:02:12.244177+00:00",
+    "failure_locations": [],
+    "failure_location": null,
+    "compile_successful": true,
+    "clean_build": true,
+    "pous_compiled": [
+      "MainProcessControl",
+      "ScaleAnalogFilter"
+    ]
+  },
+  "status": "success"
+}

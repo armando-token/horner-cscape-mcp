@@ -1,0 +1,312 @@
+{
+  "mission_id": "G1_REMAINING_NEGATIVES_OFFLINE_v3",
+  "audit_phase": "C4_DEEP_FORENSIC_GAP_AUDIT",
+  "timestamp_utc": "2026-09-09T01:19:34.566673+00:00",
+  "operational_mode": "offline/DEV only (no Cscape GUI, no PLC hardware)",
+  "status": "success",
+  "cfbf_container_forensics": {
+    "LabProject_W01.csp": {
+      "file_size_bytes": 99840,
+      "sha256": "09968f6e3f6b04a3bbc333e57dc0236c0992c69237cb8cb6ad6c9740a10772c0",
+      "magic_hex": "d0cf11e0a1b11ae1",
+      "is_valid_cfbf": true,
+      "sector_size": 512,
+      "dir_sector": 2,
+      "cscape_version": "10.2.751.4",
+      "has_contents_stream": true,
+      "has_iec_configuration": true,
+      "stream_entries": [
+        {
+          "name": "Root Entry",
+          "type": "Root",
+          "size": 0,
+          "is_stream": false
+        },
+        {
+          "name": "Contents",
+          "type": "Stream",
+          "size": 47910,
+          "is_stream": true
+        }
+      ],
+      "horner_markers": [
+        "HornerOCS",
+        "main3",
+        "Allocated",
+        "<END_RETAIN>",
+        "%AI1",
+        "%AQ1",
+        "PLC Type"
+      ]
+    },
+    "TankLevelClosedLoop.csp": {
+      "file_size_bytes": 49152,
+      "sha256": "d075e67d80be031a99a6895078735918b7a15c8086590a6d20ec8484b27749af",
+      "magic_hex": "d0cf11e0a1b11ae1",
+      "is_valid_cfbf": true,
+      "sector_size": 512,
+      "dir_sector": 2,
+      "cscape_version": "10.2.751.4",
+      "has_contents_stream": true,
+      "has_iec_configuration": true,
+      "stream_entries": [
+        {
+          "name": "Root Entry",
+          "type": "Root",
+          "size": 0,
+          "is_stream": false
+        },
+        {
+          "name": "Contents",
+          "type": "Stream",
+          "size": 44144,
+          "is_stream": true
+        }
+      ],
+      "horner_markers": [
+        "HornerOCS",
+        "main3",
+        "Allocated",
+        "<END_RETAIN>",
+        "%AI1",
+        "%AQ1",
+        "PLC Type"
+      ],
+      "baseline_sha256_match": true
+    }
+  },
+  "visual_screenshot_forensics": {
+    "total_images": 10,
+    "all_valid_png_headers": true,
+    "all_non_hollow": false,
+    "details": {
+      "w01_stage1_start.png": {
+        "file_size_bytes": 85378,
+        "width": 1300,
+        "height": 636,
+        "bit_depth": 8,
+        "color_type": 2,
+        "compression": 0,
+        "filter": 0,
+        "interlace": 0,
+        "non_hollow": true,
+        "sha256": "f30af3cc8d78989c82be024fc8f9ceab29cfde7c55e5b9863d6acdf9f959f55d"
+      },
+      "w01_stage2_edit.png": {
+        "file_size_bytes": 91443,
+        "width": 1300,
+        "height": 636,
+        "bit_depth": 8,
+        "color_type": 2,
+        "compression": 0,
+        "filter": 0,
+        "interlace": 0,
+        "non_hollow": true,
+        "sha256": "e5460b861bc92886cfb2452ecb96be6cdaa0c92545fc6267ce9bce679a8b3219"
+      },
+      "w01_stage3_save.png": {
+        "file_size_bytes": 76274,
+        "width": 1300,
+        "height": 636,
+        "bit_depth": 8,
+        "color_type": 2,
+        "compression": 0,
+        "filter": 0,
+        "interlace": 0,
+        "non_hollow": true,
+        "sha256": "50eac37b2f7b0019c17681601c2bf4f38ee2ef0a39c1a58bec331b5bd4065244"
+      },
+      "w01_stage4a_closed.png": {
+        "file_size_bytes": 82030,
+        "width": 1300,
+        "height": 636,
+        "bit_depth": 8,
+        "color_type": 2,
+        "compression": 0,
+        "filter": 0,
+        "interlace": 0,
+        "non_hollow": true,
+        "sha256": "fb3c63e972ebf542e610f887870b4fc3ae7ab43b972a93a95b8fe8364128ba5f"
+      },
+      "w01_stage4_reopened.png": {
+        "file_size_bytes": 216670,
+        "width": 1300,
+        "height": 636,
+        "bit_depth": 8,
+        "color_type": 2,
+        "compression": 0,
+        "filter": 0,
+        "interlace": 0,
+        "non_hollow": true,
+        "sha256": "14a9adfabfa387ceb1951b342418c5898599d9cb4172ca5a1c9a453f98d17399"
+      },
+      "w02_project_navigator.png": {
+        "file_size_bytes": 5685,
+        "width": 116,
+        "height": 465,
+        "bit_depth": 8,
+        "color_type": 2,
+        "compression": 0,
+        "filter": 0,
+        "interlace": 0,
+        "non_hollow": true,
+        "sha256": "55a582655f54597d390d59ee43d85557b4338afdfbb03275499d51b6801faa27"
+      },
+      "w02_status_bar.png": {
+        "file_size_bytes": 151,
+        "width": 1284,
+        "height": 19,
+        "bit_depth": 8,
+        "color_type": 2,
+        "compression": 0,
+        "filter": 0,
+        "interlace": 0,
+        "non_hollow": false,
+        "sha256": "489e3d48fbb051eb2ee12d4ab83e26ed599e828f924994ca6d3c174ff7587bf6"
+      },
+      "cscape_lab_w01_visible.png": {
+        "file_size_bytes": 215886,
+        "width": 1300,
+        "height": 636,
+        "bit_depth": 8,
+        "color_type": 2,
+        "compression": 0,
+        "filter": 0,
+        "interlace": 0,
+        "non_hollow": true,
+        "sha256": "3c6616cec42491dba7e3d78eb95816c162d10d3e9ac95a261b17f3502d97be48"
+      },
+      "modal_non_fatal_dialog.png": {
+        "file_size_bytes": 5908,
+        "width": 411,
+        "height": 159,
+        "bit_depth": 8,
+        "color_type": 2,
+        "compression": 0,
+        "filter": 0,
+        "interlace": 0,
+        "non_hollow": true,
+        "sha256": "68bd09fb0ab6e4a7d3f4efc33e98d88d7a22861ae5457f84fad5e16267f3ff78"
+      },
+      "statusbar.png": {
+        "file_size_bytes": 231,
+        "width": 1300,
+        "height": 40,
+        "bit_depth": 8,
+        "color_type": 2,
+        "compression": 0,
+        "filter": 0,
+        "interlace": 0,
+        "non_hollow": false,
+        "sha256": "85fd9cb4c1047f60474716242f0e701b0782d7c432c32310e7834e877757cfca"
+      }
+    }
+  },
+  "supervisor_inventory_forensics": {
+    "total_supervisors_audited": 5,
+    "all_zero_blind_taskkill_compliant": true,
+    "details": {
+      "scripts/cscape_supervisor.py": {
+        "lines": 679,
+        "sha256": "e3a0979cf18666cf1785bc1b15e4d6a2ada42d50d8d61a1350e34da99d7fbeb7",
+        "contains_blind_taskkill_cscape": false,
+        "contains_process_supervision": true,
+        "zero_blind_taskkill_policy_compliant": true
+      },
+      "scripts/cscape_watchdog.py": {
+        "lines": 850,
+        "sha256": "0e2d98c131c7e6bec75e5744c04f6371b6cd9eb76c7820abf28434c31545f454",
+        "contains_blind_taskkill_cscape": false,
+        "contains_process_supervision": true,
+        "zero_blind_taskkill_policy_compliant": true
+      },
+      "scripts/cscape_keepalive_watchdog.py": {
+        "lines": 86,
+        "sha256": "cbac37dfc6d4251e7112f0577e629e0cff0a657f8d3b88891a2f28a669d0c368",
+        "contains_blind_taskkill_cscape": false,
+        "contains_process_supervision": false,
+        "zero_blind_taskkill_policy_compliant": true
+      },
+      "scripts/watchdog_cscape_10min.py": {
+        "lines": 1146,
+        "sha256": "cfee122537157d2333ac0ab795c26cd8cb3178156d322983873ca4a0bbc6b893",
+        "contains_blind_taskkill_cscape": false,
+        "contains_process_supervision": true,
+        "zero_blind_taskkill_policy_compliant": true
+      },
+      "src/cscape/lifecycle.py": {
+        "lines": 2275,
+        "sha256": "1a8d3a4906b35a656618ec5d238fb0a3fae7a5ecc1d78ad6491d8cb9175794c9",
+        "contains_blind_taskkill_cscape": false,
+        "contains_process_supervision": true,
+        "zero_blind_taskkill_policy_compliant": true
+      }
+    }
+  },
+  "modal_decision_table_forensics": {
+    "total_rules": 6,
+    "auto_yes_eliminated": true,
+    "rules": [
+      {
+        "modal_type": "SPLASH_SCREEN",
+        "window_class": "#32770",
+        "match_condition": "title contains 'splash' or 'about cscape'",
+        "action": "AUTO_DISMISS_OK",
+        "target_ctrl_id": 1,
+        "status": "success",
+        "invariant": "Auto-dismiss splash screen to unblock GUI initialization"
+      },
+      {
+        "modal_type": "SELECT_EDITOR_TYPE",
+        "window_class": "#32770",
+        "match_condition": "title contains 'select editor' or ctrl_id 1461 present",
+        "action": "AUTO_SELECT_IEC_DISMISS_OK",
+        "target_ctrl_id": 1461,
+        "status": "success",
+        "invariant": "Auto-select IEC Structured Text radio (1461) and confirm with OK (1)"
+      },
+      {
+        "modal_type": "NON_FATAL_COMPILATION_ERROR",
+        "window_class": "#32770",
+        "match_condition": "text contains 'Non-Fatal Compilation Errors were found' or 'Do you wish to continue'",
+        "action": "BLOCKED_CAPTURE_NO_CLICK",
+        "target_ctrl_id": 7,
+        "status": "blocked",
+        "invariant": "Auto-clicking Yes (ID 6) is strictly forbidden; capture telemetry and dismiss cleanly with No (ID 7)"
+      },
+      {
+        "modal_type": "HARDWARE_DOWNLOAD_PROMPT",
+        "window_class": "#32770",
+        "match_condition": "title/text contains 'download' or 'target' or command 32827/33149",
+        "action": "BLOCKED_HARDWARE_LOCKOUT",
+        "target_ctrl_id": 2,
+        "status": "blocked",
+        "invariant": "Physical hardware download commands are unconditionally blocked fail-closed"
+      },
+      {
+        "modal_type": "COMMON_SAVE_AS",
+        "window_class": "#32770",
+        "match_condition": "title contains 'save as'",
+        "action": "CONTROLLED_FILE_SAVE",
+        "target_ctrl_id": 1,
+        "status": "success",
+        "invariant": "Targeted project path enforcement; prevents overwriting baseline containers"
+      },
+      {
+        "modal_type": "FOREIGN_OR_UNRECOGNIZED_MODAL",
+        "window_class": "#32770",
+        "match_condition": "foreign pid or unrecognized dialog prompt",
+        "action": "BLOCKED_CAPTURE_FAIL_CLOSED",
+        "target_ctrl_id": 2,
+        "status": "blocked",
+        "invariant": "Never blindly click Yes/OK on unknown modals; fail closed and capture diagnostic telemetry"
+      }
+    ]
+  },
+  "baseline_isolation": {
+    "file": "artifacts/projects/TankLevelClosedLoop/TankLevelClosedLoop.csp",
+    "sha256": "d075e67d80be031a99a6895078735918b7a15c8086590a6d20ec8484b27749af",
+    "baseline_hash_match": true,
+    "untouched": true
+  }
+}

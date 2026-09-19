@@ -1,0 +1,2 @@
+"name";"type";"len";"dim";"attr";"RO";"init";"tag";"desc";"scope"
+"RawLevelInput";"INT";"";"";"";"NO";"";"%AI1";"Raw analog level input";"globals"

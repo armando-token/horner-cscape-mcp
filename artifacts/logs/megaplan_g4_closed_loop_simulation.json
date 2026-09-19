@@ -1,0 +1,101 @@
+{
+  "gate": "G4",
+  "step": 183,
+  "status": "success",
+  "timestamp_utc": "2026-09-06T14:58:09.672Z",
+  "simulation_backend": "EMULATED_PURE_ST",
+  "simulation_results": {
+    "hh_trip_verified": true,
+    "ll_dry_run_verified": true,
+    "hysteresis_deadbands_verified": true,
+    "valve_actuator_verified": true,
+    "conveyor_sorting_verified": true
+  },
+  "concurrency_results": {
+    "straton_tools_count": 0,
+    "cross_contamination_detected": false,
+    "partitioned_registers": {
+      "%R250": 250.5,
+      "%R260": 260.5
+    }
+  },
+  "verification_taxonomy": {
+    "offline_audits": "offline/DEV (TESTED_MOCK)",
+    "live_gui_gate": "VERIFIED_LIVE"
+  },
+  "invariants": {
+    "invariant_A_normal_parcel_feed_lane1": {
+      "status": "success",
+      "count_lane1": 1,
+      "count_total": 1,
+      "debounce_confirmed": true,
+      "diverter1_stroke_completed": true,
+      "description": "Normal parcel feed debounced, scanned, diverted to Lane 1, counts incremented"
+    },
+    "invariant_B_divert_lane2": {
+      "status": "success",
+      "count_lane2": 1,
+      "count_total": 1,
+      "diverter2_stroke_completed": true,
+      "description": "Barcode destination 2 routed to Diverter 2, CountLane2 and CountTotal incremented"
+    },
+    "invariant_C_scanner_timeout_and_unrecognized_reject": {
+      "status": "success",
+      "scanner_timeout_diverted_reject": true,
+      "unrecognized_dest_diverted_reject": true,
+      "count_reject": 2,
+      "description": "Scanner timeout (>1.5s) and invalid barcode destinations both route to Reject chute"
+    },
+    "invariant_D_jam_detection_watchdog": {
+      "status": "success",
+      "jam_timeout_sec": 2.0,
+      "jam_alarm_asserted": true,
+      "line_halted": true,
+      "state": 90,
+      "description": "JamTimer exceeding JamTimeoutSec asserts JamAlarm, halts conveyor and enters State 90"
+    },
+    "invariant_E_cylinder_actuator_failure": {
+      "status": "success",
+      "divert_stroke_sec": 1.2,
+      "diverter_fault_asserted": true,
+      "state": 90,
+      "description": "Diverter cylinder failing to confirm extension within DivertStrokeSec triggers DiverterFault"
+    },
+    "invariant_F_fault_reset_and_resume": {
+      "status": "success",
+      "alarms_cleared": true,
+      "restored_state_idle": true,
+      "restart_successful": true,
+      "description": "ResetFault clears JamAlarm and DiverterFault; system resumes operation via StartPB"
+    },
+    "invariant_G_estop_immediate_trip": {
+      "status": "success",
+      "estop_state": 99,
+      "actuators_deenergized": true,
+      "start_pb_inhibited": true,
+      "restored_state_idle": true,
+      "description": "EStop=FALSE immediately transitions to State 99, de-energizing all actuators"
+    },
+    "invariant_H_multi_client_stdio_concurrency": {
+      "status": "success",
+      "clients": 2,
+      "partitioned_registers": {
+        "%R250": 250.5,
+        "%R260": 260.5
+      },
+      "cross_contamination_detected": false,
+      "description": "Zero cross-talk verified across concurrent JSON-RPC clients on partitioned %R250 vs %R260"
+    },
+    "invariant_I_hardware_download_lockout": {
+      "status": "blocked",
+      "locked_command_ids": [
+        32827,
+        33149
+      ],
+      "guard_endpoint_lockout": true,
+      "description": "Hardware download commands 32827 and 33149 intercepted fail-closed"
+    }
+  },
+  "straton_quarantine": "CERTIFIED_ISOLATED",
+  "dual_root_parity": true
+}

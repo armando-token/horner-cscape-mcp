@@ -1,0 +1,12 @@
+{
+  "step": 190,
+  "gate": "G4",
+  "name": "step190_mcp_ccgt_hrsg_checkpoint",
+  "classification": "offline/DEV [TESTED_MOCK]",
+  "status": "success",
+  "timestamp_utc": "2026-09-06T22:32:54.900Z",
+  "duration_sec": 0.0344,
+  "target_pou": "CCGTHRSGDrumLevelDuctBurnerControl",
+  "all_invariants_passed": true,
+  "invariants_count": 12
+}

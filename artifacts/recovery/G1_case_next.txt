@@ -1,0 +1,85 @@
+================================================================================
+HORNER CSCAPE MCP - GATE G1 NEXT NEGATIVE CASE AUDIT REPORT
+Mission ID: G1_OFFLINE_NEXT_CASE_FILE
+Generated (UTC): 2026-09-09T04:08:00Z
+Classification: STRICT OFFLINE FAIL-CLOSED HARDENING & VERIFICATION
+Status Contract Invariant: success | failed | blocked | inconclusive
+================================================================================
+
+1. CASE IDENTIFICATION
+--------------------------------------------------------------------------------
+- Case ID: CASE 44 (BATCH1-07 / G1 Audit Case 12)
+- Vulnerability Title: cscape_export_project fmt='json' Synthesizes Dummy Manifest on Missing Container Metadata
+- Component: FastMCP Project Interchange & Export Tools
+- Source File: src/mcp/tools.py (Lines 3477-3517)
+- Test Identifier: tests/test_g1_false_success_negative_cases.py::test_case44_export_project_json_missing_manifest_fails_closed
+
+2. VULNERABILITY ANALYSIS & MECHANISM
+--------------------------------------------------------------------------------
+- Trigger Condition:
+  Invoking cscape_export_project(project_name=..., output_format='json') on a project
+  that contains container files (.csp or .cpj) or directory structure but lacks an authentic
+  cscape_project.json manifest file.
+- Previous Flaw / False Success:
+  When cscape_project.json was missing, cscape_export_project fell into a fallback branch:
+      meta = {
+          "project_name": clean_name,
+          "exported_at": _get_utc_timestamp(),
+          "status": "success",
+          "target_engine": "Cscape 10.2 IEC 61131-3 Structured Text",
+          "hardware_lockout": True,
+      }
+      out_file.write_text(json.dumps(meta, indent=2), encoding="utf-8")
+  It then hashed the synthetic file and returned status: "success", success: True, error_count: 0.
+  This disguised missing project metadata by fabricating a synthetic project manifest on the fly,
+  violating the fail-closed invariant prohibiting synthetic artifact generation.
+
+3. FAIL-CLOSED FIX IMPLEMENTATION (WHAT CHANGED)
+--------------------------------------------------------------------------------
+1. In src/mcp/tools.py (cscape_export_project):
+   - Excised the synthetic dictionary generation fallback entirely.
+   - Enforced verification that cscape_project.json exists, is a regular file, has size > 0,
+     and contains syntactically valid JSON.
+   - If cscape_project.json is missing or 0 bytes:
+     * Deletes any unverified output file from disk.
+     * Returns success: False, status: "failed", error_code: "MANIFEST_NOT_FOUND".
+     * Records non-empty diagnostic errors: "Project source file not found: No authentic 'cscape_project.json' manifest found for '{clean_name}' in '{p_dir}'. Synthetic manifest generation is strictly prohibited under fail-closed policy."
+   - If cscape_project.json exists but contains malformed/corrupted JSON:
+     * Deletes unverified output file from disk.
+     * Returns success: False, status: "failed", error_code: "MANIFEST_CORRUPTED".
+     * Records non-empty diagnostic error detailing JSON parse failure.
+   - Authentic valid cscape_project.json files are copied to the export destination as genuine artifacts.
+
+2. In tests/test_g1_false_success_negative_cases.py:
+   - Added test_case44_export_project_json_missing_manifest_fails_closed verifying:
+     [A] Project with .csp container but missing cscape_project.json fails closed with MANIFEST_NOT_FOUND, status='failed', success=False, and no export file remains on disk.
+     [B] Project with empty (0-byte) cscape_project.json fails closed with MANIFEST_NOT_FOUND.
+     [C] Project with malformed JSON syntax in cscape_project.json fails closed with MANIFEST_CORRUPTED.
+     [D] Authentic valid cscape_project.json succeeds (success=True, status='success') and writes authentic content.
+
+3. Dual-Root Parity:
+   - Synchronized across C:\HornerAI\horner-cscape-mcp and C:\Users\ArmandoSilva.
+
+4. PYTEST VERIFICATION RESULT (THIS CASE ONLY)
+--------------------------------------------------------------------------------
+Command Executed:
+pytest tests/test_g1_false_success_negative_cases.py -k "test_case44" -v
+
+Standard Output:
+============================= test session starts =============================
+platform win32 -- Python 3.12.10, pytest-9.1.1, pluggy-1.6.0 -- C:\Users\ArmandoSilva\AppData\Local\Programs\Python\Python312\python.exe
+cachedir: .pytest_cache
+rootdir: C:\HornerAI\horner-cscape-mcp
+configfile: pyproject.toml
+plugins: anyio-4.15.0, asyncio-1.4.0, cov-7.1.0
+asyncio: mode=Mode.STRICT, debug=False, asyncio_default_fixture_loop_scope=None, asyncio_default_test_loop_scope=function
+collecting ... collected 44 items / 43 deselected / 1 selected
+
+tests/test_g1_false_success_negative_cases.py::test_case44_export_project_json_missing_manifest_fails_closed PASSED [100%]
+
+====================== 1 passed, 43 deselected in 47.61s ======================
+
+Exit Code: 0 (PASSED)
+================================================================================
+END OF GATE G1 NEXT NEGATIVE CASE AUDIT REPORT
+================================================================================

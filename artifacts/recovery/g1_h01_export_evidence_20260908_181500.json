@@ -1,0 +1,19 @@
+{
+  "item_id": "H01",
+  "name": "Fake Export Success Dismantled",
+  "mission_id": "G1_REMAINING_NEGATIVES_OFFLINE_v3",
+  "timestamp_utc": "2026-09-09T01:19:34.566673+00:00",
+  "status": "success",
+  "invariant": "Export on non-existent project must fail closed with status: failed and error messages",
+  "verification": {
+    "test_call": "cscape_export_project('nonexistent_test_project_h01', output_format='csp')",
+    "result_status": "failed",
+    "result_success": false,
+    "error_count": 1,
+    "errors": [
+      "Project directory or source file not found: Project directory 'C:\\HornerAI\\horner-cscape-mcp\\artifacts\\projects\\nonexistent_test_project_h01' does not exist."
+    ],
+    "cfbf_magic_verified": "d0cf11e0a1b11ae1",
+    "pass": true
+  }
+}

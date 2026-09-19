@@ -1,0 +1,148 @@
+{
+  "step": 33,
+  "title": "Multi-Boundary Anti-Chatter & Flapping Prevention Audit",
+  "timestamp_utc_start": "2026-09-05T07:31:33.630Z",
+  "timestamp_utc_end": "2026-09-05T07:31:40.262Z",
+  "status": "VERIFIED_LIVE",
+  "cscape_process": {
+    "healthy": true,
+    "pid": 15240,
+    "is_hung": false,
+    "working_set_mb": 123.64,
+    "threads": 11,
+    "gate_status": "READY_FOR_TESTS",
+    "window_title": "Cscape - Logged In : \"armando@controlnautas.com\" - [TankLevelClosedLoop.csp]"
+  },
+  "simulation_summary": {
+    "total_cycles": 500,
+    "duration_seconds": 0.351,
+    "throughput_cycles_per_sec": 1423.12
+  },
+  "chatter_metrics": {
+    "phase2_high_boundary_oscillation_cycles": 150,
+    "phase2_flapping_flips": 0,
+    "phase2_anti_chatter_verified": true,
+    "phase3_low_boundary_oscillation_cycles": 100,
+    "phase3_flapping_flips": 0,
+    "phase3_anti_chatter_verified": true,
+    "zero_relay_contact_burnout_verified": true,
+    "final_recovery_error_pct": 0.0
+  },
+  "safety_audit": {
+    "physical_plc_download_blocked": true,
+    "zero_physical_hardware_touched": true,
+    "hardware_lockout_enforced": true
+  },
+  "sample_trace": [
+    {
+      "cycle": 0,
+      "phase": "PHASE_1_NOMINAL_HOLD",
+      "pv_plant": 47.5,
+      "cv": 0.0,
+      "h": false,
+      "l": false,
+      "h_flips": 0,
+      "l_flips": 0,
+      "error": 2.5
+    },
+    {
+      "cycle": 50,
+      "phase": "PHASE_1_NOMINAL_HOLD",
+      "pv_plant": 49.8283,
+      "cv": 52.2642,
+      "h": false,
+      "l": false,
+      "h_flips": 0,
+      "l_flips": 0,
+      "error": 0.1717
+    },
+    {
+      "cycle": 100,
+      "phase": "PHASE_2_HIGH_BOUNDARY_OSCILLATION",
+      "pv_plant": 80.2,
+      "cv": 0.0,
+      "h": true,
+      "l": false,
+      "h_flips": 1,
+      "l_flips": 0,
+      "error": 30.2
+    },
+    {
+      "cycle": 150,
+      "phase": "PHASE_2_HIGH_BOUNDARY_OSCILLATION",
+      "pv_plant": 80.2,
+      "cv": 0.0,
+      "h": true,
+      "l": false,
+      "h_flips": 1,
+      "l_flips": 0,
+      "error": 30.2
+    },
+    {
+      "cycle": 200,
+      "phase": "PHASE_2_HIGH_BOUNDARY_OSCILLATION",
+      "pv_plant": 80.2,
+      "cv": 0.0,
+      "h": true,
+      "l": false,
+      "h_flips": 1,
+      "l_flips": 0,
+      "error": 30.2
+    },
+    {
+      "cycle": 250,
+      "phase": "PHASE_3_LOW_BOUNDARY_OSCILLATION",
+      "pv_plant": 19.8,
+      "cv": 100.0,
+      "h": false,
+      "l": true,
+      "h_flips": 2,
+      "l_flips": 1,
+      "error": 30.2
+    },
+    {
+      "cycle": 300,
+      "phase": "PHASE_3_LOW_BOUNDARY_OSCILLATION",
+      "pv_plant": 19.8,
+      "cv": 100.0,
+      "h": false,
+      "l": true,
+      "h_flips": 2,
+      "l_flips": 1,
+      "error": 30.2
+    },
+    {
+      "cycle": 350,
+      "phase": "PHASE_4_CLEAN_CLEARING",
+      "pv_plant": 50.0,
+      "cv": 40.4,
+      "h": false,
+      "l": false,
+      "h_flips": 2,
+      "l_flips": 2,
+      "error": 0.0
+    },
+    {
+      "cycle": 400,
+      "phase": "PHASE_5_NOMINAL_CLOSED_LOOP_RECOVERY",
+      "pv_plant": 50.0,
+      "cv": 50.0,
+      "h": false,
+      "l": false,
+      "h_flips": 2,
+      "l_flips": 2,
+      "error": 0.0
+    },
+    {
+      "cycle": 450,
+      "phase": "PHASE_5_NOMINAL_CLOSED_LOOP_RECOVERY",
+      "pv_plant": 50.0,
+      "cv": 50.0,
+      "h": false,
+      "l": false,
+      "h_flips": 2,
+      "l_flips": 2,
+      "error": 0.0
+    }
+  ]
+}

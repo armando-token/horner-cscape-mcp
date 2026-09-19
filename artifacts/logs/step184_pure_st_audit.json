@@ -1,0 +1,428 @@
+{
+  "step": 184,
+  "name": "step184_pure_st_audit",
+  "status": "success",
+  "timestamp_utc": "2026-09-06T22:32:39.275098+00:00",
+  "mandate": "PLC / IEC 61131-3 Pure ST Audit for FB_CondenserHotwellVacuumControl",
+  "execution_duration_sec": 0.4242,
+  "dual_root_parity": true,
+  "cscape_gui_mode": "headless_static_analysis_only",
+  "target_pou": {
+    "name": "FB_CondenserHotwellVacuumControl",
+    "type": "FUNCTION_BLOCK",
+    "relative_path": "examples/st_applications/condenser_hotwell_vacuum_control.st",
+    "sha256": "7a6513aa5a08468597ad2ccce03029447fc8df5cea3a031f86359423f35db1de",
+    "expected_sha256": "7a6513aa5a08468597ad2ccce03029447fc8df5cea3a031f86359423f35db1de",
+    "byte_size": 5706,
+    "lines": 135
+  },
+  "tasks": {
+    "task1_file_existence_and_parity": {
+      "status": "success",
+      "horner_file": "C:\\HornerAI\\horner-cscape-mcp\\examples\\st_applications\\condenser_hotwell_vacuum_control.st",
+      "user_file": "C:\\Users\\ArmandoSilva\\examples\\st_applications\\condenser_hotwell_vacuum_control.st",
+      "horner_sha256": "7a6513aa5a08468597ad2ccce03029447fc8df5cea3a031f86359423f35db1de",
+      "user_sha256": "7a6513aa5a08468597ad2ccce03029447fc8df5cea3a031f86359423f35db1de",
+      "expected_sha256": "7a6513aa5a08468597ad2ccce03029447fc8df5cea3a031f86359423f35db1de",
+      "sha_match": true,
+      "dual_root_parity": true,
+      "diff_line_count": 0,
+      "diff": "",
+      "file_size_bytes": 5706,
+      "duration_sec": 0.0033856999943964183
+    },
+    "task2_ladder_construct_scan_and_fail_closed": {
+      "status": "success",
+      "clean_scan_artifacts_count": 0,
+      "clean_scan_artifacts": [],
+      "clean_validator_errors": [],
+      "clean_st_parser_ladder_errors": [],
+      "mutation_tests_total": 12,
+      "mutation_tests_fail_closed": 12,
+      "mutation_results": [
+        {
+          "construct_name": "Normally Open Contact",
+          "construct_syntax": "---[ ]---",
+          "guard_rejected": true,
+          "validator_rejected": true,
+          "parser_rejected": true,
+          "mcp_rejected": true,
+          "fail_closed": true
+        },
+        {
+          "construct_name": "Normally Closed Contact",
+          "construct_syntax": "---[/]---",
+          "guard_rejected": true,
+          "validator_rejected": true,
+          "parser_rejected": true,
+          "mcp_rejected": true,
+          "fail_closed": true
+        },
+        {
+          "construct_name": "Spaced Inverted Contact",
+          "construct_syntax": "---[ / ]---",
+          "guard_rejected": true,
+          "validator_rejected": true,
+          "parser_rejected": true,
+          "mcp_rejected": true,
+          "fail_closed": true
+        },
+        {
+          "construct_name": "Normal Output Coil",
+          "construct_syntax": "---( )---",
+          "guard_rejected": true,
+          "validator_rejected": true,
+          "parser_rejected": true,
+          "mcp_rejected": true,
+          "fail_closed": true
+        },
+        {
+          "construct_name": "Set Latch Coil",
+          "construct_syntax": "---(S)---",
+          "guard_rejected": true,
+          "validator_rejected": true,
+          "parser_rejected": true,
+          "mcp_rejected": true,
+          "fail_closed": true
+        },
+        {
+          "construct_name": "Reset Unlatch Coil",
+          "construct_syntax": "---(R)---",
+          "guard_rejected": true,
+          "validator_rejected": true,
+          "parser_rejected": true,
+          "mcp_rejected": true,
+          "fail_closed": true
+        },
+        {
+          "construct_name": "Rung Header Marker",
+          "construct_syntax": "RUNG 1: Condenser Hotwell Vacuum Sequence",
+          "guard_rejected": true,
+          "validator_rejected": true,
+          "parser_rejected": true,
+          "mcp_rejected": true,
+          "fail_closed": true
+        },
+        {
+          "construct_name": "Rung Terminator Marker",
+          "construct_syntax": "END_RUNG",
+          "guard_rejected": true,
+          "validator_rejected": true,
+          "parser_rejected": true,
+          "mcp_rejected": true,
+          "fail_closed": true
+        },
+        {
+          "construct_name": "Ladder Network Section",
+          "construct_syntax": "NETWORK 10",
+          "guard_rejected": true,
+          "validator_rejected": true,
+          "parser_rejected": true,
+          "mcp_rejected": true,
+          "fail_closed": true
+        },
+        {
+          "construct_name": "Instruction Mnemonic XIC",
+          "construct_syntax": "XIC(Permissive_Run)",
+          "guard_rejected": true,
+          "validator_rejected": true,
+          "parser_rejected": true,
+          "mcp_rejected": true,
+          "fail_closed": true
+        },
+        {
+          "construct_name": "Instruction Mnemonic XIO",
+          "construct_syntax": "XIO(Reset_Alarms)",
+          "guard_rejected": true,
+          "validator_rejected": true,
+          "parser_rejected": true,
+          "mcp_rejected": true,
+          "fail_closed": true
+        },
+        {
+          "construct_name": "Instruction Mnemonic OTE",
+          "construct_syntax": "OTE(Condensate_Pumps_Run)",
+          "guard_rejected": true,
+          "validator_rejected": true,
+          "parser_rejected": true,
+          "mcp_rejected": true,
+          "fail_closed": true
+        }
+      ],
+      "duration_sec": 0.37657579994993284
+    },
+    "task3_iec61131_syntax_and_datatypes": {
+      "status": "success",
+      "pou_name": "FB_CondenserHotwellVacuumControl",
+      "pou_type": "FUNCTION_BLOCK",
+      "total_variables": 18,
+      "input_count": 6,
+      "output_count": 11,
+      "local_count": 1,
+      "case_states_valid": true,
+      "type_violations": [],
+      "iec_validator_valid": true,
+      "st_parser_valid": true,
+      "mcp_validator_valid": true,
+      "variables": [
+        {
+          "name": "Hotwell_Level_PV",
+          "data_type": "REAL",
+          "scope": "VAR_INPUT",
+          "initial_value": "500.0"
+        },
+        {
+          "name": "Condenser_Vacuum_PV",
+          "data_type": "REAL",
+          "scope": "VAR_INPUT",
+          "initial_value": "150.0"
+        },
+        {
+          "name": "Cooling_Tower_Basin_Temp_PV",
+          "data_type": "REAL",
+          "scope": "VAR_INPUT",
+          "initial_value": "850.0"
+        },
+        {
+          "name": "Cation_Conductivity_PV",
+          "data_type": "REAL",
+          "scope": "VAR_INPUT",
+          "initial_value": "20.0"
+        },
+        {
+          "name": "Permissive_Run",
+          "data_type": "BOOL",
+          "scope": "VAR_INPUT",
+          "initial_value": "TRUE"
+        },
+        {
+          "name": "Reset_Alarms",
+          "data_type": "BOOL",
+          "scope": "VAR_INPUT",
+          "initial_value": "FALSE"
+        },
+        {
+          "name": "Condensate_Dump_CV",
+          "data_type": "REAL",
+          "scope": "VAR_OUTPUT",
+          "initial_value": "0.0"
+        },
+        {
+          "name": "Condensate_Makeup_CV",
+          "data_type": "REAL",
+          "scope": "VAR_OUTPUT",
+          "initial_value": "0.0"
+        },
+        {
+          "name": "Condensate_Pumps_Run",
+          "data_type": "BOOL",
+          "scope": "VAR_OUTPUT",
+          "initial_value": "TRUE"
+        },
+        {
+          "name": "SJAE_Aux_Vacuum_Ejector",
+          "data_type": "BOOL",
+          "scope": "VAR_OUTPUT",
+          "initial_value": "FALSE"
+        },
+        {
+          "name": "Cooling_Tower_Fan1",
+          "data_type": "BOOL",
+          "scope": "VAR_OUTPUT",
+          "initial_value": "FALSE"
+        },
+        {
+          "name": "Cooling_Tower_Fan2",
+          "data_type": "BOOL",
+          "scope": "VAR_OUTPUT",
+          "initial_value": "FALSE"
+        },
+        {
+          "name": "Condensate_Polisher_Bypass_Permit",
+          "data_type": "BOOL",
+          "scope": "VAR_OUTPUT",
+          "initial_value": "TRUE"
+        },
+        {
+          "name": "Hotwell_Level_LowLow_Trip",
+          "data_type": "BOOL",
+          "scope": "VAR_OUTPUT",
+          "initial_value": "FALSE"
+        },
+        {
+          "name": "Condenser_Vacuum_HighHigh_Trip",
+          "data_type": "BOOL",
+          "scope": "VAR_OUTPUT",
+          "initial_value": "FALSE"
+        },
+        {
+          "name": "Hotwell_Level_High_Alarm",
+          "data_type": "BOOL",
+          "scope": "VAR_OUTPUT",
+          "initial_value": "FALSE"
+        },
+        {
+          "name": "Condenser_Tube_Leak_Alarm",
+          "data_type": "BOOL",
+          "scope": "VAR_OUTPUT",
+          "initial_value": "FALSE"
+        },
+        {
+          "name": "Level_Error",
+          "data_type": "REAL",
+          "scope": "VAR",
+          "initial_value": "0.0"
+        }
+      ],
+      "duration_sec": 0.03955169999971986
+    },
+    "task4_ast_decomposition": {
+      "status": "success",
+      "pou_name": "FB_CondenserHotwellVacuumControl",
+      "pou_type": "FUNCTION_BLOCK",
+      "sha256": "7a6513aa5a08468597ad2ccce03029447fc8df5cea3a031f86359423f35db1de",
+      "total_lines": 135,
+      "total_tokens": 361,
+      "var_blocks_count": 3,
+      "var_blocks": [
+        {
+          "block_type": "VAR_INPUT",
+          "declarations_count": 6,
+          "declarations": [
+            {
+              "name": "Hotwell_Level_PV",
+              "data_type": "REAL",
+              "initial_value": "LiteralNode(500.0, 'REAL')"
+            },
+            {
+              "name": "Condenser_Vacuum_PV",
+              "data_type": "REAL",
+              "initial_value": "LiteralNode(150.0, 'REAL')"
+            },
+            {
+              "name": "Cooling_Tower_Basin_Temp_PV",
+              "data_type": "REAL",
+              "initial_value": "LiteralNode(850.0, 'REAL')"
+            },
+            {
+              "name": "Cation_Conductivity_PV",
+              "data_type": "REAL",
+              "initial_value": "LiteralNode(20.0, 'REAL')"
+            },
+            {
+              "name": "Permissive_Run",
+              "data_type": "BOOL",
+              "initial_value": "LiteralNode(True, 'BOOL')"
+            },
+            {
+              "name": "Reset_Alarms",
+              "data_type": "BOOL",
+              "initial_value": "LiteralNode(False, 'BOOL')"
+            }
+          ]
+        },
+        {
+          "block_type": "VAR_OUTPUT",
+          "declarations_count": 11,
+          "declarations": [
+            {
+              "name": "Condensate_Dump_CV",
+              "data_type": "REAL",
+              "initial_value": "LiteralNode(0.0, 'REAL')"
+            },
+            {
+              "name": "Condensate_Makeup_CV",
+              "data_type": "REAL",
+              "initial_value": "LiteralNode(0.0, 'REAL')"
+            },
+            {
+              "name": "Condensate_Pumps_Run",
+              "data_type": "BOOL",
+              "initial_value": "LiteralNode(True, 'BOOL')"
+            },
+            {
+              "name": "SJAE_Aux_Vacuum_Ejector",
+              "data_type": "BOOL",
+              "initial_value": "LiteralNode(False, 'BOOL')"
+            },
+            {
+              "name": "Cooling_Tower_Fan1",
+              "data_type": "BOOL",
+              "initial_value": "LiteralNode(False, 'BOOL')"
+            },
+            {
+              "name": "Cooling_Tower_Fan2",
+              "data_type": "BOOL",
+              "initial_value": "LiteralNode(False, 'BOOL')"
+            },
+            {
+              "name": "Condensate_Polisher_Bypass_Permit",
+              "data_type": "BOOL",
+              "initial_value": "LiteralNode(True, 'BOOL')"
+            },
+            {
+              "name": "Hotwell_Level_LowLow_Trip",
+              "data_type": "BOOL",
+              "initial_value": "LiteralNode(False, 'BOOL')"
+            },
+            {
+              "name": "Condenser_Vacuum_HighHigh_Trip",
+              "data_type": "BOOL",
+              "initial_value": "LiteralNode(False, 'BOOL')"
+            },
+            {
+              "name": "Hotwell_Level_High_Alarm",
+              "data_type": "BOOL",
+              "initial_value": "LiteralNode(False, 'BOOL')"
+            },
+            {
+              "name": "Condenser_Tube_Leak_Alarm",
+              "data_type": "BOOL",
+              "initial_value": "LiteralNode(False, 'BOOL')"
+            }
+          ]
+        },
+        {
+          "block_type": "VAR",
+          "declarations_count": 1,
+          "declarations": [
+            {
+              "name": "Level_Error",
+              "data_type": "REAL",
+              "initial_value": "LiteralNode(0.0, 'REAL')"
+            }
+          ]
+        }
+      ],
+      "statements_count": 5,
+      "statements": [
+        {
+          "index": 1,
+          "statement_type": "IfNode",
+          "line": 53
+        },
+        {
+          "index": 2,
+          "statement_type": "IfNode",
+          "line": 61
+        },
+        {
+          "index": 3,
+          "statement_type": "IfNode",
+          "line": 99
+        },
+        {
+          "index": 4,
+          "statement_type": "IfNode",
+          "line": 112
+        },
+        {
+          "index": 5,
+          "statement_type": "IfNode",
+          "line": 127
+        }
+      ],
+      "duration_sec": 0.004565900017041713
+    }
+  }
+}

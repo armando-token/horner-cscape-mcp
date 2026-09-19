@@ -1,0 +1,137 @@
+{
+  "step": 160,
+  "name": "step160_dual_root_sync_checkpoint",
+  "status": "PASSED",
+  "timestamp_utc": "2026-09-06T03:52:57.103Z",
+  "auditor": "Dual-Root Step 160 Parity Auditor",
+  "mandate": "MEGAPLAN Dual-Root Checkpoint & Telemetry Verification",
+  "dual_root_parity": true,
+  "roots_verified": {
+    "horner_root": "C:\\HornerAI\\horner-cscape-mcp",
+    "user_root": "C:\\Users\\ArmandoSilva"
+  },
+  "live_cscape": {
+    "pid": 16128,
+    "hwnd": "0x024903DC",
+    "status": "READY_FOR_TESTS",
+    "ready_for_tests": true
+  },
+  "artifacts_audited": {
+    "checkpoints_count": 3,
+    "logs_count": 3,
+    "screenshots_count": 1,
+    "code_files_count": 5,
+    "all_roots_identical": true
+  },
+  "audit_details": {
+    "checkpoints": {
+      "step160_visible_gui_proof_checkpoint": {
+        "file": "artifacts/checkpoints/step160_visible_gui_proof_checkpoint.json",
+        "exists_in_both": true,
+        "valid_json": true,
+        "status": "PASSED",
+        "step": 160,
+        "file_sha256": "661fa71643964774096f371923cb6cac2b4f228e8c676cfb158adb7e9fb62099",
+        "roots_identical": true,
+        "size_bytes": 670
+      },
+      "step160_security_audit_checkpoint": {
+        "file": "artifacts/checkpoints/step160_security_audit_checkpoint.json",
+        "exists_in_both": true,
+        "valid_json": true,
+        "status": "PASSED",
+        "step": 160,
+        "file_sha256": "d865efe256968a378bd1d62fedd74ad72b73af580908792048cd7a1f08f5fa56",
+        "roots_identical": true,
+        "size_bytes": 556
+      },
+      "step160_mcp_plant_wide_integration_benchmark_checkpoint": {
+        "file": "artifacts/checkpoints/step160_mcp_plant_wide_integration_benchmark_checkpoint.json",
+        "exists_in_both": true,
+        "valid_json": true,
+        "status": "PASSED",
+        "step": 160,
+        "file_sha256": "df53ce1b8a6da56c7cec194e6398435d498d83888cf327037787aebffb068f3a",
+        "roots_identical": true,
+        "size_bytes": 750
+      }
+    },
+    "logs": {
+      "step160_visible_gui_proof": {
+        "file": "artifacts/logs/step160_visible_gui_proof.json",
+        "exists_in_both": true,
+        "valid_json": true,
+        "status": "PASSED",
+        "file_sha256": "d473b5e139ee3646e90e2aaa5104b3bb2df0117f028befdd19d1806c8d741cfb",
+        "roots_identical": true,
+        "size_bytes": 1891
+      },
+      "step160_security_audit": {
+        "file": "artifacts/logs/step160_security_audit.json",
+        "exists_in_both": true,
+        "valid_json": true,
+        "status": "PASSED",
+        "file_sha256": "9a57047bb405ce1ddbe93120de17478dd4239d68cb575742a129ce5f43452300",
+        "roots_identical": true,
+        "size_bytes": 2763
+      },
+      "step160_mcp_plant_wide_integration_benchmark": {
+        "file": "artifacts/logs/step160_mcp_plant_wide_integration_benchmark.json",
+        "exists_in_both": true,
+        "valid_json": true,
+        "status": "PASSED",
+        "file_sha256": "62d0770c913ea6fc7e2a1d3daad9ca260baa1cf5b352a9bd4c6db81de7d7273e",
+        "roots_identical": true,
+        "size_bytes": 3313
+      }
+    },
+    "screenshots": {
+      "live_cscape_tank_level_step160": {
+        "file": "artifacts/screenshots/live_cscape_tank_level_step160.png",
+        "exists_in_both": true,
+        "size_bytes": 72686,
+        "gt_10kb": true,
+        "file_sha256": "4730540e881c216fe988f2ab82b86a21b3bf9b10e662d57effe44a71b6cb657f",
+        "roots_identical": true
+      }
+    },
+    "code_files": {
+      "execute_step160_visible_cscape_gui_driver.py": {
+        "file": "scripts/execute_step160_visible_cscape_gui_driver.py",
+        "exists_in_both": true,
+        "file_sha256": "98647740a0101c7b158ccd4f151913c08fd37429e3248b2620c243b167c37a69",
+        "roots_identical": true,
+        "size_bytes": 16149
+      },
+      "execute_step160_security_audit.py": {
+        "file": "scripts/execute_step160_security_audit.py",
+        "exists_in_both": true,
+        "file_sha256": "fba264b820c4d7bc594c7ec0d9848ee6d07d18c5cf129acfb87ab079d924ab31",
+        "roots_identical": true,
+        "size_bytes": 15141
+      },
+      "execute_step160_mcp_plant_wide_integration_benchmark.py": {
+        "file": "scripts/execute_step160_mcp_plant_wide_integration_benchmark.py",
+        "exists_in_both": true,
+        "file_sha256": "6fbd8e9ca37430613315376adca9587bb01e5a4a69a658e399a69124985393e9",
+        "roots_identical": true,
+        "size_bytes": 38021
+      },
+      "test_step160_visible_cscape_gui_driver.py": {
+        "file": "tests/test_step160_visible_cscape_gui_driver.py",
+        "exists_in_both": true,
+        "file_sha256": "74246287ae602fdfc18555d9cf1120ca643a514d07ec4f4cdafe7028d0abe77e",
+        "roots_identical": true,
+        "size_bytes": 3655
+      },
+      "test_step160_mcp_plant_wide_integration_benchmark.py": {
+        "file": "tests/test_step160_mcp_plant_wide_integration_benchmark.py",
+        "exists_in_both": true,
+        "file_sha256": "45f613f415dd9c7282068f5727a2b89bacc7e911a8b9f88fb243de8aeaae05a5",
+        "roots_identical": true,
+        "size_bytes": 3229
+      }
+    }
+  },
+  "checkpoint_sha256": "b3773d20d5a2b5417d8ddd4d94caf15fae95b488b3e9bef01ce06ad384313a63"
+}

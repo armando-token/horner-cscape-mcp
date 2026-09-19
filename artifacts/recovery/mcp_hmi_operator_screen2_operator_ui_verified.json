@@ -1,0 +1,50 @@
+{
+  "checkpoint_name": "mcp_hmi_operator_screen2_compile_save_reopen_proof",
+  "status": "success",
+  "timestamp_utc": "2026-09-10T11:30:09.877Z",
+  "cscape_pid": 19488,
+  "main_hwnd": "0x01AC0B88",
+  "main_window_title": "Cscape - Logged In : \"armando@controlnautas.com\" - [TankLevelClosedLoop.csp]",
+  "target_project": "C:\\HornerAI\\horner-cscape-mcp\\artifacts\\projects\\TankLevelClosedLoop\\TankLevelClosedLoop.csp",
+  "csp_size_bytes": 131072,
+  "csp_sha256": "D3297359AF197E0ABAFD04C45D6FF4FE1EF66FD74FDE04ADE38BA4DA087C19BD",
+  "active_screen": "Screen 2 (2)",
+  "objects_count": 5,
+  "objects": [
+    {
+      "name": "TankLevelPV",
+      "type": "REAL (%R1)",
+      "role": "Large PV Data Display",
+      "bound": "TankLevelPV"
+    },
+    {
+      "name": "Setpoint",
+      "type": "REAL (%R3)",
+      "role": "Target Setpoint Display",
+      "bound": "Setpoint"
+    },
+    {
+      "name": "TankLevelPV_I16",
+      "type": "INT (%R16)",
+      "role": "Tank Silhouette Bar Fill (0..100)",
+      "bound": "TankLevelPV_I16"
+    },
+    {
+      "name": "HI",
+      "type": "BOOL (%T3)",
+      "role": "High Alarm Indicator Lamp (>= 65.0)",
+      "bound": "HI"
+    },
+    {
+      "name": "LO",
+      "type": "BOOL (%T4)",
+      "role": "Low Alarm Indicator Lamp (<= 35.0)",
+      "bound": "LO"
+    }
+  ],
+  "compile_status": "CLEAN (0 errors, 0 warnings)",
+  "save_status": "PERSISTED (ID_FILE_SAVE 57603 executed clean)",
+  "reopen_proof": "VERIFIED (Live GUI active with TankLevelClosedLoop.csp and Screen 2 in front)",
+  "offline_trend_proof": "C:\\HornerAI\\horner-cscape-mcp\\artifacts\\screenshots\\offline_trend_chart.png",
+  "tanklogs_datalog_proof": "C:\\HornerAI\\horner-cscape-mcp\\artifacts\\projects\\TankLevelClosedLoop\\TankLogs.csv"
+}

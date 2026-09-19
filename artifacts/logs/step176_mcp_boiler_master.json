@@ -1,0 +1,54 @@
+{
+  "status": "success",
+  "step": 176,
+  "title": "FastMCP Superheated Steam Boiler Master Simulation Audit",
+  "start_time_utc": "2026-09-06T12:25:20.289Z",
+  "completion_time_utc": "2026-09-06T12:25:22.113Z",
+  "duration_seconds": 1.824,
+  "st_source": {
+    "path": "C:\\HornerAI\\horner-cscape-mcp\\examples\\st_applications\\superheated_steam_boiler_master.st",
+    "sha256": "0d886a83cd0039aa1b2678b515d5d01c025534358e181200736caa9986ec649d",
+    "bytes": 7578
+  },
+  "scenarios": {
+    "scenario_A_normal_steady_state": "PASSED",
+    "scenario_B_air_lead_fuel": "PASSED",
+    "scenario_C_desuperheater_spray": "PASSED",
+    "scenario_D_drum_level_transient": "PASSED",
+    "scenario_E_flame_failure_mft": "PASSED"
+  },
+  "safety_checks": {
+    "hardware_download_blocked": true,
+    "blocked_command_ids": [
+      "ID_PROGRAM_DOWNLOADOPTIONS",
+      "ID_DOWNLOAD",
+      "ID_PLC_CLEARMEMORY",
+      "ID_CONTROLLER_DOWNLOAD_ALT",
+      38293,
+      38295,
+      "ID_DOWNLOAD_PROGRAM",
+      38297,
+      "ID_CONTROLLER_FLASH",
+      "ID_DEBUGOPTIONSELECTIONMENU_DOONLINECHANGE",
+      "ID_ONLINECHANGECONNECT",
+      "ID_PLC_UPLOAD",
+      32827,
+      32828,
+      "ID_PLC_DOWNLOAD",
+      "ID_CONTROLLER_DOWNLOAD",
+      "ID_FIRMWARE_UPDATE",
+      "ID_FIRMWARE_DOWNLOAD",
+      "ID_ONLINECHANGEACTION",
+      32862,
+      32993,
+      38372,
+      38373,
+      "ID_ONLINECHANGEREVERT",
+      "ID_DEBUGOPTIONSELECTIONMENU_DOWNLOADONLINECHANGE",
+      "ID_PLC_VERIFY",
+      33149
+    ],
+    "straton_k5_tools_found": 0,
+    "zero_gui_mutation": true
+  }
+}

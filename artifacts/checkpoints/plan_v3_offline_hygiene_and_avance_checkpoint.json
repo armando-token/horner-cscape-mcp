@@ -1,0 +1,133 @@
+{
+  "checkpoint_id": "PLAN_V3_OFFLINE_HYGIENE_AND_AVANCE_CHECKPOINT",
+  "task_id": "OFFLINE_PLAN_V3_HYGIENE_REFRESH_AND_AVANCE",
+  "generated_utc": "2026-09-18T02:12:00.000000+00:00",
+  "state_contract": "STATE: CORE-08 CONFIG_AND_TEST_OK RUNTIME_PENDING_P7",
+  "supervisor_offline_accepted": true,
+  "supervisor_signoff_timestamp": "2026-09-17T14:20:00-07:00",
+  "operational_mode": "offline/DEV [PRODUCT_EVIDENCE]",
+  "verified_live": false,
+  "plc_download": false,
+  "hardware_lockout": "BLOCKED_FAIL_CLOSED (COM1..COM256, companion flash tools, Win32 32827/33149)",
+  "no_error_check_loop": true,
+  "new_offline_phases_allowed": false,
+  "single_gui_owner": {
+    "process": "Cscape.exe",
+    "version": "10.2.751.4",
+    "pid": 12788,
+    "hwnd": 3016360,
+    "hwnd_hex": "0x002E06A8",
+    "desktop": "winsta0\\Default",
+    "status": "active_responding"
+  },
+  "process_supervision": {
+    "cscape_instances": 1,
+    "powershell_instances": 1,
+    "watchdog_state": "HYGIENE_PRESERVED_NO_POLLING"
+  },
+  "active_container": {
+    "file_name": "TankLevel_P5_Dedicated.csp",
+    "sha256": "9f69f6a2ee12dab54087ab27bb839f40e01d6d65544a546139788519acd80ab1",
+    "live_mounted_sha256": "2da72f913d80a13346452ba5c3dbb9f2bf61a0c4f8d22d64a2f8bdf969e6b66b",
+    "target_hardware": "HE-XPCE2",
+    "is_valid_cfbf": true
+  },
+  "protocol_configuration": {
+    "port": "MJ1",
+    "driver": "MJ1 CT RTU Modbus CMP v5.05 (CTRtu.dll v5.5.0.0)",
+    "scan_list_status": "EMPTY_UNTIL_LIVE",
+    "native_entries_count": 0,
+    "planned_devices_count": 3,
+    "discrepancy_delta": -3,
+    "pending_gate": "P7_PHYSICAL_PLC_DOWNLOAD_AND_COMMISSIONING"
+  },
+  "agent_consortium": {
+    "active_agents": 10,
+    "roles": [
+      "Lead Orchestrator",
+      "Research Agent",
+      "Single GUI Automation Agent",
+      "PLC / IEC 61131-3 Agent",
+      "Simulation & Verification Agent",
+      "MCP Architecture Agent",
+      "Security & Safety Guard Agent",
+      "Documentation & Standards Specialist",
+      "Process Variable & Modbus Protocol Agent",
+      "Field Commissioning & P7 Prep Specialist"
+    ]
+  },
+  "refreshed_hygiene_deliverables": {
+    "cataloged_handoff_items": 55,
+    "bilingual_progress_summary": {
+      "file_name": "AVANCE_2026-09-17.md",
+      "path": "C:\\Users\\ArmandoSilva\\Downloads\\AVANCE_2026-09-17.md",
+      "size_bytes": 36317,
+      "sections": ["English", "Español"],
+      "status": "verified_offline"
+    },
+    "refreshed_indexes": [
+      "Downloads/HANDOFF_INDEX.md",
+      "Downloads/LEEME_HANDOFF.txt",
+      "Downloads/LEEME.txt",
+      "Downloads/OFFLINE_STATUS.md",
+      "Downloads/active_state.json",
+      "Downloads/P7_COMMISSIONING_PREP_MANIFEST.md"
+    ],
+    "primary_zip_archives": [
+      {
+        "file_name": "offline_evidence_bundle_v1.1.0.zip",
+        "size_bytes": 364842,
+        "sha256": "3ebfc66e7489954a243c630b6eff46da819104f44cefae78305e5669de72bed9"
+      },
+      {
+        "file_name": "offline_evidence_bundle_v1.0.0.zip",
+        "size_bytes": 335933,
+        "sha256": "16a1ac91445a9067c24617b61063ddf9585ef272af6fa1c707fd83f1d8fec512"
+      },
+      {
+        "file_name": "TankLevel_P5_Dedicated_offline_bundle_v1.1.0.zip",
+        "size_bytes": 72977,
+        "sha256": "98e53eec68d3c657b511bfd075de05f9349b9e37b9228ef51c40884bc578a7f7"
+      },
+      {
+        "file_name": "TankLevel_P5_Dedicated_offline_bundle_v1.0.0.zip",
+        "size_bytes": 71356,
+        "sha256": "d21df9d20c793f85274b21eb928310ef17e5034a638abbf16f92d8c95c97bc08"
+      }
+    ],
+    "gap_and_roadmap_docs": [
+      {
+        "file_name": "CORE_08_09_10_RUNTIME_GAPS_AND_ROADMAP.md",
+        "size_bytes": 11745,
+        "sha256": "b25c3b85f6ff24a6ba71fd8ffa73824543f9de0f50cb355a773d1b7c6c30130c",
+        "status": "audited_still_open"
+      },
+      {
+        "file_name": "CORE_08_09_10_FIELD_VERIFICATION_MATRIX.md",
+        "size_bytes": 17523,
+        "sha256": "515f769f77584b3baab575ae8d253c3a2ede5abcc9ae89fe1664e0ffc3a5e7ba",
+        "status": "audited_still_open"
+      },
+      {
+        "file_name": "PLAN_V3_OFFLINE_GAPS_AND_RESOLUTION.md",
+        "size_bytes": 20427,
+        "sha256": "55823255c01e52e6c51d90da95c900ba74d1d50739eca9bce9844f31a08c73d4",
+        "status": "resolved_offline"
+      }
+    ],
+    "p7_prep_checklist": {
+      "file_name": "P7_MANUAL_LOAD_CHECKLIST.md",
+      "path": "C:\\Users\\ArmandoSilva\\Downloads\\P7_MANUAL_LOAD_CHECKLIST.md",
+      "size_bytes": 19885,
+      "directive": "DEFERRED_MANUAL (Zero PLC download automation; strictly manual load by Armando Silva via Cscape GUI Ctrl+F9)",
+      "status": "ready_for_field_commissioning"
+    }
+  },
+  "still_open_field_gates": [
+    "Phase P7: Manual PLC Download & Initial Loop Check (Armando Silva - DEFERRED_MANUAL)",
+    "CORE-08 Live Runtime: RS-485 Modbus Polling on MJ1 (19200-8-N-1)",
+    "CORE-09: Physical HMI & WebMI Screen Verification (3.5 inch TFT & LAN1)",
+    "CORE-10: 24h Hardware Telemetry Soak Test under plant pumping load"
+  ],
+  "checkpoint_status": "success"
+}

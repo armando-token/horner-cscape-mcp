@@ -1,0 +1,13 @@
+=== Horner Cscape 10.2 Compile Pass: ConvenienceProject ===
+Clean Build: True
+Mode: IEC 61131-3 Structured Text (Advanced Ladder Excluded)
+Timestamp: 2026-09-17T04:02:29.649191
+----------------------------------------------------------------
+Compiling POU: AddPOU (59 bytes)...
+  POU 'AddPOU' parsed and validated cleanly.
+----------------------------------------------------------------
+Build Result: SUCCESS
+Errors: 0, Warnings: 0
+Estimated AST Footprint: Statements: 1, Variables: 1, Expressions: 2, Source: 59 bytes
+Duration: 0.029s
+Hardware Lockout: ENFORCED (Zero PLC communication / No download)

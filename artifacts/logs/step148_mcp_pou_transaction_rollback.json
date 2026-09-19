@@ -1,0 +1,42 @@
+{
+  "step": 148,
+  "title": "Live Multi-Client POU Mutation, AST Integrity & Transactional Rollback over FastMCP",
+  "timestamp_start_utc": "2026-09-05T19:37:18.169Z",
+  "timestamp_end_utc": "2026-09-05T19:37:41.360Z",
+  "duration_seconds": 23.191,
+  "status": "PASSED",
+  "target_pid": 15624,
+  "target_hwnd": "0x0167056A",
+  "ast_validated_pou": "TransientFilterPOU",
+  "ast_validation_result": "VALID",
+  "pou_inserted": true,
+  "forbidden_ladder_rejected": true,
+  "rejection_code": "ERR_LADDER_FORBIDDEN",
+  "transactional_rollback_verified": true,
+  "project_exports_verified": [
+    "json",
+    "xml"
+  ],
+  "self_healing_cleanup_verified": true,
+  "simulation_cycles_executed": 50,
+  "gui_error_check_dispatched": 32826,
+  "gui_error_count": 0,
+  "gui_warning_count": 0,
+  "hardware_lockout_enforced": true,
+  "zero_straton_dependencies": true,
+  "cscape_process_health": {
+    "pid": 15624,
+    "hwnd": "0x0167056A",
+    "uptime_seconds": 2205.5,
+    "working_set_mb": 171.09,
+    "is_hung": false,
+    "is_enabled": true,
+    "ping_ok": true
+  },
+  "screenshot_evidence": {
+    "path": "C:\\Users\\ArmandoSilva\\artifacts\\screenshots\\live_cscape_tank_level_step148.png",
+    "size_bytes": 868,
+    "sha256": "83198ad12f58b287bfe0ba657aca97fc6effb54bc0980d88a12200c4b4c0c0e5"
+  },
+  "log_sha256": "98eceed7fca61f5935f0213d2d90cc52c3064bea7ae3cc6105005d5d374f72e5"
+}

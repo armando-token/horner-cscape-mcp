@@ -1,0 +1,18 @@
+{
+  "step": 30,
+  "name": "step30_gui_stability_3hour_checkpoint",
+  "description": "3-Hour / 180-Minute cumulative stay-open benchmark verified across live Cscape PID 7616 and PID 15240 with zero crashes, unhung UI (IsHungAppWindow=False), and high-res screenshot proof",
+  "timestamp_utc": "2026-09-05T07:23:03.907Z",
+  "cscape_pid": 15240,
+  "cscape_hwnd": "0x00710582",
+  "cscape_healthy": true,
+  "cumulative_stay_open_seconds": 10801.13,
+  "cumulative_stay_open_minutes": 180.02,
+  "cumulative_stay_open_hours": 3.0,
+  "zero_crashes_verified": true,
+  "hardware_lockout_enforced": true,
+  "screenshot_path": "C:\\Users\\ArmandoSilva\\artifacts\\screenshots\\live_cscape_tank_level_stay_open_3hour.png",
+  "screenshot_sha256": "646628be10a87df870d744cd7839768e3132713e392f913d27c138e3dc020121",
+  "audit_log": "C:\\Users\\ArmandoSilva\\artifacts\\logs\\cscape_gui_stability_3hour.json",
+  "status": "VERIFIED_LIVE"
+}

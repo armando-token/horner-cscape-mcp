@@ -1,0 +1,52 @@
+{
+  "step": 177,
+  "role": "Visible Cscape GUI Driver",
+  "mandate": "Exclusive Visible Cscape GUI Automation Gate G1 Live Evidence",
+  "status": "success",
+  "start_time_utc": "2026-09-06T18:13:18.865786+00:00",
+  "completion_time_utc": "2026-09-06T18:13:21.996696+00:00",
+  "execution_duration_sec": 3.131,
+  "cscape": {
+    "pid": 5196,
+    "hwnd_hex": "0x02F2058A",
+    "hwnd_int": 49415562,
+    "window_title": "Cscape - Logged In : \"armando@controlnautas.com\" - [TankLevelClosedLoop.csp]",
+    "uptime_seconds": 581.3590414524078,
+    "memory_rss_mb": 188.21,
+    "desktop": "Default",
+    "is_window_visible": true,
+    "is_window_enabled": true,
+    "is_hung": false,
+    "ping_responsive": true
+  },
+  "tasks": {
+    "task1_gate_verified": true,
+    "task2_window_attached_and_interactive": true,
+    "task3_modal_dialogs_swept": {
+      "pre_sweep_dismissed": 0,
+      "post_sweep_dismissed": 0
+    },
+    "task4_gui_error_check": {
+      "command_id": 32826,
+      "duration_sec": 2.951,
+      "success": true,
+      "error_count": 0,
+      "warning_count": 0,
+      "errors": [],
+      "warnings": []
+    },
+    "task5_screenshot_proof": {
+      "file": "artifacts\\screenshots\\live_cscape_tank_level_step177.png",
+      "size_bytes": 2187,
+      "sha256": "fd7422a64e2c4fadbd2acfa488ac02c1d03f3ba4d4d7e6cec879e38dade49a8d",
+      "mirrored_path": "C:\\Users\\ArmandoSilva\\artifacts\\screenshots\\live_cscape_tank_level_step177.png",
+      "identical_across_roots": true
+    }
+  },
+  "safety_guarantees": {
+    "gui_driver_exclusive": true,
+    "hardware_download_prevented": true,
+    "straton_quarantined": true,
+    "status_contract_adherence": "success"
+  }
+}

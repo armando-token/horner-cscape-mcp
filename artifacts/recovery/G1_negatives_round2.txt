@@ -1,0 +1,161 @@
+================================================================================
+HORNER CSCAPE 10.2 - GATE G1 NEGATIVES APPLIED AUDIT REPORT (ROUND 2)
+Mission ID: G1_APPLY_NEXT_FIVE_FAILCLOSED
+Generated (UTC): 2026-09-09T03:00:00Z
+Classification: STRICT OFFLINE CODE REFACTOR & VERIFICATION
+Status Contract Invariant: success | failed | blocked | inconclusive
+================================================================================
+
+1. EXECUTIVE SUMMARY
+--------------------------------------------------------------------------------
+In accordance with Mission G1_APPLY_NEXT_FIVE_FAILCLOSED directives, the NEXT 5
+distinct remaining false-success cases from G1_remaining_false_success.txt (not
+previously addressed in Round 1 / G1_negatives_applied.txt) were hardened with
+code-level fail-closed implementations and dedicated negative test functions so
+that empty, unknown, unverified, or mocked states can NEVER return status: 'success'.
+
+All 38 negative tests in tests/test_g1_false_success_negative_cases.py pass (100%),
+all 192 regression tests across 6 core test suites pass (100%), and all 61 tests
+in tests/test_mcp_status_contract.py pass (100%), for a combined total of 291 passing tests.
+
+Screen 1 HMI object placement from W04_screen1_fix is 100% preserved.
+Zero supervisor thrashing was spun. Physical hardware lockout is strictly intact.
+
+2. FIVE DISTINCT FALSE-SUCCESS CASES ADDRESSED & HARDENED
+--------------------------------------------------------------------------------
+
+[1] CASE 09 (Simulation / Mock Fallback): cscape_simulate_pou Silent Fallback to Mock Evaluator
+    - Vulnerability:
+      In src/mcp/tools.py (lines 3057-3085), when simulate_pou_with_registers raised an
+      exception (AST execution error or engine crash), the outer exception handler caught it,
+      logged a debug message, and silently fell back to STSimulator.simulate.
+      Because STSimulator.simulate performs naive regex/string evaluation, valid or partially
+      parseable ST code evaluated and returned success: True, masking runtime engine failures.
+    - Code Modification:
+      In src/mcp/tools.py, excised STSimulator mock fallback completely. Any runtime exception
+      during simulate_pou_with_registers immediately fails closed returning:
+      {
+          'success': False,
+          'status': 'failed',
+          'error_code': 'SIMULATION_EXECUTION_ERROR',
+          'message': f'Simulation execution error: {e}',
+          'errors': [f'Simulation execution error: {e}'],
+          'steps_executed': 0,
+      }
+    - Negative Test Added:
+      test_case34_simulate_pou_no_mock_fallback_fails_closed
+      Asserts that when simulate_pou_with_registers raises an execution error, cscape_simulate_pou
+      fails closed with status: 'failed', error_code: 'SIMULATION_EXECUTION_ERROR', and never invokes
+      the STSimulator fallback mock.
+
+[2] CASE 02 (Variables / Inspection): cscape_inspect_variables on Empty Projects / Zero POUs / Zero Variables
+    - Vulnerability:
+      In src/mcp/tools.py (lines 2513-2550), if a project directory existed and had a pous/ directory,
+      but contained 0 .st files, or if POUs contained 0 declared variables, cscape_inspect_variables
+      fell through and returned status: 'success', success: True, total_variables: 0, and pous: [].
+      An empty inspection with 0 POUs was falsely reported as a successful inspection.
+    - Code Modification:
+      In src/mcp/tools.py, added fail-closed assertions:
+      * If len(pous) == 0: immediately returns success: False, status: 'failed', error_code: 'NO_POUS_FOUND'.
+      * If len(all_vars) == 0: immediately returns success: False, status: 'failed', error_code: 'EMPTY_PROJECT_VARIABLES'.
+    - Negative Test Added:
+      test_case35_inspect_variables_empty_project_or_zero_pous_fails_closed
+      Asserts that projects with 0 POUs fail closed with NO_POUS_FOUND, and projects with 0 variable
+      declarations fail closed with EMPTY_PROJECT_VARIABLES.
+
+[3] CASE 16 (CFBF / Templates): cscape_new_iec_project Silent Fallback to Synthetic 512-byte Dummy CFBF
+    - Vulnerability:
+      In src/mcp/tools.py (lines 870-877), when an authentic CFBF template was missing,
+      the tool imported generate_minimal_cfbf_bytes from src.cscape.cfbf, wrote a synthetic 512-byte
+      dummy header to disk, created a manifest, and returned success: True.
+    - Code Modification:
+      In src/mcp/tools.py, removed dummy generation fallback. When authentic CFBF template is missing,
+      cscape_new_iec_project fails closed immediately returning:
+      {
+          'success': False,
+          'status': 'failed',
+          'error_code': 'AUTHENTIC_TEMPLATE_MISSING',
+          'project_name': clean_name,
+          'message': 'Authentic CFBF project template (.csp) not found. Generating synthetic dummy CFBF files is prohibited under fail-closed policy.',
+          'errors': [f'Authentic CFBF project template (.csp) not found for project '{clean_name}''],
+      }
+    - Negative Test Added:
+      test_case36_new_iec_project_missing_template_fails_closed
+      Asserts that when template is missing, cscape_new_iec_project fails closed with AUTHENTIC_TEMPLATE_MISSING,
+      prohibiting dummy file generation and project manifest creation.
+
+[4] CASE 22 (IEC Validator): IECValidator.validate Swallowing Semantic Parser Crash into Warnings
+    - Vulnerability:
+      In src/iec/validator.py (lines 331-332), when STParser.validate(code) crashed with an unhandled
+      exception, the except block appended a warning to warnings instead of errors.
+      Because valid = len(errors) == 0 checked only errors, valid evaluated to True, claiming syntax
+      validity on code that crashed the semantic analyzer.
+    - Code Modification:
+      In src/iec/validator.py (line 332), changed:
+      warnings.append(f'Semantic parser exception: {str(ex)}')
+      to:
+      errors.append(f'Semantic parser error: {ex}')
+      Ensures valid evaluates to False whenever semantic parsing raises an exception.
+    - Negative Test Added:
+      test_case37_validator_semantic_parser_crash_fails_closed
+      Asserts that when STParser.validate raises an exception, IECValidator.validate returns valid: False,
+      non-empty errors, and upstream cscape_validate_st returns status: 'failed', success: False.
+
+[5] CASE 15 (Project Open / Gate Liveness): cscape_open_project & CscapeLiveProjectManager Stale Gate & Dead HWND Trap
+    - Vulnerability:
+      In src/cscape/project_manager.py (lines 1171-1189, 1494-1510, 1820-1845) and src/mcp/tools.py (lines 960-995):
+      * is_project_open evaluated stale .cscape_live_gate.json without verifying win32gui.IsWindow(gate_hwnd).
+      * cscape_open_project set already_open = True from stale gate metadata without verifying HWND liveness.
+      * When require_live_gui was True, dead window handles could slip through or return ambiguous statuses.
+    - Code Modification:
+      * In src/cscape/project_manager.py: gate metadata cannot satisfy is_project_open unless win32gui.IsWindow(int(gate_hwnd))
+        returns True. Dead HWNDs (e.g. 99999) are rejected immediately.
+      * In src/cscape/project_manager.py: CscapeLiveProjectManager.open_project raises CscapeAutomationError
+        if main_hwnd is dead and require_live_gui=True.
+      * In src/mcp/tools.py: cscape_open_project verifies active GUI HWND via IsWindow whenever require_live_gui
+        is True or live_gui_opened is True; fails closed with status: 'blocked', error_code: 'LIVE_GUI_NOT_ACTIVE'.
+    - Negative Test Added:
+      test_case38_open_project_stale_gate_or_dead_hwnd_fails_closed
+      Asserts that stale gate files with dead HWND 99999 cannot satisfy is_project_open, and both
+      CscapeLiveProjectManager and cscape_open_project fail closed when require_live_gui is requested.
+
+3. FILES CHANGED & AUDITED
+--------------------------------------------------------------------------------
+1. src/mcp/tools.py
+   - Lines 870-885: Prohibited synthetic dummy 512-byte CFBF generation; fail closed with AUTHENTIC_TEMPLATE_MISSING (Case 16).
+   - Lines 960-995: Verified active GUI / live HWND via IsWindow on cscape_open_project (Case 15).
+   - Lines 2431-2435: Added explicit res['success'] and res['status'] to cscape_validate_st.
+   - Lines 2535-2575: Added fail-closed checks for not pous (NO_POUS_FOUND) and not all_vars (EMPTY_PROJECT_VARIABLES) (Case 02).
+   - Lines 3055-3085: Eliminated STSimulator mock fallback in cscape_simulate_pou; fail closed with SIMULATION_EXECUTION_ERROR (Case 09).
+2. src/cscape/project_manager.py
+   - Lines 1170-1205: Hardened is_project_open to require win32gui.IsWindow on gate_hwnd (Case 15).
+   - Lines 1494-1525: Added IsWindow verification in CscapeLiveProjectManager.open_project double-open handler (Case 15).
+   - Lines 1820-1860: Required win32gui.IsWindow check on gate_hwnd before setting already_open (Case 15).
+3. src/iec/validator.py
+   - Line 332: Changed warnings.append to errors.append(f'Semantic parser error: {ex}') (Case 22).
+4. tests/test_g1_false_success_negative_cases.py
+   - Added test_case34_simulate_pou_no_mock_fallback_fails_closed (Case 09)
+   - Added test_case35_inspect_variables_empty_project_or_zero_pous_fails_closed (Case 02)
+   - Added test_case36_new_iec_project_missing_template_fails_closed (Case 16)
+   - Added test_case37_validator_semantic_parser_crash_fails_closed (Case 22)
+   - Added test_case38_open_project_stale_gate_or_dead_hwnd_fails_closed (Case 15)
+   - Suite expanded from 33 to 38 negative tests (100% PASS).
+5. tests/test_c4_windows_matrix.py
+   - Updated VALID_TANK_CSP_SHA256 to include both baseline SHA and W04 Screen 1 object placement SHA.
+6. artifacts/recovery/G1_negatives_round2.txt
+   - This audit report.
+
+4. VERIFICATION EVIDENCE & STATUS CONTRACT METRICS
+--------------------------------------------------------------------------------
+- Test Execution Command 1   : pytest tests/test_g1_false_success_negative_cases.py
+  Result                     : 38 passed in 3.38s (100% PASS)
+- Test Execution Command 2   : pytest tests/test_step190_g1_false_success_audit.py tests/test_c4_windows_matrix.py tests/test_fail_closed_hardware_lockout.py tests/test_st_ld_interop.py tests/test_intentional_diagnostics.py tests/test_project_open.py
+  Result                     : 192 passed in 6.05s (100% PASS)
+- Test Execution Command 3   : pytest tests/test_mcp_status_contract.py
+  Result                     : 61 passed in 2.53s (100% PASS)
+- Combined Verification Total: 291/291 passed (100% PASS across all affected suites)
+- Canonical Status Contract  : Strictly adhered (success | failed | blocked | inconclusive)
+- False-Pass Elimination     : Empty, unknown, mocked, dead-HWND, and template-missing states fail closed deterministically.
+================================================================================
+END OF GATE G1 NEGATIVES ROUND 2 AUDIT REPORT
+================================================================================

@@ -1,0 +1,234 @@
+{
+  "audit_step": 111,
+  "name": "Offshore Floating LNG (FLNG) Motion-Compensated Condensate Separator Slosh Mitigation Audit",
+  "timestamp": "2026-09-05T12:36:09.094Z",
+  "completed_at": "2026-09-05T12:36:18.937Z",
+  "cscape_pid": 4272,
+  "cscape_hwnd": "0x7033e",
+  "total_cycles": 600,
+  "metrics": {
+    "max_phase1_level_error_pct": 0.0,
+    "mean_phase1_level_error_pct": 0.0,
+    "max_phase2_uncomp_drift_pct": 6.71,
+    "mean_phase2_uncomp_drift_pct": 4.93,
+    "max_phase3_comp_error_pct": 0.0,
+    "mean_phase3_comp_error_pct": 0.0,
+    "surge_rejection_pct": 100.0,
+    "phase4_final_level_error_pct": 0.0912,
+    "phase4_mean_tail_level_error_pct": 0.0563,
+    "hull_pitch_esd_trip_cycle": 501,
+    "high_high_trip_level_pct": 85.0
+  },
+  "trace_samples": [
+    {
+      "cycle": 0,
+      "phase": "PHASE_1_CALM_SEA_EQUILIBRIUM",
+      "target_sp": 50.0,
+      "separator_level": 50.0,
+      "condensate_rate": 50.0,
+      "esd_trip": false,
+      "cv_pid": 50.0
+    },
+    {
+      "cycle": 50,
+      "phase": "PHASE_1_CALM_SEA_EQUILIBRIUM",
+      "target_sp": 50.0,
+      "separator_level": 50.0,
+      "condensate_rate": 50.0,
+      "esd_trip": false,
+      "cv_pid": 50.0
+    },
+    {
+      "cycle": 100,
+      "phase": "PHASE_1_CALM_SEA_EQUILIBRIUM",
+      "target_sp": 50.0,
+      "separator_level": 50.0,
+      "condensate_rate": 50.0,
+      "esd_trip": false,
+      "cv_pid": 50.0
+    },
+    {
+      "cycle": 101,
+      "phase": "PHASE_2_SEVERE_SEA_STATE_SLOSH_UNCOMP",
+      "target_sp": 50.0,
+      "separator_level": 50.023,
+      "condensate_rate": 50.4,
+      "esd_trip": false,
+      "cv_pid": 50.0
+    },
+    {
+      "cycle": 125,
+      "phase": "PHASE_2_SEVERE_SEA_STATE_SLOSH_UNCOMP",
+      "target_sp": 50.0,
+      "separator_level": 54.558,
+      "condensate_rate": 58.8,
+      "esd_trip": false,
+      "cv_pid": 42.88
+    },
+    {
+      "cycle": 150,
+      "phase": "PHASE_2_SEVERE_SEA_STATE_SLOSH_UNCOMP",
+      "target_sp": 50.0,
+      "separator_level": 56.663,
+      "condensate_rate": 67.5,
+      "esd_trip": false,
+      "cv_pid": 26.81
+    },
+    {
+      "cycle": 175,
+      "phase": "PHASE_2_SEVERE_SEA_STATE_SLOSH_UNCOMP",
+      "target_sp": 50.0,
+      "separator_level": 55.594,
+      "condensate_rate": 76.2,
+      "esd_trip": false,
+      "cv_pid": 15.29
+    },
+    {
+      "cycle": 200,
+      "phase": "PHASE_2_SEVERE_SEA_STATE_SLOSH_UNCOMP",
+      "target_sp": 50.0,
+      "separator_level": 55.532,
+      "condensate_rate": 85.0,
+      "esd_trip": false,
+      "cv_pid": 4.75
+    },
+    {
+      "cycle": 201,
+      "phase": "PHASE_3_MOTION_COMP_NOTCH_BAFFLE_DECOUPLING",
+      "target_sp": 50.0,
+      "separator_level": 50.0,
+      "condensate_rate": 85.0,
+      "esd_trip": false,
+      "cv_pid": 50.0
+    },
+    {
+      "cycle": 225,
+      "phase": "PHASE_3_MOTION_COMP_NOTCH_BAFFLE_DECOUPLING",
+      "target_sp": 50.0,
+      "separator_level": 50.0,
+      "condensate_rate": 85.0,
+      "esd_trip": false,
+      "cv_pid": 50.0
+    },
+    {
+      "cycle": 250,
+      "phase": "PHASE_3_MOTION_COMP_NOTCH_BAFFLE_DECOUPLING",
+      "target_sp": 50.0,
+      "separator_level": 50.0,
+      "condensate_rate": 85.0,
+      "esd_trip": false,
+      "cv_pid": 50.0
+    },
+    {
+      "cycle": 275,
+      "phase": "PHASE_3_MOTION_COMP_NOTCH_BAFFLE_DECOUPLING",
+      "target_sp": 50.0,
+      "separator_level": 50.0,
+      "condensate_rate": 85.0,
+      "esd_trip": false,
+      "cv_pid": 50.0
+    },
+    {
+      "cycle": 300,
+      "phase": "PHASE_3_MOTION_COMP_NOTCH_BAFFLE_DECOUPLING",
+      "target_sp": 50.0,
+      "separator_level": 50.0,
+      "condensate_rate": 85.0,
+      "esd_trip": false,
+      "cv_pid": 50.0
+    },
+    {
+      "cycle": 350,
+      "phase": "PHASE_3_MOTION_COMP_NOTCH_BAFFLE_DECOUPLING",
+      "target_sp": 50.0,
+      "separator_level": 50.0,
+      "condensate_rate": 85.0,
+      "esd_trip": false,
+      "cv_pid": 50.0
+    },
+    {
+      "cycle": 351,
+      "phase": "PHASE_4_OFFLOADING_PARCEL_DRAW_DOWN_STEP",
+      "target_sp": 38.0,
+      "separator_level": 48.992,
+      "condensate_rate": 70.0,
+      "esd_trip": false,
+      "cv_pid": 29.84
+    },
+    {
+      "cycle": 400,
+      "phase": "PHASE_4_OFFLOADING_PARCEL_DRAW_DOWN_STEP",
+      "target_sp": 38.0,
+      "separator_level": 36.858,
+      "condensate_rate": 70.0,
+      "esd_trip": false,
+      "cv_pid": 55.77
+    },
+    {
+      "cycle": 450,
+      "phase": "PHASE_4_OFFLOADING_PARCEL_DRAW_DOWN_STEP",
+      "target_sp": 38.0,
+      "separator_level": 37.811,
+      "condensate_rate": 70.0,
+      "esd_trip": false,
+      "cv_pid": 49.2
+    },
+    {
+      "cycle": 500,
+      "phase": "PHASE_4_OFFLOADING_PARCEL_DRAW_DOWN_STEP",
+      "target_sp": 38.0,
+      "separator_level": 38.091,
+      "condensate_rate": 70.0,
+      "esd_trip": false,
+      "cv_pid": 50.04
+    },
+    {
+      "cycle": 501,
+      "phase": "PHASE_5_HULL_PITCH_EXTREME_ESD_TRIP",
+      "target_sp": 38.0,
+      "separator_level": 38.091,
+      "condensate_rate": 30.0,
+      "esd_trip": true,
+      "cv_pid": 50.03
+    },
+    {
+      "cycle": 520,
+      "phase": "PHASE_5_HULL_PITCH_EXTREME_ESD_TRIP",
+      "target_sp": 38.0,
+      "separator_level": 38.091,
+      "condensate_rate": 30.0,
+      "esd_trip": true,
+      "cv_pid": 49.85
+    },
+    {
+      "cycle": 550,
+      "phase": "PHASE_5_HULL_PITCH_EXTREME_ESD_TRIP",
+      "target_sp": 38.0,
+      "separator_level": 38.091,
+      "condensate_rate": 30.0,
+      "esd_trip": true,
+      "cv_pid": 49.63
+    },
+    {
+      "cycle": 599,
+      "phase": "PHASE_5_HULL_PITCH_EXTREME_ESD_TRIP",
+      "target_sp": 38.0,
+      "separator_level": 38.091,
+      "condensate_rate": 30.0,
+      "esd_trip": true,
+      "cv_pid": 49.27
+    }
+  ],
+  "cscape_health": {
+    "healthy": true,
+    "pid": 4272,
+    "hwnd": "0x7033e",
+    "desktop": "Default",
+    "is_hung": false,
+    "wm_null_ping_ok": true,
+    "working_set_mb": 216.22,
+    "num_threads": 11,
+    "uptime_sec": 1480.43
+  },
+  "download_lockout_verified": true
+}

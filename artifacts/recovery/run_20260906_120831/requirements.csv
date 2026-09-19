@@ -1,0 +1,13 @@
+requirement_id,category,name,mapped_gates,mapped_false_successes,description,status
+R01,Container,Fail-Closed Project Container & CFBF Integrity,G0,"H01,H02",Export/open on non-existent or invalid projects fails closed; validate 8-byte OLE2 CFBF header,success
+R02,Compiler,Honest Compiler Diagnostics & AST Metrics Pipeline,"G1,G3",H03,Compile on non-existent project fails closed; AST metrics honestly derived; download commands locked out,success
+R03,Simulation,Explicit Mock Classification & Offline Taxonomy,G4,H04,In-memory simulation engines declare TESTED_MOCK [offline/DEV only]; never claim VERIFIED_LIVE,success
+R04,GUI Automation,Modal Dialog Interception & Window State Inspection,G2,H05,Target #32770 dialogs with keyword allowlists; prevent blind global dismissal,success
+R05,Quarantine,Straton K5 Legacy Quarantine Isolation,G0,H06,Legacy Straton K5 templates quarantined under quarantine/straton_k5_legacy/; 0 active imports in src/,success
+R06,Liveness,Dynamic Gate Liveness & Ephemeral PID Decoupling,"G1,G2",H07,Decouple historical dead PIDs; require dynamic active gate resolution for live steps,success
+R07,IEC Standard,Pure IEC 61131-3 ST Enforcement & Ladder Lockout,G1,H08,"Strict pure ST validation; reject contacts, coils, rungs, and mnemonics with ERR_LADDER_FORBIDDEN",success
+R08,Interoperability,Native Language Conversion Reality Documentation,G1,H08,Document in-GUI ST->LD conversion as BLOCKED_NATIVE: DOCUMENT_ONLY in Cscape 10.2,success
+R09,Supervision,Process Supervision & Execution Watchdog Enforcement,G2,"H09,H12",Document naked launch crash (0x0051a4cd) vs supervisor keepalive; 10-min watchdog; ban FINAL_REPORT spam,success
+R10,Safety Lockout,Physical Port & Companion Flasher Fail-Closed Lockout,G3,"H10,H11","Block COM1-256, CAN, USB, JTAG; block companion flashers, CLI download switches, and command IDs 32827/33149",blocked
+R11,Protocol,FastMCP Protocol & Canonical 4-State Status Contract,"G4,G5",H13,FastMCP stdio tools strictly adhere to status: success | failed | blocked | inconclusive,success
+R12,Verification,Evidence-Gated Final Signoff & Dual-Root Parity,G5,G5,Cryptographic SHA-256 parity across dual roots without claiming premature permanent victory,success

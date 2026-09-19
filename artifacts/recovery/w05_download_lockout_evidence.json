@@ -1,0 +1,80 @@
+{
+  "mission_id": "C4_WINDOWS_MATRIX",
+  "item_id": "W05",
+  "name": "Physical Hardware Download Command Lockout (32827 / 33149)",
+  "status": "blocked",
+  "run_id": "run_20260906_120831",
+  "completed_at_utc": "2026-09-07T02:26:18.929608+00:00",
+  "policy": "Absolute Fail-Closed Hardware Lockout",
+  "restricted_command_ids": [
+    32827,
+    33149
+  ],
+  "lockout_verifications": [
+    {
+      "target": "ID_PROGRAM_DOWNLOAD (32827)",
+      "mechanism": "src.cscape.safety.intercept_download_command",
+      "exception": "CscapeSafetyViolationError",
+      "message": "Physical controller download command '32827' (ID_CONTROLLER_DOWNLOAD=32827, ID_CONTROLLER_DOWNLOAD_ALT=33149) is strictly locked out. Zero physical PLC flashing permitted.",
+      "status": "blocked"
+    },
+    {
+      "target": "ID_CONTROLLER_DOWNLOAD (33149)",
+      "mechanism": "src.cscape.safety.intercept_download_command",
+      "exception": "CscapeSafetyViolationError",
+      "message": "Physical controller download command '33149' (ID_CONTROLLER_DOWNLOAD=32827, ID_CONTROLLER_DOWNLOAD_ALT=33149) is strictly locked out. Zero physical PLC flashing permitted.",
+      "status": "blocked"
+    },
+    {
+      "target": "cscape_compile_project(command_id=32827)",
+      "mechanism": "src.cscape.compilation.cscape_compile_project",
+      "result_status": "blocked",
+      "error_code": "ERR_HARDWARE_LOCKOUT",
+      "status": "blocked"
+    },
+    {
+      "target": "cscape_compile_project(command_id=33149)",
+      "mechanism": "src.cscape.compilation.cscape_compile_project",
+      "result_status": "blocked",
+      "error_code": "ERR_HARDWARE_LOCKOUT",
+      "status": "blocked"
+    },
+    {
+      "target": "CscapeCompiler.download_to_controller()",
+      "mechanism": "src.cscape.compilation.CscapeCompiler",
+      "exception": "UnauthorizedDownloadError",
+      "message": "Hardware lockout: Physical controller download (ID_CONTROLLER_DOWNLOAD = 32827 / ID_PROGRAM_DOWNLOADOPTIONS = 33149) is strictly blocked.",
+      "status": "blocked"
+    },
+    {
+      "target": "CscapeCompiler.download_options()",
+      "mechanism": "src.cscape.compilation.CscapeCompiler",
+      "exception": "UnauthorizedDownloadError",
+      "message": "Hardware lockout: Controller download options (ID_PROGRAM_DOWNLOADOPTIONS = 33149) is strictly blocked.",
+      "status": "blocked"
+    },
+    {
+      "target": "Physical COM Port Access (COM1..COM256, CAN, USB)",
+      "mechanism": "src.security.guard.SecurityGuard.validate_command",
+      "exception": "HardwareLockoutError",
+      "message": "Hardware port or communication parameter '--port' detected in command arguments. Physical communication is locked out.",
+      "status": "blocked"
+    },
+    {
+      "target": "Flashing Utility (PGMUpdateUtility.exe)",
+      "mechanism": "src.security.guard.SecurityGuard.validate_command",
+      "exception": "BlockedExecutableError",
+      "message": "Execution of dangerous executable 'PGMUpdateUtility.exe' is blocked. Hardware flashing, firmware updates, and direct download utilities are strictly prohibited.",
+      "status": "blocked"
+    },
+    {
+      "target": "CLI Download Flag (/download)",
+      "mechanism": "src.security.guard.SecurityGuard.validate_command",
+      "exception": "DangerousArgumentError",
+      "message": "Prohibited download/flashing flag '/download' detected in command arguments. Controller downloads and flashing are strictly prohibited.",
+      "status": "blocked"
+    }
+  ],
+  "enforcement_summary": "All Win32 download command IDs, compiler download calls, and physical communication ports are unconditionally blocked fail-closed.",
+  "visibility_classification": "PARTIAL / SUPERVISOR-DEPENDENT (visibility is NOT claimed as VERIFIED_LIVE)"
+}

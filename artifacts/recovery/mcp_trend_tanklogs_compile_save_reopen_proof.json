@@ -1,0 +1,115 @@
+{
+  "mission_id": "MCP_TREND_TANKLOGS_COMPILE_SAVE_REOPEN_PROOF",
+  "status": "success",
+  "timestamp_utc": "2026-09-10T09:37:27.206Z",
+  "environment": {
+    "os": "Windows",
+    "winsta_desktop": "winsta0\\Default",
+    "cscape_version": "Horner APG Cscape 10.2 (Build 10.2.751.4)",
+    "pid": 19488,
+    "hwnd": "0x01AC0B88",
+    "target_project": "TankLevelClosedLoop.csp",
+    "target_path": "C:\\HornerAI\\horner-cscape-mcp\\artifacts\\projects\\TankLevelClosedLoop\\TankLevelClosedLoop.csp",
+    "csp_size_bytes": 131072,
+    "csp_sha256": "DAB6BB33FDB376BFC015F11CC960770DD7FCD547CA4704BDA5A8200F86EBD4EE",
+    "active_screen": "Screen 2 (2)",
+    "single_gui_owner": "PID 19488 exclusive on winsta0\\Default"
+  },
+  "verification_evidence": {
+    "offline_trend_chart": {
+      "status": "VERIFIED_PRESENT",
+      "png_path": "C:\\HornerAI\\horner-cscape-mcp\\artifacts\\screenshots\\offline_trend_chart.png",
+      "png_size_bytes": 111251,
+      "png_sha256": "447DC99040373BA43FAFA2337CFB49402A3DEAE61C7AD24967A028B629EA17D8",
+      "svg_path": "C:\\HornerAI\\horner-cscape-mcp\\artifacts\\recovery\\offline_trend_chart.svg",
+      "svg_size_bytes": 72764,
+      "resolution": "1600x900",
+      "duration_seconds": 100.0,
+      "cycles": 1000,
+      "signals": [
+        "TankLevelPV (%R1)",
+        "Setpoint (%R3)",
+        "ControlOutput (%R7)",
+        "HI (%T3, 65%)",
+        "LO (%T4, 35%)",
+        "TankLogs Samples (1s)"
+      ]
+    },
+    "tanklogs_datalog": {
+      "status": "VERIFIED_PRESENT",
+      "csv_path": "C:\\HornerAI\\horner-cscape-mcp\\artifacts\\projects\\TankLevelClosedLoop\\TankLogs.csv",
+      "csv_size_bytes": 2937,
+      "sample_count": 100,
+      "cadence": "1.0 second periodic",
+      "group_name": "TankLogs",
+      "logged_var": "TankLevelPV (REAL)",
+      "trigger_bit": "%T1 (DatalogEnable)",
+      "status_reg": "%R14 (DatalogStatus)"
+    },
+    "compile_verification": {
+      "status": "VERIFIED_CLEAN_ST_AND_SCREEN2",
+      "command_dispatched": "ID_PROGRAM_ERRORCHECK (32826)",
+      "screen1_status": "INTENTIONALLY_PRESERVED (7 legacy fatal I/O assignment errors retained)",
+      "screen2_status": "CLEAN (0 errors, 0 warnings)",
+      "st_logic_status": "CLEAN (0 errors, 0 warnings)",
+      "non_fatal_dialog_action": "DISMISSED / REJECTED (Fail-closed NO clicked)"
+    },
+    "save_verification": {
+      "status": "VERIFIED_PERSISTENT",
+      "command_dispatched": "ID_FILE_SAVE (57603)",
+      "save_as_intercepted": false,
+      "container_valid_ole": true,
+      "contents_stream_size": 59235
+    },
+    "reopen_verification": {
+      "status": "VERIFIED_REOPENED",
+      "close_command": "ID_FILE_CLOSE (57602)",
+      "reopen_command": "ID_FILE_MRU_FILE1 (57616)",
+      "window_title_after_reopen": "Cscape - Logged In : \"armando@controlnautas.com\" - [TankLevelClosedLoop.csp]",
+      "target_project_reloaded": true,
+      "screen2_tab_front": true
+    },
+    "screen2_operator_objects": {
+      "total_objects": 5,
+      "bindings": [
+        {
+          "variable": "TankLevelPV",
+          "label": "PV",
+          "tag": "@TankLevelPV@",
+          "found": true
+        },
+        {
+          "variable": "Setpoint",
+          "label": "Setpoint",
+          "tag": "@Setpoint@",
+          "found": true
+        },
+        {
+          "variable": "TankLevelPV_I16",
+          "label": "Bar",
+          "tag": "@TankLevelPV_I16@",
+          "found": true
+        },
+        {
+          "variable": "HI",
+          "label": "HI",
+          "tag": "@HI@",
+          "found": true
+        },
+        {
+          "variable": "LO",
+          "label": "LO",
+          "tag": "@LO@",
+          "found": true
+        }
+      ]
+    }
+  },
+  "safety_directives": {
+    "hardware_plc_lockout": "ENFORCED (COM1..COM256, CAN*, USB*, JTAG blocked fail-closed)",
+    "plc_download_lockout": "ENFORCED (Win32 commands 32827 & 33149 permanently blocked)",
+    "screen1_polish": "NONE (Screen 1 untouched per directive)",
+    "g1_pytest_policy": "NONE (Zero pytest/G1 runs executed)",
+    "process_continuity": "Cscape, PowerShell, Terminal, and agy remain continuously running"
+  }
+}

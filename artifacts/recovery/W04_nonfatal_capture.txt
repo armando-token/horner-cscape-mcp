@@ -1,0 +1,71 @@
+================================================================================
+W04 NON-FATAL COMPILATION ERROR CAPTURE
+Mission ID: W04_NONFATAL_THEN_MCP_ROUNDTRIP
+Timestamp (UTC): 2026-09-08T22:15:30Z
+Timestamp (Local): 2026-09-08 15:15:30
+================================================================================
+
+1. TARGET ENVIRONMENT & CSCAPE TELEMETRY
+--------------------------------------------------------------------------------
+- Cscape Host Binary   : C:\Program Files (x86)\Cscape 10.2\Cscape.exe (10.2.751.4)
+- Process ID (PID)     : 11116
+- Main Window Handle   : 0x008600BC
+- Desktop Boundary     : winsta0\Default (Interactive Desktop)
+- Operational Mode     : offline/DEV if Disconnected (Status Bar: Disconnected)
+- Visibility Invariant : PARTIAL / SUPERVISOR-DEPENDENT - NOT CLAIMED AS VERIFIED_LIVE
+- Active Project       : C:\HornerAI\horner-cscape-mcp\artifacts\projects\C6_Native_Run\C6_Native_Run.csp
+
+2. ERROR CHECK COMPILATION DISPATCH
+--------------------------------------------------------------------------------
+- Command ID           : 32826 (ID_PROGRAM_ERRORCHECK)
+- Dispatch Method      : PostMessageW(HWND 0x008600BC, WM_COMMAND, 32826, 0)
+- Single GUI Owner     : YES (Exclusive driver on winsta0\Default)
+
+3. MODAL DIALOG DETECTION & TELEMETRY
+--------------------------------------------------------------------------------
+- Modal Detected       : YES (1 modal dialog intercepted)
+- Window Handle (HWND) : 0x02D1078E
+- Window Class         : #32770 (Standard Win32 Dialog)
+- Dialog Title         : Cscape
+- Dialog Controls & Texts:
+  * Control 1 [Button, ID 6] : &Yes
+  * Control 2 [Button, ID 7] : &No
+  * Control 3 [Static, ID 65535] : Non-Fatal Compilation Errors were found. Do you want to continue?
+- Modal Action Taken   : Auto-Yes BLOCKED per fail-closed safety policy; dismissed safely with IDNO (7)
+- Dialog Safety Policy : Prefer blocked+capture over blind Yes/No. Auto-clicking Yes on Non-Fatal is strictly forbidden.
+
+4. LIVE NON-FATAL COMPILE ERROR / WARNING TEXT
+--------------------------------------------------------------------------------
+- Output Control       : ListBox (HWND 0x022607A4, Control ID 372, Item Count: 13)
+- Live Scraped Lines from Cscape Output Window:
+  [Line 01] Compiler V12.0.200.82
+  [Line 02] Loading application symbols...
+  [Line 03] EnhancedDisplayAttributes
+  [Line 04] No error detected
+  [Line 05] 
+  [Line 06] Loading application symbols...
+  [Line 07] Building application data...
+  [Line 08] Relocating code...
+  [Line 09] No error detected
+  [Line 10] Online Change is disabled
+  [Line 11] Generate OCS code...
+  [Line 12] No error detected
+  [Line 13] Warn : Screen set as first screen is empty.Screen 1
+
+- EXACT WARNING TEXT CAUSING NON-FATAL PROMPT:
+  Warn : Screen set as first screen is empty.Screen 1
+
+5. ROOT CAUSE ANALYSIS & CLASSIFICATION
+--------------------------------------------------------------------------------
+- Compile Errors Found : 0 (Clean ST logic compilation: 0 syntax errors, 0 type errors)
+- Compile Warnings     : 1 (HMI / Display Screen Warning)
+- Warning Details      : Horner OCS graphics engine warns that Screen 1 (configured as the initial startup screen) contains zero graphic elements. Cscape classifies empty startup screens as a Non-Fatal compilation condition, halting automated downstream actions and prompting the operator for confirmation.
+- Policy Assessment    : Non-Fatal warning correctly identified and intercepted. Hardware download remained strictly locked out.
+
+6. CONTRACT & STATUS CERTIFICATION
+--------------------------------------------------------------------------------
+- Status               : success
+- Error Text Present   : YES ("Warn : Screen set as first screen is empty.Screen 1")
+- Modal Handled Safely : YES (Intercepted and dismissed with IDNO)
+- Zero Hardware Access : YES (Download lockout active; no physical PLC)
+================================================================================

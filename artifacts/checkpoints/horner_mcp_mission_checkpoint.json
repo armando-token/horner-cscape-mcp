@@ -1,0 +1,35 @@
+{
+  "mission": "Horner Cscape MCP Mission",
+  "status": "ACTIVE_VERIFIED",
+  "timestamp_utc": "2026-09-05T04:25:00.000Z",
+  "cscape_state": {
+    "pid": 8180,
+    "hwnd": "0x025803DE",
+    "window_title": "Cscape - Logged In : \"armando@controlnautas.com\" - [TankLevelClosedLoop.csp]",
+    "project": "TankLevelClosedLoop",
+    "csp_path": "C:\\Users\\ArmandoSilva\\artifacts\\projects\\TankLevelClosedLoop\\TankLevelClosedLoop.csp",
+    "is_hung": false,
+    "gate_status": "READY_FOR_TESTS"
+  },
+  "lockouts_enforced": {
+    "zero_plc_download": true,
+    "zero_straton_dependencies": true,
+    "blocked_commands": [32827, 33149],
+    "hardware_ports_blocked": true
+  },
+  "verification_summary": {
+    "live_mcp_tools_e2e": "19/19 PASSED",
+    "closed_loop_master_tests": "100/100 PASSED",
+    "security_lockout_tests": "192/192 PASSED",
+    "pid_and_incident_tests": "35/35 PASSED",
+    "st_ld_interop_tests": "56/56 PASSED",
+    "mcp_compile_clean_build": "0 errors, 0 warnings"
+  },
+  "checkpoints": [
+    "artifacts/checkpoints/step1_stay_open_checkpoint.json",
+    "artifacts/checkpoints/step2_tanklevel_loaded_checkpoint.json",
+    "artifacts/checkpoints/step3_mcp_compile_checkpoint.json",
+    "artifacts/checkpoints/step4_closed_loop_checkpoint.json",
+    "artifacts/checkpoints/step5_st_ld_conversion_checkpoint.json"
+  ]
+}

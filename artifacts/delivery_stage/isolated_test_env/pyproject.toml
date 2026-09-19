@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "horner-cscape-mcp"
+version = "1.0.0"
+description = "FastMCP integration server for Horner APG Cscape 10.2 with fail-closed safety and native CFBF project container support"
+readme = "README.md"
+requires-python = ">=3.10, <3.13"
+license = { text = "MIT" }
+authors = [
+    { name = "Horner MCP Engineering Team", email = "engineering@hornerautomation.example.com" }
+]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Operating System :: Microsoft :: Windows",
+    "Topic :: Scientific/Engineering :: Interface Engine/Protocol Translator",
+]
+dependencies = [
+    "mcp==2.1.1",
+    "pydantic==2.13.5",
+    "olefile==0.47",
+    "pywinauto==0.6.9",
+    "pywin32==312",
+    "pefile==2024.8.26",
+    "psutil==7.2.2",
+    "comtypes==1.4.16",
+    "pillow==12.3.0",
+]
+
+[project.scripts]
+horner-cscape-mcp = "run_mcp_server:main"

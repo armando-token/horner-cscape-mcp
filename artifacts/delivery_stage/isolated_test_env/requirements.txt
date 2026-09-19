@@ -1,0 +1,27 @@
+# Horner APG Cscape FastMCP Server Pinned Dependencies
+# Python Runtime: >= 3.10, < 3.13 (Tested on Python 3.12 x64 Windows)
+mcp==2.1.1
+mcp-types==2.1.1
+pydantic==2.13.5
+pydantic_core==2.46.5
+olefile==0.47
+pywinauto==0.6.9
+pywin32==312
+pefile==2024.8.26
+psutil==7.2.2
+comtypes==1.4.16
+pillow==12.3.0
+uvicorn==0.52.4
+starlette==1.6.0
+anyio==4.15.0
+attrs==26.1.0
+click==8.5.0
+cffi==2.1.1
+pycparser==3.0
+typing_extensions==4.16.0
+annotated-types==0.8.0
+jsonschema==4.26.0
+jsonschema-specifications==2025.9.1
+referencing==0.37.0
+rpds-py==2026.6.3
+truststore==0.10.4

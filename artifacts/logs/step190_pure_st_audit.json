@@ -1,0 +1,715 @@
+{
+  "step": 190,
+  "name": "step190_pure_st_audit",
+  "status": "success",
+  "timestamp_utc": "2026-09-08T05:18:02.320868+00:00",
+  "mandate": "PLC / IEC 61131-3 Pure ST Audit for CCGTHRSGDrumLevelDuctBurnerControl",
+  "execution_duration_sec": 1.6342,
+  "dual_root_parity": true,
+  "cscape_gui_mode": "headless_static_analysis_only",
+  "target_pou": {
+    "name": "CCGTHRSGDrumLevelDuctBurnerControl",
+    "type": "PROGRAM",
+    "relative_path": "examples/st_applications/ccgt_hrsg_drum_level_duct_burner_control.st",
+    "sha256": "09e86d14886ba862429a44b20e1d70a318a684b8da0b6fcfed65385a81ea6009",
+    "expected_sha256": "09e86d14886ba862429a44b20e1d70a318a684b8da0b6fcfed65385a81ea6009",
+    "byte_size": 8049,
+    "expected_byte_size": 8049,
+    "lines": 146
+  },
+  "tasks": {
+    "task1_file_existence_and_parity": {
+      "status": "success",
+      "horner_file": "C:\\HornerAI\\horner-cscape-mcp\\examples\\st_applications\\ccgt_hrsg_drum_level_duct_burner_control.st",
+      "user_file": "C:\\Users\\ArmandoSilva\\examples\\st_applications\\ccgt_hrsg_drum_level_duct_burner_control.st",
+      "horner_sha256": "09e86d14886ba862429a44b20e1d70a318a684b8da0b6fcfed65385a81ea6009",
+      "user_sha256": "09e86d14886ba862429a44b20e1d70a318a684b8da0b6fcfed65385a81ea6009",
+      "expected_sha256": "09e86d14886ba862429a44b20e1d70a318a684b8da0b6fcfed65385a81ea6009",
+      "sha_match": true,
+      "dual_root_parity": true,
+      "diff_line_count": 0,
+      "diff": "",
+      "file_size_bytes": 8049,
+      "expected_size_bytes": 8049,
+      "duration_sec": 0.0007
+    },
+    "task2_ladder_construct_scan_and_fail_closed": {
+      "status": "success",
+      "clean_scan_artifacts_count": 0,
+      "clean_scan_artifacts": [],
+      "clean_validator_errors": [],
+      "clean_st_parser_ladder_errors": [],
+      "mutation_tests_total": 16,
+      "mutation_tests_fail_closed": 16,
+      "mutation_results": [
+        {
+          "construct_name": "Normally Open Contact",
+          "construct_syntax": "---[ ]---",
+          "guard_rejected": true,
+          "validator_rejected": true,
+          "parser_rejected": true,
+          "mcp_rejected": true,
+          "fail_closed": true
+        },
+        {
+          "construct_name": "Normally Closed Contact",
+          "construct_syntax": "---[/]---",
+          "guard_rejected": true,
+          "validator_rejected": true,
+          "parser_rejected": true,
+          "mcp_rejected": true,
+          "fail_closed": true
+        },
+        {
+          "construct_name": "Spaced Inverted Contact",
+          "construct_syntax": "---[ / ]---",
+          "guard_rejected": true,
+          "validator_rejected": true,
+          "parser_rejected": true,
+          "mcp_rejected": true,
+          "fail_closed": true
+        },
+        {
+          "construct_name": "Normal Output Coil",
+          "construct_syntax": "---( )---",
+          "guard_rejected": true,
+          "validator_rejected": true,
+          "parser_rejected": true,
+          "mcp_rejected": true,
+          "fail_closed": true
+        },
+        {
+          "construct_name": "Set Latch Coil",
+          "construct_syntax": "---(S)---",
+          "guard_rejected": true,
+          "validator_rejected": true,
+          "parser_rejected": true,
+          "mcp_rejected": true,
+          "fail_closed": true
+        },
+        {
+          "construct_name": "Reset Unlatch Coil",
+          "construct_syntax": "---(R)---",
+          "guard_rejected": true,
+          "validator_rejected": true,
+          "parser_rejected": true,
+          "mcp_rejected": true,
+          "fail_closed": true
+        },
+        {
+          "construct_name": "Shorthand Set Coil",
+          "construct_syntax": "---S---",
+          "guard_rejected": true,
+          "validator_rejected": true,
+          "parser_rejected": true,
+          "mcp_rejected": true,
+          "fail_closed": true
+        },
+        {
+          "construct_name": "Shorthand Reset Coil",
+          "construct_syntax": "---R---",
+          "guard_rejected": true,
+          "validator_rejected": true,
+          "parser_rejected": true,
+          "mcp_rejected": true,
+          "fail_closed": true
+        },
+        {
+          "construct_name": "Rung Header Marker",
+          "construct_syntax": "RUNG 1: CCGT Drum Level Firing",
+          "guard_rejected": true,
+          "validator_rejected": true,
+          "parser_rejected": true,
+          "mcp_rejected": true,
+          "fail_closed": true
+        },
+        {
+          "construct_name": "Rung Terminator Marker",
+          "construct_syntax": "END_RUNG",
+          "guard_rejected": true,
+          "validator_rejected": true,
+          "parser_rejected": true,
+          "mcp_rejected": true,
+          "fail_closed": true
+        },
+        {
+          "construct_name": "Ladder Network Section",
+          "construct_syntax": "NETWORK 10",
+          "guard_rejected": true,
+          "validator_rejected": true,
+          "parser_rejected": true,
+          "mcp_rejected": true,
+          "fail_closed": true
+        },
+        {
+          "construct_name": "Instruction Mnemonic XIC",
+          "construct_syntax": "XIC(GTRunPermissiveAux)",
+          "guard_rejected": true,
+          "validator_rejected": true,
+          "parser_rejected": true,
+          "mcp_rejected": true,
+          "fail_closed": true
+        },
+        {
+          "construct_name": "Instruction Mnemonic XIO",
+          "construct_syntax": "XIO(EmergencyBlowdownValveOpen)",
+          "guard_rejected": true,
+          "validator_rejected": true,
+          "parser_rejected": true,
+          "mcp_rejected": true,
+          "fail_closed": true
+        },
+        {
+          "construct_name": "Instruction Mnemonic OTE",
+          "construct_syntax": "OTE(DuctBurnerFuelGasBlockOpen)",
+          "guard_rejected": true,
+          "validator_rejected": true,
+          "parser_rejected": true,
+          "mcp_rejected": true,
+          "fail_closed": true
+        },
+        {
+          "construct_name": "Instruction Mnemonic OTL",
+          "construct_syntax": "OTL(LowLowDrumLevelTripLatched)",
+          "guard_rejected": true,
+          "validator_rejected": true,
+          "parser_rejected": true,
+          "mcp_rejected": true,
+          "fail_closed": true
+        },
+        {
+          "construct_name": "Instruction Mnemonic OTU",
+          "construct_syntax": "OTU(LowLowDrumLevelTripLatched)",
+          "guard_rejected": true,
+          "validator_rejected": true,
+          "parser_rejected": true,
+          "mcp_rejected": true,
+          "fail_closed": true
+        }
+      ],
+      "duration_sec": 1.4648
+    },
+    "task3_iec61131_syntax_and_datatypes": {
+      "status": "success",
+      "pou_name": "CCGTHRSGDrumLevelDuctBurnerControl",
+      "pou_type": "PROGRAM",
+      "total_variables": 33,
+      "r_registers_count": 8,
+      "i_registers_count": 5,
+      "q_registers_count": 4,
+      "m_registers_count": 8,
+      "address_violations": [],
+      "type_violations": [],
+      "iec_validator_valid": true,
+      "st_parser_valid": true,
+      "mcp_validator_valid": true,
+      "variables": [
+        {
+          "name": "DrumLevel_PV_mm",
+          "data_type": "REAL",
+          "scope": "VAR",
+          "address": "%R190",
+          "initial_value": null
+        },
+        {
+          "name": "SteamFlow_Rate_kgs",
+          "data_type": "REAL",
+          "scope": "VAR",
+          "address": "%R191",
+          "initial_value": null
+        },
+        {
+          "name": "FeedwaterFlow_Rate_kgs",
+          "data_type": "REAL",
+          "scope": "VAR",
+          "address": "%R192",
+          "initial_value": null
+        },
+        {
+          "name": "GT_ExhaustTemp_degC",
+          "data_type": "REAL",
+          "scope": "VAR",
+          "address": "%R193",
+          "initial_value": null
+        },
+        {
+          "name": "DuctBurnerFiringDemand_pct",
+          "data_type": "REAL",
+          "scope": "VAR",
+          "address": "%R194",
+          "initial_value": null
+        },
+        {
+          "name": "FeedwaterValveOutput_pct",
+          "data_type": "REAL",
+          "scope": "VAR",
+          "address": "%R195",
+          "initial_value": null
+        },
+        {
+          "name": "DrumPressure_bar",
+          "data_type": "REAL",
+          "scope": "VAR",
+          "address": "%R196",
+          "initial_value": null
+        },
+        {
+          "name": "BlowdownFlow_Rate_kgs",
+          "data_type": "REAL",
+          "scope": "VAR",
+          "address": "%R197",
+          "initial_value": null
+        },
+        {
+          "name": "GTRunPermissiveAux",
+          "data_type": "BOOL",
+          "scope": "VAR",
+          "address": "%I36",
+          "initial_value": null
+        },
+        {
+          "name": "BoilerFeedPumpARunningAux",
+          "data_type": "BOOL",
+          "scope": "VAR",
+          "address": "%I37",
+          "initial_value": null
+        },
+        {
+          "name": "BoilerFeedPumpBRunningAux",
+          "data_type": "BOOL",
+          "scope": "VAR",
+          "address": "%I38",
+          "initial_value": null
+        },
+        {
+          "name": "DuctBurnerFlameDetected",
+          "data_type": "BOOL",
+          "scope": "VAR",
+          "address": "%I39",
+          "initial_value": null
+        },
+        {
+          "name": "EmergencyTripResetPB",
+          "data_type": "BOOL",
+          "scope": "VAR",
+          "address": "%I40",
+          "initial_value": null
+        },
+        {
+          "name": "FeedwaterControlAutoOnline",
+          "data_type": "BOOL",
+          "scope": "VAR",
+          "address": "%Q68",
+          "initial_value": null
+        },
+        {
+          "name": "DuctBurnerFuelGasBlockOpen",
+          "data_type": "BOOL",
+          "scope": "VAR",
+          "address": "%Q69",
+          "initial_value": null
+        },
+        {
+          "name": "EmergencyBlowdownValveOpen",
+          "data_type": "BOOL",
+          "scope": "VAR",
+          "address": "%Q70",
+          "initial_value": null
+        },
+        {
+          "name": "DrumProtectionCommonAlarm",
+          "data_type": "BOOL",
+          "scope": "VAR",
+          "address": "%Q71",
+          "initial_value": null
+        },
+        {
+          "name": "ThreeElementModeActive",
+          "data_type": "BOOL",
+          "scope": "VAR",
+          "address": "%M90",
+          "initial_value": null
+        },
+        {
+          "name": "DrumSwellShrinkActive",
+          "data_type": "BOOL",
+          "scope": "VAR",
+          "address": "%M91",
+          "initial_value": null
+        },
+        {
+          "name": "HighDrumLevelWarning",
+          "data_type": "BOOL",
+          "scope": "VAR",
+          "address": "%M92",
+          "initial_value": null
+        },
+        {
+          "name": "LowDrumLevelWarning",
+          "data_type": "BOOL",
+          "scope": "VAR",
+          "address": "%M93",
+          "initial_value": null
+        },
+        {
+          "name": "LowLowDrumLevelTripLatched",
+          "data_type": "BOOL",
+          "scope": "VAR",
+          "address": "%M94",
+          "initial_value": null
+        },
+        {
+          "name": "HighHighDrumCarryoverTrip",
+          "data_type": "BOOL",
+          "scope": "VAR",
+          "address": "%M95",
+          "initial_value": null
+        },
+        {
+          "name": "DuctBurnerPermissiveOK",
+          "data_type": "BOOL",
+          "scope": "VAR",
+          "address": "%M96",
+          "initial_value": null
+        },
+        {
+          "name": "BoilerMasterTripActive",
+          "data_type": "BOOL",
+          "scope": "VAR",
+          "address": "%M97",
+          "initial_value": null
+        },
+        {
+          "name": "DrumLevelSetpoint_mm",
+          "data_type": "REAL",
+          "scope": "VAR",
+          "address": null,
+          "initial_value": "0.0"
+        },
+        {
+          "name": "LowLowTripLimit_mm",
+          "data_type": "REAL",
+          "scope": "VAR",
+          "address": null,
+          "initial_value": "-300.0"
+        },
+        {
+          "name": "HighHighTripLimit_mm",
+          "data_type": "REAL",
+          "scope": "VAR",
+          "address": null,
+          "initial_value": "350.0"
+        },
+        {
+          "name": "MinGTExhaustTemp_degC",
+          "data_type": "REAL",
+          "scope": "VAR",
+          "address": null,
+          "initial_value": "450.0"
+        },
+        {
+          "name": "MinFeedwaterFlow_kgs",
+          "data_type": "REAL",
+          "scope": "VAR",
+          "address": null,
+          "initial_value": "5.0"
+        },
+        {
+          "name": "LevelError_mm",
+          "data_type": "REAL",
+          "scope": "VAR",
+          "address": null,
+          "initial_value": "0.0"
+        },
+        {
+          "name": "FlowMismatch_kgs",
+          "data_type": "REAL",
+          "scope": "VAR",
+          "address": null,
+          "initial_value": "0.0"
+        },
+        {
+          "name": "TargetValvePos_pct",
+          "data_type": "REAL",
+          "scope": "VAR",
+          "address": null,
+          "initial_value": "50.0"
+        }
+      ],
+      "duration_sec": 0.1336
+    },
+    "task4_ast_decomposition": {
+      "status": "success",
+      "pou_name": "CCGTHRSGDrumLevelDuctBurnerControl",
+      "pou_type": "PROGRAM",
+      "sha256": "09e86d14886ba862429a44b20e1d70a318a684b8da0b6fcfed65385a81ea6009",
+      "total_lines": 146,
+      "total_tokens": 489,
+      "var_blocks_count": 1,
+      "var_blocks": [
+        {
+          "block_type": "VAR",
+          "declarations_count": 33,
+          "declarations": [
+            {
+              "name": "DrumLevel_PV_mm",
+              "data_type": "REAL",
+              "address": "%R190",
+              "initial_value": null
+            },
+            {
+              "name": "SteamFlow_Rate_kgs",
+              "data_type": "REAL",
+              "address": "%R191",
+              "initial_value": null
+            },
+            {
+              "name": "FeedwaterFlow_Rate_kgs",
+              "data_type": "REAL",
+              "address": "%R192",
+              "initial_value": null
+            },
+            {
+              "name": "GT_ExhaustTemp_degC",
+              "data_type": "REAL",
+              "address": "%R193",
+              "initial_value": null
+            },
+            {
+              "name": "DuctBurnerFiringDemand_pct",
+              "data_type": "REAL",
+              "address": "%R194",
+              "initial_value": null
+            },
+            {
+              "name": "FeedwaterValveOutput_pct",
+              "data_type": "REAL",
+              "address": "%R195",
+              "initial_value": null
+            },
+            {
+              "name": "DrumPressure_bar",
+              "data_type": "REAL",
+              "address": "%R196",
+              "initial_value": null
+            },
+            {
+              "name": "BlowdownFlow_Rate_kgs",
+              "data_type": "REAL",
+              "address": "%R197",
+              "initial_value": null
+            },
+            {
+              "name": "GTRunPermissiveAux",
+              "data_type": "BOOL",
+              "address": "%I36",
+              "initial_value": null
+            },
+            {
+              "name": "BoilerFeedPumpARunningAux",
+              "data_type": "BOOL",
+              "address": "%I37",
+              "initial_value": null
+            },
+            {
+              "name": "BoilerFeedPumpBRunningAux",
+              "data_type": "BOOL",
+              "address": "%I38",
+              "initial_value": null
+            },
+            {
+              "name": "DuctBurnerFlameDetected",
+              "data_type": "BOOL",
+              "address": "%I39",
+              "initial_value": null
+            },
+            {
+              "name": "EmergencyTripResetPB",
+              "data_type": "BOOL",
+              "address": "%I40",
+              "initial_value": null
+            },
+            {
+              "name": "FeedwaterControlAutoOnline",
+              "data_type": "BOOL",
+              "address": "%Q68",
+              "initial_value": null
+            },
+            {
+              "name": "DuctBurnerFuelGasBlockOpen",
+              "data_type": "BOOL",
+              "address": "%Q69",
+              "initial_value": null
+            },
+            {
+              "name": "EmergencyBlowdownValveOpen",
+              "data_type": "BOOL",
+              "address": "%Q70",
+              "initial_value": null
+            },
+            {
+              "name": "DrumProtectionCommonAlarm",
+              "data_type": "BOOL",
+              "address": "%Q71",
+              "initial_value": null
+            },
+            {
+              "name": "ThreeElementModeActive",
+              "data_type": "BOOL",
+              "address": "%M90",
+              "initial_value": null
+            },
+            {
+              "name": "DrumSwellShrinkActive",
+              "data_type": "BOOL",
+              "address": "%M91",
+              "initial_value": null
+            },
+            {
+              "name": "HighDrumLevelWarning",
+              "data_type": "BOOL",
+              "address": "%M92",
+              "initial_value": null
+            },
+            {
+              "name": "LowDrumLevelWarning",
+              "data_type": "BOOL",
+              "address": "%M93",
+              "initial_value": null
+            },
+            {
+              "name": "LowLowDrumLevelTripLatched",
+              "data_type": "BOOL",
+              "address": "%M94",
+              "initial_value": null
+            },
+            {
+              "name": "HighHighDrumCarryoverTrip",
+              "data_type": "BOOL",
+              "address": "%M95",
+              "initial_value": null
+            },
+            {
+              "name": "DuctBurnerPermissiveOK",
+              "data_type": "BOOL",
+              "address": "%M96",
+              "initial_value": null
+            },
+            {
+              "name": "BoilerMasterTripActive",
+              "data_type": "BOOL",
+              "address": "%M97",
+              "initial_value": null
+            },
+            {
+              "name": "DrumLevelSetpoint_mm",
+              "data_type": "REAL",
+              "address": null,
+              "initial_value": "LiteralNode(0.0, 'REAL')"
+            },
+            {
+              "name": "LowLowTripLimit_mm",
+              "data_type": "REAL",
+              "address": null,
+              "initial_value": "UnaryOpNode('-', LiteralNode(300.0, 'REAL'))"
+            },
+            {
+              "name": "HighHighTripLimit_mm",
+              "data_type": "REAL",
+              "address": null,
+              "initial_value": "LiteralNode(350.0, 'REAL')"
+            },
+            {
+              "name": "MinGTExhaustTemp_degC",
+              "data_type": "REAL",
+              "address": null,
+              "initial_value": "LiteralNode(450.0, 'REAL')"
+            },
+            {
+              "name": "MinFeedwaterFlow_kgs",
+              "data_type": "REAL",
+              "address": null,
+              "initial_value": "LiteralNode(5.0, 'REAL')"
+            },
+            {
+              "name": "LevelError_mm",
+              "data_type": "REAL",
+              "address": null,
+              "initial_value": "LiteralNode(0.0, 'REAL')"
+            },
+            {
+              "name": "FlowMismatch_kgs",
+              "data_type": "REAL",
+              "address": null,
+              "initial_value": "LiteralNode(0.0, 'REAL')"
+            },
+            {
+              "name": "TargetValvePos_pct",
+              "data_type": "REAL",
+              "address": null,
+              "initial_value": "LiteralNode(50.0, 'REAL')"
+            }
+          ]
+        }
+      ],
+      "statements_count": 8,
+      "statements": [
+        {
+          "index": 1,
+          "statement_type": "IfNode",
+          "line": 62
+        },
+        {
+          "index": 2,
+          "statement_type": "IfNode",
+          "line": 73
+        },
+        {
+          "index": 3,
+          "statement_type": "IfNode",
+          "line": 81
+        },
+        {
+          "index": 4,
+          "statement_type": "AssignmentNode",
+          "line": 92
+        },
+        {
+          "index": 5,
+          "statement_type": "AssignmentNode",
+          "line": 93
+        },
+        {
+          "index": 6,
+          "statement_type": "AssignmentNode",
+          "line": 99
+        },
+        {
+          "index": 7,
+          "statement_type": "IfNode",
+          "line": 106
+        },
+        {
+          "index": 8,
+          "statement_type": "IfNode",
+          "line": 115
+        }
+      ],
+      "duration_sec": 0.0342
+    },
+    "task5_reverify_st_to_ld_conversion_blocked": {
+      "status": "success",
+      "classification": "BLOCKED_NATIVE",
+      "directive": "DOCUMENT_ONLY",
+      "st_to_ld_conversion_allowed": false,
+      "doc_file_exists": true,
+      "doc_path": "C:\\HornerAI\\horner-cscape-mcp\\docs\\st_to_ld_conversion_blocked.md",
+      "evidence_file_exists": true,
+      "evidence_path": "C:\\HornerAI\\horner-cscape-mcp\\artifacts\\evidence\\cscape_st_to_ld_audit.json",
+      "pe_audit_zero_conversion_exports": true,
+      "guard_policy": "BLOCKED_NATIVE: DOCUMENT_ONLY",
+      "explanation": "Horner Cscape 10.2 architecture maintains strict separation between legacy Advanced Ladder and IEC 61131-3 engines with zero runtime conversion APIs.",
+      "duration_sec": 0.0006
+    }
+  }
+}

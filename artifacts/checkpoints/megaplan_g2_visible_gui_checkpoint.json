@@ -1,0 +1,51 @@
+{
+  "gate": "G2",
+  "name": "megaplan_g2_visible_gui_checkpoint",
+  "step": 190,
+  "status": "success",
+  "timestamp_utc": "2026-09-06T18:57:33.886798+00:00",
+  "mandate": "MEGAPLAN v1.0 Gate G2: Live Cscape 10.2 Visible GUI on Interactive Desktop with TankLevelClosedLoop.csp and Project Navigator",
+  "dual_root_parity": true,
+  "live_cscape": {
+    "pid": 16564,
+    "hwnd": "0x00F60868",
+    "window_title": "Cscape - Logged In : \"armando@controlnautas.com\" - [TankLevelClosedLoop.csp]",
+    "project_file": "C:\\HornerAI\\horner-cscape-mcp\\artifacts\\projects\\TankLevelClosedLoop\\TankLevelClosedLoop.csp",
+    "desktop": "winsta0\\Default",
+    "status": "READY_FOR_TESTS",
+    "is_window_visible": true,
+    "is_window_enabled": true,
+    "is_hung": false,
+    "project_navigator_visible": true,
+    "supervisor_watchdog_active": true
+  },
+  "single_gui_agent_boundary": {
+    "policy": "ONLY ONE agent drives Cscape Win32 GUI handles; all other agents/tests read-only gate inspection or FastMCP stdio RPC"
+  },
+  "hardware_safety": {
+    "zero_physical_plc": true,
+    "download_lockout_enforced": true,
+    "locked_command_ids": [
+      32827,
+      33149
+    ]
+  },
+  "screenshot_proof": {
+    "file": "artifacts/screenshots/live_cscape_tank_level_step190.png",
+    "size_bytes": 71597,
+    "sha256": "3629ca11ab19c8a2ec8b2c58e5bfcbb6febc2d45132107708368cf014cbf09b9"
+  },
+  "verified_assertions": {
+    "desktop_attached": "Default",
+    "is_window_visible": true,
+    "is_window_enabled": true,
+    "is_hung": false,
+    "ping_responsive": true,
+    "project_navigator_visible": true,
+    "error_check_compile_dispatched": true,
+    "error_check_command_id": 32826,
+    "error_count": 0,
+    "warning_count": 0,
+    "assert_cscape_live": true
+  }
+}

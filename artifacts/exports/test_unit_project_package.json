@@ -1,0 +1,106 @@
+{
+  "meta": {
+    "name": "test_unit_project",
+    "description": "Unit test project for Horner Cscape MCP",
+    "target_plc": "T5RTI",
+    "created_at": "2026-09-04T05:52:28.983006+00:00",
+    "updated_at": "2026-09-04T05:52:28.998012+00:00",
+    "pous": [
+      {
+        "name": "FB_ConveyorTest",
+        "type": "FUNCTION_BLOCK",
+        "cycle_time_ms": 10,
+        "file": "pous/FB_ConveyorTest.st",
+        "updated_at": "2026-09-04T05:52:28.998012+00:00",
+        "variables": [
+          {
+            "name": "RunCmd",
+            "type": "BOOL",
+            "scope": "VAR_INPUT",
+            "modifier": null,
+            "initial_value": null
+          },
+          {
+            "name": "PE_Sensor",
+            "type": "BOOL",
+            "scope": "VAR_INPUT",
+            "modifier": null,
+            "initial_value": null
+          },
+          {
+            "name": "MotorOut",
+            "type": "BOOL",
+            "scope": "VAR_OUTPUT",
+            "modifier": null,
+            "initial_value": null
+          },
+          {
+            "name": "BoxCount",
+            "type": "INT",
+            "scope": "VAR_OUTPUT",
+            "modifier": null,
+            "initial_value": "0"
+          }
+        ],
+        "line_count": 18
+      }
+    ],
+    "last_build": {
+      "timestamp": "2026-09-04T05:52:29.015538+00:00",
+      "successful": true,
+      "errors_count": 0,
+      "warnings_count": 0
+    }
+  },
+  "exported_at": "2026-09-04T05:52:29.173817+00:00",
+  "pous": [
+    {
+      "name": "FB_ConveyorTest",
+      "code": "FUNCTION_BLOCK FB_ConveyorTest\nVAR_INPUT\n    RunCmd : BOOL;\n    PE_Sensor : BOOL;\nEND_VAR\nVAR_OUTPUT\n    MotorOut : BOOL;\n    BoxCount : INT := 0;\nEND_VAR\nIF RunCmd THEN\n    MotorOut := TRUE;\n    IF PE_Sensor THEN\n        BoxCount := BoxCount + 1;\n    END_IF;\nELSE\n    MotorOut := FALSE;\nEND_IF;\nEND_FUNCTION_BLOCK\n",
+      "validation": {
+        "valid": true,
+        "pou_name": "FB_ConveyorTest",
+        "pou_type": "FUNCTION_BLOCK",
+        "return_type": null,
+        "variables": [
+          {
+            "name": "RunCmd",
+            "type": "BOOL",
+            "scope": "VAR_INPUT",
+            "modifier": null,
+            "initial_value": null
+          },
+          {
+            "name": "PE_Sensor",
+            "type": "BOOL",
+            "scope": "VAR_INPUT",
+            "modifier": null,
+            "initial_value": null
+          },
+          {
+            "name": "MotorOut",
+            "type": "BOOL",
+            "scope": "VAR_OUTPUT",
+            "modifier": null,
+            "initial_value": null
+          },
+          {
+            "name": "BoxCount",
+            "type": "INT",
+            "scope": "VAR_OUTPUT",
+            "modifier": null,
+            "initial_value": "0"
+          }
+        ],
+        "errors": [],
+        "warnings": [],
+        "metrics": {
+          "total_lines": 18,
+          "code_lines": 18,
+          "comment_lines": 0,
+          "variable_count": 4
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,127 @@
+================================================================================
+HORNER CSCAPE MCP - GATE G1 ONE CASE APPLIED AUDIT REPORT
+Mission ID: G1_WRITE_ONE_CASE_APPLIED
+Generated (UTC): 2026-09-09T05:04:00Z
+Classification: STRICT OFFLINE FAIL-CLOSED HARDENING & VERIFICATION
+Status Contract Invariant: success | failed | blocked | inconclusive
+================================================================================
+
+1. CASE IDENTIFICATION
+--------------------------------------------------------------------------------
+- Case ID: CASE 47
+- Vulnerability Title: cscape_insert_st Spurious Disk Mutation and False Success on Non-Existent & Whitespace Project Paths
+- Component: FastMCP Structured Text Staging & Insertion Engine
+- Target Source File: src/mcp/tools.py (Lines 1056-1093)
+- Test Identifier: tests/test_g1_false_success_negative_cases.py::test_case47_insert_st_nonexistent_or_whitespace_project_path_fails_closed
+
+2. VULNERABILITY ANALYSIS & FAIL-CLOSED HAZARD
+--------------------------------------------------------------------------------
+- Trigger Conditions:
+  1. Invoking cscape_insert_st(..., target_project_path="path/to/ghost_dir") or project_path
+     pointing to a non-existent directory.
+  2. Invoking cscape_insert_st(..., target_project_path="   ") with whitespace string.
+- Flaw in Previous Behavior:
+  1. When effective_path was provided and syntax_valid was True, cscape_insert_st executed:
+         p_dir = Path(effective_path).resolve()
+         pous_dir = p_dir / "pous"
+         pous_dir.mkdir(parents=True, exist_ok=True)
+         pou_file = pous_dir / f"{clean_pou_name}.st"
+         pou_file.write_text(st_code, encoding="utf-8")
+     It then returned status: "success", success: True, is_staged: True.
+  2. If target_project_path pointed to a non-existent directory, pous_dir.mkdir(parents=True)
+     created the directory tree out of thin air, generating spurious unmanaged directories
+     and claiming successful staging on ghost projects.
+  3. If target_project_path was whitespace (e.g. "   "), Path("   ").resolve() resolved to
+     the active workspace root (C:\Users\ArmandoSilva), creating a spurious pous/ folder
+     in the repository root!
+
+3. FAIL-CLOSED FIX IMPLEMENTATION (WHAT CHANGED)
+--------------------------------------------------------------------------------
+1. In src/mcp/tools.py (cscape_insert_st):
+   - Added strict validation for whitespace-only paths:
+     if effective_path is not None and isinstance(effective_path, str) and not effective_path.strip():
+         return {
+             "success": False,
+             "status": "failed",
+             "error_code": "INVALID_PROJECT_PATH",
+             "pou_name": clean_pou_name,
+             "pou_type": clean_pou_type,
+             "storage_mode": "ephemeral",
+             "is_staged": False,
+             "is_native_persisted": False,
+             "syntax_valid": syntax_valid,
+             "errors": ["Target project path cannot be empty or whitespace."],
+             "message": "Target project path cannot be empty or whitespace.",
+         }
+   - Added strict existence check for target project directory:
+     if effective_path:
+         p_dir = Path(effective_path).resolve()
+         if not p_dir.exists() or not p_dir.is_dir():
+             return {
+                 "success": False,
+                 "status": "failed",
+                 "error_code": "PROJECT_NOT_FOUND",
+                 "pou_name": clean_pou_name,
+                 "pou_type": clean_pou_type,
+                 "storage_mode": "staging",
+                 "is_staged": False,
+                 "is_native_persisted": False,
+                 "target_project_path": str(p_dir),
+                 "syntax_valid": syntax_valid,
+                 "errors": [f"Target project directory '{p_dir}' does not exist. Spurious disk mutation is strictly prohibited under fail-closed policy."],
+                 "message": f"Target project directory '{p_dir}' does not exist.",
+             }
+   - Invariant enforced: Zero disk mutation when target directory does not exist or is whitespace.
+
+2. In tests/test_g1_false_success_negative_cases.py:
+   - Added test_case47_insert_st_nonexistent_or_whitespace_project_path_fails_closed verifying:
+     [A] Non-existent directory via target_project_path fails closed with PROJECT_NOT_FOUND, status='failed', success=False, is_staged=False, and no directory is created on disk.
+     [B] Non-existent directory via project_path fails closed with PROJECT_NOT_FOUND, status='failed', success=False, is_staged=False, and no directory is created on disk.
+     [C] Whitespace path ('   ', '\t', '  \n  ') fails closed with INVALID_PROJECT_PATH, status='failed', success=False, and no 'pous' folder is created in workspace root.
+     [D] Valid existing directory succeeds cleanly (status='success', success=True, is_staged=True) and stages the .st file.
+
+3. Dual-Root Parity:
+   - Synchronized across C:\HornerAI\horner-cscape-mcp and C:\Users\ArmandoSilva.
+
+4. PYTEST VERIFICATION PROOF (THIS CASE & FULL SUITE)
+--------------------------------------------------------------------------------
+Command 1 (Case 47 Isolation):
+pytest tests/test_g1_false_success_negative_cases.py -k "test_case47" -v
+
+Output:
+============================= test session starts =============================
+platform win32 -- Python 3.12.10, pytest-9.1.1, pluggy-1.6.0
+rootdir: C:\Users\ArmandoSilva
+configfile: pyproject.toml
+plugins: anyio-4.15.0, asyncio-1.4.0, cov-7.1.0
+collected 47 items / 46 deselected / 1 selected
+
+tests/test_g1_false_success_negative_cases.py::test_case47_insert_st_nonexistent_or_whitespace_project_path_fails_closed PASSED [100%]
+
+====================== 1 passed, 46 deselected in 3.26s =======================
+Exit Code: 0 (PASSED)
+
+Command 2 (Full Negative Cases Regression Suite):
+pytest tests/test_g1_false_success_negative_cases.py
+
+Output:
+============================= 47 passed in 3.66s ==============================
+Exit Code: 0 (100% PASS - 47/47 negative tests passing)
+
+Command 3 (Core Cross-Cutting Subsystems):
+pytest tests/test_c2_pou_ast_rollback.py tests/test_mcp_status_contract.py tests/test_fail_closed_hardware_lockout.py tests/test_st_ld_interop.py
+
+Output:
+============================= 192 passed in 4.73s =============================
+Exit Code: 0 (100% PASS - 192/192 regression tests passing)
+
+5. OPERATIONAL DIRECTIVES COMPLIANCE
+--------------------------------------------------------------------------------
+- Single Case Addressed: Case 47 (cscape_insert_st project path validation).
+- Offline / DEV Only: Pure software verification; zero physical PLC hardware access.
+- Fail-Closed Safety: Zero spurious directory creation; strict PROJECT_NOT_FOUND and INVALID_PROJECT_PATH.
+- Single GUI Owner Preserved: winsta0\Default interactive desktop untouched; zero GUI automation spawned.
+- Status Contract Invariant: All responses strictly return status: success | failed | blocked | inconclusive.
+================================================================================
+END OF GATE G1 ONE CASE APPLIED AUDIT REPORT
+================================================================================

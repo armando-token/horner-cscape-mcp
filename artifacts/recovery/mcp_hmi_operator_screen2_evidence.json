@@ -1,0 +1,102 @@
+{
+  "mission_id": "MCP_HMI_OPERATOR_SCREEN2",
+  "status": "success",
+  "timestamp_utc": "2026-09-10T08:39:18.779Z",
+  "environment": {
+    "os": "Windows",
+    "winsta_desktop": "winsta0\\Default",
+    "cscape_version": "10.2 (Build 10.2.751.4)",
+    "pid": 19488,
+    "hwnd": "0x01AC0B88",
+    "target_csp": "C:\\HornerAI\\horner-cscape-mcp\\artifacts\\projects\\TankLevelClosedLoop\\TankLevelClosedLoop.csp",
+    "csp_sha256": "DAB6BB33FDB376BFC015F11CC960770DD7FCD547CA4704BDA5A8200F86EBD4EE",
+    "csp_size_bytes": 131072,
+    "ole_contents_stream_size_bytes": 59235
+  },
+  "screen2_specifications": {
+    "screen_name": "Screen 2",
+    "tab_identifier": "Screen 2 (2)",
+    "tab_status": "IN_FRONT",
+    "zoom_level": "120%",
+    "total_objects": 5,
+    "objects": [
+      {
+        "index": 1,
+        "name": "TankLevelPV",
+        "type": "Numeric Data Display",
+        "bound_variable": "TankLevelPV",
+        "data_type": "REAL (32-bit)",
+        "role": "Largest value on screen (Primary Process Variable)",
+        "quadrant": "Upper Left",
+        "legend": "Data",
+        "style": "High-contrast metallic beveled display container"
+      },
+      {
+        "index": 2,
+        "name": "Setpoint",
+        "type": "Numeric Data Display",
+        "bound_variable": "Setpoint",
+        "data_type": "REAL (32-bit)",
+        "role": "Target Setpoint reference value",
+        "quadrant": "Upper Right",
+        "legend": "Data",
+        "style": "High-contrast metallic beveled display container"
+      },
+      {
+        "index": 3,
+        "name": "TankSilhouette_and_Bar",
+        "type": "Bar Graph + Tank Boundary",
+        "bound_variable": "TankLevelPV_I16",
+        "data_type": "INT (16-bit, ANY_TO_INT(TankLevelPV))",
+        "role": "Tank silhouette & level bar graph indicator",
+        "quadrant": "Lower Left",
+        "legend": "Bar",
+        "range": "0.0 .. 100.0",
+        "color": "Red fill",
+        "style": "Graduated 0..100 bar graph inside tank silhouette"
+      },
+      {
+        "index": 4,
+        "name": "HighAlarmLamp",
+        "type": "Bit Lamp Indicator",
+        "bound_variable": "HI",
+        "data_type": "BOOL (%T3, TankLevelPV >= 65.0)",
+        "role": "High Level Alarm Status",
+        "quadrant": "Lower Right (left lamp)",
+        "legend": "HI"
+      },
+      {
+        "index": 5,
+        "name": "LowAlarmLamp",
+        "type": "Bit Lamp Indicator",
+        "bound_variable": "LO",
+        "data_type": "BOOL (%T4, TankLevelPV <= 35.0)",
+        "role": "Low Level Alarm Status",
+        "quadrant": "Lower Right (right lamp)",
+        "legend": "LO"
+      }
+    ]
+  },
+  "compilation_and_diagnostics": {
+    "error_check_command_id": 32826,
+    "compiler_version": "Compiler V12.0.200.82",
+    "fatal_errors_captured": 7,
+    "fatal_error_log_path": "artifacts/recovery/compile_fatals.txt",
+    "screen1_polish_policy": "NO_SCREEN1_POLISH (legacy Screen 1 errors intentionally retained)",
+    "non_fatal_modal_policy": "DISMISSED / REJECTED FAIL-CLOSED (no Yes clicked)"
+  },
+  "safety_directives": {
+    "hardware_plc_lockout": "ENFORCED (No physical COM/USB/CAN, commands 32827/33149 blocked)",
+    "single_gui_owner": "ENFORCED (PID 19488 exclusive on winsta0\\Default)",
+    "screen2_in_front": true,
+    "cscape_visible_unobstructed": true
+  },
+  "verification_artifacts": {
+    "proof_screenshot": "artifacts/screenshots/mcp_hmi_operator_screen2_proof.png",
+    "canvas_screenshot": "artifacts/screenshots/mcp_hmi_operator_screen2_canvas.png",
+    "audit_report_txt": "artifacts/recovery/mcp_hmi_operator_screen2.txt",
+    "evidence_json": "artifacts/recovery/mcp_hmi_operator_screen2_evidence.json",
+    "compile_fatals": "artifacts/recovery/compile_fatals.txt",
+    "live_gate_file": "artifacts/.cscape_live_gate.json"
+  }
+}

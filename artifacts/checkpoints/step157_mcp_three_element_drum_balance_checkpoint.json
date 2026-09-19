@@ -1,0 +1,18 @@
+{
+  "step": 157,
+  "name": "step157_mcp_three_element_drum_balance_checkpoint",
+  "status": "PASSED",
+  "timestamp_utc": "2026-09-06T03:03:00.021Z",
+  "cscape_pid": 16128,
+  "hwnd": "0x024903DC",
+  "pure_software_simulation": true,
+  "quiescent_balancing_verified": true,
+  "steam_surge_feedforward_verified": true,
+  "feedwater_loss_verified": true,
+  "dynamic_recovery_verified": true,
+  "isolation_interlock_verified": true,
+  "zero_straton_dependencies": true,
+  "hardware_lockout_enforced": true,
+  "no_cscape_gui_wm_command": true,
+  "checkpoint_sha256": "3db58a1d531090365304ee7627d03c24444ffc6fcff78d336c4b527403cbe49f"
+}

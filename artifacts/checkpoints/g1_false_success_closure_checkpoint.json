@@ -1,0 +1,116 @@
+{
+  "gate": "G1",
+  "name": "g1_false_success_closure_checkpoint",
+  "status": "success",
+  "timestamp_utc": "2026-09-06T10:55:00.000000+00:00",
+  "mandate": "MEGAPLAN v1.0 Gate G1: False-Success Gap Closure & Evidence-Gated Integrity",
+  "dual_root_parity": true,
+  "roots_verified": {
+    "horner_root": "C:\\HornerAI\\horner-cscape-mcp",
+    "user_root": "C:\\Users\\ArmandoSilva"
+  },
+  "live_cscape": {
+    "pid": 10892,
+    "hwnd": "0x01B005DC",
+    "status": "READY_FOR_TESTS",
+    "visible_on_desktop": "Default",
+    "project": "TankLevelClosedLoop.csp"
+  },
+  "screenshot_proof": {
+    "file": "artifacts/screenshots/live_cscape_tank_level_step178.png",
+    "size_bytes": 71589,
+    "sha256": "1e338571102531a95e4afe48b0fb7333a73278dccc71dc481a0aaf43aad8bc2b"
+  },
+  "audit_logs": {
+    "g1_visible_gui_proof.json": {
+      "size_bytes": 2515,
+      "sha256": "792a776bdcdbd878ce512d048667c067914cc60cc7bbcfcfd51a726484e63c00",
+      "identical_across_roots": true
+    },
+    "g1_matrix_audit.json": {
+      "size_bytes": 12386,
+      "sha256": "8504f78438f5c616629d8da83fab0d98ec05d6a46149d4c0821289a8b78a4169",
+      "identical_across_roots": true
+    },
+    "g1_export_audit.json": {
+      "size_bytes": 3806,
+      "sha256": "8a157853e294ed8d7195fa054467542244b321ca7414c40385a983574c547730",
+      "identical_across_roots": true
+    },
+    "g1_cfbf_audit.json": {
+      "size_bytes": 3976,
+      "sha256": "50821ebed2840902ab4c410e1499448c67d57d6922e6be0fbbec827813ebf087",
+      "identical_across_roots": true
+    },
+    "g1_compiler_audit.json": {
+      "size_bytes": 5228,
+      "sha256": "e753bd19622749b7233957d8b223fc159c052ae8c64a4c235ebb4944cfd5e5d1",
+      "identical_across_roots": true
+    },
+    "g1_modal_audit.json": {
+      "size_bytes": 3916,
+      "sha256": "a94754c00c4bdc6705f2de5e16af515c32f81d868ba6cda64fd08bff8657026d",
+      "identical_across_roots": true
+    },
+    "g1_security_parity_audit.json": {
+      "size_bytes": 11597,
+      "sha256": "7bcc64b0fdc73a176bf836a6a7feb3c833723b569a2a176a0b10b468a94d3d7f",
+      "identical_across_roots": true
+    },
+    "step178_visible_gui_proof.json": {
+      "size_bytes": 1648,
+      "sha256": "28f139eed89b6153c2a34ac62a03d187567f316dbb120d056448ed92363ceb80",
+      "identical_across_roots": true
+    },
+    "step178_security_audit.json": {
+      "size_bytes": 1748,
+      "sha256": "1ed2353449e45e46a8109075c6fd70f715244d0391dce832d5d2fa20d584aa8e",
+      "identical_across_roots": true
+    },
+    "step178_mcp_ccgt_hrsg.json": {
+      "size_bytes": 1784,
+      "sha256": "ecb6174ece860baec1e2ffbe97658f05d623c114545ae42e1b766796017ba23e",
+      "identical_across_roots": true
+    },
+    "step178_dual_root_sync_audit.json": {
+      "size_bytes": 5687,
+      "sha256": "6a6996383a0655024c339c11275c05b27b42e7fcbd40d37ee94129728bd88524",
+      "identical_across_roots": true
+    },
+    "g1_inventory_reconciliation.json": {
+      "size_bytes": 28906,
+      "sha256": "1fd9b90a93873689b1ef41b1c4efc29183bd86348186e705cce2c90965d66185",
+      "identical_across_roots": true
+    }
+  },
+  "test_suites_verified": {
+    "total_suites": 158,
+    "total_test_items": 2455,
+    "offline_suites": {
+      "count": 93,
+      "items": 2097,
+      "status": "success",
+      "security_lockout_tests": 417
+    },
+    "live_step_suites": {
+      "count": 65,
+      "items": 358,
+      "status": "inconclusive"
+    }
+  },
+  "false_successes_dismantled": [
+    "H01: Test suite inventory expanded to all 158 suites on disk",
+    "H02: Test items reconciled to exact pytest collection count of 2,455 items",
+    "H03: Live step tests classified as historical milestone / gate-dependent",
+    "H04: Modern Horner OCS families allowlisted in schemas (EXL10, XL10, XL+, Micro OCS, X2-X7)",
+    "H05: Legacy Straton targets deprecated & quarantined (T5RTI, T5SIMUL)",
+    "H06: Honest distinction between naked launch crash (11.4s at 0x0051a4cd) and supervisor keepalive (>7,200s)",
+    "H07: All proof artifacts in Section 7 cryptographically re-baselined with 100% hash/size match",
+    "H08: Dual-root parity strictly enforced across C:\\HornerAI\\horner-cscape-mcp and C:\\Users\\ArmandoSilva",
+    "H09: Eliminated fake VERIFIED_LIVE claims; reclassified live GUI as 'PARTIAL / SUPERVISOR-DEPENDENT', simulation as 'TESTED_MOCK', and safety as 'BLOCKED_SAFETY'",
+    "H10: Preamble and table partitioned into 93 Offline Suites (2,097 tests) vs 65 Live Step Suites (358 tests); eliminated fake 100% and VERIFIED status claims",
+    "H11: 417 dedicated security lockout tests certified passing with 0 failures",
+    "H12: ST-to-LD conversion documented as BLOCKED (Doc Only) in Cscape 10.2",
+    "H13: Fail-closed isolation enforced with zero live GUI disturbance and zero PLC downloads"
+  ]
+}

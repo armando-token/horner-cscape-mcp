@@ -1,0 +1,234 @@
+{
+  "audit_step": 104,
+  "name": "Green Hydrogen PEM Electrolyzer Gas-Liquid Separator Closed-Loop Audit",
+  "timestamp": "2026-09-05T12:12:25.320Z",
+  "completed_at": "2026-09-05T12:12:39.347Z",
+  "cscape_pid": 9472,
+  "cscape_hwnd": "0x9b08f8",
+  "total_cycles": 600,
+  "metrics": {
+    "max_phase1_level_error_pct": 0.0,
+    "mean_phase1_level_error_pct": 0.0,
+    "max_phase2_uncomp_drift_pct": 6.71,
+    "mean_phase2_uncomp_drift_pct": 4.93,
+    "max_phase3_comp_error_pct": 0.0,
+    "mean_phase3_comp_error_pct": 0.0,
+    "bubble_sieve_surge_rejection_pct": 100.0,
+    "phase4_final_level_error_pct": 0.0912,
+    "phase4_mean_tail_level_error_pct": 0.0563,
+    "h2_o2_contamination_trip_cycle": 501,
+    "low_low_trip_level_pct": 20.0
+  },
+  "trace_samples": [
+    {
+      "cycle": 0,
+      "phase": "PHASE_1_EQUILIBRIUM_SEPARATION",
+      "target_sp": 50.0,
+      "separator_level": 50.0,
+      "h2_water_flow": 35.0,
+      "contamination_trip": false,
+      "cv_pid": 50.0
+    },
+    {
+      "cycle": 50,
+      "phase": "PHASE_1_EQUILIBRIUM_SEPARATION",
+      "target_sp": 50.0,
+      "separator_level": 50.0,
+      "h2_water_flow": 35.0,
+      "contamination_trip": false,
+      "cv_pid": 50.0
+    },
+    {
+      "cycle": 100,
+      "phase": "PHASE_1_EQUILIBRIUM_SEPARATION",
+      "target_sp": 50.0,
+      "separator_level": 50.0,
+      "h2_water_flow": 35.0,
+      "contamination_trip": false,
+      "cv_pid": 50.0
+    },
+    {
+      "cycle": 101,
+      "phase": "PHASE_2_WIND_GUST_VOID_SWELL_UNCOMP",
+      "target_sp": 50.0,
+      "separator_level": 50.023,
+      "h2_water_flow": 35.4,
+      "contamination_trip": false,
+      "cv_pid": 50.0
+    },
+    {
+      "cycle": 125,
+      "phase": "PHASE_2_WIND_GUST_VOID_SWELL_UNCOMP",
+      "target_sp": 50.0,
+      "separator_level": 54.558,
+      "h2_water_flow": 43.8,
+      "contamination_trip": false,
+      "cv_pid": 42.88
+    },
+    {
+      "cycle": 150,
+      "phase": "PHASE_2_WIND_GUST_VOID_SWELL_UNCOMP",
+      "target_sp": 50.0,
+      "separator_level": 56.663,
+      "h2_water_flow": 52.5,
+      "contamination_trip": false,
+      "cv_pid": 26.81
+    },
+    {
+      "cycle": 175,
+      "phase": "PHASE_2_WIND_GUST_VOID_SWELL_UNCOMP",
+      "target_sp": 50.0,
+      "separator_level": 55.594,
+      "h2_water_flow": 61.2,
+      "contamination_trip": false,
+      "cv_pid": 15.29
+    },
+    {
+      "cycle": 200,
+      "phase": "PHASE_2_WIND_GUST_VOID_SWELL_UNCOMP",
+      "target_sp": 50.0,
+      "separator_level": 55.532,
+      "h2_water_flow": 70.0,
+      "contamination_trip": false,
+      "cv_pid": 4.75
+    },
+    {
+      "cycle": 201,
+      "phase": "PHASE_3_BUBBLE_SIEVE_DECOUPLING",
+      "target_sp": 50.0,
+      "separator_level": 50.0,
+      "h2_water_flow": 70.0,
+      "contamination_trip": false,
+      "cv_pid": 50.0
+    },
+    {
+      "cycle": 225,
+      "phase": "PHASE_3_BUBBLE_SIEVE_DECOUPLING",
+      "target_sp": 50.0,
+      "separator_level": 50.0,
+      "h2_water_flow": 70.0,
+      "contamination_trip": false,
+      "cv_pid": 50.0
+    },
+    {
+      "cycle": 250,
+      "phase": "PHASE_3_BUBBLE_SIEVE_DECOUPLING",
+      "target_sp": 50.0,
+      "separator_level": 50.0,
+      "h2_water_flow": 70.0,
+      "contamination_trip": false,
+      "cv_pid": 50.0
+    },
+    {
+      "cycle": 275,
+      "phase": "PHASE_3_BUBBLE_SIEVE_DECOUPLING",
+      "target_sp": 50.0,
+      "separator_level": 50.0,
+      "h2_water_flow": 70.0,
+      "contamination_trip": false,
+      "cv_pid": 50.0
+    },
+    {
+      "cycle": 300,
+      "phase": "PHASE_3_BUBBLE_SIEVE_DECOUPLING",
+      "target_sp": 50.0,
+      "separator_level": 50.0,
+      "h2_water_flow": 70.0,
+      "contamination_trip": false,
+      "cv_pid": 50.0
+    },
+    {
+      "cycle": 350,
+      "phase": "PHASE_3_BUBBLE_SIEVE_DECOUPLING",
+      "target_sp": 50.0,
+      "separator_level": 50.0,
+      "h2_water_flow": 70.0,
+      "contamination_trip": false,
+      "cv_pid": 50.0
+    },
+    {
+      "cycle": 351,
+      "phase": "PHASE_4_ELECTROLYZER_LOAD_STEP",
+      "target_sp": 62.0,
+      "separator_level": 51.008,
+      "h2_water_flow": 55.0,
+      "contamination_trip": false,
+      "cv_pid": 70.16
+    },
+    {
+      "cycle": 400,
+      "phase": "PHASE_4_ELECTROLYZER_LOAD_STEP",
+      "target_sp": 62.0,
+      "separator_level": 63.142,
+      "h2_water_flow": 55.0,
+      "contamination_trip": false,
+      "cv_pid": 44.23
+    },
+    {
+      "cycle": 450,
+      "phase": "PHASE_4_ELECTROLYZER_LOAD_STEP",
+      "target_sp": 62.0,
+      "separator_level": 62.189,
+      "h2_water_flow": 55.0,
+      "contamination_trip": false,
+      "cv_pid": 50.8
+    },
+    {
+      "cycle": 500,
+      "phase": "PHASE_4_ELECTROLYZER_LOAD_STEP",
+      "target_sp": 62.0,
+      "separator_level": 61.909,
+      "h2_water_flow": 55.0,
+      "contamination_trip": false,
+      "cv_pid": 49.96
+    },
+    {
+      "cycle": 501,
+      "phase": "PHASE_5_H2_O2_CONTAMINATION_TRIP",
+      "target_sp": 62.0,
+      "separator_level": 61.909,
+      "h2_water_flow": 20.0,
+      "contamination_trip": true,
+      "cv_pid": 49.97
+    },
+    {
+      "cycle": 520,
+      "phase": "PHASE_5_H2_O2_CONTAMINATION_TRIP",
+      "target_sp": 62.0,
+      "separator_level": 61.909,
+      "h2_water_flow": 20.0,
+      "contamination_trip": true,
+      "cv_pid": 50.15
+    },
+    {
+      "cycle": 550,
+      "phase": "PHASE_5_H2_O2_CONTAMINATION_TRIP",
+      "target_sp": 62.0,
+      "separator_level": 61.909,
+      "h2_water_flow": 20.0,
+      "contamination_trip": true,
+      "cv_pid": 50.37
+    },
+    {
+      "cycle": 599,
+      "phase": "PHASE_5_H2_O2_CONTAMINATION_TRIP",
+      "target_sp": 62.0,
+      "separator_level": 61.909,
+      "h2_water_flow": 20.0,
+      "contamination_trip": true,
+      "cv_pid": 50.73
+    }
+  ],
+  "cscape_health": {
+    "healthy": true,
+    "pid": 9472,
+    "hwnd": "0x9b08f8",
+    "desktop": "Default",
+    "is_hung": false,
+    "wm_null_ping_ok": true,
+    "working_set_mb": 226.57,
+    "num_threads": 15,
+    "uptime_sec": 288.07
+  },
+  "download_lockout_verified": true
+}

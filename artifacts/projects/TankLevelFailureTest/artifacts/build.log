@@ -1,0 +1,15 @@
+=== Horner Cscape 10.2 Compile Pass: TankLevelFailureTest ===
+Clean Build: True
+Mode: IEC 61131-3 Structured Text (Advanced Ladder Excluded)
+Timestamp: 2026-09-04T14:07:41.512229
+----------------------------------------------------------------
+Compiling POU: TankLevelFailureTest (144 bytes)...
+  TankLevelFailureTest.st(6,28): error ST_SYNTAX_ERROR: Syntax error at line 6, col 28: Unexpected token in expression: SEMICOLON (';')
+Compiling POU: TankLevelValid (227 bytes)...
+  POU 'TankLevelValid' parsed and validated cleanly.
+----------------------------------------------------------------
+Build Result: FAILED
+Errors: 1, Warnings: 0
+Estimated Code Size: 1395 bytes, Data Size: 512 bytes
+Duration: 0.075s
+Hardware Lockout: ENFORCED (Zero PLC communication / No download)

@@ -1,0 +1,149 @@
+{
+  "step": 23,
+  "title": "Closed-Loop Dynamic Noise Immunity & Wave Rejection Audit",
+  "timestamp_utc_start": "2026-09-05T06:54:05.072Z",
+  "timestamp_utc_end": "2026-09-05T06:54:11.638Z",
+  "status": "VERIFIED_LIVE",
+  "cscape_process": {
+    "healthy": true,
+    "pid": 7616,
+    "is_hung": false,
+    "working_set_mb": 127.02,
+    "threads": 15,
+    "gate_status": "READY_FOR_TESTS",
+    "window_title": "Cscape - Logged In : \"armando@controlnautas.com\" - [TankLevelClosedLoop.csp]"
+  },
+  "simulation_summary": {
+    "total_cycles": 500,
+    "duration_seconds": 0.344,
+    "throughput_cycles_per_sec": 1453.64
+  },
+  "noise_rejection_metrics": {
+    "noise_amplitude_pct": 3.0,
+    "mean_true_pv_error_pct": 0.2833,
+    "max_true_pv_error_pct": 0.623,
+    "peak_derivative_term_pct": 3.5438,
+    "cv_standard_deviation_pct": 3.2143,
+    "phase_3_final_settled_error_pct": 0.0015,
+    "noise_immunity_verified": true,
+    "derivative_bounded_verified": true,
+    "recovery_settling_verified": true
+  },
+  "safety_audit": {
+    "physical_plc_download_blocked": true,
+    "zero_physical_hardware_touched": true,
+    "hardware_lockout_enforced": true
+  },
+  "sample_trace": [
+    {
+      "cycle": 0,
+      "phase": "PHASE_1_QUIESCENT_HOLD",
+      "sp": 60.0,
+      "pv_true": 60.0,
+      "pv_sensed_noisy": 60.0,
+      "noise_component": 0.0,
+      "cv": 60.0,
+      "deriv": 0.0,
+      "error_true": 0.0
+    },
+    {
+      "cycle": 50,
+      "phase": "PHASE_1_QUIESCENT_HOLD",
+      "sp": 60.0,
+      "pv_true": 60.0,
+      "pv_sensed_noisy": 60.0,
+      "noise_component": 0.0,
+      "cv": 60.0,
+      "deriv": 0.0,
+      "error_true": 0.0
+    },
+    {
+      "cycle": 100,
+      "phase": "PHASE_2_NOISE_INJECTION",
+      "sp": 60.0,
+      "pv_true": 59.9105,
+      "pv_sensed_noisy": 60.4912,
+      "noise_component": 0.4912,
+      "cv": 58.2092,
+      "deriv": -0.9812,
+      "error_true": 0.0
+    },
+    {
+      "cycle": 150,
+      "phase": "PHASE_2_NOISE_INJECTION",
+      "sp": 60.0,
+      "pv_true": 59.7585,
+      "pv_sensed_noisy": 58.8355,
+      "noise_component": -0.676,
+      "cv": 64.4523,
+      "deriv": 3.3625,
+      "error_true": 0.4885
+    },
+    {
+      "cycle": 200,
+      "phase": "PHASE_2_NOISE_INJECTION",
+      "sp": 60.0,
+      "pv_true": 60.116,
+      "pv_sensed_noisy": 59.0764,
+      "noise_component": -0.9917,
+      "cv": 61.0264,
+      "deriv": -0.475,
+      "error_true": 0.0681
+    },
+    {
+      "cycle": 250,
+      "phase": "PHASE_2_NOISE_INJECTION",
+      "sp": 60.0,
+      "pv_true": 60.4419,
+      "pv_sensed_noisy": 59.6662,
+      "noise_component": -0.9023,
+      "cv": 58.0372,
+      "deriv": -3.2687,
+      "error_true": 0.5685
+    },
+    {
+      "cycle": 300,
+      "phase": "PHASE_3_STEP_CHANGE_CLEAN",
+      "sp": 40.0,
+      "pv_true": 57.2707,
+      "pv_sensed_noisy": 60.285,
+      "noise_component": 0.0,
+      "cv": 0.0,
+      "deriv": -40.325,
+      "error_true": 20.285
+    },
+    {
+      "cycle": 350,
+      "phase": "PHASE_3_STEP_CHANGE_CLEAN",
+      "sp": 40.0,
+      "pv_true": 39.1051,
+      "pv_sensed_noisy": 39.0459,
+      "noise_component": 0.0,
+      "cv": 40.2294,
+      "deriv": -0.1187,
+      "error_true": 0.9541
+    },
+    {
+      "cycle": 400,
+      "phase": "PHASE_3_STEP_CHANGE_CLEAN",
+      "sp": 40.0,
+      "pv_true": 40.0449,
+      "pv_sensed_noisy": 40.0473,
+      "noise_component": 0.0,
+      "cv": 39.9991,
+      "deriv": 0.0063,
+      "error_true": 0.0473
+    },
+    {
+      "cycle": 450,
+      "phase": "PHASE_3_STEP_CHANGE_CLEAN",
+      "sp": 40.0,
+      "pv_true": 39.9987,
+      "pv_sensed_noisy": 39.9982,
+      "noise_component": 0.0,
+      "cv": 40.0084,
+      "deriv": 0.0063,
+      "error_true": 0.0018
+    }
+  ]
+}

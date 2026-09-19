@@ -1,0 +1,472 @@
+{
+  "step": 134,
+  "title": "Full-Project Multi-POU AST Mutation & Integrity Test on TankLevelClosedLoop POUs",
+  "timestamp_utc": "2026-09-05T17:25:01.154733+00:00",
+  "status": "PASSED",
+  "project": "TankLevelClosedLoop",
+  "safety_mandates": {
+    "target_pid": 14580,
+    "cscape_pid_healthy": true,
+    "hardware_lockout_enforced": true,
+    "lockout_command_id": 32827,
+    "zero_straton_dependencies": true
+  },
+  "summary": {
+    "pous_evaluated_count": 5,
+    "total_ast_nodes": 243,
+    "total_valid_mutations": 11,
+    "all_valid_mutations_passed": true,
+    "total_syntax_faults": 30,
+    "all_syntax_faults_rejected": true,
+    "sha256_integrity_preserved": true
+  },
+  "pous": [
+    {
+      "name": "TankLevelClosedLoop.st",
+      "path": "C:\\HornerAI\\horner-cscape-mcp\\artifacts\\projects\\TankLevelClosedLoop\\pous\\TankLevelClosedLoop.st",
+      "line_count": 96,
+      "ast_node_count": 217,
+      "ast_node_breakdown": {
+        "AssignmentNode": 28,
+        "BinaryOpNode": 29,
+        "FunctionCallNode": 2,
+        "IfNode": 8,
+        "LiteralNode": 53,
+        "ProgramNode": 1,
+        "UnaryOpNode": 1,
+        "VarBlockNode": 1,
+        "VarDeclNode": 24,
+        "VariableNode": 70
+      },
+      "parse_time_ms": 5.421,
+      "sha256_baseline": "7fd73e139c3c6475dd0f4c84351c339a0c66b96f2b160f452fc2564017de7ea9",
+      "roundtrip_verified": true,
+      "valid_mutations": [
+        {
+          "mutation_id": "M1_SETPOINT_INITIAL_VAL",
+          "type": "INITIAL_VALUE_MUTATION",
+          "target": "Setpoint : REAL := 75.0",
+          "status": "PASSED",
+          "reparsed_verified": true
+        },
+        {
+          "mutation_id": "M2_BODY_STMT_INJECTION",
+          "type": "STATEMENT_INJECTION",
+          "target": "CycleCounter := CycleCounter + 5;",
+          "status": "PASSED",
+          "reparsed_verified": true
+        },
+        {
+          "mutation_id": "M3_BINARY_OP_MUTATION",
+          "type": "EXPRESSION_OPERATOR_MUTATION",
+          "target": "Error := Setpoint + TankLevelPV",
+          "status": "PASSED",
+          "reparsed_verified": true
+        }
+      ],
+      "syntax_fault_mutations": [
+        {
+          "fault_id": "F1_UNCLOSED_VAR_BLOCK",
+          "description": "Remove END_VAR keyword to induce unclosed variable block",
+          "status": "PASSED_FAIL_CLOSED_REJECTION",
+          "error_type": "ParseError",
+          "error_message": "Syntax error at line 29, col 14: Expected ':' after variable name(s)",
+          "fail_closed_verified": true
+        },
+        {
+          "fault_id": "F2_ILLEGAL_OPERATOR_TOKEN",
+          "description": "Inject illegal character '@' to induce lexer rejection",
+          "status": "PASSED_FAIL_CLOSED_REJECTION",
+          "error_type": "LexerError",
+          "error_message": "Unexpected character '@' at line 1, col 9",
+          "fail_closed_verified": true
+        },
+        {
+          "fault_id": "F3_MISSING_ASSIGNMENT_OPERAND",
+          "description": "Corrupt assignment RHS operand to missing expression ':= ;'",
+          "status": "PASSED_FAIL_CLOSED_REJECTION",
+          "error_type": "ParseError",
+          "error_message": "Syntax error at line 3, col 28: Unexpected token in expression: SEMICOLON (';')",
+          "fail_closed_verified": true
+        },
+        {
+          "fault_id": "F4_UNCLOSED_IF_BLOCK",
+          "description": "Inject unclosed IF block without END_IF",
+          "status": "PASSED_FAIL_CLOSED_REJECTION",
+          "error_type": "ParseError",
+          "error_message": "Syntax error at line 97, col 1: Unexpected token in statement: END_PROGRAM ('END_PROGRAM')",
+          "fail_closed_verified": true
+        },
+        {
+          "fault_id": "F5_POU_HEADER_TRAILING_SEMICOLON",
+          "description": "Inject illegal trailing semicolon after POU header (IEC 61131-3 strictly forbids)",
+          "status": "PASSED_FAIL_CLOSED_REJECTION",
+          "error_type": "ParseError",
+          "error_message": "Syntax error at line 1, col 28: IEC 61131-3 syntax error: PROGRAM header 'TankLevelClosedLoop' must not have a trailing semicolon",
+          "fail_closed_verified": true
+        },
+        {
+          "fault_id": "F6_UNCLOSED_POU",
+          "description": "Remove closing END_PROGRAM keyword to induce unclosed POU",
+          "status": "PASSED_FAIL_CLOSED_REJECTION",
+          "error_type": "ParseError",
+          "error_message": "Syntax error at line 97, col 1: Expected END_PROGRAM to close PROGRAM 'TankLevelClosedLoop'",
+          "fail_closed_verified": true
+        }
+      ],
+      "valid_mutations_count": 3,
+      "syntax_faults_count": 6,
+      "sha256_post": "7fd73e139c3c6475dd0f4c84351c339a0c66b96f2b160f452fc2564017de7ea9",
+      "integrity_preserved": true
+    },
+    {
+      "name": "AlarmMonitor.st",
+      "path": "C:\\HornerAI\\horner-cscape-mcp\\artifacts\\projects\\TankLevelClosedLoop\\pous\\AlarmMonitor.st",
+      "line_count": 4,
+      "ast_node_count": 6,
+      "ast_node_breakdown": {
+        "AssignmentNode": 1,
+        "LiteralNode": 1,
+        "ProgramNode": 1,
+        "VarBlockNode": 1,
+        "VarDeclNode": 1,
+        "VariableNode": 1
+      },
+      "parse_time_ms": 0.282,
+      "sha256_baseline": "3f64b213ab9977a3b1fd53511077b24c96f0568ad6c386acdfa8107debaa7d23",
+      "roundtrip_verified": true,
+      "valid_mutations": [
+        {
+          "mutation_id": "M1_ALARM_ASSIGNMENT_MUTATION",
+          "type": "EXPRESSION_LITERAL_MUTATION",
+          "target": "trip := TRUE",
+          "status": "PASSED",
+          "reparsed_verified": true
+        },
+        {
+          "mutation_id": "M2_ALARM_STMT_INJECTION",
+          "type": "STATEMENT_INJECTION",
+          "target": "trip := NOT trip;",
+          "status": "PASSED",
+          "reparsed_verified": true
+        }
+      ],
+      "syntax_fault_mutations": [
+        {
+          "fault_id": "F1_UNCLOSED_VAR_BLOCK",
+          "description": "Remove END_VAR keyword to induce unclosed variable block",
+          "status": "PASSED_FAIL_CLOSED_REJECTION",
+          "error_type": "ParseError",
+          "error_message": "Syntax error at line 3, col 6: Expected ':' after variable name(s)",
+          "fail_closed_verified": true
+        },
+        {
+          "fault_id": "F2_ILLEGAL_OPERATOR_TOKEN",
+          "description": "Inject illegal character '@' to induce lexer rejection",
+          "status": "PASSED_FAIL_CLOSED_REJECTION",
+          "error_type": "LexerError",
+          "error_message": "Unexpected character '@' at line 1, col 9",
+          "fail_closed_verified": true
+        },
+        {
+          "fault_id": "F3_MISSING_ASSIGNMENT_OPERAND",
+          "description": "Corrupt assignment RHS operand to missing expression ':= ;'",
+          "status": "PASSED_FAIL_CLOSED_REJECTION",
+          "error_type": "ParseError",
+          "error_message": "Syntax error at line 3, col 9: Unexpected token in expression: SEMICOLON (';')",
+          "fail_closed_verified": true
+        },
+        {
+          "fault_id": "F4_UNCLOSED_IF_BLOCK",
+          "description": "Inject unclosed IF block without END_IF",
+          "status": "PASSED_FAIL_CLOSED_REJECTION",
+          "error_type": "ParseError",
+          "error_message": "Syntax error at line 5, col 1: Unexpected token in statement: END_PROGRAM ('END_PROGRAM')",
+          "fail_closed_verified": true
+        },
+        {
+          "fault_id": "F5_POU_HEADER_TRAILING_SEMICOLON",
+          "description": "Inject illegal trailing semicolon after POU header (IEC 61131-3 strictly forbids)",
+          "status": "PASSED_FAIL_CLOSED_REJECTION",
+          "error_type": "ParseError",
+          "error_message": "Syntax error at line 1, col 21: IEC 61131-3 syntax error: PROGRAM header 'AlarmMonitor' must not have a trailing semicolon",
+          "fail_closed_verified": true
+        },
+        {
+          "fault_id": "F6_UNCLOSED_POU",
+          "description": "Remove closing END_PROGRAM keyword to induce unclosed POU",
+          "status": "PASSED_FAIL_CLOSED_REJECTION",
+          "error_type": "ParseError",
+          "error_message": "Syntax error at line 4, col 1: Expected END_PROGRAM to close PROGRAM 'AlarmMonitor'",
+          "fail_closed_verified": true
+        }
+      ],
+      "valid_mutations_count": 2,
+      "syntax_faults_count": 6,
+      "sha256_post": "3f64b213ab9977a3b1fd53511077b24c96f0568ad6c386acdfa8107debaa7d23",
+      "integrity_preserved": true
+    },
+    {
+      "name": "BrokenPOU.st",
+      "path": "C:\\HornerAI\\horner-cscape-mcp\\artifacts\\projects\\TankLevelClosedLoop\\pous\\BrokenPOU.st",
+      "line_count": 7,
+      "ast_node_count": 8,
+      "ast_node_breakdown": {
+        "AssignmentNode": 1,
+        "BinaryOpNode": 1,
+        "LiteralNode": 2,
+        "ProgramNode": 1,
+        "VarBlockNode": 1,
+        "VarDeclNode": 1,
+        "VariableNode": 1
+      },
+      "parse_time_ms": 0.191,
+      "sha256_baseline": "956503f06346b83b13f12b245fb1026aad8e46c60061d91a77701b7d50636ecd",
+      "roundtrip_verified": true,
+      "valid_mutations": [
+        {
+          "mutation_id": "M1_BROKENPOU_OP_MUTATION",
+          "type": "BINARY_OP_MUTATION",
+          "target": "RawVal := 10 * 5",
+          "status": "PASSED",
+          "reparsed_verified": true
+        },
+        {
+          "mutation_id": "M2_BROKENPOU_VAR_DECL_INJECTION",
+          "type": "VARIABLE_DECLARATION_INJECTION",
+          "target": "TempVar : REAL := 3.14;",
+          "status": "PASSED",
+          "reparsed_verified": true
+        }
+      ],
+      "syntax_fault_mutations": [
+        {
+          "fault_id": "F1_UNCLOSED_VAR_BLOCK",
+          "description": "Remove END_VAR keyword to induce unclosed variable block",
+          "status": "PASSED_FAIL_CLOSED_REJECTION",
+          "error_type": "ParseError",
+          "error_message": "Syntax error at line 6, col 8: Expected ':' after variable name(s)",
+          "fail_closed_verified": true
+        },
+        {
+          "fault_id": "F2_ILLEGAL_OPERATOR_TOKEN",
+          "description": "Inject illegal character '@' to induce lexer rejection",
+          "status": "PASSED_FAIL_CLOSED_REJECTION",
+          "error_type": "LexerError",
+          "error_message": "Unexpected character '@' at line 1, col 9",
+          "fail_closed_verified": true
+        },
+        {
+          "fault_id": "F3_MISSING_ASSIGNMENT_OPERAND",
+          "description": "Corrupt assignment RHS operand to missing expression ':= ;'",
+          "status": "PASSED_FAIL_CLOSED_REJECTION",
+          "error_type": "ParseError",
+          "error_message": "Syntax error at line 6, col 11: Unexpected token in expression: SEMICOLON (';')",
+          "fail_closed_verified": true
+        },
+        {
+          "fault_id": "F4_UNCLOSED_IF_BLOCK",
+          "description": "Inject unclosed IF block without END_IF",
+          "status": "PASSED_FAIL_CLOSED_REJECTION",
+          "error_type": "ParseError",
+          "error_message": "Syntax error at line 8, col 1: Unexpected token in statement: END_PROGRAM ('END_PROGRAM')",
+          "fail_closed_verified": true
+        },
+        {
+          "fault_id": "F5_POU_HEADER_TRAILING_SEMICOLON",
+          "description": "Inject illegal trailing semicolon after POU header (IEC 61131-3 strictly forbids)",
+          "status": "PASSED_FAIL_CLOSED_REJECTION",
+          "error_type": "ParseError",
+          "error_message": "Syntax error at line 1, col 18: IEC 61131-3 syntax error: PROGRAM header 'BrokenPOU' must not have a trailing semicolon",
+          "fail_closed_verified": true
+        },
+        {
+          "fault_id": "F6_UNCLOSED_POU",
+          "description": "Remove closing END_PROGRAM keyword to induce unclosed POU",
+          "status": "PASSED_FAIL_CLOSED_REJECTION",
+          "error_type": "ParseError",
+          "error_message": "Syntax error at line 8, col 1: Expected END_PROGRAM to close PROGRAM 'BrokenPOU'",
+          "fail_closed_verified": true
+        }
+      ],
+      "valid_mutations_count": 2,
+      "syntax_faults_count": 6,
+      "sha256_post": "956503f06346b83b13f12b245fb1026aad8e46c60061d91a77701b7d50636ecd",
+      "integrity_preserved": true
+    },
+    {
+      "name": "AuxPumpControl.st",
+      "path": "C:\\HornerAI\\horner-cscape-mcp\\artifacts\\projects\\TankLevelClosedLoop\\pous\\AuxPumpControl.st",
+      "line_count": 4,
+      "ast_node_count": 6,
+      "ast_node_breakdown": {
+        "AssignmentNode": 1,
+        "LiteralNode": 1,
+        "ProgramNode": 1,
+        "VarBlockNode": 1,
+        "VarDeclNode": 1,
+        "VariableNode": 1
+      },
+      "parse_time_ms": 0.167,
+      "sha256_baseline": "787b117e817c5583f99de93dc67a6301b564bc7575c3720a6e8284a16e605251",
+      "roundtrip_verified": true,
+      "valid_mutations": [
+        {
+          "mutation_id": "M1_AUXPUMP_INITIAL_VAL_INJECTION",
+          "type": "INITIAL_VALUE_MUTATION",
+          "target": "cmd : BOOL := TRUE;",
+          "status": "PASSED",
+          "reparsed_verified": true
+        },
+        {
+          "mutation_id": "M2_AUXPUMP_ASSIGNMENT_MUTATION",
+          "type": "LITERAL_MUTATION",
+          "target": "cmd := FALSE;",
+          "status": "PASSED",
+          "reparsed_verified": true
+        }
+      ],
+      "syntax_fault_mutations": [
+        {
+          "fault_id": "F1_UNCLOSED_VAR_BLOCK",
+          "description": "Remove END_VAR keyword to induce unclosed variable block",
+          "status": "PASSED_FAIL_CLOSED_REJECTION",
+          "error_type": "ParseError",
+          "error_message": "Syntax error at line 3, col 5: Expected ':' after variable name(s)",
+          "fail_closed_verified": true
+        },
+        {
+          "fault_id": "F2_ILLEGAL_OPERATOR_TOKEN",
+          "description": "Inject illegal character '@' to induce lexer rejection",
+          "status": "PASSED_FAIL_CLOSED_REJECTION",
+          "error_type": "LexerError",
+          "error_message": "Unexpected character '@' at line 1, col 9",
+          "fail_closed_verified": true
+        },
+        {
+          "fault_id": "F3_MISSING_ASSIGNMENT_OPERAND",
+          "description": "Corrupt assignment RHS operand to missing expression ':= ;'",
+          "status": "PASSED_FAIL_CLOSED_REJECTION",
+          "error_type": "ParseError",
+          "error_message": "Syntax error at line 3, col 8: Unexpected token in expression: SEMICOLON (';')",
+          "fail_closed_verified": true
+        },
+        {
+          "fault_id": "F4_UNCLOSED_IF_BLOCK",
+          "description": "Inject unclosed IF block without END_IF",
+          "status": "PASSED_FAIL_CLOSED_REJECTION",
+          "error_type": "ParseError",
+          "error_message": "Syntax error at line 5, col 1: Unexpected token in statement: END_PROGRAM ('END_PROGRAM')",
+          "fail_closed_verified": true
+        },
+        {
+          "fault_id": "F5_POU_HEADER_TRAILING_SEMICOLON",
+          "description": "Inject illegal trailing semicolon after POU header (IEC 61131-3 strictly forbids)",
+          "status": "PASSED_FAIL_CLOSED_REJECTION",
+          "error_type": "ParseError",
+          "error_message": "Syntax error at line 1, col 23: IEC 61131-3 syntax error: PROGRAM header 'AuxPumpControl' must not have a trailing semicolon",
+          "fail_closed_verified": true
+        },
+        {
+          "fault_id": "F6_UNCLOSED_POU",
+          "description": "Remove closing END_PROGRAM keyword to induce unclosed POU",
+          "status": "PASSED_FAIL_CLOSED_REJECTION",
+          "error_type": "ParseError",
+          "error_message": "Syntax error at line 4, col 1: Expected END_PROGRAM to close PROGRAM 'AuxPumpControl'",
+          "fail_closed_verified": true
+        }
+      ],
+      "valid_mutations_count": 2,
+      "syntax_faults_count": 6,
+      "sha256_post": "787b117e817c5583f99de93dc67a6301b564bc7575c3720a6e8284a16e605251",
+      "integrity_preserved": true
+    },
+    {
+      "name": "SafetyInterlockST.st",
+      "path": "C:\\HornerAI\\horner-cscape-mcp\\artifacts\\projects\\TankLevelClosedLoop\\pous\\SafetyInterlockST.st",
+      "line_count": 4,
+      "ast_node_count": 6,
+      "ast_node_breakdown": {
+        "AssignmentNode": 1,
+        "LiteralNode": 1,
+        "ProgramNode": 1,
+        "VarBlockNode": 1,
+        "VarDeclNode": 1,
+        "VariableNode": 1
+      },
+      "parse_time_ms": 0.164,
+      "sha256_baseline": "9bc3b5e7e752bed1f514c8c822224173d078328fa7d7af485af040f6299c486e",
+      "roundtrip_verified": true,
+      "valid_mutations": [
+        {
+          "mutation_id": "M1_SAFETY_ASSIGNMENT_MUTATION",
+          "type": "LITERAL_MUTATION",
+          "target": "x := 42;",
+          "status": "PASSED",
+          "reparsed_verified": true
+        },
+        {
+          "mutation_id": "M2_SAFETY_STMT_INJECTION",
+          "type": "STATEMENT_INJECTION",
+          "target": "x := x * 2;",
+          "status": "PASSED",
+          "reparsed_verified": true
+        }
+      ],
+      "syntax_fault_mutations": [
+        {
+          "fault_id": "F1_UNCLOSED_VAR_BLOCK",
+          "description": "Remove END_VAR keyword to induce unclosed variable block",
+          "status": "PASSED_FAIL_CLOSED_REJECTION",
+          "error_type": "ParseError",
+          "error_message": "Syntax error at line 3, col 3: Expected ':' after variable name(s)",
+          "fail_closed_verified": true
+        },
+        {
+          "fault_id": "F2_ILLEGAL_OPERATOR_TOKEN",
+          "description": "Inject illegal character '@' to induce lexer rejection",
+          "status": "PASSED_FAIL_CLOSED_REJECTION",
+          "error_type": "LexerError",
+          "error_message": "Unexpected character '@' at line 1, col 9",
+          "fail_closed_verified": true
+        },
+        {
+          "fault_id": "F3_MISSING_ASSIGNMENT_OPERAND",
+          "description": "Corrupt assignment RHS operand to missing expression ':= ;'",
+          "status": "PASSED_FAIL_CLOSED_REJECTION",
+          "error_type": "ParseError",
+          "error_message": "Syntax error at line 3, col 6: Unexpected token in expression: SEMICOLON (';')",
+          "fail_closed_verified": true
+        },
+        {
+          "fault_id": "F4_UNCLOSED_IF_BLOCK",
+          "description": "Inject unclosed IF block without END_IF",
+          "status": "PASSED_FAIL_CLOSED_REJECTION",
+          "error_type": "ParseError",
+          "error_message": "Syntax error at line 5, col 1: Unexpected token in statement: END_PROGRAM ('END_PROGRAM')",
+          "fail_closed_verified": true
+        },
+        {
+          "fault_id": "F5_POU_HEADER_TRAILING_SEMICOLON",
+          "description": "Inject illegal trailing semicolon after POU header (IEC 61131-3 strictly forbids)",
+          "status": "PASSED_FAIL_CLOSED_REJECTION",
+          "error_type": "ParseError",
+          "error_message": "Syntax error at line 1, col 26: IEC 61131-3 syntax error: PROGRAM header 'SafetyInterlockST' must not have a trailing semicolon",
+          "fail_closed_verified": true
+        },
+        {
+          "fault_id": "F6_UNCLOSED_POU",
+          "description": "Remove closing END_PROGRAM keyword to induce unclosed POU",
+          "status": "PASSED_FAIL_CLOSED_REJECTION",
+          "error_type": "ParseError",
+          "error_message": "Syntax error at line 4, col 1: Expected END_PROGRAM to close PROGRAM 'SafetyInterlockST'",
+          "fail_closed_verified": true
+        }
+      ],
+      "valid_mutations_count": 2,
+      "syntax_faults_count": 6,
+      "sha256_post": "9bc3b5e7e752bed1f514c8c822224173d078328fa7d7af485af040f6299c486e",
+      "integrity_preserved": true
+    }
+  ]
+}

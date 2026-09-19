@@ -1,0 +1,11 @@
+﻿MANUAL_GROK exploration (GUI only; MCP did not perform these steps)
+manual_copy_path=C:\HornerAI\horner-cscape-mcp\fixtures\native\p1_manual_base\TankLevel_P1_MANUAL.csp
+language_path=IEC/ST Structured Text; STBlock1 visible and opened; ladder not used.
+vars=yes — Program Variables > Global Variables visible; Add Variable worked; NewVar and NewVar1 BOOL persisted after reopen.
+logic=yes — STBlock1 editor opened with existing IEC/ST logic.
+hmi=yes — User Interface > Main Screen > Screen (1) opened; one Fixed Objects > Rectangle placed.
+compile=yes — Home > Error Check reported no errors or warnings; output showed no error detected; target XL4 Prime - CsCAN.
+save=yes — saved with Cscape toolbar Save.
+reopen=yes — closed active copy from application menu and reopened; title showed TankLevel_P1_MANUAL.csp and project tree/STBlock1/vars reappeared.
+dialogs=Save As path-not-exist observed; Open dialog; Error Check results dialog.
+original=TankLevelClosedLoop remained loaded/recoverable; no PLC download.

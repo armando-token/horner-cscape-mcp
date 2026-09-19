@@ -1,0 +1,524 @@
+{
+  "step": 186,
+  "name": "step186_pure_st_audit",
+  "status": "success",
+  "timestamp_utc": "2026-09-06T22:32:44.017239+00:00",
+  "mandate": "PLC / IEC 61131-3 Pure ST Audit for FB_AnalogScalingOutOfBounds",
+  "execution_duration_sec": 0.4264,
+  "dual_root_parity": true,
+  "cscape_gui_mode": "headless_static_analysis_only",
+  "target_pou": {
+    "name": "FB_AnalogScalingOutOfBounds",
+    "type": "FUNCTION_BLOCK",
+    "relative_path": "examples/st_applications/analog_scaling_bounds.st",
+    "sha256": "9e130a26c3f8cc9dff9370a3fc99c29d4c7029234d6af9c58ac5f6698a96018d",
+    "expected_sha256": "9e130a26c3f8cc9dff9370a3fc99c29d4c7029234d6af9c58ac5f6698a96018d",
+    "byte_size": 5392,
+    "lines": 120
+  },
+  "tasks": {
+    "task1_file_existence_and_parity": {
+      "status": "success",
+      "horner_file": "C:\\HornerAI\\horner-cscape-mcp\\examples\\st_applications\\analog_scaling_bounds.st",
+      "user_file": "C:\\Users\\ArmandoSilva\\examples\\st_applications\\analog_scaling_bounds.st",
+      "horner_sha256": "9e130a26c3f8cc9dff9370a3fc99c29d4c7029234d6af9c58ac5f6698a96018d",
+      "user_sha256": "9e130a26c3f8cc9dff9370a3fc99c29d4c7029234d6af9c58ac5f6698a96018d",
+      "expected_sha256": "9e130a26c3f8cc9dff9370a3fc99c29d4c7029234d6af9c58ac5f6698a96018d",
+      "sha_match": true,
+      "dual_root_parity": true,
+      "diff_line_count": 0,
+      "diff": "",
+      "file_size_bytes": 5392,
+      "duration_sec": 0.0006585000082850456
+    },
+    "task2_ladder_construct_scan_and_fail_closed": {
+      "status": "success",
+      "clean_scan_artifacts_count": 0,
+      "clean_scan_artifacts": [],
+      "clean_validator_errors": [],
+      "clean_st_parser_ladder_errors": [],
+      "mutation_tests_total": 12,
+      "mutation_tests_fail_closed": 12,
+      "mutation_results": [
+        {
+          "construct_name": "Normally Open Contact",
+          "construct_syntax": "---[ ]---",
+          "guard_rejected": true,
+          "validator_rejected": true,
+          "parser_rejected": true,
+          "mcp_rejected": true,
+          "fail_closed": true
+        },
+        {
+          "construct_name": "Normally Closed Contact",
+          "construct_syntax": "---[/]---",
+          "guard_rejected": true,
+          "validator_rejected": true,
+          "parser_rejected": true,
+          "mcp_rejected": true,
+          "fail_closed": true
+        },
+        {
+          "construct_name": "Spaced Inverted Contact",
+          "construct_syntax": "---[ / ]---",
+          "guard_rejected": true,
+          "validator_rejected": true,
+          "parser_rejected": true,
+          "mcp_rejected": true,
+          "fail_closed": true
+        },
+        {
+          "construct_name": "Normal Output Coil",
+          "construct_syntax": "---( )---",
+          "guard_rejected": true,
+          "validator_rejected": true,
+          "parser_rejected": true,
+          "mcp_rejected": true,
+          "fail_closed": true
+        },
+        {
+          "construct_name": "Set Latch Coil",
+          "construct_syntax": "---(S)---",
+          "guard_rejected": true,
+          "validator_rejected": true,
+          "parser_rejected": true,
+          "mcp_rejected": true,
+          "fail_closed": true
+        },
+        {
+          "construct_name": "Reset Unlatch Coil",
+          "construct_syntax": "---(R)---",
+          "guard_rejected": true,
+          "validator_rejected": true,
+          "parser_rejected": true,
+          "mcp_rejected": true,
+          "fail_closed": true
+        },
+        {
+          "construct_name": "Rung Header Marker",
+          "construct_syntax": "RUNG 1: Analog Sensor Scaling Bounds",
+          "guard_rejected": true,
+          "validator_rejected": true,
+          "parser_rejected": true,
+          "mcp_rejected": true,
+          "fail_closed": true
+        },
+        {
+          "construct_name": "Rung Terminator Marker",
+          "construct_syntax": "END_RUNG",
+          "guard_rejected": true,
+          "validator_rejected": true,
+          "parser_rejected": true,
+          "mcp_rejected": true,
+          "fail_closed": true
+        },
+        {
+          "construct_name": "Ladder Network Section",
+          "construct_syntax": "NETWORK 10",
+          "guard_rejected": true,
+          "validator_rejected": true,
+          "parser_rejected": true,
+          "mcp_rejected": true,
+          "fail_closed": true
+        },
+        {
+          "construct_name": "Instruction Mnemonic XIC",
+          "construct_syntax": "XIC(SensorQualityOK)",
+          "guard_rejected": true,
+          "validator_rejected": true,
+          "parser_rejected": true,
+          "mcp_rejected": true,
+          "fail_closed": true
+        },
+        {
+          "construct_name": "Instruction Mnemonic XIO",
+          "construct_syntax": "XIO(ResetFault)",
+          "guard_rejected": true,
+          "validator_rejected": true,
+          "parser_rejected": true,
+          "mcp_rejected": true,
+          "fail_closed": true
+        },
+        {
+          "construct_name": "Instruction Mnemonic OTE",
+          "construct_syntax": "OTE(AlarmUnderflow)",
+          "guard_rejected": true,
+          "validator_rejected": true,
+          "parser_rejected": true,
+          "mcp_rejected": true,
+          "fail_closed": true
+        }
+      ],
+      "duration_sec": 0.38114180002594367
+    },
+    "task3_iec61131_syntax_and_datatypes": {
+      "status": "success",
+      "pou_name": "FB_AnalogScalingOutOfBounds",
+      "pou_type": "FUNCTION_BLOCK",
+      "total_variables": 25,
+      "input_count": 12,
+      "output_count": 7,
+      "local_count": 6,
+      "type_violations": [],
+      "iec_validator_valid": true,
+      "st_parser_valid": true,
+      "mcp_validator_valid": true,
+      "variables": [
+        {
+          "name": "RawIn",
+          "data_type": "REAL",
+          "scope": "VAR_INPUT",
+          "initial_value": "0.0"
+        },
+        {
+          "name": "RawMin",
+          "data_type": "REAL",
+          "scope": "VAR_INPUT",
+          "initial_value": "4000.0"
+        },
+        {
+          "name": "RawMax",
+          "data_type": "REAL",
+          "scope": "VAR_INPUT",
+          "initial_value": "20000.0"
+        },
+        {
+          "name": "EngMin",
+          "data_type": "REAL",
+          "scope": "VAR_INPUT",
+          "initial_value": "0.0"
+        },
+        {
+          "name": "EngMax",
+          "data_type": "REAL",
+          "scope": "VAR_INPUT",
+          "initial_value": "100.0"
+        },
+        {
+          "name": "UnderflowTolerance",
+          "data_type": "REAL",
+          "scope": "VAR_INPUT",
+          "initial_value": "400.0"
+        },
+        {
+          "name": "OverflowTolerance",
+          "data_type": "REAL",
+          "scope": "VAR_INPUT",
+          "initial_value": "800.0"
+        },
+        {
+          "name": "ClampOutput",
+          "data_type": "BOOL",
+          "scope": "VAR_INPUT",
+          "initial_value": "TRUE"
+        },
+        {
+          "name": "FilterAlpha",
+          "data_type": "REAL",
+          "scope": "VAR_INPUT",
+          "initial_value": "0.20"
+        },
+        {
+          "name": "FailSafeMode",
+          "data_type": "INT",
+          "scope": "VAR_INPUT",
+          "initial_value": "0"
+        },
+        {
+          "name": "FailSafeValue",
+          "data_type": "REAL",
+          "scope": "VAR_INPUT",
+          "initial_value": "0.0"
+        },
+        {
+          "name": "ResetFault",
+          "data_type": "BOOL",
+          "scope": "VAR_INPUT",
+          "initial_value": "FALSE"
+        },
+        {
+          "name": "ScaledValue",
+          "data_type": "REAL",
+          "scope": "VAR_OUTPUT",
+          "initial_value": "0.0"
+        },
+        {
+          "name": "RawFiltered",
+          "data_type": "REAL",
+          "scope": "VAR_OUTPUT",
+          "initial_value": "0.0"
+        },
+        {
+          "name": "QualityOK",
+          "data_type": "BOOL",
+          "scope": "VAR_OUTPUT",
+          "initial_value": "TRUE"
+        },
+        {
+          "name": "AlarmUnderflow",
+          "data_type": "BOOL",
+          "scope": "VAR_OUTPUT",
+          "initial_value": "FALSE"
+        },
+        {
+          "name": "AlarmOverflow",
+          "data_type": "BOOL",
+          "scope": "VAR_OUTPUT",
+          "initial_value": "FALSE"
+        },
+        {
+          "name": "LatchedFault",
+          "data_type": "BOOL",
+          "scope": "VAR_OUTPUT",
+          "initial_value": "FALSE"
+        },
+        {
+          "name": "ErrorCode",
+          "data_type": "INT",
+          "scope": "VAR_OUTPUT",
+          "initial_value": "0"
+        },
+        {
+          "name": "RawSpan",
+          "data_type": "REAL",
+          "scope": "VAR",
+          "initial_value": "16000.0"
+        },
+        {
+          "name": "EngSpan",
+          "data_type": "REAL",
+          "scope": "VAR",
+          "initial_value": "100.0"
+        },
+        {
+          "name": "NormalizedFrac",
+          "data_type": "REAL",
+          "scope": "VAR",
+          "initial_value": "0.0"
+        },
+        {
+          "name": "CalculatedEng",
+          "data_type": "REAL",
+          "scope": "VAR",
+          "initial_value": "0.0"
+        },
+        {
+          "name": "LastValidValue",
+          "data_type": "REAL",
+          "scope": "VAR",
+          "initial_value": "0.0"
+        },
+        {
+          "name": "FilterInitialized",
+          "data_type": "BOOL",
+          "scope": "VAR",
+          "initial_value": "FALSE"
+        }
+      ],
+      "duration_sec": 0.039728400006424636
+    },
+    "task4_ast_decomposition": {
+      "status": "success",
+      "pou_name": "FB_AnalogScalingOutOfBounds",
+      "pou_type": "FUNCTION_BLOCK",
+      "sha256": "9e130a26c3f8cc9dff9370a3fc99c29d4c7029234d6af9c58ac5f6698a96018d",
+      "total_lines": 120,
+      "total_tokens": 399,
+      "var_blocks_count": 3,
+      "var_blocks": [
+        {
+          "block_type": "VAR_INPUT",
+          "declarations_count": 12,
+          "declarations": [
+            {
+              "name": "RawIn",
+              "data_type": "REAL",
+              "initial_value": "LiteralNode(0.0, 'REAL')"
+            },
+            {
+              "name": "RawMin",
+              "data_type": "REAL",
+              "initial_value": "LiteralNode(4000.0, 'REAL')"
+            },
+            {
+              "name": "RawMax",
+              "data_type": "REAL",
+              "initial_value": "LiteralNode(20000.0, 'REAL')"
+            },
+            {
+              "name": "EngMin",
+              "data_type": "REAL",
+              "initial_value": "LiteralNode(0.0, 'REAL')"
+            },
+            {
+              "name": "EngMax",
+              "data_type": "REAL",
+              "initial_value": "LiteralNode(100.0, 'REAL')"
+            },
+            {
+              "name": "UnderflowTolerance",
+              "data_type": "REAL",
+              "initial_value": "LiteralNode(400.0, 'REAL')"
+            },
+            {
+              "name": "OverflowTolerance",
+              "data_type": "REAL",
+              "initial_value": "LiteralNode(800.0, 'REAL')"
+            },
+            {
+              "name": "ClampOutput",
+              "data_type": "BOOL",
+              "initial_value": "LiteralNode(True, 'BOOL')"
+            },
+            {
+              "name": "FilterAlpha",
+              "data_type": "REAL",
+              "initial_value": "LiteralNode(0.2, 'REAL')"
+            },
+            {
+              "name": "FailSafeMode",
+              "data_type": "INT",
+              "initial_value": "LiteralNode(0, 'INT')"
+            },
+            {
+              "name": "FailSafeValue",
+              "data_type": "REAL",
+              "initial_value": "LiteralNode(0.0, 'REAL')"
+            },
+            {
+              "name": "ResetFault",
+              "data_type": "BOOL",
+              "initial_value": "LiteralNode(False, 'BOOL')"
+            }
+          ]
+        },
+        {
+          "block_type": "VAR_OUTPUT",
+          "declarations_count": 7,
+          "declarations": [
+            {
+              "name": "ScaledValue",
+              "data_type": "REAL",
+              "initial_value": "LiteralNode(0.0, 'REAL')"
+            },
+            {
+              "name": "RawFiltered",
+              "data_type": "REAL",
+              "initial_value": "LiteralNode(0.0, 'REAL')"
+            },
+            {
+              "name": "QualityOK",
+              "data_type": "BOOL",
+              "initial_value": "LiteralNode(True, 'BOOL')"
+            },
+            {
+              "name": "AlarmUnderflow",
+              "data_type": "BOOL",
+              "initial_value": "LiteralNode(False, 'BOOL')"
+            },
+            {
+              "name": "AlarmOverflow",
+              "data_type": "BOOL",
+              "initial_value": "LiteralNode(False, 'BOOL')"
+            },
+            {
+              "name": "LatchedFault",
+              "data_type": "BOOL",
+              "initial_value": "LiteralNode(False, 'BOOL')"
+            },
+            {
+              "name": "ErrorCode",
+              "data_type": "INT",
+              "initial_value": "LiteralNode(0, 'INT')"
+            }
+          ]
+        },
+        {
+          "block_type": "VAR",
+          "declarations_count": 6,
+          "declarations": [
+            {
+              "name": "RawSpan",
+              "data_type": "REAL",
+              "initial_value": "LiteralNode(16000.0, 'REAL')"
+            },
+            {
+              "name": "EngSpan",
+              "data_type": "REAL",
+              "initial_value": "LiteralNode(100.0, 'REAL')"
+            },
+            {
+              "name": "NormalizedFrac",
+              "data_type": "REAL",
+              "initial_value": "LiteralNode(0.0, 'REAL')"
+            },
+            {
+              "name": "CalculatedEng",
+              "data_type": "REAL",
+              "initial_value": "LiteralNode(0.0, 'REAL')"
+            },
+            {
+              "name": "LastValidValue",
+              "data_type": "REAL",
+              "initial_value": "LiteralNode(0.0, 'REAL')"
+            },
+            {
+              "name": "FilterInitialized",
+              "data_type": "BOOL",
+              "initial_value": "LiteralNode(False, 'BOOL')"
+            }
+          ]
+        }
+      ],
+      "statements_count": 9,
+      "statements": [
+        {
+          "index": 1,
+          "statement_type": "IfNode",
+          "line": 50
+        },
+        {
+          "index": 2,
+          "statement_type": "AssignmentNode",
+          "line": 56
+        },
+        {
+          "index": 3,
+          "statement_type": "AssignmentNode",
+          "line": 57
+        },
+        {
+          "index": 4,
+          "statement_type": "IfNode",
+          "line": 59
+        },
+        {
+          "index": 5,
+          "statement_type": "IfNode",
+          "line": 68
+        },
+        {
+          "index": 6,
+          "statement_type": "AssignmentNode",
+          "line": 76
+        },
+        {
+          "index": 7,
+          "statement_type": "AssignmentNode",
+          "line": 77
+        },
+        {
+          "index": 8,
+          "statement_type": "IfNode",
+          "line": 79
+        },
+        {
+          "index": 9,
+          "statement_type": "IfNode",
+          "line": 95
+        }
+      ],
+      "duration_sec": 0.00476340000750497
+    }
+  }
+}

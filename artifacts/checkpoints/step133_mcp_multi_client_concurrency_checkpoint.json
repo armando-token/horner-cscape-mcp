@@ -1,0 +1,53 @@
+{
+  "step": 133,
+  "name": "step133_mcp_multi_client_concurrency_checkpoint",
+  "title": "FastMCP Multi-Client Live Concurrency Benchmark on Live Cscape PID 14580",
+  "description": "5 concurrent FastMCP stdio clients executing 100 calls across 5 core tools on live Cscape PID 14580 with serialized GUI arbitration, 100% success rate, 0 dropped frames, and 0 cross-contamination.",
+  "timestamp_utc": "2026-09-05T17:27:40.984Z",
+  "cscape_pid": 14580,
+  "cscape_hwnd": "0x024B054A",
+  "cscape_healthy": true,
+  "total_clients": 5,
+  "client_names": [
+    "Client_1",
+    "Client_2",
+    "Client_3",
+    "Client_4",
+    "Client_5"
+  ],
+  "calls_per_client": 20,
+  "total_calls": 100,
+  "success_rate_percent": 100.0,
+  "error_count": 0,
+  "dropped_frames": 0,
+  "cross_client_frame_contamination": 0,
+  "aggregate_throughput_calls_per_sec": 0.78,
+  "overall_latency_ms": {
+    "min": 1.54,
+    "median": 3.63,
+    "p90": 6357.35,
+    "p95": 6435.16,
+    "p99": 6593.88,
+    "max": 6622.05,
+    "mean": 1288.87,
+    "stddev": 2563.5
+  },
+  "tools_invoked": [
+    "cscape_read_variables",
+    "cscape_simulate_cycle",
+    "cscape_read_register",
+    "cscape_write_register",
+    "cscape_compile_project"
+  ],
+  "tool_call_counts": {
+    "cscape_read_variables": 20,
+    "cscape_simulate_cycle": 20,
+    "cscape_read_register": 20,
+    "cscape_write_register": 20,
+    "cscape_compile_project": 20
+  },
+  "hardware_lockout_enforced": true,
+  "zero_straton_dependencies": true,
+  "audit_log": "C:\\Users\\ArmandoSilva\\artifacts\\logs\\mcp_multi_client_concurrency.json",
+  "status": "VERIFIED_LIVE"
+}

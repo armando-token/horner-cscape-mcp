@@ -1,0 +1,21 @@
+{
+  "step": "step1_stay_open_proof",
+  "status": "PASSED",
+  "timestamp_utc": "2026-09-05T05:29:38.232Z",
+  "target_cscape_pid": 7616,
+  "process_start_time_utc": "2026-09-05T05:18:20.649Z",
+  "verification_completion_utc": "2026-09-05T05:29:38.232Z",
+  "total_continuous_uptime_seconds": 677.56,
+  "target_duration_seconds": 605.0,
+  "total_health_ticks": 1,
+  "zero_crashes_verified": true,
+  "zero_access_violations_verified": true,
+  "mitigated_offset_0x0051a4cd": true,
+  "iec_registry_bypass_verified": true,
+  "hung_window_count": 0,
+  "final_working_set_mb": 201.26,
+  "final_window_title": "Cscape - Logged In : \"armando@controlnautas.com\" - [TankLevelClosedLoop.csp]",
+  "main_hwnd": "0x007B06D6",
+  "screenshot_proof": "C:\\Users\\ArmandoSilva\\artifacts\\screenshots\\cscape_stay_open_proof.png",
+  "log_proof": "C:\\Users\\ArmandoSilva\\artifacts\\logs\\cscape_stay_open_proof.log"
+}

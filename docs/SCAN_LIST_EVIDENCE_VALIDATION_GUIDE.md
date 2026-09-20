@@ -4,7 +4,7 @@
 **Tool Name**: [`cscape_validate_scan_list_evidence`](file:///C:/HornerAI/horner-cscape-mcp/src/mcp/tools.py)  
 **Host System**: Horner APG Cscape 10.2 (Build 10.2.751.4, x86 PE)  
 **Protocol**: FastMCP / JSON-RPC 2.0 stdio  
-**Governing Rule**: [`RULE[C:\Users\ArmandoSilva\AGENTS.md]`](file:///C:/Users/ArmandoSilva/AGENTS.md)  
+**Governing Rule**: [`AGENTS.md`](../AGENTS.md)  
 **Operational Mode**: `offline/DEV [PRODUCT_EVIDENCE]`  
 **Hardware Lockout**: Active Fail-Closed (Zero PLC Download, Physical Port Lockout)  
 
@@ -147,7 +147,7 @@ tests/test_fastmcp_server_registers_scan_list_evidence_tool PASSED
 
 | Evidence File | Primary Workspace | Mirror Workspace | Downloads Path |
 | :--- | :--- | :--- | :--- |
-| **Inspection Record (JSON)** | `ops/artifacts/mj1_devices_scan_evidence.json` | `ops/artifacts/mj1_devices_scan_evidence.json` | [`Downloads/mj1_devices_scan_evidence.json`](file:///C:/Users/ArmandoSilva/Downloads/mj1_devices_scan_evidence.json) |
-| **Inspection Summary (MD)** | `ops/artifacts/mj1_devices_scan_evidence.md` | `ops/artifacts/mj1_devices_scan_evidence.md` | [`Downloads/mj1_devices_scan_evidence.md`](file:///C:/Users/ArmandoSilva/Downloads/mj1_devices_scan_evidence.md) |
-| **Validation Evidence (JSON)** | `ops/artifacts/mj1_scan_list_validation_evidence.json` | `ops/artifacts/mj1_scan_list_validation_evidence.json` | [`Downloads/mj1_scan_list_validation_evidence.json`](file:///C:/Users/ArmandoSilva/Downloads/mj1_scan_list_validation_evidence.json) |
-| **Validation Summary (MD)** | `ops/artifacts/mj1_scan_list_validation_evidence.md` | `ops/artifacts/mj1_scan_list_validation_evidence.md` | [`Downloads/mj1_scan_list_validation_evidence.md`](file:///C:/Users/ArmandoSilva/Downloads/mj1_scan_list_validation_evidence.md) |
+| **Inspection Record (JSON)** | `ops/artifacts/mj1_devices_scan_evidence.json` | `ops/artifacts/mj1_devices_scan_evidence.json` | [`ops/artifacts/mj1_devices_scan_evidence.json`](../ops/artifacts/mj1_devices_scan_evidence.json) |
+| **Inspection Summary (MD)** | `ops/artifacts/mj1_devices_scan_evidence.md` | `ops/artifacts/mj1_devices_scan_evidence.md` | [`ops/artifacts/mj1_devices_scan_evidence.md`](../ops/artifacts/mj1_devices_scan_evidence.md) |
+| **Validation Evidence (JSON)** | `ops/artifacts/mj1_scan_list_validation_evidence.json` | `ops/artifacts/mj1_scan_list_validation_evidence.json` | [`ops/artifacts/mj1_scan_list_validation_evidence.json`](../ops/artifacts/mj1_scan_list_validation_evidence.json) |
+| **Validation Summary (MD)** | `ops/artifacts/mj1_scan_list_validation_evidence.md` | `ops/artifacts/mj1_scan_list_validation_evidence.md` | [`ops/artifacts/mj1_scan_list_validation_evidence.md`](../ops/artifacts/mj1_scan_list_validation_evidence.md) |

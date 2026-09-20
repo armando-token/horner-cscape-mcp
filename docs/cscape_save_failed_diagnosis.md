@@ -46,8 +46,8 @@ flowchart TD
 | **Icon Control** | HWND `0x000C07DC`, ID `20`, Class `Static` | Standard warning icon (`MB_ICONEXCLAMATION`) |
 | **Text Control** | HWND `0x00080778`, ID `65535` (`IDC_STATIC`), Class `Static` | Text: **`"Failed to save document."`** |
 | **Button Control**| HWND `0x000807A8`, ID `2` (`IDCANCEL` / `IDOK`), Class `Button`| Text: **`"OK"`** |
-| **Screenshot Proof** | [`Downloads/cscape_save_failed_reproduction.png`](file:///C:/Users/ArmandoSilva/Downloads/cscape_save_failed_reproduction.png) | 156,882 bytes, SHA-256: `32551bcfef4ac339cfd337e5d1bf07f55cfcee4077b0048ef79fe21bc6f74704` |
-| **Evidence JSON** | [`Downloads/cscape_save_failed_evidence.json`](file:///C:/Users/ArmandoSilva/Downloads/cscape_save_failed_evidence.json) | 885 bytes, SHA-256: `27c86d2eba955b90be8830ff307363eb152ba45e35444d9dc16599c93c6dd3d8` |
+| **Screenshot Proof** | [`ops/artifacts/cscape_save_failed_reproduction.png`](../ops/artifacts/cscape_save_failed_reproduction.png) | 156,882 bytes, SHA-256: `32551bcfef4ac339cfd337e5d1bf07f55cfcee4077b0048ef79fe21bc6f74704` |
+| **Evidence JSON** | [`ops/artifacts/cscape_save_failed_evidence.json`](../ops/artifacts/cscape_save_failed_evidence.json) | 885 bytes, SHA-256: `27c86d2eba955b90be8830ff307363eb152ba45e35444d9dc16599c93c6dd3d8` |
 
 ---
 
@@ -241,7 +241,7 @@ flowchart TD
 - **Process Boundary**: Cscape PID `928` on `winsta0\Default` and PowerShell PID `6888` were continuously preserved. No process churn or restart occurred.
 - **Compiler Watchdog**: Zero periodic Error Check loops were run.
 - **Deliverables Location**:
-  - Technical Report: [`Downloads/cscape_save_failed_diagnosis.md`](file:///C:/Users/ArmandoSilva/Downloads/cscape_save_failed_diagnosis.md)
-  - Caveat Note: [`Downloads/save_failed_caveat.txt`](file:///C:/Users/ArmandoSilva/Downloads/save_failed_caveat.txt)
-  - Photographic Proof: [`Downloads/cscape_save_failed_reproduction.png`](file:///C:/Users/ArmandoSilva/Downloads/cscape_save_failed_reproduction.png)
-  - Structured Evidence: [`Downloads/cscape_save_failed_evidence.json`](file:///C:/Users/ArmandoSilva/Downloads/cscape_save_failed_evidence.json)
+  - Technical Report: [`docs/cscape_save_failed_diagnosis.md`](cscape_save_failed_diagnosis.md)
+  - Caveat Note: [`ops/artifacts/save_failed_caveat.txt`](../ops/artifacts/save_failed_caveat.txt)
+  - Photographic Proof: [`ops/artifacts/cscape_save_failed_reproduction.png`](../ops/artifacts/cscape_save_failed_reproduction.png)
+  - Structured Evidence: [`ops/artifacts/cscape_save_failed_evidence.json`](../ops/artifacts/cscape_save_failed_evidence.json)

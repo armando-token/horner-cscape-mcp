@@ -5,7 +5,7 @@
 **Repository**: [`C:\HornerAI\horner-cscape-mcp`](file:///C:/HornerAI/horner-cscape-mcp)  
 **Host Environment**: Microsoft Windows 11 Enterprise (Build `26200`, 64-bit AMD64)  
 **Target IDE**: Horner APG Cscape 10.2 (`10.2.751.4`, 32-bit x86 PE MFC Application)  
-**Target Binary**: [`C:\Program Files (x86)\Cscape 10.2\Cscape.exe`](file:///C:/Program%20Files%20(x86)/Cscape%2010.2/Cscape.exe) (17,663,488 bytes)  
+**Target Binary**: `C:\Program Files (x86)\Cscape 10.2\Cscape.exe` (17,663,488 bytes)  
 **Audit Evaluation Date**: September 4, 2026  
 **Audit Standard**: **FAIL-CLOSED AUDIT ENFORCED (4-STATE STATUS CONTRACT: status: success | failed | blocked | inconclusive)**  
 **Repository Test Matrix**: **1,313 PRIMARY COLLECTED TESTS (30 SUITES) / 1,318 GRAND TOTAL (31 SUITES) (FAIL-CLOSED RECONCILED)**  

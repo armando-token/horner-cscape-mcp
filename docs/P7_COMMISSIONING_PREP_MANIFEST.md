@@ -16,10 +16,10 @@
 **Compiler / Hygiene Invariant**: `no_error_check_loop: true` (Single-pass verification complete; zero periodic polling loops)  
 **Single GUI Automation Owner**: Cscape 10.2 PID `12788` on `winsta0\Default` (HWND `3016360`)  
 **Pointers to Governance & Artifacts**:
-- Supervisor Signoff: [`SUPERVISOR_OFFLINE_ACCEPTANCE.md`](file:///C:/Users/ArmandoSilva/Downloads/SUPERVISOR_OFFLINE_ACCEPTANCE.md)
-- Evidence Package: [`offline_evidence_bundle_v1.0.0.zip`](file:///C:/Users/ArmandoSilva/Downloads/offline_evidence_bundle_v1.0.0.zip) (`335,933` bytes, SHA-256: `16a1ac91445a9067c24617b61063ddf9585ef272af6fa1c707fd83f1d8fec512`)
-- Commissioning SOP: [`P7_MANUAL_COMMISSIONING_PROCEDURE.md`](file:///C:/Users/ArmandoSilva/Downloads/P7_MANUAL_COMMISSIONING_PROCEDURE.md)
-- Pre-Load Checklist: [`P7_MANUAL_LOAD_CHECKLIST.md`](file:///C:/Users/ArmandoSilva/Downloads/P7_MANUAL_LOAD_CHECKLIST.md)
+- Supervisor Signoff: [`SUPERVISOR_OFFLINE_ACCEPTANCE.md`](SUPERVISOR_OFFLINE_ACCEPTANCE.md)
+- Evidence Package: [`offline_evidence_bundle_v1.0.0.zip`](../offline_evidence_bundle_v1.0.0.zip) (`335,933` bytes, SHA-256: `16a1ac91445a9067c24617b61063ddf9585ef272af6fa1c707fd83f1d8fec512`)
+- Commissioning SOP: [`P7_MANUAL_COMMISSIONING_PROCEDURE.md`](P7_MANUAL_COMMISSIONING_PROCEDURE.md)
+- Pre-Load Checklist: [`P7_MANUAL_LOAD_CHECKLIST.md`](P7_MANUAL_LOAD_CHECKLIST.md)
 
 ---
 

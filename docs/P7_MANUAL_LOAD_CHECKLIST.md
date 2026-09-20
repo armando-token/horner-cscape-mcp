@@ -15,9 +15,9 @@
 **Commissioning Engineer**: Armando Silva (Lead Controls / Commissioning Engineer)  
 **Single GUI Automation Owner**: Exclusively maintained on `winsta0\Default` (PID `12788` / `928`)  
 **Hardware Lockout Policy**: `NO_PLC_DOWNLOAD_FAIL_CLOSED` (`COM1..COM256`, companion flash utilities, Win32 IDs `32827`/`33149` locked fail-closed; do not start P7 download)  
-**Governing Standard Operating Procedure**: [`P7_MANUAL_COMMISSIONING_PROCEDURE.md`](file:///C:/Users/ArmandoSilva/Downloads/P7_MANUAL_COMMISSIONING_PROCEDURE.md) (`SOP-P7-HORNER-COMMISSIONING-001`)  
-**Supervisor Acceptance Pointer**: [`SUPERVISOR_OFFLINE_ACCEPTANCE.md`](file:///C:/Users/ArmandoSilva/Downloads/SUPERVISOR_OFFLINE_ACCEPTANCE.md)  
-**Offline Evidence Bundle Pointer**: [`offline_evidence_bundle_v1.0.0.zip`](file:///C:/Users/ArmandoSilva/Downloads/offline_evidence_bundle_v1.0.0.zip) (`335,933` bytes, SHA-256: `16a1ac91445a9067c24617b61063ddf9585ef272af6fa1c707fd83f1d8fec512`)  
+**Governing Standard Operating Procedure**: [`P7_MANUAL_COMMISSIONING_PROCEDURE.md`](P7_MANUAL_COMMISSIONING_PROCEDURE.md) (`SOP-P7-HORNER-COMMISSIONING-001`)  
+**Supervisor Acceptance Pointer**: [`SUPERVISOR_OFFLINE_ACCEPTANCE.md`](SUPERVISOR_OFFLINE_ACCEPTANCE.md)  
+**Offline Evidence Bundle Pointer**: [`offline_evidence_bundle_v1.0.0.zip`](../offline_evidence_bundle_v1.0.0.zip) (`335,933` bytes, SHA-256: `16a1ac91445a9067c24617b61063ddf9585ef272af6fa1c707fd83f1d8fec512`)  
 
 ---
 
@@ -38,12 +38,12 @@ Prior to initiating any physical connection or manual download, verify the appro
 
 | Document / Package | Path / Reference | Description & Digest |
 | :--- | :--- | :--- |
-| **Supervisor Offline Acceptance** | [`SUPERVISOR_OFFLINE_ACCEPTANCE.md`](file:///C:/Users/ArmandoSilva/Downloads/SUPERVISOR_OFFLINE_ACCEPTANCE.md) | Formal engineering supervisor acceptance of all offline deliverables (Signoff: `2026-09-17T14:20:00-07:00`, `supervisor_offline_accepted = true`). |
-| **Offline Evidence Bundle** | [`offline_evidence_bundle_v1.0.0.zip`](file:///C:/Users/ArmandoSilva/Downloads/offline_evidence_bundle_v1.0.0.zip) | Air-gapped distribution package (30 forensic & verification files, `335,933` bytes, SHA-256: `16a1ac91445a9067c24617b61063ddf9585ef272af6fa1c707fd83f1d8fec512`). |
-| **Evidence Bundle Manifest** | [`offline_evidence_bundle_manifest.md`](file:///C:/Users/ArmandoSilva/Downloads/offline_evidence_bundle_manifest.md) | Cryptographic SHA-256 table and invariant audit for all archived evidence files. |
-| **MJ1 Scan List Evidence** | [`mj1_devices_scan_list_state_evidence.md`](file:///C:/Users/ArmandoSilva/Downloads/mj1_devices_scan_list_state_evidence.md) | Baseline report confirming `MJ1 CT RTU Modbus CMP v5.05` configuration and empty scan list offline. |
-| **P5 Native Reopen Proof** | [`tanklevel_p5_native_reopen_proof_evidence.md`](file:///C:/Users/ArmandoSilva/Downloads/tanklevel_p5_native_reopen_proof_evidence.md) | Verification of `TankLevel_P5_Dedicated.csp` active in Cscape GUI (`PID 12788`, HWND `3016360`) with pure ST scaling bridge. |
-| **Manual Commissioning SOP** | [`P7_MANUAL_COMMISSIONING_PROCEDURE.md`](file:///C:/Users/ArmandoSilva/Downloads/P7_MANUAL_COMMISSIONING_PROCEDURE.md) | Standard Operating Procedure `SOP-P7-HORNER-COMMISSIONING-001` governing physical execution. |
+| **Supervisor Offline Acceptance** | [`SUPERVISOR_OFFLINE_ACCEPTANCE.md`](SUPERVISOR_OFFLINE_ACCEPTANCE.md) | Formal engineering supervisor acceptance of all offline deliverables (Signoff: `2026-09-17T14:20:00-07:00`, `supervisor_offline_accepted = true`). |
+| **Offline Evidence Bundle** | [`offline_evidence_bundle_v1.0.0.zip`](../offline_evidence_bundle_v1.0.0.zip) | Air-gapped distribution package (30 forensic & verification files, `335,933` bytes, SHA-256: `16a1ac91445a9067c24617b61063ddf9585ef272af6fa1c707fd83f1d8fec512`). |
+| **Evidence Bundle Manifest** | [`offline_evidence_bundle_manifest.md`](../ops/artifacts/offline_evidence_bundle_manifest.md) | Cryptographic SHA-256 table and invariant audit for all archived evidence files. |
+| **MJ1 Scan List Evidence** | [`mj1_devices_scan_list_state_evidence.md`](../ops/artifacts/mj1_devices_scan_list_state_evidence.md) | Baseline report confirming `MJ1 CT RTU Modbus CMP v5.05` configuration and empty scan list offline. |
+| **P5 Native Reopen Proof** | [`tanklevel_p5_native_reopen_proof_evidence.md`](../ops/artifacts/tanklevel_p5_native_reopen_proof_evidence.md) | Verification of `TankLevel_P5_Dedicated.csp` active in Cscape GUI (`PID 12788`, HWND `3016360`) with pure ST scaling bridge. |
+| **Manual Commissioning SOP** | [`P7_MANUAL_COMMISSIONING_PROCEDURE.md`](P7_MANUAL_COMMISSIONING_PROCEDURE.md) | Standard Operating Procedure `SOP-P7-HORNER-COMMISSIONING-001` governing physical execution. |
 
 ---
 
@@ -75,7 +75,7 @@ Prior to initiating any physical connection or manual download, verify the appro
   - **Confirm Scan List Table: Empty until live**:
     - Verify native scan list on `MJ1` is currently **empty** (`count: 0`, `scan_list_status: "empty"`).
     - Note: Native scan list population was blocked offline (`blocked_offline`) by design to prevent CFBF corruption and offline timeout faults.
-    - Confirm planned device inventory is documented in [`modbus_protocol_inventory.json`](file:///C:/Users/ArmandoSilva/Downloads/modbus_protocol_inventory.json) for live configuration:
+    - Confirm planned device inventory is documented in [`modbus_protocol_inventory.json`](../modbus_protocol_inventory.json) for live configuration:
       - `DEV_LT01` (Unit ID 1): Buffer Tank Level Transmitter (`%AI1`, Modicon `40001`, 0..100.0 %)
       - `DEV_FT01` (Unit ID 2): Inflow Coriolis Flowmeter (`%AI2`, Modicon `40002`, 0..500.0 L/min)
       - `DEV_PT01` (Unit ID 3): Discharge Pressure Transmitter (`%AI3`, Modicon `40003`, 0..10.0 bar)
@@ -140,7 +140,7 @@ Prior to initiating any physical connection or manual download, verify the appro
   - **Confirmar Lista de Escaneo: Vacía hasta conexión en vivo**:
     - Verificar que la lista de escaneo nativa en `MJ1` esté actualmente **vacía** (`count: 0`, `scan_list_status: "empty"`).
     - Nota: La población de la lista de escaneo se bloqueó de forma segura fuera de línea (`blocked_offline`) para evitar corrupción CFBF y fallas por timeout.
-    - Confirmar que el inventario de dispositivos planeados esté registrado en [`modbus_protocol_inventory.json`](file:///C:/Users/ArmandoSilva/Downloads/modbus_protocol_inventory.json) para configuración en vivo:
+    - Confirmar que el inventario de dispositivos planeados esté registrado en [`modbus_protocol_inventory.json`](../modbus_protocol_inventory.json) para configuración en vivo:
       - `DEV_LT01` (Unit ID 1): Transmisor de Nivel de Tanque (`%AI1`, Modicon `40001`, 0..100.0 %)
       - `DEV_FT01` (Unit ID 2): Medidor de Flujo Coriolis (`%AI2`, Modicon `40002`, 0..500.0 L/min)
       - `DEV_PT01` (Unit ID 3): Transmisor de Presión de Descarga (`%AI3`, Modicon `40003`, 0..10.0 bar)

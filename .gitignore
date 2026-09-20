@@ -1,10 +1,17 @@
-# Byte-compiled / optimized / DLL files
+# ==============================================================================
+# Horner Cscape MCP - Production-Grade Git Ignore Specification
+# Conforms to GitHub Best Practices & Horner OCS / IEC 61131-3 Pipeline Safety
+# ==============================================================================
+
+# ------------------------------------------------------------------------------
+# 1. Python Artifacts & Distribution Packaging
+# ------------------------------------------------------------------------------
 __pycache__/
+__pycache__
 *.py[cod]
 *$py.class
-
-# C extensions
 *.so
+*.pyd
 
 # Distribution / packaging
 .Python
@@ -12,6 +19,7 @@ build/
 develop-eggs/
 dist/
 downloads/
+Downloads/
 eggs/
 .eggs/
 lib/
@@ -26,7 +34,9 @@ share/python-wheels/
 *.egg
 MANIFEST
 
-# Virtual environments
+# ------------------------------------------------------------------------------
+# 2. Virtual Environments
+# ------------------------------------------------------------------------------
 .venv/
 venv/
 ENV/
@@ -34,9 +44,12 @@ env/
 env.bak/
 venv.bak/
 
-# Testing & Coverage
+# ------------------------------------------------------------------------------
+# 3. Testing & Code Coverage
+# ------------------------------------------------------------------------------
 .pytest_cache/
 .pytest_temp/
+htmlcov/
 .tox/
 .nox/
 .coverage
@@ -48,22 +61,58 @@ coverage.xml
 *.py,cover
 .hypothesis/
 
-# Environment Variables, Secrets & Credentials
-.env
-.env.*
-*.env
-*.pem
-*.key
-*.p12
-*.pfx
-secrets.json
-secrets.yaml
-credentials.json
-credentials.yaml
+# ------------------------------------------------------------------------------
+# 4. Cscape, PLC & CFBF (Compound File Binary Format) Artifacts
+# ------------------------------------------------------------------------------
+# Editor backup, temporary & lock files
+*.bak
+*.tmp
+~*
+\#*
+\#*#
+*.lock
+*.lck
+.~lock.*
 
-# IDE & Editor Specific
+# CFBF streams & Cscape runtime caches
+~$*.csp
+~$*.cpj
+*.csp.tmp
+*.cpj.tmp
+*.cfbf.tmp
+*.stream.tmp
+*.cpo
+*.t5r
+*.lge
+*.compiled
+*.k5p.bak
+Cscape*.tmp
+
+# Preserve tracked golden fixtures/backups in repository
+!artifacts/projects/TankLevelClosedLoop/*.bak*
+
+# ------------------------------------------------------------------------------
+# 5. OS & IDE / Editor Artifacts
+# ------------------------------------------------------------------------------
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+desktop.ini
+$RECYCLE.BIN/
+
+# JetBrains / VS Code / Sublime / Vim / Eclipse
 .idea/
 .vscode/
+*.sublime-project
+*.sublime-workspace
+*.sublime-*
 *.swp
 *.swo
 *~
@@ -71,27 +120,51 @@ credentials.yaml
 .pydevproject
 .settings/
 
-# Windows System Files
-Thumbs.db
-ehthumbs.db
-Desktop.ini
-desktop.ini
-$RECYCLE.BIN/
+# ------------------------------------------------------------------------------
+# 6. Sensitive Files, Credentials & Certificates
+# ------------------------------------------------------------------------------
+.env
+.env.*
+*.env
+*.pem
+*.key
+*.p12
+*.pfx
+*.cert
+*.crt
+*.id_rsa
+*.id_rsa.pub
+id_rsa
+id_rsa.pub
+*.id_ed25519
+*.id_ed25519.pub
+id_ed25519
+id_ed25519.pub
+secrets.json
+secrets.yaml
+credentials.json
+credentials.yaml
 
-# Memory Dumps & Diagnostics Logs
+# ------------------------------------------------------------------------------
+# 7. State & Local Caches, Dumps & Diagnostics
+# ------------------------------------------------------------------------------
+.state/
+!/.state/*.json
+scratch/
+scratch_verifier_clean.py
+scratch_verifier_raw.txt
+foo/
+
+# Crash dumps & runtime trace logs
 *.dmp
 *.dump
 *.stackdump
 crash_dump*
 @AutomationLog.txt
 
-# Local Scratch, Temporary & Quarantine Working Trees
-scratch/
-scratch_verifier_clean.py
-scratch_verifier_raw.txt
-foo/
-
-# Large Distribution Bundles & Archives (Publish via GitHub Releases, do not track in Git)
+# ------------------------------------------------------------------------------
+# 8. Large Distribution Bundles & Archives (Publish via GitHub Releases)
+# ------------------------------------------------------------------------------
 *.zip
 *.tar.gz
 *.tgz

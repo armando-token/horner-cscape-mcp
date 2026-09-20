@@ -4,7 +4,7 @@
 **Milestone**: `Milestone CORE-08 / Plan v3 Offline Accepted / Phase P7 Hand-off`  
 **Generated UTC**: `2026-09-17T23:10:00Z`  
 **State Contract**: `STATE: CORE-08 CONFIG_AND_TEST_OK RUNTIME_PENDING_P7`  
-**Supervisor Offline Accepted**: `true` (Signoff Timestamp: `2026-09-17T14:20:00-07:00` in [`SUPERVISOR_OFFLINE_ACCEPTANCE.md`](file:///C:/Users/ArmandoSilva/Downloads/SUPERVISOR_OFFLINE_ACCEPTANCE.md))  
+**Supervisor Offline Accepted**: `true` (Signoff Timestamp: `2026-09-17T14:20:00-07:00` in [`SUPERVISOR_OFFLINE_ACCEPTANCE.md`](SUPERVISOR_OFFLINE_ACCEPTANCE.md))  
 **Operational Scope**: `offline/DEV [PRODUCT_EVIDENCE]` $\to$ `P7_MANUAL`  
 **Active Project Container**: `TankLevel_P5_Dedicated.csp` (Horner XL4 Prime `HE-XPCE2`, Clean build: 0 errors, 0 warnings)  
 **Safety & Lockout Policy**: `NO_PLC_DOWNLOAD_FAIL_CLOSED` (`COM1..COM256`, companion flash utilities, Win32 `32827`/`33149`)  
@@ -62,7 +62,7 @@ flowchart TD
 | **GAP-04** | **Cscape Save Document Lock** | Direct `File -> Save` (`Ctrl+S` / `57603`) triggers modal error `"Failed to save document."` (`AFX_IDP_FAILED_TO_SAVE_DOC = 0xF183`) due to Windows file sharing locks (`ERROR_SHARING_VIOLATION = 32`) and CFBF stream desynchronization. | Documented in `save_failed_caveat.txt` and `cscape_save_failed_diagnosis.md`. Enforced safe workaround: execute `File -> Save As...` (`ID_FILE_SAVEAS = 57604`) specifying a distinct versioned filename. | **RESOLVED**<br>*(Safe Workaround)* |
 | **GAP-05** | **Multi-Word Register Bounds** | Multi-word data types (`REAL`, `DINT`, `LREAL`) allocated near register boundaries (e.g. `%R9999` with `REAL`) silently overflow the Horner register memory map into non-existent addresses (`%R10000`). | Implemented semantic multi-word footprint validation in `HornerRegister.spans_within_bounds()` and `cscape_validate_st()`. Rejects overflows fail-closed with `ERR_REGISTER_OUT_OF_BOUNDS`. | **RESOLVED OFFLINE**<br>*(Fail-Closed)* |
 | **GAP-06** | **FastMCP Tool Registry Parity** | Discrepancy between announced FastMCP tools and registered Pydantic v2 schemas during multi-phase tool additions. | Automated parity test (`test_p9_fastmcp_40_tools_registered_and_matched`) asserts 100% bidirectional match across all 43 FastMCP public tools and `TOOL_SCHEMAS`. | **RESOLVED OFFLINE**<br>*(43/43 Parity)* |
-| **GAP-07** | **Physical PLC Loading (P7)** | Automated scripts and AI agents cannot interface with physical PLC hardware without violating fail-closed security invariants. | Hard lockout on serial ports (`COM1..COM256`), flash utilities, and Win32 download command IDs (`32827`/`33149`). Physical download deferred to Armando Silva via SOP [`P7_MANUAL_COMMISSIONING_PROCEDURE.md`](file:///C:/Users/ArmandoSilva/Downloads/P7_MANUAL_COMMISSIONING_PROCEDURE.md) and [`P7_MANUAL_LOAD_CHECKLIST.md`](file:///C:/Users/ArmandoSilva/Downloads/P7_MANUAL_LOAD_CHECKLIST.md). | **DEFERRED TO P7**<br>*(Manual Field Gate)* |
+| **GAP-07** | **Physical PLC Loading (P7)** | Automated scripts and AI agents cannot interface with physical PLC hardware without violating fail-closed security invariants. | Hard lockout on serial ports (`COM1..COM256`), flash utilities, and Win32 download command IDs (`32827`/`33149`). Physical download deferred to Armando Silva via SOP [`P7_MANUAL_COMMISSIONING_PROCEDURE.md`](P7_MANUAL_COMMISSIONING_PROCEDURE.md) and [`P7_MANUAL_LOAD_CHECKLIST.md`](P7_MANUAL_LOAD_CHECKLIST.md). | **DEFERRED TO P7**<br>*(Manual Field Gate)* |
 
 ---
 
@@ -83,7 +83,7 @@ flowchart TD
     - Planned Device 1: `DEV_LT01` (Unit 1, Modicon 40001 $\to$ `%AI1`, 0..100.0%)
     - Planned Device 2: `DEV_FT01` (Unit 2, Modicon 40002 $\to$ `%AI2`, 0..500.0 L/min)
     - Planned Device 3: `DEV_PT01` (Unit 3, Modicon 40003 $\to$ `%AI3`, 0..10.0 bar)
-  - All 3 planned transactions remain fully specified in [`modbus_protocol_inventory.json`](file:///C:/Users/ArmandoSilva/Downloads/modbus_protocol_inventory.json) and will be entered live by the commissioning engineer during Phase P7.
+  - All 3 planned transactions remain fully specified in [`modbus_protocol_inventory.json`](../modbus_protocol_inventory.json) and will be entered live by the commissioning engineer during Phase P7.
   - Telemetry scaling is governed offline by pure Structured Text function blocks `FB_ModbusScaleQuality.st` and `TankLevelModbusBridge.st`.
 
 ### 3.2 Gap 2: Live Cscape GUI Automation (Single GUI Boundary)

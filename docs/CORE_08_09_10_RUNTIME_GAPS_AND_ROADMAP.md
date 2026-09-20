@@ -4,7 +4,7 @@
 **Milestone Scope**: `Plan v3 Post-Acceptance / Phase P7 Hand-off / Physical Plant Commissioning`  
 **Generated UTC**: `2026-09-17T23:50:00Z`  
 **State Contract**: `STATE: CORE-08 CONFIG_AND_TEST_OK RUNTIME_PENDING_P7`  
-**Supervisor Offline Accepted**: `true` (Signoff: `2026-09-17T14:20:00-07:00` in [`SUPERVISOR_OFFLINE_ACCEPTANCE.md`](file:///C:/Users/ArmandoSilva/Downloads/SUPERVISOR_OFFLINE_ACCEPTANCE.md))  
+**Supervisor Offline Accepted**: `true` (Signoff: `2026-09-17T14:20:00-07:00` in [`SUPERVISOR_OFFLINE_ACCEPTANCE.md`](SUPERVISOR_OFFLINE_ACCEPTANCE.md))  
 **Operational Scope**: `offline/DEV [PRODUCT_EVIDENCE]` $\to$ `P7_MANUAL`  
 **Active Project Container**: `TankLevel_P5_Dedicated.csp` (Horner XL4 Prime `HE-XPCE2`, Clean build: 0 errors, 0 warnings)  
 **Safety & Lockout Policy**: `NO_PLC_DOWNLOAD_FAIL_CLOSED` (`COM1..COM256`, companion flash tools, Win32 `32827`/`33149`)  
@@ -55,9 +55,9 @@ flowchart TD
 ### 2.1 Current Offline State vs. Live Runtime Delta
 - **Current Offline State**:
   - Test Harness: Pure-software in-memory test server (`127.0.0.1:15502`, FC03 Read Holding Registers).
-  - Telemetry Scaling: Linear scaling ($0..32000 \to 0.0..100.0\%$, $0..500\text{ L/min}$, $0..10\text{ bar}$) implemented via pure ST function block [`FB_ModbusScaleQuality.st`](file:///C:/Users/ArmandoSilva/Downloads/pous/FB_ModbusScaleQuality.st).
+  - Telemetry Scaling: Linear scaling ($0..32000 \to 0.0..100.0\%$, $0..500\text{ L/min}$, $0..10\text{ bar}$) implemented via pure ST function block [`FB_ModbusScaleQuality.st`](../artifacts/projects/TankLevel_P5_Dedicated/pous/FB_ModbusScaleQuality.st).
   - Native Scan List: Confirmed empty (`count: 0`, `scan_list_status: "empty"`, `native_fill_status: "blocked_offline"`).
-  - Planned Devices: 3 Modbus RTU slave devices specified in [`modbus_protocol_inventory.json`](file:///C:/Users/ArmandoSilva/Downloads/modbus_protocol_inventory.json).
+  - Planned Devices: 3 Modbus RTU slave devices specified in [`modbus_protocol_inventory.json`](../modbus_protocol_inventory.json).
 - **Live Runtime Gap Elements**:
   1. **Physical Bus Driver**: Transitioning from loopback TCP to native UART RS-485 half-duplex driver (`CTRtu.dll v5.5.0.0` / `CT RTU Modbus CMP v5.05`) over port `MJ1`.
   2. **Physical Slave Interfacing**:
@@ -133,10 +133,10 @@ Before transitioning controller to RUN mode under live Modbus polling:
 
 | Operational Milestone | Prerequisites | Execution Owner | Governing Documentation | Completion Criteria |
 | :--- | :--- | :--- | :--- | :--- |
-| **Phase P7** | Offline deliverables accepted; LOTO verified; zero-voltage confirmed. | Armando Silva (Lead Controls Engineer) | [`P7_MANUAL_COMMISSIONING_PROCEDURE.md`](file:///C:/Users/ArmandoSilva/Downloads/P7_MANUAL_COMMISSIONING_PROCEDURE.md)<br>[`P7_MANUAL_LOAD_CHECKLIST.md`](file:///C:/Users/ArmandoSilva/Downloads/P7_MANUAL_LOAD_CHECKLIST.md) | Clean manual download (`0 errors`); Local: Connected; initial I/O audit in STOP mode. |
-| **CORE-08 Runtime** | Phase P7 complete; RS-485 cabling verified; 120 $\Omega$ termination installed. | Armando Silva | [`CORE_08_MODBUS_CONVERSION_EXAMPLE.md`](file:///C:/Users/ArmandoSilva/Downloads/CORE_08_MODBUS_CONVERSION_EXAMPLE.md)<br>[`modbus_protocol_inventory.json`](file:///C:/Users/ArmandoSilva/Downloads/modbus_protocol_inventory.json) | Transmitters 1..3 responding; `%AI1..%AI3` receiving raw counts; `%R101..%R105` scaled. |
-| **CORE-09 HMI & WebMI** | CORE-08 runtime healthy; controller in RUN mode; LAN1 connected. | Armando Silva | [`P7_MANUAL_COMMISSIONING_PROCEDURE.md`](file:///C:/Users/ArmandoSilva/Downloads/P7_MANUAL_COMMISSIONING_PROCEDURE.md) (Section 8) | Screen 1..3 touch navigation verified; tank animation matches physical level; WebMI streaming. |
-| **CORE-10 Telemetry Soak** | CORE-09 sign-off; plant safety permits authorized for hydraulic pumping. | Field Operations Team | [`CORE_08_09_10_RUNTIME_GAPS_AND_ROADMAP.md`](file:///C:/Users/ArmandoSilva/Downloads/CORE_08_09_10_RUNTIME_GAPS_AND_ROADMAP.md) | 24 consecutive hours of stable run; zero unhandled faults; packet success $>99.99\%$. |
+| **Phase P7** | Offline deliverables accepted; LOTO verified; zero-voltage confirmed. | Armando Silva (Lead Controls Engineer) | [`P7_MANUAL_COMMISSIONING_PROCEDURE.md`](P7_MANUAL_COMMISSIONING_PROCEDURE.md)<br>[`P7_MANUAL_LOAD_CHECKLIST.md`](P7_MANUAL_LOAD_CHECKLIST.md) | Clean manual download (`0 errors`); Local: Connected; initial I/O audit in STOP mode. |
+| **CORE-08 Runtime** | Phase P7 complete; RS-485 cabling verified; 120 $\Omega$ termination installed. | Armando Silva | [`CORE_08_MODBUS_CONVERSION_EXAMPLE.md`](CORE_08_MODBUS_CONVERSION_EXAMPLE.md)<br>[`modbus_protocol_inventory.json`](../modbus_protocol_inventory.json) | Transmitters 1..3 responding; `%AI1..%AI3` receiving raw counts; `%R101..%R105` scaled. |
+| **CORE-09 HMI & WebMI** | CORE-08 runtime healthy; controller in RUN mode; LAN1 connected. | Armando Silva | [`P7_MANUAL_COMMISSIONING_PROCEDURE.md`](P7_MANUAL_COMMISSIONING_PROCEDURE.md) (Section 8) | Screen 1..3 touch navigation verified; tank animation matches physical level; WebMI streaming. |
+| **CORE-10 Telemetry Soak** | CORE-09 sign-off; plant safety permits authorized for hydraulic pumping. | Field Operations Team | [`CORE_08_09_10_RUNTIME_GAPS_AND_ROADMAP.md`](CORE_08_09_10_RUNTIME_GAPS_AND_ROADMAP.md) | 24 consecutive hours of stable run; zero unhandled faults; packet success $>99.99\%$. |
 
 ---
 

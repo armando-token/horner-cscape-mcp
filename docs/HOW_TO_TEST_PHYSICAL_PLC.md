@@ -5,9 +5,9 @@
 **Target Controller**: Horner APG XL4 Prime OCS Series, Model **`HE-XPCE2`**  
 **Engineering Software**: Horner APG Cscape 10.2 (Build `10.2.751.4`)  
 **Approved Project File**: `TankLevel_P5_Dedicated.csp`  
-**Governing Standard Operating Procedure**: [`P7_MANUAL_COMMISSIONING_PROCEDURE.md`](file:///C:/Users/ArmandoSilva/Downloads/P7_MANUAL_COMMISSIONING_PROCEDURE.md) (`SOP-P7-HORNER-COMMISSIONING-001`)  
-**Safety Checklist**: [`P7_MANUAL_LOAD_CHECKLIST.md`](file:///C:/Users/ArmandoSilva/Downloads/P7_MANUAL_LOAD_CHECKLIST.md)  
-**Supervisor Sign-Off**: [`SUPERVISOR_OFFLINE_ACCEPTANCE.md`](file:///C:/Users/ArmandoSilva/Downloads/SUPERVISOR_OFFLINE_ACCEPTANCE.md)  
+**Governing Standard Operating Procedure**: [`P7_MANUAL_COMMISSIONING_PROCEDURE.md`](P7_MANUAL_COMMISSIONING_PROCEDURE.md) (`SOP-P7-HORNER-COMMISSIONING-001`)  
+**Safety Checklist**: [`P7_MANUAL_LOAD_CHECKLIST.md`](P7_MANUAL_LOAD_CHECKLIST.md)  
+**Supervisor Sign-Off**: [`SUPERVISOR_OFFLINE_ACCEPTANCE.md`](SUPERVISOR_OFFLINE_ACCEPTANCE.md)  
 
 ---
 
@@ -45,7 +45,7 @@ Before attaching any programming cable or applying control power:
      - **Protocol Configuration**: Port `MJ1` set to `MJ1 CT RTU Modbus CMP v5.05` (`CTRtu.dll v5.5.0.0`, RS-485 Half-Duplex, 19200-8-N-1).
    - **Confirm Scan List Table: Empty until live**:
      - The native scan list on `MJ1` is deliberately empty offline (`count: 0`) to prevent CFBF corruption without an active bus.
-     - The planned slave device inventory is documented in [`modbus_protocol_inventory.json`](file:///C:/Users/ArmandoSilva/Downloads/modbus_protocol_inventory.json) for live manual configuration:
+     - The planned slave device inventory is documented in [`modbus_protocol_inventory.json`](../modbus_protocol_inventory.json) for live manual configuration:
        - `DEV_LT01` (Unit 1): Buffer Tank Level Transmitter (`%AI1`, Modicon `40001`, 0..100.0 %)
        - `DEV_FT01` (Unit 2): Inflow Coriolis Flowmeter (`%AI2`, Modicon `40002`, 0..500.0 L/min)
        - `DEV_PT01` (Unit 3): Discharge Pressure Transmitter (`%AI3`, Modicon `40003`, 0..10.0 bar)
@@ -85,7 +85,7 @@ Before attaching any programming cable or applying control power:
    - Test fail-safe disconnect: Unplug `MJ1` serial cable for > 2.0s; verify `%M10 = 1`, `%M11 = 1`, and `%R101` clamps to `0.0%`. Reconnect and confirm recovery.
 
 2. **Sign-Off & Hand-off to Subsequent Field Milestones**:
-   - Sign the physical validation sheet in Section 9 of [`P7_MANUAL_COMMISSIONING_PROCEDURE.md`](file:///C:/Users/ArmandoSilva/Downloads/P7_MANUAL_COMMISSIONING_PROCEDURE.md).
+   - Sign the physical validation sheet in Section 9 of [`P7_MANUAL_COMMISSIONING_PROCEDURE.md`](P7_MANUAL_COMMISSIONING_PROCEDURE.md).
    - Advance to:
      - **Milestone CORE-09**: Physical touchscreen HMI & WebMI remote screen verification.
      - **Milestone CORE-10**: 24-hour hardware telemetry soak test under plant pumping load.

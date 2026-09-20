@@ -85,7 +85,7 @@ All 49 artifacts cataloged below are synchronized across:
 > **`"Failed to save document."`** (PE String ID `AFX_IDP_FAILED_TO_SAVE_DOC = 0xF183`).
 
 ### Root Causes & Forensic Findings
-As detailed in [`Downloads/cscape_save_failed_diagnosis.md`](file:///C:/Users/ArmandoSilva/Downloads/cscape_save_failed_diagnosis.md), this occurs due to:
+As detailed in [`docs/cscape_save_failed_diagnosis.md`](cscape_save_failed_diagnosis.md), this occurs due to:
 1. **File Sharing Violations (`ERROR_SHARING_VIOLATION = 32`)**: Another process or background worker holds an open handle without `FILE_SHARE_WRITE`.
 2. **CFBF OLE2 Storage Desynchronization**: External tools modifying `.csp` containers on disk while Cscape has the file open in-memory.
 3. **MFC Working Directory Drift**: Common Dialog navigation mutating the process current working directory (`CWD`), breaking relative path resolution.

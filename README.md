@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="assets/horner_cscape_mcp_hero.jpg" alt="Horner Cscape 10.2 Model Context Protocol (MCP) Server Architecture Banner" width="100%" />
+</p>
+
 # Horner Cscape 10.2 Model Context Protocol (MCP) Server
 
 [![Python](https://img.shields.io/badge/Python-3.10%20%7C%203.11%20%7C%203.12-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)

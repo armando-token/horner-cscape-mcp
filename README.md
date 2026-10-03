@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/horner_cscape_mcp_hero.jpg" alt="Horner Cscape 10.2 Model Context Protocol (MCP) Server Architecture Banner" width="100%" />
+  <img src="assets/horner_cscape_mcp_animado.gif" alt="Horner Cscape 10.2 Model Context Protocol (MCP) Server Animation" width="100%" />
 </p>
 
 # Horner Cscape 10.2 Model Context Protocol (MCP) Server

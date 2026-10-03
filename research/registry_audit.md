@@ -52,7 +52,7 @@ The root key `HKCU\Software\Horner_Electric\Cscape` contains 18 subkeys managing
 | **`Colors`** | 3 (`Classic`, `Dark`, `Light`) | 2 | Editor syntax and canvas color palettes (RGB integers, font names `Franklin Gothic Medium`, dot grids). |
 | **`ApplicationLook`**| 0 | 1 | `RibbonTheme = 0`. |
 | **`Setup`** | 0 | 13 | Exit status flag (`CscapeExitedCorrectly`), default serial configuration (`COM1: 57600 baud`), and F1-F10 hotkeys. |
-| **`HornerIDReg`** | 1 (`Users`) | 7 | User account credentials, Horner ID (`armando@controlnautas.com`), and PC Unique ID. |
+| **`HornerIDReg`** | 1 (`Users`) | 7 | User account credentials, Horner ID (`[REDACTED]`), and PC Unique ID. |
 | **`HornerNodeLock`**| 0 | 1 | Licensing node lock state (`NodeKey = 0`). |
 | **`Modem`** | 0 | 3 | AT modem initialization and dial strings (`ATZ&D0&K0`, `ATDT`). |
 | **`OcsModelDatabase`**| 1 (`Settings`)| 0 | Part number formatting (`AbbreviatedPartNumbers = 1`). |

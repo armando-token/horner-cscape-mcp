@@ -558,7 +558,7 @@
               },
               "HornerID": {
                 "reg_type": "REG_SZ",
-                "raw_value": "armando@controlnautas.com"
+                "raw_value": "[REDACTED]"
               },
               "HornerIDRegisterLater": {
                 "reg_type": "REG_SZ",
@@ -570,11 +570,11 @@
               },
               "Password": {
                 "reg_type": "REG_SZ",
-                "raw_value": "ol/C7WerxGuKOCgr0Hlb7Q=="
+                "raw_value": "[REDACTED]"
               },
               "PCUniqueID": {
                 "reg_type": "REG_SZ",
-                "raw_value": "199257c1-3c1c-b3ce-6a22-d93eb3db8f19"
+                "raw_value": "[REDACTED]"
               },
               "StatisticFlag": {
                 "reg_type": "REG_DWORD",
@@ -591,11 +591,11 @@
                     "values": {
                       "Password": {
                         "reg_type": "REG_SZ",
-                        "raw_value": "ol/C7WerxGuKOCgr0Hlb7Q=="
+                        "raw_value": "[REDACTED]"
                       },
                       "UserID": {
                         "reg_type": "REG_SZ",
-                        "raw_value": "armando@controlnautas.com"
+                        "raw_value": "[REDACTED]"
                       }
                     },
                     "subkeys": {}
